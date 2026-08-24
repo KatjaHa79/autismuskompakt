@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const query = Astro.url.searchParams.get("q") ?? "";
+---
+
+<BaseLayout title="Suche" description="Suche auf Autismuskompakt.">
+  <div class="container">
+    <article class="prose">
+      <h1>Suche</h1>
+      <p>
+        Die Suchfunktion befindet sich noch im Aufbau. Bevor eine
+        technische Suchlösung eingebunden wird, werden die Optionen dafür
+        vorgestellt und freigegeben.
+      </p>
+      {
+        query && (
+          <p>
+            Deine Sucheingabe war: <strong>{query}</strong>
+          </p>
+        )
+      }
+      <p>
+        Nutze bis dahin gern die <a href="/">Startseite</a> oder die
+        Hauptnavigation, um Themen zu finden.
+      </p>
+    </article>
+  </div>
+</BaseLayout>

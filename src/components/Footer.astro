@@ -1,0 +1,119 @@
+---
+const groups = [
+  {
+    title: "Autismuskompakt",
+    links: [
+      { label: "Über mich", href: "/ueber-mich/" },
+      { label: "Haltung & Transparenz", href: "/ueber-mich/#haltung" },
+      { label: "Kontakt", href: "/ueber-mich/#kontakt" },
+    ],
+  },
+  {
+    title: "Informationen",
+    links: [
+      { label: "Autismus verstehen", href: "/fuer-autistische-menschen/" },
+      { label: "Diagnostik & Tests", href: "/fuer-autistische-menschen/diagnostik/" },
+      { label: "Rechte & Anträge", href: "/fuer-autistische-menschen/rechte-und-antraege/" },
+      { label: "Alltag & Leben", href: "/fuer-autistische-menschen/alltag/" },
+      { label: "Begleiterkrankungen", href: "/fuer-autistische-menschen/besonderheiten/" },
+    ],
+  },
+  {
+    title: "Hilfe",
+    links: [
+      { label: "Anlaufstellen", href: "/hilfe-finden/" },
+      { label: "Materialien", href: "/materialien/" },
+      { label: "Kostenloser Leitfaden", href: "/materialien/#leitfaden" },
+    ],
+  },
+  {
+    title: "Shop",
+    links: [
+      { label: "Bücher", href: "/shop/#buecher" },
+      { label: "Digitale Produkte", href: "/shop/#digitale-produkte" },
+      { label: "Kleidung & Merchandise", href: "/shop/#merchandise" },
+    ],
+  },
+  {
+    title: "Rechtliches",
+    links: [
+      { label: "Impressum", href: "/impressum/" },
+      { label: "Datenschutz", href: "/datenschutz/" },
+      { label: "Barrierefreiheit", href: "/barrierefreiheit/" },
+    ],
+  },
+];
+---
+
+<footer class="site-footer on-dark">
+  <div class="container site-footer__inner">
+    <nav class="site-footer__groups" aria-label="Footer-Navigation">
+      {
+        groups.map((group) => (
+          <div class="site-footer__group">
+            <h2>{group.title}</h2>
+            <ul>
+              {group.links.map((link) => (
+                <li>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </nav>
+
+    <p class="site-footer__copyright">
+      © {new Date().getFullYear()} Autismuskompakt
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--color-petrol-800);
+    color: var(--color-text-invert);
+    margin-top: var(--space-2xl);
+    padding-block: var(--space-xl) var(--space-lg);
+  }
+
+  .site-footer__groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: var(--space-lg) var(--space-md);
+  }
+
+  .site-footer__group h2 {
+    color: var(--color-text-invert);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: var(--space-sm);
+  }
+
+  .site-footer__group ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+  }
+
+  .site-footer__group a {
+    color: var(--color-text-invert);
+    text-decoration: none;
+  }
+
+  .site-footer__group a:hover {
+    text-decoration: underline;
+  }
+
+  .site-footer__copyright {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-md);
+    border-top: var(--border-width) solid var(--color-petrol-600);
+    font-size: 0.9rem;
+    color: var(--color-creme-alt);
+  }
+</style>

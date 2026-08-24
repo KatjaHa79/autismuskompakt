@@ -1,0 +1,158 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const themen = [
+  { label: "Autismus verstehen", href: "/fuer-autistische-menschen/" },
+  { label: "Diagnostik & Tests", href: "/fuer-autistische-menschen/diagnostik/" },
+  { label: "Hilfe & Anlaufstellen", href: "/hilfe-finden/" },
+  { label: "Rechte & Anträge", href: "/fuer-autistische-menschen/rechte-und-antraege/" },
+  { label: "Alltag & Leben", href: "/fuer-autistische-menschen/alltag/" },
+  { label: "Besonderheiten & Begleiterkrankungen", href: "/fuer-autistische-menschen/besonderheiten/" },
+  { label: "Downloads & Materialien", href: "/materialien/" },
+];
+
+const zielgruppen = [
+  {
+    label: "Ich bin autistisch – oder vermute es",
+    href: "/fuer-autistische-menschen/",
+  },
+  {
+    label: "Ich bin Angehörige:r",
+    href: "/angehoerige-fachkraefte/#angehoerige",
+  },
+  {
+    label: "Ich bin Fachkraft",
+    href: "/angehoerige-fachkraefte/#fachkraefte",
+  },
+];
+---
+
+<BaseLayout
+  title="Startseite"
+  description="Autismuskompakt: verständliche Informationen und konkrete Hilfe zum Thema Autismus für autistische Menschen, Angehörige und Fachkräfte."
+>
+  <section class="hero">
+    <div class="container">
+      <h1>Autismus verstehen. Unterstützung finden. Den eigenen Weg gehen.</h1>
+      <p class="hero__lead">
+        Autismuskompakt ist eine reizarme Informations- und Hilfeplattform zum
+        Thema Autismus – für autistische Menschen, Angehörige und
+        Fachkräfte.
+      </p>
+      <div class="hero__actions">
+        <a class="button button--primary" href="/fuer-autistische-menschen/">Themen entdecken</a>
+        <a class="button button--secondary" href="/hilfe-finden/">Hilfe finden</a>
+      </div>
+      <p class="hero__guide">
+        <a href="TODO_KATJA_BREVO_URL">Kostenloser Leitfaden</a>
+        (Link folgt)
+      </p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="themen-heading">
+    <div class="container">
+      <h2 id="themen-heading">Themen im Überblick</h2>
+      <ul class="card-grid">
+        {
+          themen.map((thema) => (
+            <li>
+              <a class="card" href={thema.href}>
+                {thema.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="zielgruppen-heading">
+    <div class="container">
+      <h2 id="zielgruppen-heading">Für wen suchst du Informationen?</h2>
+      <ul class="card-grid card-grid--audience">
+        {
+          zielgruppen.map((gruppe) => (
+            <li>
+              <a class="card card--audience" href={gruppe.href}>
+                {gruppe.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: var(--space-2xl) var(--space-xl);
+  }
+
+  .hero__lead {
+    margin-top: var(--space-md);
+    max-width: var(--measure);
+    font-size: 1.25rem;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+  }
+
+  .hero__guide {
+    margin-top: var(--space-md);
+    font-size: 0.95rem;
+    color: var(--color-petrol-600);
+  }
+
+  .section {
+    padding-block: var(--space-xl);
+  }
+
+  .section--alt {
+    background-color: var(--color-creme-alt);
+  }
+
+  .section h2 {
+    margin-bottom: var(--space-lg);
+  }
+
+  .card-grid {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: var(--space-md);
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    min-height: 5.5rem;
+    padding: var(--space-md);
+    background-color: var(--color-white);
+    border: var(--border-width) solid var(--color-petrol-100);
+    border-radius: var(--radius);
+    color: var(--color-petrol-900);
+    font-weight: 700;
+    text-decoration: none;
+    transition: border-color var(--transition-fast);
+  }
+
+  .card:hover {
+    border-color: var(--color-kupfer-500);
+  }
+
+  .card-grid--audience {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  }
+
+  .card--audience {
+    border-color: var(--color-petrol-600);
+    border-width: 2px;
+  }
+</style>

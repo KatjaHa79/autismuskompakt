@@ -1,0 +1,56 @@
+---
+const items = [
+  { label: "Für Autist:innen", href: "/fuer-autistische-menschen/" },
+  { label: "Für Angehörige & Fachkräfte", href: "/angehoerige-fachkraefte/" },
+  { label: "Hilfe finden", href: "/hilfe-finden/" },
+  { label: "Materialien", href: "/materialien/" },
+  { label: "Shop", href: "/shop/" },
+  { label: "Über mich", href: "/ueber-mich/" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="main-nav" aria-label="Hauptnavigation">
+  <ul class="main-nav__list">
+    {
+      items.map((item) => {
+        const isCurrent = currentPath === item.href;
+        return (
+          <li>
+            <a href={item.href} aria-current={isCurrent ? "page" : undefined}>
+              {item.label}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>
+
+<style>
+  .main-nav__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-md);
+    padding: 0;
+  }
+
+  .main-nav__list a {
+    display: inline-block;
+    padding: var(--space-2xs) 0;
+    color: var(--color-text-invert);
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 2px solid transparent;
+  }
+
+  .main-nav__list a:hover {
+    border-bottom-color: var(--color-kupfer-500);
+  }
+
+  .main-nav__list a[aria-current="page"] {
+    border-bottom-color: var(--color-kupfer-500);
+  }
+</style>
