@@ -1,0 +1,20 @@
+---
+import MaterialienFilterLayout from "../../../layouts/MaterialienFilterLayout.astro";
+import { targetGroupLabels } from "../../../content.config";
+import { getAlleMaterialien, getZielgruppenMitMaterialien } from "../../../lib/materialien";
+
+export async function getStaticPaths() {
+  const zielgruppen = await getZielgruppenMitMaterialien();
+  const alle = await getAlleMaterialien();
+  return [...zielgruppen].map((gruppe) => ({
+    params: { gruppe },
+    props: { entries: alle.filter((entry) => entry.data.targetGroups.includes(gruppe)) },
+  }));
+}
+
+const { gruppe } = Astro.params;
+const { entries } = Astro.props;
+const label = targetGroupLabels[gruppe as keyof typeof targetGroupLabels];
+---
+
+<MaterialienFilterLayout title={`Materialien für: ${label}`} filterLabel={`Zielgruppe ${label}`} entries={entries} />

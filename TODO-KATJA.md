@@ -41,14 +41,10 @@ liefern musst. Sie wird mit jeder Etappe ergänzt.
 
 ## Etappe 1 – Informationsarchitektur
 
-### Shop (`src/pages/shop/index.astro`)
+### Shop
 
-- [ ] `TODO_KATJA_SHOP_URL` (bei beiden Büchern „Autismus kompakt“ und
-      „Neuro-Kompass“) durch die jeweilige externe Verkaufs-URL ersetzen
-- [ ] Buch-Cover als Bilddatei liefern (ersetzt den Platzhalter „Cover folgt“)
-- [ ] Kurzbeschreibung und Zielgruppe je Buch liefern
-- [ ] Entscheiden, welche digitalen Produkte und welches Merchandise zuerst
-      erscheinen sollen (aktuell nur als Kategorie ohne Produkte angelegt)
+Der Shop wurde in Etappe 4 auf ein richtiges Datenmodell umgestellt – die
+offenen Punkte dazu stehen jetzt weiter unten unter „Etappe 4“.
 
 ### Über mich (`src/pages/ueber-mich/index.astro`)
 
@@ -113,6 +109,44 @@ mindestens einen Eintrag gibt – sie erscheinen also von selbst, sobald du
 weitere Anlaufstellen mit neuen Bundesländern/Kategorien anlegst. Eine
 interaktive (JavaScript-basierte) Live-Filterung wurde bewusst noch nicht
 eingebaut, um die Technik einfach zu halten; falls das später gewünscht
+ist, sprich mich gerne an.
+
+## Etappe 4 – Materialien und Shop
+
+### Bücher: echte Angaben ergänzen
+
+- [ ] `src/content/produkte/autismus-kompakt.yaml`: `TODO_KATJA_SHOP_URL_AUTISMUS_KOMPAKT`
+      durch die echte Verkaufs-URL ersetzen, `description` und `cover` ergänzen
+- [ ] `src/content/produkte/neuro-kompass.yaml`: `TODO_KATJA_SHOP_URL_NEURO_KOMPASS`
+      durch die echte Verkaufs-URL ersetzen, `description` und `cover` ergänzen
+- [ ] Bei Bedarf `targetGroups` je Buch anpassen (aktuell vorläufig auf
+      autistische Menschen und Angehörige gesetzt)
+- [ ] Entscheiden, welche digitalen Produkte und welches Merchandise als
+      Erstes erscheinen sollen (Anleitung: `ANLEITUNG-SHOP.md`)
+
+### Demo-Datensätze ersetzen/entfernen
+
+- [ ] Materialien: `demo-checkliste.yaml`, `demo-gespraechshilfe-extern.yaml`
+      (plus `public/downloads/materialien/beispiel-checkliste.pdf`) durch
+      echte Materialien ersetzen bzw. löschen, sobald genug echte vorhanden
+      sind (Anleitung: `ANLEITUNG-MATERIALIEN.md`)
+- [ ] Shop: `demo-workbook.yaml`, `demo-tasse.yaml` durch echte digitale
+      Produkte bzw. Merchandise ersetzen bzw. löschen (Anleitung:
+      `ANLEITUNG-SHOP.md`)
+
+### Selbst pflegen
+
+Schritt-für-Schritt-Anleitungen in **`ANLEITUNG-MATERIALIEN.md`** und
+**`ANLEITUNG-SHOP.md`**: neues Material/Produkt anlegen, Datei bzw. Cover
+hinterlegen, Zielgruppen/Kategorien pflegen, Shop-Link später ändern,
+Pflichtfelder im Überblick.
+
+### Hinweis zu den Filterseiten
+
+Wie schon bei „Hilfe finden“ gibt es für Materialien Filterseiten nach
+Zielgruppe und Materialtyp (z. B. `/materialien/typ/checklisten/`), die
+automatisch nur für tatsächlich vorhandene Werte erzeugt werden. Auch hier
+bewusst noch keine JavaScript-Live-Filterung – falls das später gewünscht
 ist, sprich mich gerne an.
 
 ### Hinweis zur Informationsarchitektur

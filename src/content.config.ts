@@ -217,4 +217,125 @@ const anlaufstellen = defineCollection({
     }),
 });
 
-export const collections = { artikel: articles, anlaufstellen };
+// ============================================================================
+// Materialien (Etappe 4) – kostenlose Downloads
+// ============================================================================
+
+const materialTypeValues = [
+  "checklisten",
+  "vorlagen",
+  "arbeitsblaetter",
+  "gespraechshilfen",
+  "reizprofile",
+  "kommunikationshilfen",
+  "arzttermin-vorbereitung",
+  "tages-wochenplanung",
+  "belastungsprotokolle",
+  "antragschecklisten",
+  "materialien-schule",
+  "materialien-studium",
+  "materialien-arbeit",
+] as const;
+
+export const materialTypeLabels: Record<(typeof materialTypeValues)[number], string> = {
+  checklisten: "Checklisten",
+  vorlagen: "Vorlagen",
+  arbeitsblaetter: "Arbeitsblätter",
+  gespraechshilfen: "Gesprächshilfen",
+  reizprofile: "Reizprofile",
+  kommunikationshilfen: "Kommunikationshilfen",
+  "arzttermin-vorbereitung": "Arzttermin-Vorbereitung",
+  "tages-wochenplanung": "Tages- und Wochenplanung",
+  belastungsprotokolle: "Belastungsprotokolle",
+  antragschecklisten: "Antragschecklisten",
+  "materialien-schule": "Materialien für Schule",
+  "materialien-studium": "Materialien für Studium",
+  "materialien-arbeit": "Materialien für Arbeit",
+};
+
+const materialien = defineCollection({
+  loader: glob({ pattern: "**/*.{yaml,yml}", base: "./src/content/materialien" }),
+  schema: z
+    .object({
+      title: z.string().min(1, "title darf nicht leer sein."),
+      description: z.string().min(1, "description darf nicht leer sein."),
+      targetGroups: z
+        .array(z.enum(targetGroupValues))
+        .min(1, "targetGroups braucht mindestens eine Zielgruppe."),
+      materialType: z.enum(materialTypeValues, {
+        message: `materialType muss einer der folgenden Werte sein: ${materialTypeValues.join(", ")}`,
+      }),
+      file: z.string().optional(),
+      fileFormat: z.string().optional(),
+      pages: z.number().int().positive().optional(),
+      language: z.string().default("de"),
+      updated: z.coerce.date({
+        error: "updated (Stand-Datum) ist für jedes Material verpflichtend.",
+      }),
+      accessibilityNote: z.string().optional(),
+      featured: z.boolean().default(false),
+      external: z.boolean().default(false),
+      externalUrl: z.url("externalUrl muss eine gültige, vollständige Adresse sein.").optional(),
+      demo: z.boolean().default(false),
+    })
+    .superRefine((data, ctx) => {
+      if (data.external) {
+        if (!data.externalUrl) {
+          ctx.addIssue({
+            code: "custom",
+            path: ["externalUrl"],
+            message: 'Bei extern verlinkten Materialien (external: true) ist "externalUrl" verpflichtend.',
+          });
+        }
+      } else if (!data.file) {
+        ctx.addIssue({
+          code: "custom",
+          path: ["file"],
+          message:
+            'Bei intern gehosteten Materialien ist "file" (Dateipfad) verpflichtend. Alternativ "external: true" mit "externalUrl" setzen.',
+        });
+      }
+    }),
+});
+
+// ============================================================================
+// Shop-Produkte (Etappe 4) – reine Präsentation, kein Kaufvorgang
+// ============================================================================
+
+const productTypeValues = ["buch", "digitales-produkt", "merchandise"] as const;
+
+export const productTypeLabels: Record<(typeof productTypeValues)[number], string> = {
+  buch: "Buch",
+  "digitales-produkt": "Digitales Produkt",
+  merchandise: "Merchandise",
+};
+
+export const productButtonLabels: Record<(typeof productTypeValues)[number], string> = {
+  buch: "Zum Buch",
+  "digitales-produkt": "Produkt ansehen",
+  merchandise: "Zum Shop",
+};
+
+const produkte = defineCollection({
+  loader: glob({ pattern: "**/*.{yaml,yml}", base: "./src/content/produkte" }),
+  schema: z.object({
+    title: z.string().min(1, "title darf nicht leer sein."),
+    description: z.string().min(1, "description darf nicht leer sein."),
+    cover: z.string().optional(),
+    productType: z.enum(productTypeValues, {
+      message: `productType muss einer der folgenden Werte sein: ${productTypeValues.join(", ")}`,
+    }),
+    targetGroups: z
+      .array(z.enum(targetGroupValues))
+      .min(1, "targetGroups braucht mindestens eine Zielgruppe."),
+    externalUrl: z
+      .string()
+      .min(1, 'externalUrl ist verpflichtend – auf autismuskompakt.de findet kein eigener Kaufvorgang statt.'),
+    provider: z.string().optional(),
+    buttonLabel: z.string().optional(),
+    featured: z.boolean().default(false),
+    demo: z.boolean().default(false),
+  }),
+});
+
+export const collections = { artikel: articles, anlaufstellen, materialien, produkte };

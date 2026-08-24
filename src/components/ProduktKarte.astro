@@ -1,0 +1,112 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { productTypeLabels, productButtonLabels, targetGroupLabels } from "../content.config";
+
+interface Props {
+  entry: CollectionEntry<"produkte">;
+}
+
+const { entry } = Astro.props;
+const { title, description, cover, productType, targetGroups, externalUrl, provider, buttonLabel, demo } =
+  entry.data;
+
+const label = buttonLabel ?? productButtonLabels[productType];
+---
+
+<article class="produkt-karte">
+  {
+    cover ? (
+      <img class="cover" src={cover} alt={`Cover von ${title}`} />
+    ) : (
+      <p class="cover cover--placeholder placeholder">Cover folgt</p>
+    )
+  }
+
+  <h3>
+    {title}
+    {demo && <span class="demo-badge">Beispieldatensatz</span>}
+  </h3>
+
+  <p class="typ">{productTypeLabels[productType]}</p>
+
+  <p class="beschreibung">{description}</p>
+
+  <p class="zielgruppen">Für: {targetGroups.map((gruppe) => targetGroupLabels[gruppe]).join(", ")}</p>
+
+  {provider && <p class="anbieter">Anbieter: {provider}</p>}
+
+  <a class="button button--secondary" href={externalUrl} rel="noopener noreferrer">
+    {label} <span aria-hidden="true">↗</span>
+    <span class="visually-hidden">(öffnet auf einer anderen Website)</span>
+  </a>
+</article>
+
+<style>
+  .produkt-karte {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    background-color: var(--color-white);
+    border: var(--border-width) solid var(--color-petrol-100);
+    border-radius: var(--radius);
+    padding: var(--space-md);
+  }
+
+  .cover {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: var(--space-2xs);
+  }
+
+  .cover--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .produkt-karte h3 {
+    font-size: 1.15rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2xs);
+  }
+
+  .demo-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-kupfer-800);
+    background-color: var(--color-creme-alt);
+    border: var(--border-width) solid var(--color-kupfer-800);
+    border-radius: 999px;
+    padding: 0.15em 0.6em;
+  }
+
+  .typ {
+    font-size: 0.85rem;
+    color: var(--color-petrol-600);
+  }
+
+  .beschreibung {
+    font-size: 0.95rem;
+  }
+
+  .zielgruppen {
+    font-size: 0.85rem;
+    color: var(--color-petrol-600);
+  }
+
+  .anbieter {
+    font-size: 0.85rem;
+  }
+
+  .produkt-karte .button {
+    margin-top: var(--space-xs);
+    align-self: flex-start;
+  }
+</style>

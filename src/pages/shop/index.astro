@@ -1,11 +1,15 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import ProduktKarte from "../../components/ProduktKarte.astro";
+import { getCollection } from "astro:content";
 
-const buecher = [
-  { titel: "Autismus kompakt" },
-  { titel: "Neuro-Kompass" },
-];
+const alleProdukte = await getCollection("produkte");
+const sortiert = alleProdukte.sort((a, b) => a.data.title.localeCompare(b.data.title, "de"));
+
+const buecher = sortiert.filter((p) => p.data.productType === "buch");
+const digitaleProdukte = sortiert.filter((p) => p.data.productType === "digitales-produkt");
+const merchandise = sortiert.filter((p) => p.data.productType === "merchandise");
 ---
 
 <BaseLayout
@@ -22,7 +26,9 @@ const buecher = [
       <p class="lead">
         Auf Autismuskompakt.de findet kein eigener Kaufvorgang statt. Hier
         werden Produkte vorgestellt; der Kauf erfolgt über externe
-        Verkaufsstellen, die als solche gekennzeichnet sind.
+        Verkaufsstellen, die als solche gekennzeichnet sind. Kostenlose
+        Materialien findest du nicht hier, sondern unter
+        <a href="/materialien/">Materialien</a>.
       </p>
     </div>
   </section>
@@ -33,14 +39,8 @@ const buecher = [
       <ul class="card-grid">
         {
           buecher.map((buch) => (
-            <li class="book-card">
-              <p class="book-card__cover placeholder">Cover folgt</p>
-              <h3>{buch.titel}</h3>
-              <p class="placeholder">Beschreibung und Zielgruppe folgen</p>
-              <a class="button button--secondary" href="TODO_KATJA_SHOP_URL">
-                Zum Buch <span class="visually-hidden">{buch.titel}</span>
-                <span aria-hidden="true">↗</span>
-              </a>
+            <li>
+              <ProduktKarte entry={buch} />
             </li>
           ))
         }
@@ -57,9 +57,21 @@ const buecher = [
         kostenlose Materialien findest du unter
         <a href="/materialien/">Materialien</a>.
       </p>
-      <div class="notice">
-        <p>Diese Kategorie befindet sich im Aufbau.</p>
-      </div>
+      {
+        digitaleProdukte.length > 0 ? (
+          <ul class="card-grid">
+            {digitaleProdukte.map((produkt) => (
+              <li>
+                <ProduktKarte entry={produkt} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div class="notice">
+            <p>Diese Kategorie befindet sich im Aufbau.</p>
+          </div>
+        )
+      }
     </div>
   </section>
 
@@ -67,9 +79,21 @@ const buecher = [
     <div class="container">
       <h2>Kleidung & Merchandise</h2>
       <p class="lead-small">Zum Beispiel T-Shirts, Hoodies, Taschen oder Tassen.</p>
-      <div class="notice">
-        <p>Diese Kategorie befindet sich im Aufbau.</p>
-      </div>
+      {
+        merchandise.length > 0 ? (
+          <ul class="card-grid">
+            {merchandise.map((produkt) => (
+              <li>
+                <ProduktKarte entry={produkt} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div class="notice">
+            <p>Diese Kategorie befindet sich im Aufbau.</p>
+          </div>
+        )
+      }
     </div>
   </section>
 </BaseLayout>
@@ -89,26 +113,12 @@ const buecher = [
     margin-bottom: var(--space-sm);
   }
 
-  .book-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-2xs);
-    min-height: auto;
-    background-color: var(--color-white);
-    border: var(--border-width) solid var(--color-petrol-100);
-    border-radius: var(--radius);
-    padding: var(--space-md);
-  }
-
-  .book-card__cover {
-    width: 100%;
-    text-align: center;
-    padding-block: var(--space-lg);
-  }
-
-  .book-card .button {
-    margin-top: var(--space-xs);
+  .card-grid {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: var(--space-md);
   }
 
   .notice {

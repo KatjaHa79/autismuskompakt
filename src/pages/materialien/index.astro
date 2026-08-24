@@ -1,26 +1,23 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import MaterialKarte from "../../components/MaterialKarte.astro";
+import { materialTypeLabels, targetGroupLabels } from "../../content.config";
+import { BREVO_LEITFADEN_URL } from "../../lib/constants";
+import {
+  getAlleMaterialien,
+  getZielgruppenMitMaterialien,
+  getMaterialtypenMitMaterialien,
+} from "../../lib/materialien";
 
-const kategorien = [
-  {
-    title: "Für mich selbst",
-    beispiele: ["Reizprofile", "Belastungsprotokolle", "Tagesplanung", "Wochenplanung", "Arzttermin-Vorbereitung"],
-  },
-  {
-    title: "Für Angehörige",
-    beispiele: ["Gesprächshilfen", "Checklisten", "Unterlagen für Schule"],
-  },
-  {
-    title: "Für Fachkräfte",
-    beispiele: ["Kommunikationsbögen", "Materialien für die Praxis", "Antragschecklisten"],
-  },
-];
+const alle = await getAlleMaterialien();
+const zielgruppen = await getZielgruppenMitMaterialien();
+const materialtypen = await getMaterialtypenMitMaterialien();
 ---
 
 <BaseLayout
   title="Materialien"
-  description="Kostenlose Checklisten, Vorlagen und Arbeitsblätter zum Thema Autismus – für Betroffene, Angehörige und Fachkräfte."
+  description="Kostenlose Checklisten, Vorlagen und Arbeitsblätter zum Thema Autismus – für autistische Menschen, Angehörige und Fachkräfte."
 >
   <div class="container">
     <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Materialien" }]} />
@@ -30,46 +27,70 @@ const kategorien = [
     <div class="container">
       <h1>Materialien</h1>
       <p class="lead">
-        Hier entsteht eine Sammlung kostenloser Materialien, die ohne
-        Anmeldung heruntergeladen werden können – zum Beispiel Checklisten,
-        Vorlagen, Arbeitsblätter und Gesprächshilfen.
+        Alle hier aufgeführten Materialien sind <strong>kostenlos</strong> und
+        ohne Anmeldung nutzbar – zum Beispiel Checklisten, Vorlagen,
+        Arbeitsblätter und Gesprächshilfen. Kostenpflichtige digitale Produkte
+        findest du im <a href="/shop/#digitale-produkte">Shop</a>.
       </p>
-
-      {
-        kategorien.map((kategorie) => (
-          <div class="kategorie">
-            <h2>{kategorie.title}</h2>
-            <p class="kategorie__hinweis">Geplante Materialien, unter anderem:</p>
-            <ul class="beispiel-list">
-              {kategorie.beispiele.map((beispiel) => (
-                <li>{beispiel}</li>
-              ))}
-            </ul>
-          </div>
-        ))
-      }
-
-      <div class="notice">
-        <p>
-          Diese Seite befindet sich im Aufbau. Die einzelnen Materialien
-          werden in einer späteren Etappe ergänzt und stehen dann direkt zum
-          Download bereit.
-        </p>
-      </div>
     </div>
   </section>
 
   <section id="leitfaden" class="section section--alt">
     <div class="container">
       <h2>Kostenloser Leitfaden</h2>
-      <p class="lead">
-        Zusätzlich zu den einzelnen Materialien wird es ein umfangreicheres
-        kostenloses Gesamtpaket geben.
+      <p class="lead-small">
+        Zusätzlich zu den einzelnen Materialien gibt es ein umfangreicheres
+        kostenloses Gesamtpaket.
       </p>
       <p>
-        <a class="button button--primary" href="TODO_KATJA_BREVO_URL">Kostenlosen Leitfaden anfordern</a>
-        <span class="placeholder-note">(Link folgt)</span>
+        <a class="button button--primary" href={BREVO_LEITFADEN_URL}>Kostenlosen Leitfaden erhalten</a>
+        <span class="placeholder-note">(Link folgt) <span aria-hidden="true">↗</span></span>
       </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Nach Zielgruppe</h2>
+      <ul class="filter-list">
+        {
+          [...zielgruppen].map((gruppe) => (
+            <li>
+              <a href={`/materialien/zielgruppe/${gruppe}/`}>{targetGroupLabels[gruppe]}</a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <h2>Nach Materialtyp</h2>
+      <ul class="filter-list">
+        {
+          [...materialtypen].map((typ) => (
+            <li>
+              <a href={`/materialien/typ/${typ}/`}>{materialTypeLabels[typ]}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="alle-heading">
+    <div class="container">
+      <h2 id="alle-heading">Alle Materialien</h2>
+      <p class="lead-small">
+        Die unten gezeigten Materialien sind derzeit ausschließlich
+        Beispieldatensätze zur Vorführung der Struktur.
+      </p>
+      <ul class="material-grid">
+        {
+          alle.map((entry) => (
+            <li>
+              <MaterialKarte entry={entry} />
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </section>
 </BaseLayout>
@@ -78,34 +99,57 @@ const kategorien = [
   .lead {
     max-width: var(--measure);
     font-size: 1.15rem;
-    margin-bottom: var(--space-lg);
   }
 
-  .kategorie {
-    margin-bottom: var(--space-lg);
+  .lead-small {
+    max-width: var(--measure);
+    margin-bottom: var(--space-sm);
   }
 
-  .kategorie h2 {
-    margin-bottom: var(--space-2xs);
-  }
-
-  .kategorie__hinweis {
-    color: var(--color-petrol-600);
-    margin-bottom: var(--space-2xs);
-  }
-
-  .beispiel-list {
-    list-style: disc;
-    padding-inline-start: 1.25em;
-  }
-
-  .notice {
+  h2 {
     margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  h2:first-of-type {
+    margin-top: 0;
+  }
+
+  .filter-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+  }
+
+  .filter-list a {
+    display: inline-block;
+    background-color: var(--color-white);
+    border: var(--border-width) solid var(--color-petrol-100);
+    border-radius: 999px;
+    padding: var(--space-2xs) var(--space-sm);
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: var(--color-petrol-900);
+    font-weight: 700;
+  }
+
+  .filter-list a:hover {
+    border-color: var(--color-kupfer-500);
   }
 
   .placeholder-note {
     margin-left: var(--space-2xs);
     color: var(--color-petrol-600);
     font-size: 0.95rem;
+  }
+
+  .material-grid {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: var(--space-md);
   }
 </style>

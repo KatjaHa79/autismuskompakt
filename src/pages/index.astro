@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { BREVO_LEITFADEN_URL } from "../lib/constants";
 
 const themen = [
   { label: "Autismus verstehen", href: "/fuer-autistische-menschen/" },
@@ -44,7 +45,7 @@ const zielgruppen = [
         <a class="button button--secondary" href="/hilfe-finden/">Hilfe finden</a>
       </div>
       <p class="hero__guide">
-        <a href="TODO_KATJA_BREVO_URL">Kostenloser Leitfaden</a>
+        <a href={BREVO_LEITFADEN_URL}>Kostenloser Leitfaden</a>
         (Link folgt)
       </p>
     </div>

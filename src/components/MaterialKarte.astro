@@ -1,0 +1,137 @@
+---
+import type { CollectionEntry } from "astro:content";
+import StandDatum from "./StandDatum.astro";
+import { materialTypeLabels, targetGroupLabels } from "../content.config";
+
+interface Props {
+  entry: CollectionEntry<"materialien">;
+}
+
+const { entry } = Astro.props;
+const {
+  title,
+  description,
+  targetGroups,
+  materialType,
+  file,
+  fileFormat,
+  pages,
+  accessibilityNote,
+  external,
+  externalUrl,
+  updated,
+  demo,
+} = entry.data;
+
+const formatAngabe = [fileFormat, pages ? `${pages} Seiten` : undefined].filter(Boolean).join(" · ");
+const downloadHref = external ? externalUrl : `/downloads/materialien/${file}`;
+---
+
+<article class="material-karte">
+  <header>
+    <h3>
+      {title}
+      {demo && <span class="demo-badge">Beispieldatensatz</span>}
+    </h3>
+  </header>
+
+  <ul class="tags">
+    <li class="tag">{materialTypeLabels[materialType]}</li>
+    {targetGroups.map((gruppe) => <li class="tag">{targetGroupLabels[gruppe]}</li>)}
+  </ul>
+
+  <p class="beschreibung">{description}</p>
+
+  {formatAngabe && <p class="format">{formatAngabe}</p>}
+
+  {accessibilityNote && (
+    <p class="barrierefreiheit">
+      <strong>Barrierefreiheit:</strong> {accessibilityNote}
+    </p>
+  )}
+
+  <StandDatum date={updated} />
+
+  <p class="download">
+    {external ? (
+      <a href={downloadHref} rel="noopener noreferrer">
+        Material extern öffnen <span aria-hidden="true">↗</span>
+        <span class="visually-hidden">(öffnet auf einer anderen Website)</span>
+      </a>
+    ) : (
+      <a href={downloadHref} download>
+        {title} herunterladen{fileFormat ? ` (${fileFormat})` : ""}
+      </a>
+    )}
+  </p>
+</article>
+
+<style>
+  .material-karte {
+    background-color: var(--color-white);
+    border: var(--border-width) solid var(--color-petrol-100);
+    border-radius: var(--radius);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .material-karte h3 {
+    font-size: 1.15rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2xs);
+  }
+
+  .demo-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-kupfer-800);
+    background-color: var(--color-creme-alt);
+    border: var(--border-width) solid var(--color-kupfer-800);
+    border-radius: 999px;
+    padding: 0.15em 0.6em;
+  }
+
+  .tags {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+  }
+
+  .tag {
+    font-size: 0.85rem;
+    background-color: var(--color-creme-alt);
+    border-radius: 999px;
+    padding: 0.15em 0.7em;
+    color: var(--color-petrol-900);
+  }
+
+  .beschreibung {
+    font-size: 0.95rem;
+  }
+
+  .format {
+    font-size: 0.85rem;
+    color: var(--color-petrol-600);
+  }
+
+  .barrierefreiheit {
+    font-size: 0.9rem;
+  }
+
+  .download {
+    margin-top: auto;
+    padding-top: var(--space-xs);
+  }
+
+  .download a {
+    font-weight: 700;
+  }
+</style>

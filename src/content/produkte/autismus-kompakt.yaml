@@ -1,0 +1,11 @@
+# Echtes Buch von Katja. Cover, Beschreibung, Zielgruppe und Verkaufslink
+# sind noch Platzhalter – siehe TODO-KATJA.md.
+title: "Autismus kompakt"
+description: "Beschreibung folgt."
+productType: "buch"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+
+externalUrl: "TODO_KATJA_SHOP_URL_AUTISMUS_KOMPAKT"

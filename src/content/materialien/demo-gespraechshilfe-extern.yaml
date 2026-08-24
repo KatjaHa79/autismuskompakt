@@ -1,0 +1,19 @@
+# DEMO-DATENSATZ – kein echtes Material.
+# Dient nur zur Vorführung des Datenmodells (Etappe 4), insbesondere der
+# Variante "extern verlinktes Material".
+title: "Beispiel-Gesprächshilfe (Demo-Datensatz, extern)"
+description: >
+  Beispieltext für ein extern verlinktes Material. Kein echter Inhalt,
+  kein echtes Ziel – die Adresse example.com ist eine für Beispiele
+  reservierte, nicht echte Internetadresse.
+demo: true
+
+targetGroups:
+  - angehoerige
+materialType: "gespraechshilfen"
+
+external: true
+externalUrl: "https://example.com/beispiel-material"
+language: "de"
+
+updated: 2026-08-24

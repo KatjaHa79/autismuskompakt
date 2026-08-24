@@ -1,0 +1,20 @@
+---
+import MaterialienFilterLayout from "../../../layouts/MaterialienFilterLayout.astro";
+import { materialTypeLabels } from "../../../content.config";
+import { getAlleMaterialien, getMaterialtypenMitMaterialien } from "../../../lib/materialien";
+
+export async function getStaticPaths() {
+  const typen = await getMaterialtypenMitMaterialien();
+  const alle = await getAlleMaterialien();
+  return [...typen].map((typ) => ({
+    params: { typ },
+    props: { entries: alle.filter((entry) => entry.data.materialType === typ) },
+  }));
+}
+
+const { typ } = Astro.params;
+const { entries } = Astro.props;
+const label = materialTypeLabels[typ as keyof typeof materialTypeLabels];
+---
+
+<MaterialienFilterLayout title={label} filterLabel={`Materialtyp ${label}`} entries={entries} />
