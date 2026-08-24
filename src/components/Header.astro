@@ -8,27 +8,98 @@ import Navigation from "./Navigation.astro";
       Autismuskompakt
     </a>
 
-    <Navigation />
+    <button
+      type="button"
+      id="nav-toggle"
+      class="nav-toggle"
+      aria-expanded="false"
+      aria-controls="primary-menu"
+    >
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22">
+        <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+      </svg>
+      <span>Menü</span>
+    </button>
 
-    <form class="site-header__search" action="/suche/" method="get" role="search">
-      <label class="visually-hidden" for="site-search">Website durchsuchen</label>
-      <input
-        id="site-search"
-        name="q"
-        type="search"
-        placeholder="Suchen …"
-        autocomplete="off"
-      />
-      <button type="submit">
-        <span class="visually-hidden">Suchen</span>
-        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
-          <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"></circle>
-          <line x1="16.6" y1="16.6" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
-        </svg>
-      </button>
-    </form>
+    <div id="primary-menu" class="primary-menu">
+      <Navigation />
+
+      <form class="site-header__search" action="/suche/" method="get" role="search">
+        <label class="visually-hidden" for="site-search">Website durchsuchen</label>
+        <input
+          id="site-search"
+          name="q"
+          type="search"
+          placeholder="Suchen …"
+          autocomplete="off"
+        />
+        <button type="submit">
+          <span class="visually-hidden">Suchen</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
+            <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"></circle>
+            <line x1="16.6" y1="16.6" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+          </svg>
+        </button>
+      </form>
+    </div>
   </div>
 </header>
+
+<script is:inline>
+  (function () {
+    var toggle = document.getElementById("nav-toggle");
+    var panel = document.getElementById("primary-menu");
+    if (!toggle || !panel) return;
+
+    var mq = window.matchMedia("(max-width: 40rem)");
+
+    function collapse() {
+      panel.style.display = "none";
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    function expand() {
+      panel.style.display = "";
+      toggle.setAttribute("aria-expanded", "true");
+    }
+
+    function syncToBreakpoint() {
+      if (mq.matches) {
+        collapse();
+      } else {
+        panel.style.display = "";
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    }
+
+    syncToBreakpoint();
+    mq.addEventListener("change", syncToBreakpoint);
+
+    toggle.addEventListener("click", function () {
+      if (!mq.matches) return;
+      if (panel.style.display === "none") {
+        expand();
+      } else {
+        collapse();
+      }
+    });
+
+    panel.addEventListener("click", function (event) {
+      if (mq.matches && event.target.closest("a")) {
+        collapse();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && mq.matches && panel.style.display !== "none") {
+        collapse();
+        toggle.focus();
+      }
+    });
+  })();
+</script>
 
 <style>
   .site-header {
@@ -51,6 +122,46 @@ import Navigation from "./Navigation.astro";
     color: var(--color-text-invert);
     text-decoration: none;
     white-space: nowrap;
+  }
+
+  /* Hamburger-Schaltfläche: nur auf schmalen Bildschirmen und nur, wenn
+     JavaScript verfügbar ist (siehe html.js in BaseLayout.astro). Ohne
+     JavaScript bleibt die Navigation immer sichtbar und umbricht wie
+     gewohnt – die Schaltfläche erscheint dann gar nicht erst. */
+  .nav-toggle {
+    display: none;
+    align-items: center;
+    gap: var(--space-2xs);
+    background: transparent;
+    border: var(--border-width) solid var(--color-creme);
+    color: var(--color-text-invert);
+    border-radius: var(--radius);
+    padding: var(--space-2xs) var(--space-sm);
+    font-weight: 700;
+    min-height: 44px;
+  }
+
+  .primary-menu {
+    display: contents;
+  }
+
+  @media (max-width: 40rem) {
+    html.js .nav-toggle {
+      display: inline-flex;
+    }
+
+    html.js .primary-menu {
+      display: block;
+      flex-basis: 100%;
+      order: 3;
+      padding-top: var(--space-sm);
+      border-top: var(--border-width) solid var(--color-petrol-600);
+      margin-top: var(--space-2xs);
+    }
+
+    html.js .primary-menu .site-header__search {
+      margin-top: var(--space-sm);
+    }
   }
 
   .site-header__search {

@@ -53,4 +53,17 @@ const currentPath = Astro.url.pathname;
   .main-nav__list a[aria-current="page"] {
     border-bottom-color: var(--color-kupfer-500);
   }
+
+  @media (max-width: 40rem) {
+    html.js .main-nav__list {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: var(--space-2xs);
+    }
+
+    html.js .main-nav__list a {
+      display: block;
+      padding: var(--space-xs) 0;
+    }
+  }
 </style>
