@@ -92,7 +92,8 @@ const zeigtWarteinfo = Boolean(waitingList || waitingTime);
           <dt>Website</dt>
           <dd>
             <a href={website} rel="noopener noreferrer">
-              {website.replace(/^https?:\/\//, "")}
+              {website.replace(/^https?:\/\//, "")} <span aria-hidden="true">↗</span>
+              <span class="visually-hidden">(öffnet auf einer anderen Website)</span>
             </a>
           </dd>
         </div>
@@ -123,7 +124,7 @@ const zeigtWarteinfo = Boolean(waitingList || waitingTime);
     <StandDatum date={updated} />
   </div>
 
-  <Quellenblock sources={[source]} />
+  <Quellenblock sources={[source]} headingLevel={4} context={name} />
 </article>
 
 <style>

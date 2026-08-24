@@ -42,11 +42,78 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         Diese Website befindet sich im Aufbau. Diese Erklärung wird mit
         jedem weiteren Ausbauschritt aktualisiert und um konkrete
         Prüfergebnisse ergänzt.
-        <span class="placeholder"
-          >PLATZHALTER: vollständiger Konformitätsstatus nach Abschluss der
-          Qualitätssicherung (Etappe 5)</span
-        >
       </p>
+
+      <h2>Ergebnis der technischen Qualitätssicherung</h2>
+      <p>
+        Im Rahmen einer technischen Qualitätssicherung wurden alle bis
+        dahin bestehenden Seitentypen geprüft: Startseite, Themen- und
+        Wegweiserseiten, Wissensartikel, Anlaufstellen- und
+        Materialien-Übersichts- sowie Filterseiten, Shop, rechtliche
+        Seiten und die 404-Seite.
+      </p>
+      <p>
+        Automatisiert geprüft wurde unter anderem mit dem
+        Accessibility-Prüfwerkzeug axe-core (Regelsätze für WCAG 2.0/2.1/2.2,
+        Konformitätsstufen A und AA, sowie Best-Practice-Regeln) über eine
+        repräsentative Auswahl von 26 Seiten. Dabei gefundene Probleme
+        wurden behoben:
+      </p>
+      <ul>
+        <li>
+          fehlende Zwischenüberschrift auf Filter-Ergebnisseiten (Sprung von
+          Überschriftenebene 1 direkt auf Ebene 3) – behoben durch eine
+          zusätzliche Zwischenüberschrift
+        </li>
+        <li>
+          mehrere gleichnamige „Quellen“-Abschnitte auf einer Seite waren
+          für Screenreader nicht eindeutig unterscheidbar, wenn mehrere
+          Anlaufstellen-Karten auf einer Seite stehen – behoben durch
+          eindeutige, für Screenreader unterscheidbare Bezeichnungen
+        </li>
+      </ul>
+      <p>Nach den Korrekturen wurden keine weiteren automatisiert erkennbaren Verstöße gefunden.</p>
+      <p>Zusätzlich manuell geprüft:</p>
+      <ul>
+        <li>
+          vollständige Tastaturbedienung inklusive Skip-Link, Hauptnavigation,
+          Hamburger-Menü auf kleinen Bildschirmen, Suche und Filterseiten –
+          keine Tastaturfallen gefunden, Fokus durchgängig sichtbar
+        </li>
+        <li>
+          responsive Darstellung bei 320, 390, 768, 1024, 1280 und 1440
+          Pixel Breite – kein horizontales Scrollen, keine abgeschnittenen
+          Inhalte
+        </li>
+        <li>
+          Betrieb ohne JavaScript auf den zentralen Bereichen (Startseite,
+          Für Autist:innen, Angehörige &amp; Fachkräfte, Hilfe finden,
+          Materialien, Shop) – Navigation und Links bleiben vollständig
+          nutzbar
+        </li>
+        <li>
+          Farbkontraste aller Text-/Hintergrund-Kombinationen rechnerisch
+          geprüft – erfüllen mindestens WCAG-AA
+        </li>
+        <li>
+          reduzierte Bewegungseinstellungen (prefers-reduced-motion): Die
+          Website verwendet ohnehin keine Animationen; es gehen keine
+          Informationen durch reduzierte Bewegung verloren
+        </li>
+      </ul>
+      <p>Bekannte, bewusst in Kauf genommene Einschränkungen:</p>
+      <ul>
+        <li>
+          automatisierte Tests und die bisherige manuelle Prüfung ersetzen
+          keinen vollständigen Praxistest mit Screenreader-Nutzer:innen
+        </li>
+        <li>
+          ein Teil der Inhalte besteht noch aus Platzhaltern oder
+          ausdrücklich gekennzeichneten Beispieldatensätzen und wurde daher
+          noch nicht redaktionell auf Verständlichkeit geprüft
+        </li>
+      </ul>
+      <p>Ziel bleibt die Konformitätsstufe WCAG 2.2 AA für die gesamte Website.</p>
 
       <h2>Feedback und Kontakt</h2>
       <p>

@@ -1,21 +1,37 @@
 ---
 interface Props {
   sources: { title: string; url?: string }[];
+  // Überschriftenebene anpassen, je nachdem, wo die Komponente eingebettet
+  // wird (z. B. h4, wenn sie unter einer Karten-Überschrift auf Ebene h3
+  // steht). Standard: h2, passend für die Verwendung auf Artikelseiten.
+  headingLevel?: 2 | 3 | 4 | 5 | 6;
+  // Zusätzlicher Kontext (z. B. Name der Anlaufstelle), damit bei mehreren
+  // Quellenblöcken auf einer Seite (z. B. auf Übersichtsseiten mit mehreren
+  // Karten) jeder Abschnitt einen eindeutigen, für Screenreader
+  // unterscheidbaren Namen erhält. Der sichtbare Text bleibt unverändert.
+  context?: string;
 }
 
-const { sources } = Astro.props;
+const { sources, headingLevel = 2, context } = Astro.props;
+const Heading = `h${headingLevel}` as "h2" | "h3" | "h4" | "h5" | "h6";
+const headingId = `quellen-heading-${crypto.randomUUID()}`;
 ---
 
 {
   sources.length > 0 && (
-    <section class="quellenblock" aria-labelledby="quellen-heading">
-      <h2 id="quellen-heading">Quellen</h2>
+    <section
+      class="quellenblock"
+      aria-label={context ? `Quellen: ${context}` : undefined}
+      aria-labelledby={context ? undefined : headingId}
+    >
+      <Heading id={headingId}>Quellen</Heading>
       <ul>
         {sources.map((source) => (
           <li>
             {source.url ? (
               <a href={source.url} rel="noopener noreferrer">
-                {source.title}
+                {source.title} <span aria-hidden="true">↗</span>
+                <span class="visually-hidden">(öffnet auf einer anderen Website)</span>
               </a>
             ) : (
               source.title
@@ -35,7 +51,11 @@ const { sources } = Astro.props;
     border-top: var(--border-width) solid var(--color-petrol-100);
   }
 
-  .quellenblock h2 {
+  .quellenblock h2,
+  .quellenblock h3,
+  .quellenblock h4,
+  .quellenblock h5,
+  .quellenblock h6 {
     font-size: 1.125rem;
     margin-bottom: var(--space-xs);
   }

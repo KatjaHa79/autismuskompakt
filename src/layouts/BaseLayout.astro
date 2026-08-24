@@ -22,6 +22,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:site_name" content="Autismuskompakt" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${title} · Autismuskompakt`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content="de_DE" />
+
     <script is:inline>
       document.documentElement.classList.replace("no-js", "js");
     </script>

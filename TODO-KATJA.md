@@ -30,7 +30,7 @@ liefern musst. Sie wird mit jeder Etappe ergänzt.
 - [ ] Stand-Datum eintragen
 - [ ] E-Mail-Adresse für Feedback zu Barrieren eintragen
 - [ ] Prüfen, ob eine Schlichtungsstelle nach BGG benannt werden muss (in der Regel nur für öffentliche Stellen – bitte kurz prüfen/gegenprüfen)
-- [ ] Nach Etappe 5 (Qualitätssicherung): vollständigen Konformitätsstatus ergänzen
+- [x] Konformitätsstatus nach der Qualitätssicherung ergänzt (siehe Etappe 5 unten)
 
 ### Kostenloser Leitfaden (Startseite und Materialien)
 
@@ -157,3 +157,37 @@ Unterbereiche sind jetzt angelegt. Die dort gelisteten Einzelthemen (z. B.
 keine eigenen Seiten – sie werden erst mit dem Content-System in Etappe 2
 sowie den Datenbanken/Bibliotheken in Etappe 3 und 4 mit echten Inhalten
 gefüllt.
+
+## Etappe 5 – Qualitätssicherung
+
+### Für die spätere Einrichtung bei IONOS Deploy Now (.htaccess)
+
+- [ ] Damit die 404-Seite (`src/pages/404.astro`) auf dem Apache-Server auch
+      wirklich angezeigt wird, muss in der `.htaccess`-Datei später
+      `ErrorDocument 404 /404.html` eingetragen werden. Das gehört zur
+      Sicherheits-/Weiterleitungs-Konfiguration, die laut Master-Projektauftrag
+      ohnehin separat über `.deploy-now/[projektname]/.htaccess.template`
+      erfolgt.
+
+### Barrierefreiheitserklärung
+
+- [ ] Die Erklärung wurde um die Ergebnisse der technischen
+      Qualitätssicherung ergänzt (siehe `src/pages/barrierefreiheit.astro`).
+      Bitte weiterhin `Stand`-Datum und Feedback-E-Mail-Adresse eintragen
+      (siehe Etappe 0 oben).
+
+### Neu hinzugekommen in Etappe 5
+
+- Sitemap (`/sitemap-index.xml`) und `robots.txt` wurden ergänzt (über das
+  offizielle Astro-Sitemap-Modul, keine externe Abhängigkeit).
+- Eine 404-Seite wurde ergänzt (`src/pages/404.astro`).
+- Einfache Open-Graph-Metadaten (Titel, Beschreibung, Typ, URL) wurden auf
+  allen Seiten ergänzt – ohne externe Abhängigkeit, ohne Bild (kein
+  `og:image`, da kein passendes Bild vorhanden ist).
+- Zwei kleinere Barrierefreiheits-Korrekturen wurden vorgenommen: eine
+  fehlende Zwischenüberschrift auf Filter-Ergebnisseiten sowie eindeutige
+  Bezeichnungen für „Quellen“-Abschnitte, wenn mehrere Anlaufstellen-Karten
+  auf einer Seite stehen. Details siehe Barrierefreiheitserklärung.
+- Externe Links, die noch keine sichtbare ↗-Kennzeichnung hatten (Website
+  einer Anlaufstelle, Quellenangaben), wurden zur Konsistenz mit den
+  übrigen externen Links ergänzt.

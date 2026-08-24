@@ -34,6 +34,8 @@ const { title, filterLabel, entries } = Astro.props;
         <a href="/hilfe-finden/">Zurück zur vollständigen Übersicht und zu weiteren Filtern</a>
       </p>
 
+      <h2 class="visually-hidden">Treffer</h2>
+
       {
         entries.length === 0 ? (
           <div class="notice">

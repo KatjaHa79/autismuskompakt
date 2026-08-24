@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const links = [
+  { label: "Startseite", href: "/" },
+  { label: "Für Autist:innen", href: "/fuer-autistische-menschen/" },
+  { label: "Für Angehörige & Fachkräfte", href: "/angehoerige-fachkraefte/" },
+  { label: "Hilfe finden", href: "/hilfe-finden/" },
+  { label: "Materialien", href: "/materialien/" },
+];
+---
+
+<BaseLayout
+  title="Seite nicht gefunden"
+  description="Diese Seite konnte nicht gefunden werden."
+>
+  <div class="container">
+    <article class="prose">
+      <h1>Seite nicht gefunden</h1>
+      <p>
+        Die aufgerufene Seite existiert nicht oder wurde verschoben. Das
+        kann zum Beispiel passieren, wenn ein Link veraltet ist.
+      </p>
+
+      <h2>Hier geht es weiter</h2>
+      <ul>
+        {
+          links.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </article>
+  </div>
+</BaseLayout>
