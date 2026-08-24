@@ -1,0 +1,16 @@
+---
+import { render } from "astro:content";
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import { getArticleStaticPaths } from "../../../lib/articles";
+
+export async function getStaticPaths() {
+  return getArticleStaticPaths("diagnostik-tests");
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<ArticleLayout entry={entry}>
+  <Content />
+</ArticleLayout>

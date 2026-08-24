@@ -1,0 +1,31 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<p class="kurz-gesagt">
+  <span class="kurz-gesagt__label">Kurz gesagt:</span>
+  {text}
+</p>
+
+<style>
+  .kurz-gesagt {
+    max-width: var(--measure);
+    font-size: 1.15rem;
+    background-color: var(--color-white);
+    border-left: 4px solid var(--color-kupfer-800);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: var(--space-sm) var(--space-md);
+    margin-block: var(--space-lg);
+  }
+
+  .kurz-gesagt__label {
+    display: block;
+    font-weight: 700;
+    color: var(--color-petrol-900);
+    margin-bottom: var(--space-2xs);
+  }
+</style>

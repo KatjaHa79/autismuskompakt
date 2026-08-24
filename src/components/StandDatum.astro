@@ -1,0 +1,23 @@
+---
+interface Props {
+  date: Date;
+}
+
+const { date } = Astro.props;
+const formatted = date.toLocaleDateString("de-DE", {
+  day: "2-digit",
+  month: "2-digit",
+  year: "numeric",
+});
+---
+
+<p class="stand-datum">
+  Stand: <time datetime={date.toISOString().slice(0, 10)}>{formatted}</time>
+</p>
+
+<style>
+  .stand-datum {
+    font-size: 0.95rem;
+    color: var(--color-petrol-600);
+  }
+</style>

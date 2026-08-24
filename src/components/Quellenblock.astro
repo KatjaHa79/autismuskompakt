@@ -1,0 +1,51 @@
+---
+interface Props {
+  sources: { title: string; url?: string }[];
+}
+
+const { sources } = Astro.props;
+---
+
+{
+  sources.length > 0 && (
+    <section class="quellenblock" aria-labelledby="quellen-heading">
+      <h2 id="quellen-heading">Quellen</h2>
+      <ul>
+        {sources.map((source) => (
+          <li>
+            {source.url ? (
+              <a href={source.url} rel="noopener noreferrer">
+                {source.title}
+              </a>
+            ) : (
+              source.title
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+<style>
+  .quellenblock {
+    max-width: var(--measure);
+    margin-top: var(--space-xl);
+    padding-top: var(--space-md);
+    border-top: var(--border-width) solid var(--color-petrol-100);
+  }
+
+  .quellenblock h2 {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .quellenblock ul {
+    list-style: disc;
+    padding-inline-start: 1.25em;
+  }
+
+  .quellenblock li {
+    margin-bottom: var(--space-2xs);
+  }
+</style>

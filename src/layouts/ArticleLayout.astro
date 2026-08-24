@@ -1,0 +1,84 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import KurzGesagt from "../components/KurzGesagt.astro";
+import StandDatum from "../components/StandDatum.astro";
+import Quellenblock from "../components/Quellenblock.astro";
+import Hinweisbox from "../components/Hinweisbox.astro";
+import { categoryLabels, categoryHrefs, categoriesRequiringUpdated } from "../content.config";
+
+interface Props {
+  entry: CollectionEntry<"artikel">;
+}
+
+const { entry } = Astro.props;
+const { title, description, category, targetGroups, updated, sources } = entry.data;
+
+const targetGroupLabels: Record<string, string> = {
+  "autistische-menschen": "Autistische Menschen",
+  angehoerige: "Angehörige",
+  fachkraefte: "Fachkräfte",
+};
+
+const zeigtRechtlichenHinweis = categoriesRequiringUpdated.has(category);
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="container">
+    <Breadcrumbs
+      items={[
+        { label: "Start", href: "/" },
+        { label: categoryLabels[category], href: categoryHrefs[category] },
+        { label: title },
+      ]}
+    />
+  </div>
+
+  <article class="section">
+    <div class="container">
+      <p class="zielgruppen">
+        Für: {targetGroups.map((gruppe) => targetGroupLabels[gruppe]).join(", ")}
+      </p>
+      <h1>{title}</h1>
+
+      <KurzGesagt text={description} />
+
+      <div class="prose">
+        <slot />
+      </div>
+
+      {
+        zeigtRechtlichenHinweis && (
+          <Hinweisbox titel="Wichtiger Hinweis">
+            <p>
+              Dieser Beitrag bietet allgemeine Informationen und ersetzt keine
+              Rechtsberatung und keine medizinische oder therapeutische
+              Beratung im Einzelfall.
+            </p>
+          </Hinweisbox>
+        )
+      }
+
+      {updated && <StandDatum date={updated} />}
+
+      <Quellenblock sources={sources} />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .zielgruppen {
+    font-size: 0.9rem;
+    color: var(--color-petrol-600);
+    margin-top: var(--space-md);
+  }
+
+  h1 {
+    margin-top: var(--space-2xs);
+  }
+
+  .prose {
+    padding-block: 0;
+  }
+</style>

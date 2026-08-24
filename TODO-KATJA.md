@@ -60,6 +60,31 @@ liefern musst. Sie wird mit jeder Etappe ergänzt.
 - [ ] Kontaktmöglichkeit (z. B. E-Mail-Adresse), die hier veröffentlicht
       werden darf
 
+## Etappe 2 – Content-System
+
+### Beispielartikel als reine Demonstration
+
+Es gibt drei Beispielartikel, die ausschließlich die Struktur des
+Content-Systems zeigen. Sie sind bewusst kurz gehalten, mit echten
+(aber allgemeinen) Quellen belegt und deutlich als Beispielinhalt
+gekennzeichnet:
+
+- [ ] `src/content/artikel/autismus-verstehen/stimming.md` – ausführlichen,
+      fachlich geprüften Text ergänzen (oder Artikel bewusst so lassen und
+      später ersetzen)
+- [ ] `src/content/artikel/rechte-antraege/pflegegrad.md` – vollständige,
+      sozialrechtlich geprüfte Fassung nach dem einheitlichen Aufbau aus
+      Punkt 16 des Master-Projektauftrags ergänzen
+- [ ] `src/content/artikel/besonderheiten-begleiterkrankungen/autismus-und-adhs.md` –
+      fachlich geprüften Text ergänzen
+
+### Neue Artikel selbst anlegen
+
+Eine bebilderte Schritt-für-Schritt-Anleitung liegt in
+`ANLEITUNG-NEUER-ARTIKEL.md`. Kurzfassung: neue Markdown-Datei im
+passenden Kategorie-Ordner unter `src/content/artikel/` anlegen,
+Kopfbereich (Frontmatter) ausfüllen, Text schreiben, speichern.
+
 ### Hinweis zur Informationsarchitektur
 
 Alle sechs Grundseiten der Hauptnavigation sowie ihre wichtigsten
