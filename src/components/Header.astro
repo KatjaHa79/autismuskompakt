@@ -1,48 +1,57 @@
 ---
 import Navigation from "./Navigation.astro";
+import { BREVO_LEITFADEN_URL } from "../lib/constants";
 ---
 
 <header class="site-header on-dark">
   <div class="container site-header__inner">
-    <a class="site-header__logo" href="/">
-      Autismuskompakt
-    </a>
+    <div class="site-header__top">
+      <a class="site-header__logo" href="/">
+        Autismuskompakt
+      </a>
 
-    <button
-      type="button"
-      id="nav-toggle"
-      class="nav-toggle"
-      aria-expanded="false"
-      aria-controls="primary-menu"
-    >
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22">
-        <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
-        <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
-        <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
-      </svg>
-      <span>Menü</span>
-    </button>
+      <button
+        type="button"
+        id="nav-toggle"
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="primary-menu"
+      >
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22">
+          <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+          <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+          <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        </svg>
+        <span>Menü</span>
+      </button>
+    </div>
 
     <div id="primary-menu" class="primary-menu">
       <Navigation />
 
-      <form class="site-header__search" action="/suche/" method="get" role="search">
-        <label class="visually-hidden" for="site-search">Website durchsuchen</label>
-        <input
-          id="site-search"
-          name="q"
-          type="search"
-          placeholder="Suchen …"
-          autocomplete="off"
-        />
-        <button type="submit">
-          <span class="visually-hidden">Suchen</span>
-          <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
-            <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"></circle>
-            <line x1="16.6" y1="16.6" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
-          </svg>
-        </button>
-      </form>
+      <div class="primary-menu__utility">
+        <a class="site-header__cta button button--accent" href={BREVO_LEITFADEN_URL}>
+          Kostenloser Leitfaden
+        </a>
+
+        <form class="site-header__search" action="/suche/" method="get" role="search">
+          <label class="visually-hidden" for="site-search">Website durchsuchen</label>
+          <input
+            id="site-search"
+            name="q"
+            type="search"
+            placeholder="Suchen …"
+            autocomplete="off"
+          />
+          <button type="submit">
+            <span class="visually-hidden">Suchen</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
+              <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"></circle>
+              <line x1="16.6" y1="16.6" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            </svg>
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 </header>
@@ -103,25 +112,39 @@ import Navigation from "./Navigation.astro";
 
 <style>
   .site-header {
-    background-color: var(--color-petrol-700);
+    background-color: var(--color-petrol);
     color: var(--color-text-invert);
-    padding-block: var(--space-sm);
+    padding-block: var(--space-md);
   }
 
   .site-header__inner {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .site-header__top {
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-sm) var(--space-md);
+    gap: var(--space-sm);
   }
 
   .site-header__logo {
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.4375rem;
+    letter-spacing: 0.01em;
     color: var(--color-text-invert);
     text-decoration: none;
     white-space: nowrap;
+  }
+
+  /* Sehr schmale Bildschirme: Logo etwas kleiner, damit es zusammen mit der
+     Menü-Schaltfläche ohne horizontales Scrollen in eine Zeile passt. */
+  @media (max-width: 23rem) {
+    .site-header__logo {
+      font-size: 1.1875rem;
+    }
   }
 
   /* Hamburger-Schaltfläche: nur auf schmalen Bildschirmen und nur, wenn
@@ -133,7 +156,7 @@ import Navigation from "./Navigation.astro";
     align-items: center;
     gap: var(--space-2xs);
     background: transparent;
-    border: var(--border-width) solid var(--color-creme);
+    border: var(--border-width) solid var(--color-cream);
     color: var(--color-text-invert);
     border-radius: var(--radius);
     padding: var(--space-2xs) var(--space-sm);
@@ -142,7 +165,22 @@ import Navigation from "./Navigation.astro";
   }
 
   .primary-menu {
-    display: contents;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm) var(--space-lg);
+  }
+
+  .primary-menu__utility {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-inline-start: auto;
+  }
+
+  .site-header__cta {
+    white-space: nowrap;
   }
 
   @media (max-width: 40rem) {
@@ -152,15 +190,19 @@ import Navigation from "./Navigation.astro";
 
     html.js .primary-menu {
       display: block;
-      flex-basis: 100%;
-      order: 3;
       padding-top: var(--space-sm);
-      border-top: var(--border-width) solid var(--color-petrol-600);
-      margin-top: var(--space-2xs);
+      border-top: var(--border-width) solid var(--color-petrol-muted);
     }
 
-    html.js .primary-menu .site-header__search {
+    html.js .primary-menu__utility {
+      margin-inline-start: 0;
       margin-top: var(--space-sm);
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    html.js .site-header__cta {
+      justify-content: center;
     }
   }
 
@@ -168,17 +210,16 @@ import Navigation from "./Navigation.astro";
     display: flex;
     align-items: stretch;
     gap: 0;
-    margin-inline-start: auto;
   }
 
   .site-header__search input {
-    border: var(--border-width) solid var(--color-petrol-600);
-    background-color: var(--color-creme);
+    border: var(--border-width) solid var(--color-petrol-muted);
+    background-color: var(--color-cream);
     color: var(--color-text);
     padding: var(--space-2xs) var(--space-sm);
     border-radius: var(--radius) 0 0 var(--radius);
-    min-height: 44px;
-    width: 12rem;
+    min-height: 42px;
+    width: 11rem;
     max-width: 40vw;
   }
 
@@ -186,25 +227,20 @@ import Navigation from "./Navigation.astro";
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 44px;
-    min-height: 44px;
+    min-width: 42px;
+    min-height: 42px;
     padding-inline: var(--space-xs);
-    background-color: var(--color-kupfer-800);
+    background-color: var(--color-petrol-dark);
     color: var(--color-white);
     border: none;
     border-radius: 0 var(--radius) var(--radius) 0;
   }
 
   .site-header__search button:hover {
-    background-color: #733610;
+    background-color: var(--color-petrol-muted);
   }
 
   @media (max-width: 40rem) {
-    .site-header__search {
-      margin-inline-start: 0;
-      width: 100%;
-    }
-
     .site-header__search input {
       width: 100%;
       max-width: none;
