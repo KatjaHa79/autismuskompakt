@@ -1,0 +1,25 @@
+# DEMO-DATENSATZ – keine echte Einrichtung.
+# Dient nur zur Vorführung des Datenmodells (Etappe 3).
+name: "Beispiel-Anlaufstelle Online (Demo-Datensatz)"
+type: "Beratungsstelle (Beispiel)"
+demo: true
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - erwachsene
+categories:
+  - beratung
+  - selbsthilfe
+
+online: true
+onsite: false
+
+offer: >
+  Beispieltext für ein bundesweites Online-Beratungsangebot.
+  Kein echtes Angebot.
+
+updated: 2026-08-24
+source:
+  title: "Demo-Datensatz – keine echte Quelle"

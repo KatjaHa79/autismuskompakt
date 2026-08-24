@@ -1,28 +1,34 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnlaufstelleKarte from "../../components/AnlaufstelleKarte.astro";
+import {
+  anlaufstelleCategoryLabels,
+  ageGroupLabels,
+  bundeslandLabels,
+  targetGroupLabels,
+} from "../../content.config";
+import {
+  getAlleAnlaufstellen,
+  getBundeslaenderMitEintraegen,
+  getKategorienMitEintraegen,
+  getZielgruppenMitEintraegen,
+  getAltersgruppenMitEintraegen,
+} from "../../lib/anlaufstellen";
 
-const geplanteFilter = [
-  "Bundesland",
-  "Kinder",
-  "Jugendliche",
-  "Erwachsene",
-  "Diagnostik",
-  "Beratung",
-  "Therapie",
-  "Sozialrecht",
-  "Alltagshilfe",
-  "Selbsthilfe",
-  "Angehörigenberatung",
-  "Fachberatung",
-  "Online",
-  "Vor Ort",
-];
+const alle = await getAlleAnlaufstellen();
+const bundeslaender = await getBundeslaenderMitEintraegen();
+const kategorien = await getKategorienMitEintraegen();
+const zielgruppen = await getZielgruppenMitEintraegen();
+const altersgruppen = await getAltersgruppenMitEintraegen();
+
+const hatOnline = alle.some((a) => a.data.online);
+const hatVorOrt = alle.some((a) => a.data.onsite);
 ---
 
 <BaseLayout
   title="Hilfe finden"
-  description="Anlaufstellen zum Thema Autismus: Diagnostik, Beratung, Therapie, Sozialrecht und Selbsthilfe. Filterbar nach Bundesland und Zielgruppe."
+  description="Anlaufstellen zum Thema Autismus: Diagnostik, Beratung, Therapie, Sozialrecht und Selbsthilfe. Filterbar nach Bundesland, Kategorie und Zielgruppe."
 >
   <div class="container">
     <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Hilfe finden" }]} />
@@ -32,24 +38,85 @@ const geplanteFilter = [
     <div class="container">
       <h1>Hilfe finden</h1>
       <p class="lead">
-        An dieser Stelle entsteht eine gepflegte, filterbare Übersicht über
-        Anlaufstellen zum Thema Autismus – zum Beispiel für Diagnostik,
-        Beratung, Therapie, Sozialrecht oder Selbsthilfe.
+        Eine gepflegte Übersicht über Anlaufstellen zum Thema Autismus – zum
+        Beispiel für Diagnostik, Beratung, Therapie, Sozialrecht oder
+        Selbsthilfe. Diese Übersicht wächst mit jedem weiteren Ausbauschritt.
       </p>
-
-      <h2>Geplante Filter</h2>
-      <ul class="filter-list">
-        {geplanteFilter.map((filter) => <li>{filter}</li>)}
-      </ul>
 
       <div class="notice">
         <p>
-          Diese Seite befindet sich im Aufbau. Es werden ausschließlich
-          geprüfte Anlaufstellen mit Angabe von Quelle und Stand-Datum
-          aufgenommen – erfundene oder ungeprüfte Einträge finden hier
-          keinen Platz.
+          Es werden ausschließlich geprüfte Anlaufstellen mit Angabe von
+          Quelle und Stand-Datum aufgenommen – erfundene oder ungeprüfte
+          Einträge finden hier keinen Platz. Die unten gezeigten Karten sind
+          derzeit ausschließlich Beispieldatensätze zur Vorführung der
+          Struktur.
         </p>
       </div>
+
+      <h2>Nach Bundesland</h2>
+      <ul class="filter-list">
+        {
+          [...bundeslaender].map((land) => (
+            <li>
+              <a href={`/hilfe-finden/bundesland/${land}/`}>{bundeslandLabels[land]}</a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <h2>Nach Kategorie</h2>
+      <ul class="filter-list">
+        {
+          [...kategorien].map((kategorie) => (
+            <li>
+              <a href={`/hilfe-finden/kategorie/${kategorie}/`}>{anlaufstelleCategoryLabels[kategorie]}</a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <h2>Nach Zielgruppe</h2>
+      <ul class="filter-list">
+        {
+          [...zielgruppen].map((gruppe) => (
+            <li>
+              <a href={`/hilfe-finden/zielgruppe/${gruppe}/`}>{targetGroupLabels[gruppe]}</a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <h2>Nach Altersgruppe</h2>
+      <ul class="filter-list">
+        {
+          [...altersgruppen].map((gruppe) => (
+            <li>
+              <a href={`/hilfe-finden/altersgruppe/${gruppe}/`}>{ageGroupLabels[gruppe]}</a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <h2>Nach Angebotsform</h2>
+      <ul class="filter-list">
+        {hatOnline && <li><a href="/hilfe-finden/online/">Online</a></li>}
+        {hatVorOrt && <li><a href="/hilfe-finden/vor-ort/">Vor Ort</a></li>}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="alle-heading">
+    <div class="container">
+      <h2 id="alle-heading">Alle Anlaufstellen</h2>
+      <ul class="anlaufstellen-grid">
+        {
+          alle.map((entry) => (
+            <li>
+              <AnlaufstelleKarte entry={entry} />
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </section>
 </BaseLayout>
@@ -58,10 +125,11 @@ const geplanteFilter = [
   .lead {
     max-width: var(--measure);
     font-size: 1.15rem;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
   }
 
   h2 {
+    margin-top: var(--space-lg);
     margin-bottom: var(--space-sm);
   }
 
@@ -73,15 +141,31 @@ const geplanteFilter = [
     gap: var(--space-2xs);
   }
 
-  .filter-list li {
+  .filter-list a {
+    display: inline-block;
     background-color: var(--color-white);
     border: var(--border-width) solid var(--color-petrol-100);
     border-radius: 999px;
     padding: var(--space-2xs) var(--space-sm);
     font-size: 0.95rem;
+    text-decoration: none;
+    color: var(--color-petrol-900);
+    font-weight: 700;
+  }
+
+  .filter-list a:hover {
+    border-color: var(--color-kupfer-500);
   }
 
   .notice {
-    margin-top: var(--space-lg);
+    margin-top: var(--space-md);
+  }
+
+  .anlaufstellen-grid {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: var(--space-md);
   }
 </style>

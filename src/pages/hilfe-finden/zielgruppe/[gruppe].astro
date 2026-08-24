@@ -1,0 +1,20 @@
+---
+import AnlaufstellenFilterLayout from "../../../layouts/AnlaufstellenFilterLayout.astro";
+import { targetGroupLabels } from "../../../content.config";
+import { getAlleAnlaufstellen, getZielgruppenMitEintraegen } from "../../../lib/anlaufstellen";
+
+export async function getStaticPaths() {
+  const zielgruppen = await getZielgruppenMitEintraegen();
+  const alle = await getAlleAnlaufstellen();
+  return [...zielgruppen].map((gruppe) => ({
+    params: { gruppe },
+    props: { entries: alle.filter((entry) => entry.data.targetGroups.includes(gruppe)) },
+  }));
+}
+
+const { gruppe } = Astro.params;
+const { entries } = Astro.props;
+const label = targetGroupLabels[gruppe as keyof typeof targetGroupLabels];
+---
+
+<AnlaufstellenFilterLayout title={`Anlaufstellen für: ${label}`} filterLabel={`Zielgruppe ${label}`} entries={entries} />

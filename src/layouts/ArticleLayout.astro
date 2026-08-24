@@ -6,7 +6,7 @@ import KurzGesagt from "../components/KurzGesagt.astro";
 import StandDatum from "../components/StandDatum.astro";
 import Quellenblock from "../components/Quellenblock.astro";
 import Hinweisbox from "../components/Hinweisbox.astro";
-import { categoryLabels, categoryHrefs, categoriesRequiringUpdated } from "../content.config";
+import { categoryLabels, categoryHrefs, categoriesRequiringUpdated, targetGroupLabels } from "../content.config";
 
 interface Props {
   entry: CollectionEntry<"artikel">;
@@ -14,12 +14,6 @@ interface Props {
 
 const { entry } = Astro.props;
 const { title, description, category, targetGroups, updated, sources } = entry.data;
-
-const targetGroupLabels: Record<string, string> = {
-  "autistische-menschen": "Autistische Menschen",
-  angehoerige: "Angehörige",
-  fachkraefte: "Fachkräfte",
-};
 
 const zeigtRechtlichenHinweis = categoriesRequiringUpdated.has(category);
 ---

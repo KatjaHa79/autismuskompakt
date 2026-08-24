@@ -1,0 +1,9 @@
+---
+import AnlaufstellenFilterLayout from "../../../layouts/AnlaufstellenFilterLayout.astro";
+import { getAlleAnlaufstellen } from "../../../lib/anlaufstellen";
+
+const alle = await getAlleAnlaufstellen();
+const entries = alle.filter((entry) => entry.data.online);
+---
+
+<AnlaufstellenFilterLayout title="Online-Angebote" filterLabel="Online" entries={entries} />

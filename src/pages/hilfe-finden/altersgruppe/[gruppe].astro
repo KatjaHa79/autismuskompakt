@@ -1,0 +1,20 @@
+---
+import AnlaufstellenFilterLayout from "../../../layouts/AnlaufstellenFilterLayout.astro";
+import { ageGroupLabels } from "../../../content.config";
+import { getAlleAnlaufstellen, getAltersgruppenMitEintraegen } from "../../../lib/anlaufstellen";
+
+export async function getStaticPaths() {
+  const altersgruppen = await getAltersgruppenMitEintraegen();
+  const alle = await getAlleAnlaufstellen();
+  return [...altersgruppen].map((gruppe) => ({
+    params: { gruppe },
+    props: { entries: alle.filter((entry) => entry.data.ageGroups.includes(gruppe)) },
+  }));
+}
+
+const { gruppe } = Astro.params;
+const { entries } = Astro.props;
+const label = ageGroupLabels[gruppe as keyof typeof ageGroupLabels];
+---
+
+<AnlaufstellenFilterLayout title={`Anlaufstellen für: ${label}`} filterLabel={`Altersgruppe ${label}`} entries={entries} />

@@ -1,0 +1,20 @@
+---
+import AnlaufstellenFilterLayout from "../../../layouts/AnlaufstellenFilterLayout.astro";
+import { anlaufstelleCategoryLabels } from "../../../content.config";
+import { getAlleAnlaufstellen, getKategorienMitEintraegen } from "../../../lib/anlaufstellen";
+
+export async function getStaticPaths() {
+  const kategorien = await getKategorienMitEintraegen();
+  const alle = await getAlleAnlaufstellen();
+  return [...kategorien].map((kategorie) => ({
+    params: { kategorie },
+    props: { entries: alle.filter((entry) => entry.data.categories.includes(kategorie)) },
+  }));
+}
+
+const { kategorie } = Astro.params;
+const { entries } = Astro.props;
+const label = anlaufstelleCategoryLabels[kategorie as keyof typeof anlaufstelleCategoryLabels];
+---
+
+<AnlaufstellenFilterLayout title={`Anlaufstellen: ${label}`} filterLabel={`Kategorie ${label}`} entries={entries} />

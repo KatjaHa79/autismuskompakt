@@ -1,0 +1,69 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import AnlaufstelleKarte from "../components/AnlaufstelleKarte.astro";
+
+interface Props {
+  title: string;
+  filterLabel: string;
+  entries: CollectionEntry<"anlaufstellen">[];
+}
+
+const { title, filterLabel, entries } = Astro.props;
+---
+
+<BaseLayout
+  title={`${title} – Hilfe finden`}
+  description={`Anlaufstellen zum Thema Autismus, gefiltert nach: ${filterLabel}.`}
+>
+  <div class="container">
+    <Breadcrumbs
+      items={[
+        { label: "Start", href: "/" },
+        { label: "Hilfe finden", href: "/hilfe-finden/" },
+        { label: title },
+      ]}
+    />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <h1>{title}</h1>
+      <p class="lead">
+        <a href="/hilfe-finden/">Zurück zur vollständigen Übersicht und zu weiteren Filtern</a>
+      </p>
+
+      {
+        entries.length === 0 ? (
+          <div class="notice">
+            <p>Für diesen Filter gibt es aktuell noch keine Einträge.</p>
+          </div>
+        ) : (
+          <ul class="anlaufstellen-grid">
+            {entries.map((entry) => (
+              <li>
+                <AnlaufstelleKarte entry={entry} />
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    max-width: var(--measure);
+    margin-bottom: var(--space-lg);
+  }
+
+  .anlaufstellen-grid {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: var(--space-md);
+  }
+</style>

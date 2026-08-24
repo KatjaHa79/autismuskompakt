@@ -85,6 +85,36 @@ Eine bebilderte Schritt-für-Schritt-Anleitung liegt in
 passenden Kategorie-Ordner unter `src/content/artikel/` anlegen,
 Kopfbereich (Frontmatter) ausfüllen, Text schreiben, speichern.
 
+## Etappe 3 – Anlaufstellen-Datenmodell
+
+### Demo-Datensätze ersetzen
+
+Die drei Dateien in `src/content/anlaufstellen/` (`demo-online-beratung.yaml`,
+`demo-vor-ort-nrw.yaml`, `demo-sozialrecht-bayern.yaml`) sind **erfundene
+Beispieldaten** zur Vorführung der Struktur – keine echten Einrichtungen,
+keine echten Telefonnummern/E-Mails/Wartelisten.
+
+- [ ] Echte, geprüfte Anlaufstellen nach und nach ergänzen (Anleitung siehe
+      `ANLEITUNG-ANLAUFSTELLEN.md`)
+- [ ] Demo-Dateien löschen, sobald genügend echte Einträge vorhanden sind
+
+### Anlaufstellen selbst pflegen
+
+Schritt-für-Schritt-Anleitung in **`ANLEITUNG-ANLAUFSTELLEN.md`**: neue
+Anlaufstelle anlegen, Kontaktdaten ändern, Warteliste und Stand-Datum
+aktualisieren, alle Felder im Überblick.
+
+### Hinweis zu den Filterseiten
+
+Es gibt jetzt Filterseiten nach Bundesland, Kategorie, Zielgruppe,
+Altersgruppe sowie Online/Vor Ort (z. B. `/hilfe-finden/bundesland/bayern/`).
+Diese Seiten werden automatisch nur für Werte erzeugt, zu denen es
+mindestens einen Eintrag gibt – sie erscheinen also von selbst, sobald du
+weitere Anlaufstellen mit neuen Bundesländern/Kategorien anlegst. Eine
+interaktive (JavaScript-basierte) Live-Filterung wurde bewusst noch nicht
+eingebaut, um die Technik einfach zu halten; falls das später gewünscht
+ist, sprich mich gerne an.
+
 ### Hinweis zur Informationsarchitektur
 
 Alle sechs Grundseiten der Hauptnavigation sowie ihre wichtigsten

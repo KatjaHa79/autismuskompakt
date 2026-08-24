@@ -1,0 +1,231 @@
+---
+import type { CollectionEntry } from "astro:content";
+import StandDatum from "./StandDatum.astro";
+import Quellenblock from "./Quellenblock.astro";
+import {
+  anlaufstelleCategoryLabels,
+  ageGroupLabels,
+  bundeslandLabels,
+  paymentTypeLabels,
+  waitingListLabels,
+  targetGroupLabels,
+} from "../content.config";
+
+interface Props {
+  entry: CollectionEntry<"anlaufstellen">;
+}
+
+const { entry } = Astro.props;
+const {
+  name,
+  type,
+  targetGroups,
+  ageGroups,
+  categories,
+  street,
+  postalCode,
+  city,
+  state,
+  phone,
+  email,
+  website,
+  offer,
+  admissionRequirements,
+  paymentType,
+  costs,
+  waitingList,
+  waitingTime,
+  online,
+  onsite,
+  updated,
+  source,
+  demo,
+} = entry.data;
+
+const ortTeile = [street, [postalCode, city].filter(Boolean).join(" "), state && bundeslandLabels[state]].filter(
+  Boolean,
+);
+
+const zeigtWarteinfo = Boolean(waitingList || waitingTime);
+---
+
+<article class="anlaufstelle-karte">
+  <header>
+    <h3>
+      {name}
+      {demo && <span class="demo-badge">Beispieldatensatz</span>}
+    </h3>
+    {type && <p class="typ">{type}</p>}
+  </header>
+
+  <ul class="tags">
+    {online && <li class="tag tag--modus">Online</li>}
+    {onsite && <li class="tag tag--modus">Vor Ort</li>}
+    {categories.map((kategorie) => <li class="tag">{anlaufstelleCategoryLabels[kategorie]}</li>)}
+  </ul>
+
+  {ortTeile.length > 0 && <p class="ort">{ortTeile.join(", ")}</p>}
+
+  <p class="zielgruppen">
+    Für: {targetGroups.map((gruppe) => targetGroupLabels[gruppe]).join(", ")}
+    {ageGroups.length > 0 && ` · ${ageGroups.map((gruppe) => ageGroupLabels[gruppe]).join(", ")}`}
+  </p>
+
+  {offer && <p class="offer">{offer}</p>}
+
+  {(phone || email || website) && (
+    <dl class="kontakt">
+      {phone && (
+        <div>
+          <dt>Telefon</dt>
+          <dd><a href={`tel:${phone.replace(/\s+/g, "")}`}>{phone}</a></dd>
+        </div>
+      )}
+      {email && (
+        <div>
+          <dt>E-Mail</dt>
+          <dd><a href={`mailto:${email}`}>{email}</a></dd>
+        </div>
+      )}
+      {website && (
+        <div>
+          <dt>Website</dt>
+          <dd>
+            <a href={website} rel="noopener noreferrer">
+              {website.replace(/^https?:\/\//, "")}
+            </a>
+          </dd>
+        </div>
+      )}
+    </dl>
+  )}
+
+  {admissionRequirements && (
+    <p class="detail">
+      <strong>Aufnahmebedingungen:</strong> {admissionRequirements}
+    </p>
+  )}
+
+  {(paymentType.length > 0 || costs) && (
+    <p class="detail">
+      <strong>Kosten/Kassenstatus:</strong>{" "}
+      {[paymentType.map((art) => paymentTypeLabels[art]).join(", "), costs].filter(Boolean).join(" · ")}
+    </p>
+  )}
+
+  <div class="stand-block">
+    {zeigtWarteinfo && (
+      <p class="detail warteinfo">
+        <strong>{waitingList ? waitingListLabels[waitingList] : "Warteliste"}</strong>
+        {waitingTime && ` · ${waitingTime}`}
+      </p>
+    )}
+    <StandDatum date={updated} />
+  </div>
+
+  <Quellenblock sources={[source]} />
+</article>
+
+<style>
+  .anlaufstelle-karte {
+    background-color: var(--color-white);
+    border: var(--border-width) solid var(--color-petrol-100);
+    border-radius: var(--radius);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .anlaufstelle-karte h3 {
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2xs);
+  }
+
+  .demo-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-kupfer-800);
+    background-color: var(--color-creme-alt);
+    border: var(--border-width) solid var(--color-kupfer-800);
+    border-radius: 999px;
+    padding: 0.15em 0.6em;
+  }
+
+  .typ {
+    color: var(--color-petrol-600);
+    font-size: 0.95rem;
+  }
+
+  .tags {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+  }
+
+  .tag {
+    font-size: 0.85rem;
+    background-color: var(--color-creme-alt);
+    border-radius: 999px;
+    padding: 0.15em 0.7em;
+    color: var(--color-petrol-900);
+  }
+
+  .tag--modus {
+    background-color: var(--color-petrol-100);
+    font-weight: 700;
+  }
+
+  .ort {
+    font-weight: 700;
+  }
+
+  .zielgruppen {
+    font-size: 0.9rem;
+    color: var(--color-petrol-600);
+  }
+
+  .kontakt {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-md);
+  }
+
+  .kontakt div {
+    display: flex;
+    gap: 0.4em;
+  }
+
+  .kontakt dt {
+    font-weight: 700;
+  }
+
+  .detail {
+    font-size: 0.95rem;
+  }
+
+  .stand-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+    background-color: var(--color-creme-alt);
+    border-radius: var(--radius);
+    padding: var(--space-2xs) var(--space-xs);
+  }
+
+  .warteinfo {
+    margin: 0;
+  }
+
+  .anlaufstelle-karte > :global(.quellenblock) {
+    margin-top: var(--space-2xs);
+    padding-top: var(--space-sm);
+  }
+</style>

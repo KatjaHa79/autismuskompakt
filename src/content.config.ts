@@ -15,6 +15,12 @@ const categoryValues = [
 // Die drei Zielgruppen aus dem Master-Projektauftrag (Punkt 2).
 const targetGroupValues = ["autistische-menschen", "angehoerige", "fachkraefte"] as const;
 
+export const targetGroupLabels: Record<(typeof targetGroupValues)[number], string> = {
+  "autistische-menschen": "Autistische Menschen",
+  angehoerige: "Angehörige",
+  fachkraefte: "Fachkräfte",
+};
+
 // Für diese Kategorien ist ein Stand-Datum verpflichtend, weil es sich um
 // sozialrechtliche oder medizinische Inhalte handelt (Punkt 23 und 25 des
 // Master-Projektauftrags).
@@ -75,4 +81,140 @@ const articles = defineCollection({
     }),
 });
 
-export const collections = { artikel: articles };
+// ============================================================================
+// Anlaufstellen (Etappe 3)
+// ============================================================================
+
+const anlaufstelleCategoryValues = [
+  "diagnostik",
+  "beratung",
+  "therapie",
+  "sozialrecht",
+  "alltagshilfe",
+  "selbsthilfe",
+  "angehoerigenberatung",
+  "fachberatung",
+] as const;
+
+export const anlaufstelleCategoryLabels: Record<(typeof anlaufstelleCategoryValues)[number], string> = {
+  diagnostik: "Diagnostik",
+  beratung: "Beratung",
+  therapie: "Therapie",
+  sozialrecht: "Sozialrecht",
+  alltagshilfe: "Alltagshilfe",
+  selbsthilfe: "Selbsthilfe",
+  angehoerigenberatung: "Angehörigenberatung",
+  fachberatung: "Fachberatung",
+};
+
+const ageGroupValues = ["kinder", "jugendliche", "erwachsene"] as const;
+
+export const ageGroupLabels: Record<(typeof ageGroupValues)[number], string> = {
+  kinder: "Kinder",
+  jugendliche: "Jugendliche",
+  erwachsene: "Erwachsene",
+};
+
+const bundeslandValues = [
+  "baden-wuerttemberg",
+  "bayern",
+  "berlin",
+  "brandenburg",
+  "bremen",
+  "hamburg",
+  "hessen",
+  "mecklenburg-vorpommern",
+  "niedersachsen",
+  "nordrhein-westfalen",
+  "rheinland-pfalz",
+  "saarland",
+  "sachsen",
+  "sachsen-anhalt",
+  "schleswig-holstein",
+  "thueringen",
+] as const;
+
+export const bundeslandLabels: Record<(typeof bundeslandValues)[number], string> = {
+  "baden-wuerttemberg": "Baden-Württemberg",
+  bayern: "Bayern",
+  berlin: "Berlin",
+  brandenburg: "Brandenburg",
+  bremen: "Bremen",
+  hamburg: "Hamburg",
+  hessen: "Hessen",
+  "mecklenburg-vorpommern": "Mecklenburg-Vorpommern",
+  niedersachsen: "Niedersachsen",
+  "nordrhein-westfalen": "Nordrhein-Westfalen",
+  "rheinland-pfalz": "Rheinland-Pfalz",
+  saarland: "Saarland",
+  sachsen: "Sachsen",
+  "sachsen-anhalt": "Sachsen-Anhalt",
+  "schleswig-holstein": "Schleswig-Holstein",
+  thueringen: "Thüringen",
+};
+
+const paymentTypeValues = ["gesetzlich", "privat", "selbstzahler"] as const;
+
+export const paymentTypeLabels: Record<(typeof paymentTypeValues)[number], string> = {
+  gesetzlich: "Gesetzliche Kassen",
+  privat: "Private Kassen",
+  selbstzahler: "Selbstzahler",
+};
+
+const waitingListValues = ["offen", "geschlossen", "unbekannt"] as const;
+
+export const waitingListLabels: Record<(typeof waitingListValues)[number], string> = {
+  offen: "Warteliste offen",
+  geschlossen: "Warteliste geschlossen",
+  unbekannt: "Warteliste unbekannt",
+};
+
+const anlaufstellen = defineCollection({
+  loader: glob({ pattern: "**/*.{yaml,yml}", base: "./src/content/anlaufstellen" }),
+  schema: z
+    .object({
+      name: z.string().min(1, "name darf nicht leer sein."),
+      type: z.string().optional(),
+      targetGroups: z
+        .array(z.enum(targetGroupValues))
+        .min(1, "targetGroups braucht mindestens eine Zielgruppe."),
+      ageGroups: z.array(z.enum(ageGroupValues)).default([]),
+      categories: z
+        .array(z.enum(anlaufstelleCategoryValues))
+        .min(1, "categories braucht mindestens eine Kategorie."),
+      street: z.string().optional(),
+      postalCode: z.string().optional(),
+      city: z.string().optional(),
+      state: z.enum(bundeslandValues).optional(),
+      phone: z.string().optional(),
+      email: z.email("email muss eine gültige E-Mail-Adresse sein.").optional(),
+      website: z.url("website muss eine gültige, vollständige Adresse sein.").optional(),
+      offer: z.string().optional(),
+      admissionRequirements: z.string().optional(),
+      paymentType: z.array(z.enum(paymentTypeValues)).default([]),
+      costs: z.string().optional(),
+      waitingList: z.enum(waitingListValues).optional(),
+      waitingTime: z.string().optional(),
+      online: z.boolean().default(false),
+      onsite: z.boolean().default(false),
+      updated: z.coerce.date({
+        error: "updated (Stand-Datum) ist für jede Anlaufstelle verpflichtend.",
+      }),
+      source: sourceSchema,
+      // Kennzeichnet eindeutig als Demonstrationsdaten angelegte Einträge
+      // (siehe Punkt 7 des Master-Projektauftrags zu Etappe 3).
+      demo: z.boolean().default(false),
+    })
+    .superRefine((data, ctx) => {
+      if (!data.state && !data.online) {
+        ctx.addIssue({
+          code: "custom",
+          path: ["state"],
+          message:
+            'Entweder "state" (Bundesland) oder "online: true" ist verpflichtend, damit die Anlaufstelle auffindbar ist.',
+        });
+      }
+    }),
+});
+
+export const collections = { artikel: articles, anlaufstellen };

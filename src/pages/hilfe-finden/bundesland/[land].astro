@@ -1,0 +1,20 @@
+---
+import AnlaufstellenFilterLayout from "../../../layouts/AnlaufstellenFilterLayout.astro";
+import { bundeslandLabels } from "../../../content.config";
+import { getAlleAnlaufstellen, getBundeslaenderMitEintraegen } from "../../../lib/anlaufstellen";
+
+export async function getStaticPaths() {
+  const bundeslaender = await getBundeslaenderMitEintraegen();
+  const alle = await getAlleAnlaufstellen();
+  return [...bundeslaender].map((land) => ({
+    params: { land },
+    props: { entries: alle.filter((entry) => entry.data.state === land) },
+  }));
+}
+
+const { land } = Astro.params;
+const { entries } = Astro.props;
+const label = bundeslandLabels[land as keyof typeof bundeslandLabels];
+---
+
+<AnlaufstellenFilterLayout title={`Anlaufstellen in ${label}`} filterLabel={`Bundesland ${label}`} entries={entries} />
