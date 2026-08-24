@@ -32,17 +32,39 @@ liefern musst. Sie wird mit jeder Etappe ergänzt.
 - [ ] Prüfen, ob eine Schlichtungsstelle nach BGG benannt werden muss (in der Regel nur für öffentliche Stellen – bitte kurz prüfen/gegenprüfen)
 - [ ] Nach Etappe 5 (Qualitätssicherung): vollständigen Konformitätsstatus ergänzen
 
-### Startseite (`src/pages/index.astro`)
+### Kostenloser Leitfaden (Startseite und Materialien)
 
 - [ ] `TODO_KATJA_BREVO_URL` durch die tatsächliche Brevo-Landingpage-URL für den
       kostenlosen Leitfaden ersetzen, sobald diese existiert (siehe Punkt 19
-      im Master-Projektauftrag)
+      im Master-Projektauftrag). Der Platzhalter wird an zwei Stellen
+      verwendet: `src/pages/index.astro` und `src/pages/materialien/index.astro`
 
-### Hinweis zur Navigation
+## Etappe 1 – Informationsarchitektur
 
-Die Hauptnavigation und mehrere Startseiten-Kacheln verlinken bereits auf die
-finalen Ziel-URLs der Informationsarchitektur (z. B. `/fuer-autistische-menschen/`,
-`/hilfe-finden/`, `/angehoerige-fachkraefte/`, `/materialien/`, `/shop/`,
-`/ueber-mich/`). Diese Seiten werden erst in **Etappe 1** angelegt. Bis dahin
-führen diese Links zu einer 404-Seite – das ist in dieser Bauphase normal und
-kein Fehler.
+### Shop (`src/pages/shop/index.astro`)
+
+- [ ] `TODO_KATJA_SHOP_URL` (bei beiden Büchern „Autismus kompakt“ und
+      „Neuro-Kompass“) durch die jeweilige externe Verkaufs-URL ersetzen
+- [ ] Buch-Cover als Bilddatei liefern (ersetzt den Platzhalter „Cover folgt“)
+- [ ] Kurzbeschreibung und Zielgruppe je Buch liefern
+- [ ] Entscheiden, welche digitalen Produkte und welches Merchandise zuerst
+      erscheinen sollen (aktuell nur als Kategorie ohne Produkte angelegt)
+
+### Über mich (`src/pages/ueber-mich/index.astro`)
+
+- [ ] Kurze Vorstellung von Katja
+- [ ] Entstehungsgeschichte von Autismuskompakt
+- [ ] Fachlicher Hintergrund
+- [ ] Persönliche Ergänzung zur Haltung (ein allgemeiner Absatz dazu ist
+      bereits aus dem Master-Projektauftrag übernommen)
+- [ ] Kontaktmöglichkeit (z. B. E-Mail-Adresse), die hier veröffentlicht
+      werden darf
+
+### Hinweis zur Informationsarchitektur
+
+Alle sechs Grundseiten der Hauptnavigation sowie ihre wichtigsten
+Unterbereiche sind jetzt angelegt. Die dort gelisteten Einzelthemen (z. B.
+„Was ist Autismus?“, einzelne Anlaufstellen, einzelne Materialien) sind noch
+keine eigenen Seiten – sie werden erst mit dem Content-System in Etappe 2
+sowie den Datenbanken/Bibliotheken in Etappe 3 und 4 mit echten Inhalten
+gefüllt.

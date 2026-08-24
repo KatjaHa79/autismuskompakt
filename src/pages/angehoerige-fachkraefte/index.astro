@@ -1,0 +1,98 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PlannedTopics from "../../components/PlannedTopics.astro";
+
+const angehoerigeThemen = [
+  "Autismus verstehen",
+  "Kommunikation verstehen",
+  "Reizverarbeitung",
+  "Verhalten einordnen",
+  "Unterstützung im Alltag",
+  "Diagnose eines Kindes",
+  "Schule und Kita",
+  "Nachteilsausgleiche",
+  "Hilfen beantragen",
+  "Übergang ins Erwachsenenalter",
+  "Beziehungen",
+  "Unterstützung ohne Bevormundung",
+];
+
+const fachkraefteThemen = [
+  "Autismusfreundliche Kommunikation",
+  "Arzttermine gestalten",
+  "Beratung",
+  "Therapie",
+  "Schule",
+  "Pädagogik",
+  "Arbeitsplatz",
+  "Barrieren erkennen",
+  "Sensorische Bedürfnisse berücksichtigen",
+  "Materialien für die Praxis",
+];
+---
+
+<BaseLayout
+  title="Für Angehörige & Fachkräfte"
+  description="Informationen für Angehörige und Fachkräfte zum Thema Autismus – verständlich, praxisnah und aufeinander abgestimmt."
+>
+  <div class="container">
+    <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Für Angehörige & Fachkräfte" }]} />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <h1>Für Angehörige & Fachkräfte</h1>
+      <p class="lead">
+        Ob Familie, Partner:in, Freund:in oder Fachkraft aus Medizin,
+        Therapie, Pädagogik oder Beratung: Hier findest du Informationen für
+        deine jeweilige Rolle. Grundlagenwissen wird dabei nicht doppelt
+        geschrieben, sondern gemeinsam genutzt und um den passenden Kontext
+        ergänzt.
+      </p>
+    </div>
+  </section>
+
+  <section id="angehoerige" class="section section--alt">
+    <div class="container">
+      <h2>Ich bin Angehörige:r</h2>
+      <p class="lead-small">Zum Beispiel Eltern, Partner:innen, Familie oder Freund:innen.</p>
+      <PlannedTopics topics={angehoerigeThemen} />
+    </div>
+  </section>
+
+  <section id="fachkraefte" class="section">
+    <div class="container">
+      <h2>Ich bin Fachkraft</h2>
+      <p class="lead-small">
+        Zum Beispiel aus Medizin, Therapie, Pädagogik, Schule, Beratung,
+        Sozialarbeit oder als Arbeitgeber:in.
+      </p>
+      <PlannedTopics topics={fachkraefteThemen} />
+
+      <div class="notice">
+        <p>
+          Diese Seite befindet sich im Aufbau. Ausführliche Beiträge
+          entstehen in den nächsten Etappen.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    max-width: var(--measure);
+    font-size: 1.15rem;
+  }
+
+  .lead-small {
+    max-width: var(--measure);
+    margin-bottom: var(--space-md);
+    color: var(--color-petrol-600);
+  }
+
+  .notice {
+    margin-top: var(--space-lg);
+  }
+</style>

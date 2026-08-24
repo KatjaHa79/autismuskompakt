@@ -1,0 +1,111 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+
+const kategorien = [
+  {
+    title: "Für mich selbst",
+    beispiele: ["Reizprofile", "Belastungsprotokolle", "Tagesplanung", "Wochenplanung", "Arzttermin-Vorbereitung"],
+  },
+  {
+    title: "Für Angehörige",
+    beispiele: ["Gesprächshilfen", "Checklisten", "Unterlagen für Schule"],
+  },
+  {
+    title: "Für Fachkräfte",
+    beispiele: ["Kommunikationsbögen", "Materialien für die Praxis", "Antragschecklisten"],
+  },
+];
+---
+
+<BaseLayout
+  title="Materialien"
+  description="Kostenlose Checklisten, Vorlagen und Arbeitsblätter zum Thema Autismus – für Betroffene, Angehörige und Fachkräfte."
+>
+  <div class="container">
+    <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Materialien" }]} />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <h1>Materialien</h1>
+      <p class="lead">
+        Hier entsteht eine Sammlung kostenloser Materialien, die ohne
+        Anmeldung heruntergeladen werden können – zum Beispiel Checklisten,
+        Vorlagen, Arbeitsblätter und Gesprächshilfen.
+      </p>
+
+      {
+        kategorien.map((kategorie) => (
+          <div class="kategorie">
+            <h2>{kategorie.title}</h2>
+            <p class="kategorie__hinweis">Geplante Materialien, unter anderem:</p>
+            <ul class="beispiel-list">
+              {kategorie.beispiele.map((beispiel) => (
+                <li>{beispiel}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+
+      <div class="notice">
+        <p>
+          Diese Seite befindet sich im Aufbau. Die einzelnen Materialien
+          werden in einer späteren Etappe ergänzt und stehen dann direkt zum
+          Download bereit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="leitfaden" class="section section--alt">
+    <div class="container">
+      <h2>Kostenloser Leitfaden</h2>
+      <p class="lead">
+        Zusätzlich zu den einzelnen Materialien wird es ein umfangreicheres
+        kostenloses Gesamtpaket geben.
+      </p>
+      <p>
+        <a class="button button--primary" href="TODO_KATJA_BREVO_URL">Kostenlosen Leitfaden anfordern</a>
+        <span class="placeholder-note">(Link folgt)</span>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    max-width: var(--measure);
+    font-size: 1.15rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  .kategorie {
+    margin-bottom: var(--space-lg);
+  }
+
+  .kategorie h2 {
+    margin-bottom: var(--space-2xs);
+  }
+
+  .kategorie__hinweis {
+    color: var(--color-petrol-600);
+    margin-bottom: var(--space-2xs);
+  }
+
+  .beispiel-list {
+    list-style: disc;
+    padding-inline-start: 1.25em;
+  }
+
+  .notice {
+    margin-top: var(--space-lg);
+  }
+
+  .placeholder-note {
+    margin-left: var(--space-2xs);
+    color: var(--color-petrol-600);
+    font-size: 0.95rem;
+  }
+</style>

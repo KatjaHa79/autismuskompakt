@@ -269,6 +269,57 @@ summary:focus-visible,
 }
 
 /* ==========================================================================
+   Seitenabschnitte & Karten (wiederverwendet auf mehreren Seiten)
+   ========================================================================== */
+
+.section {
+  padding-block: var(--space-xl);
+}
+
+.section--alt {
+  background-color: var(--color-creme-alt);
+}
+
+.section h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.card-grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: var(--space-md);
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  min-height: 5.5rem;
+  padding: var(--space-md);
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-petrol-100);
+  border-radius: var(--radius);
+  color: var(--color-petrol-900);
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color var(--transition-fast);
+}
+
+.card:hover {
+  border-color: var(--color-kupfer-500);
+}
+
+.card-grid--audience {
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+
+.card--audience {
+  border-color: var(--color-petrol-600);
+  border-width: 2px;
+}
+
+/* ==========================================================================
    Textseiten (z. B. Impressum, Datenschutz, Barrierefreiheit)
    ========================================================================== */
 
@@ -307,4 +358,17 @@ summary:focus-visible,
   border-radius: var(--radius);
   padding: var(--space-2xs) var(--space-xs);
   display: inline-block;
+}
+
+/* Hinweiskasten, z. B. "befindet sich im Aufbau" */
+.notice {
+  background-color: var(--color-creme-alt);
+  border-left: 4px solid var(--color-kupfer-800);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: var(--space-sm) var(--space-md);
+  max-width: var(--measure);
+}
+
+.notice p:last-child {
+  margin-bottom: 0;
 }

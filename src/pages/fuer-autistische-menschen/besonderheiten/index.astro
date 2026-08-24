@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import PlannedTopics from "../../../components/PlannedTopics.astro";
+
+const themen = [
+  "ADHS",
+  "Autismus und ADHS",
+  "Angst",
+  "Depression",
+  "Schlafprobleme",
+  "Epilepsie",
+  "Migräne",
+  "Dyspraxie",
+  "Alexithymie",
+  "Essprobleme",
+  "Sensorische Besonderheiten",
+  "Interozeption",
+];
+
+const belastungszustaende = ["Overload", "Meltdown", "Shutdown", "Autistischer Burnout"];
+---
+
+<BaseLayout
+  title="Besonderheiten & Begleiterkrankungen"
+  description="Wissenschaftlich fundierte Informationen zu Besonderheiten und Begleiterkrankungen bei Autismus sowie zu Belastungszuständen wie Meltdown und Burnout."
+>
+  <div class="container">
+    <Breadcrumbs
+      items={[
+        { label: "Start", href: "/" },
+        { label: "Für Autist:innen", href: "/fuer-autistische-menschen/" },
+        { label: "Besonderheiten & Begleiterkrankungen" },
+      ]}
+    />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <h1>Besonderheiten & Begleiterkrankungen</h1>
+      <p class="lead">
+        Autismus tritt häufig gemeinsam mit weiteren Besonderheiten oder
+        Begleiterkrankungen auf. Dieser Bereich wird dazu wissenschaftlich
+        fundierte und neurodiversitätsorientierte Informationen sammeln.
+      </p>
+
+      <h2>Geplante Themen</h2>
+      <PlannedTopics topics={themen} />
+
+      <h2>Belastungszustände</h2>
+      <PlannedTopics topics={belastungszustaende} />
+
+      <div class="notice">
+        <p>
+          Diese Seite befindet sich im Aufbau. Beiträge werden nur auf
+          Grundlage nachvollziehbarer Quellen erstellt und unterscheiden
+          klar zwischen gesicherten Zusammenhängen und bloßen
+          Assoziationen.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    max-width: var(--measure);
+    font-size: 1.15rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  h2 {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  h2:first-of-type {
+    margin-top: 0;
+  }
+
+  .notice {
+    margin-top: var(--space-lg);
+  }
+</style>

@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import PlannedTopics from "../../../components/PlannedTopics.astro";
+
+const themen = [
+  "Reizmanagement",
+  "Energie und Belastung",
+  "Tagesstruktur",
+  "Kommunikation",
+  "Arztbesuche",
+  "Behördenkontakte",
+  "Telefonieren",
+  "Einkaufen",
+  "Ernährung",
+  "Schlaf",
+  "Wohnen",
+  "Beziehungen",
+  "Familie",
+  "Freundschaften",
+  "Arbeit",
+  "Ausbildung",
+  "Studium",
+  "Schule",
+  "Freizeit",
+  "Reisen",
+  "Umgang mit Überlastung",
+];
+---
+
+<BaseLayout
+  title="Alltag & Leben"
+  description="Konkrete, alltagstaugliche Unterstützung für autistische Menschen: Reizmanagement, Tagesstruktur, Arbeit, Wohnen und mehr."
+>
+  <div class="container">
+    <Breadcrumbs
+      items={[
+        { label: "Start", href: "/" },
+        { label: "Für Autist:innen", href: "/fuer-autistische-menschen/" },
+        { label: "Alltag & Leben" },
+      ]}
+    />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <h1>Alltag & Leben</h1>
+      <p class="lead">
+        Dieser Bereich soll praktische, alltagstaugliche Unterstützung
+        bieten – von Reizmanagement über Behördenkontakte bis zu Arbeit und
+        Wohnen.
+      </p>
+
+      <h2>Geplante Themen</h2>
+      <PlannedTopics topics={themen} />
+
+      <div class="notice">
+        <p>
+          Diese Seite befindet sich im Aufbau. Ausführliche Beiträge
+          entstehen in den nächsten Etappen.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    max-width: var(--measure);
+    font-size: 1.15rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .notice {
+    margin-top: var(--space-lg);
+  }
+</style>

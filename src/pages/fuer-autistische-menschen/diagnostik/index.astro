@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import PlannedTopics from "../../../components/PlannedTopics.astro";
+
+const themen = [
+  "Könnte ich autistisch sein?",
+  "Wann kann eine Diagnostik sinnvoll sein?",
+  "Wie läuft eine Diagnostik ab?",
+  "Diagnostik bei Erwachsenen",
+  "Diagnostik bei Kindern und Jugendlichen",
+  "Diagnostik bei Frauen",
+  "Vorbereitung auf die Diagnostik",
+  "Hilfreiche Unterlagen",
+  "Differenzialdiagnostik",
+  "Screeningtests",
+  "Selbsttests",
+  "Testergebnisse verstehen",
+  "Diagnostikstellen finden",
+];
+---
+
+<BaseLayout
+  title="Diagnostik & Tests"
+  description="Informationen rund um die Autismus-Diagnostik: Ablauf, Vorbereitung, Screening- und Selbsttests, Diagnostikstellen."
+>
+  <div class="container">
+    <Breadcrumbs
+      items={[
+        { label: "Start", href: "/" },
+        { label: "Für Autist:innen", href: "/fuer-autistische-menschen/" },
+        { label: "Diagnostik & Tests" },
+      ]}
+    />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <h1>Diagnostik & Tests</h1>
+      <p class="lead">
+        Dieser Bereich wird Informationen rund um die Autismus-Diagnostik
+        sammeln – von ersten Anzeichen über den Ablauf einer Diagnostik bis
+        zur Suche nach einer Diagnostikstelle.
+      </p>
+
+      <h2>Geplante Themen</h2>
+      <PlannedTopics topics={themen} />
+
+      <div class="notice">
+        <p>
+          Wichtiger Hinweis für später: Screening- und Selbsttests, die hier
+          künftig angeboten werden, ersetzen keine Diagnose. Sie können
+          höchstens einen ersten Anhaltspunkt liefern.
+        </p>
+        <p>
+          Diese Seite befindet sich im Aufbau. Ausführliche Beiträge
+          entstehen in den nächsten Etappen.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    max-width: var(--measure);
+    font-size: 1.15rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .notice {
+    margin-top: var(--space-lg);
+  }
+
+  .notice p + p {
+    margin-top: var(--space-xs);
+  }
+</style>

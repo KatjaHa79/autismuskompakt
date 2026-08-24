@@ -1,0 +1,85 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import PlannedTopics from "../../../components/PlannedTopics.astro";
+
+const themen = [
+  "Grad der Behinderung (GdB)",
+  "Schwerbehindertenausweis",
+  "Merkzeichen",
+  "Pflegegrad",
+  "Persönliches Budget",
+  "Eingliederungshilfe",
+  "Assistenzleistungen",
+  "Hilfsmittel",
+  "Nachteilsausgleich in der Schule",
+  "Nachteilsausgleich im Studium",
+  "Nachteilsausgleich am Arbeitsplatz",
+  "Leistungen zur Teilhabe am Arbeitsleben",
+  "Rehabilitation",
+  "Erwerbsminderungsrente",
+];
+---
+
+<BaseLayout
+  title="Rechte & Anträge"
+  description="Überblick über Sozialleistungen und Anträge, die für autistische Menschen relevant sein können: GdB, Pflegegrad, Eingliederungshilfe und mehr."
+>
+  <div class="container">
+    <Breadcrumbs
+      items={[
+        { label: "Start", href: "/" },
+        { label: "Für Autist:innen", href: "/fuer-autistische-menschen/" },
+        { label: "Rechte & Anträge" },
+      ]}
+    />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <h1>Rechte & Anträge</h1>
+      <p class="lead">
+        Grundfrage dieses Bereichs: Was kann ich wo beantragen? Hier
+        entstehen nach und nach verständliche Übersichten zu den
+        wichtigsten Sozialleistungen und Nachteilsausgleichen.
+      </p>
+
+      <h2>Geplante Themen</h2>
+      <PlannedTopics topics={themen} />
+
+      <div class="notice">
+        <p>
+          Jede einzelne Leistungsseite wird künftig einem einheitlichen
+          Aufbau folgen: kurz gesagt, worum es geht, für wen die Leistung
+          infrage kommt, wo sie beantragt wird, Voraussetzungen, benötigte
+          Unterlagen, Verfahrensablauf, Vorgehen bei Ablehnung, passende
+          Downloads, offizielle Quellen und ein Stand-Datum.
+        </p>
+        <p>
+          Diese Seite befindet sich im Aufbau. Ausführliche, sozialrechtlich
+          geprüfte Beiträge entstehen in den nächsten Etappen.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    max-width: var(--measure);
+    font-size: 1.15rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .notice {
+    margin-top: var(--space-lg);
+  }
+
+  .notice p + p {
+    margin-top: var(--space-xs);
+  }
+</style>

@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+
+const geplanteFilter = [
+  "Bundesland",
+  "Kinder",
+  "Jugendliche",
+  "Erwachsene",
+  "Diagnostik",
+  "Beratung",
+  "Therapie",
+  "Sozialrecht",
+  "Alltagshilfe",
+  "Selbsthilfe",
+  "Angehörigenberatung",
+  "Fachberatung",
+  "Online",
+  "Vor Ort",
+];
+---
+
+<BaseLayout
+  title="Hilfe finden"
+  description="Anlaufstellen zum Thema Autismus: Diagnostik, Beratung, Therapie, Sozialrecht und Selbsthilfe. Filterbar nach Bundesland und Zielgruppe."
+>
+  <div class="container">
+    <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Hilfe finden" }]} />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <h1>Hilfe finden</h1>
+      <p class="lead">
+        An dieser Stelle entsteht eine gepflegte, filterbare Übersicht über
+        Anlaufstellen zum Thema Autismus – zum Beispiel für Diagnostik,
+        Beratung, Therapie, Sozialrecht oder Selbsthilfe.
+      </p>
+
+      <h2>Geplante Filter</h2>
+      <ul class="filter-list">
+        {geplanteFilter.map((filter) => <li>{filter}</li>)}
+      </ul>
+
+      <div class="notice">
+        <p>
+          Diese Seite befindet sich im Aufbau. Es werden ausschließlich
+          geprüfte Anlaufstellen mit Angabe von Quelle und Stand-Datum
+          aufgenommen – erfundene oder ungeprüfte Einträge finden hier
+          keinen Platz.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    max-width: var(--measure);
+    font-size: 1.15rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .filter-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+  }
+
+  .filter-list li {
+    background-color: var(--color-white);
+    border: var(--border-width) solid var(--color-petrol-100);
+    border-radius: 999px;
+    padding: var(--space-2xs) var(--space-sm);
+    font-size: 0.95rem;
+  }
+
+  .notice {
+    margin-top: var(--space-lg);
+  }
+</style>

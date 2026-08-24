@@ -1,0 +1,98 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PlannedTopics from "../../components/PlannedTopics.astro";
+
+const verstehenThemen = [
+  "Was ist Autismus?",
+  "Merkmale und individuelle Ausprägungen",
+  "Wahrnehmung und Reizverarbeitung",
+  "Kommunikation",
+  "Soziale Situationen",
+  "Routinen und Veränderungen",
+  "Stimming",
+  "Masking/Camouflaging",
+  "Overload",
+  "Meltdown",
+  "Shutdown",
+  "Autistischer Burnout",
+  "Exekutive Funktionen",
+  "Interozeption",
+  "Autismus bei Frauen und Mädchen",
+  "Autismus im Erwachsenenalter",
+  "Autismus im Alter",
+  "Sprache und Begriffe",
+  "Mythen und Fakten",
+];
+
+const bereiche = [
+  { label: "Diagnostik & Tests", href: "/fuer-autistische-menschen/diagnostik/" },
+  { label: "Rechte & Anträge", href: "/fuer-autistische-menschen/rechte-und-antraege/" },
+  { label: "Alltag & Leben", href: "/fuer-autistische-menschen/alltag/" },
+  { label: "Besonderheiten & Begleiterkrankungen", href: "/fuer-autistische-menschen/besonderheiten/" },
+];
+---
+
+<BaseLayout
+  title="Für Autist:innen"
+  description="Wegweiser für autistische Menschen und Menschen, die vermuten, autistisch zu sein: Autismus verstehen, Diagnostik, Rechte, Alltag und mehr."
+>
+  <div class="container">
+    <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Für Autist:innen" }]} />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <h1>Für Autist:innen</h1>
+      <p class="lead">
+        Diese Seite ist ein Wegweiser für autistische Menschen und Menschen,
+        die vermuten, autistisch zu sein. Von hier aus geht es zu den
+        einzelnen Themenbereichen von Autismuskompakt.
+      </p>
+
+      <h2>Autismus verstehen</h2>
+      <PlannedTopics topics={verstehenThemen} />
+
+      <div class="notice">
+        <p>
+          Diese Seite befindet sich im Aufbau. Ausführliche, fachlich
+          fundierte Beiträge zu den einzelnen Themen entstehen in den
+          nächsten Etappen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="bereiche-heading">
+    <div class="container">
+      <h2 id="bereiche-heading">Weitere Themenbereiche</h2>
+      <ul class="card-grid">
+        {
+          bereiche.map((bereich) => (
+            <li>
+              <a class="card" href={bereich.href}>
+                {bereich.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    max-width: var(--measure);
+    font-size: 1.15rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .notice {
+    margin-top: var(--space-lg);
+  }
+</style>

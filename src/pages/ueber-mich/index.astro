@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+---
+
+<BaseLayout
+  title="Über mich"
+  description="Über Katja und die Entstehung von Autismuskompakt."
+>
+  <div class="container">
+    <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Über mich" }]} />
+  </div>
+
+  <div class="container">
+    <article class="prose">
+      <h1>Über mich</h1>
+
+      <h2>Über Katja</h2>
+      <p class="placeholder">PLATZHALTER: kurze Vorstellung ergänzen</p>
+
+      <h2>Wie Autismuskompakt entstanden ist</h2>
+      <p class="placeholder">PLATZHALTER: Entstehungsgeschichte ergänzen</p>
+
+      <h2>Fachlicher Hintergrund</h2>
+      <p class="placeholder">PLATZHALTER: fachlicher Hintergrund ergänzen</p>
+
+      <h2>Bücher</h2>
+      <p>
+        Mehr zu den Büchern „Autismus kompakt“ und „Neuro-Kompass“ findest
+        du im <a href="/shop/#buecher">Shop</a>.
+      </p>
+
+      <h2 id="haltung">Haltung & Transparenz</h2>
+      <p>
+        Autismuskompakt soll in erster Linie Information, Orientierung und
+        konkrete Hilfe bieten – Produkte und Bücher sind ein ergänzender,
+        kein zentraler Bestandteil. Die Website richtet sich an autistische
+        Menschen, Angehörige und Fachkräfte und soll vermitteln: Hier finde
+        ich mich zurecht, hier werde ich ernst genommen.
+      </p>
+      <p class="placeholder">PLATZHALTER: persönliche Haltung ergänzen</p>
+
+      <h2 id="kontakt">Kontakt</h2>
+      <p class="placeholder">PLATZHALTER: Kontaktmöglichkeit ergänzen</p>
+    </article>
+  </div>
+</BaseLayout>
