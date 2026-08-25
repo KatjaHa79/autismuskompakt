@@ -19,48 +19,43 @@
 }
 
 /* ==========================================================================
-   Design-Tokens: Petrol + Kupfer + Creme (Etappe 6 – verbindliche Zielpalette)
+   Design-Tokens: Petrol + Bronze + Grau (verbindliche Zielpalette)
    Alle Text-/Hintergrund-Kombinationen wurden auf WCAG-AA-Kontrast geprüft.
+   Kein Beige/Creme, kein Rostorange – siehe Kontrastprüfung in der
+   Projektdokumentation.
    ========================================================================== */
 
 :root {
   /* ---- Verbindliche Zielwerte ---- */
-  --color-cream: #fcf7ef;
-  --color-cream-soft: #faf2e8;
-  --color-petrol: #034551;
-  --color-petrol-dark: #013843;
-  --color-copper: #a94b20;
-  --color-text: #1f2e31;
+  --color-background: #f4f6f6; /* Haupt-Hintergrund: sehr helles Grau */
+  --color-background-alt: #e9eeee; /* abgesetzte Bereiche: leicht dunkleres Hellgrau */
+  --color-surface: #fbfcfc; /* Karten: nahezu weiß */
 
-  /* ---- Abgestufte Zusatzwerte derselben Farbfamilien ---- */
-  --color-surface: #fcf8f1; /* Kartenhintergrund: minimal helleres Warmweiß statt reinem Weiß */
+  --color-petrol: #0b4f5c;
+  --color-petrol-dark: #073a45;
+  --color-petrol-deep: #052f38;
+
+  --color-bronze: #a56c3b;
+  --color-bronze-dark: #80502b;
+  --color-bronze-soft: #c89a72;
+
+  --color-text: #203238;
+  --color-text-muted: #526267;
+
+  /* ---- Abgeleitete Zusatzwerte derselben Farbfamilien ---- */
   --color-white: #ffffff; /* z. B. Schrift auf farbigem Grund */
-  --color-petrol-muted: #42747d; /* gedämpfter Petrol-Ton für sekundären Text (Breadcrumbs, Stand-Datum) */
-  --color-petrol-border: #d4dbd6; /* helle Petrol-Tönung für dezente Kartenrahmen auf Creme */
-  --color-copper-muted: #bf7858; /* rein dekorativ, nicht für Text */
-  --color-copper-dark: #8b3e1a; /* Hover-Zustand für Kupfer-Akzente */
+  --color-border: #d3dfe0; /* helle Petrol-Tönung für dezente Kartenrahmen */
+  --color-bronze-hover: #694223; /* dunklerer Bronze-Ton für Hover auf bronze-dark-Flächen */
 
-  /* ---- Bisherige Token-Namen: verweisen auf die Werte oben, damit
-     bestehende Komponenten unverändert funktionieren ---- */
-  --color-creme: var(--color-cream);
-  --color-creme-alt: var(--color-cream-soft);
-  --color-petrol-900: var(--color-text);
-  --color-petrol-800: var(--color-petrol-dark);
-  --color-petrol-700: var(--color-petrol);
-  --color-petrol-600: var(--color-petrol-muted);
-  --color-petrol-100: var(--color-petrol-border);
-  --color-kupfer-800: var(--color-copper);
-  --color-kupfer-500: var(--color-copper-muted);
-
-  /* Fokusfarbe: auf hellem Grund Kupfer, auf dunklem Petrol-Grund Creme
+  /* Fokusfarbe: auf hellem Grund Bronze, auf dunklem Petrol-Grund helles Grau
      (siehe .on-dark) – beides mit ausreichendem Kontrast geprüft */
-  --color-focus: var(--color-copper);
+  --color-focus: var(--color-bronze);
 
   /* Statusfarben (zurückhaltend, nicht für reine Farbinformation genutzt) */
   --color-error: #a3271e;
 
   /* Textfarben */
-  --color-text-invert: var(--color-cream);
+  --color-text-invert: var(--color-background);
   --color-link: var(--color-petrol);
 
   /* Typografie */
@@ -122,7 +117,7 @@ body {
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   color: var(--color-text);
-  background-color: var(--color-creme);
+  background-color: var(--color-background);
   text-rendering: optimizeLegibility;
 }
 
@@ -197,10 +192,10 @@ summary:focus-visible,
   border-radius: 2px;
 }
 
-/* Auf dunklem Petrol-Hintergrund (Header, Footer) hätte die kupferfarbene
-   Fokusmarkierung zu wenig Kontrast – dort wird Creme verwendet. */
+/* Auf dunklem Petrol-Hintergrund (Header, Footer) hätte die bronzefarbene
+   Fokusmarkierung zu wenig Kontrast – dort wird das helle Grau verwendet. */
 .on-dark {
-  --color-focus: var(--color-creme);
+  --color-focus: var(--color-background);
 }
 
 /* ==========================================================================
@@ -233,8 +228,8 @@ summary:focus-visible,
   left: var(--space-sm);
   z-index: 100;
   padding: var(--space-xs) var(--space-sm);
-  background-color: var(--color-petrol-900);
-  color: var(--color-creme);
+  background-color: var(--color-petrol-deep);
+  color: var(--color-background);
   border-radius: var(--radius);
   text-decoration: none;
   transition: top var(--transition-fast);
@@ -279,18 +274,19 @@ summary:focus-visible,
 }
 
 .button--secondary:hover {
-  background-color: var(--color-petrol-border);
+  background-color: var(--color-border);
 }
 
-/* Kupfer sparsam für besonders hervorgehobene Aktionen, z. B. den
-   kostenlosen Leitfaden – bewusst nicht die Standard-Buttonfarbe. */
+/* Bronze sparsam für besonders hervorgehobene Aktionen, z. B. den
+   kostenlosen Leitfaden – bewusst nicht die Standard-Buttonfarbe.
+   Bewusst der dunklere Bronze-Ton, damit weiße Schrift AA-Kontrast erreicht. */
 .button--accent {
-  background-color: var(--color-copper);
+  background-color: var(--color-bronze-dark);
   color: var(--color-white);
 }
 
 .button--accent:hover {
-  background-color: var(--color-copper-dark);
+  background-color: var(--color-bronze-hover);
 }
 
 /* ==========================================================================
@@ -302,7 +298,7 @@ summary:focus-visible,
 }
 
 .section--alt {
-  background-color: var(--color-creme-alt);
+  background-color: var(--color-background-alt);
 }
 
 .section h2 {
@@ -324,7 +320,7 @@ summary:focus-visible,
   min-height: 6.5rem;
   padding: var(--space-lg);
   background-color: var(--color-surface);
-  border: var(--border-width) solid var(--color-petrol-border);
+  border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius);
   color: var(--color-petrol);
   font-weight: 700;
@@ -335,7 +331,7 @@ summary:focus-visible,
 }
 
 .card:hover {
-  border-color: var(--color-copper-muted);
+  border-color: var(--color-bronze-soft);
 }
 
 .card-grid--audience {
@@ -381,8 +377,8 @@ summary:focus-visible,
 }
 
 .placeholder {
-  background-color: var(--color-creme-alt);
-  border: var(--border-width) dashed var(--color-kupfer-800);
+  background-color: var(--color-background-alt);
+  border: var(--border-width) dashed var(--color-bronze);
   border-radius: var(--radius);
   padding: var(--space-2xs) var(--space-xs);
   display: inline-block;
@@ -390,8 +386,8 @@ summary:focus-visible,
 
 /* Hinweiskasten, z. B. "befindet sich im Aufbau" */
 .notice {
-  background-color: var(--color-creme-alt);
-  border-left: 4px solid var(--color-kupfer-800);
+  background-color: var(--color-background-alt);
+  border-left: 4px solid var(--color-bronze);
   border-radius: 0 var(--radius) var(--radius) 0;
   padding: var(--space-sm) var(--space-md);
   max-width: var(--measure);
