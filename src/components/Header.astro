@@ -129,6 +129,10 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
+    /* Der Header darf breiter sein als die 72rem-Textspalte der übrigen
+       Seite, damit Logo, Navigation, CTA und Suche auf großen Desktops
+       in einer ruhigen Zeile Platz finden. */
+    max-width: 100rem;
   }
 
   .site-header__top {
@@ -151,23 +155,31 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
   }
 
   /* Sehr schmale Bildschirme: Logo etwas kleiner, damit es zusammen mit der
-     Menü-Schaltfläche ohne horizontales Scrollen in eine Zeile passt. */
+     Menü-Schaltfläche ohne horizontales Scrollen in eine Zeile passt –
+     aber weiterhin klar als Marke erkennbar. */
   @media (max-width: 23rem) {
     .site-header__logo-img {
-      height: 1.75rem;
+      height: 2rem;
     }
   }
 
   @media (min-width: 23.0625rem) and (max-width: 40rem) {
     .site-header__logo-img {
-      height: 2.25rem;
+      height: 2.5rem;
     }
   }
 
   /* Ab hier genug Platz: Logo, Navigation und CTA teilen sich eine Zeile. */
-  @media (min-width: 40.0625rem) {
+  @media (min-width: 40.0625rem) and (max-width: 79.9375rem) {
     .site-header__logo-img {
-      height: 3.5rem;
+      height: 4rem;
+    }
+  }
+
+  /* Großer Desktop: Logo deutlich größer, klar als Markenlogo erkennbar. */
+  @media (min-width: 80rem) {
+    .site-header__logo-img {
+      height: 4.5rem;
     }
   }
 
@@ -202,108 +214,18 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
     gap: var(--space-sm) var(--space-md);
   }
 
+  /* Zurückhaltender als der Standard-Button: sichtbar, aber weder
+     größer noch schwerer wirkend als Logo und Navigation. */
   .site-header__cta {
     white-space: nowrap;
+    padding-block: var(--space-2xs);
+    padding-inline: var(--space-sm);
+    font-size: 0.9375rem;
+    min-height: 38px;
   }
 
   .site-header__search-row {
     display: flex;
-  }
-
-  @media (max-width: 40rem) {
-    html.js .nav-toggle {
-      display: inline-flex;
-    }
-
-    html.js .primary-menu {
-      display: block;
-      padding-top: var(--space-sm);
-      border-top: var(--border-width) solid var(--color-petrol-dark);
-    }
-
-    html.js .primary-menu__actions {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      gap: var(--space-sm);
-      margin-top: var(--space-sm);
-    }
-
-    html.js .site-header__cta {
-      justify-content: center;
-    }
-  }
-
-  /* Ab hier teilen sich Logo und Navigation eine Zeile; Leitfaden-Button und
-     Suche rücken als ruhige, kompakte zweite Zeile darunter – bei
-     genügend Breite (großer Desktop, siehe unten) reiht sich der Button
-     stattdessen direkt neben die Navigation ein. */
-  @media (min-width: 40.0625rem) and (max-width: 63.9375rem) {
-    .site-header__inner {
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      column-gap: var(--space-xl);
-      row-gap: var(--space-sm);
-    }
-
-    .site-header__top {
-      flex: 0 0 auto;
-    }
-
-    .primary-menu {
-      flex: 1 1 0%;
-      min-width: 0;
-    }
-
-    .primary-menu :global(.main-nav) {
-      flex: 1 1 auto;
-    }
-
-    .primary-menu__actions {
-      flex-basis: 100%;
-      justify-content: flex-end;
-    }
-  }
-
-  /* Großer Desktop: ausreichend Breite, damit Logo, Navigation und
-     Bronze-CTA eine gemeinsame Zeile teilen; die Suche bleibt eine
-     ruhige, rechtsbündige zweite Zeile darunter. */
-  @media (min-width: 64rem) {
-    .site-header__inner {
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      column-gap: var(--space-xl);
-      row-gap: var(--space-sm);
-    }
-
-    .site-header__top {
-      flex: 0 0 auto;
-    }
-
-    .primary-menu {
-      flex: 1 1 0%;
-      min-width: 0;
-    }
-
-    .primary-menu :global(.main-nav) {
-      flex: 1 1 0%;
-      min-width: 0;
-    }
-
-    .primary-menu__actions {
-      display: contents;
-    }
-
-    .site-header__cta {
-      flex: 0 0 auto;
-    }
-
-    .site-header__search-row {
-      flex-basis: 100%;
-      justify-content: flex-end;
-    }
   }
 
   .site-header__search {
@@ -338,6 +260,117 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
 
   .site-header__search button:hover {
     background-color: var(--color-petrol);
+  }
+
+  @media (max-width: 40rem) {
+    html.js .nav-toggle {
+      display: inline-flex;
+    }
+
+    html.js .primary-menu {
+      display: block;
+      padding-top: var(--space-sm);
+      border-top: var(--border-width) solid var(--color-petrol-dark);
+    }
+
+    html.js .primary-menu__actions {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-sm);
+      margin-top: var(--space-sm);
+    }
+
+    html.js .site-header__cta {
+      justify-content: center;
+    }
+  }
+
+  /* Ab hier teilen sich Logo und Navigation eine Zeile; Leitfaden-Button und
+     Suche rücken als ruhige, kompakte zweite Zeile darunter. Erst bei sehr
+     viel Breite (großer Desktop, siehe unten) reiht sich alles – Logo,
+     Navigation, CTA und Suche – in einer einzigen Zeile aneinander. */
+  @media (min-width: 40.0625rem) and (max-width: 79.9375rem) {
+    .site-header__inner {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      column-gap: var(--space-xl);
+      row-gap: var(--space-sm);
+    }
+
+    .site-header__top {
+      flex: 0 0 auto;
+    }
+
+    .primary-menu {
+      flex: 1 1 0%;
+      min-width: 0;
+    }
+
+    .primary-menu :global(.main-nav) {
+      flex: 1 1 auto;
+    }
+
+    .primary-menu__actions {
+      flex-basis: 100%;
+      justify-content: flex-end;
+    }
+  }
+
+  /* Großer Desktop: genug Breite für eine einzige ruhige Zeile mit Logo,
+     Navigation, CTA und Suche. Abstände fallen hier etwas knapper aus als
+     auf den schmaleren Stufen, damit alle vier Elemente nebeneinander
+     passen – weiterhin klar getrennt, nicht gedrängt. */
+  @media (min-width: 80rem) {
+    .site-header__inner {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      column-gap: var(--space-md);
+      row-gap: var(--space-sm);
+    }
+
+    .site-header__top {
+      flex: 0 0 auto;
+    }
+
+    .primary-menu {
+      flex: 1 1 0%;
+      min-width: 0;
+      column-gap: var(--space-2xs);
+    }
+
+    .primary-menu :global(.main-nav) {
+      flex: 1 1 0%;
+      min-width: 0;
+    }
+
+    .primary-menu :global(.main-nav__list) {
+      column-gap: var(--space-sm);
+    }
+
+    .primary-menu__actions {
+      display: contents;
+    }
+
+    .site-header__cta {
+      flex: 0 0 auto;
+      padding-inline: var(--space-2xs);
+      font-size: 0.875rem;
+    }
+
+    .site-header__search-row {
+      flex: 0 0 auto;
+    }
+
+    .site-header__search input {
+      width: 7rem;
+    }
+
+    .site-header__search button {
+      min-width: 38px;
+    }
   }
 
   @media (max-width: 40rem) {
