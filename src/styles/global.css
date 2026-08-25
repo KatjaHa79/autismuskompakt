@@ -27,17 +27,17 @@
 
 :root {
   /* ---- Verbindliche Zielwerte ---- */
-  --color-background: #f4f6f6; /* Haupt-Hintergrund: sehr helles Grau */
-  --color-background-alt: #e9eeee; /* abgesetzte Bereiche: leicht dunkleres Hellgrau */
-  --color-surface: #fbfcfc; /* Karten: nahezu weiß */
+  --color-background: #f5f5f4; /* Haupt-Hintergrund: neutrales Hellgrau, kein Petrolstich */
+  --color-background-alt: #ececed; /* abgesetzte Bereiche: leicht dunkleres neutrales Hellgrau */
+  --color-surface: #fcfcfb; /* Karten: nahezu weiß */
 
   --color-petrol: #0b4f5c;
   --color-petrol-dark: #073a45;
   --color-petrol-deep: #052f38;
 
-  --color-bronze: #a56c3b;
-  --color-bronze-dark: #80502b;
-  --color-bronze-soft: #c89a72;
+  --color-bronze: #8b6238; /* goldiger/edler, kein Rost-/Kupferorange */
+  --color-bronze-dark: #6c4728;
+  --color-bronze-soft: #b89568;
 
   --color-text: #203238;
   --color-text-muted: #526267;
@@ -45,7 +45,7 @@
   /* ---- Abgeleitete Zusatzwerte derselben Farbfamilien ---- */
   --color-white: #ffffff; /* z. B. Schrift auf farbigem Grund */
   --color-border: #d3dfe0; /* helle Petrol-Tönung für dezente Kartenrahmen */
-  --color-bronze-hover: #694223; /* dunklerer Bronze-Ton für Hover auf bronze-dark-Flächen */
+  --color-bronze-hover: #593a21; /* dunklerer Bronze-Ton für Hover auf bronze-dark-Flächen */
 
   /* Fokusfarbe: auf hellem Grund Bronze, auf dunklem Petrol-Grund helles Grau
      (siehe .on-dark) – beides mit ausreichendem Kontrast geprüft */
