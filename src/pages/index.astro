@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { BREVO_LEITFADEN_URL } from "../lib/constants";
 
 const themen = [
   { label: "Autismus verstehen", href: "/fuer-autistische-menschen/" },
@@ -33,21 +32,27 @@ const zielgruppen = [
   description="Autismuskompakt: verständliche Informationen und konkrete Hilfe zum Thema Autismus für autistische Menschen, Angehörige und Fachkräfte."
 >
   <section class="hero">
-    <div class="container">
-      <h1>Autismus verstehen. Unterstützung finden. Den eigenen Weg gehen.</h1>
-      <p class="hero__lead">
-        Autismuskompakt ist eine reizarme Informations- und Hilfeplattform zum
-        Thema Autismus – für autistische Menschen, Angehörige und
-        Fachkräfte.
-      </p>
-      <div class="hero__actions">
-        <a class="button button--primary" href="/fuer-autistische-menschen/">Themen entdecken</a>
-        <a class="button button--secondary" href="/hilfe-finden/">Hilfe finden</a>
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <h1>Autismus verstehen. Unterstützung finden. Den eigenen Weg gehen.</h1>
+        <p class="hero__lead">
+          Autismuskompakt ist eine reizarme Informations- und Hilfeplattform zum
+          Thema Autismus – für autistische Menschen, Angehörige und
+          Fachkräfte.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="/fuer-autistische-menschen/">Themen entdecken</a>
+          <a class="button button--secondary" href="/hilfe-finden/">Hilfe finden</a>
+        </div>
       </div>
-      <p class="hero__guide">
-        <a href={BREVO_LEITFADEN_URL}>Kostenloser Leitfaden</a>
-        (Link folgt)
-      </p>
+
+      <div class="hero__visual" aria-hidden="true">
+        <svg viewBox="0 0 400 400" focusable="false">
+          <circle class="hero__visual-ring hero__visual-ring--petrol-soft" cx="230" cy="150" r="170" />
+          <circle class="hero__visual-ring hero__visual-ring--petrol" cx="150" cy="250" r="110" />
+          <path class="hero__visual-arc" d="M 60 150 A 150 150 0 0 1 260 40" />
+        </svg>
+      </div>
     </div>
   </section>
 
@@ -88,12 +93,29 @@ const zielgruppen = [
 
 <style>
   .hero {
-    padding-block: var(--space-2xl) var(--space-xl);
+    padding-block: var(--space-2xl) var(--space-md);
+  }
+
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  .hero__content {
+    max-width: 40rem;
+  }
+
+  .hero h1 {
+    max-width: none;
+    line-height: 1.35;
+    font-size: clamp(2.125rem, 1.6rem + 1.8vw, 2.875rem);
   }
 
   .hero__lead {
-    margin-top: var(--space-md);
-    max-width: var(--measure);
+    margin-top: var(--space-sm);
+    max-width: 46ch;
     font-size: 1.25rem;
   }
 
@@ -104,9 +126,57 @@ const zielgruppen = [
     margin-top: var(--space-lg);
   }
 
-  .hero__guide {
-    margin-top: var(--space-md);
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
+  /* Ruhige, abstrakte Fläche – bewusst zurückhaltend, keine Illustration.
+     Nur bestehende Grau-/Petrol-/Bronze-Töne, keine neue Farbe. */
+  .hero__visual {
+    display: none;
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-background-alt);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .hero__visual svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero__visual-ring {
+    fill: none;
+    stroke: var(--color-petrol);
+  }
+
+  .hero__visual-ring--petrol-soft {
+    stroke-width: 1.5;
+    opacity: 0.16;
+  }
+
+  .hero__visual-ring--petrol {
+    stroke-width: 2;
+    opacity: 0.28;
+  }
+
+  .hero__visual-arc {
+    fill: none;
+    stroke: var(--color-bronze);
+    stroke-width: 3;
+    stroke-linecap: round;
+    opacity: 0.45;
+  }
+
+  /* Ab hier zweispaltig: Text links (~60%), ruhige Fläche rechts (~40%). */
+  @media (min-width: 64rem) {
+    .hero__grid {
+      grid-template-columns: 3fr 2fr;
+      gap: var(--space-2xl);
+    }
+
+    .hero__content {
+      max-width: none;
+    }
+
+    .hero__visual {
+      display: block;
+    }
   }
 </style>
