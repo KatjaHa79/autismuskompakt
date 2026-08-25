@@ -3,25 +3,29 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import PlannedTopics from "../../../components/PlannedTopics.astro";
 
-const themen = [
+const neurodivergent = [
   "ADHS",
   {
-    label: "Autismus und ADHS",
+    label: "Autismus + ADHS",
     href: "/fuer-autistische-menschen/besonderheiten/autismus-und-adhs/",
   },
-  "Angst",
-  "Depression",
-  "Schlafprobleme",
-  "Epilepsie",
-  "Migräne",
-  "Dyspraxie",
   "Alexithymie",
-  "Essprobleme",
-  "Sensorische Besonderheiten",
+  "Dyspraxie",
+  "Exekutive Dysfunktion",
   "Interozeption",
+  "Sensorische Besonderheiten",
+  "ARFID / selektives Essen",
 ];
 
-const belastungszustaende = ["Overload", "Meltdown", "Shutdown", "Autistischer Burnout"];
+const psychischeBelastungen = [
+  "Angst",
+  "Depression",
+  "Zwangssymptome",
+  "Traumafolgen",
+  { label: "Autistischer Burnout", href: "/fuer-autistische-menschen/autistischer-burnout/" },
+];
+
+const koerperlicheBegleiterkrankungen = ["Schlafstörungen", "Epilepsie", "Migräne", "Gastrointestinale Beschwerden"];
 ---
 
 <BaseLayout
@@ -47,11 +51,14 @@ const belastungszustaende = ["Overload", "Meltdown", "Shutdown", "Autistischer B
         fundierte und neurodiversitätsorientierte Informationen sammeln.
       </p>
 
-      <h2>Geplante Themen</h2>
-      <PlannedTopics topics={themen} />
+      <h2>Neurodivergente und kognitive Besonderheiten</h2>
+      <PlannedTopics topics={neurodivergent} />
 
-      <h2>Belastungszustände</h2>
-      <PlannedTopics topics={belastungszustaende} />
+      <h2>Psychische Belastungen</h2>
+      <PlannedTopics topics={psychischeBelastungen} />
+
+      <h2>Körperliche Begleiterkrankungen</h2>
+      <PlannedTopics topics={koerperlicheBegleiterkrankungen} />
 
       <div class="notice">
         <p>

@@ -3,26 +3,41 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import PlannedTopics from "../../components/PlannedTopics.astro";
 
-const verstehenThemen = [
-  "Was ist Autismus?",
-  "Merkmale und individuelle Ausprägungen",
-  "Wahrnehmung und Reizverarbeitung",
-  "Kommunikation",
-  "Soziale Situationen",
-  "Routinen und Veränderungen",
+const verstehenKernbereiche = [
+  { label: "Was ist Autismus?", href: "/fuer-autistische-menschen/was-ist-autismus/" },
+  { label: "Autistische Wahrnehmung", href: "/fuer-autistische-menschen/autistische-wahrnehmung/" },
+  {
+    label: "Reizverarbeitung & sensorische Besonderheiten",
+    href: "/fuer-autistische-menschen/reizverarbeitung/",
+  },
+  { label: "Kommunikation", href: "/fuer-autistische-menschen/kommunikation/" },
+  "Soziale Situationen & Double Empathy",
+  "Routinen, Veränderungen & Vorhersehbarkeit",
   { label: "Stimming", href: "/fuer-autistische-menschen/stimming/" },
-  "Masking/Camouflaging",
-  "Overload",
-  "Meltdown",
-  "Shutdown",
-  "Autistischer Burnout",
+  { label: "Masking / Camouflaging", href: "/fuer-autistische-menschen/masking/" },
+  { label: "Overload", href: "/fuer-autistische-menschen/overload/" },
+  { label: "Meltdown", href: "/fuer-autistische-menschen/meltdown/" },
+  { label: "Shutdown", href: "/fuer-autistische-menschen/shutdown/" },
+  { label: "Autistischer Burnout", href: "/fuer-autistische-menschen/autistischer-burnout/" },
   "Exekutive Funktionen",
   "Interozeption",
+];
+
+const verstehenWeitereThemen = [
+  "Spezialinteressen",
+  "Monotropismus",
+  "Zentrale Kohärenz",
+  "Predictive Processing",
+  "Alexithymie",
+  "Dyspraxie",
+  "Propriozeption",
+  "Synästhesie",
   "Autismus bei Frauen und Mädchen",
+  "Spätdiagnose",
   "Autismus im Erwachsenenalter",
-  "Autismus im Alter",
-  "Sprache und Begriffe",
-  "Mythen und Fakten",
+  "Autismus und Älterwerden",
+  "Sprache & Begriffe",
+  "Mythen & Fakten",
 ];
 
 const bereiche = [
@@ -67,7 +82,10 @@ const bereiche = [
       </p>
 
       <h2>Autismus verstehen</h2>
-      <PlannedTopics topics={verstehenThemen} />
+      <PlannedTopics topics={verstehenKernbereiche} />
+
+      <h3>Weitere Themen</h3>
+      <PlannedTopics topics={verstehenWeitereThemen} />
 
       <div class="notice">
         <p>
@@ -112,6 +130,11 @@ const bereiche = [
   }
 
   h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  h3 {
+    margin-top: var(--space-lg);
     margin-bottom: var(--space-sm);
   }
 

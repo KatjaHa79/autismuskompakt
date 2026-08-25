@@ -4,20 +4,33 @@ import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import PlannedTopics from "../../../components/PlannedTopics.astro";
 
 const themen = [
-  "Könnte ich autistisch sein?",
-  "Wann kann eine Diagnostik sinnvoll sein?",
-  "Wie läuft eine Diagnostik ab?",
-  "Diagnostik bei Erwachsenen",
-  "Diagnostik bei Kindern und Jugendlichen",
+  { label: "Könnte ich autistisch sein?", href: "/fuer-autistische-menschen/diagnostik/koennte-ich-autistisch-sein/" },
+  "Wann ist eine Diagnostik sinnvoll?",
+  {
+    label: "Wie läuft eine Autismusdiagnostik ab?",
+    href: "/fuer-autistische-menschen/diagnostik/ablauf-der-diagnostik/",
+  },
+  {
+    label: "Diagnostik bei Erwachsenen",
+    href: "/fuer-autistische-menschen/diagnostik/diagnostik-bei-erwachsenen/",
+  },
   "Diagnostik bei Frauen",
   "Vorbereitung auf die Diagnostik",
   "Hilfreiche Unterlagen",
-  "Differenzialdiagnostik",
-  "Screeningtests",
-  "Selbsttests",
-  "Testergebnisse verstehen",
   "Diagnostikstellen finden",
+  "Was bedeutet das Ergebnis?",
+  "Was passiert nach der Diagnose?",
+  "Differenzialdiagnostik",
+  "ADHS oder Autismus?",
+  {
+    label: "Autismus und ADHS gleichzeitig",
+    href: "/fuer-autistische-menschen/besonderheiten/autismus-und-adhs/",
+  },
+  "Fehldiagnosen und späte Diagnose",
+  "Diagnostik ohne Kindheitsunterlagen",
 ];
+
+const screeningtests = ["AQ", "RAADS-R", "CAT-Q"];
 ---
 
 <BaseLayout
@@ -46,11 +59,13 @@ const themen = [
       <h2>Geplante Themen</h2>
       <PlannedTopics topics={themen} />
 
+      <h3>Screeningtests</h3>
+      <PlannedTopics topics={screeningtests} />
+
       <div class="notice">
         <p>
-          Wichtiger Hinweis für später: Screening- und Selbsttests, die hier
-          künftig angeboten werden, ersetzen keine Diagnose. Sie können
-          höchstens einen ersten Anhaltspunkt liefern.
+          Wichtiger Hinweis für später: Ein Screeningtest kann Hinweise
+          geben, ersetzt aber keine fachliche Diagnostik.
         </p>
         <p>
           Diese Seite befindet sich im Aufbau. Ausführliche Beiträge
@@ -69,6 +84,11 @@ const themen = [
   }
 
   h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  h3 {
+    margin-top: var(--space-lg);
     margin-bottom: var(--space-sm);
   }
 

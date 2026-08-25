@@ -3,21 +3,31 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import PlannedTopics from "../../../components/PlannedTopics.astro";
 
-const themen = [
-  "Grad der Behinderung (GdB)",
+const kernbereiche = [
+  { label: "GdB", href: "/fuer-autistische-menschen/rechte-und-antraege/gdb/" },
   "Schwerbehindertenausweis",
   "Merkzeichen",
   { label: "Pflegegrad", href: "/fuer-autistische-menschen/rechte-und-antraege/pflegegrad/" },
-  "Persönliches Budget",
+  {
+    label: "Persönliches Budget",
+    href: "/fuer-autistische-menschen/rechte-und-antraege/persoenliches-budget/",
+  },
   "Eingliederungshilfe",
   "Assistenzleistungen",
+  "Nachteilsausgleich",
   "Hilfsmittel",
-  "Nachteilsausgleich in der Schule",
-  "Nachteilsausgleich im Studium",
-  "Nachteilsausgleich am Arbeitsplatz",
   "Leistungen zur Teilhabe am Arbeitsleben",
+];
+
+const weitereThemen = [
   "Rehabilitation",
   "Erwerbsminderungsrente",
+  "Unterstützung in der Schule",
+  "Unterstützung im Studium",
+  "Unterstützung am Arbeitsplatz",
+  "Steuerliche Nachteilsausgleiche",
+  "Mobilität",
+  "Widerspruch gegen einen Bescheid",
 ];
 ---
 
@@ -44,16 +54,20 @@ const themen = [
         wichtigsten Sozialleistungen und Nachteilsausgleichen.
       </p>
 
-      <h2>Geplante Themen</h2>
-      <PlannedTopics topics={themen} />
+      <h2>Kernbereiche</h2>
+      <PlannedTopics topics={kernbereiche} />
+
+      <h3>Weitere Themen</h3>
+      <PlannedTopics topics={weitereThemen} />
 
       <div class="notice">
         <p>
-          Jede einzelne Leistungsseite wird künftig einem einheitlichen
-          Aufbau folgen: kurz gesagt, worum es geht, für wen die Leistung
-          infrage kommt, wo sie beantragt wird, Voraussetzungen, benötigte
-          Unterlagen, Verfahrensablauf, Vorgehen bei Ablehnung, passende
-          Downloads, offizielle Quellen und ein Stand-Datum.
+          Jede einzelne Leistungsseite folgt künftig einem einheitlichen
+          Aufbau: kurz gesagt, worum es geht, für wen die Leistung infrage
+          kommt, wo sie beantragt wird, Voraussetzungen, benötigte
+          Unterlagen, Ablauf, was nach dem Antrag passiert, was bei
+          Ablehnung zu tun ist, passende Downloads, Hilfe/Anlaufstellen,
+          offizielle Quellen und ein Stand-Datum.
         </p>
         <p>
           Diese Seite befindet sich im Aufbau. Ausführliche, sozialrechtlich
@@ -72,6 +86,11 @@ const themen = [
   }
 
   h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  h3 {
+    margin-top: var(--space-lg);
     margin-bottom: var(--space-sm);
   }
 

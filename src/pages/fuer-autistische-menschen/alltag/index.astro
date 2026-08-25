@@ -3,29 +3,56 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import PlannedTopics from "../../../components/PlannedTopics.astro";
 
-const themen = [
-  "Reizmanagement",
-  "Energie und Belastung",
-  "Tagesstruktur",
-  "Kommunikation",
-  "Arztbesuche",
-  "Behördenkontakte",
-  "Telefonieren",
-  "Einkaufen",
-  "Ernährung",
-  "Schlaf",
-  "Wohnen",
-  "Beziehungen",
-  "Familie",
-  "Freundschaften",
-  "Arbeit",
-  "Ausbildung",
-  "Studium",
-  "Schule",
-  "Freizeit",
-  "Reisen",
-  "Umgang mit Überlastung",
+const reizeUndEnergie = [
+  { label: "Reizüberflutung", href: "/fuer-autistische-menschen/alltag/reizmanagement-im-alltag/" },
+  "Reize reduzieren",
+  "Rückzug",
+  "Energie einteilen",
+  "Erholung",
+  { label: "Overload im Alltag", href: "/fuer-autistische-menschen/overload/" },
+  { label: "Meltdown im Alltag", href: "/fuer-autistische-menschen/meltdown/" },
+  { label: "Shutdown im Alltag", href: "/fuer-autistische-menschen/shutdown/" },
+  { label: "Autistischer Burnout im Alltag", href: "/fuer-autistische-menschen/autistischer-burnout/" },
 ];
+
+const kommunikation = [
+  "Bedürfnisse mitteilen",
+  "Grenzen setzen",
+  "Telefonieren",
+  "Schriftliche Kommunikation",
+  "Missverständnisse",
+  "Small Talk",
+  "Kommunikationshilfen",
+];
+
+const alltagsorganisation = [
+  "Tagesstruktur",
+  "Veränderungen",
+  "Termine",
+  "Einkaufen",
+  "Haushalt",
+  "Essen",
+  "Schlaf",
+  { label: "Arzttermine", href: "/fuer-autistische-menschen/alltag/arzttermine/" },
+  "Behördenkontakte",
+];
+
+const beziehungen = ["Partnerschaft", "Freundschaften", "Familie", "Konflikte", "Nähe & Rückzug", "Dating", "Grenzen & Zustimmung"];
+
+const arbeitAusbildungStudium = [
+  { label: "Arbeitsplatz gestalten", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+  "Reize am Arbeitsplatz",
+  "Kommunikation mit Vorgesetzten",
+  "Offenlegung der Diagnose",
+  "Homeoffice",
+  "Nachteilsausgleich",
+  "Studium",
+  "Ausbildung",
+  "Bewerbung",
+  "Jobwechsel",
+];
+
+const wohnenUndSelbststaendigkeit = ["Allein wohnen", "Assistenz", "Unterstützungsbedarf", "Wohnformen"];
 ---
 
 <BaseLayout
@@ -51,8 +78,23 @@ const themen = [
         Wohnen.
       </p>
 
-      <h2>Geplante Themen</h2>
-      <PlannedTopics topics={themen} />
+      <h2>Reize & Energie</h2>
+      <PlannedTopics topics={reizeUndEnergie} />
+
+      <h2>Kommunikation</h2>
+      <PlannedTopics topics={kommunikation} />
+
+      <h2>Alltagsorganisation</h2>
+      <PlannedTopics topics={alltagsorganisation} />
+
+      <h2>Beziehungen</h2>
+      <PlannedTopics topics={beziehungen} />
+
+      <h2>Arbeit, Ausbildung & Studium</h2>
+      <PlannedTopics topics={arbeitAusbildungStudium} />
+
+      <h2>Wohnen & Selbstständigkeit</h2>
+      <PlannedTopics topics={wohnenUndSelbststaendigkeit} />
 
       <div class="notice">
         <p>
@@ -72,7 +114,12 @@ const themen = [
   }
 
   h2 {
+    margin-top: var(--space-lg);
     margin-bottom: var(--space-sm);
+  }
+
+  h2:first-of-type {
+    margin-top: 0;
   }
 
   .notice {
