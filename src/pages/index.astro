@@ -2,27 +2,58 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const themen = [
-  { label: "Autismus verstehen", href: "/fuer-autistische-menschen/" },
-  { label: "Diagnostik & Tests", href: "/fuer-autistische-menschen/diagnostik/" },
-  { label: "Hilfe & Anlaufstellen", href: "/hilfe-finden/" },
-  { label: "Rechte & Anträge", href: "/fuer-autistische-menschen/rechte-und-antraege/" },
-  { label: "Alltag & Leben", href: "/fuer-autistische-menschen/alltag/" },
-  { label: "Besonderheiten & Begleiterkrankungen", href: "/fuer-autistische-menschen/besonderheiten/" },
-  { label: "Downloads & Materialien", href: "/materialien/" },
+  {
+    label: "Autismus verstehen",
+    href: "/fuer-autistische-menschen/",
+    description: "Grundlagen, Wahrnehmung, Kommunikation und individuelle Ausprägungen.",
+  },
+  {
+    label: "Diagnostik & Tests",
+    href: "/fuer-autistische-menschen/diagnostik/",
+    description: "Orientierung zur Diagnostik und zu Screeningverfahren.",
+  },
+  {
+    label: "Hilfe & Anlaufstellen",
+    href: "/hilfe-finden/",
+    description: "Beratungsstellen, Therapie und Selbsthilfeangebote finden.",
+  },
+  {
+    label: "Rechte & Anträge",
+    href: "/fuer-autistische-menschen/rechte-und-antraege/",
+    description: "Ansprüche, Anträge und rechtliche Grundlagen im Überblick.",
+  },
+  {
+    label: "Alltag & Leben",
+    href: "/fuer-autistische-menschen/alltag/",
+    description: "Struktur, Reizverarbeitung und Unterstützung im Alltag.",
+  },
+  {
+    label: "Besonderheiten & Begleiterkrankungen",
+    href: "/fuer-autistische-menschen/besonderheiten/",
+    description: "Häufige Begleiterkrankungen und besondere Ausprägungen.",
+  },
+  {
+    label: "Downloads & Materialien",
+    href: "/materialien/",
+    description: "Checklisten, Vorlagen und Arbeitsblätter zum Herunterladen.",
+  },
 ];
 
 const zielgruppen = [
   {
     label: "Ich bin autistisch – oder vermute es",
     href: "/fuer-autistische-menschen/",
+    description: "Orientierung, Wissen und praktische Hilfen für deinen Alltag.",
   },
   {
     label: "Ich bin Angehörige:r",
     href: "/angehoerige-fachkraefte/#angehoerige",
+    description: "Verstehen, begleiten und passende Unterstützung finden.",
   },
   {
     label: "Ich bin Fachkraft",
     href: "/angehoerige-fachkraefte/#fachkraefte",
+    description: "Fachlich fundierte Informationen und Materialien für die Praxis.",
   },
 ];
 ---
@@ -46,47 +77,48 @@ const zielgruppen = [
         </div>
       </div>
 
-      <div class="hero__visual" aria-hidden="true">
-        <svg viewBox="0 0 400 400" focusable="false">
-          <circle class="hero__visual-ring hero__visual-ring--petrol-soft" cx="230" cy="150" r="170" />
-          <circle class="hero__visual-ring hero__visual-ring--petrol" cx="150" cy="250" r="110" />
-          <path class="hero__visual-arc" d="M 60 150 A 150 150 0 0 1 260 40" />
-        </svg>
-      </div>
+      <div class="hero__accent" aria-hidden="true"></div>
     </div>
   </section>
 
   <section class="section" aria-labelledby="themen-heading">
     <div class="container">
       <h2 id="themen-heading">Themen im Überblick</h2>
-      <ul class="card-grid">
+      <ol class="theme-list">
         {
-          themen.map((thema) => (
-            <li>
-              <a class="card" href={thema.href}>
-                {thema.label}
+          themen.map((thema, index) => (
+            <li class="theme-list__item">
+              <a class="theme-list__link" href={thema.href}>
+                <span class="theme-list__index" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span class="theme-list__body">
+                  <span class="theme-list__title">{thema.label}</span>
+                  <span class="theme-list__desc">{thema.description}</span>
+                </span>
+                <span class="theme-list__arrow" aria-hidden="true">→</span>
               </a>
             </li>
           ))
         }
-      </ul>
+      </ol>
     </div>
   </section>
 
   <section class="section section--alt" aria-labelledby="zielgruppen-heading">
     <div class="container">
       <h2 id="zielgruppen-heading">Für wen suchst du Informationen?</h2>
-      <ul class="card-grid card-grid--audience">
+      <div class="audience-grid">
         {
           zielgruppen.map((gruppe) => (
-            <li>
-              <a class="card card--audience" href={gruppe.href}>
-                {gruppe.label}
-              </a>
-            </li>
+            <a class="audience-item" href={gruppe.href}>
+              <span class="audience-item__title">{gruppe.label}</span>
+              <span class="audience-item__desc">{gruppe.description}</span>
+              <span class="audience-item__arrow" aria-hidden="true">→</span>
+            </a>
           ))
         }
-      </ul>
+      </div>
     </div>
   </section>
 </BaseLayout>
@@ -99,7 +131,6 @@ const zielgruppen = [
   .hero__grid {
     display: grid;
     grid-template-columns: 1fr;
-    align-items: center;
     gap: var(--space-xl);
   }
 
@@ -126,45 +157,13 @@ const zielgruppen = [
     margin-top: var(--space-lg);
   }
 
-  /* Ruhige, abstrakte Fläche – bewusst zurückhaltend, keine Illustration.
-     Nur bestehende Grau-/Petrol-/Bronze-Töne, keine neue Farbe. */
-  .hero__visual {
+  /* Bewusster Freiraum rechts statt einer Symbolgrafik – nur eine sehr
+     feine Bronze-Linie als dezenter typografischer Akzent. */
+  .hero__accent {
     display: none;
-    aspect-ratio: 1 / 1;
-    background-color: var(--color-background-alt);
-    border-radius: var(--radius);
-    overflow: hidden;
   }
 
-  .hero__visual svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .hero__visual-ring {
-    fill: none;
-    stroke: var(--color-petrol);
-  }
-
-  .hero__visual-ring--petrol-soft {
-    stroke-width: 1.5;
-    opacity: 0.16;
-  }
-
-  .hero__visual-ring--petrol {
-    stroke-width: 2;
-    opacity: 0.28;
-  }
-
-  .hero__visual-arc {
-    fill: none;
-    stroke: var(--color-bronze);
-    stroke-width: 3;
-    stroke-linecap: round;
-    opacity: 0.45;
-  }
-
-  /* Ab hier zweispaltig: Text links (~60%), ruhige Fläche rechts (~40%). */
+  /* Ab hier zweispaltig: Text links (~60%), Freiraum rechts (~40%). */
   @media (min-width: 64rem) {
     .hero__grid {
       grid-template-columns: 3fr 2fr;
@@ -175,8 +174,124 @@ const zielgruppen = [
       max-width: none;
     }
 
-    .hero__visual {
+    .hero__accent {
       display: block;
+      justify-self: start;
+      width: 1px;
+      height: 100%;
+      min-height: 12rem;
+      background-color: var(--color-bronze-soft);
+    }
+  }
+
+  /* Themen im Überblick: redaktionelle, nummerierte Liste statt
+     gleichförmiger Dashboard-Karten. */
+  .theme-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: var(--border-width) solid var(--color-border);
+  }
+
+  .theme-list__item {
+    border-bottom: var(--border-width) solid var(--color-border);
+  }
+
+  .theme-list__link {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-md);
+    padding-block: var(--space-md);
+    text-decoration: none;
+    color: inherit;
+    transition: background-color var(--transition-fast);
+  }
+
+  .theme-list__link:hover,
+  .theme-list__link:focus-visible {
+    background-color: var(--color-background-alt);
+  }
+
+  .theme-list__index {
+    flex-shrink: 0;
+    width: 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-bronze-dark);
+  }
+
+  .theme-list__body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+  }
+
+  .theme-list__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-petrol);
+  }
+
+  .theme-list__desc {
+    color: var(--color-text-muted);
+    max-width: 60ch;
+  }
+
+  .theme-list__arrow {
+    flex-shrink: 0;
+    color: var(--color-petrol);
+    font-size: 1.25rem;
+  }
+
+  @media (min-width: 48rem) {
+    .theme-list__link {
+      align-items: center;
+    }
+
+    .theme-list__title {
+      font-size: 1.375rem;
+    }
+  }
+
+  /* Zielgruppenbereich: drei ruhige, typografische Spalten statt Karten. */
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .audience-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    padding-top: var(--space-md);
+    border-top: 2px solid var(--color-petrol);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .audience-item__title {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--color-petrol);
+  }
+
+  .audience-item__desc {
+    color: var(--color-text-muted);
+  }
+
+  .audience-item__arrow {
+    margin-top: var(--space-2xs);
+    color: var(--color-bronze-dark);
+    font-weight: 700;
+  }
+
+  @media (min-width: 48rem) {
+    .audience-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
     }
   }
 </style>

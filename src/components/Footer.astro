@@ -75,24 +75,22 @@ const groups = [
     background-color: var(--color-petrol-deep);
     color: var(--color-text-invert);
     margin-top: var(--space-2xl);
-    padding-block: var(--space-2xl) var(--space-xl);
+    padding-block: calc(var(--space-2xl) + var(--space-sm)) var(--space-xl);
   }
 
   .site-footer__groups {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-    gap: var(--space-xl) var(--space-lg);
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: var(--space-2xl) var(--space-xl);
   }
 
   .site-footer__group h2 {
-    display: inline-block;
     color: var(--color-text-invert);
-    font-size: 1rem;
+    font-size: 0.9375rem;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
-    padding-bottom: var(--space-2xs);
-    margin-bottom: var(--space-sm);
-    border-bottom: 2px solid var(--color-bronze-soft);
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
   }
 
   .site-footer__group ul {
@@ -100,7 +98,7 @@ const groups = [
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
+    gap: var(--space-sm);
   }
 
   .site-footer__group a {

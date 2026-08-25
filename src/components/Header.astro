@@ -3,7 +3,7 @@ import Navigation from "./Navigation.astro";
 import { BREVO_LEITFADEN_URL } from "../lib/constants";
 ---
 
-<header class="site-header on-dark">
+<header class="site-header">
   <div class="container site-header__inner">
     <div class="site-header__top">
       <a class="site-header__logo" href="/" aria-label="Autismuskompakt – Startseite">
@@ -11,8 +11,8 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
           class="site-header__logo-img"
           src="/logo/autismuskompakt-logo.png"
           alt=""
-          width="500"
-          height="506"
+          width="469"
+          height="475"
         />
       </a>
 
@@ -119,10 +119,13 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
 </script>
 
 <style>
+  /* Heller, editorieller Header statt großflächigem dunklem Petrol –
+     das Logo trägt die Markenwirkung, nicht die Headerfläche. */
   .site-header {
-    background-color: var(--color-petrol);
-    color: var(--color-text-invert);
-    padding-block: var(--space-lg);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    border-bottom: var(--border-width) solid var(--color-border);
+    padding-block: var(--space-sm);
   }
 
   .site-header__inner {
@@ -151,35 +154,30 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
   .site-header__logo-img {
     display: block;
     width: auto;
-    height: 2rem;
+    height: 3.25rem;
   }
 
   /* Sehr schmale Bildschirme: Logo etwas kleiner, damit es zusammen mit der
      Menü-Schaltfläche ohne horizontales Scrollen in eine Zeile passt –
-     aber weiterhin klar als Marke erkennbar. */
+     aber weiterhin klar als Marke erkennbar (Ziel ca. 55–70px sichtbar). */
   @media (max-width: 23rem) {
     .site-header__logo-img {
-      height: 2rem;
+      height: 3rem;
     }
   }
 
   @media (min-width: 23.0625rem) and (max-width: 40rem) {
     .site-header__logo-img {
-      height: 2.5rem;
+      height: 3.5rem;
     }
   }
 
-  /* Ab hier genug Platz: Logo, Navigation und CTA teilen sich eine Zeile. */
-  @media (min-width: 40.0625rem) and (max-width: 79.9375rem) {
+  /* Ab hier genug Platz: Logo, Navigation und CTA teilen sich eine Zeile.
+     Das freigestellte Logo ist hier der wichtigste visuelle Anker im
+     Header (Ziel ca. 100–120px sichtbare Höhe). */
+  @media (min-width: 40.0625rem) {
     .site-header__logo-img {
-      height: 4rem;
-    }
-  }
-
-  /* Großer Desktop: Logo deutlich größer, klar als Markenlogo erkennbar. */
-  @media (min-width: 80rem) {
-    .site-header__logo-img {
-      height: 4.5rem;
+      height: 6.875rem;
     }
   }
 
@@ -192,8 +190,8 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
     align-items: center;
     gap: var(--space-2xs);
     background: transparent;
-    border: var(--border-width) solid var(--color-background);
-    color: var(--color-text-invert);
+    border: var(--border-width) solid var(--color-petrol);
+    color: var(--color-petrol);
     border-radius: var(--radius);
     padding: var(--space-2xs) var(--space-sm);
     font-weight: 700;
@@ -270,7 +268,7 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
     html.js .primary-menu {
       display: block;
       padding-top: var(--space-sm);
-      border-top: var(--border-width) solid var(--color-petrol-dark);
+      border-top: var(--border-width) solid var(--color-border);
     }
 
     html.js .primary-menu__actions {
