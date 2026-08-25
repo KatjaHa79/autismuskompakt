@@ -36,7 +36,7 @@ const merchandise = sortiert.filter((p) => p.data.productType === "merchandise")
   <section id="buecher" class="section section--alt">
     <div class="container">
       <h2>Bücher</h2>
-      <ul class="card-grid">
+      <ul class="card-grid card-grid--buecher">
         {
           buecher.map((buch) => (
             <li>
@@ -119,6 +119,12 @@ const merchandise = sortiert.filter((p) => p.data.productType === "merchandise")
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     gap: var(--space-md);
+  }
+
+  /* Bücher etwas hochwertiger/großzügiger als die übrigen Produktarten. */
+  .card-grid--buecher {
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: var(--space-xl);
   }
 
   .notice {

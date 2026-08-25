@@ -26,10 +26,26 @@ const verstehenThemen = [
 ];
 
 const bereiche = [
-  { label: "Diagnostik & Tests", href: "/fuer-autistische-menschen/diagnostik/" },
-  { label: "Rechte & Anträge", href: "/fuer-autistische-menschen/rechte-und-antraege/" },
-  { label: "Alltag & Leben", href: "/fuer-autistische-menschen/alltag/" },
-  { label: "Besonderheiten & Begleiterkrankungen", href: "/fuer-autistische-menschen/besonderheiten/" },
+  {
+    label: "Diagnostik & Tests",
+    href: "/fuer-autistische-menschen/diagnostik/",
+    description: "Orientierung zur Diagnostik und zu Screeningverfahren.",
+  },
+  {
+    label: "Rechte & Anträge",
+    href: "/fuer-autistische-menschen/rechte-und-antraege/",
+    description: "Ansprüche, Anträge und rechtliche Grundlagen im Überblick.",
+  },
+  {
+    label: "Alltag & Leben",
+    href: "/fuer-autistische-menschen/alltag/",
+    description: "Struktur, Reizverarbeitung und Unterstützung im Alltag.",
+  },
+  {
+    label: "Besonderheiten & Begleiterkrankungen",
+    href: "/fuer-autistische-menschen/besonderheiten/",
+    description: "Häufige Begleiterkrankungen und besondere Ausprägungen.",
+  },
 ];
 ---
 
@@ -66,17 +82,24 @@ const bereiche = [
   <section class="section section--alt" aria-labelledby="bereiche-heading">
     <div class="container">
       <h2 id="bereiche-heading">Weitere Themenbereiche</h2>
-      <ul class="card-grid">
+      <ol class="theme-list">
         {
-          bereiche.map((bereich) => (
-            <li>
-              <a class="card" href={bereich.href}>
-                {bereich.label}
+          bereiche.map((bereich, index) => (
+            <li class="theme-list__item">
+              <a class="theme-list__link" href={bereich.href}>
+                <span class="theme-list__index" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span class="theme-list__body">
+                  <span class="theme-list__title">{bereich.label}</span>
+                  <span class="theme-list__desc">{bereich.description}</span>
+                </span>
+                <span class="theme-list__arrow" aria-hidden="true">→</span>
               </a>
             </li>
           ))
         }
-      </ul>
+      </ol>
     </div>
   </section>
 </BaseLayout>

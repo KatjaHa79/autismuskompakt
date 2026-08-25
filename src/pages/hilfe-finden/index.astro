@@ -53,55 +53,70 @@ const hatVorOrt = alle.some((a) => a.data.onsite);
         </p>
       </div>
 
-      <h2>Nach Bundesland</h2>
-      <ul class="filter-list">
-        {
-          [...bundeslaender].map((land) => (
-            <li>
-              <a href={`/hilfe-finden/bundesland/${land}/`}>{bundeslandLabels[land]}</a>
-            </li>
-          ))
-        }
-      </ul>
+      <div class="filter-panel">
+        <h2>Nach Kriterien filtern</h2>
+        <div class="filter-groups">
+          <div class="filter-group">
+            <h3>Bundesland</h3>
+            <ul class="filter-list">
+              {
+                [...bundeslaender].map((land) => (
+                  <li>
+                    <a href={`/hilfe-finden/bundesland/${land}/`}>{bundeslandLabels[land]}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
 
-      <h2>Nach Kategorie</h2>
-      <ul class="filter-list">
-        {
-          [...kategorien].map((kategorie) => (
-            <li>
-              <a href={`/hilfe-finden/kategorie/${kategorie}/`}>{anlaufstelleCategoryLabels[kategorie]}</a>
-            </li>
-          ))
-        }
-      </ul>
+          <div class="filter-group">
+            <h3>Kategorie</h3>
+            <ul class="filter-list">
+              {
+                [...kategorien].map((kategorie) => (
+                  <li>
+                    <a href={`/hilfe-finden/kategorie/${kategorie}/`}>{anlaufstelleCategoryLabels[kategorie]}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
 
-      <h2>Nach Zielgruppe</h2>
-      <ul class="filter-list">
-        {
-          [...zielgruppen].map((gruppe) => (
-            <li>
-              <a href={`/hilfe-finden/zielgruppe/${gruppe}/`}>{targetGroupLabels[gruppe]}</a>
-            </li>
-          ))
-        }
-      </ul>
+          <div class="filter-group">
+            <h3>Zielgruppe</h3>
+            <ul class="filter-list">
+              {
+                [...zielgruppen].map((gruppe) => (
+                  <li>
+                    <a href={`/hilfe-finden/zielgruppe/${gruppe}/`}>{targetGroupLabels[gruppe]}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
 
-      <h2>Nach Altersgruppe</h2>
-      <ul class="filter-list">
-        {
-          [...altersgruppen].map((gruppe) => (
-            <li>
-              <a href={`/hilfe-finden/altersgruppe/${gruppe}/`}>{ageGroupLabels[gruppe]}</a>
-            </li>
-          ))
-        }
-      </ul>
+          <div class="filter-group">
+            <h3>Altersgruppe</h3>
+            <ul class="filter-list">
+              {
+                [...altersgruppen].map((gruppe) => (
+                  <li>
+                    <a href={`/hilfe-finden/altersgruppe/${gruppe}/`}>{ageGroupLabels[gruppe]}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
 
-      <h2>Nach Angebotsform</h2>
-      <ul class="filter-list">
-        {hatOnline && <li><a href="/hilfe-finden/online/">Online</a></li>}
-        {hatVorOrt && <li><a href="/hilfe-finden/vor-ort/">Vor Ort</a></li>}
-      </ul>
+          <div class="filter-group">
+            <h3>Angebotsform</h3>
+            <ul class="filter-list">
+              {hatOnline && <li><a href="/hilfe-finden/online/">Online</a></li>}
+              {hatVorOrt && <li><a href="/hilfe-finden/vor-ort/">Vor Ort</a></li>}
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -126,35 +141,6 @@ const hatVorOrt = alle.some((a) => a.data.onsite);
     max-width: var(--measure);
     font-size: 1.15rem;
     margin-bottom: var(--space-md);
-  }
-
-  h2 {
-    margin-top: var(--space-lg);
-    margin-bottom: var(--space-sm);
-  }
-
-  .filter-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2xs);
-  }
-
-  .filter-list a {
-    display: inline-block;
-    background-color: var(--color-surface);
-    border: var(--border-width) solid var(--color-border);
-    border-radius: 999px;
-    padding: var(--space-2xs) var(--space-sm);
-    font-size: 0.95rem;
-    text-decoration: none;
-    color: var(--color-text);
-    font-weight: 700;
-  }
-
-  .filter-list a:hover {
-    border-color: var(--color-bronze-soft);
   }
 
   .notice {

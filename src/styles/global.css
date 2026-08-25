@@ -145,6 +145,7 @@ button {
 p,
 li {
   max-width: var(--measure);
+  overflow-wrap: break-word;
 }
 
 h1,
@@ -155,6 +156,9 @@ h4 {
   line-height: 1.25;
   color: var(--color-petrol);
   max-width: 30ch;
+  /* Lange, unteilbare deutsche Komposita (z. B. "Verbraucherstreitbeilegung")
+     dürfen auf sehr schmalen Bildschirmen umbrechen statt überzulaufen. */
+  overflow-wrap: break-word;
 }
 
 h1 {
@@ -344,6 +348,131 @@ summary:focus-visible,
 }
 
 /* ==========================================================================
+   Redaktionelle Zeilenliste – nummerierte Themen-/Bereichsübersichten ohne
+   Kartenoptik, z. B. "Themen im Überblick" oder "Weitere Themenbereiche".
+   Wiederverwendet auf mehreren Seiten für eine einheitliche Wirkung.
+   ========================================================================== */
+
+.theme-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.theme-list__item {
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.theme-list__link {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  padding-block: var(--space-md);
+  text-decoration: none;
+  color: inherit;
+  transition: background-color var(--transition-fast);
+}
+
+.theme-list__link:hover,
+.theme-list__link:focus-visible {
+  background-color: var(--color-background-alt);
+}
+
+.theme-list__index {
+  flex-shrink: 0;
+  width: 2.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-bronze-dark);
+}
+
+.theme-list__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.theme-list__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-petrol);
+}
+
+.theme-list__desc {
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
+.theme-list__arrow {
+  flex-shrink: 0;
+  color: var(--color-petrol);
+  font-size: 1.25rem;
+}
+
+@media (min-width: 48rem) {
+  .theme-list__link {
+    align-items: center;
+  }
+
+  .theme-list__title {
+    font-size: 1.375rem;
+  }
+}
+
+/* ==========================================================================
+   Filterbereiche – klar gruppiert statt lose aneinandergereihter Tags
+   (Hilfe finden, Materialien).
+   ========================================================================== */
+
+.filter-panel {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.filter-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--space-lg) var(--space-xl);
+}
+
+.filter-group h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.filter-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+}
+
+.filter-list a {
+  display: inline-block;
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 999px;
+  padding: var(--space-2xs) var(--space-sm);
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 700;
+  transition: border-color var(--transition-fast);
+}
+
+.filter-list a:hover {
+  border-color: var(--color-bronze-soft);
+}
+
+/* ==========================================================================
    Textseiten (z. B. Impressum, Datenschutz, Barrierefreiheit)
    ========================================================================== */
 
@@ -352,13 +481,22 @@ summary:focus-visible,
   padding-block: var(--space-xl);
 }
 
+.prose h1 {
+  margin-bottom: var(--space-lg);
+}
+
 .prose h2 {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xl);
   margin-bottom: var(--space-sm);
 }
 
 .prose h2:first-of-type {
   margin-top: 0;
+}
+
+.prose h3 {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-2xs);
 }
 
 .prose p,

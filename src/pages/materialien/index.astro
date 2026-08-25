@@ -51,27 +51,36 @@ const materialtypen = await getMaterialtypenMitMaterialien();
 
   <section class="section">
     <div class="container">
-      <h2>Nach Zielgruppe</h2>
-      <ul class="filter-list">
-        {
-          [...zielgruppen].map((gruppe) => (
-            <li>
-              <a href={`/materialien/zielgruppe/${gruppe}/`}>{targetGroupLabels[gruppe]}</a>
-            </li>
-          ))
-        }
-      </ul>
+      <div class="filter-panel">
+        <h2>Nach Kriterien filtern</h2>
+        <div class="filter-groups">
+          <div class="filter-group">
+            <h3>Zielgruppe</h3>
+            <ul class="filter-list">
+              {
+                [...zielgruppen].map((gruppe) => (
+                  <li>
+                    <a href={`/materialien/zielgruppe/${gruppe}/`}>{targetGroupLabels[gruppe]}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
 
-      <h2>Nach Materialtyp</h2>
-      <ul class="filter-list">
-        {
-          [...materialtypen].map((typ) => (
-            <li>
-              <a href={`/materialien/typ/${typ}/`}>{materialTypeLabels[typ]}</a>
-            </li>
-          ))
-        }
-      </ul>
+          <div class="filter-group">
+            <h3>Materialtyp</h3>
+            <ul class="filter-list">
+              {
+                [...materialtypen].map((typ) => (
+                  <li>
+                    <a href={`/materialien/typ/${typ}/`}>{materialTypeLabels[typ]}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -115,28 +124,13 @@ const materialtypen = await getMaterialtypenMitMaterialien();
     margin-top: 0;
   }
 
-  .filter-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2xs);
-  }
-
-  .filter-list a {
-    display: inline-block;
-    background-color: var(--color-surface);
-    border: var(--border-width) solid var(--color-border);
-    border-radius: 999px;
-    padding: var(--space-2xs) var(--space-sm);
-    font-size: 0.95rem;
-    text-decoration: none;
-    color: var(--color-text);
-    font-weight: 700;
-  }
-
-  .filter-list a:hover {
-    border-color: var(--color-bronze-soft);
+  /* In diesem Abschnitt ist der Filterbereich das einzige Element – die
+     obere Linie/Abstand des geteilten .filter-panel wäre hier doppelt,
+     da der umgebende Abschnitt bereits eigenen Abstand mitbringt. */
+  .filter-panel {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
   }
 
   .placeholder-note {
