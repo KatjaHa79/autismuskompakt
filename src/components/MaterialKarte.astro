@@ -27,7 +27,7 @@ const formatAngabe = [fileFormat, pages ? `${pages} Seiten` : undefined].filter(
 const downloadHref = external ? externalUrl : `/downloads/materialien/${file}`;
 ---
 
-<article class="material-karte">
+<article class="material-karte" id={entry.id}>
   <header>
     <h3>
       {title}

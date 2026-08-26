@@ -13,7 +13,7 @@ const { title, description, cover, productType, targetGroups, externalUrl, provi
 const label = buttonLabel ?? productButtonLabels[productType];
 ---
 
-<article class="produkt-karte">
+<article class="produkt-karte" id={entry.id}>
   {
     cover ? (
       <img class="cover" src={cover} alt={`Cover von ${title}`} />

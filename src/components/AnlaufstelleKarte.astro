@@ -49,7 +49,7 @@ const ortTeile = [street, [postalCode, city].filter(Boolean).join(" "), state &&
 const zeigtWarteinfo = Boolean(waitingList || waitingTime);
 ---
 
-<article class="anlaufstelle-karte">
+<article class="anlaufstelle-karte" id={entry.id}>
   <header>
     <h3>
       {name}

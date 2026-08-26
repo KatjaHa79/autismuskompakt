@@ -1,29 +1,416 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const query = Astro.url.searchParams.get("q") ?? "";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 ---
 
-<BaseLayout title="Suche" description="Suche auf Autismuskompakt.">
+<BaseLayout
+  title="Suche"
+  description="Durchsuche Artikel, Anlaufstellen und Materialien auf Autismuskompakt."
+>
   <div class="container">
-    <article class="prose">
-      <h1>Suche</h1>
-      <p>
-        Die Suchfunktion befindet sich noch im Aufbau. Bevor eine
-        technische Suchlösung eingebunden wird, werden die Optionen dafür
-        vorgestellt und freigegeben.
-      </p>
-      {
-        query && (
-          <p>
-            Deine Sucheingabe war: <strong>{query}</strong>
-          </p>
-        )
-      }
-      <p>
-        Nutze bis dahin gern die <a href="/">Startseite</a> oder die
-        Hauptnavigation, um Themen zu finden.
-      </p>
-    </article>
+    <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Suche" }]} />
   </div>
+
+  <section class="section">
+    <div class="container">
+      <h1>Suche</h1>
+      <p class="lead">Durchsuche Artikel, Anlaufstellen und Materialien auf Autismuskompakt.</p>
+
+      <noscript>
+        <div class="notice">
+          <p>
+            Die Suche benötigt JavaScript, um Ergebnisse anzuzeigen. Die
+            restliche Website funktioniert auch ohne JavaScript weiter –
+            nutze die <a href="/">Startseite</a> oder die Hauptnavigation,
+            um Themen zu finden.
+          </p>
+        </div>
+      </noscript>
+
+      <div class="suche-app" id="suche-app">
+        <form id="suche-form" role="search" autocomplete="off">
+          <label for="suche-eingabe">Was suchst du?</label>
+          <div class="suche-eingabe-row">
+            <input
+              id="suche-eingabe"
+              name="q"
+              type="search"
+              placeholder="z. B. Pflegegrad, Diagnostik, Schule …"
+            />
+            <button type="submit" class="button button--primary">Suchen</button>
+          </div>
+        </form>
+
+        <div class="suche-filter" role="group" aria-label="Nach Inhaltstyp filtern">
+          <button type="button" class="filter-btn" data-filter="alle" aria-pressed="true">Alle</button>
+          <button type="button" class="filter-btn" data-filter="artikel" aria-pressed="false">Artikel</button>
+          <button type="button" class="filter-btn" data-filter="anlaufstelle" aria-pressed="false">
+            Anlaufstellen
+          </button>
+          <button type="button" class="filter-btn" data-filter="material" aria-pressed="false">Materialien</button>
+          <button type="button" class="filter-btn" data-filter="produkt" aria-pressed="false">Produkte</button>
+        </div>
+
+        <p id="suche-status" class="suche-status" role="status">Gib einen Suchbegriff ein.</p>
+
+        <ul id="suche-ergebnisse" class="suche-ergebnisse"></ul>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<script>
+  import { expandQuery, normalizeQuery } from "../lib/search-synonyms";
+
+  interface SearchEntry {
+    id: string;
+    type: "artikel" | "anlaufstelle" | "material" | "produkt";
+    title: string;
+    description: string;
+    url: string;
+    category?: string;
+    targetGroups?: string[];
+    city?: string;
+    state?: string;
+    categories?: string[];
+    ageGroups?: string[];
+    online?: boolean;
+    offer?: string;
+    materialType?: string;
+  }
+
+  const TYP_LABELS: Record<SearchEntry["type"], string> = {
+    artikel: "Artikel",
+    anlaufstelle: "Anlaufstelle",
+    material: "Material",
+    produkt: "Produkt",
+  };
+
+  const MAX_ERGEBNISSE = 40;
+
+  const form = document.getElementById("suche-form") as HTMLFormElement | null;
+  const input = document.getElementById("suche-eingabe") as HTMLInputElement | null;
+  const status = document.getElementById("suche-status");
+  const liste = document.getElementById("suche-ergebnisse");
+  const filterButtons = Array.from(document.querySelectorAll<HTMLButtonElement>(".filter-btn"));
+
+  if (form && input && status && liste) {
+    let index: SearchEntry[] = [];
+    let indexBereit = false;
+    let aktiverFilter = "alle";
+    let debounceTimer: number | undefined;
+
+    function escapeHtml(wert: string): string {
+      return wert
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function tokenSet(text: string): Set<string> {
+      return new Set(normalizeQuery(text).split(" ").filter(Boolean));
+    }
+
+    function scoreEntry(entry: SearchEntry, phraseTerms: string[], wordTerms: string[]): number {
+      const titleNorm = normalizeQuery(entry.title);
+      const descriptionNorm = normalizeQuery(entry.description || "");
+      const categoryNorm = normalizeQuery(entry.category || "");
+      const sonstigesNorm = normalizeQuery(
+        [
+          ...(entry.targetGroups ?? []),
+          ...(entry.categories ?? []),
+          ...(entry.ageGroups ?? []),
+          entry.city,
+          entry.state,
+          entry.offer,
+          entry.materialType,
+        ]
+          .filter(Boolean)
+          .join(" ")
+      );
+
+      let score = 0;
+
+      // Ganze (Teil-)Phrasen: per Teilstring-Suche, für Synonym-Treffer und
+      // die vollständige Nutzereingabe.
+      for (const term of phraseTerms) {
+        if (!term) continue;
+        if (titleNorm === term) score += 100;
+        else if (titleNorm.includes(term)) score += 50;
+        if (descriptionNorm.includes(term)) score += 20;
+        if (categoryNorm.includes(term)) score += 10;
+        if (sonstigesNorm.includes(term)) score += 8;
+      }
+
+      // Einzelwörter: nur als vollständiges Wort werten, damit z. B. "zu"
+      // nicht zufällig in "Zustimmung" anschlägt.
+      if (wordTerms.length > 0) {
+        const titleTokens = tokenSet(entry.title);
+        const descriptionTokens = tokenSet(entry.description || "");
+        const categoryTokens = tokenSet(entry.category || "");
+        const sonstigesTokens = tokenSet(sonstigesNorm);
+
+        for (const term of wordTerms) {
+          if (titleTokens.has(term)) score += 45;
+          if (descriptionTokens.has(term)) score += 18;
+          if (categoryTokens.has(term)) score += 9;
+          if (sonstigesTokens.has(term)) score += 7;
+        }
+      }
+
+      return score;
+    }
+
+    function renderErgebnisse(query: string) {
+      if (!liste || !status) return;
+
+      const trimmed = query.trim();
+      if (!trimmed) {
+        liste.innerHTML = "";
+        status.textContent = "Gib einen Suchbegriff ein.";
+        return;
+      }
+
+      if (!indexBereit) {
+        status.textContent = "Suchindex wird geladen …";
+        return;
+      }
+
+      const { phraseTerms, wordTerms } = expandQuery(trimmed);
+      const gefiltert = index.filter((entry) => aktiverFilter === "alle" || entry.type === aktiverFilter);
+
+      const treffer = gefiltert
+        .map((entry) => ({ entry, score: scoreEntry(entry, phraseTerms, wordTerms) }))
+        .filter((t) => t.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, MAX_ERGEBNISSE);
+
+      liste.innerHTML = treffer
+        .map(({ entry }) => {
+          const zusatz = [entry.category, [entry.city, entry.state].filter(Boolean).join(", ")]
+            .filter(Boolean)
+            .map((teil) => `<span class="suche-treffer__zusatz">${escapeHtml(teil as string)}</span>`)
+            .join("");
+
+          return `<li class="suche-treffer">
+            <a href="${escapeHtml(entry.url)}">
+              <span class="suche-treffer__kopf">
+                <span class="suche-treffer__typ">${TYP_LABELS[entry.type]}</span>
+                <span class="suche-treffer__titel">${escapeHtml(entry.title)}</span>
+              </span>
+              ${zusatz}
+              <span class="suche-treffer__beschreibung">${escapeHtml(entry.description ?? "")}</span>
+            </a>
+          </li>`;
+        })
+        .join("");
+
+      const anzahl = treffer.length;
+      if (anzahl === 0) {
+        status.textContent = "Keine Ergebnisse gefunden.";
+      } else if (anzahl === 1) {
+        status.textContent = `1 Ergebnis für „${trimmed}“`;
+      } else {
+        status.textContent = `${anzahl} Ergebnisse für „${trimmed}“`;
+      }
+    }
+
+    function aktualisiereUrl(query: string) {
+      const url = new URL(window.location.href);
+      if (query.trim()) {
+        url.searchParams.set("q", query);
+      } else {
+        url.searchParams.delete("q");
+      }
+      window.history.replaceState(null, "", url.pathname + url.search);
+    }
+
+    async function ladeIndex() {
+      try {
+        const antwort = await fetch("/search-index.json");
+        if (!antwort.ok) throw new Error("Suchindex nicht erreichbar");
+        index = await antwort.json();
+        indexBereit = true;
+      } catch {
+        index = [];
+        indexBereit = true;
+        if (status) status.textContent = "Suchindex konnte nicht geladen werden.";
+      }
+      if (input && input.value.trim()) renderErgebnisse(input.value);
+    }
+
+    input.addEventListener("input", () => {
+      window.clearTimeout(debounceTimer);
+      const wert = input.value;
+      debounceTimer = window.setTimeout(() => {
+        aktualisiereUrl(wert);
+        renderErgebnisse(wert);
+      }, 150);
+    });
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      window.clearTimeout(debounceTimer);
+      aktualisiereUrl(input.value);
+      renderErgebnisse(input.value);
+    });
+
+    for (const button of filterButtons) {
+      button.addEventListener("click", () => {
+        for (const other of filterButtons) other.setAttribute("aria-pressed", "false");
+        button.setAttribute("aria-pressed", "true");
+        aktiverFilter = button.dataset.filter ?? "alle";
+        renderErgebnisse(input.value);
+      });
+    }
+
+    const anfangswert = new URLSearchParams(window.location.search).get("q") ?? "";
+    if (anfangswert) input.value = anfangswert;
+
+    ladeIndex();
+  }
+</script>
+
+<style>
+  .lead {
+    max-width: var(--measure);
+    font-size: 1.15rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  html.no-js .suche-app {
+    display: none;
+  }
+
+  #suche-form label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .suche-eingabe-row {
+    display: flex;
+    gap: var(--space-xs);
+    max-width: 34rem;
+  }
+
+  .suche-eingabe-row input {
+    flex: 1;
+    min-width: 0;
+    min-height: 44px;
+    padding: var(--space-2xs) var(--space-sm);
+    border: var(--border-width) solid var(--color-text-muted);
+    border-radius: var(--radius);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    font-size: 1rem;
+  }
+
+  .suche-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+    margin-top: var(--space-md);
+  }
+
+  .filter-btn {
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: 999px;
+    padding: var(--space-2xs) var(--space-sm);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text);
+    min-height: 40px;
+    transition:
+      border-color var(--transition-fast),
+      background-color var(--transition-fast);
+  }
+
+  .filter-btn:hover {
+    border-color: var(--color-bronze-soft);
+  }
+
+  .filter-btn[aria-pressed="true"] {
+    background-color: var(--color-petrol);
+    border-color: var(--color-petrol);
+    color: var(--color-white);
+  }
+
+  .suche-status {
+    margin-top: var(--space-md);
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .suche-ergebnisse {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: var(--border-width) solid var(--color-border);
+  }
+
+  .suche-treffer {
+    border-bottom: var(--border-width) solid var(--color-border);
+  }
+
+  .suche-treffer a {
+    display: block;
+    padding-block: var(--space-sm);
+    text-decoration: none;
+    color: inherit;
+    transition: background-color var(--transition-fast);
+  }
+
+  .suche-treffer a:hover,
+  .suche-treffer a:focus-visible {
+    background-color: var(--color-background-alt);
+  }
+
+  .suche-treffer__kopf {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-xs);
+  }
+
+  .suche-treffer__typ {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-bronze-dark);
+    background-color: var(--color-background-alt);
+    border-radius: 999px;
+    padding: 0.15em 0.6em;
+  }
+
+  .suche-treffer__titel {
+    font-weight: 700;
+    color: var(--color-petrol);
+    font-size: 1.1rem;
+  }
+
+  .suche-treffer__zusatz {
+    display: inline-block;
+    margin-right: var(--space-xs);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .suche-treffer__beschreibung {
+    display: block;
+    margin-top: var(--space-2xs);
+    color: var(--color-text-muted);
+    max-width: var(--measure);
+  }
+
+  @media (max-width: 26rem) {
+    .suche-eingabe-row {
+      flex-direction: column;
+    }
+  }
+</style>
