@@ -5,7 +5,10 @@ import PlannedTopics from "../../../components/PlannedTopics.astro";
 
 const themen = [
   { label: "Könnte ich autistisch sein?", href: "/fuer-autistische-menschen/diagnostik/koennte-ich-autistisch-sein/" },
-  "Wann ist eine Diagnostik sinnvoll?",
+  {
+    label: "Wann ist eine Diagnostik sinnvoll?",
+    href: "/fuer-autistische-menschen/diagnostik/koennte-ich-autistisch-sein/",
+  },
   {
     label: "Wie läuft eine Autismusdiagnostik ab?",
     href: "/fuer-autistische-menschen/diagnostik/ablauf-der-diagnostik/",
@@ -14,23 +17,40 @@ const themen = [
     label: "Diagnostik bei Erwachsenen",
     href: "/fuer-autistische-menschen/diagnostik/diagnostik-bei-erwachsenen/",
   },
-  "Diagnostik bei Frauen",
-  "Vorbereitung auf die Diagnostik",
-  "Hilfreiche Unterlagen",
-  "Diagnostikstellen finden",
-  "Was bedeutet das Ergebnis?",
-  "Was passiert nach der Diagnose?",
-  "Differenzialdiagnostik",
-  "ADHS oder Autismus?",
+  { label: "Diagnostik bei Frauen", href: "/fuer-autistische-menschen/diagnostik/diagnostik-bei-frauen/" },
+  {
+    label: "Vorbereitung auf die Diagnostik",
+    href: "/fuer-autistische-menschen/diagnostik/vorbereitung-auf-die-diagnostik/",
+  },
+  {
+    label: "Hilfreiche Unterlagen",
+    href: "/fuer-autistische-menschen/diagnostik/vorbereitung-auf-die-diagnostik/",
+  },
+  { label: "Diagnostikstellen finden", href: "/hilfe-finden/kategorie/diagnostik/" },
+  { label: "Was bedeutet das Ergebnis?", href: "/fuer-autistische-menschen/diagnostik/ergebnis-der-diagnostik/" },
+  {
+    label: "Was passiert nach der Diagnose?",
+    href: "/fuer-autistische-menschen/diagnostik/nach-der-diagnose/",
+  },
+  { label: "Differenzialdiagnostik", href: "/fuer-autistische-menschen/diagnostik/differenzialdiagnostik/" },
+  { label: "ADHS oder Autismus?", href: "/fuer-autistische-menschen/diagnostik/differenzialdiagnostik/" },
   {
     label: "Autismus und ADHS gleichzeitig",
     href: "/fuer-autistische-menschen/besonderheiten/autismus-und-adhs/",
   },
-  "Fehldiagnosen und späte Diagnose",
-  "Diagnostik ohne Kindheitsunterlagen",
+  {
+    label: "Fehldiagnosen und späte Diagnose",
+    href: "/fuer-autistische-menschen/diagnostik/diagnostik-bei-erwachsenen/",
+  },
+  {
+    label: "Diagnostik ohne Kindheitsunterlagen",
+    href: "/fuer-autistische-menschen/diagnostik/diagnostik-bei-erwachsenen/",
+  },
 ];
 
-const screeningtests = ["AQ", "RAADS-R", "CAT-Q"];
+const screeningtests = [
+  { label: "AQ, RAADS-R & CAT-Q: Was sagen sie wirklich?", href: "/fuer-autistische-menschen/diagnostik/screeningtests/" },
+];
 ---
 
 <BaseLayout

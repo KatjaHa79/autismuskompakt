@@ -4,28 +4,61 @@ import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import PlannedTopics from "../../../components/PlannedTopics.astro";
 
 const neurodivergent = [
-  "ADHS",
+  {
+    label: "ADHS",
+    href: "/fuer-autistische-menschen/besonderheiten/autismus-und-adhs/",
+  },
   {
     label: "Autismus + ADHS",
     href: "/fuer-autistische-menschen/besonderheiten/autismus-und-adhs/",
   },
   "Alexithymie",
-  "Dyspraxie",
+  {
+    label: "Dyspraxie",
+    href: "/fuer-autistische-menschen/besonderheiten/motorische-besonderheiten-und-dyspraxie/",
+  },
   "Exekutive Dysfunktion",
   "Interozeption",
-  "Sensorische Besonderheiten",
-  "ARFID / selektives Essen",
+  {
+    label: "Sensorische Besonderheiten",
+    href: "/fuer-autistische-menschen/reizverarbeitung/",
+  },
+  {
+    label: "ARFID / selektives Essen",
+    href: "/fuer-autistische-menschen/besonderheiten/selektives-essen-und-arfid/",
+  },
+  {
+    label: "Sprache und Kommunikation",
+    href: "/fuer-autistische-menschen/besonderheiten/sprache-und-kommunikation/",
+  },
+  {
+    label: "Intellektuelle Entwicklungsstörung",
+    href: "/fuer-autistische-menschen/besonderheiten/intellektuelle-entwicklungsstoerung/",
+  },
 ];
 
 const psychischeBelastungen = [
-  "Angst",
-  "Depression",
-  "Zwangssymptome",
-  "Traumafolgen",
+  { label: "Angst", href: "/fuer-autistische-menschen/besonderheiten/angststoerungen/" },
+  { label: "Depression", href: "/fuer-autistische-menschen/besonderheiten/depression/" },
+  { label: "Zwangssymptome", href: "/fuer-autistische-menschen/besonderheiten/zwangsstoerung/" },
+  { label: "Traumafolgen", href: "/fuer-autistische-menschen/besonderheiten/traumafolgen-und-ptbs/" },
   { label: "Autistischer Burnout", href: "/fuer-autistische-menschen/autistischer-burnout/" },
+  {
+    label: "Selbstverletzendes Verhalten",
+    href: "/fuer-autistische-menschen/besonderheiten/selbstverletzendes-verhalten/",
+  },
+  { label: "Suizidalität (Krisenhilfe)", href: "/fuer-autistische-menschen/besonderheiten/suizidalitaet/" },
 ];
 
-const koerperlicheBegleiterkrankungen = ["Schlafstörungen", "Epilepsie", "Migräne", "Gastrointestinale Beschwerden"];
+const koerperlicheBegleiterkrankungen = [
+  { label: "Schlafstörungen", href: "/fuer-autistische-menschen/besonderheiten/schlafstoerungen/" },
+  { label: "Epilepsie", href: "/fuer-autistische-menschen/besonderheiten/epilepsie/" },
+  { label: "Migräne", href: "/fuer-autistische-menschen/besonderheiten/migraene-und-kopfschmerzen/" },
+  {
+    label: "Gastrointestinale Beschwerden",
+    href: "/fuer-autistische-menschen/besonderheiten/gastrointestinale-beschwerden/",
+  },
+];
 ---
 
 <BaseLayout

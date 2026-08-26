@@ -5,10 +5,11 @@ import PlannedTopics from "../../../components/PlannedTopics.astro";
 
 const reizeUndEnergie = [
   { label: "Reizüberflutung", href: "/fuer-autistische-menschen/alltag/reizmanagement-im-alltag/" },
-  "Reize reduzieren",
-  "Rückzug",
-  "Energie einteilen",
-  "Erholung",
+  { label: "Reize reduzieren", href: "/fuer-autistische-menschen/alltag/reizmanagement-im-alltag/" },
+  { label: "Rückzug", href: "/fuer-autistische-menschen/alltag/reizmanagement-im-alltag/" },
+  { label: "Energie einteilen", href: "/fuer-autistische-menschen/alltag/reizmanagement-im-alltag/" },
+  { label: "Erholung", href: "/fuer-autistische-menschen/alltag/reisen-und-freizeit/" },
+  { label: "Reisen & Freizeit", href: "/fuer-autistische-menschen/alltag/reisen-und-freizeit/" },
   { label: "Overload im Alltag", href: "/fuer-autistische-menschen/overload/" },
   { label: "Meltdown im Alltag", href: "/fuer-autistische-menschen/meltdown/" },
   { label: "Shutdown im Alltag", href: "/fuer-autistische-menschen/shutdown/" },
@@ -16,28 +17,42 @@ const reizeUndEnergie = [
 ];
 
 const kommunikation = [
-  "Bedürfnisse mitteilen",
-  "Grenzen setzen",
-  "Telefonieren",
-  "Schriftliche Kommunikation",
-  "Missverständnisse",
-  "Small Talk",
+  { label: "Bedürfnisse mitteilen", href: "/fuer-autistische-menschen/alltag/kommunikation-im-alltag/" },
+  { label: "Grenzen setzen", href: "/fuer-autistische-menschen/alltag/kommunikation-im-alltag/" },
+  { label: "Telefonieren", href: "/fuer-autistische-menschen/alltag/kommunikation-im-alltag/" },
+  {
+    label: "Schriftliche Kommunikation",
+    href: "/fuer-autistische-menschen/alltag/kommunikation-im-alltag/",
+  },
+  { label: "Missverständnisse", href: "/fuer-autistische-menschen/double-empathy/" },
+  { label: "Small Talk", href: "/fuer-autistische-menschen/alltag/kommunikation-im-alltag/" },
   "Kommunikationshilfen",
 ];
 
 const alltagsorganisation = [
-  "Tagesstruktur",
-  "Veränderungen",
-  "Termine",
-  "Einkaufen",
-  "Haushalt",
-  "Essen",
-  "Schlaf",
+  { label: "Tagesstruktur", href: "/fuer-autistische-menschen/alltag/tagesstruktur-und-uebergaenge/" },
+  { label: "Veränderungen", href: "/fuer-autistische-menschen/alltag/tagesstruktur-und-uebergaenge/" },
+  { label: "Übergänge", href: "/fuer-autistische-menschen/alltag/tagesstruktur-und-uebergaenge/" },
+  { label: "Einkaufen", href: "/fuer-autistische-menschen/alltag/einkaufen-haushalt-und-essen/" },
+  { label: "Haushalt", href: "/fuer-autistische-menschen/alltag/einkaufen-haushalt-und-essen/" },
+  { label: "Essen", href: "/fuer-autistische-menschen/alltag/einkaufen-haushalt-und-essen/" },
+  { label: "Schlaf", href: "/fuer-autistische-menschen/alltag/schlaf-im-alltag/" },
   { label: "Arzttermine", href: "/fuer-autistische-menschen/alltag/arzttermine/" },
-  "Behördenkontakte",
+  { label: "Behördenkontakte", href: "/fuer-autistische-menschen/alltag/behoerdenkontakte/" },
 ];
 
-const beziehungen = ["Partnerschaft", "Freundschaften", "Familie", "Konflikte", "Nähe & Rückzug", "Dating", "Grenzen & Zustimmung"];
+const beziehungen = [
+  { label: "Partnerschaft", href: "/fuer-autistische-menschen/alltag/partnerschaft-und-freundschaften/" },
+  { label: "Freundschaften", href: "/fuer-autistische-menschen/alltag/partnerschaft-und-freundschaften/" },
+  { label: "Familie", href: "/fuer-autistische-menschen/alltag/familie-und-konflikte/" },
+  { label: "Konflikte", href: "/fuer-autistische-menschen/alltag/familie-und-konflikte/" },
+  { label: "Nähe & Rückzug", href: "/fuer-autistische-menschen/alltag/naehe-rueckzug-und-alleinzeit/" },
+  "Dating",
+  {
+    label: "Grenzen & Zustimmung",
+    href: "/fuer-autistische-menschen/alltag/sexualitaet-grenzen-und-zustimmung/",
+  },
+];
 
 const arbeitAusbildungStudium = [
   { label: "Arbeitsplatz gestalten", href: "/fuer-autistische-menschen/alltag/arbeit/" },
@@ -52,7 +67,12 @@ const arbeitAusbildungStudium = [
   "Jobwechsel",
 ];
 
-const wohnenUndSelbststaendigkeit = ["Allein wohnen", "Assistenz", "Unterstützungsbedarf", "Wohnformen"];
+const wohnenUndSelbststaendigkeit = [
+  { label: "Allein wohnen", href: "/fuer-autistische-menschen/alltag/wohnen-und-assistenz/" },
+  { label: "Assistenz", href: "/fuer-autistische-menschen/alltag/wohnen-und-assistenz/" },
+  { label: "Unterstützungsbedarf", href: "/fuer-autistische-menschen/alltag/wohnen-und-assistenz/" },
+  { label: "Wohnformen", href: "/fuer-autistische-menschen/alltag/wohnen-und-assistenz/" },
+];
 ---
 
 <BaseLayout
