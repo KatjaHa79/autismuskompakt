@@ -8,8 +8,9 @@ targetGroups: ["autistische-menschen", "angehoerige", "fachkraefte"]
 Dieser Beitrag soll künftig verständlich beschreiben, was mit Meltdown
 gemeint ist.
 
-TODO_KATJA_CONTENT: Ausführlicher, fachlich geprüfter Inhalt fehlt noch
-und wird in einer späteren Etappe ergänzt.
+<!-- TODO_KATJA_CONTENT: Ausführlicher, fachlich geprüfter Inhalt fehlt noch
+und wird in einer späteren Etappe ergänzt. -->
+
 
 Dieser Beitrag ist ein vorbereiteter Platzhalter zur Demonstration des
 Content-Systems.

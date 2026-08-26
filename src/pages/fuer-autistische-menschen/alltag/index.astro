@@ -56,15 +56,18 @@ const beziehungen = [
 
 const arbeitAusbildungStudium = [
   { label: "Arbeitsplatz gestalten", href: "/fuer-autistische-menschen/alltag/arbeit/" },
-  "Reize am Arbeitsplatz",
-  "Kommunikation mit Vorgesetzten",
-  "Offenlegung der Diagnose",
-  "Homeoffice",
-  "Nachteilsausgleich",
-  "Studium",
-  "Ausbildung",
-  "Bewerbung",
-  "Jobwechsel",
+  { label: "Reize am Arbeitsplatz", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+  { label: "Kommunikation mit Vorgesetzten", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+  { label: "Offenlegung der Diagnose", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+  { label: "Homeoffice", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+  {
+    label: "Nachteilsausgleich",
+    href: "/fuer-autistische-menschen/alltag/ausbildung-und-studium/",
+  },
+  { label: "Studium", href: "/fuer-autistische-menschen/alltag/ausbildung-und-studium/" },
+  { label: "Ausbildung", href: "/fuer-autistische-menschen/alltag/ausbildung-und-studium/" },
+  { label: "Bewerbung", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+  { label: "Jobwechsel", href: "/fuer-autistische-menschen/alltag/arbeit/" },
 ];
 
 const wohnenUndSelbststaendigkeit = [
@@ -72,6 +75,29 @@ const wohnenUndSelbststaendigkeit = [
   { label: "Assistenz", href: "/fuer-autistische-menschen/alltag/wohnen-und-assistenz/" },
   { label: "Unterstützungsbedarf", href: "/fuer-autistische-menschen/alltag/wohnen-und-assistenz/" },
   { label: "Wohnformen", href: "/fuer-autistische-menschen/alltag/wohnen-und-assistenz/" },
+];
+
+const gesundheitUndTherapie = [
+  {
+    label: "Schmerzen & körperliche Symptome",
+    href: "/fuer-autistische-menschen/alltag/schmerzen-und-koerperliche-symptome/",
+  },
+  {
+    label: "Krankenhaus, Notaufnahme & Zahnarzt",
+    href: "/fuer-autistische-menschen/alltag/krankenhaus-notaufnahme-und-zahnarzt/",
+  },
+  {
+    label: "Psychotherapie & Medikamente",
+    href: "/fuer-autistische-menschen/alltag/psychotherapie-und-medikamente/",
+  },
+  {
+    label: "Ergotherapie, Logopädie & AAC",
+    href: "/fuer-autistische-menschen/alltag/ergotherapie-logopaedie-und-aac/",
+  },
+  {
+    label: "Therapieangebote kritisch prüfen",
+    href: "/fuer-autistische-menschen/alltag/therapieangebote-kritisch-pruefen/",
+  },
 ];
 ---
 
@@ -115,6 +141,9 @@ const wohnenUndSelbststaendigkeit = [
 
       <h2>Wohnen & Selbstständigkeit</h2>
       <PlannedTopics topics={wohnenUndSelbststaendigkeit} />
+
+      <h2>Gesundheit & Therapie</h2>
+      <PlannedTopics topics={gesundheitUndTherapie} />
 
       <div class="notice">
         <p>

@@ -53,6 +53,53 @@ const hatVorOrt = alle.some((a) => a.data.onsite);
         </p>
       </div>
 
+      <div class="notice">
+        <p>
+          <strong>Akute Hilfe:</strong> Bei unmittelbarer Lebensgefahr wähle
+          <strong>112</strong> oder gehe in die nächste Notaufnahme. Die
+          TelefonSeelsorge ist kostenlos und rund um die Uhr erreichbar unter
+          <strong>0800 1110111</strong>, <strong>0800 1110222</strong> oder
+          <strong>116 123</strong> – auch per Chat und Mail über{" "}
+          <a href="https://www.telefonseelsorge.de/">telefonseelsorge.de</a>.
+          Die 116117 ist für dringende, nicht lebensbedrohliche Beschwerden
+          außerhalb regulärer Sprechzeiten gedacht.
+        </p>
+      </div>
+
+      <div class="orientierung">
+        <h2>Du musst nicht wissen, wie dein Problem fachlich heißt</h2>
+        <p class="lead-small">
+          Du startest bei deiner aktuellen Situation – nicht bei einem
+          Fachbegriff. Wähle unten den Satz, der am besten passt.
+        </p>
+        <ul class="orientierung-liste">
+          <li>
+            <a href="/fuer-autistische-menschen/diagnostik/koennte-ich-autistisch-sein/">
+              Ich vermute, dass ich autistisch bin.
+            </a>
+          </li>
+          <li>
+            <a href="/fuer-autistische-menschen/diagnostik/nach-der-diagnose/">
+              Ich habe gerade meine Diagnose bekommen.
+            </a>
+          </li>
+          <li>
+            <a href="/fuer-autistische-menschen/alltag/reizmanagement-im-alltag/">
+              Ich komme im Alltag nicht mehr zurecht.
+            </a>
+          </li>
+          <li>
+            <a href="/fuer-autistische-menschen/rechte-und-antraege/">Ich brauche Hilfe mit Behörden oder Anträgen.</a>
+          </li>
+          <li>
+            <a href="/hilfe-finden/kategorie/diagnostik/">Ich suche eine Diagnostikstelle.</a>
+          </li>
+          <li>
+            <a href="/hilfe-finden/kategorie/beratung/">Ich suche Unterstützung oder Beratung.</a>
+          </li>
+        </ul>
+      </div>
+
       <div class="filter-panel">
         <h2>Nach Kriterien filtern</h2>
         <div class="filter-groups">
@@ -145,6 +192,31 @@ const hatVorOrt = alle.some((a) => a.data.onsite);
 
   .notice {
     margin-top: var(--space-md);
+  }
+
+  .orientierung {
+    margin-top: var(--space-lg);
+  }
+
+  .lead-small {
+    max-width: var(--measure);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+  }
+
+  .orientierung-liste {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .orientierung-liste a {
+    display: block;
+    padding: var(--space-xs) var(--space-sm);
+    background-color: var(--color-surface);
+    border-radius: var(--radius);
+    border: var(--border-width) solid var(--color-background-alt);
   }
 
   .anlaufstellen-grid {

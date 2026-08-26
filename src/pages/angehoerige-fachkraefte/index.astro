@@ -4,31 +4,43 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import PlannedTopics from "../../components/PlannedTopics.astro";
 
 const angehoerigeThemen = [
-  "Autismus verstehen",
-  "Kommunikation verstehen",
-  "Reizverarbeitung",
-  "Verhalten einordnen",
-  "Unterstützung im Alltag",
-  "Diagnose eines Kindes",
-  "Schule und Kita",
-  "Nachteilsausgleiche",
-  "Hilfen beantragen",
-  "Übergang ins Erwachsenenalter",
-  "Beziehungen",
-  "Unterstützung ohne Bevormundung",
+  { label: "Autismus verstehen", href: "/fuer-autistische-menschen/was-ist-autismus/" },
+  { label: "Kommunikation verstehen", href: "/fuer-autistische-menschen/kommunikation/" },
+  { label: "Reizverarbeitung", href: "/fuer-autistische-menschen/reizverarbeitung/" },
+  { label: "Verhalten einordnen", href: "/angehoerige-fachkraefte/autistisches-kind-begleiten/" },
+  { label: "Unterstützung im Alltag", href: "/angehoerige-fachkraefte/unterstuetzung-ohne-bevormundung/" },
+  { label: "Diagnose eines Kindes", href: "/angehoerige-fachkraefte/eltern-nach-der-diagnose/" },
+  { label: "Schule und Kita", href: "/angehoerige-fachkraefte/schule-und-bildung/" },
+  {
+    label: "Nachteilsausgleiche",
+    href: "/angehoerige-fachkraefte/nachteilsausgleich-und-schulbegleitung/",
+  },
+  { label: "Hilfen beantragen", href: "/fuer-autistische-menschen/rechte-und-antraege/" },
+  {
+    label: "Übergang ins Erwachsenenalter",
+    href: "/angehoerige-fachkraefte/uebergang-ins-erwachsenenalter/",
+  },
+  { label: "Beziehungen", href: "/angehoerige-fachkraefte/partnerschaft-und-spaete-diagnose/" },
+  {
+    label: "Unterstützung ohne Bevormundung",
+    href: "/angehoerige-fachkraefte/unterstuetzung-ohne-bevormundung/",
+  },
 ];
 
 const fachkraefteThemen = [
-  "Autismusfreundliche Kommunikation",
-  "Arzttermine gestalten",
-  "Beratung",
-  "Therapie",
-  "Schule",
-  "Pädagogik",
-  "Arbeitsplatz",
-  "Barrieren erkennen",
-  "Sensorische Bedürfnisse berücksichtigen",
-  "Materialien für die Praxis",
+  { label: "Autismusfreundliche Kommunikation", href: "/fuer-autistische-menschen/kommunikation/" },
+  { label: "Arzttermine gestalten", href: "/fuer-autistische-menschen/alltag/arzttermine/" },
+  { label: "Beratung", href: "/hilfe-finden/kategorie/beratung/" },
+  { label: "Therapie", href: "/hilfe-finden/kategorie/therapie/" },
+  { label: "Schule", href: "/angehoerige-fachkraefte/schule-und-bildung/" },
+  { label: "Pädagogik", href: "/angehoerige-fachkraefte/schule-und-bildung/" },
+  { label: "Arbeitsplatz", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+  { label: "Barrieren erkennen", href: "/fuer-autistische-menschen/reizverarbeitung/" },
+  {
+    label: "Sensorische Bedürfnisse berücksichtigen",
+    href: "/fuer-autistische-menschen/reizverarbeitung/",
+  },
+  { label: "Materialien für die Praxis", href: "/materialien/" },
 ];
 ---
 
