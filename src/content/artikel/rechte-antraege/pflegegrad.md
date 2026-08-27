@@ -59,4 +59,4 @@ Bei vielen sozialrechtlichen Bescheiden beträgt die Widerspruchsfrist grundsät
 
 ## Hilfe / Anlaufstellen
 
-Unabhängige Beratung zu Pflege und Teilhabe bietet die [Ergänzende unabhängige Teilhabeberatung (EUTB)](https://www.teilhabeberatung.de/). Passende Anlaufstellen in deiner Nähe findest du auch über [Hilfe finden](/hilfe-finden/kategorie/sozialrecht/).
+Unabhängige Beratung zu Pflege und Teilhabe bietet die [Ergänzende unabhängige Teilhabeberatung (EUTB)](https://www.teilhabeberatung.de/). Passende Anlaufstellen in deiner Nähe findest du auch über [Hilfe finden](/hilfe-finden/).

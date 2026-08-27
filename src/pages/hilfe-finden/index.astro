@@ -4,7 +4,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import AnlaufstelleKarte from "../../components/AnlaufstelleKarte.astro";
 import {
-  anlaufstelleCategoryLabels,
   ageGroupLabels,
   bundeslandLabels,
   targetGroupLabels,
@@ -12,19 +11,14 @@ import {
 import {
   getAlleAnlaufstellen,
   getBundeslaenderMitEintraegen,
-  getKategorienMitEintraegen,
   getZielgruppenMitEintraegen,
   getAltersgruppenMitEintraegen,
 } from "../../lib/anlaufstellen";
 
 const alle = await getAlleAnlaufstellen();
 const bundeslaender = await getBundeslaenderMitEintraegen();
-const kategorien = await getKategorienMitEintraegen();
 const zielgruppen = await getZielgruppenMitEintraegen();
 const altersgruppen = await getAltersgruppenMitEintraegen();
-
-const hatOnline = alle.some((a) => a.data.online);
-const hatVorOrt = alle.some((a) => a.data.onsite);
 
 // Passende Downloads je Situation (Master-Projektauftrag, Abschnitt P).
 // Ergänzt die Anlaufstellen-Datenbank um konkrete Arbeitsblätter, ersetzt
@@ -193,19 +187,6 @@ const passendeDownloads = passendeDownloadsProSituation.map((eintrag) => ({
           </div>
 
           <div class="filter-group">
-            <h3>Kategorie</h3>
-            <ul class="filter-list">
-              {
-                [...kategorien].map((kategorie) => (
-                  <li>
-                    <a href={`/hilfe-finden/kategorie/${kategorie}/`}>{anlaufstelleCategoryLabels[kategorie]}</a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-
-          <div class="filter-group">
             <h3>Zielgruppe</h3>
             <ul class="filter-list">
               {
@@ -228,14 +209,6 @@ const passendeDownloads = passendeDownloadsProSituation.map((eintrag) => ({
                   </li>
                 ))
               }
-            </ul>
-          </div>
-
-          <div class="filter-group">
-            <h3>Angebotsform</h3>
-            <ul class="filter-list">
-              {hatOnline && <li><a href="/hilfe-finden/online/">Online</a></li>}
-              {hatVorOrt && <li><a href="/hilfe-finden/vor-ort/">Vor Ort</a></li>}
             </ul>
           </div>
         </div>
