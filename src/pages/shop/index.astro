@@ -16,12 +16,12 @@ const merchandise = sortiert.filter((p) => p.data.productType === "merchandise")
   title="Shop"
   description="Bücher, digitale Produkte und Merchandise rund um Autismuskompakt. Verkauf findet ausschließlich über externe Verkaufsstellen statt."
 >
-  <div class="container">
+  <div class="container container--wide">
     <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Shop" }]} />
   </div>
 
   <section class="section">
-    <div class="container">
+    <div class="container container--wide">
       <h1>Shop</h1>
       <p class="lead">
         Hier findest du Bücher und künftig weitere Materialien rund um
@@ -39,7 +39,7 @@ const merchandise = sortiert.filter((p) => p.data.productType === "merchandise")
   </section>
 
   <section id="buecher" class="section section--alt">
-    <div class="container">
+    <div class="container container--wide">
       <h2>Bücher</h2>
       <ul class="card-grid card-grid--buecher">
         {
@@ -54,7 +54,7 @@ const merchandise = sortiert.filter((p) => p.data.productType === "merchandise")
   </section>
 
   <section id="digitale-produkte" class="section">
-    <div class="container">
+    <div class="container container--wide">
       <h2>Digitale Produkte</h2>
       <p class="lead-small">
         Zum Beispiel Workbooks, umfangreichere PDF-Pakete, Planer oder
@@ -81,7 +81,7 @@ const merchandise = sortiert.filter((p) => p.data.productType === "merchandise")
   </section>
 
   <section id="merchandise" class="section section--alt">
-    <div class="container">
+    <div class="container container--wide">
       <h2>Merchandise</h2>
       {
         merchandise.length > 0 ? (
@@ -110,8 +110,8 @@ const merchandise = sortiert.filter((p) => p.data.productType === "merchandise")
 
 <style>
   .lead {
-    max-width: var(--measure);
-    font-size: 1.0625rem; /* ca. 17-18px */
+    max-width: 60rem;
+    font-size: 1rem; /* ca. 15.5-16px */
   }
 
   .lead-small {

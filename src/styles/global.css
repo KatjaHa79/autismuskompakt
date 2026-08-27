@@ -60,7 +60,7 @@
 
   /* Typografie */
   --font-body: "Work Sans", "Segoe UI", system-ui, sans-serif;
-  --font-size-base: clamp(0.9375rem, 0.92rem + 0.1vw, 1rem); /* 15–16px */
+  --font-size-base: clamp(0.90625rem, 0.89rem + 0.1vw, 0.96875rem); /* 14,5–15,5px */
   --line-height-base: 1.6;
   --measure: 70ch; /* maximale Textzeilenlänge, entspricht --content-width */
   --narrow-width: 60ch;
@@ -76,7 +76,13 @@
 
   /* Struktur */
   --radius: 0.75rem;
-  --site-width: 80rem; /* ca. 1280px – zentraler Breiten-Token für den Seitencontainer */
+  /* Width-Systematik (siehe Nutzungsregeln):
+     - wide:    Header, Hero, Hub-/Startseiten (breite Desktopfläche)
+     - site:    normale Übersichten/Unterseiten (Standardcontainer)
+     - content: entspricht --measure, lange Fachartikel-Prosa
+     - narrow:  kleine Hinweise/Kästen */
+  --site-width-wide: 88rem; /* ca. 1408px – Header, Hero, Hub-/Startseiten */
+  --site-width: 80rem; /* ca. 1280px – zentraler Breiten-Token für normale Übersichten */
   --container-width: var(--site-width);
   --border-width: 1px;
   --focus-width: 3px;
@@ -164,18 +170,18 @@ h4 {
 }
 
 h1 {
-  /* ca. 27–30px mobil, 32–36px Desktop */
-  font-size: clamp(1.6875rem, 1.6rem + 1.3vw, 2.125rem);
+  /* ca. 26px mobil, 30–34px Desktop */
+  font-size: clamp(1.625rem, 1.56rem + 1.1vw, 2.0625rem);
 }
 
 h2 {
-  /* ca. 22–24px mobil, 24–27px Desktop */
-  font-size: clamp(1.375rem, 1.32rem + 0.7vw, 1.6875rem);
+  /* ca. 22–25px */
+  font-size: clamp(1.375rem, 1.34rem + 0.5vw, 1.5625rem);
 }
 
 h3 {
-  /* ca. 19–21px */
-  font-size: clamp(1.1875rem, 1.16rem + 0.2vw, 1.3125rem);
+  /* ca. 18–20px */
+  font-size: clamp(1.125rem, 1.11rem + 0.15vw, 1.25rem);
 }
 
 a {
@@ -213,6 +219,14 @@ summary:focus-visible,
   max-width: var(--container-width);
   margin-inline: auto;
   padding-inline: var(--space-md);
+}
+
+/* Breitere Variante für Header, Hero und Hub-/Startseiten – nutzt dieselbe
+   Innenabstands-Regel wie .container, nur mit größerem max-width. Muss auf
+   demselben Element zusätzlich zu .container stehen (class="container
+   container--wide"); die Kaskadenreihenfolge in dieser Datei entscheidet. */
+.container--wide {
+  max-width: var(--site-width-wide);
 }
 
 .visually-hidden {

@@ -109,12 +109,12 @@ const uebrige = alle.filter((entry) => !zugeordneteIds.has(entry.id));
   title="Materialien & Downloads"
   description="Kostenlose Arbeitsblätter, Checklisten, Vorlagen und Orientierungshilfen zum Thema Autismus – für autistische Menschen, Angehörige und Fachkräfte."
 >
-  <div class="container">
+  <div class="container container--wide">
     <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Materialien & Downloads" }]} />
   </div>
 
   <section class="section">
-    <div class="container">
+    <div class="container container--wide">
       <h1>Materialien & Downloads</h1>
       <p class="lead">
         Hier stehen <strong>kostenlose</strong> Arbeitsblätter, Checklisten,
@@ -127,7 +127,7 @@ const uebrige = alle.filter((entry) => !zugeordneteIds.has(entry.id));
   </section>
 
   <section id="leitfaden" class="section section--alt">
-    <div class="container">
+    <div class="container container--wide">
       <h2>Kostenloser Leitfaden</h2>
       <p class="lead-small">
         Zusätzlich zu den einzelnen Materialien gibt es ein umfangreicheres
@@ -141,7 +141,7 @@ const uebrige = alle.filter((entry) => !zugeordneteIds.has(entry.id));
   </section>
 
   <section class="section">
-    <div class="container">
+    <div class="container container--wide">
       <div class="filter-panel">
         <h2>Nach Kriterien filtern</h2>
         <div class="filter-groups">
@@ -178,7 +178,7 @@ const uebrige = alle.filter((entry) => !zugeordneteIds.has(entry.id));
   {
     gruppen.map((gruppe, index) => (
       <section class={`section ${index % 2 === 1 ? "section--alt" : ""}`} aria-labelledby={`gruppe-${index}`}>
-        <div class="container">
+        <div class="container container--wide">
           <h2 id={`gruppe-${index}`}>{gruppe.titel}</h2>
           <ul class="material-grid">
             {gruppe.entries.map((entry) => (
@@ -195,7 +195,7 @@ const uebrige = alle.filter((entry) => !zugeordneteIds.has(entry.id));
   {
     uebrige.length > 0 && (
       <section class="section" aria-labelledby="weitere-heading">
-        <div class="container">
+        <div class="container container--wide">
           <h2 id="weitere-heading">Weitere Materialien</h2>
           <ul class="material-grid">
             {uebrige.map((entry) => (
@@ -212,8 +212,8 @@ const uebrige = alle.filter((entry) => !zugeordneteIds.has(entry.id));
 
 <style>
   .lead {
-    max-width: var(--measure);
-    font-size: 1.0625rem; /* ca. 17-18px */
+    max-width: 60rem;
+    font-size: 1rem; /* ca. 15.5-16px */
   }
 
   .lead-small {

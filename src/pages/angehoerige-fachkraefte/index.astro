@@ -181,12 +181,12 @@ const fachkraefteGruppen = [
   title="Für Angehörige & Fachkräfte"
   description="Informationen für Angehörige und Fachkräfte zum Thema Autismus – verständlich, praxisnah und aufeinander abgestimmt."
 >
-  <div class="container">
+  <div class="container container--wide">
     <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Für Angehörige & Fachkräfte" }]} />
   </div>
 
   <section class="section">
-    <div class="container">
+    <div class="container container--wide">
       <h1>Für Angehörige & Fachkräfte</h1>
       <p class="lead">
         Ob Familie, Partner:in, Freund:in oder Fachkraft aus Medizin,
@@ -199,7 +199,7 @@ const fachkraefteGruppen = [
   </section>
 
   <section id="angehoerige" class="section section--alt">
-    <div class="container">
+    <div class="container container--wide">
       <h2>Ich bin Angehörige:r</h2>
       <p class="lead-small">Zum Beispiel Eltern, Partner:innen, Familie oder Freund:innen.</p>
       {
@@ -223,7 +223,7 @@ const fachkraefteGruppen = [
   </section>
 
   <section id="fachkraefte" class="section">
-    <div class="container">
+    <div class="container container--wide">
       <h2>Ich bin Fachkraft</h2>
       <p class="lead-small">
         Zum Beispiel aus Medizin, Therapie, Pädagogik, Schule, Beratung,
@@ -252,8 +252,8 @@ const fachkraefteGruppen = [
 
 <style>
   .lead {
-    max-width: var(--measure);
-    font-size: 1.0625rem; /* ca. 17-18px */
+    max-width: 60rem;
+    font-size: 1rem; /* ca. 15.5-16px */
   }
 
   .lead-small {

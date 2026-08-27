@@ -74,25 +74,30 @@ const zielgruppen = [
   description="Verständliche Informationen rund um Autismus: Diagnostik, Alltag, Rechte, Anlaufstellen, Begleiterkrankungen, kostenlose Materialien und praktische Hilfen."
 >
   <section class="hero">
-    <div class="container">
-      <div class="hero__content">
-        <h1>Autismus verstehen. Unterstützung finden. Den eigenen Weg gehen.</h1>
-        <p class="hero__lead">
-          Autismuskompakt bietet verständliche und fundierte Informationen rund
-          um Autismus – für autistische Menschen, Angehörige und Fachkräfte.
-          Hier findest du Orientierung, praktische Hilfen, Anlaufstellen und
-          Materialien für unterschiedliche Lebenssituationen.
-        </p>
-        <div class="hero__actions">
-          <a class="button button--primary" href="/fuer-autistische-menschen/">Themen entdecken</a>
-          <a class="button button--secondary" href="/hilfe-finden/">Anlaufstellen finden</a>
+    <div class="container container--wide">
+      <div class="hero__grid">
+        <div class="hero__content">
+          <h1>Autismus verstehen. Unterstützung finden. Den eigenen Weg gehen.</h1>
+          <p class="hero__lead">
+            Autismuskompakt bietet verständliche und fundierte Informationen rund
+            um Autismus – für autistische Menschen, Angehörige und Fachkräfte.
+            Hier findest du Orientierung, praktische Hilfen, Anlaufstellen und
+            Materialien für unterschiedliche Lebenssituationen.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="/fuer-autistische-menschen/">Themen entdecken</a>
+            <a class="button button--secondary" href="/hilfe-finden/">Anlaufstellen finden</a>
+          </div>
+        </div>
+        <div class="hero__accent" aria-hidden="true">
+          <div class="hero__accent-panel"></div>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section" aria-labelledby="themen-heading">
-    <div class="container">
+    <div class="container container--wide">
       <h2 id="themen-heading">Themen im Überblick</h2>
       <div class="themen-kacheln">
         {
@@ -110,7 +115,7 @@ const zielgruppen = [
   </section>
 
   <section class="section section--alt" aria-labelledby="zielgruppen-heading">
-    <div class="container">
+    <div class="container container--wide">
       <h2 id="zielgruppen-heading">Für wen suchst du Informationen?</h2>
       <div class="themen-kacheln">
         {
@@ -134,19 +139,26 @@ const zielgruppen = [
     border-bottom: var(--border-width) solid var(--color-bronze-soft);
   }
 
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
   .hero__content {
-    max-width: 56rem;
+    max-width: none;
   }
 
   .hero h1 {
-    max-width: 22ch;
+    max-width: 28ch;
     line-height: 1.2;
   }
 
   .hero__lead {
     margin-top: var(--space-sm);
-    max-width: 60ch;
-    font-size: 1.0625rem; /* ca. 17px */
+    max-width: 62ch;
+    font-size: 1rem; /* ca. 15,5-16px */
   }
 
   .hero__actions {
@@ -156,9 +168,46 @@ const zielgruppen = [
     margin-top: var(--space-md);
   }
 
+  /* Ruhige, rein dekorative Fläche neben dem Hero-Text – bewusst
+     abstrakt (kein Icon, keine Illustration), nur Farbe/Rahmen als
+     Akzent. Auf schmalen Bildschirmen ausgeblendet, damit der Text
+     nicht künstlich verdrängt wird. */
+  .hero__accent {
+    display: none;
+  }
+
+  @media (min-width: 64rem) {
+    .hero__grid {
+      grid-template-columns: 1.4fr 1fr;
+      gap: var(--space-xl);
+    }
+
+    .hero__accent {
+      display: block;
+      align-self: stretch;
+    }
+
+    .hero__accent-panel {
+      height: 100%;
+      min-height: 18rem;
+      position: relative;
+      border-radius: var(--radius);
+      background-color: var(--color-background-alt);
+      border: var(--border-width) solid var(--color-border);
+    }
+
+    .hero__accent-panel::before {
+      content: "";
+      position: absolute;
+      inset: var(--space-lg);
+      border: 2px solid var(--color-bronze-soft);
+      border-radius: calc(var(--radius) - 0.25rem);
+    }
+  }
+
   .themen-kacheln {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     gap: var(--space-sm);
   }
 </style>

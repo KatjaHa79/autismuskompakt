@@ -68,7 +68,7 @@ const weitereThemenGeplant = ["Unterstützung in der Schule", "Mobilität"];
   title="Rechte & Anträge"
   description="Überblick über Sozialleistungen und Anträge, die für autistische Menschen relevant sein können: GdB, Pflegegrad, Eingliederungshilfe und mehr."
 >
-  <div class="container">
+  <div class="container container--wide">
     <Breadcrumbs
       items={[
         { label: "Start", href: "/" },
@@ -79,7 +79,7 @@ const weitereThemenGeplant = ["Unterstützung in der Schule", "Mobilität"];
   </div>
 
   <section class="section">
-    <div class="container">
+    <div class="container container--wide">
       <h1>Rechte & Anträge</h1>
       <p class="lead">
         Grundfrage dieses Bereichs: Was kann ich wo beantragen? Hier
@@ -120,8 +120,8 @@ const weitereThemenGeplant = ["Unterstützung in der Schule", "Mobilität"];
 
 <style>
   .lead {
-    max-width: var(--measure);
-    font-size: 1.0625rem; /* ca. 17-18px */
+    max-width: 60rem;
+    font-size: 1rem; /* ca. 15.5-16px */
     margin-bottom: var(--space-lg);
   }
 
