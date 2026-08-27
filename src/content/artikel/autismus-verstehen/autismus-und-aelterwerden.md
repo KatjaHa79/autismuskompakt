@@ -6,6 +6,7 @@ targetGroups: ["autistische-menschen", "angehoerige", "fachkraefte"]
 updated: 2026-08-27
 sources:
   - title: "Roestorf, A. et al. (2019): Older adults with ASD: The consequences of aging. Insights from a series of special interest group meetings held at the International Society for Autism Research 2016–2017. Research in Autism Spectrum Disorders, 63, 3–12"
+    url: "https://doi.org/10.1016/j.rasd.2018.08.007"
 ---
 
 Verwandte Themen: [Autismus im Erwachsenenalter](/fuer-autistische-menschen/autismus-im-erwachsenenalter/) und [Autistischer Burnout](/fuer-autistische-menschen/autistischer-burnout/).
