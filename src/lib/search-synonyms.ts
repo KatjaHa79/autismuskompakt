@@ -43,6 +43,16 @@ export const SEARCH_SYNONYMS: Array<{ pattern: string; keywords: string[] }> = [
   { pattern: "wohnen", keywords: ["wohnen und assistenz"] },
   { pattern: "verstecktes verhalten", keywords: ["masking"] },
   { pattern: "camouflaging", keywords: ["masking"] },
+  { pattern: "frauen autismus", keywords: ["diagnostik bei frauen"] },
+  { pattern: "autismus frauen", keywords: ["diagnostik bei frauen"] },
+  { pattern: "mädchen autismus", keywords: ["diagnostik bei frauen"] },
+  { pattern: "maedchen autismus", keywords: ["diagnostik bei frauen"] },
+  { pattern: "autismus mädchen", keywords: ["diagnostik bei frauen"] },
+  { pattern: "autismus maedchen", keywords: ["diagnostik bei frauen"] },
+  { pattern: "weiblicher autismus", keywords: ["diagnostik bei frauen"] },
+  { pattern: "spät erkannt frau", keywords: ["diagnostik bei frauen", "spätdiagnose"] },
+  { pattern: "spaet erkannt frau", keywords: ["diagnostik bei frauen", "spätdiagnose"] },
+  { pattern: "masking frauen", keywords: ["diagnostik bei frauen", "masking"] },
 
   // Ergänzungen für die Download- und Materialien-Etappe (Alltagssprache).
   { pattern: "glaube ich bin autistisch", keywords: ["autismusverdacht", "könnte ich autistisch sein", "orientierungscheck"] },

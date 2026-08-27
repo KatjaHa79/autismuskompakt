@@ -9,6 +9,8 @@ sources:
     url: "https://iris.who.int/bitstream/handle/10665/375767/9789240077263-eng.pdf"
   - title: "Jaswal, V. K. & Akhtar, N. (2019): Being versus appearing socially uninterested: Challenging assumptions about social motivation in autism. Behavioral and Brain Sciences, 42, e82"
     url: "https://doi.org/10.1017/S0140525X18001826"
+  - title: "Taylor, L. E., Swerdfeger, A. L. & Eslick, G. D. (2014): Vaccines are not associated with autism: An evidence-based meta-analysis of case-control and cohort studies. Vaccine, 32(29), 3623–3629"
+    url: "https://doi.org/10.1016/j.vaccine.2014.04.085"
 ---
 
 Verwandte Themen: [Sprache & Begriffe](/fuer-autistische-menschen/sprache-und-begriffe/) und [Was ist Autismus?](/fuer-autistische-menschen/was-ist-autismus/)
@@ -27,7 +29,7 @@ Verwandte Themen: [Sprache & Begriffe](/fuer-autistische-menschen/sprache-und-be
 
 **"Autistische Menschen haben kein Einfühlungsvermögen."** Das Double-Empathy-Modell stellt diese Annahme infrage: Verständigungsprobleme zwischen autistischen und nicht-autistischen Menschen entstehen häufig auf beiden Seiten, nicht nur bei einer. Mehr dazu: [Soziale Situationen & Double Empathy](/fuer-autistische-menschen/double-empathy/).
 
-**"Autismus wird durch Impfungen verursacht."** Diese Annahme gilt als wissenschaftlich widerlegt und wird von großen Gesundheitsorganisationen ausdrücklich zurückgewiesen. Die genauen Ursachen von Autismus sind komplex und noch nicht vollständig erforscht; ein Zusammenhang mit Impfungen gehört nicht dazu.
+**"Autismus wird durch Impfungen verursacht."** Eine große evidenzbasierte Meta-Analyse von Fall-Kontroll- und Kohortenstudien (Taylor et al., 2014) findet keinen Zusammenhang zwischen Impfungen und Autismus. Diese Annahme gilt als wissenschaftlich widerlegt und wird von großen Gesundheitsorganisationen ausdrücklich zurückgewiesen. Die genauen Ursachen von Autismus sind komplex und noch nicht vollständig erforscht; ein Zusammenhang mit Impfungen gehört nicht dazu.
 
 **"Nur Jungen sind autistisch."** Autismus tritt bei allen Geschlechtern auf. Mädchen und Frauen werden aus unterschiedlichen Gründen häufiger übersehen oder später diagnostiziert. Mehr dazu: [Autismus bei Frauen und Mädchen](/fuer-autistische-menschen/diagnostik/diagnostik-bei-frauen/).
 
