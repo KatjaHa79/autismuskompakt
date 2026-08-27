@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import PlannedTopics from "../../components/PlannedTopics.astro";
+import ThemenKachel from "../../components/ThemenKachel.astro";
 
 const angehoerigeThemen = [
   { label: "Autismus verstehen", href: "/fuer-autistische-menschen/was-ist-autismus/" },
@@ -27,21 +28,88 @@ const angehoerigeThemen = [
   },
 ];
 
-const fachkraefteThemen = [
-  { label: "Autismusfreundliche Kommunikation", href: "/fuer-autistische-menschen/kommunikation/" },
-  { label: "Arzttermine gestalten", href: "/fuer-autistische-menschen/alltag/arzttermine/" },
-  { label: "Beratung", href: "/hilfe-finden/kategorie/beratung/" },
-  { label: "Therapie", href: "/hilfe-finden/" },
-  { label: "Schule", href: "/angehoerige-fachkraefte/schule-und-bildung/" },
-  { label: "Pädagogik", href: "/angehoerige-fachkraefte/schule-und-bildung/" },
-  { label: "Arbeitsplatz", href: "/fuer-autistische-menschen/alltag/arbeit/" },
-  { label: "Barrieren erkennen", href: "/fuer-autistische-menschen/reizverarbeitung/" },
+const fachkraefteGruppen = [
   {
-    label: "Sensorische Bedürfnisse berücksichtigen",
-    href: "/fuer-autistische-menschen/reizverarbeitung/",
+    titel: "Kommunikation & Begegnung",
+    kacheln: [
+      {
+        icon: "sprechblase",
+        title: "Autismusfreundliche Kommunikation",
+        description: "Worauf es bei verständlicher, respektvoller Kommunikation mit autistischen Menschen ankommt.",
+        href: "/fuer-autistische-menschen/kommunikation/",
+      },
+      {
+        icon: "ebenen",
+        title: "Barrieren erkennen",
+        description: "Wie unnötige Hürden im Kontakt mit autistischen Menschen entstehen – und wie sie sich abbauen lassen.",
+        href: "/fuer-autistische-menschen/reizverarbeitung/",
+      },
+      {
+        icon: "wellen",
+        title: "Sensorische Bedürfnisse berücksichtigen",
+        description: "Wie Reizverarbeitung den Alltag beeinflusst und worauf Fachkräfte achten können.",
+        href: "/fuer-autistische-menschen/reizverarbeitung/",
+      },
+    ],
   },
-  { label: "Materialien für die Praxis", href: "/materialien/" },
-];
+  {
+    titel: "Medizin, Beratung & Therapie",
+    kacheln: [
+      {
+        icon: "kalender",
+        title: "Arzttermine gestalten",
+        description: "Praktische Hinweise, damit Arzttermine für autistische Patient:innen gut zugänglich sind.",
+        href: "/fuer-autistische-menschen/alltag/arzttermine/",
+      },
+      {
+        icon: "kompass",
+        title: "Beratung",
+        description: "Anlaufstellen und Angebote mit Beratungsschwerpunkt finden.",
+        href: "/hilfe-finden/kategorie/beratung/",
+      },
+      {
+        icon: "regler",
+        title: "Therapie",
+        description: "Therapeutische Anlaufstellen und Angebote im Überblick.",
+        href: "/hilfe-finden/",
+      },
+    ],
+  },
+  {
+    titel: "Bildung & Arbeitswelt",
+    kacheln: [
+      {
+        icon: "buch",
+        title: "Schule",
+        description: "Unterstützung, Nachteilsausgleiche und Zusammenarbeit rund um Schule und Bildung.",
+        href: "/angehoerige-fachkraefte/schule-und-bildung/",
+      },
+      {
+        icon: "buch",
+        title: "Pädagogik",
+        description: "Pädagogische Begleitung, die autistische Bedürfnisse ernst nimmt.",
+        href: "/angehoerige-fachkraefte/schule-und-bildung/",
+      },
+      {
+        icon: "uhr",
+        title: "Arbeitsplatz",
+        description: "Wie sich Arbeitsplätze autismusfreundlich gestalten lassen.",
+        href: "/fuer-autistische-menschen/alltag/arbeit/",
+      },
+    ],
+  },
+  {
+    titel: "Materialien",
+    kacheln: [
+      {
+        icon: "buch",
+        title: "Materialien für die Praxis",
+        description: "Kostenlose Arbeitsblätter und Checklisten für den fachlichen Alltag.",
+        href: "/materialien/",
+      },
+    ],
+  },
+] as const;
 ---
 
 <BaseLayout
@@ -80,14 +148,23 @@ const fachkraefteThemen = [
         Zum Beispiel aus Medizin, Therapie, Pädagogik, Schule, Beratung,
         Sozialarbeit oder als Arbeitgeber:in.
       </p>
-      <PlannedTopics topics={fachkraefteThemen} />
-
-      <div class="notice">
-        <p>
-          Diese Seite befindet sich im Aufbau. Ausführliche Beiträge
-          entstehen in den nächsten Etappen.
-        </p>
-      </div>
+      {
+        fachkraefteGruppen.map((gruppe) => (
+          <div class="themen-gruppe">
+            <h3>{gruppe.titel}</h3>
+            <div class="themen-kacheln">
+              {gruppe.kacheln.map((kachel) => (
+                <ThemenKachel
+                  icon={kachel.icon}
+                  title={kachel.title}
+                  description={kachel.description}
+                  href={kachel.href}
+                />
+              ))}
+            </div>
+          </div>
+        ))
+      }
     </div>
   </section>
 </BaseLayout>
@@ -104,7 +181,21 @@ const fachkraefteThemen = [
     color: var(--color-text-muted);
   }
 
-  .notice {
+  .themen-gruppe + .themen-gruppe {
     margin-top: var(--space-lg);
+  }
+
+  .themen-gruppe h3 {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: var(--space-sm);
+  }
+
+  .themen-kacheln {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: var(--space-sm);
   }
 </style>
