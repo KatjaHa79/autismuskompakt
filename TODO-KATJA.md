@@ -32,12 +32,18 @@ liefern musst. Sie wird mit jeder Etappe ergänzt.
 - [ ] Prüfen, ob eine Schlichtungsstelle nach BGG benannt werden muss (in der Regel nur für öffentliche Stellen – bitte kurz prüfen/gegenprüfen)
 - [x] Konformitätsstatus nach der Qualitätssicherung ergänzt (siehe Etappe 5 unten)
 
-### Kostenloser Leitfaden (Startseite und Materialien)
+### Kostenloser Leitfaden (Header und Materialien)
 
-- [ ] `TODO_KATJA_BREVO_URL` durch die tatsächliche Brevo-Landingpage-URL für den
-      kostenlosen Leitfaden ersetzen, sobald diese existiert (siehe Punkt 19
-      im Master-Projektauftrag). Der Platzhalter wird an zwei Stellen
-      verwendet: `src/pages/index.astro` und `src/pages/materialien/index.astro`
+- [x] Brevo-Anmeldeformular ist jetzt unter `/kostenloser-leitfaden/`
+      eingebunden (technische Basis: dein Brevo-HTML-Export, gestalterisch
+      an die Website angepasst). Der frühere Platzhalter `TODO_KATJA_BREVO_URL`
+      wurde entfernt; alle „Kostenloser Leitfaden“-Schaltflächen zeigen jetzt
+      dorthin.
+- [ ] Falls du später eine andere Brevo-Liste/-Formular-URL verwenden
+      möchtest: `BREVO_LEITFADEN_URL` in `src/lib/constants.ts` zeigt auf
+      `/kostenloser-leitfaden/`; die eigentliche Formular-Action-URL steht in
+      `src/pages/kostenloser-leitfaden/index.astro` und müsste dort ersetzt
+      werden.
 
 ## Etappe 1 – Informationsarchitektur
 

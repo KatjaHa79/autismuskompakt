@@ -1,6 +1,8 @@
-// Zentral verwaltete Platzhalter-URLs. Sobald Katja die echten Adressen
-// mitteilt, müssen sie nur hier ein einziges Mal geändert werden.
+// Zentral verwaltete URLs. Änderungen müssen nur hier ein einziges Mal
+// vorgenommen werden.
 
-// Ziel-URL der externen Brevo-Landingpage für den kostenlosen Leitfaden.
-// Verwendet auf der Startseite und auf /materialien/.
-export const BREVO_LEITFADEN_URL = "TODO_KATJA_BREVO_URL";
+// Ziel der "Kostenloser Leitfaden"-Schaltflächen: die interne Seite mit dem
+// eingebetteten Brevo-Anmeldeformular (nicht direkt die externe
+// Brevo-Formular-URL, siehe src/pages/kostenloser-leitfaden/index.astro).
+// Verwendet im Header und auf /materialien/.
+export const BREVO_LEITFADEN_URL = "/kostenloser-leitfaden/";
