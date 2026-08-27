@@ -4,7 +4,7 @@ import Icon, { type IconName } from "./Icon.astro";
 interface Props {
   icon: IconName;
   title: string;
-  description: string;
+  description?: string;
   href: string;
 }
 
@@ -17,7 +17,7 @@ const { icon, title, description, href } = Astro.props;
   </span>
   <span class="themen-kachel__body">
     <span class="themen-kachel__title">{title}</span>
-    <span class="themen-kachel__desc">{description}</span>
+    {description && <span class="themen-kachel__desc">{description}</span>}
     <span class="themen-kachel__link" aria-hidden="true">Mehr erfahren →</span>
   </span>
 </a>
@@ -26,8 +26,9 @@ const { icon, title, description, href } = Astro.props;
   .themen-kachel {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
-    padding: var(--space-md);
+    gap: var(--space-2xs);
+    min-width: 0;
+    padding: var(--space-sm);
     border: var(--border-width) solid var(--color-border);
     border-radius: var(--radius);
     background-color: var(--color-surface);
@@ -57,17 +58,19 @@ const { icon, title, description, href } = Astro.props;
   .themen-kachel__title {
     font-weight: 700;
     color: var(--color-petrol);
-    font-size: 1.15rem;
+    font-size: 1.0625rem; /* ca. 16–18px */
+    line-height: 1.25;
   }
 
   .themen-kachel__desc {
     color: var(--color-text-muted);
-    font-size: 0.9rem;
+    font-size: 0.9375rem; /* ca. 14–15px */
+    line-height: 1.45;
   }
 
   .themen-kachel__link {
     margin-top: var(--space-2xs);
-    font-size: 0.85rem;
+    font-size: 0.8125rem;
     font-weight: 700;
     color: var(--color-bronze-dark);
   }

@@ -1,104 +1,114 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
-import PlannedTopics from "../../../components/PlannedTopics.astro";
+import ThemenKachel from "../../../components/ThemenKachel.astro";
 
 const reizeUndEnergie = [
-  { label: "Reizüberflutung", href: "/fuer-autistische-menschen/alltag/reizmanagement-im-alltag/" },
-  { label: "Reize reduzieren", href: "/fuer-autistische-menschen/alltag/reizmanagement-im-alltag/" },
-  { label: "Rückzug", href: "/fuer-autistische-menschen/alltag/reizmanagement-im-alltag/" },
-  { label: "Energie einteilen", href: "/fuer-autistische-menschen/alltag/reizmanagement-im-alltag/" },
-  { label: "Erholung", href: "/fuer-autistische-menschen/alltag/reisen-und-freizeit/" },
-  { label: "Reisen & Freizeit", href: "/fuer-autistische-menschen/alltag/reisen-und-freizeit/" },
-  { label: "Overload im Alltag", href: "/fuer-autistische-menschen/overload/" },
-  { label: "Meltdown im Alltag", href: "/fuer-autistische-menschen/meltdown/" },
-  { label: "Shutdown im Alltag", href: "/fuer-autistische-menschen/shutdown/" },
-  { label: "Autistischer Burnout im Alltag", href: "/fuer-autistische-menschen/autistischer-burnout/" },
-];
+  { icon: "wellen", label: "Reizüberflutung", href: "/fuer-autistische-menschen/alltag/reizmanagement-im-alltag/" },
+  { icon: "wellen", label: "Reize reduzieren", href: "/fuer-autistische-menschen/alltag/reizmanagement-im-alltag/" },
+  { icon: "mond", label: "Rückzug", href: "/fuer-autistische-menschen/alltag/reizmanagement-im-alltag/" },
+  { icon: "regler", label: "Energie einteilen", href: "/fuer-autistische-menschen/alltag/reizmanagement-im-alltag/" },
+  { icon: "mond", label: "Erholung", href: "/fuer-autistische-menschen/alltag/reisen-und-freizeit/" },
+  { icon: "kompass", label: "Reisen & Freizeit", href: "/fuer-autistische-menschen/alltag/reisen-und-freizeit/" },
+  { icon: "wellen", label: "Overload im Alltag", href: "/fuer-autistische-menschen/overload/" },
+  { icon: "wellen", label: "Meltdown im Alltag", href: "/fuer-autistische-menschen/meltdown/" },
+  { icon: "mond", label: "Shutdown im Alltag", href: "/fuer-autistische-menschen/shutdown/" },
+  { icon: "mond", label: "Autistischer Burnout im Alltag", href: "/fuer-autistische-menschen/autistischer-burnout/" },
+] as const;
 
 const kommunikation = [
-  { label: "Bedürfnisse mitteilen", href: "/fuer-autistische-menschen/alltag/kommunikation-im-alltag/" },
-  { label: "Grenzen setzen", href: "/fuer-autistische-menschen/alltag/kommunikation-im-alltag/" },
-  { label: "Telefonieren", href: "/fuer-autistische-menschen/alltag/kommunikation-im-alltag/" },
+  { icon: "sprechblase", label: "Bedürfnisse mitteilen", href: "/fuer-autistische-menschen/alltag/kommunikation-im-alltag/" },
+  { icon: "sprechblase", label: "Grenzen setzen", href: "/fuer-autistische-menschen/alltag/kommunikation-im-alltag/" },
+  { icon: "sprechblase", label: "Telefonieren", href: "/fuer-autistische-menschen/alltag/kommunikation-im-alltag/" },
   {
+    icon: "sprechblase",
     label: "Schriftliche Kommunikation",
     href: "/fuer-autistische-menschen/alltag/kommunikation-im-alltag/",
   },
-  { label: "Missverständnisse", href: "/fuer-autistische-menschen/double-empathy/" },
-  { label: "Small Talk", href: "/fuer-autistische-menschen/alltag/kommunikation-im-alltag/" },
-  "Kommunikationshilfen",
-];
+  { icon: "kreise", label: "Missverständnisse", href: "/fuer-autistische-menschen/double-empathy/" },
+  { icon: "sprechblase", label: "Small Talk", href: "/fuer-autistische-menschen/alltag/kommunikation-im-alltag/" },
+] as const;
+
+const kommunikationGeplant = ["Kommunikationshilfen"];
 
 const alltagsorganisation = [
-  { label: "Tagesstruktur", href: "/fuer-autistische-menschen/alltag/tagesstruktur-und-uebergaenge/" },
-  { label: "Veränderungen", href: "/fuer-autistische-menschen/alltag/tagesstruktur-und-uebergaenge/" },
-  { label: "Übergänge", href: "/fuer-autistische-menschen/alltag/tagesstruktur-und-uebergaenge/" },
-  { label: "Einkaufen", href: "/fuer-autistische-menschen/alltag/einkaufen-haushalt-und-essen/" },
-  { label: "Haushalt", href: "/fuer-autistische-menschen/alltag/einkaufen-haushalt-und-essen/" },
-  { label: "Essen", href: "/fuer-autistische-menschen/alltag/einkaufen-haushalt-und-essen/" },
-  { label: "Schlaf", href: "/fuer-autistische-menschen/alltag/schlaf-im-alltag/" },
-  { label: "Arzttermine", href: "/fuer-autistische-menschen/alltag/arzttermine/" },
-  { label: "Behördenkontakte", href: "/fuer-autistische-menschen/alltag/behoerdenkontakte/" },
-];
+  { icon: "kalender", label: "Tagesstruktur", href: "/fuer-autistische-menschen/alltag/tagesstruktur-und-uebergaenge/" },
+  { icon: "kalender", label: "Veränderungen", href: "/fuer-autistische-menschen/alltag/tagesstruktur-und-uebergaenge/" },
+  { icon: "kalender", label: "Übergänge", href: "/fuer-autistische-menschen/alltag/tagesstruktur-und-uebergaenge/" },
+  { icon: "regler", label: "Einkaufen", href: "/fuer-autistische-menschen/alltag/einkaufen-haushalt-und-essen/" },
+  { icon: "regler", label: "Haushalt", href: "/fuer-autistische-menschen/alltag/einkaufen-haushalt-und-essen/" },
+  { icon: "regler", label: "Essen", href: "/fuer-autistische-menschen/alltag/einkaufen-haushalt-und-essen/" },
+  { icon: "mond", label: "Schlaf", href: "/fuer-autistische-menschen/alltag/schlaf-im-alltag/" },
+  { icon: "kalender", label: "Arzttermine", href: "/fuer-autistische-menschen/alltag/arzttermine/" },
+  { icon: "buch", label: "Behördenkontakte", href: "/fuer-autistische-menschen/alltag/behoerdenkontakte/" },
+] as const;
 
 const beziehungen = [
-  { label: "Partnerschaft", href: "/fuer-autistische-menschen/alltag/partnerschaft-und-freundschaften/" },
-  { label: "Freundschaften", href: "/fuer-autistische-menschen/alltag/partnerschaft-und-freundschaften/" },
-  { label: "Familie", href: "/fuer-autistische-menschen/alltag/familie-und-konflikte/" },
-  { label: "Konflikte", href: "/fuer-autistische-menschen/alltag/familie-und-konflikte/" },
-  { label: "Nähe & Rückzug", href: "/fuer-autistische-menschen/alltag/naehe-rueckzug-und-alleinzeit/" },
-  "Dating",
+  { icon: "kreise", label: "Partnerschaft", href: "/fuer-autistische-menschen/alltag/partnerschaft-und-freundschaften/" },
+  { icon: "kreise", label: "Freundschaften", href: "/fuer-autistische-menschen/alltag/partnerschaft-und-freundschaften/" },
+  { icon: "kreise", label: "Familie", href: "/fuer-autistische-menschen/alltag/familie-und-konflikte/" },
+  { icon: "wellen", label: "Konflikte", href: "/fuer-autistische-menschen/alltag/familie-und-konflikte/" },
+  { icon: "mond", label: "Nähe & Rückzug", href: "/fuer-autistische-menschen/alltag/naehe-rueckzug-und-alleinzeit/" },
   {
+    icon: "sprechblase",
     label: "Grenzen & Zustimmung",
     href: "/fuer-autistische-menschen/alltag/sexualitaet-grenzen-und-zustimmung/",
   },
-];
+] as const;
+
+const beziehungenGeplant = ["Dating"];
 
 const arbeitAusbildungStudium = [
-  { label: "Arbeitsplatz gestalten", href: "/fuer-autistische-menschen/alltag/arbeit/" },
-  { label: "Reize am Arbeitsplatz", href: "/fuer-autistische-menschen/alltag/arbeit/" },
-  { label: "Kommunikation mit Vorgesetzten", href: "/fuer-autistische-menschen/alltag/arbeit/" },
-  { label: "Offenlegung der Diagnose", href: "/fuer-autistische-menschen/alltag/arbeit/" },
-  { label: "Homeoffice", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+  { icon: "uhr", label: "Arbeitsplatz gestalten", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+  { icon: "wellen", label: "Reize am Arbeitsplatz", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+  { icon: "sprechblase", label: "Kommunikation mit Vorgesetzten", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+  { icon: "sprechblase", label: "Offenlegung der Diagnose", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+  { icon: "kalender", label: "Homeoffice", href: "/fuer-autistische-menschen/alltag/arbeit/" },
   {
+    icon: "ebenen",
     label: "Nachteilsausgleich",
     href: "/fuer-autistische-menschen/alltag/ausbildung-und-studium/",
   },
-  { label: "Studium", href: "/fuer-autistische-menschen/alltag/ausbildung-und-studium/" },
-  { label: "Ausbildung", href: "/fuer-autistische-menschen/alltag/ausbildung-und-studium/" },
-  { label: "Bewerbung", href: "/fuer-autistische-menschen/alltag/arbeit/" },
-  { label: "Jobwechsel", href: "/fuer-autistische-menschen/alltag/arbeit/" },
-];
+  { icon: "buch", label: "Studium", href: "/fuer-autistische-menschen/alltag/ausbildung-und-studium/" },
+  { icon: "buch", label: "Ausbildung", href: "/fuer-autistische-menschen/alltag/ausbildung-und-studium/" },
+  { icon: "uhr", label: "Bewerbung", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+  { icon: "uhr", label: "Jobwechsel", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+] as const;
 
 const wohnenUndSelbststaendigkeit = [
-  { label: "Allein wohnen", href: "/fuer-autistische-menschen/alltag/wohnen-und-assistenz/" },
-  { label: "Assistenz", href: "/fuer-autistische-menschen/alltag/wohnen-und-assistenz/" },
-  { label: "Unterstützungsbedarf", href: "/fuer-autistische-menschen/alltag/wohnen-und-assistenz/" },
-  { label: "Wohnformen", href: "/fuer-autistische-menschen/alltag/wohnen-und-assistenz/" },
-];
+  { icon: "kompass", label: "Allein wohnen", href: "/fuer-autistische-menschen/alltag/wohnen-und-assistenz/" },
+  { icon: "kreise", label: "Assistenz", href: "/fuer-autistische-menschen/alltag/wohnen-und-assistenz/" },
+  { icon: "regler", label: "Unterstützungsbedarf", href: "/fuer-autistische-menschen/alltag/wohnen-und-assistenz/" },
+  { icon: "kompass", label: "Wohnformen", href: "/fuer-autistische-menschen/alltag/wohnen-und-assistenz/" },
+] as const;
 
 const gesundheitUndTherapie = [
   {
+    icon: "wellen",
     label: "Schmerzen & körperliche Symptome",
     href: "/fuer-autistische-menschen/alltag/schmerzen-und-koerperliche-symptome/",
   },
   {
+    icon: "kalender",
     label: "Krankenhaus, Notaufnahme & Zahnarzt",
     href: "/fuer-autistische-menschen/alltag/krankenhaus-notaufnahme-und-zahnarzt/",
   },
   {
+    icon: "regler",
     label: "Psychotherapie & Medikamente",
     href: "/fuer-autistische-menschen/alltag/psychotherapie-und-medikamente/",
   },
   {
+    icon: "regler",
     label: "Ergotherapie, Logopädie & AAC",
     href: "/fuer-autistische-menschen/alltag/ergotherapie-logopaedie-und-aac/",
   },
   {
+    icon: "auge",
     label: "Therapieangebote kritisch prüfen",
     href: "/fuer-autistische-menschen/alltag/therapieangebote-kritisch-pruefen/",
   },
-];
+] as const;
 ---
 
 <BaseLayout
@@ -125,25 +135,43 @@ const gesundheitUndTherapie = [
       </p>
 
       <h2>Reize & Energie</h2>
-      <PlannedTopics topics={reizeUndEnergie} />
+      <div class="themen-kacheln">
+        {reizeUndEnergie.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
+      </div>
 
       <h2>Kommunikation</h2>
-      <PlannedTopics topics={kommunikation} />
+      <div class="themen-kacheln">
+        {kommunikation.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
+      </div>
+      <p class="geplant-hinweis">In Vorbereitung: {kommunikationGeplant.join(" · ")}.</p>
 
       <h2>Alltagsorganisation</h2>
-      <PlannedTopics topics={alltagsorganisation} />
+      <div class="themen-kacheln">
+        {alltagsorganisation.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
+      </div>
 
       <h2>Beziehungen</h2>
-      <PlannedTopics topics={beziehungen} />
+      <div class="themen-kacheln">
+        {beziehungen.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
+      </div>
+      <p class="geplant-hinweis">In Vorbereitung: {beziehungenGeplant.join(" · ")}.</p>
 
       <h2>Arbeit, Ausbildung & Studium</h2>
-      <PlannedTopics topics={arbeitAusbildungStudium} />
+      <div class="themen-kacheln">
+        {arbeitAusbildungStudium.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
+      </div>
 
       <h2>Wohnen & Selbstständigkeit</h2>
-      <PlannedTopics topics={wohnenUndSelbststaendigkeit} />
+      <div class="themen-kacheln">
+        {wohnenUndSelbststaendigkeit.map((thema) => (
+          <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />
+        ))}
+      </div>
 
       <h2>Gesundheit & Therapie</h2>
-      <PlannedTopics topics={gesundheitUndTherapie} />
+      <div class="themen-kacheln">
+        {gesundheitUndTherapie.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
+      </div>
 
       <div class="notice">
         <p>
@@ -158,7 +186,7 @@ const gesundheitUndTherapie = [
 <style>
   .lead {
     max-width: var(--measure);
-    font-size: 1.15rem;
+    font-size: 1.0625rem; /* ca. 17-18px */
     margin-bottom: var(--space-lg);
   }
 
@@ -173,5 +201,17 @@ const gesundheitUndTherapie = [
 
   .notice {
     margin-top: var(--space-lg);
+  }
+
+  .themen-kacheln {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: var(--space-sm);
+  }
+
+  .geplant-hinweis {
+    margin-top: var(--space-sm);
+    color: var(--color-text-muted);
+    font-size: 0.9375rem; /* ca. 14-15px */
   }
 </style>

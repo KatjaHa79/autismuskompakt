@@ -1,56 +1,69 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
-import PlannedTopics from "../../../components/PlannedTopics.astro";
+import ThemenKachel from "../../../components/ThemenKachel.astro";
 
 const themen = [
-  { label: "Könnte ich autistisch sein?", href: "/fuer-autistische-menschen/diagnostik/koennte-ich-autistisch-sein/" },
+  { icon: "kompass", label: "Könnte ich autistisch sein?", href: "/fuer-autistische-menschen/diagnostik/koennte-ich-autistisch-sein/" },
   {
+    icon: "kompass",
     label: "Wann ist eine Diagnostik sinnvoll?",
     href: "/fuer-autistische-menschen/diagnostik/koennte-ich-autistisch-sein/",
   },
   {
+    icon: "uhr",
     label: "Wie läuft eine Autismusdiagnostik ab?",
     href: "/fuer-autistische-menschen/diagnostik/ablauf-der-diagnostik/",
   },
   {
+    icon: "uhr",
     label: "Diagnostik bei Erwachsenen",
     href: "/fuer-autistische-menschen/diagnostik/diagnostik-bei-erwachsenen/",
   },
-  { label: "Diagnostik bei Frauen", href: "/fuer-autistische-menschen/diagnostik/diagnostik-bei-frauen/" },
+  { icon: "auge", label: "Diagnostik bei Frauen", href: "/fuer-autistische-menschen/diagnostik/diagnostik-bei-frauen/" },
   {
+    icon: "regler",
     label: "Vorbereitung auf die Diagnostik",
     href: "/fuer-autistische-menschen/diagnostik/vorbereitung-auf-die-diagnostik/",
   },
   {
+    icon: "buch",
     label: "Hilfreiche Unterlagen",
     href: "/fuer-autistische-menschen/diagnostik/vorbereitung-auf-die-diagnostik/",
   },
-  { label: "Diagnostikstellen finden", href: "/hilfe-finden/kategorie/diagnostik/" },
-  { label: "Was bedeutet das Ergebnis?", href: "/fuer-autistische-menschen/diagnostik/ergebnis-der-diagnostik/" },
+  { icon: "kreise", label: "Diagnostikstellen finden", href: "/hilfe-finden/kategorie/diagnostik/" },
+  { icon: "sprechblase", label: "Was bedeutet das Ergebnis?", href: "/fuer-autistische-menschen/diagnostik/ergebnis-der-diagnostik/" },
   {
+    icon: "stern",
     label: "Was passiert nach der Diagnose?",
     href: "/fuer-autistische-menschen/diagnostik/nach-der-diagnose/",
   },
-  { label: "Differenzialdiagnostik", href: "/fuer-autistische-menschen/diagnostik/differenzialdiagnostik/" },
-  { label: "ADHS oder Autismus?", href: "/fuer-autistische-menschen/diagnostik/differenzialdiagnostik/" },
+  { icon: "ebenen", label: "Differenzialdiagnostik", href: "/fuer-autistische-menschen/diagnostik/differenzialdiagnostik/" },
+  { icon: "ebenen", label: "ADHS oder Autismus?", href: "/fuer-autistische-menschen/diagnostik/differenzialdiagnostik/" },
   {
+    icon: "wellen",
     label: "Autismus und ADHS gleichzeitig",
     href: "/fuer-autistische-menschen/besonderheiten/autismus-und-adhs/",
   },
   {
+    icon: "mond",
     label: "Fehldiagnosen und späte Diagnose",
     href: "/fuer-autistische-menschen/diagnostik/diagnostik-bei-erwachsenen/",
   },
   {
+    icon: "buch",
     label: "Diagnostik ohne Kindheitsunterlagen",
     href: "/fuer-autistische-menschen/diagnostik/diagnostik-bei-erwachsenen/",
   },
-];
+] as const;
 
 const screeningtests = [
-  { label: "AQ, RAADS-R & CAT-Q: Was sagen sie wirklich?", href: "/fuer-autistische-menschen/diagnostik/screeningtests/" },
-];
+  {
+    icon: "regler",
+    label: "AQ, RAADS-R & CAT-Q: Was sagen sie wirklich?",
+    href: "/fuer-autistische-menschen/diagnostik/screeningtests/",
+  },
+] as const;
 ---
 
 <BaseLayout
@@ -92,10 +105,14 @@ const screeningtests = [
       </div>
 
       <h2>Geplante Themen</h2>
-      <PlannedTopics topics={themen} />
+      <div class="themen-kacheln">
+        {themen.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
+      </div>
 
       <h3>Screeningtests</h3>
-      <PlannedTopics topics={screeningtests} />
+      <div class="themen-kacheln">
+        {screeningtests.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
+      </div>
 
       <div class="notice">
         <p>
@@ -114,7 +131,7 @@ const screeningtests = [
 <style>
   .lead {
     max-width: var(--measure);
-    font-size: 1.15rem;
+    font-size: 1.0625rem; /* ca. 17-18px */
     margin-bottom: var(--space-lg);
   }
 
@@ -156,5 +173,11 @@ const screeningtests = [
 
   .orientierungscheck-einstieg p:last-child {
     margin-bottom: 0;
+  }
+
+  .themen-kacheln {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: var(--space-sm);
   }
 </style>

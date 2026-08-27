@@ -111,7 +111,7 @@ const merchandise = sortiert.filter((p) => p.data.productType === "merchandise")
 <style>
   .lead {
     max-width: var(--measure);
-    font-size: 1.15rem;
+    font-size: 1.0625rem; /* ca. 17-18px */
   }
 
   .lead-small {
@@ -127,13 +127,13 @@ const merchandise = sortiert.filter((p) => p.data.productType === "merchandise")
     list-style: none;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap: var(--space-md);
   }
 
   /* Bücher etwas hochwertiger/großzügiger als die übrigen Produktarten. */
   .card-grid--buecher {
-    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     gap: var(--space-xl);
   }
 

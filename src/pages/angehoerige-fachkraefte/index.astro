@@ -1,32 +1,97 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import PlannedTopics from "../../components/PlannedTopics.astro";
 import ThemenKachel from "../../components/ThemenKachel.astro";
 
-const angehoerigeThemen = [
-  { label: "Autismus verstehen", href: "/fuer-autistische-menschen/was-ist-autismus/" },
-  { label: "Kommunikation verstehen", href: "/fuer-autistische-menschen/kommunikation/" },
-  { label: "Reizverarbeitung", href: "/fuer-autistische-menschen/reizverarbeitung/" },
-  { label: "Verhalten einordnen", href: "/angehoerige-fachkraefte/autistisches-kind-begleiten/" },
-  { label: "Unterstützung im Alltag", href: "/angehoerige-fachkraefte/unterstuetzung-ohne-bevormundung/" },
-  { label: "Diagnose eines Kindes", href: "/angehoerige-fachkraefte/eltern-nach-der-diagnose/" },
-  { label: "Schule und Kita", href: "/angehoerige-fachkraefte/schule-und-bildung/" },
+const angehoerigeGruppen = [
   {
-    label: "Nachteilsausgleiche",
-    href: "/angehoerige-fachkraefte/nachteilsausgleich-und-schulbegleitung/",
+    titel: "Autismus verstehen",
+    kacheln: [
+      {
+        icon: "kompass",
+        title: "Autismus verstehen",
+        description: "Grundlagen zu Autismus und was die Diagnose für dein Familienmitglied bedeutet.",
+        href: "/fuer-autistische-menschen/was-ist-autismus/",
+      },
+      {
+        icon: "sprechblase",
+        title: "Kommunikation verstehen",
+        description: "Warum Kommunikation anders ablaufen kann und wie Verständigung leichter gelingt.",
+        href: "/fuer-autistische-menschen/kommunikation/",
+      },
+      {
+        icon: "wellen",
+        title: "Reizverarbeitung",
+        description: "Wie Reize und Sinneseindrücke unterschiedlich wirken können – und was entlastet.",
+        href: "/fuer-autistische-menschen/reizverarbeitung/",
+      },
+      {
+        icon: "auge",
+        title: "Verhalten einordnen",
+        description: "Verhalten besser verstehen, statt es vorschnell zu bewerten.",
+        href: "/angehoerige-fachkraefte/autistisches-kind-begleiten/",
+      },
+    ],
   },
-  { label: "Hilfen beantragen", href: "/fuer-autistische-menschen/rechte-und-antraege/" },
   {
-    label: "Übergang ins Erwachsenenalter",
-    href: "/angehoerige-fachkraefte/uebergang-ins-erwachsenenalter/",
+    titel: "Unterstützung im Alltag",
+    kacheln: [
+      {
+        icon: "kalender",
+        title: "Unterstützung im Alltag",
+        description: "Praktische Wege, im Alltag zu unterstützen, ohne zu bevormunden.",
+        href: "/angehoerige-fachkraefte/unterstuetzung-ohne-bevormundung/",
+      },
+      {
+        icon: "buch",
+        title: "Hilfen beantragen",
+        description: "Orientierung zu Anträgen, Nachteilsausgleichen und weiteren Leistungen.",
+        href: "/fuer-autistische-menschen/rechte-und-antraege/",
+      },
+      {
+        icon: "regler",
+        title: "Unterstützung ohne Bevormundung",
+        description: "Unterstützen und gleichzeitig Selbstbestimmung respektieren.",
+        href: "/angehoerige-fachkraefte/unterstuetzung-ohne-bevormundung/",
+      },
+      {
+        icon: "kreise",
+        title: "Beziehungen",
+        description: "Partnerschaft, Familie und Freundschaften mit autistischen Angehörigen gestalten.",
+        href: "/angehoerige-fachkraefte/partnerschaft-und-spaete-diagnose/",
+      },
+    ],
   },
-  { label: "Beziehungen", href: "/angehoerige-fachkraefte/partnerschaft-und-spaete-diagnose/" },
   {
-    label: "Unterstützung ohne Bevormundung",
-    href: "/angehoerige-fachkraefte/unterstuetzung-ohne-bevormundung/",
+    titel: "Kinder, Schule & Übergänge",
+    kacheln: [
+      {
+        icon: "stern",
+        title: "Diagnose eines Kindes",
+        description: "Erste Orientierung nach der Autismusdiagnose eines Kindes.",
+        href: "/angehoerige-fachkraefte/eltern-nach-der-diagnose/",
+      },
+      {
+        icon: "buch",
+        title: "Schule und Kita",
+        description: "Zusammenarbeit mit Schule und Kita autismusfreundlich gestalten.",
+        href: "/angehoerige-fachkraefte/schule-und-bildung/",
+      },
+      {
+        icon: "ebenen",
+        title: "Nachteilsausgleiche",
+        description: "Nachteilsausgleiche und Schulbegleitung im Überblick.",
+        href: "/angehoerige-fachkraefte/nachteilsausgleich-und-schulbegleitung/",
+      },
+      {
+        icon: "uhr",
+        title: "Übergang ins Erwachsenenalter",
+        description: "Was sich beim Übergang ins Erwachsenenalter verändert und worauf zu achten ist.",
+        href: "/angehoerige-fachkraefte/uebergang-ins-erwachsenenalter/",
+      },
+    ],
   },
-];
+] as const;
 
 const fachkraefteGruppen = [
   {
@@ -137,7 +202,23 @@ const fachkraefteGruppen = [
     <div class="container">
       <h2>Ich bin Angehörige:r</h2>
       <p class="lead-small">Zum Beispiel Eltern, Partner:innen, Familie oder Freund:innen.</p>
-      <PlannedTopics topics={angehoerigeThemen} />
+      {
+        angehoerigeGruppen.map((gruppe) => (
+          <div class="themen-gruppe">
+            <h3>{gruppe.titel}</h3>
+            <div class="themen-kacheln">
+              {gruppe.kacheln.map((kachel) => (
+                <ThemenKachel
+                  icon={kachel.icon}
+                  title={kachel.title}
+                  description={kachel.description}
+                  href={kachel.href}
+                />
+              ))}
+            </div>
+          </div>
+        ))
+      }
     </div>
   </section>
 
@@ -172,7 +253,7 @@ const fachkraefteGruppen = [
 <style>
   .lead {
     max-width: var(--measure);
-    font-size: 1.15rem;
+    font-size: 1.0625rem; /* ca. 17-18px */
   }
 
   .lead-small {
@@ -195,7 +276,7 @@ const fachkraefteGruppen = [
 
   .themen-kacheln {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     gap: var(--space-sm);
   }
 </style>

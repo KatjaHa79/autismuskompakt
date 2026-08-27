@@ -88,6 +88,14 @@ const passendeMaterialien = materialIds
 </BaseLayout>
 
 <style>
+  /* Der äußere Layoutcontainer darf website-weit breiter sein; die
+     eigentliche Artikelprosa bleibt dennoch in Lesebreite und zentriert
+     (keine Sidebar in dieser Etappe, aber architektonisch vorbereitet). */
+  .container {
+    max-width: var(--measure);
+    margin-inline: auto;
+  }
+
   .zielgruppen {
     font-size: 0.9rem;
     color: var(--color-text-muted);

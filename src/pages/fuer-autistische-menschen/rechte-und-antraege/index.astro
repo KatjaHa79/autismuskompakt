@@ -1,58 +1,67 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
-import PlannedTopics from "../../../components/PlannedTopics.astro";
+import ThemenKachel from "../../../components/ThemenKachel.astro";
 
 const kernbereiche = [
-  { label: "GdB", href: "/fuer-autistische-menschen/rechte-und-antraege/gdb/" },
-  { label: "Schwerbehindertenausweis", href: "/fuer-autistische-menschen/rechte-und-antraege/gdb/" },
-  { label: "Merkzeichen", href: "/fuer-autistische-menschen/rechte-und-antraege/gdb/" },
-  { label: "Pflegegrad", href: "/fuer-autistische-menschen/rechte-und-antraege/pflegegrad/" },
+  { icon: "buch", label: "GdB", href: "/fuer-autistische-menschen/rechte-und-antraege/gdb/" },
+  { icon: "buch", label: "Schwerbehindertenausweis", href: "/fuer-autistische-menschen/rechte-und-antraege/gdb/" },
+  { icon: "buch", label: "Merkzeichen", href: "/fuer-autistische-menschen/rechte-und-antraege/gdb/" },
+  { icon: "regler", label: "Pflegegrad", href: "/fuer-autistische-menschen/rechte-und-antraege/pflegegrad/" },
   {
+    icon: "buch",
     label: "Persönliches Budget",
     href: "/fuer-autistische-menschen/rechte-und-antraege/persoenliches-budget/",
   },
   {
+    icon: "kreise",
     label: "Eingliederungshilfe",
     href: "/fuer-autistische-menschen/rechte-und-antraege/eingliederungshilfe-und-assistenz/",
   },
   {
+    icon: "kreise",
     label: "Assistenzleistungen",
     href: "/fuer-autistische-menschen/rechte-und-antraege/eingliederungshilfe-und-assistenz/",
   },
   {
+    icon: "ebenen",
     label: "Nachteilsausgleich",
     href: "/fuer-autistische-menschen/rechte-und-antraege/steuerliche-nachteilsausgleiche/",
   },
   {
+    icon: "regler",
     label: "Hilfsmittel",
     href: "/fuer-autistische-menschen/rechte-und-antraege/eingliederungshilfe-und-assistenz/",
   },
   {
+    icon: "uhr",
     label: "Leistungen zur Teilhabe am Arbeitsleben",
     href: "/fuer-autistische-menschen/rechte-und-antraege/erwerbsminderungsrente/",
   },
-];
+] as const;
 
 const weitereThemen = [
-  { label: "Rehabilitation", href: "/fuer-autistische-menschen/rechte-und-antraege/erwerbsminderungsrente/" },
+  { icon: "uhr", label: "Rehabilitation", href: "/fuer-autistische-menschen/rechte-und-antraege/erwerbsminderungsrente/" },
   {
+    icon: "buch",
     label: "Erwerbsminderungsrente",
     href: "/fuer-autistische-menschen/rechte-und-antraege/erwerbsminderungsrente/",
   },
-  "Unterstützung in der Schule",
-  { label: "Unterstützung im Studium", href: "/fuer-autistische-menschen/alltag/arbeit/" },
-  { label: "Unterstützung am Arbeitsplatz", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+  { icon: "uhr", label: "Unterstützung im Studium", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+  { icon: "uhr", label: "Unterstützung am Arbeitsplatz", href: "/fuer-autistische-menschen/alltag/arbeit/" },
   {
+    icon: "ebenen",
     label: "Steuerliche Nachteilsausgleiche",
     href: "/fuer-autistische-menschen/rechte-und-antraege/steuerliche-nachteilsausgleiche/",
   },
-  "Mobilität",
   {
+    icon: "buch",
     label: "Widerspruch gegen einen Bescheid",
     href: "/fuer-autistische-menschen/rechte-und-antraege/widerspruch-klage-und-akteneinsicht/",
   },
-];
+] as const;
+
+const weitereThemenGeplant = ["Unterstützung in der Schule", "Mobilität"];
 ---
 
 <BaseLayout
@@ -79,10 +88,17 @@ const weitereThemen = [
       </p>
 
       <h2>Kernbereiche</h2>
-      <PlannedTopics topics={kernbereiche} />
+      <div class="themen-kacheln">
+        {kernbereiche.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
+      </div>
 
       <h3>Weitere Themen</h3>
-      <PlannedTopics topics={weitereThemen} />
+      <div class="themen-kacheln">
+        {weitereThemen.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
+      </div>
+      <p class="geplant-hinweis">
+        In Vorbereitung: {weitereThemenGeplant.join(" · ")}.
+      </p>
 
       <div class="notice">
         <p>
@@ -105,7 +121,7 @@ const weitereThemen = [
 <style>
   .lead {
     max-width: var(--measure);
-    font-size: 1.15rem;
+    font-size: 1.0625rem; /* ca. 17-18px */
     margin-bottom: var(--space-lg);
   }
 
@@ -124,5 +140,17 @@ const weitereThemen = [
 
   .notice p + p {
     margin-top: var(--space-xs);
+  }
+
+  .themen-kacheln {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: var(--space-sm);
+  }
+
+  .geplant-hinweis {
+    margin-top: var(--space-sm);
+    color: var(--color-text-muted);
+    font-size: 0.9375rem; /* ca. 14-15px */
   }
 </style>

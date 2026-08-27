@@ -60,9 +60,10 @@
 
   /* Typografie */
   --font-body: "Work Sans", "Segoe UI", system-ui, sans-serif;
-  --font-size-base: clamp(1rem, 0.97rem + 0.2vw, 1.0625rem); /* 16–17px */
+  --font-size-base: clamp(0.9375rem, 0.92rem + 0.1vw, 1rem); /* 15–16px */
   --line-height-base: 1.6;
-  --measure: 70ch; /* maximale Textzeilenlänge */
+  --measure: 70ch; /* maximale Textzeilenlänge, entspricht --content-width */
+  --narrow-width: 60ch;
 
   /* Abstände */
   --space-2xs: 0.5rem;
@@ -75,7 +76,8 @@
 
   /* Struktur */
   --radius: 0.75rem;
-  --container-width: 72rem;
+  --site-width: 80rem; /* ca. 1280px – zentraler Breiten-Token für den Seitencontainer */
+  --container-width: var(--site-width);
   --border-width: 1px;
   --focus-width: 3px;
 
@@ -162,18 +164,18 @@ h4 {
 }
 
 h1 {
-  /* ca. 30–34px mobil, 38–42px Desktop */
-  font-size: clamp(2rem, 1.8rem + 1.6vw, 2.625rem);
+  /* ca. 27–30px mobil, 32–36px Desktop */
+  font-size: clamp(1.6875rem, 1.6rem + 1.3vw, 2.125rem);
 }
 
 h2 {
-  /* ca. 24–28px mobil, 28–32px Desktop */
-  font-size: clamp(1.5rem, 1.42rem + 0.9vw, 2rem);
+  /* ca. 22–24px mobil, 24–27px Desktop */
+  font-size: clamp(1.375rem, 1.32rem + 0.7vw, 1.6875rem);
 }
 
 h3 {
-  /* ca. 21–24px */
-  font-size: clamp(1.3125rem, 1.28rem + 0.3vw, 1.5rem);
+  /* ca. 19–21px */
+  font-size: clamp(1.1875rem, 1.16rem + 0.2vw, 1.3125rem);
 }
 
 a {
@@ -254,6 +256,7 @@ summary:focus-visible,
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius);
   font-weight: 700;
+  font-size: 0.9375rem; /* ca. 14–15px */
   text-decoration: none;
   min-height: 44px;
   border: var(--border-width) solid transparent;
@@ -478,6 +481,7 @@ summary:focus-visible,
 
 .prose {
   max-width: var(--measure);
+  margin-inline: auto;
   padding-block: var(--space-xl);
 }
 

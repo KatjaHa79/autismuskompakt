@@ -1,64 +1,72 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
-import PlannedTopics from "../../../components/PlannedTopics.astro";
+import ThemenKachel from "../../../components/ThemenKachel.astro";
 
 const neurodivergent = [
   {
+    icon: "ebenen",
     label: "ADHS",
     href: "/fuer-autistische-menschen/besonderheiten/autismus-und-adhs/",
   },
   {
+    icon: "wellen",
     label: "Autismus + ADHS",
     href: "/fuer-autistische-menschen/besonderheiten/autismus-und-adhs/",
   },
-  "Alexithymie",
   {
+    icon: "regler",
     label: "Dyspraxie",
     href: "/fuer-autistische-menschen/besonderheiten/motorische-besonderheiten-und-dyspraxie/",
   },
-  "Exekutive Dysfunktion",
-  "Interozeption",
   {
+    icon: "wellen",
     label: "Sensorische Besonderheiten",
     href: "/fuer-autistische-menschen/reizverarbeitung/",
   },
   {
+    icon: "kalender",
     label: "ARFID / selektives Essen",
     href: "/fuer-autistische-menschen/besonderheiten/selektives-essen-und-arfid/",
   },
   {
+    icon: "sprechblase",
     label: "Sprache und Kommunikation",
     href: "/fuer-autistische-menschen/besonderheiten/sprache-und-kommunikation/",
   },
   {
+    icon: "ebenen",
     label: "Intellektuelle Entwicklungsstörung",
     href: "/fuer-autistische-menschen/besonderheiten/intellektuelle-entwicklungsstoerung/",
   },
-];
+] as const;
+
+const neurodivergentGeplant = ["Alexithymie", "Exekutive Dysfunktion", "Interozeption"];
 
 const psychischeBelastungen = [
-  { label: "Angst", href: "/fuer-autistische-menschen/besonderheiten/angststoerungen/" },
-  { label: "Depression", href: "/fuer-autistische-menschen/besonderheiten/depression/" },
-  { label: "Zwangssymptome", href: "/fuer-autistische-menschen/besonderheiten/zwangsstoerung/" },
-  { label: "Traumafolgen", href: "/fuer-autistische-menschen/besonderheiten/traumafolgen-und-ptbs/" },
-  { label: "Autistischer Burnout", href: "/fuer-autistische-menschen/autistischer-burnout/" },
+  { icon: "wellen", label: "Angst", href: "/fuer-autistische-menschen/besonderheiten/angststoerungen/" },
+  { icon: "mond", label: "Depression", href: "/fuer-autistische-menschen/besonderheiten/depression/" },
+  { icon: "regler", label: "Zwangssymptome", href: "/fuer-autistische-menschen/besonderheiten/zwangsstoerung/" },
+  { icon: "mond", label: "Traumafolgen", href: "/fuer-autistische-menschen/besonderheiten/traumafolgen-und-ptbs/" },
+  { icon: "mond", label: "Autistischer Burnout", href: "/fuer-autistische-menschen/autistischer-burnout/" },
   {
+    icon: "wellen",
     label: "Selbstverletzendes Verhalten",
     href: "/fuer-autistische-menschen/besonderheiten/selbstverletzendes-verhalten/",
   },
-  { label: "Suizidalität (Krisenhilfe)", href: "/fuer-autistische-menschen/besonderheiten/suizidalitaet/" },
-];
+  { icon: "stern", label: "Suizidalität (Krisenhilfe)", href: "/fuer-autistische-menschen/besonderheiten/suizidalitaet/" },
+] as const;
 
 const koerperlicheBegleiterkrankungen = [
-  { label: "Schlafstörungen", href: "/fuer-autistische-menschen/besonderheiten/schlafstoerungen/" },
-  { label: "Epilepsie", href: "/fuer-autistische-menschen/besonderheiten/epilepsie/" },
-  { label: "Migräne", href: "/fuer-autistische-menschen/besonderheiten/migraene-und-kopfschmerzen/" },
+  { icon: "mond", label: "Schlafstörungen", href: "/fuer-autistische-menschen/besonderheiten/schlafstoerungen/" },
+  { icon: "wellen", label: "Epilepsie", href: "/fuer-autistische-menschen/besonderheiten/epilepsie/" },
+  { icon: "wellen", label: "Migräne", href: "/fuer-autistische-menschen/besonderheiten/migraene-und-kopfschmerzen/" },
   {
+    icon: "kalender",
     label: "Gastrointestinale Beschwerden",
     href: "/fuer-autistische-menschen/besonderheiten/gastrointestinale-beschwerden/",
   },
-];
+] as const;
 ---
 
 <BaseLayout
@@ -85,13 +93,24 @@ const koerperlicheBegleiterkrankungen = [
       </p>
 
       <h2>Neurodivergente und kognitive Besonderheiten</h2>
-      <PlannedTopics topics={neurodivergent} />
+      <div class="themen-kacheln">
+        {neurodivergent.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
+      </div>
+      <p class="geplant-hinweis">
+        In Vorbereitung: {neurodivergentGeplant.join(" · ")}.
+      </p>
 
       <h2>Psychische Belastungen</h2>
-      <PlannedTopics topics={psychischeBelastungen} />
+      <div class="themen-kacheln">
+        {psychischeBelastungen.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
+      </div>
 
       <h2>Körperliche Begleiterkrankungen</h2>
-      <PlannedTopics topics={koerperlicheBegleiterkrankungen} />
+      <div class="themen-kacheln">
+        {koerperlicheBegleiterkrankungen.map((thema) => (
+          <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />
+        ))}
+      </div>
 
       <div class="notice">
         <p>
@@ -108,7 +127,7 @@ const koerperlicheBegleiterkrankungen = [
 <style>
   .lead {
     max-width: var(--measure);
-    font-size: 1.15rem;
+    font-size: 1.0625rem; /* ca. 17-18px */
     margin-bottom: var(--space-lg);
   }
 
@@ -123,5 +142,17 @@ const koerperlicheBegleiterkrankungen = [
 
   .notice {
     margin-top: var(--space-lg);
+  }
+
+  .themen-kacheln {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: var(--space-sm);
+  }
+
+  .geplant-hinweis {
+    margin-top: var(--space-sm);
+    color: var(--color-text-muted);
+    font-size: 0.9375rem; /* ca. 14-15px */
   }
 </style>

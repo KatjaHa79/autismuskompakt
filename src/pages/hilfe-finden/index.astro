@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import AnlaufstelleKarte from "../../components/AnlaufstelleKarte.astro";
+import ThemenKachel from "../../components/ThemenKachel.astro";
 import {
   ageGroupLabels,
   bundeslandLabels,
@@ -56,6 +57,39 @@ const passendeDownloads = passendeDownloadsProSituation.map((eintrag) => ({
   situation: eintrag.situation,
   materialien: eintrag.ids.map((id) => nachId.get(id)).filter((m) => m !== undefined),
 }));
+
+const wegweiser = [
+  {
+    icon: "kompass",
+    title: "Ich vermute, dass ich autistisch bin.",
+    href: "/fuer-autistische-menschen/diagnostik/koennte-ich-autistisch-sein/",
+  },
+  {
+    icon: "stern",
+    title: "Ich habe gerade meine Diagnose bekommen.",
+    href: "/fuer-autistische-menschen/diagnostik/nach-der-diagnose/",
+  },
+  {
+    icon: "wellen",
+    title: "Ich komme im Alltag nicht mehr zurecht.",
+    href: "/fuer-autistische-menschen/alltag/reizmanagement-im-alltag/",
+  },
+  {
+    icon: "buch",
+    title: "Ich brauche Hilfe mit Behörden oder Anträgen.",
+    href: "/fuer-autistische-menschen/rechte-und-antraege/",
+  },
+  {
+    icon: "auge",
+    title: "Ich suche eine Diagnostikstelle.",
+    href: "/hilfe-finden/kategorie/diagnostik/",
+  },
+  {
+    icon: "sprechblase",
+    title: "Ich suche Unterstützung oder Beratung.",
+    href: "/hilfe-finden/kategorie/beratung/",
+  },
+] as const;
 ---
 
 <BaseLayout
@@ -114,32 +148,13 @@ const passendeDownloads = passendeDownloadsProSituation.map((eintrag) => ({
           Du startest bei deiner aktuellen Situation – nicht bei einem
           Fachbegriff. Wähle unten den Satz, der am besten passt.
         </p>
-        <ul class="orientierung-liste">
-          <li>
-            <a href="/fuer-autistische-menschen/diagnostik/koennte-ich-autistisch-sein/">
-              Ich vermute, dass ich autistisch bin.
-            </a>
-          </li>
-          <li>
-            <a href="/fuer-autistische-menschen/diagnostik/nach-der-diagnose/">
-              Ich habe gerade meine Diagnose bekommen.
-            </a>
-          </li>
-          <li>
-            <a href="/fuer-autistische-menschen/alltag/reizmanagement-im-alltag/">
-              Ich komme im Alltag nicht mehr zurecht.
-            </a>
-          </li>
-          <li>
-            <a href="/fuer-autistische-menschen/rechte-und-antraege/">Ich brauche Hilfe mit Behörden oder Anträgen.</a>
-          </li>
-          <li>
-            <a href="/hilfe-finden/kategorie/diagnostik/">Ich suche eine Diagnostikstelle.</a>
-          </li>
-          <li>
-            <a href="/hilfe-finden/kategorie/beratung/">Ich suche Unterstützung oder Beratung.</a>
-          </li>
-        </ul>
+        <div class="situationen-kacheln">
+          {
+            wegweiser.map((eintrag) => (
+              <ThemenKachel icon={eintrag.icon} title={eintrag.title} href={eintrag.href} />
+            ))
+          }
+        </div>
       </div>
 
       <div class="orientierung">
@@ -154,12 +169,12 @@ const passendeDownloads = passendeDownloadsProSituation.map((eintrag) => ({
             passendeDownloads.map(
               (eintrag) =>
                 eintrag.materialien.length > 0 && (
-                  <li>
-                    <p class="downloads-liste__situation">{eintrag.situation}</p>
-                    <ul class="downloads-liste__links">
+                  <li class="downloads-karte">
+                    <p class="downloads-karte__situation">{eintrag.situation}</p>
+                    <ul class="downloads-karte__links">
                       {eintrag.materialien.map((material) => (
                         <li>
-                          <a href={`/materialien/#${material.id}`}>{material.data.title}</a>
+                          <a href={`/materialien/#${material.id}`}>{material.data.title} ↗</a>
                         </li>
                       ))}
                     </ul>
@@ -235,7 +250,7 @@ const passendeDownloads = passendeDownloadsProSituation.map((eintrag) => ({
 <style>
   .lead {
     max-width: var(--measure);
-    font-size: 1.15rem;
+    font-size: 1.0625rem; /* ca. 17-18px */
     margin-bottom: var(--space-md);
   }
 
@@ -253,58 +268,76 @@ const passendeDownloads = passendeDownloadsProSituation.map((eintrag) => ({
     margin-bottom: var(--space-sm);
   }
 
-  .orientierung-liste {
-    list-style: none;
-    padding: 0;
+  .situationen-kacheln {
     display: grid;
-    gap: var(--space-2xs);
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-sm);
   }
 
-  .orientierung-liste a {
-    display: block;
-    padding: var(--space-xs) var(--space-sm);
-    background-color: var(--color-surface);
-    border-radius: var(--radius);
-    border: var(--border-width) solid var(--color-background-alt);
+  @media (min-width: 48rem) {
+    .situationen-kacheln {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .situationen-kacheln {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 
   .anlaufstellen-grid {
     list-style: none;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-md);
+  }
+
+  .anlaufstellen-grid > li {
+    min-width: 0;
+  }
+
+  @media (min-width: 48rem) {
+    .anlaufstellen-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 75rem) {
+    .anlaufstellen-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 
   .downloads-liste {
     list-style: none;
     padding: 0;
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
     gap: var(--space-sm);
   }
 
-  .downloads-liste > li + li {
-    padding-top: var(--space-sm);
-    border-top: var(--border-width) solid var(--color-border);
+  .downloads-karte {
+    padding: var(--space-sm);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius);
+    background-color: var(--color-surface);
   }
 
-  .downloads-liste__situation {
+  .downloads-karte__situation {
     font-weight: 700;
+    color: var(--color-petrol);
+    font-size: 1.0625rem; /* ca. 16-18px, wie Kachel-Titel */
     margin-bottom: var(--space-2xs);
   }
 
-  .downloads-liste__links {
+  .downloads-karte__links {
     list-style: none;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2xs) var(--space-sm);
-  }
-
-  .downloads-liste__links a {
-    display: inline-block;
-    padding: 0.15em 0.7em;
-    background-color: var(--color-background-alt);
-    border-radius: 999px;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    font-size: 0.9375rem; /* ca. 14-15px */
   }
 </style>

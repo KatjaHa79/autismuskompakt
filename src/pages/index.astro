@@ -1,61 +1,72 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ThemenKachel from "../components/ThemenKachel.astro";
 
 const themen = [
   {
+    icon: "kompass",
     label: "Autismus verstehen",
     href: "/fuer-autistische-menschen/",
     description: "Grundlagen zu Autismus, Wahrnehmung, Kommunikation und unterschiedlichen autistischen Erfahrungen.",
   },
   {
+    icon: "auge",
     label: "Diagnostik & Tests",
     href: "/fuer-autistische-menschen/diagnostik/",
     description: "Informationen zur Autismusdiagnostik, zum Ablauf einer Abklärung und zu Screeningverfahren.",
   },
   {
+    icon: "kreise",
     label: "Hilfe & Anlaufstellen",
     href: "/hilfe-finden/",
     description: "Beratungsstellen, Diagnostikangebote und weitere Unterstützungsmöglichkeiten finden.",
   },
   {
+    icon: "buch",
     label: "Rechte & Anträge",
     href: "/fuer-autistische-menschen/rechte-und-antraege/",
     description: "Orientierung zu Nachteilsausgleichen, GdB, Pflegegrad, Teilhabe und weiteren Leistungen.",
   },
   {
+    icon: "kalender",
     label: "Alltag & Leben",
     href: "/fuer-autistische-menschen/alltag/",
     description: "Praktische Informationen zu Reizregulation, Kommunikation, Beziehungen, Wohnen, Arbeit und Selbstfürsorge.",
   },
   {
+    icon: "ebenen",
     label: "Besonderheiten & Begleiterkrankungen",
     href: "/fuer-autistische-menschen/besonderheiten/",
     description: "Informationen zu häufig gemeinsam auftretenden Besonderheiten, Beschwerden und Diagnosen.",
   },
   {
+    icon: "regler",
     label: "Downloads & Materialien",
     href: "/materialien/",
     description: "Kostenlose Checklisten, Vorlagen, Übersichten und Arbeitshilfen zum Herunterladen.",
   },
-];
+] as const;
 
 const zielgruppen = [
   {
+    icon: "kompass",
     label: "Ich bin autistisch – oder vermute es",
     href: "/fuer-autistische-menschen/",
     description: "Wissen, Orientierung und praktische Hilfen für Diagnostik, Alltag, Selbstverständnis, Rechte und Unterstützung.",
   },
   {
+    icon: "kreise",
     label: "Ich bin Angehörige:r",
     href: "/angehoerige-fachkraefte/#angehoerige",
     description: "Autismus besser verstehen, Bedürfnisse einordnen und passende Möglichkeiten zur Unterstützung finden.",
   },
   {
+    icon: "buch",
     label: "Ich bin Fachkraft",
     href: "/angehoerige-fachkraefte/#fachkraefte",
     description: "Fundierte Informationen, praktische Materialien und Orientierung für Beratung, Bildung, Arbeit und Begleitung.",
   },
-];
+] as const;
 ---
 
 <BaseLayout
@@ -63,7 +74,7 @@ const zielgruppen = [
   description="Verständliche Informationen rund um Autismus: Diagnostik, Alltag, Rechte, Anlaufstellen, Begleiterkrankungen, kostenlose Materialien und praktische Hilfen."
 >
   <section class="hero">
-    <div class="container hero__grid">
+    <div class="container">
       <div class="hero__content">
         <h1>Autismus verstehen. Unterstützung finden. Den eigenen Weg gehen.</h1>
         <p class="hero__lead">
@@ -77,46 +88,39 @@ const zielgruppen = [
           <a class="button button--secondary" href="/hilfe-finden/">Anlaufstellen finden</a>
         </div>
       </div>
-
-      <div class="hero__accent" aria-hidden="true"></div>
     </div>
   </section>
 
   <section class="section" aria-labelledby="themen-heading">
     <div class="container">
       <h2 id="themen-heading">Themen im Überblick</h2>
-      <ol class="theme-list">
+      <div class="themen-kacheln">
         {
-          themen.map((thema, index) => (
-            <li class="theme-list__item">
-              <a class="theme-list__link" href={thema.href}>
-                <span class="theme-list__index" aria-hidden="true">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span class="theme-list__body">
-                  <span class="theme-list__title">{thema.label}</span>
-                  <span class="theme-list__desc">{thema.description}</span>
-                </span>
-                <span class="theme-list__arrow" aria-hidden="true">→</span>
-              </a>
-            </li>
+          themen.map((thema) => (
+            <ThemenKachel
+              icon={thema.icon}
+              title={thema.label}
+              description={thema.description}
+              href={thema.href}
+            />
           ))
         }
-      </ol>
+      </div>
     </div>
   </section>
 
   <section class="section section--alt" aria-labelledby="zielgruppen-heading">
     <div class="container">
       <h2 id="zielgruppen-heading">Für wen suchst du Informationen?</h2>
-      <div class="audience-grid">
+      <div class="themen-kacheln">
         {
           zielgruppen.map((gruppe) => (
-            <a class="audience-item" href={gruppe.href}>
-              <span class="audience-item__title">{gruppe.label}</span>
-              <span class="audience-item__desc">{gruppe.description}</span>
-              <span class="audience-item__arrow" aria-hidden="true">→</span>
-            </a>
+            <ThemenKachel
+              icon={gruppe.icon}
+              title={gruppe.label}
+              description={gruppe.description}
+              href={gruppe.href}
+            />
           ))
         }
       </div>
@@ -126,102 +130,35 @@ const zielgruppen = [
 
 <style>
   .hero {
-    padding-block: var(--space-xl) var(--space-md);
-  }
-
-  .hero__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
+    padding-block: var(--space-lg) var(--space-md);
+    border-bottom: var(--border-width) solid var(--color-bronze-soft);
   }
 
   .hero__content {
-    max-width: 40rem;
+    max-width: 56rem;
   }
 
   .hero h1 {
-    max-width: none;
-    line-height: 1.35;
-    font-size: clamp(2rem, 1.8rem + 1.6vw, 2.625rem);
+    max-width: 22ch;
+    line-height: 1.2;
   }
 
   .hero__lead {
     margin-top: var(--space-sm);
-    max-width: 46ch;
-    font-size: 1.25rem;
+    max-width: 60ch;
+    font-size: 1.0625rem; /* ca. 17px */
   }
 
   .hero__actions {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-sm);
-    margin-top: var(--space-lg);
+    gap: var(--space-xs);
+    margin-top: var(--space-md);
   }
 
-  /* Bewusster Freiraum rechts statt einer Symbolgrafik – nur eine sehr
-     feine Bronze-Linie als dezenter typografischer Akzent. */
-  .hero__accent {
-    display: none;
-  }
-
-  /* Ab hier zweispaltig: Text links (~55%), Freiraum rechts (~45%). */
-  @media (min-width: 64rem) {
-    .hero__grid {
-      grid-template-columns: 11fr 9fr;
-      gap: var(--space-2xl);
-    }
-
-    .hero__content {
-      max-width: none;
-    }
-
-    .hero__accent {
-      display: block;
-      justify-self: start;
-      width: 1px;
-      height: 100%;
-      min-height: 12rem;
-      background-color: var(--color-bronze-soft);
-    }
-  }
-
-  /* Zielgruppenbereich: drei ruhige, typografische Spalten statt Karten. */
-  .audience-grid {
+  .themen-kacheln {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-  }
-
-  .audience-item {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2xs);
-    padding-top: var(--space-md);
-    border-top: 2px solid var(--color-petrol);
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .audience-item__title {
-    font-size: 1.375rem;
-    font-weight: 700;
-    color: var(--color-petrol);
-  }
-
-  .audience-item__desc {
-    color: var(--color-text-muted);
-  }
-
-  .audience-item__arrow {
-    margin-top: var(--space-2xs);
-    color: var(--color-bronze-dark);
-    font-weight: 700;
-  }
-
-  @media (min-width: 48rem) {
-    .audience-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-xl);
-    }
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: var(--space-sm);
   }
 </style>
