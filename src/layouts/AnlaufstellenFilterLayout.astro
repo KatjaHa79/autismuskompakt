@@ -14,14 +14,14 @@ const { title, filterLabel, entries } = Astro.props;
 ---
 
 <BaseLayout
-  title={`${title} – Hilfe finden`}
+  title={`${title} – Anlaufstellen`}
   description={`Anlaufstellen zum Thema Autismus, gefiltert nach: ${filterLabel}.`}
 >
   <div class="container">
     <Breadcrumbs
       items={[
         { label: "Start", href: "/" },
-        { label: "Hilfe finden", href: "/hilfe-finden/" },
+        { label: "Anlaufstellen", href: "/hilfe-finden/" },
         { label: title },
       ]}
     />

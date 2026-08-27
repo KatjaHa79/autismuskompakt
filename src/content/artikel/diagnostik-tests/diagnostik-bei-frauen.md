@@ -1,6 +1,6 @@
 ---
 title: "Diagnostik bei Frauen"
-description: "Warum Mädchen und Frauen in der Autismusdiagnostik häufiger übersehen oder später erkannt werden – und warum daraus kein neues, starres Bild entstehen sollte."
+description: "Warum Mädchen und Frauen mit Autismus in der Diagnostik häufiger übersehen oder später erkannt werden – und warum daraus kein neues, starres Bild entstehen sollte."
 category: "diagnostik-tests"
 targetGroups: ["autistische-menschen", "angehoerige", "fachkraefte"]
 updated: 2026-08-26

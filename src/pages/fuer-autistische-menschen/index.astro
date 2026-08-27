@@ -1,50 +1,197 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import PlannedTopics from "../../components/PlannedTopics.astro";
+import ThemenKachel from "../../components/ThemenKachel.astro";
 
-const verstehenKernbereiche = [
-  { label: "Was ist Autismus?", href: "/fuer-autistische-menschen/was-ist-autismus/" },
-  { label: "Autistische Wahrnehmung", href: "/fuer-autistische-menschen/autistische-wahrnehmung/" },
+const themenGruppen = [
   {
-    label: "Reizverarbeitung & sensorische Besonderheiten",
-    href: "/fuer-autistische-menschen/reizverarbeitung/",
+    titel: "Grundlagen, Wahrnehmung und Kommunikation",
+    kacheln: [
+      {
+        icon: "kompass",
+        title: "Was ist Autismus?",
+        description: "Eine Einführung: was Autismus ist, wie vielfältig er sich zeigen kann und was die Diagnose bedeutet.",
+        href: "/fuer-autistische-menschen/was-ist-autismus/",
+      },
+      {
+        icon: "auge",
+        title: "Autistische Wahrnehmung",
+        description: "Wie Reize, Details und Informationen unterschiedlich verarbeitet werden können.",
+        href: "/fuer-autistische-menschen/autistische-wahrnehmung/",
+      },
+      {
+        icon: "wellen",
+        title: "Reizverarbeitung & sensorische Besonderheiten",
+        description: "Warum Geräusche, Licht oder Berührung unterschiedlich intensiv wirken können – und was helfen kann.",
+        href: "/fuer-autistische-menschen/reizverarbeitung/",
+      },
+      {
+        icon: "sprechblase",
+        title: "Kommunikation",
+        description: "Warum Kommunikation auch bei guter Sprachfähigkeit anstrengend sein kann und welche Anpassungen helfen.",
+        href: "/fuer-autistische-menschen/kommunikation/",
+      },
+      {
+        icon: "kreise",
+        title: "Soziale Situationen & Double Empathy",
+        description: "Missverständnisse entstehen oft auf beiden Seiten – nicht nur bei autistischen Menschen.",
+        href: "/fuer-autistische-menschen/double-empathy/",
+      },
+      {
+        icon: "kalender",
+        title: "Routinen, Veränderungen & Vorhersehbarkeit",
+        description: "Warum Routinen Sicherheit geben können und wie Veränderungen leichter zu bewältigen sind.",
+        href: "/fuer-autistische-menschen/routinen-und-veraenderungen/",
+      },
+    ],
   },
-  { label: "Kommunikation", href: "/fuer-autistische-menschen/kommunikation/" },
   {
-    label: "Soziale Situationen & Double Empathy",
-    href: "/fuer-autistische-menschen/double-empathy/",
+    titel: "Reize, Regulation & Erholung",
+    kacheln: [
+      {
+        icon: "regler",
+        title: "Stimming",
+        description: "Wiederkehrende Bewegungen oder Geräusche können beruhigen, regulieren oder Freude ausdrücken.",
+        href: "/fuer-autistische-menschen/stimming/",
+      },
+      {
+        icon: "wellen",
+        title: "Overload",
+        description: "Wenn Reize und Anforderungen zu viel werden und das System an seine Grenzen kommt.",
+        href: "/fuer-autistische-menschen/overload/",
+      },
+      {
+        icon: "regler",
+        title: "Meltdown",
+        description: "Ein Kontrollverlust durch Überlastung – keine Absicht und kein Wutausbruch im klassischen Sinn.",
+        href: "/fuer-autistische-menschen/meltdown/",
+      },
+      {
+        icon: "mond",
+        title: "Shutdown",
+        description: "Wenn Überlastung nicht nach außen, sondern nach innen wirkt und der Rückzug beginnt.",
+        href: "/fuer-autistische-menschen/shutdown/",
+      },
+      {
+        icon: "mond",
+        title: "Autistischer Burnout",
+        description: "Anhaltende Erschöpfung durch Dauerbelastung, oft mit spürbarem Verlust von Fähigkeiten.",
+        href: "/fuer-autistische-menschen/autistischer-burnout/",
+      },
+      {
+        icon: "auge",
+        title: "Interozeption",
+        description: "Der Sinn für innere Körpersignale wie Hunger, Durst, Schmerz oder Herzschlag.",
+        href: "/fuer-autistische-menschen/interozeption/",
+      },
+      {
+        icon: "ebenen",
+        title: "Propriozeption",
+        description: "Der Körpersinn hilft wahrzunehmen, wo sich der eigene Körper im Raum befindet und wie er sich bewegt.",
+        href: "/fuer-autistische-menschen/propriozeption/",
+      },
+    ],
   },
   {
-    label: "Routinen, Veränderungen & Vorhersehbarkeit",
-    href: "/fuer-autistische-menschen/routinen-und-veraenderungen/",
+    titel: "Denken, Aufmerksamkeit & Informationsverarbeitung",
+    kacheln: [
+      {
+        icon: "uhr",
+        title: "Exekutive Funktionen",
+        description: "Planen, Organisieren und Umsetzen von Aufgaben kann unterschiedlich viel Anstrengung erfordern.",
+        href: "/fuer-autistische-menschen/exekutive-funktionen/",
+      },
+      {
+        icon: "stern",
+        title: "Spezialinteressen",
+        description: "Intensive Interessen können Wissen, Freude, Regulation und Verbindung ermöglichen.",
+        href: "/fuer-autistische-menschen/spezialinteressen/",
+      },
+      {
+        icon: "kreise",
+        title: "Monotropismus",
+        description: "Ein Modell dafür, wie Aufmerksamkeit besonders intensiv auf wenige Dinge gleichzeitig gerichtet sein kann.",
+        href: "/fuer-autistische-menschen/monotropismus/",
+      },
+      {
+        icon: "ebenen",
+        title: "Zentrale Kohärenz",
+        description: "Warum Details manchmal stärker in den Vordergrund treten als der Gesamtzusammenhang.",
+        href: "/fuer-autistische-menschen/zentrale-kohaerenz/",
+      },
+      {
+        icon: "kompass",
+        title: "Predictive Processing",
+        description: "Ein Forschungsansatz dazu, wie Erwartungen und Sinneseindrücke miteinander abgeglichen werden.",
+        href: "/fuer-autistische-menschen/predictive-processing/",
+      },
+      {
+        icon: "sprechblase",
+        title: "Alexithymie",
+        description: "Wenn es schwerfällt, eigene Gefühle wahrzunehmen, zu unterscheiden oder in Worte zu fassen.",
+        href: "/fuer-autistische-menschen/alexithymie/",
+      },
+      {
+        icon: "regler",
+        title: "Dyspraxie",
+        description: "Schwierigkeiten bei Planung, Koordination und Ausführung von Bewegungen können den Alltag beeinflussen.",
+        href: "/fuer-autistische-menschen/besonderheiten/motorische-besonderheiten-und-dyspraxie/",
+      },
+      {
+        icon: "wellen",
+        title: "Synästhesie",
+        description: "Bei Synästhesie können Sinneseindrücke automatisch zusätzliche Wahrnehmungen auslösen.",
+        href: "/fuer-autistische-menschen/synaesthesie/",
+      },
+    ],
   },
-  { label: "Stimming", href: "/fuer-autistische-menschen/stimming/" },
-  { label: "Masking / Camouflaging", href: "/fuer-autistische-menschen/masking/" },
-  { label: "Overload", href: "/fuer-autistische-menschen/overload/" },
-  { label: "Meltdown", href: "/fuer-autistische-menschen/meltdown/" },
-  { label: "Shutdown", href: "/fuer-autistische-menschen/shutdown/" },
-  { label: "Autistischer Burnout", href: "/fuer-autistische-menschen/autistischer-burnout/" },
-  "Exekutive Funktionen",
-  "Interozeption",
-];
-
-const verstehenWeitereThemen = [
-  "Spezialinteressen",
-  "Monotropismus",
-  "Zentrale Kohärenz",
-  "Predictive Processing",
-  "Alexithymie",
-  "Dyspraxie",
-  "Propriozeption",
-  "Synästhesie",
-  "Autismus bei Frauen und Mädchen",
-  "Spätdiagnose",
-  "Autismus im Erwachsenenalter",
-  "Autismus und Älterwerden",
-  "Sprache & Begriffe",
-  "Mythen & Fakten",
-];
+  {
+    titel: "Lebensverlauf & unterschiedliche Erfahrungen",
+    kacheln: [
+      {
+        icon: "auge",
+        title: "Autismus bei Frauen und Mädchen",
+        description: "Warum autistische Merkmale bei Mädchen und Frauen häufiger übersehen oder anders eingeordnet werden können.",
+        href: "/fuer-autistische-menschen/diagnostik/diagnostik-bei-frauen/",
+      },
+      {
+        icon: "kompass",
+        title: "Spätdiagnose",
+        description: "Was es bedeuten kann, Autismus erst im Erwachsenenalter zu erkennen und einzuordnen.",
+        href: "/fuer-autistische-menschen/spaetdiagnose/",
+      },
+      {
+        icon: "uhr",
+        title: "Autismus im Erwachsenenalter",
+        description: "Autismus endet nicht mit der Kindheit – Anforderungen und Unterstützungsbedarf verändern sich im Lebensverlauf.",
+        href: "/fuer-autistische-menschen/autismus-im-erwachsenenalter/",
+      },
+      {
+        icon: "uhr",
+        title: "Autismus und Älterwerden",
+        description: "Wie sich Bedürfnisse, Belastungen und Ressourcen im höheren Lebensalter verändern können.",
+        href: "/fuer-autistische-menschen/autismus-und-aelterwerden/",
+      },
+    ],
+  },
+  {
+    titel: "Einordnung & Wissen",
+    kacheln: [
+      {
+        icon: "buch",
+        title: "Sprache & Begriffe",
+        description: "Begriffe rund um Autismus verständlich erklärt und fachlich eingeordnet.",
+        href: "/fuer-autistische-menschen/sprache-und-begriffe/",
+      },
+      {
+        icon: "buch",
+        title: "Mythen & Fakten",
+        description: "Verbreitete Vorstellungen über Autismus im Vergleich mit dem heutigen Wissensstand.",
+        href: "/fuer-autistische-menschen/mythen-und-fakten/",
+      },
+    ],
+  },
+] as const;
 
 const bereiche = [
   {
@@ -88,18 +235,28 @@ const bereiche = [
       </p>
 
       <h2>Autismus verstehen</h2>
-      <PlannedTopics topics={verstehenKernbereiche} />
+      <p class="lead-small">
+        Grundlagen, Wahrnehmung, Regulation und unterschiedliche autistische
+        Erfahrungen – kompakt zusammengefasst. Wähle ein Thema aus.
+      </p>
 
-      <h3>Weitere Themen</h3>
-      <PlannedTopics topics={verstehenWeitereThemen} />
-
-      <div class="notice">
-        <p>
-          Diese Seite befindet sich im Aufbau. Ausführliche, fachlich
-          fundierte Beiträge zu den einzelnen Themen entstehen in den
-          nächsten Etappen.
-        </p>
-      </div>
+      {
+        themenGruppen.map((gruppe) => (
+          <div class="themen-gruppe">
+            <h3>{gruppe.titel}</h3>
+            <div class="themen-kacheln">
+              {gruppe.kacheln.map((kachel) => (
+                <ThemenKachel
+                  icon={kachel.icon}
+                  title={kachel.title}
+                  description={kachel.description}
+                  href={kachel.href}
+                />
+              ))}
+            </div>
+          </div>
+        ))
+      }
     </div>
   </section>
 
@@ -139,12 +296,27 @@ const bereiche = [
     margin-bottom: var(--space-sm);
   }
 
-  h3 {
+  .lead-small {
+    max-width: var(--measure);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  .themen-gruppe + .themen-gruppe {
     margin-top: var(--space-lg);
+  }
+
+  .themen-gruppe h3 {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
     margin-bottom: var(--space-sm);
   }
 
-  .notice {
-    margin-top: var(--space-lg);
+  .themen-kacheln {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: var(--space-sm);
   }
 </style>

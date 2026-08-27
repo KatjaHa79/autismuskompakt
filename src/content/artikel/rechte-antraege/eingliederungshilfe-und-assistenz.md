@@ -37,4 +37,4 @@ Die leistungsrechtliche Entscheidung bleibt beim zuständigen Träger.
 
 ## Hilfe / Anlaufstellen
 
-Unabhängige Beratung zu Teilhabeleistungen bietet die [Ergänzende unabhängige Teilhabeberatung (EUTB)](https://www.teilhabeberatung.de/). Passende Anlaufstellen in deiner Nähe findest du auch über [Hilfe finden](/hilfe-finden/).
+Unabhängige Beratung zu Teilhabeleistungen bietet die [Ergänzende unabhängige Teilhabeberatung (EUTB)](https://www.teilhabeberatung.de/). Weitere passende Anlaufstellen in deiner Nähe findest du unter [Anlaufstellen](/hilfe-finden/).
