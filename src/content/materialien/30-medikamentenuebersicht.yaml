@@ -1,0 +1,15 @@
+# Download 30 – Meine Medikamentenübersicht
+# Quelle: Original-PDF von Katja, unverändert übernommen.
+title: Meine Medikamentenübersicht
+description: Vorlage zur übersichtlichen Dokumentation von Medikamenten, Dosierung, Zweck und möglichen
+  Nebenwirkungen.
+targetGroups:
+- autistische-menschen
+- angehoerige
+materialType: vorlagen
+file: 30-medikamentenuebersicht.pdf
+fileFormat: PDF
+pages: 3
+language: de
+updated: '2026-08-26'
+accessibilityNote: PDF zum Ausfüllen und Ausdrucken.

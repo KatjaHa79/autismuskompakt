@@ -59,8 +59,10 @@ const downloadHref = external ? externalUrl : `/downloads/materialien/${file}`;
         <span class="visually-hidden">(öffnet auf einer anderen Website)</span>
       </a>
     ) : (
-      <a href={downloadHref} download>
-        {title} herunterladen{fileFormat ? ` (${fileFormat})` : ""}
+      <a href={downloadHref}>
+        PDF öffnen
+        {pages ? ` · ${pages} Seite${pages === 1 ? "" : "n"}` : ""}
+        <span class="visually-hidden"> ({title})</span>
       </a>
     )}
   </p>

@@ -38,6 +38,22 @@ export const SEARCH_SYNONYMS: Array<{ pattern: string; keywords: string[] }> = [
   { pattern: "wohnen", keywords: ["wohnen und assistenz"] },
   { pattern: "verstecktes verhalten", keywords: ["masking"] },
   { pattern: "camouflaging", keywords: ["masking"] },
+
+  // Ergänzungen für die Download- und Materialien-Etappe (Alltagssprache).
+  { pattern: "glaube ich bin autistisch", keywords: ["autismusverdacht", "könnte ich autistisch sein"] },
+  { pattern: "ich bin autistisch", keywords: ["autismusverdacht", "könnte ich autistisch sein"] },
+  { pattern: "muss einen antrag stellen", keywords: ["antrag vorbereiten", "gdb", "pflegegrad"] },
+  { pattern: "antrag stellen", keywords: ["antrag vorbereiten"] },
+  { pattern: "bescheid ist falsch", keywords: ["widerspruch", "bescheid-check"] },
+  { pattern: "mein bescheid", keywords: ["widerspruch", "bescheid-check"] },
+  { pattern: "familie mich unterstützen", keywords: ["so kannst du mich unterstützen", "familie"] },
+  { pattern: "familie unterstuetzen", keywords: ["so kannst du mich unterstützen", "familie"] },
+  { pattern: "mit ins krankenhaus", keywords: ["krankenhaus- & notfallinformation", "notfall"] },
+  { pattern: "weiß nicht welche hilfe", keywords: ["welche unterstützung brauche ich", "hilfe finden"] },
+  { pattern: "weiss nicht welche hilfe", keywords: ["welche unterstützung brauche ich", "hilfe finden"] },
+  { pattern: "diagnose bekommen", keywords: ["nach der diagnose", "diagnose"] },
+  { pattern: "telefonieren", keywords: ["telefonat vorbereiten", "kommunikation"] },
+  { pattern: "einarbeitung", keywords: ["einarbeitungsplan", "arbeitsplatz"] },
 ];
 
 /**

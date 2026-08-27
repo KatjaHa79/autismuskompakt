@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import AnlaufstelleKarte from "../../components/AnlaufstelleKarte.astro";
@@ -24,6 +25,43 @@ const altersgruppen = await getAltersgruppenMitEintraegen();
 
 const hatOnline = alle.some((a) => a.data.online);
 const hatVorOrt = alle.some((a) => a.data.onsite);
+
+// Passende Downloads je Situation (Master-Projektauftrag, Abschnitt P).
+// Ergänzt die Anlaufstellen-Datenbank um konkrete Arbeitsblätter, ersetzt
+// die bestehenden Filter unten aber nicht.
+const alleMaterialien = await getCollection("materialien");
+const nachId = new Map(alleMaterialien.map((entry) => [entry.id, entry]));
+const passendeDownloadsProSituation: Array<{ situation: string; ids: string[] }> = [
+  { situation: "Ich vermute, dass ich autistisch bin.", ids: ["01-autismusverdacht-was-jetzt"] },
+  { situation: "Ich möchte mich auf eine Diagnostik vorbereiten.", ids: ["02-vorbereitung-autismusdiagnostik"] },
+  {
+    situation: "Mein Alltag ist gerade überfordernd.",
+    ids: [
+      "03-belastungs-energie-check",
+      "12-was-hilft-mir-was-belastet-mich",
+      "17-wochenplan-mit-erholungszeiten",
+      "34-alltag-funktioniert-nicht-mehr-was-jetzt",
+    ],
+  },
+  { situation: "Ich bereite einen Arzttermin vor.", ids: ["04-arzttermin-vorbereitung"] },
+  {
+    situation: "Ich möchte einen Antrag stellen oder Rechte klären.",
+    ids: [
+      "07-gdb-antrag-vorbereitung",
+      "08-pflegegrad-begutachtung-vorbereitung",
+      "09-widerspruch-bescheid-check",
+      "22-antrag-vorbereiten-unterlagen-fristen",
+    ],
+  },
+  { situation: "Ich habe gerade meine Diagnose bekommen.", ids: ["33-nach-der-autismusdiagnose-was-jetzt"] },
+  { situation: "Ich weiß nicht, welche Unterstützung ich brauche.", ids: ["35-welche-unterstuetzung-brauche-ich"] },
+  { situation: "Ich möchte eine passende Anlaufstelle auswählen.", ids: ["36-anlaufstellen-check"] },
+  { situation: "Ich möchte meine nächsten Schritte koordinieren.", ids: ["37-mein-persoenlicher-hilfeplan"] },
+];
+const passendeDownloads = passendeDownloadsProSituation.map((eintrag) => ({
+  situation: eintrag.situation,
+  materialien: eintrag.ids.map((id) => nachId.get(id)).filter((m) => m !== undefined),
+}));
 ---
 
 <BaseLayout
@@ -97,6 +135,34 @@ const hatVorOrt = alle.some((a) => a.data.onsite);
           <li>
             <a href="/hilfe-finden/kategorie/beratung/">Ich suche Unterstützung oder Beratung.</a>
           </li>
+        </ul>
+      </div>
+
+      <div class="orientierung">
+        <h2>Passende Arbeitsblätter für deine Situation</h2>
+        <p class="lead-small">
+          Zusätzlich zu den Anlaufstellen unten gibt es kostenlose
+          Arbeitsblätter und Checklisten für einzelne Situationen. Alle
+          Downloads findest du gesammelt auf der <a href="/materialien/">Materialien-Seite</a>.
+        </p>
+        <ul class="downloads-liste">
+          {
+            passendeDownloads.map(
+              (eintrag) =>
+                eintrag.materialien.length > 0 && (
+                  <li>
+                    <p class="downloads-liste__situation">{eintrag.situation}</p>
+                    <ul class="downloads-liste__links">
+                      {eintrag.materialien.map((material) => (
+                        <li>
+                          <a href={`/materialien/#${material.id}`}>{material.data.title}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                )
+            )
+          }
         </ul>
       </div>
 
@@ -225,5 +291,37 @@ const hatVorOrt = alle.some((a) => a.data.onsite);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     gap: var(--space-md);
+  }
+
+  .downloads-liste {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-sm);
+  }
+
+  .downloads-liste > li + li {
+    padding-top: var(--space-sm);
+    border-top: var(--border-width) solid var(--color-border);
+  }
+
+  .downloads-liste__situation {
+    font-weight: 700;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .downloads-liste__links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-sm);
+  }
+
+  .downloads-liste__links a {
+    display: inline-block;
+    padding: 0.15em 0.7em;
+    background-color: var(--color-background-alt);
+    border-radius: 999px;
   }
 </style>

@@ -13,24 +13,115 @@ import {
 const alle = await getAlleMaterialien();
 const zielgruppen = await getZielgruppenMitMaterialien();
 const materialtypen = await getMaterialtypenMitMaterialien();
+
+// Themenbereiche für die Download-Bibliothek. Jedes Material bekommt genau
+// eine primäre Position (keine Dopplungen als vollständige Karte); weitere
+// Zugänge erfolgen über die Filter oben und über Verlinkungen aus Artikeln.
+const themenbereiche: Array<{ titel: string; ids: string[] }> = [
+  {
+    titel: "Orientierung & erste Schritte",
+    ids: [
+      "01-autismusverdacht-was-jetzt",
+      "10-mein-persoenliches-autismus-profil",
+      "11-so-kommuniziere-ich-am-besten",
+      "12-was-hilft-mir-was-belastet-mich",
+      "33-nach-der-autismusdiagnose-was-jetzt",
+    ],
+  },
+  {
+    titel: "Diagnostik & Tests",
+    ids: ["02-vorbereitung-autismusdiagnostik", "13-online-test-ergebnis-einordnen"],
+  },
+  {
+    titel: "Alltag & Selbstorganisation",
+    ids: [
+      "03-belastungs-energie-check",
+      "17-wochenplan-mit-erholungszeiten",
+      "18-telefonat-vorbereiten",
+      "19-haushalt-in-kleinen-schritten",
+      "20-veraenderungen-vorbereiten",
+    ],
+  },
+  {
+    titel: "Gesundheit & Arzttermine",
+    ids: [
+      "04-arzttermin-vorbereitung",
+      "14-schlafprotokoll-14-tage",
+      "15-kopfschmerz-migraene-tagebuch",
+      "16-essens-und-ernaehrungsbeobachtung",
+      "29-mein-schmerzprofil",
+      "30-medikamentenuebersicht",
+    ],
+  },
+  {
+    titel: "Arbeit, Ausbildung & Schule",
+    ids: ["05-arbeit-ausbildung-studium", "06-schule-bildung-unterstuetzungsprofil", "21-einarbeitungsplan-neuer-arbeitsplatz"],
+  },
+  {
+    titel: "Rechte & Anträge",
+    ids: [
+      "07-gdb-antrag-vorbereitung",
+      "08-pflegegrad-begutachtung-vorbereitung",
+      "09-widerspruch-bescheid-check",
+      "22-antrag-vorbereiten-unterlagen-fristen",
+    ],
+  },
+  {
+    titel: "Familie & Partnerschaft",
+    ids: [
+      "23-so-kannst-du-mich-unterstuetzen",
+      "24-rueckzug-ohne-missverstaendnisse",
+      "25-gespraechsvereinbarung-paare-familien",
+      "26-uebergang-ins-erwachsenenleben",
+      "27-unterstuetzen-oder-uebernehmen",
+    ],
+  },
+  {
+    titel: "Gesundheitsversorgung & Therapie",
+    ids: ["28-krankenhaus-notfallinformation", "31-therapieangebot-kritisch-pruefen", "32-meine-therapieziele"],
+  },
+  {
+    titel: "Hilfe finden",
+    ids: [
+      "34-alltag-funktioniert-nicht-mehr-was-jetzt",
+      "35-welche-unterstuetzung-brauche-ich",
+      "36-anlaufstellen-check",
+      "37-mein-persoenlicher-hilfeplan",
+    ],
+  },
+];
+
+const nachId = new Map(alle.map((entry) => [entry.id, entry]));
+const gruppen = themenbereiche
+  .map((gruppe) => ({
+    titel: gruppe.titel,
+    entries: gruppe.ids.map((id) => nachId.get(id)).filter((entry) => entry !== undefined),
+  }))
+  .filter((gruppe) => gruppe.entries.length > 0);
+
+// Materialien, die keinem Themenbereich zugeordnet sind, trotzdem anzeigen
+// (z. B. künftig ergänzte Materialien), damit nichts stillschweigend fehlt.
+const zugeordneteIds = new Set(themenbereiche.flatMap((gruppe) => gruppe.ids));
+const uebrige = alle.filter((entry) => !zugeordneteIds.has(entry.id));
 ---
 
 <BaseLayout
-  title="Materialien"
-  description="Kostenlose Checklisten, Vorlagen und Arbeitsblätter zum Thema Autismus – für autistische Menschen, Angehörige und Fachkräfte."
+  title="Materialien & Downloads"
+  description="Kostenlose Arbeitsblätter, Checklisten, Vorlagen und Orientierungshilfen zum Thema Autismus – für autistische Menschen, Angehörige und Fachkräfte."
 >
   <div class="container">
-    <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Materialien" }]} />
+    <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Materialien & Downloads" }]} />
   </div>
 
   <section class="section">
     <div class="container">
-      <h1>Materialien</h1>
+      <h1>Materialien & Downloads</h1>
       <p class="lead">
-        Alle hier aufgeführten Materialien sind <strong>kostenlos</strong> und
-        ohne Anmeldung nutzbar – zum Beispiel Checklisten, Vorlagen,
-        Arbeitsblätter und Gesprächshilfen. Kostenpflichtige digitale Produkte
-        findest du im <a href="/shop/#digitale-produkte">Shop</a>.
+        Hier stehen <strong>kostenlose</strong> Arbeitsblätter, Checklisten,
+        Vorlagen und Orientierungshilfen von Autismuskompakt bereit – ohne
+        Anmeldung nutzbar, zum Ansehen, Ausdrucken oder Herunterladen.
+        Kostenpflichtige digitale Produkte findest du im{" "}
+        <a href="/shop/#digitale-produkte">Shop</a>.
       </p>
     </div>
   </section>
@@ -84,24 +175,39 @@ const materialtypen = await getMaterialtypenMitMaterialien();
     </div>
   </section>
 
-  <section class="section section--alt" aria-labelledby="alle-heading">
-    <div class="container">
-      <h2 id="alle-heading">Alle Materialien</h2>
-      <p class="lead-small">
-        Die unten gezeigten Materialien sind derzeit ausschließlich
-        Beispieldatensätze zur Vorführung der Struktur.
-      </p>
-      <ul class="material-grid">
-        {
-          alle.map((entry) => (
-            <li>
-              <MaterialKarte entry={entry} />
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </section>
+  {
+    gruppen.map((gruppe, index) => (
+      <section class={`section ${index % 2 === 1 ? "section--alt" : ""}`} aria-labelledby={`gruppe-${index}`}>
+        <div class="container">
+          <h2 id={`gruppe-${index}`}>{gruppe.titel}</h2>
+          <ul class="material-grid">
+            {gruppe.entries.map((entry) => (
+              <li>
+                <MaterialKarte entry={entry} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    ))
+  }
+
+  {
+    uebrige.length > 0 && (
+      <section class="section" aria-labelledby="weitere-heading">
+        <div class="container">
+          <h2 id="weitere-heading">Weitere Materialien</h2>
+          <ul class="material-grid">
+            {uebrige.map((entry) => (
+              <li>
+                <MaterialKarte entry={entry} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )
+  }
 </BaseLayout>
 
 <style>

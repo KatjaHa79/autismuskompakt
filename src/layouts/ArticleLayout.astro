@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
@@ -7,6 +8,7 @@ import StandDatum from "../components/StandDatum.astro";
 import Quellenblock from "../components/Quellenblock.astro";
 import Hinweisbox from "../components/Hinweisbox.astro";
 import { categoryLabels, categoryHrefs, categoriesRequiringUpdated, targetGroupLabels } from "../content.config";
+import { PASSENDE_MATERIALIEN } from "../lib/artikel-materialien";
 
 interface Props {
   entry: CollectionEntry<"artikel">;
@@ -16,6 +18,12 @@ const { entry } = Astro.props;
 const { title, description, category, targetGroups, updated, sources } = entry.data;
 
 const zeigtRechtlichenHinweis = categoriesRequiringUpdated.has(category);
+
+const materialIds = PASSENDE_MATERIALIEN[entry.id] ?? [];
+const alleMaterialien = materialIds.length > 0 ? await getCollection("materialien") : [];
+const passendeMaterialien = materialIds
+  .map((id) => alleMaterialien.find((material) => material.id === id))
+  .filter((material) => material !== undefined);
 ---
 
 <BaseLayout title={title} description={description}>
@@ -41,6 +49,24 @@ const zeigtRechtlichenHinweis = categoriesRequiringUpdated.has(category);
       <div class="prose">
         <slot />
       </div>
+
+      {
+        passendeMaterialien.length > 0 && (
+          <Hinweisbox titel={passendeMaterialien.length > 1 ? "Passende Arbeitsblätter" : "Passendes Arbeitsblatt"}>
+            <ul class="passende-materialien">
+              {passendeMaterialien.map((material) => (
+                <li>
+                  <p class="passende-materialien__titel">{material.data.title}</p>
+                  <p class="passende-materialien__beschreibung">{material.data.description}</p>
+                  <a href={`/materialien/#${material.id}`}>
+                    {material.data.title} ansehen <span aria-hidden="true">→</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </Hinweisbox>
+        )
+      }
 
       {
         zeigtRechtlichenHinweis && (
@@ -74,5 +100,25 @@ const zeigtRechtlichenHinweis = categoriesRequiringUpdated.has(category);
 
   .prose {
     padding-block: 0;
+  }
+
+  .passende-materialien {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-sm);
+  }
+
+  .passende-materialien li + li {
+    padding-top: var(--space-sm);
+    border-top: var(--border-width) solid var(--color-border);
+  }
+
+  .passende-materialien__titel {
+    font-weight: 700;
+  }
+
+  .passende-materialien__beschreibung {
+    font-size: 0.95rem;
   }
 </style>
