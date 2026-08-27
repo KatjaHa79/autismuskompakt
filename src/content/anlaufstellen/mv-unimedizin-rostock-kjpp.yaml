@@ -1,0 +1,34 @@
+name: "Universitätsmedizin Rostock – Kinder- und jugendpsychiatrische Institutsambulanzen"
+type: "Klinik für Psychiatrie, Neurologie, Psychosomatik und Psychotherapie im Kindes- und Jugendalter"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Standorte u. a. Zentrum für Nervenheilkunde Rostock, Doberaner Straße Rostock und Bad Doberan"
+city: "Rostock / Bad Doberan"
+state: "mecklenburg-vorpommern"
+
+offer: >
+  Umfassende kinder- und jugendpsychiatrische, psychologische und
+  neuropsychologische Diagnostik sowie Therapie; tiefgreifende
+  Entwicklungsstörungen (einschließlich Autismus) werden ausdrücklich als
+  Versorgungsschwerpunkt genannt. Keine eigenständig benannte
+  ASS-Spezialsprechstunde auf der aktuellen Ambulanzseite.
+admissionRequirements: "Im Regelfall Überweisung vom Kinder- oder Hausarzt. Versichertenkarte, Überweisung, Untersuchungsheft, Zeugnisse und vorhandene Vorbefunde sollen mitgebracht werden."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle autismus-spezifische Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Universitätsmedizin Rostock – Institutsambulanz KJPP"
+    url: "https://kjpp.med.uni-rostock.de/institutsambulanz"

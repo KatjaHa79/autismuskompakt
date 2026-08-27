@@ -1,0 +1,32 @@
+name: "Autismus Nord e.V."
+type: "Autismusspezifische Hilfen, Familienentlastung und Fortbildung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups: []
+categories:
+  - selbsthilfe
+  - alltagshilfe
+
+state: "schleswig-holstein"
+email: "verein@autismus-nord.de"
+
+offer: >
+  Autismusspezifische Leistungen/Förderung, familienentlastender Dienst und
+  Alltagsbegleitung sowie Fort- und Weiterbildung für Menschen mit Autismus
+  und Familien; einzelne Angebote richten sich auch an Helfer:innen und
+  Fachkräfte. Medizinische Diagnostik: nicht als Leistung ausgewiesen.
+admissionRequirements: "Bestimmte niedrigschwellige Hilfen können über den Entlastungsbetrag der Pflegeversicherung finanziert werden, sofern ein Pflegegrad vorliegt."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: keine aktuelle allgemeine Wartezeit veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Nord e.V."
+    url: "https://www.autismus-nord.de/"

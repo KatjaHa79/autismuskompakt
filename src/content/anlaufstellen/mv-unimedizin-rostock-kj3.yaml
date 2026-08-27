@@ -1,0 +1,31 @@
+name: "Universitätsmedizin Rostock – Station KJ 3"
+type: "Stationäre Kinder- und Jugendpsychiatrie"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - kinder
+categories:
+  - diagnostik
+  - therapie
+
+city: "Rostock"
+state: "mecklenburg-vorpommern"
+phone: "0381 494 4630"
+
+offer: >
+  Stationäre Diagnostik und Therapie vorwiegend für Kinder im Alter von etwa
+  2 bis 14 Jahren; Autismus wird ausdrücklich unter den tiefgreifenden
+  Entwicklungsstörungen als Behandlungsschwerpunkt genannt. Eine geplante
+  Aufnahme beginnt mit einer Stationsbesichtigung.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Universitätsmedizin Rostock – Stationen KJPP"
+    url: "https://kjpp.med.uni-rostock.de/patienten-besucher/stationen/"

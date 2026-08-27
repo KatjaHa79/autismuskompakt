@@ -200,7 +200,9 @@ const anlaufstellen = defineCollection({
       updated: z.coerce.date({
         error: "updated (Stand-Datum) ist für jede Anlaufstelle verpflichtend.",
       }),
-      source: sourceSchema,
+      // Array statt Einzelfeld, da mehrere Einrichtungen zwei oder mehr
+      // gleichwertige Primärquellen haben (z. B. Angebotsseite + Terminseite).
+      sources: z.array(sourceSchema).min(1, "Mindestens eine Quelle ist verpflichtend."),
       // Kennzeichnet eindeutig als Demonstrationsdaten angelegte Einträge
       // (siehe Punkt 7 des Master-Projektauftrags zu Etappe 3).
       demo: z.boolean().default(false),

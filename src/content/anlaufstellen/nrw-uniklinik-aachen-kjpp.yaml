@@ -1,0 +1,34 @@
+name: "Uniklinik RWTH Aachen – Kinder- und Jugendpsychiatrie"
+type: "Klinik für Psychiatrie, Psychosomatik und Psychotherapie des Kindes- und Jugendalters"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Neuenhofer Weg 21"
+postalCode: "52074"
+city: "Aachen"
+state: "nordrhein-westfalen"
+
+offer: >
+  Autismus-Spektrum-Störungen werden als eigener Behandlungsbereich für
+  Kinder und Jugendliche bis 18 Jahre geführt; stationär behandelt die
+  Jugendstation KJ02 Jugendliche mit ASS.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Uniklinik RWTH Aachen – ASS-Sprechstunde (verweist auf KJP)"
+    url: "https://www.ukaachen.de/kliniken-institute/klinik-fuer-psychiatrie-psychotherapie-und-psychosomatik/patientenversorgung/ambulante-versorgung/autismus-spektrum-sprechstunde-ass/"
+  - title: "Uniklinik RWTH Aachen – Jugendstation KJ02"
+    url: "https://www.ukaachen.de/kliniken-institute/klinik-fuer-psychiatrie-psychosomatik-und-psychotherapie-des-kindes-und-jugendalters/fuer-patienten/unsere-behandlungsangebote/jugendstation-kj02/"

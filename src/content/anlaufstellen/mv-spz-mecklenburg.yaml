@@ -1,0 +1,38 @@
+name: "Sozialpädiatrisches Zentrum Mecklenburg"
+type: "Sozialpädiatrisches Zentrum"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+
+street: "Wismarsche Straße 306"
+postalCode: "19055"
+city: "Schwerin"
+state: "mecklenburg-vorpommern"
+email: "empfang@spz-mecklenburg.de"
+
+offer: >
+  Interdisziplinäre Entwicklungs- und Verhaltensdiagnostik für Kinder und
+  Jugendliche von Geburt bis zum 18. Lebensjahr mit Entwicklungs- und
+  Verhaltensauffälligkeiten, chronischen Erkrankungen oder Behinderungen.
+  Diagnostik und Beratung bei Autismus wird als möglicher fachlicher
+  Schwerpunkt genannt; eine eigene, öffentlich benannte
+  ASS-Spezialsprechstunde ist auf der aktuellen Leistungsseite jedoch nicht
+  ausgewiesen.
+admissionRequirements: "Neuanmeldung nur mit Überweisungsschein einer kinderärztlichen oder hausärztlichen Praxis. Stand 27.08.2026: telefonische Neuanmeldung aktuell aus organisatorischen Gründen nicht möglich; Formular/E-Mail verwenden."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "SPZ Mecklenburg"
+    url: "https://www.spz-mecklenburg.de/"

@@ -1,0 +1,38 @@
+name: "varisano Klinikum Frankfurt Höchst – Autismus-Therapie-Zentrum (ATZ)"
+type: "Inklusives Zentrum"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+categories:
+  - therapie
+  - angehoerigenberatung
+
+street: "Gotenstraße 6-8"
+postalCode: "65929"
+city: "Frankfurt am Main"
+state: "hessen"
+phone: "069 3106-2172"
+email: "atz@varisano.de"
+
+offer: >
+  Einzel- und Gruppentherapie, autismusspezifische Förderung und
+  Elternberatung für Kinder mit Autismus-Spektrum-Störung bis zum Ende der
+  Grundschulzeit. Diagnostik nicht über das ATZ selbst; bei unklarer
+  Diagnose wird an das SPZ verwiesen.
+admissionRequirements: "Kostenübernahme ausdrücklich über die Sozialämter; das ATZ unterstützt bei der Antragstellung."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "varisano Frankfurt Höchst – Autismus-Therapie-Zentrum"
+    url: "https://www.varisano.de/klinikum-frankfurt-hoechst/autismus-therapie-zentrum"
+  - title: "varisano Frankfurt Höchst – ATZ Anmeldung"
+    url: "https://www.varisano.de/klinikum-frankfurt-hoechst/autismus-therapie-zentrum/anmeldung"

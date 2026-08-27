@@ -1,0 +1,37 @@
+name: "Autismus-Therapieinstitut Langen und Regionalstellen"
+type: "Therapie- und Beratungsnetzwerk (Südhessen)"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups: []
+categories:
+  - therapie
+  - beratung
+
+street: "Zentrale: Robert-Bosch-Straße 11 B (Regionalstellen laut Bundesverband u. a. Frankfurt, Bad Nauheim, Offenbach, Darmstadt, Heppenheim, Höchst/Odenwald, Wiesbaden)"
+postalCode: "63225"
+city: "Langen"
+state: "hessen"
+phone: "06103 202860"
+email: "autismus@behindertenhilfe-offenbach.de"
+
+offer: >
+  Therapie und Beratung, durch den Bundesverband Autismus Deutschland als
+  Therapieinstitut mit Regionalstellen geführt, für Menschen im
+  Autismus-Spektrum und Familien. Diagnostik nicht als medizinische
+  Eigenleistung verifiziert.
+admissionRequirements: "Kosten- und Leistungsträgerregelungen müssen je Regionalstelle und Leistungsart aus Primärquellen nachgepflegt werden."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeiten nicht belastbar veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Bundesverband Autismus Deutschland – Verzeichnis"
+    url: "https://www.autismus.de/index.php?L=1&id=19"
+  - title: "Bundesverband Autismus Deutschland – Adressteil Juni 2026"
+    url: "https://www.autismus.de/fileadmin/NEWS/Adressteil_Stand_Juni_2026.pdf"

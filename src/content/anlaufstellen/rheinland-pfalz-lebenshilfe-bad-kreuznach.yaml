@@ -1,0 +1,39 @@
+name: "Lebenshilfe Bad Kreuznach – Autismus-Beratungszentrum"
+type: "Beratung und autismusspezifische Förderung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - beratung
+  - fachberatung
+
+street: "Agnesienberg 78-80"
+postalCode: "55545"
+city: "Bad Kreuznach"
+state: "rheinland-pfalz"
+phone: "0671 483269-127"
+email: "autismus@lebenshilfe-kreuznach.de"
+
+offer: >
+  Autismusspezifische Förderung im häuslichen Umfeld, in Kita und Schule
+  sowie Fachberatung für Kinder und Jugendliche mit gesicherter
+  Autismusdiagnose, Familien, Angehörige und Fachkräfte. Medizinische
+  Diagnostik: nein; das Angebot setzt eine gesicherte Diagnose voraus und
+  verweist bei fehlender Diagnose an Kinderärzt:innen bzw. diagnostische
+  Stellen.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Erstanfrage per Formular möglich; konkrete aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Lebenshilfe Bad Kreuznach – Autismus-Beratungszentrum"
+    url: "https://www.lebenshilfe-kreuznach.de/autismus-beratungszentrum/"

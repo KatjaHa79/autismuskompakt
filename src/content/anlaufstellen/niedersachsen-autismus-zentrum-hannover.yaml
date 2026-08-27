@@ -1,0 +1,37 @@
+name: "Autismus-Zentrum Hannover"
+type: "Autismus-Zentrum Hannover GmbH"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - beratung
+  - alltagshilfe
+
+street: "Prinz-Albrecht-Ring 63"
+postalCode: "30657"
+city: "Hannover"
+state: "niedersachsen"
+email: "verwaltung@autismus-hannover.de"
+
+offer: >
+  Ambulanz- und Beratungsstelle mit Frühförderung, Wohnen, Bildung,
+  Familienhilfe und Fortbildung für Kinder, Jugendliche und junge Erwachsene
+  mit Autismus sowie Familien und Fachkräfte. Medizinische
+  Autismusdiagnostik auf den aktuellen Primärseiten nicht als eigene
+  fachärztliche/psychologische Diagnostikleistung bestätigt.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeiten nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus-Zentrum Hannover – Kontakt"
+    url: "https://www.autismus-hannover.de/autismus-zentrum-hannover/kontakt/"

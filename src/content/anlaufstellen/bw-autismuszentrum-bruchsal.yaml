@@ -1,0 +1,34 @@
+name: "AutismusZentrum Bruchsal"
+type: "Autismuszentrum (Standorte Bruchsal, Karlsruhe-Durlach, Wiesloch, Bretten, Graben-Neudorf)"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+
+street: "Bruchsal: Wilderichstraße 11, 76646 Bruchsal · Karlsruhe-Durlach: Zehntstraße 7, 76227 Karlsruhe-Durlach · Wiesloch: Zum Keitelberg 14, 69168 Wiesloch · Bretten: Virchowstraße 21, 75015 Bretten · Graben-Neudorf: Bahnhofsring 39, 76676 Graben-Neudorf"
+state: "baden-wuerttemberg"
+phone: "Bruchsal: 07251 3927990"
+email: "info@az-bruchsal.de"
+
+offer: >
+  Therapie und Beratung für Kinder, Jugendliche und Erwachsene. Diagnostik:
+  ausdrücklich nein – das Zentrum schreibt ausdrücklich, dass es keine
+  Diagnostik durchführt.
+admissionRequirements: "Für Therapie ist zunächst eine Kostenzusage des zuständigen Kostenträgers erforderlich; erst danach erfolgt die Aufnahme auf die Warteliste. Finanzierung über zuständige Kostenträger, nicht klassische Krankenversicherungsabrechnung."
+
+waitingList: "offen"
+waitingTime: "Stand 27.08.2026: Warteliste vorhanden; keine Dauer veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "AutismusZentrum Bruchsal (laut Recherche-Dossier; im Dossier keine Einzel-URL angegeben)"

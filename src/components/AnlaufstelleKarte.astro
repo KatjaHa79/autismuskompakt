@@ -38,7 +38,7 @@ const {
   online,
   onsite,
   updated,
-  source,
+  sources,
   demo,
 } = entry.data;
 
@@ -124,7 +124,7 @@ const zeigtWarteinfo = Boolean(waitingList || waitingTime);
     <StandDatum date={updated} />
   </div>
 
-  <Quellenblock sources={[source]} headingLevel={4} context={name} />
+  <Quellenblock sources={sources} headingLevel={4} context={name} />
 </article>
 
 <style>
@@ -136,6 +136,8 @@ const zeigtWarteinfo = Boolean(waitingList || waitingTime);
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
+    overflow-wrap: anywhere;
+    min-width: 0;
   }
 
   .anlaufstelle-karte h3 {
@@ -144,6 +146,8 @@ const zeigtWarteinfo = Boolean(waitingList || waitingTime);
     flex-wrap: wrap;
     align-items: center;
     gap: var(--space-2xs);
+    overflow-wrap: anywhere;
+    min-width: 0;
   }
 
   .demo-badge {
@@ -197,11 +201,18 @@ const zeigtWarteinfo = Boolean(waitingList || waitingTime);
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2xs) var(--space-md);
+    min-width: 0;
   }
 
   .kontakt div {
     display: flex;
     gap: 0.4em;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .kontakt a {
+    overflow-wrap: anywhere;
   }
 
   .kontakt dt {

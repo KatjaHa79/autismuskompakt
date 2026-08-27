@@ -1,0 +1,35 @@
+name: "Landesamt für Schule und Bildung Sachsen – sonderpädagogische Beratung Autismus"
+type: "Schulische / sonderpädagogische Beratung"
+
+targetGroups:
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - fachberatung
+
+city: "Bautzen, Chemnitz, Dresden, Leipzig, Zwickau"
+state: "sachsen"
+phone: "Bautzen: 03591 621-0 · Chemnitz: 0371 5366-0 · Dresden: 0351 8439-0 · Leipzig: 0341 4945-50 · Zwickau: 0375 4444-0"
+
+offer: >
+  Sonderpädagogische Diagnostik und Beratung im schulischen Kontext für
+  Kinder und Jugendliche mit gesicherter Autismusdiagnose, Eltern, Schulen
+  und pädagogische Fachkräfte. Medizinische Autismusdiagnostik: nein; eine
+  gesicherte medizinische Diagnose ist Voraussetzung für die entsprechende
+  sonderpädagogische Diagnostik.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: keine allgemeine Wartezeit veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Sachsen – Sonderpädagogische Beratung Autismus"
+    url: "https://www.foerderdiagnostik.bildung.sachsen.de/sonderpaedagogische-beratung-im-bereich-autismus-4115.html"
+  - title: "LaSuB Sachsen – Kontakt"
+    url: "https://www.lasub.smk.sachsen.de/kontakt.html"

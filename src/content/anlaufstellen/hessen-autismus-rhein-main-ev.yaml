@@ -1,0 +1,33 @@
+name: "autismus Rhein-Main e.V."
+type: "Regionalverband von Autismus Deutschland"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups: []
+categories:
+  - selbsthilfe
+  - beratung
+
+street: "Sonnemannstraße 3"
+postalCode: "60314"
+city: "Frankfurt am Main"
+state: "hessen"
+email: "info@autismus-rhein-main.de"
+
+offer: >
+  Beratung/Information und regionale Vernetzung als Regionalverband für
+  autistische Menschen, Angehörige, Familien und Fachkräfte. Medizinische
+  Diagnostik oder Therapie nicht als eigene Leistung.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: keine feste Wartezeit veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Bundesverband Autismus Deutschland – Verzeichnis"
+    url: "https://www.autismus.de/index.php?L=1&id=19"

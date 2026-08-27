@@ -1,0 +1,35 @@
+name: "autismus Saarland e.V. – Selbsthilfe, Austausch und MeetAut"
+type: "Regionalverband / Selbsthilfe"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - erwachsene
+categories:
+  - selbsthilfe
+
+street: "Vereinssitz: Prälat-Subtil-Ring 12, 66740 Saarlouis · MeetAut: Arbeitskammer des Saarlandes, Fritz-Dobisch-Straße 6, 66111 Saarbrücken"
+state: "saarland"
+email: "regio@autismus-saarland.de"
+
+offer: >
+  Selbsthilfe, Austausch, Information und Vernetzung für autistische
+  Menschen, Angehörige und Familien. MeetAut ist ein moderierter offener
+  Gruppentreff für erwachsene Autist:innen mit Diagnose, laufender
+  Diagnostik oder angestrebter Diagnostik. Medizinische Diagnostik/Therapie
+  nicht durch den Verein selbst.
+costs: "MeetAut ist für Teilnehmende kostenfrei."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: veröffentlichte Gruppentermine; keine klassische Warteliste."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "autismus Saarland e.V. – Über uns"
+    url: "https://www.autismuszentrum-saar.de/autismus-saarland-ev/ueber-uns/was-wir-tun.php"
+  - title: "autismus Saarland e.V. – MeetAut"
+    url: "https://www.autismuszentrum-saar.de/autismus-saarland-ev/unsere-angebote/MeetAut-Offener-Gruppentreff-fuer-erwachsene-Betroffene.php"

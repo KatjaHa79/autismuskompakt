@@ -1,0 +1,33 @@
+name: "Hetzel – Praxis für Psychotherapie"
+type: "Psychotherapeutische Praxis"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+
+street: "Prenzlauer Promenade 190"
+postalCode: "13189"
+city: "Berlin-Pankow"
+state: "berlin"
+
+offer: >
+  Autismusdiagnostik mit Screening, ausführlicher Anamnese, klinischem
+  Interview, ADOS-2, Fremdanamnese, Differentialdiagnostik, Auswertung und
+  schriftlichem Befundbericht für Erwachsene.
+admissionRequirements: "Für die konkrete Autismusdiagnostik ist auf der geprüften Leistungsseite keine eindeutige GKV-Kostenübernahme veröffentlicht; Kostenübernahme vorab klären."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Terminvergabe nach Behandlungsvereinbarung; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Hetzel Praxis – Leistungen"
+    url: "https://www.hetzel-praxis.de/leistungen/"
+  - title: "Hetzel Praxis – Kontakt"
+    url: "https://www.hetzel-praxis.de/kontakt/"

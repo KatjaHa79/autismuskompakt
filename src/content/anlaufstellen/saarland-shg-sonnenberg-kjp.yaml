@@ -1,0 +1,42 @@
+name: "SHG-Kliniken Sonnenberg – Autismus-Spezialambulanz Kinder und Jugendliche"
+type: "Zentrum für Kinder- und Jugendpsychiatrie, Psychotherapie und Psychosomatik"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Sonnenbergstraße 10, Gebäude 21"
+postalCode: "66119"
+city: "Saarbrücken"
+state: "saarland"
+phone: "0681 889-2700"
+email: "sekr.kjp@sb.shg-kliniken.de"
+
+offer: >
+  Diagnostische und therapeutische Versorgung für Kinder und Jugendliche bis
+  18 Jahre; die Institutsambulanz weist ausdrücklich eine Spezialambulanz
+  "Autismus" aus. Tagesklinische und stationäre Behandlung ebenfalls
+  vorhanden.
+admissionRequirements: >
+  Für die allgemeine Institutsambulanz ist normalerweise ein
+  Überweisungsschein eines Facharztes für Kinder- und Jugendpsychiatrie
+  erforderlich – diese Regel gilt ausdrücklich NICHT für die
+  Spezialambulanzen einschließlich Autismus.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle spezifische Wartezeit oder Aufnahmestatus der Autismus-Spezialambulanz nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "SHG Sonnenberg – Institutsambulanz KJP"
+    url: "https://www.shg-kliniken.de/sonnenberg/institutsambulanz/kinder-und-jugendpsychiatrie"
+  - title: "SHG Sonnenberg – Klinik KJP"
+    url: "https://www.shg-kliniken.de/sonnenberg/klinik/kinder-jugendpsychiatrie-psychotherapie-psychosomatik/"

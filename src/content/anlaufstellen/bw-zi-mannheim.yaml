@@ -1,0 +1,38 @@
+name: "Zentralinstitut für Seelische Gesundheit Mannheim – ASS-Spezialsprechstunde"
+type: "Spezialsprechstunde / psychiatrische Einrichtung"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+
+street: "J5"
+postalCode: "68159"
+city: "Mannheim"
+state: "baden-wuerttemberg"
+phone: "0621 1703-2850"
+
+offer: >
+  Diagnostik und Differentialdiagnostik für Erwachsene bis 35 Jahre mit
+  Verdacht auf ASS ohne Intelligenzminderung und ohne bzw. nur mit
+  leichter Beeinträchtigung der funktionalen Sprache; Beratung im Rahmen
+  der diagnostischen Abklärung. Kein allgemeiner Therapieplatz durch diese
+  Spezialsprechstunde belegt.
+admissionRequirements: >
+  Erforderlich: Überweisung durch Psychiater:in oder Neurolog:in,
+  Fragebögen, vorhandene Vorbefunde, Grundschulzeugnisse, ggf.
+  Betreuerausweis. Vor der eigentlichen Spezialdiagnostik erfolgen zwei
+  Voruntersuchungen im Diagnose- und Aufnahmezentrum. Altersgrenze bis 35
+  Jahre.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Zentralinstitut für Seelische Gesundheit Mannheim (laut Recherche-Dossier; im Dossier keine Einzel-URL angegeben)"

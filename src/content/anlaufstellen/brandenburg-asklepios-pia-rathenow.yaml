@@ -1,0 +1,33 @@
+name: "Asklepios Fachklinikum Brandenburg – PIA für Kinder und Jugendliche Rathenow"
+type: "Kinder- und jugendpsychiatrische Institutsambulanz"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Forststraße 45"
+postalCode: "14712"
+city: "Rathenow"
+state: "brandenburg"
+phone: "03385 555-8070"
+
+offer: >
+  Autismus-Spektrum-Störungen werden ausdrücklich als Störungsbild der
+  Institutsambulanz ausgewiesen; diagnostische und therapeutische
+  Anlaufstelle für kinder- und jugendpsychiatrische Erkrankungen.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle ASS-spezifische Wartezeit oder Wartelistenstatus nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Asklepios Brandenburg – PIA KJP Rathenow"
+    url: "https://www.asklepios.com/brandenburg/abteilungen-spezialistinnen/pias/pia-kjp-rathenow"

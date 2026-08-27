@@ -1,0 +1,38 @@
+name: "Autismus – Point of Contact e.V."
+type: "Autismusspezifische Förderung und Familienberatung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - alltagshilfe
+  - beratung
+
+street: "Am Elisabethhof 14"
+postalCode: "14772"
+city: "Brandenburg an der Havel"
+state: "brandenburg"
+phone: "03381 4108014"
+email: "selbsthilfegruppe-autismus-brandenburg@gmx.de"
+
+offer: >
+  Individuelle 1:1-Begleitung sowie Beratung für Familien u. a. bei
+  Alltagsstruktur, Kommunikation, Selbstregulation, Schule und Übergängen,
+  für autistische Kinder, Jugendliche und junge Volljährige bis 27 Jahre
+  sowie Familien; zusätzlich Schulworkshops und Vernetzung. Medizinische
+  Diagnostik nicht angeboten.
+admissionRequirements: "Finanzierung der autismusspezifischen Förderung über das Jugendamt."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Kontaktaufnahme jederzeit möglich, Rückmeldung laut Anbieter in der Regel innerhalb von 48 Stunden (keine Platzgarantie)."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Point of Contact"
+    url: "https://www.autismus-pointofcontact.de/"

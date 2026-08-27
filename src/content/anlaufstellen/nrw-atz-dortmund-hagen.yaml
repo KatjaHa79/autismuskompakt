@@ -1,0 +1,41 @@
+name: "Autismus-Therapie-Zentrum Dortmund und Hagen"
+type: "autismus Dortmund und Umgebung e.V."
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+
+street: "Dortmund: Am Wasserturm 12a, 44135 Dortmund · Hagen: Am Pfannenofen 33, 58097 Hagen"
+state: "nordrhein-westfalen"
+phone: "0231 880886-0"
+email: "info@atz-do.de"
+
+offer: >
+  Therapie/Förderung und Beratung, bereits bei Autismusverdacht sowie zu
+  Therapie, Schule, Beruf, Wohnen und Hilfen, für Kinder, Jugendliche und
+  Erwachsene mit Autismus sowie Familien. Entwicklungs- und Förderdiagnostik
+  vorhanden; medizinische Erstdiagnostik: nein – das ATZ hilft beim Weg zur
+  Diagnosestelle.
+costs: "Beratung ist kostenfrei."
+admissionRequirements: "Autismustherapie wird im Rahmen der Eingliederungshilfe nach SGB IX beantragt."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Beratung wird als zeitnah beschrieben; konkrete Therapiewartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "ATZ Dortmund/Hagen – Unser Angebot"
+    url: "https://autismus-dortmund.de/atz-autismus-therapie-zentrum-dortmund-und-hagen/atz-unser-angebot/"
+  - title: "ATZ Dortmund/Hagen – Beratung vor Ort"
+    url: "https://autismus-dortmund.de/beratung-vor-ort/"

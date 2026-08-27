@@ -1,0 +1,37 @@
+name: "Universitätsklinikum Erlangen – SPZ Sprechstunde für Entwicklungsstörungen"
+type: "Sozialpädiatrisches Zentrum"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Kinder- und Jugendklinik, Loschgestr. 15"
+postalCode: "91054"
+city: "Erlangen"
+state: "bayern"
+phone: "09131 85-32146"
+email: "spz@uk-erlangen.de"
+
+offer: >
+  Interdisziplinäre Abklärung und Entwicklung eines individuellen
+  Therapieplans sowie psychosoziale und sozialrechtliche Unterstützung der
+  Familien für Kinder und Jugendliche mit Entwicklungsstörungen;
+  Autismus-Spektrum-Störungen werden ausdrücklich genannt.
+admissionRequirements: "Mitzubringen: Versicherungsnachweis (Krankenkassenkarte), Zuweisung, Medikamentenliste."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Terminvergabe nur nach Absprache; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "UK Erlangen – SPZ, Sprechstunde für Entwicklungsstörungen"
+    url: "https://www.spz.uk-erlangen.de/patienten/sprechstunden/sprechstunde/sprechstunde-fuer-entwicklungsstoerungen-1464/"

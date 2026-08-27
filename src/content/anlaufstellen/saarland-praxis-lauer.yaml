@@ -1,0 +1,45 @@
+name: "Autismus-ADHS-Praxis Lauer"
+type: "Psychiatrische Schwerpunktpraxis"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+  - therapie
+
+street: "Am Staden 23"
+postalCode: "66121"
+city: "Saarbrücken"
+state: "saarland"
+phone: "0681 68659760"
+
+offer: >
+  Mehrterminige fachärztliche Autismusdiagnostik unter Einbezug von
+  Vorbefunden, ggf. Grundschulzeugnissen und weiterer
+  medizinischer/psychologischer Diagnostik für Erwachsene ab 18 Jahren mit
+  bereits diagnostiziertem oder vermutetem Autismus, ADHS oder AuDHS.
+  Psychiatrisch-medikamentöse Behandlung und Gruppenpsychotherapie im Rahmen
+  verfügbarer Kapazitäten.
+admissionRequirements: "Termine nur nach Vereinbarung; keine offene Sprechstunde."
+paymentType:
+  - gesetzlich
+  - privat
+  - selbstzahler
+
+waitingList: "geschlossen"
+waitingTime: >
+  Stand 27.08.2026: gegenwärtig keine Kapazitäten für neue Patient:innen.
+  Die Praxis bittet ausdrücklich darum, keine Behandlungsplatz-Anfragen zu
+  stellen.
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus-ADHS-Praxis Lauer – Leistungen/Konzept"
+    url: "https://www.autismus-adhs-praxis.de/meine-leistungen-konzept/"
+  - title: "Autismus-ADHS-Praxis Lauer – Kontakt/Praxiszeiten"
+    url: "https://www.autismus-adhs-praxis.de/kontakt-praxiszeiten/"

@@ -1,0 +1,40 @@
+name: "LVR-Klinik Bonn – Spezialambulanz für Autismus-Spektrum-Störungen"
+type: "Kinder- und Jugendpsychiatrie, Psychosomatik und Psychotherapie"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+  - beratung
+
+street: "Kaiser-Karl-Ring 20"
+postalCode: "53111"
+city: "Bonn"
+state: "nordrhein-westfalen"
+phone: "0228 551-2853"
+email: "ambulanz-kjp-bonn@lvr.de"
+
+offer: >
+  Ausdrücklich benannte Spezialambulanz für Autismus-Spektrum-Störungen für
+  Kinder und Jugendliche bis 18 Jahre; Erstvorstellung, ausführliche
+  Anamnese, ggf. weitere Diagnostiktermine und Abschlussgespräch. Behandlung
+  und Beratung; Familien werden einbezogen.
+admissionRequirements: "Versichertenkarte zum Ersttermin mitzubringen."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle ASS-spezifische Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "LVR-Klinik Bonn – Aufnahme Ambulanz"
+    url: "https://klinik-bonn.lvr.de/de/nav_main/fachgebiete/kinder_und_jugend_psychiatrie/ambulante_behandlung/aufnahme_ambulanz.html"
+  - title: "LVR-Klinik Bonn – Spezialsprechstunden"
+    url: "https://klinik-bonn.lvr.de/de/nav_main/fachgebiete/kinder_und_jugend_psychiatrie/ambulante_behandlung/spezialsprechstunden/spezialsprechstunden_1.html"

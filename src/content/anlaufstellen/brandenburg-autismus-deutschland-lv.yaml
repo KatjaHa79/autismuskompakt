@@ -1,0 +1,38 @@
+name: "Autismus Deutschland e.V. – Landesverband Brandenburg"
+type: "Landesverband / Selbsthilfe und Beratung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups: []
+categories:
+  - selbsthilfe
+  - beratung
+
+street: "Friedrich-Hegel-Straße 13"
+postalCode: "15230"
+city: "Frankfurt (Oder)"
+state: "brandenburg"
+phone: "0173 6918026"
+email: "info@autismusbrandenburg.de"
+
+offer: >
+  Beratung und Vermittlung, Selbsthilfe, Erfahrungsaustausch,
+  Veranstaltungen, Information und Unterstützung bei der Suche nach
+  geeigneten Hilfen für Menschen im Autismus-Spektrum, Familien und
+  Angehörige sowie Fachleute/Interessierte. Medizinische Diagnostik und
+  Therapie nicht als eigene Leistungen.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: keine feste Wartezeit veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Brandenburg – Verein"
+    url: "https://www.autismusbrandenburg.de/seite/441472/verein.html"
+  - title: "Autismus Brandenburg – Kontakt"
+    url: "https://www.autismusbrandenburg.de/kontakt/"

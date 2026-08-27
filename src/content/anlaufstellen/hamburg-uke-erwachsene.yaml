@@ -1,0 +1,34 @@
+name: "Universitätsklinikum Hamburg-Eppendorf (UKE) – Erwachsenen-Diagnostik"
+type: "Zentrum für Psychosoziale Medizin / Klinik und Poliklinik für Psychiatrie und Psychotherapie"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+
+street: "Martinistraße 52"
+postalCode: "20246"
+city: "Hamburg"
+state: "hamburg"
+phone: "040 7410-53210"
+email: "ambulanz.psychiatrie@uke.de"
+
+offer: >
+  Das UKE wird vom Hamburger Autismus Institut in seiner aktuell gepflegten
+  Liste der Hamburger Diagnostikstellen für Erwachsene geführt. Eine
+  eigenständige aktuelle UKE-Webseite ausschließlich zur
+  ASS-Erwachsenendiagnostik konnte in der Primärquellenprüfung nicht
+  eindeutig gefunden werden.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle ASS-spezifische Wartezeit oder Neuaufnahmeregelung auf der geprüften Quelle nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Hamburger Autismus Institut – Angebote für Erwachsene mit ASS (Diagnostikstellenliste)"
+    url: "https://autismus-institut.de/therapie-institut/angebote-fuer-erwachsene-mit-ass/"

@@ -1,0 +1,36 @@
+name: "Kompetenzzentrum Autismus Schwaben-Nord"
+type: "Beratungsstelle des Caritasverbandes für die Diözese Augsburg e.V."
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups: []
+categories:
+  - beratung
+
+street: "Auf dem Kreuz 41"
+postalCode: "86152"
+city: "Augsburg"
+state: "bayern"
+phone: "0821 3156-454"
+email: "autismus@caritas-augsburg.de"
+
+offer: >
+  Persönliche, telefonische und Video-Beratung sowie offene Sprechstunde
+  mit Information und Orientierung rund um Autismus für Menschen mit
+  Autismus, Angehörige und Fachkräfte in Augsburg sowie den zugeordneten
+  Landkreisen Schwaben-Nord. Keine belastbare Aussage zu medizinischer
+  Autismusdiagnostik an dieser Stelle.
+admissionRequirements: "Gefördert durch Bezirk Schwaben und Freistaat Bayern."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Termine nach Vereinbarung, zusätzlich offene Sprechstunde; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Caritas Augsburg – Autismusberatung"
+    url: "https://www.caritas-augsburg.de/hilfeberatung/autismus/autismus"

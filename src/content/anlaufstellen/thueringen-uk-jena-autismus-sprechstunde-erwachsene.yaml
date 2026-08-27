@@ -1,0 +1,37 @@
+name: "Universitätsklinikum Jena – Autismus-Sprechstunde Erwachsene"
+type: "Psychiatrische Institutsambulanz (Universitätsklinikum)"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+  - beratung
+  - therapie
+
+street: "Philosophenweg 3"
+postalCode: "07743"
+city: "Jena"
+state: "thueringen"
+phone: "03641 9390400"
+email: "autismus-sprechstunde@med.uni-jena.de"
+website: "https://www.uniklinikum-jena.de/psychiatrie/Therapie-font-14.html"
+
+offer: >
+  Diagnostik, Beratung sowie Einzel- und Gruppentherapie für Erwachsene mit
+  Autismus-Verdacht. Einzugsgebiet ausdrücklich Thüringen.
+admissionRequirements: "Einzugsgebiet: Wohnsitz Thüringen."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Uniklinikum Jena – Psychiatrie, Therapie"
+    url: "https://www.uniklinikum-jena.de/psychiatrie/Therapie-font-14.html"
+  - title: "Uni Jena – Autismus-Sprechstunde"
+    url: "https://www.fsv.uni-jena.de/43736/autismus-sprechstunde-jena"

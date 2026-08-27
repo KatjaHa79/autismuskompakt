@@ -1,0 +1,36 @@
+name: "Team Autismus Mainz – Angebot für Erwachsene"
+type: "Autismusspezifische Unterstützung für Erwachsene"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+
+street: "Wilhelm-Theodor-Römheld-Straße 34"
+postalCode: "55130"
+city: "Mainz"
+state: "rheinland-pfalz"
+phone: "06131 6179566"
+email: "therapie@team-autismus.de"
+
+offer: >
+  Therapie/Beratung für Erwachsene mit Autismus (sowohl ohne als auch mit
+  gesetzlicher Betreuung), u. a. zu Umgang mit Diagnose,
+  Wahrnehmungsbesonderheiten, Flexibilität, Organisation, sozialer
+  Interaktion und Kommunikation. Erstversorgung umfasst in der Regel drei
+  Termine; Notfalltermine nach Kostenzusage möglich.
+admissionRequirements: "Eingliederungshilfe; private Übernahme nur ausnahmsweise bzw. als Zuzahlung möglich."
+
+waitingList: "offen"
+waitingTime: "Stand 27.08.2026: aktuell Warteliste für Langzeittherapie; Beginn erst, wenn ein Therapieplatz frei wird."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Team Autismus Mainz – Erwachsene ohne gesetzliche Betreuung"
+    url: "https://www.team-autismus.de/therapie-und-foerderung/angebot/erwachsene-ohne-gesetzliche-betreuung/"

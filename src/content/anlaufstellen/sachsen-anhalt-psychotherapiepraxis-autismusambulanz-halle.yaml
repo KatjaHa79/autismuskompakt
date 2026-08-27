@@ -1,0 +1,45 @@
+name: "Psychotherapiepraxis der Autismusambulanz Halle – Diagnostik und Psychotherapie Erwachsene"
+type: "Psychotherapeutische Praxis mit Autismus-Schwerpunkt"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+  - therapie
+
+city: "Halle (Saale)"
+state: "sachsen-anhalt"
+website: "https://www.autismusambulanz-halle.de/psychotherapie"
+
+offer: >
+  Strukturierte Diagnostik mit klinischen Interviews, Angehörigeninterviews
+  und Fragebögen sowie ambulante Einzeltherapie (tiefenpsychologisch
+  fundiert und systemisch) für Erwachsene mit Meldeadresse in
+  Sachsen-Anhalt und Autismus-Verdacht bzw. Bedarf an autismusspezifischer
+  Psychotherapie.
+admissionRequirements: >
+  Überweisung zur Autismusdiagnostik oder Psychotherapie durch Psychiater:in
+  oder PTV11-Formular mit Autismus-Verdachtsdiagnose einer
+  Psychotherapeut:in mit Kassensitz erforderlich. Meldeadresse
+  Sachsen-Anhalt vorausgesetzt.
+costs: >
+  Stand 27.08.2026: Ab Juli 2026 kostet ein ausführlicher Befundbericht
+  134,06 EUR; ohne ausführlichen Befundbericht entstehen laut Praxis dafür
+  keine zusätzlichen Kosten.
+
+waitingList: "unbekannt"
+waitingTime: >
+  Stand 27.08.2026: Anmeldung nur am ersten Mittwoch jedes Monats ab 09:00
+  Uhr für 24 Stunden. Wegen begrenzter Kapazitäten werden die verfügbaren
+  Plätze unter allen gültigen Anmeldungen per Zufall ausgewählt; keine
+  klassische Warteliste.
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismusambulanz Halle – Psychotherapie"
+    url: "https://www.autismusambulanz-halle.de/psychotherapie"

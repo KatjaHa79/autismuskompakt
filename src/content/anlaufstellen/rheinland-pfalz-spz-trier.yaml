@@ -1,0 +1,44 @@
+name: "Zentrum für Sozialpädiatrie und Frühförderung Trier"
+type: "Sozialpädiatrisches Zentrum / Diagnostik- und Therapiezentrum"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+  - beratung
+
+street: "Luxemburger Straße 144 (mit Außenstellen u. a. Hermeskeil, Bitburg, Prüm, Daun, Wittlich)"
+postalCode: "54294"
+city: "Trier"
+state: "rheinland-pfalz"
+phone: "0651 82861-0"
+email: "kontakt@spz-trier.de"
+
+offer: >
+  Kinder- und jugendärztliche sowie psychologische Diagnostik,
+  Entwicklungsneurologie und Verhaltensbeobachtung, Therapie, Förderung und
+  Beratung für Kinder und Jugendliche mit komplexen Auffälligkeiten oder
+  Störungen in Entwicklung und Verhalten. Autismus wird ausdrücklich im
+  medizinisch-therapeutischen Behandlungsspektrum genannt.
+admissionRequirements: "Überweisung durch eine Kinderarztpraxis oder andere niedergelassene Arztpraxis erforderlich."
+
+waitingList: "unbekannt"
+waitingTime: >
+  Stand 27.08.2026: das SPZ weist ausdrücklich auf längere Wartezeiten bei
+  Neuaufnahmen hin. Terminvergabe nach Dringlichkeit, Komplexität, Alter und
+  Vorentwicklung, nicht streng nach Eingangsdatum.
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "SPZ Trier"
+    url: "https://www.spz-trier.de/"
+  - title: "SPZ Trier – Angebot"
+    url: "https://spz-trier.de/zentrum_home.php?spz=angebot"

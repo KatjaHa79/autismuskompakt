@@ -1,0 +1,37 @@
+name: "Klinikum Frankfurt (Oder) – Sozialpädiatrisches Zentrum (SPZ)"
+type: "Sozialpädiatrisches Zentrum"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+  - beratung
+
+street: "Heilbronner Straße 1"
+city: "Frankfurt (Oder)"
+state: "brandenburg"
+phone: "0335 548-4980"
+email: "spz@klinikumffo.de"
+
+offer: >
+  Seit 2015 etabliertes Team für Autismus-Spektrum-Störungen mit
+  umfassender ASS-Diagnostik und Beratung für Kinder und Jugendliche;
+  zusätzlich interdisziplinäre Entwicklungsdiagnostik, Therapieeinleitung,
+  Förderung und Sozialberatung.
+admissionRequirements: "Facharzt-Überweisung erforderlich."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Terminvergabe nach individueller Absprache; konkrete aktuelle Wartezeit für ASS-Diagnostik nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Klinikum Frankfurt (Oder) – SPZ, Kontakte"
+    url: "https://www.klinikumffo.de/behandlungsangebot/unsere-zentren/sozialpaediatrisches-zentrum/unsere-kontakte.html"

@@ -1,0 +1,36 @@
+name: "Zentrum für Integrative Psychiatrie / UKSH – Kinder- und Jugendpsychiatrie Kiel"
+type: "Kinder- und Jugendpsychiatrische Institutsambulanz"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Schwanenweg 20 (Eingang Kirchenstraße, Haus U27)"
+postalCode: "24105"
+city: "Kiel"
+state: "schleswig-holstein"
+phone: "0431 500-98300"
+
+offer: >
+  Diagnostik und Behandlung eines breiten Spektrums psychischer und
+  entwicklungsbezogener Erkrankungen bei Kindern und Jugendlichen.
+  Autismus-Spektrum-Störungen gehören ausdrücklich zu den typischen
+  Störungsbildern der kinder- und jugendpsychiatrischen Versorgung; eine
+  eigenständige, öffentlich benannte Autismus-Spezialambulanz konnte nicht
+  bestätigt werden.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Autismus-Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Land Schleswig-Holstein – Ansprechstellen KJP"
+    url: "https://www.schleswig-holstein.de/DE/landesregierung/ministerien-behoerden/LJA/Themen/_documents/ansprechstellen_kjp"

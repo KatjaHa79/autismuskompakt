@@ -1,0 +1,43 @@
+name: "Autismus-Therapie-Zentrum Saar gGmbH – Außenstelle Homburg-Beeden"
+type: "Autismusspezifische ambulante Therapie und Beratung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+
+street: "Saarbrücker Straße 118"
+postalCode: "66424"
+city: "Homburg"
+state: "saarland"
+phone: "06841 6870376"
+email: "mail@autismuszentrum-saar.de"
+
+offer: >
+  Autismusspezifische Therapie/Förderung und Beratung für Kinder,
+  Jugendliche und Erwachsene mit Autismusdiagnose. Medizinische
+  Erstdiagnostik: nein. Inhaltlich gelten die gleichen Grundsätze des
+  Trägers wie am Standort Saarlouis.
+admissionRequirements: "Finanzierung über Eingliederungshilfe/Leistungsträger; nicht als GKV-Therapie."
+
+waitingList: "unbekannt"
+waitingTime: >
+  Stand 27.08.2026: mehrmonatige Wartezeiten werden trägerweit
+  veröffentlicht; ein aktueller Medienbericht beschreibt die Wartelisten an
+  Saarlouis und Homburg als voll (hohe Auslastung).
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "ATZ Saar – Kontakt"
+    url: "https://www.autismuszentrum-saar.de/atz-saar/kontakt/kontakt.php"
+  - title: "Tagesschau – Neues Autismus-Therapie-Zentrum Saarbrücken"
+    url: "https://www.tagesschau.de/inland/regional/saarland/sr-neues-autismus-therapie-zentrum-in-saarbruecken-oeffnet-bald-102.html"

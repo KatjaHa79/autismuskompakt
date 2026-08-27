@@ -1,0 +1,34 @@
+name: "Praxiszentrum Psychotherapie – Diagnostikambulanz Stuttgart"
+type: "Psychotherapeutische Praxis / Diagnostikambulanz"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - diagnostik
+
+city: "Stuttgart"
+state: "baden-wuerttemberg"
+
+offer: >
+  Autismusdiagnostik für Kinder, Jugendliche und Erwachsene, Umfang ca. acht
+  Sitzungen à 50 Minuten. Die Anmeldung zur Diagnostik stellt ausdrücklich
+  keine Anmeldung zur Psychotherapie dar.
+paymentType:
+  - selbstzahler
+costs: >
+  Aktuell etwa 1.580 EUR (Selbstzahlerangebot, solange keine belastbare
+  Aussage zur Erstattung durch PKV oder GKV vorliegt).
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: noch nicht belastbar ermittelt."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Praxiszentrum Psychotherapie Stuttgart – Diagnostikambulanz (laut Recherche-Dossier; im Dossier keine Einzel-URL angegeben)"

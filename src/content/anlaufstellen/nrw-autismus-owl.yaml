@@ -1,0 +1,37 @@
+name: "autismus OWL e.V. – Autismus-Therapie-Zentren"
+type: "Therapie- und Beratungsnetz (Bielefeld, Gütersloh, Lemgo, Lippstadt, Minden, Paderborn)"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+
+street: "Verwaltung: Herforder Straße 155a"
+postalCode: "33609"
+city: "Bielefeld"
+state: "nordrhein-westfalen"
+phone: "0521 322011"
+email: "info@autismus-owl.de"
+
+offer: >
+  Therapie und Beratung für Kinder, Jugendliche und Erwachsene mit Autismus;
+  Beratung auch für Familien und Umfeld. Medizinische Erstdiagnostik nicht
+  als zentrale Eigenleistung auf der aktuellen Therapie-Seite ausgewiesen.
+admissionRequirements: "Finanzierung über Eingliederungshilfe des Sozialamts und Jugendhilfe; private Finanzierung ebenfalls möglich."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Therapiestart erst nach Kostenzusage und sobald ein Therapieplatz frei ist; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "autismus OWL – Beratung/Therapie"
+    url: "https://www.autismus-owl.de/unsere-angebote/beratung-therapie/"

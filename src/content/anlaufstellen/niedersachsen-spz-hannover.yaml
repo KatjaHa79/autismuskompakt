@@ -1,0 +1,40 @@
+name: "Sozialpädiatrisches Zentrum Hannover – Auf der Bult"
+type: "Sozialpädiatrisches Zentrum"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+
+street: "Janusz-Korczak-Allee 8"
+postalCode: "30173"
+city: "Hannover"
+state: "niedersachsen"
+phone: "0511 8115-7712"
+email: "spzinfo@hka.de"
+
+offer: >
+  Interdisziplinäre Entwicklungsdiagnostik für Kinder und Jugendliche mit
+  komplexen Entwicklungs- und Verhaltensfragestellungen; die Einrichtung
+  veröffentlicht autismusspezifische Kommunikations- und
+  Entwicklungsangebote und dokumentiert eine wachsende ASS-Diagnostikkompetenz.
+  Eine eigenständige aktuelle ASS-Spezialambulanz wird auf den geprüften
+  Seiten nicht separat ausgewiesen.
+admissionRequirements: "SPZ-Überweisung der Kinder-/Hausärzt:in erforderlich."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle konkrete ASS-Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "SPZ Hannover – Kontakt"
+    url: "https://www.spz-hannover.de/kontakt-1"
+  - title: "SPZ Hannover – Psychologie"
+    url: "https://www.spz-hannover.de/behandlungsformen/psychologie"

@@ -1,0 +1,41 @@
+name: "Helios Klinikum Schleswig – Kinder- und Jugendpsychiatrische Autismusambulanz"
+type: "Kinder- und Jugendpsychiatrie und -psychotherapie"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Friedrich-Ebert-Straße 5a"
+postalCode: "24837"
+city: "Schleswig"
+state: "schleswig-holstein"
+phone: "04621 83-1606"
+email: "institutsambulanz-kjp.schleswig@helios-gesundheit.de"
+
+offer: >
+  Autismusambulanz als ausgewiesene Spezialambulanz für Kinder und
+  Jugendliche von 0 bis 18 Jahren, in besonderen Fällen bis 21 Jahre.
+  Ambulante sowie bei Bedarf stationäre Behandlung.
+admissionRequirements: >
+  Überweisung durch Kinderarzt, Kinder- und Jugendpsychiater:in oder Kinder-
+  und Jugendlichenpsychotherapeut:in erforderlich; ab 14 Jahren auch
+  hausärztliche Überweisung möglich. Krankenkassenkarte zum Termin mitbringen.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: konkrete Autismus-Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Helios Schleswig – KJP Ambulanz, Informationen"
+    url: "https://www.helios-gesundheit.de/standorte-angebote/kliniken/schleswig/fachbereiche/kinder-jugendpsychiatrie/ambulanz/schleswig/informationen/"
+  - title: "Helios Schleswig – KJP Ambulanz, Anmeldung"
+    url: "https://www.helios-gesundheit.de/standorte-angebote/kliniken/schleswig/fachbereiche/kinder-jugendpsychiatrie/ambulanz/schleswig/anmeldung/"

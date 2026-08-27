@@ -1,0 +1,40 @@
+name: "varisano Klinikum Frankfurt Höchst – Sozialpädiatrisches Zentrum (SPZ)"
+type: "Inklusives Zentrum"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - beratung
+
+street: "Gotenstraße 6-8"
+postalCode: "65929"
+city: "Frankfurt am Main"
+state: "hessen"
+phone: "069 3106-2172"
+email: "spz-neuanmeldung@varisano.de"
+
+offer: >
+  Autismusdiagnostik mit Anamnese, körperlicher Untersuchung und weiteren
+  abgestimmten diagnostischen Schritten sowie Beratung, längerfristige
+  Begleitung und Elterntraining für Kinder und Jugendliche mit
+  Entwicklungsauffälligkeiten; Autismus-Spektrum-Störungen sind ausdrücklich
+  ein Schwerpunkt.
+admissionRequirements: "Überweisung des Kinderarztes/der Kinderärztin erforderlich; bei gesetzlicher Versicherung ist der Kinderarzt-Fragebogen entsprechend zu bestätigen."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle ASS-spezifische Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "varisano Frankfurt Höchst – SPZ, Autismus-Spektrum-Störung"
+    url: "https://www.varisano.de/klinikum-frankfurt-hoechst/sozialpaediatrisches-zentrum/unsere-schwerpunkte/autismus-spektrum-stoerung"
+  - title: "varisano Frankfurt Höchst – SPZ Anmeldung"
+    url: "https://www.varisano.de/klinikum-frankfurt-hoechst/sozialpaediatrisches-zentrum/anmeldung"

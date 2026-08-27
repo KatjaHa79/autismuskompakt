@@ -1,0 +1,39 @@
+name: "UKE – Autismusambulanz Kinder und Jugendliche"
+type: "Klinik für Kinder- und Jugendpsychiatrie, -psychotherapie und -psychosomatik"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - beratung
+
+street: "Martinistraße 52"
+postalCode: "20246"
+city: "Hamburg"
+state: "hamburg"
+phone: "040 7410-55113"
+
+offer: >
+  Ersteinschätzung bei Verdacht auf ASS für Klein- und Vorschulkinder bis 5
+  Jahre, Grundschulkinder 6-10 Jahre sowie Jugendliche/junge Menschen 11-21
+  Jahre; bei entsprechender Indikation ausführliche spezifische Diagnostik,
+  Beratung und Begleitung. Angehörigenberatung auch für Eltern, die selbst
+  autistisch sind.
+
+waitingList: "unbekannt"
+waitingTime: >
+  Stand 27.08.2026: die Ambulanz nennt ausdrücklich mehrmonatige
+  Wartezeiten. Nach einem ersten Beratungstermin erfolgt bei Bedarf die
+  Aufnahme auf die Warteliste für ausführliche Diagnostik und Beratung.
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "UKE – Kinder- und Jugendpsychiatrie, Sprechstunden"
+    url: "https://www.uke.de/kliniken-institute/kliniken/kinder-und-jugendpsychiatrie-psychotherapie-und-psychosomatik/sprechstunden/index.html"

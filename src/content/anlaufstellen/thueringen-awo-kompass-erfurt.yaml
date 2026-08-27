@@ -1,0 +1,43 @@
+name: "AWO KompASS – Personenzentrierte Komplexleistung"
+type: "Spezialisierte autismusspezifische Teilhabeleistung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - alltagshilfe
+  - fachberatung
+
+street: "Lüneburger Straße 3"
+postalCode: "99085"
+city: "Erfurt"
+state: "thueringen"
+phone: "0361 4233696"
+email: "info@autismus-thueringen.de"
+
+offer: >
+  Einzel- und Gruppenförderung, Unterstützte Kommunikation, soziale
+  Fähigkeiten, Alltagsbewältigung, Schulbegleitung und Umfeld-/Netzwerkarbeit
+  für Kinder, Jugendliche und Erwachsene im Autismus-Spektrum. Keine
+  medizinische Diagnostik.
+admissionRequirements: "Eingliederungshilfe über Sozialamt/Jugendamt oder privatfinanziert; aktuelle Kostenzusage individuell klären."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: keine konkrete aktuelle Wartezeit veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "autismus Thüringen – Startseite"
+    url: "https://www.autismus-thueringen.de/"
+  - title: "autismus Thüringen – Leistungsangebot"
+    url: "https://www.autismus-thueringen.de/ueber-uns/leistungsangebot/"
+  - title: "autismus Thüringen – Kontakt"
+    url: "https://www.autismus-thueringen.de/kontakt/"

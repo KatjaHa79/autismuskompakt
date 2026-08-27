@@ -1,0 +1,33 @@
+name: "Universitätsklinikum Tübingen – Spezialsprechstunde Kinder und Jugendliche"
+type: "Kinder- und Jugendpsychiatrische Spezialsprechstunde"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Osianderstraße 14-16"
+postalCode: "72076"
+city: "Tübingen"
+state: "baden-wuerttemberg"
+
+offer: >
+  Diagnostik und Therapie für Kinder, Jugendliche sowie deren Eltern bzw.
+  Angehörige. Mit TüTASS besteht ein spezifisches ambulantes Training für
+  Kinder und Jugendliche von 8 bis 17 Jahren, bestehend aus 20
+  Trainingsterminen.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: nicht aktuell veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Universitätsklinikum Tübingen – Kinder- und Jugendpsychiatrie (laut Recherche-Dossier; im Dossier keine Einzel-URL angegeben)"

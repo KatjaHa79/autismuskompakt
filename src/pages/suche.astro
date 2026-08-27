@@ -76,6 +76,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
     ageGroups?: string[];
     online?: boolean;
     offer?: string;
+    status?: string;
     materialType?: string;
   }
 
@@ -125,6 +126,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
           entry.city,
           entry.state,
           entry.offer,
+          entry.status,
           entry.materialType,
         ]
           .filter(Boolean)

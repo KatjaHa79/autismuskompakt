@@ -1,0 +1,36 @@
+name: "UKS – Psychopädiatrische Ambulanz"
+type: "Klinik für Allgemeine Pädiatrie und Neonatologie"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - beratung
+
+city: "Homburg"
+postalCode: "66421"
+state: "saarland"
+phone: "06841 16-28337"
+
+offer: >
+  Psychologische Diagnostik sowie Beratung und psychotherapeutische
+  Unterstützung für Kinder und Jugendliche jeden Alters und ihre Familien,
+  u. a. bei Entwicklungsfragen, Kontaktschwierigkeiten sowie emotionalen und
+  Verhaltensauffälligkeiten. Eine spezifische medizinische
+  Autismusdiagnostik ist auf der Seite nicht als eigenes Angebot
+  ausgewiesen.
+admissionRequirements: "Zugang nur über Überweisung durch niedergelassene Kinder- und Jugendärzt:innen."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Termine nur nach vorheriger Anmeldung; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "UKS – Psychopädiatrische Ambulanz"
+    url: "https://www.uks.eu/kliniken-einrichtungen/kinder-jugendmedizin/allgemeine-paediatrie-neonatologie/ambulante-behandlung/psychopaediatrische-ambulanz"

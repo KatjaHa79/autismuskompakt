@@ -1,0 +1,32 @@
+name: "Connect2 – Beratungsstelle für Ausbildung und Arbeit"
+type: "Autismus-Therapie-Zentrum Saar · berufliche Teilhabe"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - fachberatung
+
+street: "über Autismus-Therapie-Zentrum Saar, Prälat-Subtil-Ring 12"
+postalCode: "66740"
+city: "Saarlouis"
+state: "saarland"
+email: "schmadel@autismuszentrum-saar.de"
+
+offer: >
+  Einstiegsberatung zu beruflicher Teilhabe, Vermittlung von Jobcoaching,
+  Beratung zu Nischenarbeitsplätzen und Unterstützung von Betrieben für
+  autistische Arbeitnehmende/Auszubildende sowie Arbeitgeber und Betriebe.
+  Diagnostik/Therapie ist nicht Kernleistung dieses Angebots.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "ATZ Saar – Connect2"
+    url: "https://www.autismuszentrum-saar.de/atz-saar/Connect-2/Connect-2.php"

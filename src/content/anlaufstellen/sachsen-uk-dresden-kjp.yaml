@@ -1,0 +1,39 @@
+name: "Universitätsklinikum Carl Gustav Carus Dresden – KJP Autismusambulanz"
+type: "Klinik und Poliklinik für Kinder- und Jugendpsychiatrie und -psychotherapie"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Fetscherstraße 74 (Besucheradresse: Blasewitzer Straße 86, Haus 105)"
+postalCode: "01307"
+city: "Dresden"
+state: "sachsen"
+phone: "0351 458-7124"
+email: "KJPAutismusambulanz@uniklinikum-dresden.de"
+
+offer: >
+  Diagnostik und Behandlung für Kinder und Jugendliche; der aktuelle
+  Klinikflyer nennt Verhaltenstherapie, Strukturierung und
+  Kommunikationstraining. Beratung und Fortbildung für Eltern/Fachkräfte.
+admissionRequirements: >
+  Für den Ersttermin sollen Vorbefunde und Zeugnisse eingereicht werden. In
+  der Regel Überweisung durch Kinder- und Jugendpsychiater:in,
+  Psychotherapeut:in oder SPZ; Ausnahmen werden individuell entschieden.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Uniklinikum Dresden – KJP Flyer Autismusambulanz"
+    url: "https://www.uniklinikum-dresden.de/de/das-klinikum/kliniken-polikliniken-institute/kjp/textdatein/flyerdateien/klinik/kjp_flyer_a3-a5_autismusambulanz.pdf/%40%40download/file/KJP_Flyer_A3-A5_Autismusambulanz.pdf"

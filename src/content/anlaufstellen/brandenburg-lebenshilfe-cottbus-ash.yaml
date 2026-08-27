@@ -1,0 +1,37 @@
+name: "Lebenshilfe Cottbus – Autismusspezifische Hilfen (ASH)"
+type: "Ambulante Eingliederungshilfe"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - alltagshilfe
+
+street: "Ostrower Damm 2"
+postalCode: "03046"
+city: "Cottbus"
+state: "brandenburg"
+phone: "0355 430 998 17"
+email: "r.bomme@lebenshilfe-cottbus.de"
+
+offer: >
+  Unterstützung u. a. beim Umgang mit der Diagnose, Alltagsorganisation,
+  Kommunikation, Selbstständigkeit und gesellschaftlicher Teilhabe für
+  Kinder, Jugendliche und Erwachsene mit Autismus. Medizinische Diagnostik:
+  nein.
+admissionRequirements: "Leistung der ambulanten Eingliederungshilfe; Kosten werden laut Anbieter durch Sozialamt oder Jugendamt übernommen."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit oder Kapazitätsangabe nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Lebenshilfe Cottbus – Autismusspezifische Hilfen"
+    url: "https://www.lebenshilfe-cottbus.de/seite/661774/autismusspezifische-hilfen.html"

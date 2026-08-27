@@ -1,0 +1,34 @@
+name: "Frühförder- und Beratungszentrum der Stadt Brandenburg an der Havel"
+type: "Kommunales Frühförder- und Beratungszentrum"
+
+targetGroups:
+  - angehoerige
+  - autistische-menschen
+ageGroups:
+  - kinder
+categories:
+  - beratung
+
+street: "Bürgerhaus Hohenstücken, Walther-Ausländer-Straße 1"
+postalCode: "14772"
+city: "Brandenburg an der Havel"
+state: "brandenburg"
+phone: "03381 585155"
+
+offer: >
+  Entwicklungsdiagnostik, Frühförderung, Beratung für Eltern und
+  Weitervermittlung zu spezialisierten Einrichtungen für Kinder vom
+  Säuglingsalter bis zum Schuleintritt, ausdrücklich auch Kinder mit
+  autistischen Zügen bzw. Entwicklungsauffälligkeiten. Eine fachärztliche
+  Autismusdiagnostik wird nicht als eigenständige Leistung beschrieben.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: unverbindliche Erstberatung wird angeboten; aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Stadt Brandenburg – Frühförder- und Beratungszentrum"
+    url: "https://www.stadt-brandenburg.de/kinder-jugendliche-und-familien/fruehfoerder-beratungszentrum"

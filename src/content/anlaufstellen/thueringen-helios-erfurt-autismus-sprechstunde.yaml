@@ -1,0 +1,36 @@
+name: "Helios Klinikum Erfurt – ambulante Autismus-Sprechstunde KJP"
+type: "Kinder- und Jugendpsychiatrie, Psychotherapie und Psychosomatik"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Nordhäuser Straße 74"
+postalCode: "99089"
+city: "Erfurt"
+state: "thueringen"
+phone: "0361 781-5432"
+
+offer: >
+  Ambulante Autismus-Sprechstunde für Kinder und Jugendliche: medizinische,
+  kinder-/jugendpsychiatrische und testpsychologische Diagnostik; verschiedene
+  psychotherapeutische, Gruppen- und weitere Behandlungsverfahren. Eltern
+  werden in die Behandlung einbezogen.
+admissionRequirements: "Eine gesonderte Privatsprechstunde ist ausgewiesen (Chefarztsekretariat: 0361 781-2801)."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: konkrete Wartezeit/Aufnahmestatus nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Helios Erfurt – Kinder- und Jugendpsychiatrie"
+    url: "https://www.helios-gesundheit.de/standorte-angebote/kliniken/erfurt/leistungen/fachbereiche/kinder-jugendpsychiatrie/"

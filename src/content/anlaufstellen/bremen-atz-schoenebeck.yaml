@@ -1,0 +1,41 @@
+name: "Autismus-Therapiezentrum Bremen-Schönebeck"
+type: "Autismus Bremen e.V. · Therapiezentrum"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+
+street: "Clamersdorfer Straße 47"
+postalCode: "28757"
+city: "Bremen"
+state: "bremen"
+phone: "0421 625606"
+email: "schoenebeck@atz-bremen.de"
+
+offer: >
+  Therapie und Beratung durch ein multiprofessionelles Team mit
+  psychologischen, sozialpädagogischen, pädagogischen, logopädischen und
+  ergotherapeutischen Fachkräften für Kinder, Jugendliche und Erwachsene mit
+  Autismus-Spektrum-Störung. Medizinische Autismusdiagnostik nicht als
+  eigenes Standortangebot ausgewiesen.
+admissionRequirements: "Therapie setzt eine aktuelle Diagnose voraus; Antrag und Kostenträgerklärung über die Beratungs-/Antragsstruktur."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit nicht veröffentlicht. Telefonisch in der Regel Montag bis Freitag 08:00-12:00 Uhr."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Bremen – ATZ Schönebeck"
+    url: "https://www.autismus-bremen.de/schoenebeck/"
+  - title: "Autismus Bremen – Unser Team"
+    url: "https://www.autismus-bremen.de/unser-team/"

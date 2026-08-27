@@ -1,0 +1,40 @@
+name: "Landesförderzentrum Autistisches Verhalten (LFZ-AV)"
+type: "Landesweite schulische Beratungsstelle des Landes Schleswig-Holstein"
+
+targetGroups:
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - fachberatung
+
+street: "Schreberweg 5"
+postalCode: "24119"
+city: "Kronshagen"
+state: "schleswig-holstein"
+phone: "0431 5403-196"
+email: "lfz-autistisches-verhalten.kronshagen@schule.landsh.de"
+
+offer: >
+  Sonderpädagogische Unterstützung, Fortbildungen und Beratung zu
+  Nachteilsausgleichen und schulischer Teilhabe für Schüler:innen mit
+  Autismusdiagnose, Eltern, Schulen, Lehrkräfte und weitere schulische
+  Netzwerkpartner. Unterstützt auch bei Autismusverdacht bei
+  Ersteinschätzung und Planung des weiteren Vorgehens. Medizinische
+  Diagnostik: nein; diese muss durch KJP-Praxis, SPZ oder entsprechende
+  Klinik erfolgen.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: telefonische Bürozeiten veröffentlicht; keine klassische Warteliste."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Land Schleswig-Holstein – LFZ-AV"
+    url: "https://www.schleswig-holstein.de/DE/landesregierung/ministerien-behoerden/LFZAV/lfzav_node"
+  - title: "Land Schleswig-Holstein – LFZ-AV Kontakt"
+    url: "https://www.schleswig-holstein.de/DE/landesregierung/ministerien-behoerden/LFZAV/Kontakt"

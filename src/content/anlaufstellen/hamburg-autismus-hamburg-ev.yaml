@@ -1,0 +1,31 @@
+name: "Autismus Hamburg e.V."
+type: "Selbsthilfeverein / Beratungs- und Informationsangebot"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups: []
+categories:
+  - beratung
+  - selbsthilfe
+
+state: "hamburg"
+email: "info@autismushamburg.de"
+
+offer: >
+  Beratung/Orientierung zu Diagnostik und Therapie, Bildung, Wohnen, Recht
+  und Unterstützungsangeboten sowie Selbsthilfe/Elterntreffen,
+  Veranstaltungen und Webinare für Eltern, Angehörige, autistische Menschen
+  und Interessierte. Medizinische Diagnostik: nein.
+admissionRequirements: 'Stand 27.08.2026: die Beratungsstelle startet ab 01.09.2026 – vor diesem Datum noch nicht aktiv.'
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: die Website kündigt die Beratungsstelle ab 01.09.2026 an; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Hamburg e.V."
+    url: "https://www.autismushamburg.de/"

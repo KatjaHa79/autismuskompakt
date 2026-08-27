@@ -1,0 +1,37 @@
+name: "Autismuszentrum KleineWege® & Beratungsstelle"
+type: "Heilpädagogische autismusspezifische Förderung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - alltagshilfe
+  - fachberatung
+
+street: "Standorte: Nordhausen (Geiersberg 12), Erfurt (Marbacher Gasse 35-37), Weimar (Steubenstraße 15), Heilbad Heiligenstadt (Bahnhofstraße 22)"
+state: "thueringen"
+phone: "Nordhausen: 03631 981040 · Erfurt: 0361 65366830 · Weimar: 03643 4959660 · Heiligenstadt: 03606 5062077"
+email: "kontakt@kleine-wege.de"
+
+offer: >
+  Autismusspezifische heilpädagogische Förderung und Beratung für Kinder,
+  Jugendliche und Erwachsene im Autismus-Spektrum sowie Eltern, Angehörige,
+  schulisches und berufliches Umfeld und Fachkräfte. Keine medizinische
+  Diagnostik als Eigenleistung.
+admissionRequirements: "Ärztliche Diagnose ist Voraussetzung. Kosten trägt der zuständige Leistungsträger (Sozialamt/Jugendamt) im Rahmen der Eingliederungshilfe."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: keine konkrete Wartezeit veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "KleineWege – Kontakt"
+    url: "https://www.kleine-wege.de/KW/contact/"

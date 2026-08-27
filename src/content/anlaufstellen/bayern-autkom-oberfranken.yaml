@@ -1,0 +1,38 @@
+name: "Autismus-Kompetenzzentrum Oberfranken gGmbH"
+type: "Beratungsstelle"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups: []
+categories:
+  - beratung
+
+street: "Pabstenweg 10"
+postalCode: "96215"
+city: "Lichtenfels"
+state: "bayern"
+phone: "09571 75567-0"
+email: "info@autkom-ofr.de"
+
+offer: >
+  Information zu Diagnose, Therapie und Förderung, sozialrechtlichen
+  Themen, Lernen, Wohnen und Arbeiten sowie Fachberatung und
+  Fortbildungen für Menschen aus dem Autismus-Spektrum jeden Alters,
+  Angehörige und Fachkräfte. Keine medizinische Diagnostik als eigenes
+  Angebot nachgewiesen.
+admissionRequirements: "Gefördert u. a. durch Bezirk Oberfranken und Bayerisches Sozialministerium."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuell veröffentlichte Wartezeit für Beratungstermine: etwa 4 bis 5 Monate."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus-Kompetenzzentrum Oberfranken"
+    url: "https://autkom-ofr.de/"
+  - title: "Autismus-Kompetenzzentrum Oberfranken – Aktuelles"
+    url: "https://autkom-ofr.de/aktuelles/"

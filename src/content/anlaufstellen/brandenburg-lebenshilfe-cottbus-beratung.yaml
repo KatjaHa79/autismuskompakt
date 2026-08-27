@@ -1,0 +1,34 @@
+name: "Lebenshilfe Cottbus – Autismusberatungsstelle"
+type: "Beratungsstelle"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups: []
+categories:
+  - beratung
+
+street: "Ostrower Damm 2"
+postalCode: "03046"
+city: "Cottbus"
+state: "brandenburg"
+phone: "0355 86627673"
+email: "autismusberatung@lebenshilfe-cottbus.de"
+
+offer: >
+  Informationen zu ASS, Vermittlung zu Ärzt:innen und Therapeut:innen,
+  Orientierung zu Hilfsangeboten, Alltagsfragen, Eltern-/Selbsthilfegruppen
+  für Menschen mit Autismus, Familien und nahestehende Personen.
+  Medizinische Diagnostik nicht als eigene Leistung ausgewiesen.
+costs: "Für Menschen mit Wohnsitz in Cottbus laut Anbieter kostenfrei; Personen außerhalb Cottbus müssen einen Antrag stellen."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Termin nach telefonischer oder E-Mail-Anfrage, auch Hausbesuche möglich; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Lebenshilfe Cottbus – Autismusberatung"
+    url: "https://www.lebenshilfe-cottbus.de/seite/661766/autismusberatung.html"

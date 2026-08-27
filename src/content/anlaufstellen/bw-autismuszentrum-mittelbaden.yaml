@@ -1,0 +1,31 @@
+name: "Autismuszentrum Mittelbaden"
+type: "Autismuszentrum (Standorte Rastatt, Achern, Offenburg, Freudenstadt)"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups: []
+categories:
+  - therapie
+  - beratung
+
+street: "Rastatt: Im Steingerüst 30, 76437 Rastatt · Achern: Lindenbrunnenstraße 4, 77855 Achern · Offenburg: Haselwanderstraße 28, 77652 Offenburg · Freudenstadt: Lange Straße 30, 72250 Freudenstadt"
+state: "baden-wuerttemberg"
+phone: "Rastatt: 07222 8305216"
+
+offer: >
+  Therapie sowie Beratung im Rahmen der Angebote, zusätzlich Schulbegleitung,
+  Assistenz im Wohn- und Sozialraum, häusliche autismusspezifische
+  Unterstützung sowie Fortbildungen für Angehörige und Fachkräfte.
+  Diagnostik bislang nicht als medizinische Autismusdiagnostik bestätigt.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismuszentrum Mittelbaden (laut Recherche-Dossier; im Dossier keine Einzel-URL angegeben)"

@@ -1,0 +1,46 @@
+name: "Talentum – Psychologisches Fachinstitut für Begabung und Entwicklung"
+type: "Private psychologische Diagnostik- und Therapieeinrichtung"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - diagnostik
+  - therapie
+  - beratung
+
+street: "Brook 1"
+postalCode: "20457"
+city: "Hamburg"
+state: "hamburg"
+phone: "040 18206715"
+email: "info@talentum-hamburg.de"
+
+offer: >
+  Autismusdiagnostik mit standardisierten Verfahren einschließlich ADOS-2
+  und ADI-R sowie Differentialdiagnostik; Therapie/Beratung u. a.
+  Verhaltenstherapie für Kinder, soziales Kompetenztraining und Beratung
+  für Kinder, Jugendliche und Erwachsene.
+paymentType:
+  - selbstzahler
+costs: >
+  Autismusdiagnostik aktuell 1.390 EUR für Kinder und 1.080 EUR für
+  Erwachsene. Private Kassen können Kosten ganz oder teilweise übernehmen;
+  vorherige Klärung empfohlen. GKV: Praxis nicht regulär
+  abrechnungsfähig.
+
+waitingList: "offen"
+waitingTime: "Stand 27.08.2026: kurze Wartezeiten für Diagnostik und freie Plätze für Autismus-Therapie; Rückmeldung über Kontaktformular üblicherweise innerhalb 24-48 Stunden."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Talentum Hamburg – Autismus-Spektrum-Störung"
+    url: "https://talentum-hamburg.de/fachgebiete/autismus-spektrum-storung/"
+  - title: "Talentum Hamburg – Kosten"
+    url: "https://talentum-hamburg.de/unser-angebot/kosten/"

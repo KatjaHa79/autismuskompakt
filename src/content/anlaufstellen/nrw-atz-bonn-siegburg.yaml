@@ -1,0 +1,31 @@
+name: "Autismus-Therapie-Zentrum Bonn / Siegburg"
+type: "Autismus Köln/Bonn e.V."
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups: []
+categories:
+  - therapie
+  - beratung
+
+street: "Bonn: Waldenburger Ring 44, 53119 Bonn · Siegburg: Annostraße 3a, 53721 Siegburg"
+state: "nordrhein-westfalen"
+
+offer: >
+  Therapie und Beratung für Menschen mit Autismus und Familien. Medizinische
+  Autismusdiagnostik nicht als eigene medizinische Leistung auf den
+  aktuellen Hauptseiten belegt.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeiten nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus-Therapie-Zentrum Bonn"
+    url: "https://www.atz-bonn.de/"
+  - title: "Bundesverband Autismus Deutschland – Verzeichnis"
+    url: "https://www.autismus.de/index.php?L=1&id=19"

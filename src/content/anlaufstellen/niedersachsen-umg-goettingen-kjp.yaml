@@ -1,0 +1,39 @@
+name: "Universitätsmedizin Göttingen – Spezialambulanz Autismus-Spektrum-Störung"
+type: "Klinik für Kinder- und Jugendpsychiatrie und Psychotherapie"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Von-Siebold-Straße 5"
+postalCode: "37075"
+city: "Göttingen"
+state: "niedersachsen"
+phone: "0551 3962444"
+
+offer: >
+  Multiprofessionelle Diagnostik und ambulante Behandlung, bei Bedarf teil-
+  und vollstationäre Weiterbehandlung, für Kinder und Jugendliche bis 18
+  Jahre. Autismus-Spektrum-Störung ist eine ausdrücklich benannte
+  Spezialambulanz.
+admissionRequirements: "Zum ersten Termin ist eine Überweisung von Kinder-/Hausarzt, KJP-Facharzt oder approbierter Kinder- und Jugendlichenpsychotherapeut:in erforderlich."
+paymentType:
+  - gesetzlich
+  - selbstzahler
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: konkrete Wartezeit auf der allgemeinen Spezialambulanzseite nicht genannt."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "UMG Göttingen – Spezialambulanzen KJP"
+    url: "https://kjp.umg.eu/patienten-besucher/spezialambulanzen/"

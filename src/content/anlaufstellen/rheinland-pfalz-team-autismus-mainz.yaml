@@ -1,0 +1,41 @@
+name: "Team Autismus Mainz"
+type: "Therapie, Förderung, Beratung und Akademie"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+
+street: "Wilhelm-Theodor-Römheld-Straße 34"
+postalCode: "55130"
+city: "Mainz"
+state: "rheinland-pfalz"
+phone: "06131 6179566"
+email: "info@team-autismus.de"
+
+offer: >
+  TEACCH-basierte Therapie/Förderung, Beratung, Seminare, Weiterbildung und
+  Institutionsberatung für Klient:innen aller Altersklassen aus dem gesamten
+  Autismusspektrum. Diagnostik: ausdrücklich nein.
+admissionRequirements: "Leistung der Eingliederungshilfe; private Kostenübernahme in Ausnahmefällen oder als Zuzahlung bei Erwachsenen möglich. Neuaufnahmen besonders für Mainz, Mainz-Bingen und Wiesbaden."
+
+waitingList: "offen"
+waitingTime: "Stand 27.08.2026: für Langzeittherapie besteht aktuell eine Warteliste (Kinder/Jugendliche und Erwachsene); konkrete Dauer nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Team Autismus Mainz"
+    url: "https://www.team-autismus.de/"
+  - title: "Team Autismus Mainz – Angebot"
+    url: "https://www.team-autismus.de/therapie-und-foerderung/angebot/"
+  - title: "Team Autismus Mainz – FAQs"
+    url: "https://www.team-autismus.de/therapie-und-foerderung/faqs/"

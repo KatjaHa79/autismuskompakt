@@ -1,0 +1,38 @@
+name: "Universitätsklinikum Heidelberg – HEAS (Heidelberger Sprechstunde für Erwachsene mit Autismus-Spektrum-Störung)"
+type: "Spezialsprechstunde / Psychiatrische Institutsambulanz"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+  - beratung
+
+street: "Voßstraße 4"
+postalCode: "69115"
+city: "Heidelberg"
+state: "baden-wuerttemberg"
+
+offer: >
+  Sehr ausführliche Diagnostik mit Anamnese, standardisierten Fragebögen,
+  Fremdanamnese und bei Bedarf weiteren Untersuchungen sowie
+  therapeutische Abschlussberatung für Erwachsene mit Verdacht auf ASS.
+  Keine reguläre Autismustherapie als Hauptleistung veröffentlicht.
+admissionRequirements: >
+  Neue Anmeldungen werden nur von Personen mit Wohnsitz in Heidelberg
+  angenommen, Ausnahmen sind ausdrücklich nicht möglich. Kontaktaufnahme
+  muss über die behandelnde psychiatrische oder psychotherapeutische
+  Fachperson erfolgen (Überweisung erforderlich); Kindheitsinformationen/
+  Fremdanamnese ausdrücklich vorgesehen, Schulzeugnisse sofern vorhanden
+  erwünscht.
+
+waitingList: "offen"
+waitingTime: "Stand 27.08.2026: aktuell 12-16 Monate."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Universitätsklinikum Heidelberg – offizielle Website (laut Recherche-Dossier; im Dossier keine Einzel-URL angegeben)"

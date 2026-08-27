@@ -1,0 +1,39 @@
+name: "Charité – Kinder- und Jugendpsychiatrie / Sozialpädiatrisches Zentrum"
+type: "Campus Virchow-Klinikum"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Augustenburger Platz 1"
+postalCode: "13353"
+city: "Berlin-Wedding"
+state: "berlin"
+phone: "+49 30 450 566 229"
+
+offer: >
+  Interdisziplinäre Diagnostik und Behandlung im SPZ und in der Kinder- und
+  Jugendpsychiatrie für Kinder und Jugendliche sowie deren Familien. Eine
+  eigenständige, öffentlich bezeichnete ASS-Spezialambulanz ist auf der
+  aktuellen KJP-Übersichtsseite nicht ausgewiesen; Autismusdiagnostik ist
+  daher als mögliche Fragestellung innerhalb der interdisziplinären
+  Versorgung zu verstehen, nicht als separates Spezialangebot.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: für stationäre und teilstationäre KJP-Aufnahmen arbeitet die Charité ausschließlich mit Wartelisten; veröffentlichte Wartezeit aktuell bis zu 6 Monate (keine spezifische ASS-Wartezeit)."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Charité – Sozialpädiatrisches Zentrum"
+    url: "https://spz.charite.de/"
+  - title: "Charité – Kinder- und Jugendpsychiatrie, für Patienten/Eltern"
+    url: "https://kinder-und-jugendpsychiatrie.charite.de/fuer_patienten_eltern"

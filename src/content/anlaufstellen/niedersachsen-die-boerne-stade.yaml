@@ -1,0 +1,36 @@
+name: "DIE BÖRNE – Autismus Therapiezentrum Stade"
+type: "Autismustherapie"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+
+street: "Trägeranschrift: Claus-von-Stauffenberg-Weg 10"
+postalCode: "21684"
+city: "Stade"
+state: "niedersachsen"
+phone: "04141 5343-63"
+
+offer: >
+  Autismustherapie (Einzel- und bei Bedarf Gruppensitzungen) für Kinder,
+  Jugendliche und Erwachsene mit gesicherter Autismusdiagnose; Angehörige und
+  weitere Bezugspersonen werden einbezogen. Medizinische Diagnostik nicht als
+  eigene Leistung ausgewiesen.
+admissionRequirements: "Therapieantrag kann formlos beim zuständigen Jugend- oder Sozialamt gestellt werden (Eingliederungshilfe)."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "DIE BÖRNE – Autismus Therapiezentrum Stade"
+    url: "https://dieboerne.de/autismus-therapiezentrum-stade"

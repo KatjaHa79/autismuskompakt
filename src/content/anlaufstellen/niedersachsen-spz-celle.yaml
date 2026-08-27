@@ -1,0 +1,41 @@
+name: "Sozialpädiatrisches Zentrum Celle"
+type: "Allgemeines Krankenhaus Celle · Sozialpädiatrisches Zentrum"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Bullenberg 10"
+postalCode: "29221"
+city: "Celle"
+state: "niedersachsen"
+phone: "05141 72-1851"
+email: "sekretariat.spz@akh-celle.de"
+
+offer: >
+  Ärztliche, psychologische und therapeutische Diagnostik, Therapie- und
+  Förderplanung sowie Sozialberatung für Kinder und Jugendliche von 0 bis 18
+  Jahren; Autismus wird ausdrücklich als Schwerpunkt genannt.
+admissionRequirements: "Gesetzlich Versicherte: Überweisung eines niedergelassenen Arztes erforderlich. Privat Versicherte: zusätzlich separates Formular."
+paymentType:
+  - gesetzlich
+  - privat
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: die Anmeldeunterlagen weisen darauf hin, dass in der Regel mit einer längeren Wartezeit gerechnet werden muss; keine konkrete Dauer veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "AKH Celle – Sozialpädiatrisches Zentrum"
+    url: "https://www.akh-celle.de/medizinwelten-experten/stationaer-ambulant/stationaer/sozialpaediatrisches-zentrum"
+  - title: "AKH Celle – SPZ Anmeldebogen"
+    url: "https://www.akh-celle.de/fileadmin/user_upload/Dateien/Fachbereiche/Sozialpaediatrische-Zentrum_SPZ/SPZ_Anschreiben_Anmeldebogen.pdf"

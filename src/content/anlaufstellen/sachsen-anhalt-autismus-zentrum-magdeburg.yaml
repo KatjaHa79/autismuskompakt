@@ -1,0 +1,41 @@
+name: "Autismus Zentrum Magdeburg gGmbH"
+type: "Autismusspezifische Förderung, Tagesstruktur und Beratung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - alltagshilfe
+  - beratung
+
+street: "Freie Straße 23"
+postalCode: "39112"
+city: "Magdeburg"
+state: "sachsen-anhalt"
+email: "kontakt@autismus-magdeburg.de"
+
+offer: >
+  Ambulante und teilstationäre Förderung, Lernzentrum, Gruppenangebote und
+  Beratung für Kinder ab etwa 3 Jahren, Jugendliche und Erwachsene mit
+  gesicherter Autismusdiagnose sowie Familien. Medizinische Diagnostik
+  ausdrücklich nein.
+admissionRequirements: "Gesicherte Autismusdiagnose sowie Antrag auf autismusspezifische Eingliederungshilfe beim zuständigen Jugend- oder Sozialamt; Kostenzusage wird im Aufnahmeprozess benötigt."
+
+waitingList: "offen"
+waitingTime: "Stand 27.08.2026: Aufnahme auf die Warteliste erst nach gesicherter Diagnose und Nachweis der beantragten Eingliederungshilfe möglich; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Zentrum Magdeburg – Leistungen"
+    url: "https://www.autismus-magdeburg.de/pages/leistungen"
+  - title: "Autismus Zentrum Magdeburg – Warteliste"
+    url: "https://www.autismus-magdeburg.de/pages/warteliste"
+  - title: "Autismus Zentrum Magdeburg – Diagnose"
+    url: "https://www.autismus-magdeburg.de/pages/diagnose"

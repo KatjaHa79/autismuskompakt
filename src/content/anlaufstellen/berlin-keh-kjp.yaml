@@ -1,0 +1,33 @@
+name: "Evangelisches Krankenhaus Königin Elisabeth Herzberge – Kinder- und Jugendpsychiatrie"
+type: "Klinik für Psychiatrie, Psychotherapie und Psychosomatik des Kindes- und Jugendalters"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Herzbergstraße 79"
+postalCode: "10365"
+city: "Berlin"
+state: "berlin"
+
+offer: >
+  Teilstationäres Angebot mit Schwerpunkt Autismusdiagnostik ausdrücklich
+  ausgewiesen; daneben kinder- und jugendpsychiatrische ambulante, teil-
+  und vollstationäre Angebote.
+admissionRequirements: "Für teil- oder vollstationäre Behandlung ist eine Anmeldung durch niedergelassene Kinder- und Jugendpsychiater:innen oder Kinder- und Jugendpsychotherapeut:innen erforderlich."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "KEH Berlin – Anmeldung teilstationäre/stationäre Therapie KJP"
+    url: "https://www.keh-berlin.de/einweiser-fachbesucher/psychiatrie-psychotherapie-und-psychosomatik-des-kindes-und-jugendalters/anmeldung-fuer-eine-teilstationaere-oder-stationaere-therapie-auf-einer-unserer-kjp-stationen"

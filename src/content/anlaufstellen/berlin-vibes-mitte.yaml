@@ -1,0 +1,37 @@
+name: "Vibes Psychotherapie & Coaching – ASS-Diagnostik"
+type: "Psychotherapeutische Praxis"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+
+street: "Zionskirchstraße 21"
+postalCode: "10119"
+city: "Berlin-Mitte"
+state: "berlin"
+phone: "030 93498776"
+email: "kontakt@vibes-mitte.de"
+
+offer: >
+  AD(H)S- und Autismus-Spektrum-Diagnostik für Erwachsene. Psychotherapie
+  wird unabhängig davon auch für gesetzlich und privat Versicherte sowie
+  Selbstzahlende angeboten.
+paymentType:
+  - selbstzahler
+costs: "ASS-Diagnostik: ausdrücklich Selbstzahler:innen-Basis, nicht zu verwechseln mit der allgemeinen Psychotherapie-Abrechnung."
+
+waitingList: "offen"
+waitingTime: "Stand 08/2026 (Prüfstand 27.08.2026): aktuell freie Plätze für ADHS- und ASS-Diagnostik verfügbar, auch samstags."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Vibes Mitte"
+    url: "https://vibes-mitte.de/"
+  - title: "Vibes Mitte – Kontakt und Termine"
+    url: "https://vibes-mitte.de/kontakt-und-termine/"

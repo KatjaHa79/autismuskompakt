@@ -1,0 +1,32 @@
+name: "Netzwerk Autismus Niederbayern / Oberpfalz gGmbH"
+type: "Beratungs- und Koordinierungsstellen (Passau und Regensburg)"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups: []
+categories:
+  - beratung
+
+street: "Oberpfalz: Grasgasse 12, 93047 Regensburg · Niederbayern: Bahnhofstraße 32, 94032 Passau"
+state: "bayern"
+phone: "Oberpfalz: 0941 595799-81 · Niederbayern: 0851 75638197"
+
+offer: >
+  Beratung mit Vermittlung zu Diagnostik, Therapie und Förderung,
+  Krisenunterstützung; Themen u. a. Schule, Ausbildung, Arbeit, Wohnen,
+  Sozialrecht, Selbsthilfe, Vernetzung und Fortbildung für Betroffene,
+  Angehörige und Fachleute. Eigene medizinische Diagnostik ist nicht als
+  Angebot ausgewiesen.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Termine nach Vereinbarung, Haus- und Einrichtungsbesuche bei Bedarf; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Netzwerk Autismus Niederbayern/Oberpfalz – Aktuelles"
+    url: "https://www.netzwerk-autismus.eu/aktuelles-01.html"

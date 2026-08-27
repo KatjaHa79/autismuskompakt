@@ -1,0 +1,38 @@
+name: "Asklepios Klinik Nord-Ochsenzoll – Autismus-Ambulanz"
+type: "Psychiatrisch-Psychotherapeutisches Ambulanzzentrum"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+  - beratung
+
+street: "Besucheranschrift: Henny-Schütz-Allee 3 (Postanschrift: Langenhorner Chaussee 560, Haus 3)"
+postalCode: "22419"
+city: "Hamburg"
+state: "hamburg"
+phone: "040 181887-4579"
+email: "autismus.nord@asklepios.com"
+
+offer: >
+  Ausführliche Diagnostik in 1-2 Terminen von jeweils etwa zwei Stunden mit
+  Gespräch und Testungen für erwachsene Patient:innen mit Störungen aus dem
+  autistischen Formenkreis, anschließend Beratung zu Therapieoptionen.
+admissionRequirements: 'Die offizielle Sprechstundenseite kennzeichnet die Patientengruppe als "Alle Versicherte".'
+
+waitingList: "geschlossen"
+waitingTime: >
+  Stand 27.08.2026: Warteliste geschlossen; Anfragen sollen laut aktuellem
+  institutionellem Hinweis ab Anfang 2027 per E-Mail wieder möglich sein.
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Asklepios Nord-Ochsenzoll – Autismus-Ambulanz"
+    url: "https://www.asklepios.com/hamburg/nord/psychiatrie-ochsenzoll/experten/psychiatrie-und-psychotherapie-ochsenzoll/psychiatrisch-psychotherapeutisches-ambulanzzentrum/zentrum-ochsenzoll-pia/autismus-ambulanz/"
+  - title: "Hamburger Autismus Institut – Angebote für Erwachsene mit ASS (Statusquelle)"
+    url: "https://autismus-institut.de/therapie-institut/angebote-fuer-erwachsene-mit-ass/"

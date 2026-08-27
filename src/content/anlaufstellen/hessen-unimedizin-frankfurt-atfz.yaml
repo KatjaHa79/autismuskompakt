@@ -1,0 +1,37 @@
+name: "Universitätsmedizin Frankfurt – Autismus-Therapie- und Forschungszentrum (ATFZ)"
+type: "Klinik für Psychiatrie, Psychosomatik und Psychotherapie des Kindes- und Jugendalters"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - therapie
+
+street: "Deutschordenstraße 50"
+postalCode: "60528"
+city: "Frankfurt am Main"
+state: "hessen"
+email: "atfz@unimedizin-ffm.de"
+
+offer: >
+  Spezialambulanz mit integriertem Forschungszentrum: autismusspezifische
+  Förderung sowie Eltern- und Geschwisterangebote für Kinder und
+  Jugendliche mit Autismus-Spektrum-Störung im Alter von 2 bis 18 Jahren.
+  Diagnostik: die Diagnostik bei Verdacht erfolgt über die kinder- und
+  jugendpsychiatrische Ambulanz, nicht als voraussetzungsloser
+  Therapiezugang im ATFZ.
+admissionRequirements: "Zugang zur ATFZ-Förderung setzt eine gesicherte Autismusdiagnose voraus; bei schwerer Symptomatik kann zunächst teil- oder vollstationäre Behandlung notwendig sein."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle konkrete Wartezeit für ATFZ-Behandlung nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Universitätsmedizin Frankfurt – ATFZ"
+    url: "https://www.unimedizin-ffm.de/einrichtungen/kliniken/zentrum-fuer-psychische-gesundheit/psychiatrie-psychosomatik-und-psychotherapie-des-kindes-und-jugendalters/kinder-jugendliche-eltern/autismus-therapie-und-forschungszentrum"

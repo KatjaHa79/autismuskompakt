@@ -1,0 +1,36 @@
+name: "Helios Kliniken Schwerin – Spezialambulanz für neuronale Entwicklungsstörungen / Autismus"
+type: "Carl-Friedrich-Flemming-Klinik für Psychiatrie und Psychotherapie"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+  - therapie
+
+street: "Wismarsche Straße 393-397"
+postalCode: "19049"
+city: "Schwerin"
+state: "mecklenburg-vorpommern"
+email: "klaas.winter@helios-gesundheit.de"
+phone: "0385 520-0"
+
+offer: >
+  Autismus-Spektrum-Störungen werden ausdrücklich als Schwerpunkt der
+  Spezialambulanz genannt; Diagnostik und Behandlung für Erwachsene. Für die
+  Diagnostik werden Untersuchungsgespräche sowie möglichst Angaben zur
+  früheren Lebensgeschichte, Grundschulzeugnisse und Angaben von
+  Angehörigen genutzt.
+admissionRequirements: "Die Spezialambulanz nimmt keine Kinder oder Jugendlichen auf und richtet sich an Menschen aus der Region Mecklenburg-Schwerin."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle konkrete Wartezeit oder Wartelistenstatus nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Helios Schwerin – Flemming-Klinik, Psychiatrie/Psychotherapie"
+    url: "https://www.helios-gesundheit.de/standorte-angebote/kliniken/schwerin/leistungen/flemming-klinik/psychiatrie-psychotherapie/"

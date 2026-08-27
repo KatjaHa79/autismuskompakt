@@ -1,0 +1,37 @@
+name: "BBZ – Bildungs- und Beratungszentrum Pädagogik bei Krankheit / Autismus"
+type: "Behördliches Bildungs- und Beratungszentrum"
+
+targetGroups:
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+categories:
+  - fachberatung
+
+street: "Von-Essen-Straße 82-84"
+postalCode: "22081"
+city: "Hamburg"
+state: "hamburg"
+phone: "040 42863-4962"
+email: "autismusberatung-bbz@bsfb.hamburg.de"
+
+offer: >
+  Unterstützung bei Schulwahl, Übergang Kita-Grundschule, sonderpädagogischem
+  Förderbedarf und Nachteilsausgleichen sowie Fachberatung und Fortbildung
+  für Schulen/Fachkräfte für Eltern von Kindern mit Autismus vor der
+  Einschulung, Hamburger Schulen, Lehr- und Beratungskräfte sowie
+  Fachstellen. Medizinische Diagnostik/Therapie: nein.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: keine konkrete Wartezeit veröffentlicht; Sprechzeiten gelten während der Schulzeit."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "BBZ Hamburg – Autismusberatung"
+    url: "https://bbz.hamburg.de/autismusberatung/"
+  - title: "hamburg.de – Autismusberatung BBZ"
+    url: "https://www.hamburg.de/service/info/11323376/"

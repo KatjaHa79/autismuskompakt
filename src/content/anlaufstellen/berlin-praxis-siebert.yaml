@@ -1,0 +1,35 @@
+name: "Praxis Christian Siebert – Autismusdiagnostik für Erwachsene"
+type: "Facharztpraxis für Psychiatrie/Psychotherapie"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+
+street: "Fasanenstraße 3"
+postalCode: "10623"
+city: "Berlin-Charlottenburg"
+state: "berlin"
+phone: "030 5400 0245"
+email: "info@siebert-praxis.de"
+
+offer: >
+  Eigene Selbstzahlerpraxis für ADHS- und Autismusdiagnostik für
+  Erwachsene; zusätzlich ein darauf abgestimmtes Therapieangebot für
+  Selbstzahler. Die allgemeine Psychotherapie ist hiervon zu unterscheiden
+  und wird auch für Versicherte aller Krankenkassen angeboten.
+paymentType:
+  - selbstzahler
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Terminbuchung über Doctolib/Rückruf möglich; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Praxis Siebert"
+    url: "https://siebert-praxis.de/"

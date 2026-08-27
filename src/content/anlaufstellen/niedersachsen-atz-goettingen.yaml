@@ -1,0 +1,40 @@
+name: "Autismus-Therapie-Zentrum Göttingen"
+type: "Therapiezentrum"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+
+street: "Weender Landstraße 59"
+postalCode: "37075"
+city: "Göttingen"
+state: "niedersachsen"
+phone: "0551 38420130"
+email: "info@autismus-goettingen.de"
+
+offer: >
+  Therapie, Beratung, Begleitung und Supervision sowie Fortbildungen und
+  Unterstützung bei Begutachtung und Kostenanträgen für Kinder, Jugendliche
+  und Erwachsene mit Autismus-Spektrum-Störung; zusätzlich Eltern,
+  Lehrkräfte und Betreuende. Medizinische Erstdiagnostik nicht als eigene
+  Leistung; Therapie beginnt nach fachärztlicher Begutachtung und geklärter
+  Kostenübernahme.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus-Therapie-Zentrum Göttingen – Flyer"
+    url: "https://www.autismus-goettingen.de/images/stories/downloads/flyer-atz.pdf"

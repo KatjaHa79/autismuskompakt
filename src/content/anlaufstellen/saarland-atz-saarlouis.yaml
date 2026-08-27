@@ -1,0 +1,48 @@
+name: "Autismus-Therapie-Zentrum Saar gGmbH – Saarlouis"
+type: "Autismusspezifische ambulante Therapie und Beratung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+
+street: "Prälat-Subtil-Ring 12 (Eingang Gerichtsstraße)"
+postalCode: "66740"
+city: "Saarlouis"
+state: "saarland"
+phone: "06831 9679612"
+email: "mail@autismuszentrum-saar.de"
+
+offer: >
+  Autismusspezifische Therapie/Förderung und Beratung für Menschen jeden
+  Alters mit fachärztlich bestätigter Autismusdiagnose. Medizinische
+  Erstdiagnostik: nein; das Zentrum erklärt selbst, dass die Diagnostik bei
+  Kindern/Jugendlichen in spezialisierten KJP-Fachkliniken und bei
+  Erwachsenen in spezialisierten psychiatrischen Kliniken erfolgt.
+admissionRequirements: "Autismustherapie ist Eingliederungshilfe und wird ausdrücklich NICHT von der gesetzlichen Krankenversicherung finanziert. Kostenträger sind in der Regel Landesamt für Soziales oder Jugendamt."
+
+waitingList: "unbekannt"
+waitingTime: >
+  Stand 27.08.2026: Wartesystem statt klassischer Warteliste; laut eigener
+  FAQ bestehen aktuell mehrmonatige Wartezeiten. Ein aktueller SR-Bericht
+  vom 04.08.2026 beschreibt die Wartelisten der ATZ-Standorte als voll
+  (hohe Auslastung).
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "ATZ Saar – Diagnoseverfahren und Antragstellung"
+    url: "https://www.autismuszentrum-saar.de/atz-saar/autismustherapie/diagnoseverfahren-und-antragstelung.php"
+  - title: "ATZ Saar – FAQ"
+    url: "https://autismuszentrum-saar.de/FAQ.pdf"
+  - title: "ATZ Saar – Kontakt"
+    url: "https://www.autismuszentrum-saar.de/atz-saar/kontakt/kontakt.php"

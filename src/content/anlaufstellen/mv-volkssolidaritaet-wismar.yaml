@@ -1,0 +1,33 @@
+name: "Volkssolidarität Region Rostock – Autismus-Ambulanz Region Wismar"
+type: "Autismusspezifische Therapie und Beratung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups: []
+categories:
+  - therapie
+  - beratung
+
+street: "Gerberhof 5c"
+postalCode: "23970"
+city: "Wismar"
+state: "mecklenburg-vorpommern"
+phone: "03841 3760132"
+email: "autismusambulanz-hwi@vs-hro.de"
+
+offer: >
+  Therapie und Beratung für Menschen im Autismus-Spektrum und deren Umfeld.
+  Medizinische Autismusdiagnostik nicht als eigene Leistung bestätigt.
+admissionRequirements: "Finanzierungsweg analog zu autismusspezifischen Hilfen über zuständige Leistungsträger; individuelle Kostenübernahme klären."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Volkssolidarität Rostock – Autismusambulanzen"
+    url: "https://vs-hro.de/autismusambulanzen/"

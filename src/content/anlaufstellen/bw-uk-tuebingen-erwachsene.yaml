@@ -1,0 +1,38 @@
+name: "Universitätsklinikum Tübingen – Autismus-Sprechstunde für Erwachsene"
+type: "Universitätsklinik / Psychiatrische Hochschulambulanz / Spezialsprechstunde"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+  - beratung
+
+street: "Calwerstraße 14"
+postalCode: "72076"
+city: "Tübingen"
+state: "baden-wuerttemberg"
+phone: "07071 29-80934"
+email: "psychiatrische-hochschulambulanz@med.uni-tuebingen.de"
+
+offer: >
+  Diagnostik und Beratung für Menschen mit Autismusverdacht; die
+  Sprechstunde dient primär Diagnostik und Beratung.
+admissionRequirements: >
+  Aufnahme auf die Warteliste erfolgt inzwischen nur über eine ambulante
+  Fachpraxis; erforderlich sind eine Checkliste zur Ersteinschätzung und
+  eine Einweisung, die unmittelbar von der zuweisenden Praxis übermittelt
+  werden müssen. Einzugsgebiet beschränkt: Landkreis Tübingen, umliegende
+  Städte einschließlich Reutlingen und Stuttgart sowie ein näherer Umkreis
+  von etwa 50 km.
+
+waitingList: "offen"
+waitingTime: "Stand 27.08.2026: die Klinik beschreibt ausdrücklich mehrjährige Wartezeiten; keine präzisere aktuelle Dauer veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Universitätsklinikum Tübingen – Psychiatrische Hochschulambulanz (laut Recherche-Dossier; im Dossier keine Einzel-URL angegeben)"

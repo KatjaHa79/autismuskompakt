@@ -1,0 +1,35 @@
+name: "Autismus Trier – Selbsthilfe und Beratung"
+type: "Selbsthilfe / Erstkontakt / Elternkreise"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - erwachsene
+categories:
+  - selbsthilfe
+
+street: "Brotstraße 30-31"
+postalCode: "54290"
+city: "Trier"
+state: "rheinland-pfalz"
+phone: "0651 603441-32"
+email: "selbsthilfe@autismus-trier.de"
+
+offer: >
+  Selbsthilfegruppen, Elternkreise, Gesprächsgruppen, Freizeit- und
+  Informationsangebote sowie Beratung/Erstkontakt für autistische
+  Erwachsene, Angehörige, Eltern und weitere Bezugspersonen. Medizinische
+  Diagnostik/Therapie läuft über separate Bereiche des Trägers, nicht über
+  die Selbsthilfegruppe selbst.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Termine nach veröffentlichtem Gruppenplan; keine klassische Warteliste."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Trier – Selbsthilfegruppen"
+    url: "https://autismus-trier.de/selbsthilfe/selbsthilfegruppen"

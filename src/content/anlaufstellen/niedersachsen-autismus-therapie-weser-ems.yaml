@@ -1,0 +1,42 @@
+name: "Autismus-Therapie Weser-Ems gGmbH"
+type: "Autismus-Therapiezentren (Meppen, Emden, Oldenburg, Bassum, Leer, Wittmund)"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+
+street: "Hauptgeschäftsstelle: Hüttenstraße 7-9"
+postalCode: "49716"
+city: "Meppen"
+state: "niedersachsen"
+phone: "05931 88179-0"
+email: "info@autismus-weser-ems.de"
+
+offer: >
+  Therapie/Förderung, Beratung sowie Entwicklungs- und Förderdiagnostik für
+  Kinder, Jugendliche und Erwachsene (ca. 2 Jahre bis ins hohe
+  Erwachsenenalter); zusätzlich Schul-/Studienbegleitung, Fortbildungen,
+  Supervision und Selbsthilfegruppen für Erwachsene. Medizinische
+  Erstdiagnostik nicht als eigenständige ärztliche Diagnostik ausgewiesen.
+admissionRequirements: "Kosten werden in der Regel im Rahmen der Eingliederungshilfe von örtlichen Sozial- bzw. Jugendämtern übernommen."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: konkrete allgemeine Wartezeiten nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus-Therapie Weser-Ems – Therapie/Förderung"
+    url: "https://autismus-weser-ems.de/therapie-foerderung/"
+  - title: "Autismus-Therapie Weser-Ems – Standorte"
+    url: "https://autismus-weser-ems.de/standorte/"

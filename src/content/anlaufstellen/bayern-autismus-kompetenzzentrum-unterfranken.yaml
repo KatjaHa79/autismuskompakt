@@ -1,0 +1,35 @@
+name: "Autismus Kompetenzzentrum Unterfranken"
+type: "Beratungsstelle mit Außensprechstunden"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups: []
+categories:
+  - beratung
+
+street: "Augustinerstraße 6"
+postalCode: "97070"
+city: "Würzburg"
+state: "bayern"
+phone: "0931 359830-0"
+
+offer: >
+  Information und Beratung zu Autismus, Therapie, Förderung und
+  Lebensbereichen für Menschen mit Autismus, Angehörige, Fachkräfte und
+  weitere Interessierte. Diagnostik: ausdrücklich nein.
+admissionRequirements: "Für die Beratung von Betroffenen/Eltern wird eine gesicherte Diagnose vorausgesetzt."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Beratung nach Terminvereinbarung; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Kompetenzzentrum Unterfranken – Kontakt"
+    url: "https://www.autismus-unterfranken.de/kontakt/"
+  - title: "Autismus Kompetenzzentrum Unterfranken – Beratung"
+    url: "https://www.autismus-unterfranken.de/wir-%C3%BCber-uns/beratung/"

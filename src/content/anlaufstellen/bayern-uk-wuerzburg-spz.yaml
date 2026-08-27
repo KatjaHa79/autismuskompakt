@@ -1,0 +1,33 @@
+name: "Universitätsklinikum Würzburg – Sozialpädiatrisches Zentrum (SPZ)"
+type: "Sozialpädiatrisches Zentrum"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+
+city: "Würzburg"
+state: "bayern"
+
+offer: >
+  Umfassende Untersuchung mit Anamnese, Verhaltensbeobachtung,
+  Entwicklungstests und autismus-spezifischen Untersuchungsverfahren für
+  Kinder und Jugendliche mit Autismus-Spektrum-Störungen und deren
+  Familien. Nach Diagnosestellung Beratung zu Förder- und
+  Therapiemaßnahmen; Wiedervorstellungstermine zur langfristigen
+  Begleitung.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "UK Würzburg – Sozialpädiatrisches Zentrum, Schwerpunkte"
+    url: "https://www.ukw.de/behandlungszentren/sozialpaediatrisches-zentrum-spz/schwerpunkte/"

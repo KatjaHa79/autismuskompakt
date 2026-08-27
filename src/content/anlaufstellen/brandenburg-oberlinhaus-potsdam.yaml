@@ -1,0 +1,37 @@
+name: "Oberlinhaus Lebenswelten – Autismuszentrum Potsdam"
+type: "Überregionale Kontakt-, Förder- und Beratungsstelle"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - beratung
+  - fachberatung
+
+street: "Rudolf-Breitscheid-Straße 24 (Eingang Rudolf-Breitscheid-Straße 26)"
+postalCode: "14482"
+city: "Potsdam"
+state: "brandenburg"
+phone: "0331 763-4915"
+
+offer: >
+  Beratung und Förderung (u. a. ambulante Früh- und Einzelförderung) sowie
+  Fachberatung für Menschen mit Autismus, Angehörige und Bezugspersonen
+  sowie Fachleute im Sozial- und Gesundheitswesen; besonders Angebote für
+  Kinder und Jugendliche. Medizinische Autismusdiagnostik nicht als eigenes
+  Angebot bestätigt.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Termine nur nach Vereinbarung; aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Oberlin Lebenswelten – Autismuszentrum Potsdam"
+    url: "https://oberlin-lebenswelten.de/standorte/potsdam/autismuszentrum"

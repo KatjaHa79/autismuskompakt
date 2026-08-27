@@ -1,0 +1,37 @@
+name: "Universitätsklinikum des Saarlandes – Sozialpädiatrisches Zentrum (SPZ)"
+type: "Ambulantes SPZ, Klinik für Allgemeine Pädiatrie und Neonatologie"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+
+city: "Homburg"
+postalCode: "66421"
+state: "saarland"
+phone: "06841 16-28460"
+
+offer: >
+  Multiprofessionelle Mehrbereichsdiagnostik, Beratung und Koordination für
+  Kinder und Jugendliche von 0 bis 18 Jahren mit Entwicklungsauffälligkeiten,
+  chronischen Erkrankungen und Behinderungen. Autismus wird auf den
+  aktuellen Schwerpunktseiten nicht als eigener ausgewiesener Schwerpunkt
+  genannt; daher keine gesicherte Autismus-Spezialdiagnostik.
+admissionRequirements: "Überweisung durch Kinderarzt, Neurologe oder Allgemeinmediziner erforderlich. Ambulante Versorgung nach §119 SGB V zugelassen."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "UKS – Sozialpädiatrisches Zentrum"
+    url: "https://www.uks.eu/kliniken-einrichtungen/kinder-jugendmedizin/sozialpaediatrisches-zentrum"
+  - title: "UKS – SPZ, Informationen für Zuweiser"
+    url: "https://www.uks.eu/kliniken-einrichtungen/kinder-jugendmedizin/sozialpaediatrisches-zentrum/informationen-fuer-zuweiser"

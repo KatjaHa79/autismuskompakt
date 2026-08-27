@@ -1,0 +1,45 @@
+name: "Charité – Autismus-Sprechstunde Campus Benjamin Franklin"
+type: "Klinik für Psychiatrie und Psychotherapie"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+
+street: "Hindenburgdamm 30"
+postalCode: "12203"
+city: "Berlin-Steglitz"
+state: "berlin"
+email: "autismus-ambulanz@charite.de"
+
+offer: >
+  Eine der vier Berliner Spezialambulanzen für Autismusdiagnostik im
+  Erwachsenenalter. Seit Juni 2025 koordinieren diese vier Ambulanzen
+  (Humboldt-Universität, Charité Campus Mitte, Charité Campus Benjamin
+  Franklin und Evangelisches Krankenhaus Königin Elisabeth Herzberge) die
+  Diagnostikplatzvergabe gemeinsam über ein zentrales Verfahren. Die
+  Charité beschreibt das aktuelle Angebot als diagnostisch; reguläre
+  Autismus-Therapie oder Beratung nach Diagnose wird über diese Ambulanz
+  nicht angeboten.
+admissionRequirements: >
+  Gemeinsames zentrales Anmeldeverfahren aller vier Berliner
+  Spezialambulanzen: Anmeldung viermal jährlich am ersten Mittwoch eines
+  Quartals über ein zentrales Online-Verfahren. Wegen begrenzter
+  Kapazitäten ist die Anmeldung unverbindlich; die Zuteilung erfolgt per
+  Zufallsverfahren. Individuelle Standortwünsche werden nicht
+  berücksichtigt.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: begrenzte Zahl an Plätzen je Quartal, Zufallszuteilung."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Charité – Ambulanz für Autismus-Spektrum-Störung"
+    url: "https://psychiatrie.charite.de/behandlungsangebot/ambulanzbereich/ambulanz_fuer_autismus_spektrum_stoerung"
+  - title: "Berliner Autismus Netzwerk – Diagnostikplatzvergabe"
+    url: "https://berlinerautismusnetzwerk.org/diagnostik/diagnostikplatzvergabe/"

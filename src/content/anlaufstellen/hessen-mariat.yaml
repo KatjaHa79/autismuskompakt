@@ -1,0 +1,43 @@
+name: "Marburger Institut für Autismusforschung und Therapie (MarIAT)"
+type: "Philipps-Universität Marburg / Fachbereich Medizin"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - angehoerigenberatung
+  - fachberatung
+
+street: "Haus Bethanien, Schützenstraße 49"
+postalCode: "35039"
+city: "Marburg"
+state: "hessen"
+phone: "06421 58-63908"
+email: "mariat@uni-marburg.de"
+
+offer: >
+  Individualisierte, entwicklungsorientierte, verhaltenstherapeutische
+  Förderung; Einzel- und Gruppentherapie zu sozialer Kompetenz,
+  Emotionsregulation, Selbstständigkeit, Kommunikation und beruflicher
+  Wiedereingliederung; Angehörigenberatung und Fortbildungen für
+  Fachkräfte. Medizinische Diagnostik nicht durch MarIAT selbst; hierfür
+  verweist die Universität auf die UKGM-Spezialambulanz.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Warteliste bzw. Wartezeit für Therapie nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "MarIAT"
+    url: "https://www.uni-marburg.de/de/fb20/bereiche/zpg/mariat"
+  - title: "MarIAT – Therapie"
+    url: "https://www.uni-marburg.de/de/fb20/bereiche/zpg/mariat/therapie"

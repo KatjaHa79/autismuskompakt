@@ -1,0 +1,37 @@
+name: "Krankenhaus St. Elisabeth und St. Barbara Halle – Sozialpädiatrisches Zentrum"
+type: "Sozialpädiatrisches Zentrum (SPZ)"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Barbarastraße 4"
+postalCode: "06110"
+city: "Halle (Saale)"
+state: "sachsen-anhalt"
+phone: "0345 213-5702"
+email: "spz@krankenhaus-halle-saale.de"
+
+offer: >
+  Interdisziplinäre medizinische, psychologische und therapeutische
+  Diagnostik, Beratung, Therapie und Förderplanung für Säuglinge, Kinder und
+  Jugendliche bis 18 Jahre; Erkrankungen des autistischen Spektrums werden
+  ausdrücklich als Indikation genannt.
+admissionRequirements: "In jedem Quartal Überweisungsschein des Kinder- oder Hausarztes sowie elektronische Gesundheitskarte erforderlich. Vorherige Terminabsprache zwingend."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: konkrete autismus-spezifische Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Krankenhaus Halle-Saale – Sozialpädiatrisches Zentrum"
+    url: "https://www.krankenhaus-halle-saale.de/unser-krankenhaus/kliniken-abteilungen/sozialpaediatrisches-zentrum"

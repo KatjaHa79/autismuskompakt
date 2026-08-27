@@ -1,0 +1,39 @@
+name: "Autismus Mecklenburg-Vorpommern e.V. – Beratungs- und Koordinationsstelle"
+type: "Landesweite unabhängige Betroffenenberatung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups: []
+categories:
+  - beratung
+  - selbsthilfe
+
+street: "Gemeinsames Haus e.V., Henrik-Ibsen-Straße 20"
+postalCode: "18106"
+city: "Rostock-Evershagen"
+state: "mecklenburg-vorpommern"
+phone: "0381 66096430"
+email: "k.dabergott@autismus-mv.de"
+
+offer: >
+  Beratung und Koordination sowie Selbsthilfe/Vernetzung für autistische
+  Menschen, Menschen mit Verdacht, Angehörige und Fachkräfte aus ganz
+  Mecklenburg-Vorpommern. Nach eigener Angabe die einzige unabhängige
+  Betroffenenberatungsstelle für Autismus im Land. Medizinische
+  Diagnostik/Therapie: nein.
+costs: "Beratung: kostenlos."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Beratung ausschließlich nach Terminvereinbarung; konkrete Wartezeit nicht veröffentlicht. Seit 01.01.2026 mit einer zweiten Fachkraft verstärkt."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus M-V – Beratungsstelle"
+    url: "https://autismus-mv.de/pages/beratungsstelle.php"
+  - title: "Autismus M-V – Aktuelles"
+    url: "https://www.autismus-mv.de/pages/aktuelles.php"

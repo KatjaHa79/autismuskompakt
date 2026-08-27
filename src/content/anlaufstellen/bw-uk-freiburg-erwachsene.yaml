@@ -1,0 +1,39 @@
+name: "Universitätsklinikum Freiburg – Spezialsprechstunde für Autismus-Spektrum-Störungen im Erwachsenenalter"
+type: "Universitätsklinik / Spezialsprechstunde"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+  - beratung
+
+street: "Hauptstraße 5"
+postalCode: "79104"
+city: "Freiburg im Breisgau"
+state: "baden-wuerttemberg"
+phone: "0761 270-65010"
+
+offer: >
+  Diagnostik und Beratung für Menschen mit Autismusverdacht; im Klinikum
+  bestehen ergänzend autismusspezifische Therapieangebote sowie eine
+  Station mit ASS-Schwerpunkt (die Spezialsprechstunde selbst ist primär
+  diagnostisch ausgerichtet).
+admissionRequirements: >
+  Die Klinik bittet ausdrücklich darum, sich nicht ersatzweise über die
+  allgemeine Ambulanz anzumelden.
+
+waitingList: "geschlossen"
+waitingTime: >
+  Stand 27.08.2026: die Anmeldung zur ASS-Sprechstunde ist seit 26.04.2024
+  vorübergehend geschlossen (faktisch keine neue Aufnahme auf die
+  Warteliste). Für bereits eingegangene Fälle nennt die Klinik eine
+  Wartezeit von mindestens drei Jahren.
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Universitätsklinikum Freiburg – offizielle Website (laut Recherche-Dossier; im Dossier keine Einzel-URL angegeben)"

@@ -1,0 +1,33 @@
+name: "Lebenshilfe Braunschweig – Autismusambulanz"
+type: "Förderzentrum Hasenwinkel"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups: []
+categories:
+  - alltagshilfe
+  - beratung
+
+street: "Hasenwinkel 3 (zusätzlich Mitgaustraße 15; Außenstellen Peine und Salzgitter)"
+postalCode: "38114"
+city: "Braunschweig"
+state: "niedersachsen"
+phone: "0531 4719-492"
+email: "autismusambulanz@lebenshilfe-braunschweig.de"
+
+offer: >
+  Förderung/Beratung, Elternberatung und Elternkreise für Menschen aus dem
+  Autismus-Spektrum und Familien. Medizinische Autismusdiagnostik nicht als
+  eigene Leistung bestätigt.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle allgemeine Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Lebenshilfe Braunschweig – Autismusambulanz"
+    url: "https://www.lebenshilfe-braunschweig.de/informieren/autismusambulanz/"

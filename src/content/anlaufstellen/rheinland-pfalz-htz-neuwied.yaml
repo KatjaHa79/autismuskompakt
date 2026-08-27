@@ -1,0 +1,39 @@
+name: "Heilpädagogisch-Therapeutisches Zentrum Neuwied – Sozialpädiatrisches Zentrum"
+type: "Sozialpädiatrisches Zentrum (SPZ)"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+city: "Neuwied"
+state: "rheinland-pfalz"
+email: "arztsek@htz-neuwied.de"
+
+offer: >
+  Umfassende interdisziplinäre Diagnostik mit entwicklungsneurologischen,
+  psychologischen, ergotherapeutischen und logopädischen Untersuchungen
+  sowie Behandlung (Ergotherapie, Logopädie, Physiotherapie, heilpädagogische
+  Therapie, medikamentöse Therapie, Beratung) für Kinder und Jugendliche mit
+  Entwicklungs-, Verhaltens- oder neurologischen Fragestellungen. Eine
+  eigenständig benannte Autismus-Spezialambulanz ist auf der aktuellen
+  Leistungsseite nicht ausgewiesen.
+admissionRequirements: "Gültiger Überweisungsschein für das laufende Quartal und Krankenversichertenkarte erforderlich."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: konkrete Autismus-spezifische Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "HTZ Neuwied – Leistungen des SPZ"
+    url: "https://www.htz-neuwied.de/das-sozialpaediatrisches-zentrum/unsere-leistungen/"
+  - title: "HTZ Neuwied – Besuchsinformationen"
+    url: "https://www.htz-neuwied.de/besuchsinformationen/"

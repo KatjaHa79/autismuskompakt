@@ -1,0 +1,44 @@
+name: "Humboldt-Universität zu Berlin – Spezialambulanz für Soziale Interaktion"
+type: "Hochschulambulanz für Psychotherapie und Psychodiagnostik"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+
+street: "Justus-von-Liebig-Straße 7"
+postalCode: "12489"
+city: "Berlin-Adlershof"
+state: "berlin"
+email: "hochschulambulanz@hu-berlin.de"
+phone: "+49 30 2093 98800"
+
+offer: >
+  Eine der vier Berliner Spezialambulanzen für Autismusdiagnostik im
+  Erwachsenenalter. Seit Juni 2025 koordinieren diese vier Ambulanzen
+  (Humboldt-Universität, Charité Campus Mitte, Charité Campus Benjamin
+  Franklin und Evangelisches Krankenhaus Königin Elisabeth Herzberge) die
+  Diagnostikplatzvergabe gemeinsam über ein zentrales Verfahren.
+  Therapieangebote bestehen an der Hochschulambulanz auch im
+  Forschungs-/Behandlungskontext, sind aber nicht mit einem allgemeinen
+  Therapieplatz gleichzusetzen.
+admissionRequirements: >
+  Gemeinsames zentrales Anmeldeverfahren aller vier Berliner
+  Spezialambulanzen: Anmeldung viermal jährlich am ersten Mittwoch eines
+  Quartals über ein zentrales Online-Verfahren. Wegen begrenzter
+  Kapazitäten ist die Anmeldung unverbindlich; die Zuteilung erfolgt per
+  Zufallsverfahren. Individuelle Standortwünsche werden nicht
+  berücksichtigt.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: keine klassische offene Warteliste; nur begrenzte Plätze je Quartal, Zuteilung per Zufallsverfahren."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Berliner Autismus Netzwerk – Diagnostikplatzvergabe"
+    url: "https://berlinerautismusnetzwerk.org/diagnostik/diagnostikplatzvergabe/"

@@ -1,0 +1,45 @@
+name: "Autismusambulanz Halle"
+type: "Autismusspezifische Eingliederungshilfe, Beratung und Förderung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - alltagshilfe
+  - fachberatung
+
+street: "Willy-Brandt-Straße 82"
+postalCode: "06110"
+city: "Halle (Saale)"
+state: "sachsen-anhalt"
+phone: "0345 6787344"
+email: "autismus-halle@int-bsw.de"
+
+offer: >
+  Individuelle autismusspezifische Einzelangebote, systemische
+  Familienberatung, Integrationsbegleitung, Sozialtrainingsgruppen,
+  Selbsthilfegruppen, Beratung und Fortbildung für Kinder, Jugendliche und
+  Erwachsene mit gesicherter Autismusdiagnose. Medizinische Diagnostik durch
+  die Autismusambulanz selbst ausdrücklich nein; Erwachsenendiagnostik
+  erfolgt getrennt über die angegliederte Psychotherapiepraxis.
+admissionRequirements: "Einzugsgebiet südliches Sachsen-Anhalt. Finanzierung in der Regel über Eingliederungshilfe durch Jugend- oder Sozialamt; in Einzelfällen Selbstzahlung möglich."
+
+waitingList: "offen"
+waitingTime: "Stand 27.08.2026: nach Diagnose, Antrag und Kostenübernahme erfolgt Aufnahme auf die Warteliste; anschließende Wartezeit von etwa 6 bis 12 Monaten. Die Bedarfsprüfung beim Amt dauert laut FAQ ungefähr 3 Monate."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismusambulanz Halle – Angebote"
+    url: "https://www.autismusambulanz-halle.de/angebote"
+  - title: "Autismusambulanz Halle – FAQs"
+    url: "https://www.autismusambulanz-halle.de/faqs"
+  - title: "Autismusambulanz Halle – Kontakt"
+    url: "https://www.autismusambulanz-halle.de/kontakt/"

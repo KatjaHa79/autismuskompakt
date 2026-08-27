@@ -1,0 +1,46 @@
+name: "Autismus Institut Lübeck"
+type: "Autismusspezifische Förderung, Beratung, Supervision und Fortbildung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - fachberatung
+
+street: "Travemünder Allee 30"
+postalCode: "23568"
+city: "Lübeck"
+state: "schleswig-holstein"
+phone: "0451 98989798"
+email: "info@autismus-institut-luebeck.de"
+
+offer: >
+  Einzel- und Gruppenförderung, soziale Kompetenzgruppen, Elternberatung,
+  Umfeldarbeit, Beratung, Supervision und Fortbildung für Kinder, Jugendliche
+  und Erwachsene mit gesicherter Autismusdiagnose. Medizinische Diagnostik:
+  ausdrücklich nein; die Einrichtung verweist an spezialisierte
+  (kinder- und jugend-)psychiatrische Stellen.
+admissionRequirements: >
+  Finanzierung über Eingliederungshilfe (nicht Krankenkasse): für Erwachsene
+  und noch nicht schulpflichtige Kinder in der Regel Sozialamt nach SGB IX,
+  für schulpflichtige Kinder/Jugendliche häufig Jugendamt nach §35a SGB VIII.
+  Zur Aufnahme auf die Warteliste soll ein Fragebogen eingereicht werden.
+
+waitingList: "offen"
+waitingTime: "Stand 27.08.2026: interne Warteliste vorhanden, konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Institut Lübeck – Diagnostik"
+    url: "https://autismus-institut-luebeck.de/therapeutische-foerderung-und-diagnostik/diagnostik/"
+  - title: "Autismus Institut Lübeck – Beantragung der Therapie"
+    url: "https://autismus-institut-luebeck.de/therapeutische-foerderung-und-diagnostik/beantragung-der-therapie/"

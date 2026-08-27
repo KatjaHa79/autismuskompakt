@@ -1,0 +1,33 @@
+name: "Universitätsmedizin Göttingen – FEASS Früherkennung Autismus-Spektrum-Störungen"
+type: "Früherkennungsangebot der KJP"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+categories:
+  - diagnostik
+
+street: "Von-Siebold-Straße 5"
+postalCode: "37075"
+city: "Göttingen"
+state: "niedersachsen"
+phone: "0551 3962444"
+email: "corinna.isensee@med.uni-goettingen.de"
+
+offer: >
+  Früherkennung und Diagnostik für Kinder mit früher Autismusfragestellung,
+  eingebettet in die spezialisierte KJP-Versorgung.
+admissionRequirements: "Vorbefunde, U-Heft und Einverständnis der Sorgeberechtigten werden benötigt. Krankenkassenkarte des Kindes zum Termin mitbringen."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: die Klinik weist ausdrücklich darauf hin, dass aufgrund vieler Anfragen mit Wartezeiten gerechnet werden muss; keine konkrete Dauer."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "UMG Göttingen – FEASS Früherkennung"
+    url: "https://kjp.umg.eu/patienten-besucher/spezialambulanzen/spezialambulanz-autismus-spektrum-stoerungen/frueherkennung-autismus-spektrum-stoerungen/"

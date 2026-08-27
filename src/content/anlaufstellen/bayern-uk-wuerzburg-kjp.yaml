@@ -1,0 +1,33 @@
+name: "Universitätsklinikum Würzburg – Spezialambulanz Autismus (Kinder/Jugendliche)"
+type: "Kinder- und Jugendpsychiatrie"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+city: "Würzburg"
+state: "bayern"
+
+offer: >
+  Umfassende Diagnostik und Therapie für das gesamte autistische Spektrum
+  bei Kindern und Jugendlichen ab 2 Jahren mit Verdacht auf eine autistische
+  Störung oder bereits gesicherter Diagnose; Maßnahmen können ambulant in
+  der Spezialambulanz sowie teilstationär oder stationär erfolgen.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: keine belastbare aktuelle Angabe auf den geprüften Seiten."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "UK Würzburg – Kinder- und Jugendpsychiatrie, ambulante Behandlung"
+    url: "https://www.ukw.de/kinder-und-jugendpsychiatrie/ambulante-behandlung/"
+  - title: "UK Würzburg – Kinder- und Jugendpsychiatrie, Schwerpunkte"
+    url: "https://www.ukw.de/kinder-und-jugendpsychiatrie/schwerpunkte/klinische-schwerpunkte/"

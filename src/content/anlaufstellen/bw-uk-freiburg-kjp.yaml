@@ -1,0 +1,32 @@
+name: "Universitätsklinikum Freiburg – Kinder- und Jugendpsychiatrie"
+type: "PIA / Hochschulambulanz / Universitätsklinik"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+  - beratung
+
+city: "Freiburg im Breisgau"
+state: "baden-wuerttemberg"
+phone: "0761 270-68730"
+
+offer: >
+  ASS mit Komorbiditäten wird ausdrücklich als eines der Krankheitsbilder
+  der Institutsambulanz genannt; eigene Autismus-Sprechstunde vorhanden.
+  Die autismusspezifische Diagnostik für Kinder und Jugendliche beinhaltet
+  bei entsprechendem Verdacht u. a. ADOS und ADI-R.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: keine aktuelle Information veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Universitätsklinikum Freiburg – offizielle Website (laut Recherche-Dossier; im Dossier keine Einzel-URL angegeben)"

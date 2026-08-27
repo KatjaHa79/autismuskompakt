@@ -1,0 +1,52 @@
+name: "Hamburger Autismus Institut"
+type: "Therapiezentrum für Autismus-Spektrum-Störungen"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - diagnostik
+  - therapie
+  - beratung
+
+street: "Zentrale Verwaltung: Alsterdorfer Markt 4"
+postalCode: "22297"
+city: "Hamburg"
+state: "hamburg"
+phone: "040 5116825"
+email: "info@autismus-hamburg.de"
+
+offer: >
+  Ambulante autismusspezifische Therapie für Kinder, Jugendliche und
+  Erwachsene, Angehörigenberatung, Elterntraining, Gruppen, Fortbildungen
+  und Supervision. Erwachsenendiagnostik: ja, als Selbstzahlerangebot.
+  Diagnostik für Kinder/Jugendliche nur in Ausnahmefällen bei Beauftragung
+  durch Kostenträger.
+admissionRequirements: "Diagnostik für Erwachsene richtet sich an Personen aus Hamburg, Lüneburg oder näherer Umgebung."
+paymentType:
+  - selbstzahler
+costs: "Erwachsenendiagnostik: ausdrücklich Selbstzahlerangebot; Therapie überwiegend über Eingliederungshilfe."
+
+waitingList: "geschlossen"
+waitingTime: >
+  Stand 27.08.2026: Erwachsenendiagnostik – Warteliste aktuell geschlossen;
+  Wiederöffnung angekündigt für 01.10.2026 um 08:00 Uhr. Therapie: Aufnahme
+  auf Warteliste erst nach vorliegender Kostenzusicherung, konkrete Dauer
+  nicht veröffentlicht.
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Hamburger Autismus Institut – Angebote für Erwachsene mit ASS"
+    url: "https://autismus-institut.de/therapie-institut/angebote-fuer-erwachsene-mit-ass/"
+  - title: "Hamburger Autismus Institut – Beantragung der Therapie"
+    url: "https://autismus-institut.de/therapie-institut/autismustherapie/beantragung-der-therapie/"
+  - title: "Hamburger Autismus Institut – Kontakt"
+    url: "https://autismus-institut.de/kontakt/"

@@ -1,0 +1,33 @@
+name: "Saarländisches Institut für Aus- und Weiterbildung in Psychotherapie (SIAP) – KJP-Ambulanz"
+type: "Psychotherapeutische Ambulanz"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - therapie
+
+street: "Großherzog-Friedrich-Straße 35"
+postalCode: "66111"
+city: "Saarbrücken"
+state: "saarland"
+phone: "0681 38912-701"
+
+offer: >
+  Verhaltenstherapeutische Ambulanz, die Autismus ausdrücklich im
+  Behandlungsspektrum der Entwicklungsstörungen für Kinder und Jugendliche
+  nennt. Medizinische Erstdiagnostik ist auf der Angebotsseite nicht als
+  eigenständige Autismusdiagnostik bestätigt.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "SHG Sonnenberg – SIAP"
+    url: "https://www.shg-kliniken.de/sonnenberg/siap"

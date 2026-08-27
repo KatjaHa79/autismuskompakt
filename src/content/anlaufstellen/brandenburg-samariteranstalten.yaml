@@ -1,0 +1,37 @@
+name: "Samariteranstalten – Autismus-Zentrum"
+type: "Autismusspezifische Förderung und Beratung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups: []
+categories:
+  - therapie
+  - beratung
+  - fachberatung
+
+street: "Haus Germania, Langewahler Straße 1"
+postalCode: "15517"
+city: "Fürstenwalde"
+state: "brandenburg"
+phone: "03361 567-380"
+email: "autismuszentrum@samariteranstalten.de"
+
+offer: >
+  Autismusspezifische Förderung, Beratung und Fachangebote (auch für
+  Schulen, Arbeitgeber und andere Einrichtungen) für Menschen mit Autismus
+  und Familien. Medizinische Diagnostik nicht als eigene Leistung
+  veröffentlicht.
+admissionRequirements: "Selbstzahlung möglich oder Kostenübernahme nach Antrag durch Jugendamt (SGB VIII) bzw. Sozialamt (SGB IX), abhängig von Personenkreis und Bedarf."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Erstgespräch nach telefonischer Kontaktaufnahme oder Kontaktformular; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Samariteranstalten – Autismus-Zentrum"
+    url: "https://www.samariteranstalten.de/autismus-zentrum"

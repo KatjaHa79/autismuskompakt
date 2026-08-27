@@ -1,0 +1,34 @@
+name: "LVR-Klinik Bonn – Jugendstation III"
+type: "Stationäre Kinder- und Jugendpsychiatrie"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Kaiser-Karl-Ring 20"
+postalCode: "53111"
+city: "Bonn"
+state: "nordrhein-westfalen"
+phone: "0228 551-2853"
+
+offer: >
+  Stationäre Behandlung vorwiegend für junge Patient:innen mit
+  Autismus-Spektrum-Störungen sowie weiteren psychiatrischen Erkrankungen,
+  in zwei Altersgruppen (12-14 und 14-18 Jahre). Diagnostik und Therapie
+  erfolgen im stationären Rahmen.
+admissionRequirements: "Aufnahme abhängig von Behandlungsbedarf und Kapazität."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "LVR-Klinik Bonn – Stationäre Behandlung"
+    url: "https://klinik-bonn.lvr.de/de/nav_main/fachgebiete/kinder_und_jugend_psychiatrie/stationaere_behandlung/stationaere_behandlung_1.html"

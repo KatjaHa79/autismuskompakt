@@ -1,0 +1,34 @@
+name: "Ambulante Autismushilfe"
+type: "Autismus Bremen e.V. · ambulante Teilhabe- und Alltagshilfe"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - alltagshilfe
+
+city: "Bremen"
+state: "bremen"
+phone: "0421 60951764"
+email: "info@ambulante-autismushilfe.de"
+
+offer: >
+  Unterstützung bei täglicher Lebensführung, sozialen Beziehungen,
+  Arbeit/Beschäftigung, Tagesstruktur, Freizeit und selbstbestimmtem Wohnen
+  für Menschen mit Autismus-Spektrum-Störung, die in einer eigenen Wohnung
+  leben; in der Praxis überwiegend Erwachsene bzw. verselbstständigte
+  Personen. Zusammenarbeit mit Angehörigen, gesetzlichen Betreuer:innen,
+  Fachkräften, Ämtern und Behörden. Diagnostik: nein. Therapie nicht als
+  medizinische/psychotherapeutische Therapie ausgewiesen.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit oder Kapazitätslage nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Bremen – Ambulante Autismus-Hilfen"
+    url: "https://www.autismus-bremen.de/ambulante-autismus-hilfen/"

@@ -1,0 +1,37 @@
+name: "IntegrASS Hilfen gGmbH"
+type: "Freier Träger der Jugendhilfe"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups: []
+categories:
+  - alltagshilfe
+  - fachberatung
+
+street: "Finsterwalde: Bahnhofstraße 4, 03238 Finsterwalde · Büro Senftenberg: Häuerstraße 8, 01968 Senftenberg"
+state: "brandenburg"
+phone: "Finsterwalde: 03531 7173074 · Senftenberg: 03573 8097946"
+email: "info@integrass-hilfen.de"
+
+offer: >
+  Autismusspezifische Förderung, Fachberatung, Elternarbeit,
+  Kita-/Schulbegleitung, Integrations- und Studienassistenz sowie
+  qualifizierte Assistenz für Menschen mit ASS, Eltern, Erziehungsberechtigte,
+  Angehörige, Bezugspersonen, Fachkräfte, Lehrkräfte und Institutionen.
+  Medizinische Diagnostik nicht als Leistung ausgewiesen.
+admissionRequirements: "Finanzierung/Leistungswege: SGB VIII, SGB IX und Persönliches Budget."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit oder Kapazitätslage nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "IntegrASS Hilfen"
+    url: "https://www.integrass-hilfen.de/"
+  - title: "IntegrASS Hilfen – Dienstleistungen"
+    url: "https://www.integrass-hilfen.de/dienstleistungen-integrass-hilfen"

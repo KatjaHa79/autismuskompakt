@@ -1,0 +1,40 @@
+name: "UKGM Marburg – Spezialambulanz Autismus"
+type: "Klinik für Kinder- und Jugendpsychiatrie, Psychosomatik und Psychotherapie"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - diagnostik
+  - beratung
+
+street: "Schützenstraße 45"
+postalCode: "35039"
+city: "Marburg"
+state: "hessen"
+phone: "06421 58-66469"
+email: "kjp.mr@uk-gm.de"
+
+offer: >
+  Autismusspezifische Abklärung mit gängigen diagnostischen Instrumenten
+  sowie ausführliche Aufklärung, Rückmeldung und Besprechung
+  therapeutischer Optionen (auch Therapieberatung bei Ausschluss einer
+  Autismusdiagnose) für Kinder ab 2 Jahren, Jugendliche und junge
+  Erwachsene bis 26 Jahre mit Verdacht auf Autismus-Spektrum-Störung.
+admissionRequirements: "Vorherige Einschätzung des Autismusverdachts durch KJP-Facharzt, Kinder- und Jugendlichenpsychotherapeut:in oder Kinderarzt; Vorbefunde und Überweisungsschein zum Ersttermin erforderlich."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: die Klinik veröffentlicht ausdrücklich sehr lange Wartezeiten; eine konkrete Monats-/Jahresangabe wird aktuell nicht genannt."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "UKGM Marburg – KJP (1)"
+    url: "https://www.ukgm.de/ugm_2/deu/umr_kjp/2783.html"
+  - title: "UKGM Marburg – KJP (2)"
+    url: "https://www.ukgm.de/ugm_2/deu/umr_kjp/16943.html"

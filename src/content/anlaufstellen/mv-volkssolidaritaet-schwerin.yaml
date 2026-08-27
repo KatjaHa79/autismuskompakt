@@ -1,0 +1,35 @@
+name: "Volkssolidarität Region Rostock – Autismus-Ambulanz Region Schwerin"
+type: "Autismusspezifische Therapie und Beratung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups: []
+categories:
+  - therapie
+  - beratung
+
+street: "Taubenstraße 19"
+postalCode: "19055"
+city: "Schwerin"
+state: "mecklenburg-vorpommern"
+phone: "0385 34338687"
+email: "autismus-sn@vs-hro.de"
+
+offer: >
+  Therapie/Beratung als Teil des Autismusambulanz-Netzwerks der
+  Volkssolidarität für Menschen im Autismus-Spektrum und deren soziales
+  Umfeld. Medizinische Autismusdiagnostik nicht als eigene Leistung
+  verifiziert.
+admissionRequirements: "Finanzierung grundsätzlich über Sozial-/Jugendhilfeträger nach Diagnose; konkrete Einzelfallzuständigkeit erfragen."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Volkssolidarität Rostock – Autismusambulanzen"
+    url: "https://vs-hro.de/autismusambulanzen/"

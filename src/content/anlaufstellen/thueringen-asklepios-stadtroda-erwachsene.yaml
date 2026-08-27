@@ -1,0 +1,40 @@
+name: "Asklepios Fachklinikum Stadtroda – Autismusdiagnostik Erwachsene"
+type: "Stationäre Allgemeinpsychiatrie (Fachklinikum)"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+  - therapie
+
+street: "Bahnhofstraße 1a"
+postalCode: "07646"
+city: "Stadtroda"
+state: "thueringen"
+phone: "036428 56-1111"
+website: "https://www.asklepios.com/stadtroda/abteilungen-spezialistinnen/abteilungen/psychiatrie/autismus-diagnostik"
+
+offer: >
+  Ausführliche, standardisierte Autismusdiagnostik für Erwachsene –
+  ausschließlich stationär im Rahmen eines allgemeinpsychiatrischen
+  Behandlungsangebots (nicht ambulant), mit gleichzeitiger Teilnahme am
+  therapeutischen Angebot; Dauer laut Klinik ca. 4 Wochen.
+admissionRequirements: >
+  Voraussetzung sind eine stationäre Behandlungsindikation und ein
+  schriftliches Empfehlungsschreiben einer psychiatrischen/psychotherapeutischen
+  Fachperson (PTV 11 möglich). Nur für Erwachsene mit Wohnsitz in Thüringen.
+
+waitingList: "offen"
+waitingTime: >
+  Stand 27.08.2026: Warteliste offen, die Klinik weist aber ausdrücklich auf
+  sehr lange Wartezeiten hin.
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Asklepios Stadtroda – Autismus-Diagnostik"
+    url: "https://www.asklepios.com/stadtroda/abteilungen-spezialistinnen/abteilungen/psychiatrie/autismus-diagnostik"

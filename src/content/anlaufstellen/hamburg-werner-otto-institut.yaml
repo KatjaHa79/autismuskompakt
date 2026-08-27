@@ -1,0 +1,36 @@
+name: "Werner Otto Institut – Sozialpädiatrisches Zentrum"
+type: "Sozialpädiatrisches Zentrum · Evangelische Stiftung Alsterdorf"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+categories:
+  - diagnostik
+
+street: "Bodelschwinghstraße 23"
+postalCode: "22337"
+city: "Hamburg"
+state: "hamburg"
+
+offer: >
+  Entwicklungsdiagnostik, interdisziplinäre Abklärung und Beratung; für die
+  Fragestellung Autismus werden derzeit nur Kinder bis einschließlich 5
+  Jahre angenommen.
+admissionRequirements: >
+  Stand 27.08.2026: Kinder ab 6 Jahren können mit hauptsächlicher/alleiniger
+  Fragestellung Autismus aktuell nicht auf die Warteliste genommen werden.
+  Empfohlen werden KJP-Praxen oder die KJPP-Ambulanz des UKE. Kinder bis 5
+  Jahre können weiterhin angemeldet werden.
+
+waitingList: "geschlossen"
+waitingTime: "Stand 27.08.2026: ab 6 Jahren aktuell keine ASS-Warteliste; bis 5 Jahre weiterhin Anmeldung möglich."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Werner Otto Institut"
+    url: "https://www.werner-otto-institut.de/"

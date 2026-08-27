@@ -1,0 +1,38 @@
+name: "Autismus Leben Berlin ALB gGmbH – Autismus Beratung Kinder und Jugendliche"
+type: "Beratungsstelle (Standorte Steglitz und Prenzlauer Berg)"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - beratung
+
+street: "Arno-Holz-Straße 10 (zusätzlicher Standort: Prenzlauer Allee 90)"
+postalCode: "12165"
+city: "Berlin"
+state: "berlin"
+email: "beratungkj@autismus-berlin.de"
+
+offer: >
+  Fachberatung, Elternberatung, Übergangsthemen, Gesprächskreise und
+  Vernetzung für Familien und Angehörige, Kinder/Jugendliche, junge
+  Erwachsene bis maximal 25 Jahre sowie Fachkräfte; auch Familien mit
+  Verdacht auf Autismus können sich melden. Unterstützung bei der
+  Diagnostik erfolgt nur auf Anfrage behandelnder Fachärzt:innen bzw. in
+  Einzelfällen; keine eigenständige medizinische Diagnostikstelle.
+costs: "Die Beratungsangebote werden aus Zuwendungsmitteln des Landes Berlin finanziert und sind laut aktuellem Flyer kostenlos; kein Überweisungsschein erforderlich."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aufgrund hohen Anfrageaufkommens kann es zu längeren Wartezeiten bis zur Rückmeldung kommen; keine konkrete Dauer veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Leben Berlin – Beratung Kinder und Jugendliche"
+    url: "https://www.autismus-berlin.de/angebote/autismus-beratung-kinder-und-jugendliche/"

@@ -1,0 +1,38 @@
+name: "Diakonie Nord Nord Ost – Kinder- und Jugendpsychiatrische Ambulanz Lübeck"
+type: "Fachklinik für Junges Leben / Kinder- und Jugendpsychiatrie"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - beratung
+  - therapie
+
+street: "Triftstraße 139-143"
+postalCode: "23554"
+city: "Lübeck"
+state: "schleswig-holstein"
+phone: "0451 4002 50400"
+email: "kjp.jule@diakonie-nordnordost.de"
+
+offer: >
+  Ambulante Diagnostik, Beratung und Behandlung für Kinder und Jugendliche
+  von 0 bis 18 Jahren; Autismus-Spektrum-Störungen werden ausdrücklich als
+  Bereich der ambulanten Diagnostik genannt. Bei Bedarf teil- oder
+  vollstationäre Behandlung.
+admissionRequirements: "Für teilstationäre Behandlung ist ein Einweisungsschein erforderlich."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle autismus-spezifische Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Diakonie Nord Nord Ost – Ambulanz Lübeck"
+    url: "https://www.diakonie-nordnordost.de/angebote/kinder-und-jugendpsychiatrie/ambulanzen/ambulanz-luebeck"

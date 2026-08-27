@@ -1,0 +1,36 @@
+name: "Universitätsklinikum Würzburg – Spezialambulanz Autismus (Erwachsene)"
+type: "Klinik für Psychiatrie, Psychosomatik und Psychotherapie"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+
+street: "Margarete-Höppel-Platz 1"
+postalCode: "97080"
+city: "Würzburg"
+state: "bayern"
+phone: "+49 931 201-77800"
+email: "ep_poli@ukw.de"
+
+offer: >
+  Ausführliche Diagnostik bei Verdacht auf Autismus im Erwachsenenalter
+  (ab 18 Jahren); anschließend Empfehlungen zum weiteren Vorgehen und zu
+  therapeutischen Maßnahmen. Weiterbehandlung von Personen, die bereits in
+  der KJPPP wegen Autismus behandelt wurden.
+
+waitingList: "geschlossen"
+waitingTime: >
+  Stand 27.08.2026: aktuell können keine neuen Patient:innen aufgenommen
+  werden. Die Klinik kündigt an, auf der Website zu informieren, sobald
+  wieder Anfragen angenommen werden.
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "UK Würzburg – Psychiatrie, ambulante Behandlung"
+    url: "https://www.ukw.de/psychiatrie/ambulante-behandlung/"

@@ -1,0 +1,46 @@
+name: "Praxis Dr. Scherf & Kollegen – Autismus-Spektrum-Störungen"
+type: "Praxis für Kinder-, Jugend- und Erwachsenenpsychiatrie, Psychosomatik und Psychotherapie"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - diagnostik
+  - therapie
+
+street: "Zeppelinstraße 37"
+postalCode: "14471"
+city: "Potsdam"
+state: "brandenburg"
+phone: "0331 58 56 52 30"
+email: "kontakt@praxis-scherf.de"
+
+offer: >
+  Umfassende testpsychologische Diagnostik bei Autismus-Spektrum-Störungen
+  für Kinder, Jugendliche und Erwachsene; ASS als Schwerpunkt des
+  ärztlichen Leiters. Therapie einschließlich Einzel- und Gruppentherapie
+  bei begleitenden psychischen Belastungen; medikamentöse Behandlung kann
+  ergänzend erfolgen.
+paymentType:
+  - gesetzlich
+  - privat
+
+waitingList: "geschlossen"
+waitingTime: >
+  Stand 27.08.2026: aktueller Aufnahmestatus im Erwachsenenbereich – keine
+  Kapazitäten für Neupatient:innen. Ein Ersttermin für Psychotherapie wird
+  grundsätzlich über die Anmeldung vergeben; dies hebt den aktuellen
+  Aufnahmestopp im Erwachsenenbereich nicht auf.
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Praxis Scherf – ASS-Sprechstunde"
+    url: "https://www.psychiatrie-potsdam.de/psychiatrische-sprechstunde/autismus-spektrum-stoerungen/"
+  - title: "Praxis Scherf – Leistungsspektrum"
+    url: "https://www.psychiatrie-potsdam.de/psychiatrische-sprechstunde/leistungsspektrum/"

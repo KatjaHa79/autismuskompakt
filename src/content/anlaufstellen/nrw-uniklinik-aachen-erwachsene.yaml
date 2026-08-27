@@ -1,0 +1,34 @@
+name: "Uniklinik RWTH Aachen – Autismus-Spektrum-Sprechstunde Erwachsene"
+type: "Klinik für Psychiatrie, Psychotherapie und Psychosomatik"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+  - beratung
+
+street: "Pauwelsstraße 30"
+postalCode: "52074"
+city: "Aachen"
+state: "nordrhein-westfalen"
+phone: "0241 80-80166"
+
+offer: >
+  Interdisziplinäre Diagnostik, Beratung und Betreuung für Erwachsene mit
+  bereits diagnostiziertem Autismus oder mit Verdacht auf ASS. Nach
+  Diagnosestellung können passende Therapieformen und individuelle Hilfen im
+  Alltag organisiert werden.
+admissionRequirements: "Gültige Überweisung eines Facharztes für Psychiatrie oder Neurologie sowie Chipkarte zum Termin erforderlich."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: konkrete aktuelle Wartezeit oder Wartelistenstatus nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Uniklinik RWTH Aachen – Autismus-Spektrum-Sprechstunde"
+    url: "https://www.ukaachen.de/kliniken-institute/klinik-fuer-psychiatrie-psychotherapie-und-psychosomatik/patientenversorgung/ambulante-versorgung/autismus-spektrum-sprechstunde-ass/"

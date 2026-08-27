@@ -1,0 +1,37 @@
+name: "AWO Autismus-Therapiezentrum Mannheim"
+type: "Autismus-Therapiezentrum"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+  - alltagshilfe
+
+street: "S6, 18"
+postalCode: "68161"
+city: "Mannheim"
+state: "baden-wuerttemberg"
+phone: "0621 150314418"
+email: "autismustherapiezentrum@awo-mannheim.de"
+
+offer: >
+  Therapie, Beratung und soziale Begleitung für Betroffene und Angehörige
+  aus Nordbaden sowie angrenzenden Regionen; kostenfreies Erstgespräch.
+  Diagnostik nicht als medizinische Autismusdiagnostik bestätigt.
+admissionRequirements: "Kosten therapeutischer Förderung können insbesondere im Rahmen der Eingliederungshilfe nach SGB VIII bzw. SGB IX beantragt werden (nicht GKV)."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "AWO Mannheim (laut Recherche-Dossier; im Dossier keine Einzel-URL angegeben)"

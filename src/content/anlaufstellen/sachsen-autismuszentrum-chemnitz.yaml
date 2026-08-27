@@ -1,0 +1,41 @@
+name: "Autismuszentrum Chemnitz und Annaberg-Buchholz"
+type: "SFZ Förderzentrum gGmbH"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - fachberatung
+  - alltagshilfe
+
+street: "Chemnitz: Stadlerstraße 4, 09126 Chemnitz · Annaberg-Buchholz: Dresdner Straße 22, 09456 Annaberg-Buchholz"
+state: "sachsen"
+phone: "Chemnitz: 0371 262370 · Annaberg-Buchholz: 03733 6794917"
+email: "info.autismus@sfz-chemnitz.de"
+
+offer: >
+  Schulbegleitung, berufliche Beratung und Assistenz, Jobcoaching,
+  persönliche Assistenz, Sozialkompetenztraining, Familienhilfe, Freizeit-
+  und Tagesstrukturangebote für Kinder, Jugendliche und Erwachsene im
+  Autismus-Spektrum, Angehörige, Fachkräfte, Schulen, Arbeitgeber und
+  Institutionen. Medizinische Autismusdiagnostik nicht als eigene Leistung
+  belegt.
+admissionRequirements: "Finanzierung je nach Angebot über Jugendhilfe, Eingliederungshilfe, Persönliches Budget oder andere Kostenträger."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Termine nach Vereinbarung; konkrete allgemeine Wartezeiten nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismuszentrum Chemnitz – Angebote"
+    url: "https://autismuszentrum-chemnitz.de/angebote/"
+  - title: "Autismuszentrum Chemnitz – Kontakt"
+    url: "https://autismuszentrum-chemnitz.de/kontakt/"

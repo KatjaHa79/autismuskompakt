@@ -1,0 +1,40 @@
+name: "Asklepios Fachklinikum Stadtroda – KJP Institutsambulanz"
+type: "Kinder- und Jugendpsychiatrische Institutsambulanz"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Bahnhofstraße 1a"
+postalCode: "07646"
+city: "Stadtroda"
+state: "thueringen"
+phone: "036428 56-1212"
+
+offer: >
+  Umfangreiche Abklärung, Beratung und Betreuung bei Autismus für Kinder und
+  Jugendliche bis 18 Jahre; zusätzlich autismusspezifische Behandlung und ggf.
+  Sozialkompetenzgruppe.
+admissionRequirements: >
+  Terminseite kennzeichnet die Sprechstunde mit "Alle Versicherte".
+  Krankenversicherungskarte mitbringen; Überweisung durch Kinder-/Hausarzt
+  falls vorhanden. Telefonische Voranmeldung erforderlich.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: keine konkrete Wartezeit veröffentlicht; Termine nach Dringlichkeit."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Asklepios Stadtroda – Sprechstunde KJP"
+    url: "https://www.asklepios.com/stadtroda/anmeldung-aufenthalt/anmeldung-aufnahme/termine-sprechstunden/sprechstunde/akst-kjp-01"
+  - title: "Asklepios Stadtroda – Kinder- und Jugendpsychiatrie, Autismus"
+    url: "https://www.asklepios.com/stadtroda/abteilungen-spezialistinnen/abteilungen/kinder-und-jugendpsychiatrie/autismus"

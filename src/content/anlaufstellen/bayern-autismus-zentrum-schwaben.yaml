@@ -1,0 +1,40 @@
+name: "Autismus Zentrum Schwaben gGmbH"
+type: "Beratung und ambulante Förderung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - beratung
+  - alltagshilfe
+
+street: "Industriestraße 36"
+postalCode: "87448"
+city: "Waltenhofen"
+state: "bayern"
+phone: "0831 9609970"
+email: "info@autismus-schwaben.de"
+
+offer: >
+  Beratung, autismusspezifische Förderung sowie Fachberatung und
+  Elternangebote für autistische Kinder, Jugendliche und Erwachsene sowie
+  Familien und Fachkräfte. Fachärztliche Diagnostik: ausdrücklich nein.
+admissionRequirements: "Förderung kann über Eingliederungshilfe finanziert werden; für die Beantragung wird eine schriftliche Diagnose benötigt (Kostenträger u. a. Bezirk Schwaben oder Jugendämter)."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Beratungstermine nach Vereinbarung; für einzelne Außenstellen gelten wechselnde Verfügbarkeiten, konkrete allgemeine Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Zentrum Schwaben"
+    url: "https://www.autismus-schwaben.de/"
+  - title: "Autismus Zentrum Schwaben – FAQ"
+    url: "https://www.autismus-schwaben.de/service-karriere/haeufig-gestellte-fragen"

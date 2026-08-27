@@ -1,0 +1,39 @@
+name: "Asklepios Fachklinikum Stadtroda – KJP Institutsambulanz Gera"
+type: "Kinder- und Jugendpsychiatrische Institutsambulanz"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Werner-Petzold-Straße 17"
+postalCode: "07549"
+city: "Gera"
+state: "thueringen"
+phone: "0365 552249330"
+
+offer: >
+  Umfangreiche Abklärung, Beratung und Betreuung bei Autismus und
+  Entwicklungsstörungen für Kinder und Jugendliche bis 18 Jahre.
+admissionRequirements: >
+  Terminseite kennzeichnet die Sprechstunde mit "Alle Versicherte".
+  Krankenversicherungskarte mitbringen; Überweisung durch Kinder-/Hausarzt
+  falls vorhanden. Telefonische Voranmeldung erforderlich.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Asklepios Stadtroda – Sprechstunde PIA Gera"
+    url: "https://www.asklepios.com/stadtroda/anmeldung-aufenthalt/anmeldung-aufnahme/termine-sprechstunden/sprechstunde/akst-kjp-02"
+  - title: "Asklepios Stadtroda – PIA KJP Gera"
+    url: "https://www.asklepios.com/stadtroda/abteilungen-spezialistinnen/pias/pia-kjp-gera"

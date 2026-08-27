@@ -1,0 +1,36 @@
+name: "Mariaberg – Psychiatrische Institutsambulanz für Kinder und Jugendliche"
+type: "Psychiatrische Institutsambulanz"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Burghaldenstraße 6"
+postalCode: "72501"
+city: "Gammertingen"
+state: "baden-wuerttemberg"
+phone: "07124 923-600"
+email: "pia@mariaberg.de"
+
+offer: >
+  "Tiefgreifende Entwicklungsstörungen aus dem Autismusspektrum" werden
+  ausdrücklich als eines der Krankheitsbilder der Ambulanz genannt; dort
+  erfolgen sowohl Diagnostik als auch Therapie. Das Fachkrankenhaus
+  verfügt darüber hinaus über stationäre und teilstationäre Angebote und
+  nennt ASS als besonderen Behandlungsschwerpunkt.
+admissionRequirements: "Überweisung des behandelnden Arztes oder Kinderarztes wird als erwünscht bezeichnet."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Mariaberg (laut Recherche-Dossier; im Dossier keine Einzel-URL angegeben)"

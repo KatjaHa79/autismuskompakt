@@ -1,0 +1,37 @@
+name: "Lebenshilfe Buxtehude – Autismus Ambulanz"
+type: "Therapeutisch-pädagogische Autismusambulanz"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - alltagshilfe
+  - beratung
+
+street: "Bertha-von-Suttner-Allee 4 (weitere Räume in Buxtehude und Harsefeld)"
+postalCode: "21614"
+city: "Buxtehude"
+state: "niedersachsen"
+phone: "04161 7430-550"
+
+offer: >
+  Therapeutisch-pädagogische Begleitung und Förderung sowie Beratung von
+  Familien, Fach- und Bezugspersonen in Kita und Schule für Kinder,
+  Jugendliche und Erwachsene im Autismus-Spektrum sowie Familien und
+  Bezugspersonen. Medizinische Autismusdiagnostik nicht als eigene Leistung
+  ausgewiesen.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Lebenshilfe Buxtehude – Autismusambulanz"
+    url: "https://www.lebenshilfe-buxtehude.de/angebote/autismusambulanz"

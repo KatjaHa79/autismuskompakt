@@ -1,0 +1,40 @@
+name: "Autismus-Therapiezentrum Mitte"
+type: "Autismus Bremen e.V. · Therapiezentrum / Frühförderung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+
+street: "Stader Straße 35"
+postalCode: "28205"
+city: "Bremen"
+state: "bremen"
+phone: "0421 468868-20"
+email: "mitte@atz-bremen.de"
+
+offer: >
+  Therapie, autismusspezifische Frühförderung und Beratung für Kinder,
+  Jugendliche und Erwachsene mit gesicherter Autismusdiagnose; Angehörige
+  und Institutionen im Rahmen der Beratung. Medizinische Autismusdiagnostik
+  auf der Standortseite nicht als eigene Leistung ausgewiesen.
+admissionRequirements: "Voraussetzung für Autismustherapie ist eine aktuelle Autismusdiagnose. Für Therapiebeantragung gesonderte Antragsadresse: Antragstelle@atz-bremen.de."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Bremen – ATZ Mitte"
+    url: "https://www.autismus-bremen.de/mitte/"
+  - title: "Autismus Bremen – Therapie"
+    url: "https://www.autismus-bremen.de/therapie/"

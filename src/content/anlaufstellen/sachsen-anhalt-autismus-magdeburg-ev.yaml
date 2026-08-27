@@ -1,0 +1,31 @@
+name: "Autismus Magdeburg e.V."
+type: "Regionalverband / Förderverein"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups: []
+categories:
+  - selbsthilfe
+
+street: "Herrenkrugstraße 199"
+postalCode: "39114"
+city: "Magdeburg"
+state: "sachsen-anhalt"
+email: "vorstand@autismus-magdeburg-ev.de"
+
+offer: >
+  Vernetzung, Unterstützung und Förderung des Autismus Zentrums Magdeburg für
+  Betroffene, Eltern, Angehörige, Unterstützer:innen und Interessierte.
+  Medizinische Diagnostik und Therapie nicht als eigene Leistungen.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: keine klassische Warteliste veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Bundesverband Autismus Deutschland – Verzeichnis"
+    url: "https://www.autismus.de/index.php?L=1&id=19"

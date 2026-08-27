@@ -1,0 +1,41 @@
+name: "Beratungsstelle Autismus Bremen e.V."
+type: "Beratungs- und Informationsstelle"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups: []
+categories:
+  - beratung
+
+street: "Stader Straße 35"
+postalCode: "28205"
+city: "Bremen"
+state: "bremen"
+phone: "0421 468868-0"
+email: "info@autismus-bremen.de"
+
+offer: >
+  Beratung zu Diagnostik, Förderung, Therapie, Ausbildung, Beruf, Krisen,
+  Familie, Schule, Wohnen und Selbsthilfe sowie kostenpflichtige
+  Fachberatung für Betroffene, Angehörige und Mitarbeitende von
+  Einrichtungen/Institutionen (u. a. Kindergärten, Schulen, Werkstätten,
+  Wohneinrichtungen). Medizinische Diagnostik: nein; die Beratungsstelle
+  vermittelt zu Diagnostikstellen.
+costs: "Beratung für Betroffene und Angehörige gegen einen Unkostenbeitrag; Fachberatung für Einrichtungen kostenpflichtig."
+admissionRequirements: >
+  Stand 27.08.2026: die Beratungsstelle ist laut aktueller Website bis auf
+  Weiteres nicht besetzt. Anfragen sollen per E-Mail an
+  info@atz-bremerhaven.de gerichtet werden.
+
+waitingList: "geschlossen"
+waitingTime: "Stand 27.08.2026: bis auf Weiteres nicht besetzt; keine konkrete Wiederbesetzungsfrist veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Bremen – Beratung"
+    url: "https://www.autismus-bremen.de/beratung/"

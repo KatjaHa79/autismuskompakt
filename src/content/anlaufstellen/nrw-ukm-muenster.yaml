@@ -1,0 +1,37 @@
+name: "Universitätsklinikum Münster – Spezialambulanz für Autismus der KJPP"
+type: "Klinik für Kinder- und Jugendpsychiatrie, -psychosomatik und -psychotherapie"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+  - therapie
+
+street: "Schmeddingstraße 50"
+postalCode: "48149"
+city: "Münster"
+state: "nordrhein-westfalen"
+phone: "0251 83-56701"
+
+offer: >
+  Spezialambulanz für Autismus der Kinder- und Jugendpsychiatrie mit
+  langjähriger ambulanter Diagnostik sowie autismusspezifischer Förderung;
+  Autismus wird als eigener Versorgungsschwerpunkt der Klinik geführt.
+admissionRequirements: "Nicht veröffentlicht."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: konkrete aktuelle ASS-Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "UKM Münster – Kinderpsychiatrie/Jugendpsychiatrie"
+    url: "https://www.ukm.de/kliniken/kinderpsychiatrie-jugendpsychiatrie"
+  - title: "UKM Fachveranstaltung Autismus-Diagnostik 2026"
+    url: "https://www.ukm.de/fileadmin/user_upload/Veranstaltungen/Fachveranstaltungen/2026/ukm-fachveranstaltung-Kinder-Jugend-Psychiatrie-Autismus-Diagnostik-26-06-26.pdf"

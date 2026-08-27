@@ -1,0 +1,34 @@
+name: "Klinikum St. Georg Leipzig – Autismus-Diagnostik für Erwachsene"
+type: "Verbund Gemeindenahe Psychiatrie / Institutsambulanz"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+
+street: "Delitzscher Straße 141"
+postalCode: "04129"
+city: "Leipzig"
+state: "sachsen"
+email: "autismusdiagnostik@sanktgeorg.de"
+
+offer: >
+  Mehrstufiges Diagnostikverfahren für Erwachsene mit Fragebögen,
+  Fremdeinschätzung, retrospektiven Angaben zur Kindheit, psychiatrischem
+  Videointerview und ggf. weiterführender vertiefter Diagnostik.
+admissionRequirements: "Die Einrichtung diagnostiziert ausschließlich Personen aus der Stadt Leipzig, der Stadt Halle/Saale und dem Raum Leipzig."
+
+waitingList: "geschlossen"
+waitingTime: >
+  Stand 27.08.2026: Warteliste aufgrund hoher Nachfrage bis Dezember 2028
+  geschlossen. Die Klinik bittet ausdrücklich darum, von Anfragen abzusehen.
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Klinikum St. Georg – Autismus-Diagnostik für Erwachsene"
+    url: "https://www.sanktgeorg.de/patienten-besucher/verbund-gemeindenahe-psychiatrie/autismus-diagnostik-fuer-erwachsene.html"

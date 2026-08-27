@@ -1,0 +1,39 @@
+name: "Volkssolidarität Region Rostock – Autismus-Ambulanz Region Rostock"
+type: "Autismusspezifische ambulante Therapie und Beratung"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+
+street: "Warnowallee 30"
+postalCode: "18107"
+city: "Rostock"
+state: "mecklenburg-vorpommern"
+phone: "0381 8099528"
+email: "autismusambulanz-rostock@vs-hro.de"
+
+offer: >
+  Ambulante und mobile Therapie sowie Beratung, auch im familiären und
+  sozialen Umfeld, für Kinder, Jugendliche und Erwachsene mit
+  diagnostizierter Autismus-Spektrum-Störung sowie Familien und soziales
+  Umfeld. Diagnostik: keine medizinische Erstdiagnostik als eigene
+  Leistung; Therapie setzt eine Autismusdiagnose voraus.
+admissionRequirements: "Auf Grundlage einer Autismusdiagnose werden die Therapiekosten laut Träger von den örtlichen Sozialhilfe- bzw. Jugendhilfeträgern übernommen."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit oder Kapazitätsangabe nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Volkssolidarität Rostock – Autismusambulanzen"
+    url: "https://vs-hro.de/autismusambulanzen/region-rostock/"

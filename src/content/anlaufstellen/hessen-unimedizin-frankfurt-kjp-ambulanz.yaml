@@ -1,0 +1,37 @@
+name: "Universitätsmedizin Frankfurt – KJP-Ambulanz / Diagnostik bei Autismusverdacht"
+type: "Kinder- und Jugendpsychiatrisch-psychotherapeutische Ambulanz"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - diagnostik
+
+street: "Deutschordenstraße 50"
+postalCode: "60528"
+city: "Frankfurt am Main"
+state: "hessen"
+phone: "069 6301-5920"
+email: "Kjp.Ambulanz@unimedizin-ffm.de"
+
+offer: >
+  Ambulante Vorstellung bei Verdacht auf psychische Störung einschließlich
+  Autismusfragestellungen für Kinder und Jugendliche; die aktuelle
+  ATFZ-Seite verweist Eltern mit Verdacht auf Autismus ausdrücklich zur
+  Anmeldung der Diagnostik an das Ambulanzsekretariat der KJP. Zusätzlich
+  Privatsprechstunde mit diagnostischer Abklärung und Therapie.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle ASS-spezifische Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Universitätsmedizin Frankfurt – ATFZ (verweist auf KJP-Ambulanz)"
+    url: "https://www.unimedizin-ffm.de/einrichtungen/kliniken/zentrum-fuer-psychische-gesundheit/psychiatrie-psychosomatik-und-psychotherapie-des-kindes-und-jugendalters/kinder-jugendliche-eltern/autismus-therapie-und-forschungszentrum"
+  - title: "Universitätsmedizin Frankfurt – Privatsprechstunde"
+    url: "https://www.unimedizin-ffm.de/einrichtungen/kliniken/zentrum-fuer-psychische-gesundheit/psychiatrie-psychosomatik-und-psychotherapie-des-kindes-und-jugendalters/kinder-jugendliche-eltern/privatsprechstunde"

@@ -1,0 +1,39 @@
+name: "SALO+PARTNER – Autismus-Beratungs- und Förderzentren Rostock und Schwerin"
+type: "Beratung, Förderung, Assistenz und berufliche Rehabilitation"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - beratung
+  - alltagshilfe
+
+street: "Rostock: Industriestraße 8, 18069 Rostock · Schwerin: Bremsweg 9, 19057 Schwerin"
+state: "mecklenburg-vorpommern"
+phone: "Rostock: 0381 36436430 · Schwerin: 0385 4838-222"
+
+offer: >
+  Beratung, autismusspezifische Förderung, Assistenzleistungen,
+  Umfeldberatung, Fortbildungen und berufliche Rehabilitation für Kinder,
+  Jugendliche und Erwachsene im Autismus-Spektrum sowie Familien, Kita,
+  Schule, Arbeitgeber und weitere Unterstützer:innen. Medizinische
+  Autismusdiagnostik nicht als eigene Leistung beschrieben.
+costs: "Erstberatung: kostenlos."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "SALO – Standort Rostock"
+    url: "https://www.salo-ag.de/standorte/salo-rostock/"
+  - title: "SALO – Autismusberatung Schwerin und Rostock"
+    url: "https://www.salo-ag.de/autismusberatung-schwerin-und-rostock/"

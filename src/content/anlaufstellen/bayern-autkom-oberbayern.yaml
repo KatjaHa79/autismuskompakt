@@ -1,0 +1,38 @@
+name: "Autismuskompetenzzentrum Oberbayern gGmbH (autkom)"
+type: "Kontakt- und Beratungsstelle"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups: []
+categories:
+  - beratung
+
+street: "Zamdorfer Straße 100"
+postalCode: "81677"
+city: "München"
+state: "bayern"
+phone: "089 4522587-0"
+email: "info@autkom-obb.de"
+
+offer: >
+  Beratung zu Autismus, Diagnostik, Versorgung, Sozialleistungen, Alltag,
+  Wohnen und weiteren Lebensbereichen für Menschen aus dem
+  Autismus-Spektrum, Angehörige und Fachkräfte. Diagnostik: ausdrücklich
+  nein; bei Fragen zu Diagnostikstellen vermittelt die Stelle
+  Informationen.
+admissionRequirements: "Beratung nur für Personen mit Wohnsitz in Oberbayern."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Termine nach Vereinbarung; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "autkom Oberbayern"
+    url: "https://www.autkom-obb.de/"
+  - title: "autkom Oberbayern – Kontakt"
+    url: "https://www.autkom-obb.de/kontakt"

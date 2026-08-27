@@ -1,0 +1,36 @@
+name: "Nautilus – Beratung und Gruppenangebote für Erwachsene im Autismus-Spektrum"
+type: "Stiftung Freundeskreis Ochsenzoll / Sozialpsychiatrische Angebote"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - erwachsene
+categories:
+  - beratung
+  - selbsthilfe
+  - alltagshilfe
+
+street: "Beratung: Langenhorner Chaussee 92-94, 22415 Hamburg · Selbsthilfegruppe: Hummelsbütteler Landstraße 7, 22335 Hamburg"
+state: "hamburg"
+email: "nautilus.info@sf.hamburg"
+phone: "0176 14802801"
+
+offer: >
+  Beratung insbesondere zu Teilhabe und konkreten
+  Alltags-/Unterstützungsfragen, Gruppenangebote, moderierte
+  Selbsthilfegruppe und Wohngemeinschaft mit Assistenz für Erwachsene ab 21
+  Jahren im Autismus-Spektrum bzw. mit Verdacht; Angehörige. Für das offene
+  Beratungsangebot ist keine Diagnose erforderlich. Medizinische
+  Diagnostik: nein.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: offene Beratung mittwochs 14:00-15:30 Uhr ohne Anmeldung; bei Ausfall zeitnahe Alternativtermine per E-Mail."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Stiftung Freundeskreis – Angebote für Erwachsene im Autismus-Spektrum"
+    url: "https://sf.hamburg/unsere-angebote/fuer-erwachsene-im-autismus-spektrum/"

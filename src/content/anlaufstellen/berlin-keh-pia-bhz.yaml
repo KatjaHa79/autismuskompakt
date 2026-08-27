@@ -1,0 +1,42 @@
+name: "Evangelisches Krankenhaus Königin Elisabeth Herzberge – PIA am BHZ"
+type: "Behandlungszentrum für psychische Gesundheit bei Entwicklungsstörungen"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+
+street: "Herzbergstraße 79, Haus 11"
+postalCode: "10365"
+city: "Berlin-Lichtenberg"
+state: "berlin"
+email: "pia-gb@keh-berlin.de"
+
+offer: >
+  Eine der vier Berliner Spezialambulanzen für Autismusdiagnostik im
+  Erwachsenenalter. Seit Juni 2025 koordinieren diese vier Ambulanzen
+  (Humboldt-Universität, Charité Campus Mitte, Charité Campus Benjamin
+  Franklin und Evangelisches Krankenhaus Königin Elisabeth Herzberge) die
+  Diagnostikplatzvergabe gemeinsam über ein zentrales Verfahren. Das
+  diagnostische Angebot umfasst sowohl Menschen mit
+  Intelligenzentwicklungsstörung als auch Menschen mit Normintelligenz.
+admissionRequirements: >
+  Für Erwachsene mit Normintelligenz erfolgt der Zugang über die zentrale
+  Berliner Diagnostikplatzvergabe (Anmeldung viermal jährlich am ersten
+  Mittwoch eines Quartals über ein zentrales Online-Verfahren, begrenzte
+  Plätze, Zufallszuteilung, individuelle Standortwünsche werden nicht
+  berücksichtigt). Menschen mit Intelligenzentwicklungsstörung nutzen die
+  regulären PIA-Anmeldeformulare.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: die PIA weist wegen hohen Patientenaufkommens auf längere Bearbeitungszeiten für Neuanmeldungen hin."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "KEH Berlin – Psychiatrische Institutsambulanz (PIA am BHZ)"
+    url: "https://www.keh-berlin.de/ambulanzen/detail/psychiatrische-institutsambulanz-pia-am-bhz"

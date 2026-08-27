@@ -1,0 +1,40 @@
+name: "Lebenshilfe Neubrandenburg e.V. – Autismus-Therapiezentrum"
+type: "Hauptstelle Neubrandenburg mit Außenstellen Greifswald und Stralsund"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+
+street: "Hauptstelle: Mlada-Boleslaver-Straße 1, 17036 Neubrandenburg · Greifswald: Brinkstraße 27a, 17489 Greifswald · Stralsund: Große Parower Straße 133T, Haus W9, 18435 Stralsund"
+state: "mecklenburg-vorpommern"
+phone: "0395 36290131"
+email: "autismus@lebenshilfe-neubrandenburg.de"
+
+offer: >
+  Ambulante und mobile Therapie/Förderung, Beratung sowie Förder- und
+  Verlaufsdiagnostik für Kinder, Jugendliche und Erwachsene mit
+  Autismus-Spektrum-Störung; außerdem Eltern, Fachleute und Institutionen.
+  Medizinische Erstdiagnostik: nein; bei fehlender Diagnose vermittelt das
+  Zentrum zu diagnostischen Einrichtungen.
+admissionRequirements: "Voraussetzung für die Therapie ist eine Autismusdiagnose. Antrag auf Kostenübernahme wird beim zuständigen Jugendamt oder Sozialamt eingereicht."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: nach Kostenübernahme erfolgt Kontaktaufnahme und Zuordnung einer therapeutischen Fachkraft; konkrete aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Lebenshilfe Neubrandenburg – Autismus-Therapiezentrum"
+    url: "https://lebenshilfe-neubrandenburg.de/index.php/autismus-therapiezentrum"
+  - title: "Lebenshilfe Neubrandenburg – Ihr Weg zu uns"
+    url: "https://lebenshilfe-neubrandenburg.de/index.php/ihr-weg-zu-uns"

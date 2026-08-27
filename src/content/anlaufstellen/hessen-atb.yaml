@@ -1,0 +1,46 @@
+name: "ATB Autismus Therapie & Beratung gGmbH"
+type: "Therapie- und Beratungszentrum (Nord- und Osthessen)"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+
+street: "Hauptgeschäftsstelle: Kölnische Straße 43 (weitere Standorte: Kassel-Marbachshöhe, Bad Arolsen, Bad Hersfeld, Eschwege, Fulda, Korbach)"
+postalCode: "34117"
+city: "Kassel"
+state: "hessen"
+phone: "0561 33430"
+email: "info@autismus-hessen.de"
+
+offer: >
+  Therapie sowie Beratung und Orientierung, auch Angebote für Angehörige
+  und Fachkräfte, für Kinder, Jugendliche und Erwachsene mit Autismus oder
+  Verdacht. Bei Autismusverdacht bietet das ATB eine Erstberatung; auf
+  Wunsch wird auch autismusspezifische Diagnostik in Kooperation mit
+  Fachärzt:innen und Partnern beschrieben – daraus lässt sich jedoch nicht
+  automatisch für jeden Standort "Diagnostik: ja" ableiten; Diagnostikstatus
+  bitte je Standort direkt erfragen.
+paymentType:
+  - selbstzahler
+costs: "Erstberatung bei Autismusverdacht: 65 EUR Selbstzahler, keine Krankenkassenabrechnung. Bei vorliegender Diagnose kann eine Erstberatung über Beratungsgutschein/Leistungsträger finanziert werden."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Erstberatung wird nach Kontaktanfrage terminiert; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "ATB Autismus Hessen"
+    url: "https://autismus-hessen.de/"
+  - title: "ATB Autismus Hessen – Angebote"
+    url: "https://autismus-hessen.de/was-tun-wir/angebote"

@@ -1,0 +1,34 @@
+name: "Autismus Leben Berlin ALB gGmbH – Ambulante Hilfen"
+type: "Ambulante autismusspezifische Hilfen"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+categories:
+  - therapie
+
+street: "Arno-Holz-Straße 10"
+postalCode: "12165"
+city: "Berlin-Steglitz"
+state: "berlin"
+email: "ambulante-hilfen@autismus-berlin.de"
+
+offer: >
+  Ambulante entwicklungs-, beziehungs- und ressourcenorientierte Hilfen
+  durch heil- und sozialpädagogische Fachkräfte für Kinder/Jugendliche mit
+  Autismus und deren Familien.
+admissionRequirements: "Voraussetzung sind Autismusdiagnose und Zuordnung zum Personenkreis nach § 35a SGB VIII oder § 99 SGB IX; formaler Antrag, Hilfekonferenz und positiver Bescheid erforderlich."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: vor Start erfolgt Kapazitätscheck; konkrete Wartedauer nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Leben Berlin – Ambulante Hilfen"
+    url: "https://www.autismus-berlin.de/angebote/ambulante-hilfen/"

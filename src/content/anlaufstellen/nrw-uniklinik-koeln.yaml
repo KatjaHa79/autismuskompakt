@@ -1,0 +1,45 @@
+name: "Uniklinik Köln – Spezialambulanz Autismus im Erwachsenenalter"
+type: "Klinik und Poliklinik für Psychiatrie und Psychotherapie"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+  - beratung
+  - therapie
+
+street: "Kerpener Straße 62 (Anfahrt Psychiatrische Klinik über Gleueler Straße 111-113)"
+postalCode: "50937"
+city: "Köln"
+state: "nordrhein-westfalen"
+phone: "0221 478-76714"
+
+offer: >
+  Mehrstufige leitlinienorientierte Diagnostik und Beratung für Volljährige
+  mit begründetem Verdacht auf ASS. Für diagnostizierte Betroffene aus Köln
+  und Umgebung: autismusspezifische Behandlungsangebote,
+  Wiedereingliederungsunterstützung, Psychotherapie und moderierte
+  Selbsthilfegruppen.
+admissionRequirements: >
+  Nur Wohnsitz in Köln und näherer Umgebung. Zugang setzt einen begründeten
+  Verdacht voraus, festgestellt von Psychotherapeut:in oder Ärzt:in aus
+  Psychiatrie/Neurologie bzw. ausnahmsweise Allgemeinmedizin. Vollständige
+  Unterlagen sind Voraussetzung für die Warteliste.
+paymentType:
+  - gesetzlich
+  - privat
+
+waitingList: "offen"
+waitingTime: "Stand 27.08.2026: Warteliste nur für Köln und Umgebung geöffnet; veröffentlichte Wartezeit aktuell 2 bis 3 Jahre."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Uniklinik Köln – Spezialambulanz Autismus"
+    url: "https://psychiatrie-psychotherapie.uk-koeln.de/klinik/ambulante-behandlung/spezialambulanz-autismus/"
+  - title: "Uniklinik Köln – Ansprechpartner"
+    url: "https://psychiatrie-psychotherapie.uk-koeln.de/informationen/ansprechpartner-auf-einen-blick/"

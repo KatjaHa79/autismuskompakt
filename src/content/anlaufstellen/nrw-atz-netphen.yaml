@@ -1,0 +1,41 @@
+name: "Autismus-Therapiezentrum Netphen gGmbH"
+type: "autismus Siegen e.V."
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+  - fachberatung
+
+street: "Postanschrift: Hauptstraße 31b"
+postalCode: "57250"
+city: "Netphen"
+state: "nordrhein-westfalen"
+
+offer: >
+  Einzel- und Gruppentherapie, Beratung (einschließlich Vorwegberatung ohne
+  therapeutische Anbindung), Jobcoaching und Förderdiagnostik für Kinder,
+  Jugendliche und Erwachsene im Autismus-Spektrum sowie Angehörige, Schulen,
+  Arbeitgeber und weitere Bezugspersonen. Medizinische Erstdiagnostik nicht
+  als eigene Leistung ausgewiesen.
+costs: "Therapieleistungen sind laut Träger in der Regel für Antragstellende kostenlos, finanziert über Eingliederungshilfe nach SGB VIII bzw. SGB XII."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Therapiebeginn, sobald ein Platz angeboten werden kann; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "autismus Siegen – Therapiezentrum"
+    url: "https://autismus-siegen.de/therapiezentrum/"
+  - title: "autismus Siegen – Ihr Weg zu uns"
+    url: "https://autismus-siegen.de/ihr-weg-zu-uns/"

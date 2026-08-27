@@ -1,0 +1,35 @@
+name: "Medizinische Hochschule Hannover – Autismus-Sprechstunde für Erwachsene"
+type: "Klinik für Psychiatrie, Sozialpsychiatrie und Psychotherapie"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+
+street: "Carl-Neuberg-Straße 1"
+postalCode: "30625"
+city: "Hannover"
+state: "niedersachsen"
+phone: "0511 532-3167"
+
+offer: >
+  Von der Landesarbeitsgemeinschaft Autismus Niedersachsen ausdrücklich als
+  Autismus-Sprechstunde für Erwachsene geführt. Die aktuelle
+  MHH-Ambulanzseite nennt Autismus im Seitentitel, veröffentlicht jedoch
+  derzeit keinen eigenständigen Abschnitt mit detailliertem Anmeldeweg,
+  Altersgrenzen oder Diagnostikablauf.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle ASS-spezifische Wartezeit oder Aufnahmestatus nicht eindeutig veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "MHH – Psychiatrische Institutsambulanz (PIA)"
+    url: "https://www.mhh.de/kliniken-und-spezialzentren/klinik-fuer-psychiatrie-sozialpsychiatrie-und-psychotherapie/ambulante-behandlungsangebote/psychiatrische-institutsambulanz-pia"
+  - title: "Landesarbeitsgemeinschaft Autismus Niedersachsen"
+    url: "https://www.autismus-niedersachsen.de/?page_id=312"

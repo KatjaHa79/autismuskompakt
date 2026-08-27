@@ -1,0 +1,43 @@
+name: "Psychotherapeutische Praxis Aida Knabe"
+type: "Psychologische Psychotherapie / Verhaltenstherapie"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - angehoerigenberatung
+  - fachberatung
+
+street: "Oberaltenallee 8"
+postalCode: "22081"
+city: "Hamburg"
+state: "hamburg"
+phone: "0176 50200412"
+email: "praxis@psychotherapie-aida-knabe.de"
+
+offer: >
+  Einzel- und Gruppentherapie, für Erwachsene u. a.
+  Psychoedukationsgruppe für Menschen aus dem Autismus-Spektrum und
+  soziales Kompetenztraining; Angehörigenberatung; Beratung/Supervision für
+  Fachkräfte, die mit autistischen Patient:innen arbeiten. Autismusdiagnostik
+  nicht als eigenes Angebot ausgewiesen.
+paymentType:
+  - gesetzlich
+  - privat
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit oder freie Therapieplätze nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Praxis Aida Knabe"
+    url: "https://www.psychotherapie-aida-knabe.de/"

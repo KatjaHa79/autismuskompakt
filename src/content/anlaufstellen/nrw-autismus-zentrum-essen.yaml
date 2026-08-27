@@ -1,0 +1,33 @@
+name: "Autismus-Zentrum Essen und verbundene Regionalzentren"
+type: "Autismus-Zentrum-Essen gGmbH (mit Zentren in Bottrop, Dorsten, Recklinghausen, Herten)"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups: []
+categories:
+  - therapie
+  - beratung
+
+street: "Annastraße 58-64"
+postalCode: "45130"
+city: "Essen"
+state: "nordrhein-westfalen"
+phone: "0201 80050711"
+email: "info@a-z-essen.de"
+
+offer: >
+  Therapie, Beratung und Fortbildung für Menschen mit Autismus und Familien.
+  Medizinische Diagnostik: ausdrücklich nein – das Zentrum schreibt auf der
+  Startseite, dass keine Autismusdiagnosen durchgeführt werden.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeiten nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus-Zentrum Essen"
+    url: "https://a-z-essen.de/"

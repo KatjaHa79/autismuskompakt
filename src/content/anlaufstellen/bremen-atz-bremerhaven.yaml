@@ -1,0 +1,43 @@
+name: "Autismus-Therapiezentrum Bremerhaven"
+type: "Autismus Bremen e.V. · Therapiezentrum / Frühförderstelle"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - erwachsene
+categories:
+  - diagnostik
+  - therapie
+  - beratung
+
+street: "Friedrich-Ebert-Straße 33"
+postalCode: "27570"
+city: "Bremerhaven"
+state: "bremen"
+phone: "0471 95158100"
+email: "info@atz-bremerhaven.de"
+
+offer: >
+  Diagnostik: nur bis 4 Jahre bei Autismusfragestellung sowie zusätzlich
+  eigenständige Diagnostik für Erwachsene – nicht pauschal als
+  "Diagnostik Kinder & Jugendliche" zu verstehen. Daneben individuelle
+  autismusspezifische Einzeltherapie, Eltern- und Institutionsberatung,
+  Gruppenangebote (u. a. Multi-Familien-Therapie, Eltern- und
+  Müttergruppen) und Frühförderung (seit 2016 als heilpädagogische
+  Frühförderstelle Autismus anerkannt) für Menschen mit
+  Autismus-Spektrum-Störungen in Bremerhaven und den umgebenden
+  Landkreisen.
+admissionRequirements: "Telefonisch montags bis donnerstags 09:00-12:00 Uhr erreichbar."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit bzw. Wartelistenstatus für Diagnostik und Therapie nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Bremen – ATZ Bremerhaven-Debstedt"
+    url: "https://www.autismus-bremen.de/bremerhaven-debstedt/"

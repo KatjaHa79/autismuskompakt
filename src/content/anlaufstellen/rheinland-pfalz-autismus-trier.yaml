@@ -1,0 +1,47 @@
+name: "Autismus Trier – Therapie gGmbH / Autismus Trier e.V."
+type: "Autismustherapie, Beratung, Selbsthilfe, Wohnen und Arbeit"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+  - alltagshilfe
+
+street: "Zentrale: Brotstraße 30-31 (weitere Therapiestandorte u. a. Trier-Ehrang, Trier-Medard, Idar-Oberstein, Daun)"
+postalCode: "54290"
+city: "Trier"
+state: "rheinland-pfalz"
+phone: "0651 603441-00"
+email: "verwaltung@autismus-trier.de"
+
+offer: >
+  Therapeutische Komplexmaßnahmen der Eingliederungshilfe, Beratung,
+  Selbsthilfe, Wohnen, Arbeit und Fortbildung für autistische Menschen
+  verschiedener Altersgruppen, Angehörige und Betreuer:innen. Medizinische
+  Erstdiagnostik: nein; für Therapie ist eine schriftliche fachärztliche
+  Diagnose mit Therapieempfehlung Voraussetzung.
+admissionRequirements: >
+  Einzugsgebiet westliches und nördliches Rheinland-Pfalz. Finanzierung über
+  Jugend- bzw. Sozialämter im Rahmen der Jugend- oder Eingliederungshilfe;
+  vollständige Unterlagen und Kostenzusage/Leistungsbewilligung erforderlich.
+
+waitingList: "offen"
+waitingTime: "Stand 27.08.2026: Aufnahme auf die Warteliste erst nach fachärztlicher Diagnose, vollständigen Unterlagen und Kostenzusage; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Trier – Weg zur Therapie"
+    url: "https://autismus-trier.de/therapie/weg-zur-therapie"
+  - title: "Autismus Trier – Therapieangebot"
+    url: "https://autismus-trier.de/therapie/therapieangebot"
+  - title: "Autismus Trier – Standorte"
+    url: "https://autismus-trier.de/ueber-uns/standorte"

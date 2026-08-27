@@ -1,0 +1,38 @@
+name: "Autismushilfe Schleswig-Holstein – Autismus-Therapie-Zentren Neumünster und Lübeck"
+type: "Hilfe für das autistische Kind e.V. / Autismushilfe Schleswig-Holstein gGmbH"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+
+street: "Geschäftsstelle: Marienstraße 1 C, 24534 Neumünster · ATZ Neumünster: Brachenfelder Straße 28, 24534 Neumünster · ATZ Lübeck: Kantstraße 15-17, 23566 Lübeck"
+state: "schleswig-holstein"
+phone: "04321 22067"
+email: "info@autismus-sh.de"
+
+offer: >
+  Therapeutische Beratung, Förderung und Begleitung sowie individuelle
+  autismusspezifische therapeutische Förderung für Kinder, Jugendliche und
+  Erwachsene mit Autismus-Spektrum-Störung. Medizinische Erstdiagnostik nicht
+  als Eigenleistung.
+admissionRequirements: "Eine gesicherte ASS-Diagnose ist Voraussetzung. Antrag/Bewilligung bei Eingliederungshilfe oder Jugendamt vor Anmeldung beim Träger."
+
+waitingList: "offen"
+waitingTime: "Stand 27.08.2026: Warteliste vorhanden; der Träger weist aufgrund hoher Auslastung auf teilweise erhebliche Wartezeiten hin."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismushilfe Schleswig-Holstein"
+    url: "https://www.autismus-sh.de/"
+  - title: "Autismushilfe Schleswig-Holstein – Team"
+    url: "https://www.autismus-sh.de/team"

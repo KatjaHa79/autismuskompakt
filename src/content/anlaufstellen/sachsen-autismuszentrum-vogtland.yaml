@@ -1,0 +1,41 @@
+name: "Autismuszentrum Vogtland e.V."
+type: "Beratung, Förderung, Assistenz und Wohnen"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - beratung
+  - alltagshilfe
+
+street: "Breitscheidstraße 33"
+postalCode: "08209"
+city: "Auerbach/Vogtl."
+state: "sachsen"
+phone: "03744 4399550"
+email: "geschaeftsstelle@autismus-vogtland.de"
+
+offer: >
+  Einzel- und Gruppenkompetenztraining, familienunterstützender Dienst,
+  Schulbegleitung, Tagesstruktur, Wohnen, Selbsthilfe und Fortbildungen für
+  Kinder, Jugendliche und Erwachsene im Autismus-Spektrum sowie Angehörige
+  und Fachkräfte. Diagnostik: ausdrücklich nein – die Beratungsstelle führt
+  selbst keine Autismusdiagnostik durch und verweist an Fachstellen.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: Termine auch außerhalb regulärer Öffnungszeiten nach Vereinbarung; konkrete Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismuszentrum Vogtland – Diagnostik"
+    url: "https://www.autismus-vogtland.de/diagnostik"
+  - title: "Autismuszentrum Vogtland – Kontakt"
+    url: "https://www.autismus-vogtland.de/kontakt"

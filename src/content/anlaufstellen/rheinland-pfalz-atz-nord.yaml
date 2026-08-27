@@ -1,0 +1,33 @@
+name: "ATZ Rheinland-Pfalz Nord e.V."
+type: "Autismus Therapie- und Beratungszentrum"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups: []
+categories:
+  - therapie
+  - beratung
+
+street: "Theo-Mackeben-Straße 22"
+postalCode: "56070"
+city: "Koblenz"
+state: "rheinland-pfalz"
+email: "info@autismus-stark.de"
+
+offer: >
+  Therapie und Beratung für Menschen mit Autismus und Familien; institutionell
+  durch den Bundesverband Autismus Deutschland als Therapiezentrum belegt.
+  Medizinische Erstdiagnostik nicht belegt.
+admissionRequirements: "Sprechzeiten laut Bundesverband: Mo-Mi 09:00-13:00 Uhr, Do 13:00-17:00 Uhr."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Bundesverband Autismus Deutschland – Verzeichnis"
+    url: "https://www.autismus.de/index.php?L=1&id=19"

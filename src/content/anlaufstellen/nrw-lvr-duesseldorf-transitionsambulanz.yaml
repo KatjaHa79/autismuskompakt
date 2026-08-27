@@ -1,0 +1,31 @@
+name: "LVR-Klinikum Düsseldorf – Transitionsambulanz"
+type: "Erwachsenenpsychiatrische Transition"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - therapie
+
+street: "Bergische Landstraße 2"
+postalCode: "40629"
+city: "Düsseldorf"
+state: "nordrhein-westfalen"
+
+offer: >
+  Begleitung des Übergangs aus der Kinder- und Jugendpsychiatrie in die
+  Erwachsenenpsychiatrie für junge Erwachsene von 18 bis 25 Jahren mit seit
+  Jugend bestehender psychischer Erkrankung, ausdrücklich auch Autismus.
+  Keine Erstdiagnostik-Ambulanz für Autismus.
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit nicht veröffentlicht."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "LVR-Klinikum Düsseldorf – Transitionsambulanz"
+    url: "https://klinikum-duesseldorf.lvr.de/de/nav_main/fachgebiete/z_2/ambulant_2/ia_poliklinik/transitionsambulanz___eltern_kind_behandlung/transitionsambulanz___eltern_kind_behandlung.html"

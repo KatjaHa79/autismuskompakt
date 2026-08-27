@@ -1,0 +1,40 @@
+name: "Autismus Therapie- und Beratungszentrum Wolfsburg / Gifhorn / Helmstedt / Lehre"
+type: "Autismusspezifische Förderung und Beratung (Ostniedersachsen)"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+  - fachberatung
+
+street: "Wolfsburg: An der Grandkuhle 5, 38442 Wolfsburg · Gifhorn: Knickwall 1, 38518 Gifhorn · Helmstedt: Kleiner Wall 1, 38350 Helmstedt · Lehre: Schlesier Straße 2a, 38165 Lehre"
+state: "niedersachsen"
+phone: "05362 500667"
+email: "info@autismus-wolfsburg.de"
+
+offer: >
+  Förderung/Therapie sowie Beratung für Betroffene, Angehörige, Kitas,
+  Schulen und Arbeitsstellen für Kinder, Jugendliche und Erwachsene mit
+  Autismusdiagnose; keine Altersbegrenzung für Förderung. Medizinische
+  Diagnostik nicht als eigene Leistung; Förderung setzt Diagnose voraus.
+admissionRequirements: "Autismusspezifische Förderung ist eine Leistung der Eingliederungshilfe und kann beim zuständigen Jugend- bzw. Sozialamt beantragt werden."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: die Einrichtung erwähnt eine Wartezeit im Förderprozess, veröffentlicht aber keine konkrete Dauer."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Wolfsburg"
+    url: "https://autismus-wolfsburg.de/"
+  - title: "Autismus Wolfsburg – Beratung für Erwachsene"
+    url: "https://autismus-wolfsburg.de/beratung-fuer-erwachsene/"

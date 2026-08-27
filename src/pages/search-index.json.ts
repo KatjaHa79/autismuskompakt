@@ -7,6 +7,8 @@ import {
   anlaufstelleCategoryLabels,
   ageGroupLabels,
   bundeslandLabels,
+  paymentTypeLabels,
+  waitingListLabels,
   materialTypeLabels,
   productTypeLabels,
 } from "../content.config";
@@ -29,6 +31,10 @@ interface SearchEntry {
   ageGroups?: string[];
   online?: boolean;
   offer?: string;
+  // Nur bei Anlaufstellen, ausschließlich für die Suche (nicht angezeigt):
+  // Aufnahmestatus/Wartezeit/Zugangsvoraussetzungen/Kosten, damit z. B.
+  // "Warteliste geschlossen" oder "keine Neuaufnahme" auffindbar sind.
+  status?: string;
   // Nur bei Materialien:
   materialType?: string;
 }
@@ -53,6 +59,15 @@ export const GET: APIRoute = async () => {
   const anlaufstellen = await getCollection("anlaufstellen");
   for (const entry of anlaufstellen) {
     const offer = entry.data.offer?.trim();
+    const status = [
+      entry.data.waitingList ? waitingListLabels[entry.data.waitingList] : undefined,
+      entry.data.waitingTime,
+      entry.data.admissionRequirements,
+      entry.data.paymentType.map((art) => paymentTypeLabels[art]).join(" "),
+      entry.data.costs,
+    ]
+      .filter(Boolean)
+      .join(" ");
     entries.push({
       id: `anlaufstelle/${entry.id}`,
       type: "anlaufstelle",
@@ -66,6 +81,7 @@ export const GET: APIRoute = async () => {
       ageGroups: entry.data.ageGroups.map((gruppe) => ageGroupLabels[gruppe]),
       online: entry.data.online,
       offer,
+      status: status || undefined,
     });
   }
 

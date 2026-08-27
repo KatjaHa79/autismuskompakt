@@ -1,0 +1,41 @@
+name: "Autismus-Therapiezentrum Buntentor"
+type: "Autismus Bremen e.V. · Therapiezentrum"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+ageGroups:
+  - kinder
+  - jugendliche
+  - erwachsene
+categories:
+  - therapie
+  - beratung
+
+street: "Dorotheenstraße 1"
+postalCode: "28201"
+city: "Bremen"
+state: "bremen"
+phone: "0421 55904651"
+email: "buntentor@atz-bremen.de"
+
+offer: >
+  Einzel- und Gruppentherapien sowie Beratung für Kinder, Jugendliche und
+  Erwachsene mit Autismus-Spektrum-Störung; Beratung auch für Angehörige
+  und Institutionen. JobPatenProjekt am Standort zur Unterstützung bei der
+  Arbeitssuche. Medizinische Autismusdiagnostik nicht als eigenes
+  Standortangebot ausgewiesen.
+admissionRequirements: "Für eine Autismustherapie wird ein Antragverfahren genutzt; die Beratung unterstützt bei der Beantragung."
+
+waitingList: "unbekannt"
+waitingTime: "Stand 27.08.2026: aktuelle Wartezeit nicht veröffentlicht. Telefonisch in der Regel Montag bis Donnerstag 08:00-12:00 Uhr."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Autismus Bremen – ATZ Buntentor (Neustadt)"
+    url: "https://www.autismus-bremen.de/autismus-therapiezentrum-bremen-neustadt/"
+  - title: "Autismus Bremen – Team Buntentor"
+    url: "https://www.autismus-bremen.de/team-buntentor/"

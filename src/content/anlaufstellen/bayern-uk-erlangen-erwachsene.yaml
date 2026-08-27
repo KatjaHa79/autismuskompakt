@@ -1,0 +1,31 @@
+name: "Universitätsklinikum Erlangen – Sprechstunde für Autismus (Erwachsene)"
+type: "Psychiatrische Institutsambulanz / Hochschulambulanz"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+
+street: "Kopfkliniken, Schwabachanlage 6"
+postalCode: "91054"
+city: "Erlangen"
+state: "bayern"
+email: "ps-Autismus@uk-erlangen.de"
+
+offer: >
+  Spezialsprechstunde zur Abklärung von Autismus-Spektrum-Störungen im
+  Erwachsenenalter.
+admissionRequirements: "Mitzubringen: Versicherungsnachweis (Krankenkassenkarte), Medikamentenliste, vorhandene Befundberichte und Überweisungsschein."
+
+waitingList: "geschlossen"
+waitingTime: "Stand 27.08.2026: derzeit werden keine neuen Termine vergeben."
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "UK Erlangen – Psychiatrische Institutsambulanz, Autismus-Spektrum-Störung"
+    url: "https://www.psychiatrie.uk-erlangen.de/patienten/medizinisches-spektrum/psychiatrische-institutsambulanz-und-hochschulambulanz/entwicklungsstoerungen/-stoerungen-mit-beginn-im-kindesalter/autismus-spektrum-stoerung/"

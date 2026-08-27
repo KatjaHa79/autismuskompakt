@@ -1,0 +1,41 @@
+name: "Asklepios Klinikum Harburg – ADHS und ASS im Erwachsenenalter"
+type: "Klinik für Psychiatrie, Psychotherapie und Psychosomatik"
+
+targetGroups:
+  - autistische-menschen
+ageGroups:
+  - erwachsene
+categories:
+  - diagnostik
+  - therapie
+
+street: "Eißendorfer Pferdeweg 52"
+postalCode: "21075"
+city: "Hamburg"
+state: "hamburg"
+email: "sprechstundeassundadhs.harburg@asklepios.com"
+
+offer: >
+  Mehrstufige klinisch-psychiatrische und testpsychologische
+  ASS-Diagnostik mit 2-4 Terminen, Fremdanamnese, neuropsychologischer
+  Untersuchung und Abschlussbericht; Therapie mit Psychoedukation,
+  ASS-spezifischer Gruppenpsychotherapie, Behandlung von
+  Begleiterkrankungen, Sozialberatung und ggf. stationärer Behandlung.
+admissionRequirements: >
+  Fachärztliche Überweisung und Krankenversicherungskarte erforderlich.
+  Regionaler Zugang zusätzlich auf Harburg, Wilhelmsburg, Neugraben und
+  Finkenwerder begrenzt.
+
+waitingList: "geschlossen"
+waitingTime: >
+  Stand 27.08.2026: Aufgrund anhaltend hoher Nachfrage stehen die
+  ADHS-/ASS-Angebote derzeit nicht zur Verfügung. Asklepios kündigt an, auf
+  der Website zu informieren, sobald wieder Kapazitäten vorhanden sind.
+
+online: false
+onsite: true
+
+updated: 2026-08-27
+sources:
+  - title: "Asklepios Harburg – ADHS und ASS Erwachsenenalter"
+    url: "https://www.asklepios.com/harburg/abteilungen-spezialistinnen/abteilungen/psychiatrie/adhs-und-ass-erwachsenenalter"
