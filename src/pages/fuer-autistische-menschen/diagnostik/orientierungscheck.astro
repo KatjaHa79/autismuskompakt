@@ -1,0 +1,638 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import Quellenblock from "../../../components/Quellenblock.astro";
+
+const quellen = [
+  {
+    title: "WHO: ICD-11, Autism spectrum disorder (6A02), Clinical Descriptions and Diagnostic Requirements",
+    url: "https://iris.who.int/bitstream/handle/10665/375767/9789240077263-eng.pdf",
+  },
+  { title: "NICE CG142: Autism spectrum disorder in adults: diagnosis and management", url: "https://www.nice.org.uk/guidance/cg142" },
+  {
+    title: "NICE CG128: Autism spectrum disorder in under 19s: recognition, referral and diagnosis",
+    url: "https://www.nice.org.uk/guidance/cg128",
+  },
+  {
+    title: "Hull et al. (2019): Development and Validation of the Camouflaging Autistic Traits Questionnaire (CAT-Q)",
+    url: "https://doi.org/10.1007/s10803-018-3792-6",
+  },
+  {
+    title: "Cook et al. (2021): Camouflaging in autism: A systematic review. Clinical Psychology Review 89:102080",
+    url: "https://doi.org/10.1016/j.cpr.2021.102080",
+  },
+];
+---
+
+<BaseLayout
+  title="Autismus-Orientierungscheck für Erwachsene"
+  description="Ein wertschätzender Orientierungscheck für Erwachsene: eigene Erfahrungen mit sozialer Kommunikation, Reizen, Routinen, Masking und Überlastung besser einordnen. Kein diagnostischer Test."
+>
+  <div class="container">
+    <Breadcrumbs
+      items={[
+        { label: "Start", href: "/" },
+        { label: "Für Autist:innen", href: "/fuer-autistische-menschen/" },
+        { label: "Diagnostik & Tests", href: "/fuer-autistische-menschen/diagnostik/" },
+        { label: "Autismuskompakt-Orientierungscheck" },
+      ]}
+    />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <h1>Könnte Autismus bei mir eine Rolle spielen?</h1>
+
+      <div class="prose">
+        <p>
+          Vielleicht beschäftigst du dich erst seit Kurzem mit Autismus. Vielleicht erkennst du dich schon länger in
+          Erfahrungen autistischer Menschen wieder. Oder du suchst eine mögliche Erklärung dafür, warum manche
+          Situationen für dich deutlich mehr Kraft kosten als für andere.
+        </p>
+        <p>Dieser Check soll dir helfen, deine eigenen Erfahrungen etwas strukturierter anzuschauen.</p>
+        <p>Es geht nicht darum, möglichst viele „passende" Antworten zu finden.</p>
+        <p>Und du musst hier nicht beweisen, dass etwas schwierig genug ist.</p>
+        <p>
+          Versuche so zu antworten, wie es sich für dich selbst anfühlt – nicht nur danach, was andere Menschen von dir
+          sehen.
+        </p>
+        <p>Wenn du gelernt hast, etwas sehr gut zu kompensieren, frage dich zusätzlich:</p>
+        <p>„Wie leicht wäre es für mich, wenn ich meine Strategien nicht einsetzen würde?"</p>
+        <p>und: „Wie viel Energie kostet mich das?"</p>
+
+        <h2>Was dieser Check kann</h2>
+        <ul>
+          <li>welche Muster du bei dir wahrnimmst</li>
+          <li>welche Situationen dich besonders belasten</li>
+          <li>welche Bedingungen dir möglicherweise guttun</li>
+          <li>ob du dich näher mit Autismus beschäftigen möchtest</li>
+        </ul>
+
+        <h2>Was dieser Check nicht kann</h2>
+        <p>
+          Dieser Orientierungscheck ist kein diagnostischer Test und kein validiertes Screening-Instrument.
+        </p>
+        <p>Er kann weder feststellen noch ausschließen, dass du autistisch bist.</p>
+        <p>
+          Ähnliche Erfahrungen können auch bei anderen neuroentwicklungsbedingten, psychischen oder körperlichen
+          Besonderheiten auftreten.
+        </p>
+      </div>
+
+      <div class="notice" role="note">
+        <p><strong>Deine Antworten bleiben auf deinem Gerät.</strong></p>
+        <p>
+          Die Auswertung findet ausschließlich in deinem Browser statt. Deine Antworten werden nicht an uns übertragen
+          oder gespeichert.
+        </p>
+      </div>
+
+      <noscript>
+        <div class="notice">
+          <p>
+            Der Autismuskompakt-Orientierungscheck benötigt JavaScript, weil die Auswertung ausschließlich lokal in
+            deinem Browser durchgeführt wird.
+          </p>
+          <p>Du findest trotzdem weiterführende Informationen:</p>
+          <ul>
+            <li><a href="/fuer-autistische-menschen/diagnostik/">Diagnostik & Tests</a></li>
+            <li><a href="/materialien/">Materialien</a></li>
+            <li><a href="/hilfe-finden/">Hilfe finden</a></li>
+          </ul>
+        </div>
+      </noscript>
+
+      <div class="oc-app" id="oc-app">
+        <div id="oc-start">
+          <p>
+            <button type="button" id="oc-start-button" class="button button--primary">Check starten</button>
+          </p>
+        </div>
+
+        <div id="oc-frage-bereich" hidden>
+          <div class="oc-fortschritt">
+            <p id="oc-fortschritt-text" class="oc-fortschritt-text"></p>
+            <div
+              class="oc-fortschritt-balken"
+              role="progressbar"
+              aria-valuemin="1"
+              aria-valuemax="30"
+              aria-valuenow="1"
+              id="oc-progressbar"
+            >
+              <div class="oc-fortschritt-balken__fuellung" id="oc-fortschritt-fuellung"></div>
+            </div>
+          </div>
+
+          <form id="oc-frage-form" novalidate>
+            <fieldset>
+              <legend id="oc-frage-text" tabindex="-1"></legend>
+              <div id="oc-antwortoptionen" class="oc-antwortoptionen"></div>
+            </fieldset>
+            <div class="oc-nav">
+              <button type="button" id="oc-zurueck" class="button button--secondary">Zurück</button>
+              <button type="submit" id="oc-weiter" class="button button--primary" disabled>Weiter</button>
+            </div>
+          </form>
+        </div>
+
+        <div id="oc-ergebnis-bereich" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="prose">
+        <h2>Fachliche Grundlage</h2>
+        <p>Der Autismuskompakt-Orientierungscheck ist kein validiertes diagnostisches Instrument.</p>
+        <p>
+          Seine Themenbereiche orientieren sich an aktuellen diagnostischen Beschreibungen von Autismus sowie an
+          Fachliteratur zu sozialer Kommunikation, repetitiven und unflexiblen Verhaltensmustern, sensorischer
+          Verarbeitung und Camouflaging.
+        </p>
+        <p>
+          Eine fachgerechte Autismusdiagnostik umfasst deutlich mehr als einen Selbstfragebogen und berücksichtigt
+          unter anderem die Entwicklung seit der Kindheit, verschiedene Lebensbereiche sowie mögliche andere
+          Erklärungen.
+        </p>
+      </div>
+      <Quellenblock sources={quellen} context="Autismuskompakt-Orientierungscheck" />
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { FRAGEN, ANTWORTOPTIONEN } from "../../../data/orientierungscheck-fragen.ts";
+  import {
+    calculateAllCategoryScores,
+    determineProfileLevel,
+    isAnswered,
+    PROFILE_LEVEL_LABELS,
+  } from "../../../lib/orientierungscheck/scoring.ts";
+  import {
+    determineMainPattern,
+    selectImmediateHelp,
+    selectPersonalFeedback,
+    SOFORTHILFE_ABSCHLUSS,
+    type ContentBlock,
+  } from "../../../lib/orientierungscheck/resultRules.ts";
+  import type { Answers, AnswerValue } from "../../../lib/orientierungscheck/types.ts";
+  import type { AuswertbareKategorie, CategoryScore } from "../../../lib/orientierungscheck/scoring.ts";
+
+  const GESAMTZAHL_FRAGEN = FRAGEN.length;
+
+  // Reiner In-Memory-Zustand. Keine Persistenz jeglicher Art (kein
+  // localStorage/sessionStorage/Cookie) - beim Neuladen sind die Antworten
+  // weg (Master-Projektauftrag, Abschnitt 5).
+  let answers: Answers = {};
+  let aktuelleFrageIndex = 1;
+
+  const startBereich = document.getElementById("oc-start");
+  const startButton = document.getElementById("oc-start-button") as HTMLButtonElement | null;
+  const frageBereich = document.getElementById("oc-frage-bereich");
+  const ergebnisBereich = document.getElementById("oc-ergebnis-bereich");
+  const fortschrittText = document.getElementById("oc-fortschritt-text");
+  const progressbar = document.getElementById("oc-progressbar");
+  const fortschrittFuellung = document.getElementById("oc-fortschritt-fuellung") as HTMLElement | null;
+  const frageForm = document.getElementById("oc-frage-form") as HTMLFormElement | null;
+  const frageText = document.getElementById("oc-frage-text");
+  const antwortoptionenContainer = document.getElementById("oc-antwortoptionen");
+  const zurueckButton = document.getElementById("oc-zurueck") as HTMLButtonElement | null;
+  const weiterButton = document.getElementById("oc-weiter") as HTMLButtonElement | null;
+
+  function escapeHtml(wert: string): string {
+    return wert
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function werteZuRadioValue(wert: AnswerValue): string {
+    return wert === null ? "null" : String(wert);
+  }
+
+  function radioValueZuWert(value: string): AnswerValue {
+    return value === "null" ? null : (Number(value) as 0 | 1 | 2 | 3 | 4);
+  }
+
+  function renderFrage(index: number) {
+    const frage = FRAGEN[index - 1];
+    if (!frage || !frageText || !antwortoptionenContainer || !fortschrittText || !progressbar || !fortschrittFuellung) return;
+
+    const fortschrittLabel = `Frage ${index} von ${GESAMTZAHL_FRAGEN}`;
+    fortschrittText.textContent = fortschrittLabel;
+    progressbar.setAttribute("aria-valuenow", String(index));
+    progressbar.setAttribute("aria-label", fortschrittLabel);
+    fortschrittFuellung.style.width = `${(index / GESAMTZAHL_FRAGEN) * 100}%`;
+
+    frageText.textContent = frage.text;
+
+    const bestehendeAntwort = answers[frage.id];
+    antwortoptionenContainer.innerHTML = ANTWORTOPTIONEN.map((option, i) => {
+      const radioValue = werteZuRadioValue(option.value);
+      const inputId = `oc-option-${i}`;
+      const checked = bestehendeAntwort !== undefined && werteZuRadioValue(bestehendeAntwort) === radioValue ? "checked" : "";
+      return `<label class="oc-option">
+        <input type="radio" name="oc-antwort" id="${inputId}" value="${radioValue}" ${checked} />
+        <span>${escapeHtml(option.label)}</span>
+      </label>`;
+    }).join("");
+
+    if (zurueckButton) zurueckButton.disabled = index === 1;
+    if (weiterButton) {
+      weiterButton.textContent = index === GESAMTZAHL_FRAGEN ? "Meine Auswertung ansehen" : "Weiter";
+      weiterButton.disabled = !isAnswered(bestehendeAntwort);
+    }
+
+    frageText.focus();
+  }
+
+  function aktuelleAntwortSpeichern() {
+    const checked = antwortoptionenContainer?.querySelector<HTMLInputElement>('input[name="oc-antwort"]:checked');
+    if (!checked) return;
+    const frage = FRAGEN[aktuelleFrageIndex - 1];
+    answers[frage.id] = radioValueZuWert(checked.value);
+  }
+
+  function renderContentBlock(block: ContentBlock, headingTag: "h2" | "h3"): string {
+    let html = `<${headingTag}>${escapeHtml(block.heading)}</${headingTag}>`;
+    for (const absatz of block.paragraphs ?? []) {
+      html += `<p>${escapeHtml(absatz)}</p>`;
+    }
+    for (const liste of block.lists ?? []) {
+      if (liste.title) html += `<p class="oc-liste-titel">${escapeHtml(liste.title)}</p>`;
+      html += `<ul>${liste.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+    }
+    return html;
+  }
+
+  const PROFIL_BEREICHE: Array<{ kategorie: AuswertbareKategorie; label: string }> = [
+    { kategorie: "social", label: "Soziale Kommunikation" },
+    { kategorie: "routine", label: "Vorhersehbarkeit & Routinen" },
+    { kategorie: "interests", label: "Intensive Interessen" },
+    { kategorie: "sensory", label: "Sensorische Wahrnehmung" },
+    { kategorie: "masking", label: "Masking & Anpassung" },
+    { kategorie: "regulation", label: "Überlastung & Regulation" },
+  ];
+
+  function renderProfilUebersicht(scores: Record<AuswertbareKategorie, CategoryScore>, frage30: AnswerValue | undefined): string {
+    const zeilen = PROFIL_BEREICHE.map(({ kategorie, label }) => {
+      const score = scores[kategorie];
+      const levelText =
+        score.status === "insufficient" ? "Noch nicht sinnvoll einzuordnen" : PROFILE_LEVEL_LABELS[determineProfileLevel(score.percent as number)];
+      const segmente =
+        score.status === "insufficient"
+          ? 0
+          : Math.max(1, Math.round(((score.percent as number) / 100) * 5));
+      const segmentHtml = Array.from({ length: 5 }, (_, i) => `<span class="oc-segment${i < segmente ? " oc-segment--gefuellt" : ""}"></span>`).join(
+        ""
+      );
+      return `<li class="oc-profil-zeile">
+        <span class="oc-profil-zeile__label">${escapeHtml(label)}</span>
+        <span class="oc-profil-zeile__segmente" aria-hidden="true">${segmentHtml}</span>
+        <span class="oc-profil-zeile__text">${escapeHtml(levelText)}</span>
+      </li>`;
+    }).join("");
+
+    const entwicklungHtml =
+      typeof frage30 === "number" && frage30 >= 3
+        ? `<p class="oc-entwicklungsbezug">Hinweise bereits aus Kindheit/Jugend</p>`
+        : "";
+
+    return `<h2>Dein Profil im Überblick</h2>
+      <ul class="oc-profil-liste">${zeilen}</ul>
+      ${entwicklungHtml}`;
+  }
+
+  function renderErgebnis() {
+    if (!ergebnisBereich) return;
+
+    const scores = calculateAllCategoryScores(answers);
+    const hauptmuster = determineMainPattern(scores, answers[30]);
+    const persoenlicheRueckmeldungen = selectPersonalFeedback(scores, answers);
+    const soforthilfe = selectImmediateHelp(answers);
+
+    let html = `<h2 id="oc-ergebnis-heading" tabindex="-1">Deine Auswertung</h2>`;
+
+    html += renderProfilUebersicht(scores, answers[30]);
+
+    html += `<h2>Zuerst etwas Wichtiges</h2>
+      <p>Du hast gerade über Erfahrungen nachgedacht, über die viele Menschen sehr lange kaum sprechen – oder die sie irgendwann für selbstverständlich halten.</p>
+      <p>Vielleicht hast du dich bei einigen Fragen sofort wiedererkannt.</p>
+      <p>Vielleicht war manches schwer zu beantworten.</p>
+      <p>Vielleicht überrascht dich dein Ergebnis.</p>
+      <p>Keine dieser Reaktionen ist falsch.</p>
+      <p>Deine Antworten sind kein Urteil über dich.</p>
+      <p>Sie zeigen einige Muster, Bedürfnisse und Belastungen, die du bei dir selbst wahrgenommen hast.</p>`;
+
+    for (const feedback of persoenlicheRueckmeldungen) {
+      html += renderContentBlock(feedback.content, "h3");
+    }
+
+    if (soforthilfe) {
+      html += renderContentBlock(soforthilfe, "h3");
+      html += `<p>${escapeHtml(SOFORTHILFE_ABSCHLUSS)}</p>`;
+    }
+
+    html += renderContentBlock(hauptmuster.content, "h2");
+
+    html += `<h2>Was du schon heute verändern darfst</h2>
+      <p>Du brauchst keine Diagnose, um Bedingungen zu schaffen, unter denen dein Alltag leichter wird.</p>
+      <ul>
+        <li>Wenn weniger Licht angenehmer ist, darf das Licht weniger sein.</li>
+        <li>Wenn ein ruhiger Platz hilft, darfst du den ruhigen Platz wählen.</li>
+        <li>Wenn klare Absprachen helfen, darfst du danach fragen.</li>
+        <li>Wenn du Pausen brauchst, darfst du sie einplanen.</li>
+        <li>Wenn Routinen dir Sicherheit geben, dürfen sie Teil deines Alltags sein.</li>
+        <li>Wenn schriftliche Kommunikation leichter ist, darfst du schriftlich kommunizieren.</li>
+        <li>Wenn du nach sozialen Kontakten Erholung brauchst, darfst du sie einplanen.</li>
+        <li>Wenn Vorbereitung Sicherheit gibt, darfst du dich vorbereiten.</li>
+      </ul>
+      <p>Es geht nicht darum, dich möglichst gut an jede Umgebung anzupassen.</p>
+      <p>Es geht auch darum herauszufinden, welche Umgebung zu dir passt.</p>`;
+
+    html += `<h2>Nächste Schritte</h2>
+      <ol>
+        <li>Beobachte deinen Alltag</li>
+        <li>Sammle konkrete Beispiele</li>
+        <li>Schau zurück</li>
+        <li>Informiere dich weiter</li>
+        <li>Diagnostik erwägen – wenn die Frage für dich wichtig ist oder du Klarheit möchtest, kann eine spezialisierte Diagnostik ein sinnvoller nächster Schritt sein.</li>
+      </ol>`;
+
+    html += `<h2>Weiterführende Links</h2>
+      <ul>
+        <li><a href="/fuer-autistische-menschen/was-ist-autismus/">Was ist Autismus?</a></li>
+        <li><a href="/fuer-autistische-menschen/diagnostik/">Diagnostik & Tests</a></li>
+        <li><a href="/fuer-autistische-menschen/diagnostik/koennte-ich-autistisch-sein/">Könnte ich autistisch sein?</a></li>
+        <li><a href="/fuer-autistische-menschen/diagnostik/ablauf-der-diagnostik/">Ablauf einer Diagnostik</a></li>
+        <li><a href="/fuer-autistische-menschen/diagnostik/diagnostik-bei-erwachsenen/">Diagnostik bei Erwachsenen</a></li>
+        <li><a href="/fuer-autistische-menschen/masking/">Masking</a></li>
+        <li><a href="/fuer-autistische-menschen/reizverarbeitung/">Reizverarbeitung & sensorische Besonderheiten</a></li>
+        <li><a href="/fuer-autistische-menschen/alltag/">Alltag</a></li>
+        <li><a href="/hilfe-finden/kategorie/diagnostik/">Diagnostikstellen finden</a></li>
+      </ul>
+
+      <h2>Passende Materialien</h2>
+      <ul>
+        <li><a href="/materialien/#01-autismusverdacht-was-jetzt">Autismusverdacht – was jetzt?</a></li>
+        <li><a href="/materialien/#02-vorbereitung-autismusdiagnostik">Vorbereitung auf die Autismusdiagnostik</a></li>
+        <li><a href="/materialien/#10-mein-persoenliches-autismus-profil">Mein persönliches Autismus-Profil</a></li>
+        <li><a href="/materialien/#12-was-hilft-mir-was-belastet-mich">Was hilft mir – was belastet mich?</a></li>
+        <li><a href="/materialien/#13-online-test-ergebnis-einordnen">Online-Test gemacht – was bedeutet mein Ergebnis?</a></li>
+        <li><a href="/materialien/#35-welche-unterstuetzung-brauche-ich">Welche Unterstützung brauche ich eigentlich?</a></li>
+        <li><a href="/materialien/">Alle Materialien ansehen</a></li>
+      </ul>
+
+      <p>
+        <button type="button" id="oc-neustart" class="button button--secondary">Orientierungscheck neu starten</button>
+      </p>`;
+
+    ergebnisBereich.innerHTML = html;
+    ergebnisBereich.hidden = false;
+    frageBereich?.setAttribute("hidden", "");
+
+    const ergebnisHeading = document.getElementById("oc-ergebnis-heading");
+    ergebnisHeading?.focus();
+
+    const neustartButton = document.getElementById("oc-neustart");
+    neustartButton?.addEventListener("click", neustart);
+  }
+
+  function neustart() {
+    answers = {};
+    aktuelleFrageIndex = 1;
+    if (ergebnisBereich) {
+      ergebnisBereich.innerHTML = "";
+      ergebnisBereich.hidden = true;
+    }
+    frageBereich?.setAttribute("hidden", "");
+    if (startBereich) startBereich.hidden = false;
+    startButton?.focus();
+  }
+
+  startButton?.addEventListener("click", () => {
+    if (startBereich) startBereich.hidden = true;
+    frageBereich?.removeAttribute("hidden");
+    aktuelleFrageIndex = 1;
+    renderFrage(aktuelleFrageIndex);
+  });
+
+  antwortoptionenContainer?.addEventListener("change", () => {
+    if (weiterButton) weiterButton.disabled = false;
+  });
+
+  zurueckButton?.addEventListener("click", () => {
+    aktuelleAntwortSpeichern();
+    if (aktuelleFrageIndex > 1) {
+      aktuelleFrageIndex -= 1;
+      renderFrage(aktuelleFrageIndex);
+    }
+  });
+
+  frageForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const checked = antwortoptionenContainer?.querySelector<HTMLInputElement>('input[name="oc-antwort"]:checked');
+    if (!checked) return; // "Weiter" ist ohnehin deaktiviert, doppelte Absicherung
+
+    aktuelleAntwortSpeichern();
+
+    if (aktuelleFrageIndex < GESAMTZAHL_FRAGEN) {
+      aktuelleFrageIndex += 1;
+      renderFrage(aktuelleFrageIndex);
+    } else {
+      renderErgebnis();
+    }
+  });
+</script>
+
+<style>
+  .prose h2 {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  .prose h2:first-of-type {
+    margin-top: var(--space-md);
+  }
+
+  .notice {
+    margin-top: var(--space-lg);
+    max-width: var(--measure);
+  }
+
+  html.no-js .oc-app {
+    display: none;
+  }
+
+  .oc-app {
+    margin-top: var(--space-lg);
+    max-width: var(--measure);
+  }
+
+  .oc-fortschritt-text {
+    font-weight: 700;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .oc-fortschritt-balken {
+    height: 0.5rem;
+    background-color: var(--color-background-alt);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: var(--space-lg);
+  }
+
+  .oc-fortschritt-balken__fuellung {
+    height: 100%;
+    background-color: var(--color-petrol);
+    transition: width var(--transition-fast);
+  }
+
+  #oc-frage-form fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #oc-frage-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: var(--space-md);
+    outline: none;
+  }
+
+  #oc-frage-text:focus-visible {
+    outline: var(--focus-width) solid var(--color-focus);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  .oc-antwortoptionen {
+    display: grid;
+    gap: var(--space-2xs);
+    margin-bottom: var(--space-lg);
+  }
+
+  .oc-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-sm);
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    min-height: 44px;
+  }
+
+  .oc-option:has(input:checked) {
+    border-color: var(--color-petrol);
+    background-color: var(--color-background-alt);
+  }
+
+  .oc-option input {
+    flex-shrink: 0;
+    width: 1.15rem;
+    height: 1.15rem;
+    accent-color: var(--color-petrol);
+  }
+
+  .oc-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-sm);
+  }
+
+  #oc-ergebnis-bereich :global(h2) {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  #oc-ergebnis-bereich :global(h2:first-child) {
+    margin-top: 0;
+    outline: none;
+  }
+
+  #oc-ergebnis-bereich :global(h3) {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xs);
+  }
+
+  #oc-ergebnis-bereich :global(.oc-liste-titel) {
+    font-weight: 700;
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-2xs);
+  }
+
+  #oc-ergebnis-bereich :global(ul),
+  #oc-ergebnis-bereich :global(ol) {
+    padding-inline-start: 1.25em;
+  }
+
+  #oc-ergebnis-bereich :global(li) {
+    margin-bottom: var(--space-2xs);
+  }
+
+  .oc-profil-liste {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-sm);
+  }
+
+  .oc-profil-zeile {
+    display: grid;
+    grid-template-columns: minmax(10rem, 1fr) auto;
+    grid-template-areas: "label text" "segmente segmente";
+    row-gap: var(--space-2xs);
+    align-items: center;
+  }
+
+  .oc-profil-zeile__label {
+    grid-area: label;
+    font-weight: 700;
+  }
+
+  .oc-profil-zeile__text {
+    grid-area: text;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .oc-profil-zeile__segmente {
+    grid-area: segmente;
+    display: flex;
+    gap: 0.2rem;
+  }
+
+  .oc-segment {
+    width: 1.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background-color: var(--color-background-alt);
+    border: var(--border-width) solid var(--color-border);
+  }
+
+  .oc-segment--gefuellt {
+    background-color: var(--color-petrol);
+    border-color: var(--color-petrol);
+  }
+
+  .oc-entwicklungsbezug {
+    margin-top: var(--space-sm);
+    font-style: italic;
+    color: var(--color-text-muted);
+  }
+
+  @media (min-width: 30rem) {
+    .oc-profil-zeile {
+      grid-template-columns: minmax(12rem, 1fr) auto auto;
+      grid-template-areas: "label segmente text";
+    }
+  }
+</style>

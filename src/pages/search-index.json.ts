@@ -95,6 +95,20 @@ export const GET: APIRoute = async () => {
     });
   }
 
+  // Der Autismuskompakt-Orientierungscheck ist keine Content-Collection-Seite
+  // und wird deshalb von Hand ergänzt (siehe Master-Projektauftrag,
+  // Abschnitt 40). Wichtig: nirgends als "Autismustest" bezeichnen.
+  entries.push({
+    id: "artikel/diagnostik-tests/orientierungscheck",
+    type: "artikel",
+    title: "Autismuskompakt-Orientierungscheck",
+    description:
+      "Ein wertschätzender Orientierungscheck für Erwachsene: eigene Erfahrungen mit sozialer Kommunikation, Reizen, Routinen, Masking und Überlastung besser einordnen. Kein diagnostischer Test.",
+    url: "/fuer-autistische-menschen/diagnostik/orientierungscheck/",
+    category: categoryLabels["diagnostik-tests"],
+    targetGroups: [targetGroupLabels["autistische-menschen"]],
+  });
+
   return new Response(JSON.stringify(entries), {
     headers: { "Content-Type": "application/json; charset=utf-8" },
   });

@@ -13,7 +13,7 @@ sources:
     url: "https://www.nice.org.uk/guidance/cg128"
 ---
 
-Einen Überblick über den weiteren Ablauf gibt der Beitrag [Ablauf einer Diagnostik](/fuer-autistische-menschen/diagnostik/ablauf-der-diagnostik/). Zu Screeningtests wie AQ, RAADS-R und CAT-Q gibt es einen eigenen Beitrag: [Screeningtests](/fuer-autistische-menschen/diagnostik/screeningtests/).
+Einen Überblick über den weiteren Ablauf gibt der Beitrag [Ablauf einer Diagnostik](/fuer-autistische-menschen/diagnostik/ablauf-der-diagnostik/). Zu Screeningtests wie AQ, RAADS-R und CAT-Q gibt es einen eigenen Beitrag: [Screeningtests](/fuer-autistische-menschen/diagnostik/screeningtests/). Wer die eigenen Erfahrungen erst strukturiert für sich selbst anschauen möchte, findet dafür den [Autismuskompakt-Orientierungscheck](/fuer-autistische-menschen/diagnostik/orientierungscheck/) – kein diagnostischer Test, sondern eine wertschätzende Orientierungshilfe.
 
 ## Für autistische Menschen
 

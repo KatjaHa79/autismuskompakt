@@ -23,7 +23,7 @@ sources:
     url: "https://www.mchatscreen.com/wp-content/uploads/2025/03/M-CHAT-R_F_Rev_March2025.pdf"
 ---
 
-Ein wichtiger Hinweis vorab: Autismuskompakt bettet keine vollständigen Testfragebögen zum Ausfüllen ein. Der Grund dafür steht am Ende dieses Beitrags.
+Ein wichtiger Hinweis vorab: Autismuskompakt bettet keine vollständigen Testfragebögen zum Ausfüllen ein. Der Grund dafür steht am Ende dieses Beitrags. Wer die eigenen Erfahrungen trotzdem strukturiert anschauen möchte, findet dafür den [Autismuskompakt-Orientierungscheck](/fuer-autistische-menschen/diagnostik/orientierungscheck/) – ausdrücklich kein Screening-Test, sondern eine wertschätzende Orientierungshilfe.
 
 ## Für autistische Menschen
 
