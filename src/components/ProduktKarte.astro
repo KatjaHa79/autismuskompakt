@@ -7,16 +7,23 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { title, description, cover, productType, targetGroups, externalUrl, provider, buttonLabel, demo } =
+const { title, subtitle, description, cover, productType, targetGroups, externalUrl, provider, buttonLabel, demo } =
   entry.data;
 
 const label = buttonLabel ?? productButtonLabels[productType];
+const istBuch = productType === "buch";
 ---
 
-<article class="produkt-karte" id={entry.id}>
+<article class:list={["produkt-karte", istBuch && "produkt-karte--buch"]} id={entry.id}>
   {
     cover ? (
-      <img class="cover" src={cover} alt={`Cover von ${title}`} />
+      <img
+        class:list={["cover", istBuch && "cover--buch"]}
+        src={cover}
+        alt={`Buchcover ${title}${subtitle ? ` – ${subtitle}` : ""} von Katja Hageneier`}
+        loading="lazy"
+        decoding="async"
+      />
     ) : (
       <p class="cover cover--placeholder placeholder">Cover folgt</p>
     )
@@ -27,7 +34,11 @@ const label = buttonLabel ?? productButtonLabels[productType];
     {demo && <span class="demo-badge">Beispieldatensatz</span>}
   </h3>
 
+  {subtitle && <p class="untertitel">{subtitle}</p>}
+
   <p class="typ">{productTypeLabels[productType]}</p>
+
+  {productType === "buch" && <p class="autorin">Autorin: Katja Hageneier</p>}
 
   <p class="beschreibung">{description}</p>
 
@@ -60,11 +71,29 @@ const label = buttonLabel ?? productButtonLabels[productType];
     margin-bottom: var(--space-2xs);
   }
 
+  /* Buchcover unverändert und vollständig im eigenen Seitenverhältnis
+     zeigen statt zuzuschneiden oder zu verzerren. */
+  .cover--buch {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 28rem;
+    aspect-ratio: auto;
+    object-fit: contain;
+    margin-inline: auto;
+  }
+
   .cover--placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+  }
+
+  .produkt-karte--buch {
+    border: none;
+    background-color: transparent;
+    padding: 0;
   }
 
   .produkt-karte h3 {
@@ -73,6 +102,20 @@ const label = buttonLabel ?? productButtonLabels[productType];
     flex-wrap: wrap;
     align-items: center;
     gap: var(--space-2xs);
+  }
+
+  .produkt-karte--buch h3 {
+    font-size: 1.35rem;
+    margin-top: var(--space-xs);
+  }
+
+  .untertitel {
+    font-style: italic;
+    color: var(--color-text-muted);
+  }
+
+  .autorin {
+    font-size: 0.9rem;
   }
 
   .demo-badge {

@@ -48,13 +48,9 @@ offenen Punkte dazu stehen jetzt weiter unten unter „Etappe 4“.
 
 ### Über mich (`src/pages/ueber-mich/index.astro`)
 
-- [ ] Kurze Vorstellung von Katja
-- [ ] Entstehungsgeschichte von Autismuskompakt
-- [ ] Fachlicher Hintergrund
-- [ ] Persönliche Ergänzung zur Haltung (ein allgemeiner Absatz dazu ist
-      bereits aus dem Master-Projektauftrag übernommen)
-- [ ] Kontaktmöglichkeit (z. B. E-Mail-Adresse), die hier veröffentlicht
-      werden darf
+- [x] Vollständig redaktionell ausformuliert (Vorstellung, Hintergrund,
+      Bücher, Haltung, Kontakt) – siehe Etappe „Shop finalisieren + Über
+      mich ergänzen“. Kontakt-E-Mail: `autismuskompakt@web.de`.
 
 ## Etappe 2 – Content-System
 
@@ -113,16 +109,14 @@ ist, sprich mich gerne an.
 
 ## Etappe 4 – Materialien und Shop
 
-### Bücher: echte Angaben ergänzen
+### Bücher: echte Angaben ergänzt
 
-- [ ] `src/content/produkte/autismus-kompakt.yaml`: `TODO_KATJA_SHOP_URL_AUTISMUS_KOMPAKT`
-      durch die echte Verkaufs-URL ersetzen, `description` und `cover` ergänzen
-- [ ] `src/content/produkte/neuro-kompass.yaml`: `TODO_KATJA_SHOP_URL_NEURO_KOMPASS`
-      durch die echte Verkaufs-URL ersetzen, `description` und `cover` ergänzen
-- [ ] Bei Bedarf `targetGroups` je Buch anpassen (aktuell vorläufig auf
-      autistische Menschen und Angehörige gesetzt)
+- [x] `src/content/produkte/autismus-kompakt.yaml` und
+      `src/content/produkte/neuro-kompass.yaml`: echte Verkaufs-URLs (BoD),
+      Beschreibung und Cover ergänzt (siehe Etappe „Shop finalisieren“).
 - [ ] Entscheiden, welche digitalen Produkte und welches Merchandise als
-      Erstes erscheinen sollen (Anleitung: `ANLEITUNG-SHOP.md`)
+      Erstes erscheinen sollen (Anleitung: `ANLEITUNG-SHOP.md`); Merchandise
+      ist auf der Shop-Seite bereits als „Ab Anfang Oktober 2026“ angekündigt.
 
 ### Demo-Datensätze ersetzen/entfernen
 
@@ -130,9 +124,8 @@ ist, sprich mich gerne an.
       (plus `public/downloads/materialien/beispiel-checkliste.pdf`) durch
       echte Materialien ersetzen bzw. löschen, sobald genug echte vorhanden
       sind (Anleitung: `ANLEITUNG-MATERIALIEN.md`)
-- [ ] Shop: `demo-workbook.yaml`, `demo-tasse.yaml` durch echte digitale
-      Produkte bzw. Merchandise ersetzen bzw. löschen (Anleitung:
-      `ANLEITUNG-SHOP.md`)
+- [x] Shop: `demo-workbook.yaml`, `demo-tasse.yaml` entfernt (siehe Etappe
+      „Shop finalisieren“).
 
 ### Selbst pflegen
 

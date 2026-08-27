@@ -322,6 +322,7 @@ const produkte = defineCollection({
   loader: glob({ pattern: "**/*.{yaml,yml}", base: "./src/content/produkte" }),
   schema: z.object({
     title: z.string().min(1, "title darf nicht leer sein."),
+    subtitle: z.string().optional(),
     description: z.string().min(1, "description darf nicht leer sein."),
     cover: z.string().optional(),
     productType: z.enum(productTypeValues, {

@@ -100,6 +100,15 @@ export const GET: APIRoute = async () => {
 
   const produkte = await getCollection("produkte");
   for (const entry of produkte) {
+    // Autorin und Untertitel stehen nicht als eigene Karten-Elemente in der
+    // Anzeige, sollen aber trotzdem auffindbar sein (z. B. "Katja Hageneier"
+    // oder "Praxis Guide"/"Alltagstipps" aus dem Untertitel). Bindestriche
+    // werden zu Leerzeichen, damit z. B. "Praxis-Guide" auch bei der Suche
+    // nach "Praxis Guide" gefunden wird.
+    const suchZusatz =
+      entry.data.productType === "buch"
+        ? [entry.data.subtitle?.replace(/-/g, " "), "Katja Hageneier"].filter(Boolean).join(" ")
+        : undefined;
     entries.push({
       id: `produkt/${entry.id}`,
       type: "produkt",
@@ -108,6 +117,7 @@ export const GET: APIRoute = async () => {
       url: `/shop/#${entry.id}`,
       category: productTypeLabels[entry.data.productType],
       targetGroups: entry.data.targetGroups.map((gruppe) => targetGroupLabels[gruppe]),
+      status: suchZusatz,
     });
   }
 

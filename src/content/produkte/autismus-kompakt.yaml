@@ -1,11 +1,21 @@
-# Echtes Buch von Katja. Cover, Beschreibung, Zielgruppe und Verkaufslink
-# sind noch Platzhalter – siehe TODO-KATJA.md.
 title: "Autismus kompakt"
-description: "Beschreibung folgt."
+subtitle: "Orientierung, Alltagstipps & Hilfen"
+description: >
+  „Autismus kompakt“ bietet Orientierung und praktische Unterstützung rund
+  um Autismus. Das Buch richtet sich an autistische Menschen, Angehörige,
+  Fachkräfte und Arbeitgeber und verbindet verständlich aufbereitetes
+  Wissen mit konkreten Hilfen für den Alltag. Checklisten, Fallbeispiele,
+  Reflexionsaufgaben und praxisnahe Tipps helfen dabei, individuelle
+  Bedürfnisse besser zu verstehen, Belastungen einzuordnen und passende
+  Unterstützung zu finden.
+cover: "/images/shop/autismus-kompakt-cover.jpg"
 productType: "buch"
 
 targetGroups:
   - autistische-menschen
   - angehoerige
+  - fachkraefte
 
-externalUrl: "TODO_KATJA_SHOP_URL_AUTISMUS_KOMPAKT"
+provider: "BoD – Books on Demand"
+buttonLabel: "Buch ansehen"
+externalUrl: "https://buchshop.bod.de/autismus-kompakt-orientierung-alltagstipps-und-hilfen-katja-hageneier-9783695159628"

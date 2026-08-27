@@ -24,6 +24,11 @@ const merchandise = sortiert.filter((p) => p.data.productType === "merchandise")
     <div class="container">
       <h1>Shop</h1>
       <p class="lead">
+        Hier findest du Bücher und künftig weitere Materialien rund um
+        Autismus, Neurodivergenz und einen Alltag, der zu den eigenen
+        Bedürfnissen passt.
+      </p>
+      <p class="lead-small">
         Auf Autismuskompakt.de findet kein eigener Kaufvorgang statt. Hier
         werden Produkte vorgestellt; der Kauf erfolgt über externe
         Verkaufsstellen, die als solche gekennzeichnet sind. Kostenlose
@@ -77,8 +82,7 @@ const merchandise = sortiert.filter((p) => p.data.productType === "merchandise")
 
   <section id="merchandise" class="section section--alt">
     <div class="container">
-      <h2>Kleidung & Merchandise</h2>
-      <p class="lead-small">Zum Beispiel T-Shirts, Hoodies, Taschen oder Tassen.</p>
+      <h2>Merchandise</h2>
       {
         merchandise.length > 0 ? (
           <ul class="card-grid">
@@ -90,7 +94,13 @@ const merchandise = sortiert.filter((p) => p.data.productType === "merchandise")
           </ul>
         ) : (
           <div class="notice">
-            <p>Diese Kategorie befindet sich im Aufbau.</p>
+            <p>Hier entsteht gerade etwas Neues.</p>
+            <p>
+              Ab Anfang Oktober 2026 findest du im Shop auch ausgewählte
+              Autismuskompakt-Produkte. Der Bereich wird derzeit
+              vorbereitet und nach und nach ergänzt.
+            </p>
+            <p class="lead-small">Schau gerne wieder vorbei.</p>
           </div>
         )
       }
