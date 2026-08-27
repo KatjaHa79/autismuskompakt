@@ -89,8 +89,15 @@ const zielgruppen = [
             <a class="button button--secondary" href="/hilfe-finden/">Anlaufstellen finden</a>
           </div>
         </div>
-        <div class="hero__accent" aria-hidden="true">
-          <div class="hero__accent-panel"></div>
+        <div class="hero__media">
+          <img
+            src="/images/hero/autismuskompakt-hero-stillleben.webp"
+            alt=""
+            width="1536"
+            height="1024"
+            loading="eager"
+            decoding="async"
+          />
         </div>
       </div>
     </div>
@@ -168,12 +175,23 @@ const zielgruppen = [
     margin-top: var(--space-md);
   }
 
-  /* Ruhige, rein dekorative Fläche neben dem Hero-Text – bewusst
-     abstrakt (kein Icon, keine Illustration), nur Farbe/Rahmen als
-     Akzent. Auf schmalen Bildschirmen ausgeblendet, damit der Text
-     nicht künstlich verdrängt wird. */
-  .hero__accent {
-    display: none;
+  /* Hero-Bild: ruhiges Stillleben statt abstrakter Fläche. Auf
+     schmalen Bildschirmen volle Breite im festen Seitenverhältnis
+     unterhalb der Buttons; ab der Zweispalten-Schwelle streckt es
+     sich auf die Höhe des Textbereichs und füllt die rechte Spalte. */
+  .hero__media {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: var(--border-width) solid var(--color-border);
+  }
+
+  .hero__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: center 60%;
   }
 
   @media (min-width: 64rem) {
@@ -182,26 +200,15 @@ const zielgruppen = [
       gap: var(--space-xl);
     }
 
-    .hero__accent {
-      display: block;
+    .hero__media {
       align-self: stretch;
-    }
-
-    .hero__accent-panel {
       height: 100%;
       min-height: 18rem;
-      position: relative;
-      border-radius: var(--radius);
-      background-color: var(--color-background-alt);
-      border: var(--border-width) solid var(--color-border);
     }
 
-    .hero__accent-panel::before {
-      content: "";
-      position: absolute;
-      inset: var(--space-lg);
-      border: 2px solid var(--color-bronze-soft);
-      border-radius: calc(var(--radius) - 0.25rem);
+    .hero__media img {
+      height: 100%;
+      aspect-ratio: auto;
     }
   }
 
