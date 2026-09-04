@@ -3,7 +3,7 @@ title: "Nachteilsausgleich & Schulbegleitung"
 description: "Nachteilsausgleich, sonderpädagogische Förderung und Schulbegleitung sind verschiedene Instrumente mit unterschiedlichen Voraussetzungen – Schulrecht ist dabei Landesrecht."
 category: "angehoerige-fachkraefte"
 targetGroups: ["autistische-menschen", "angehoerige", "fachkraefte"]
-updated: 2026-08-26
+updated: 2026-09-04
 sources:
   - title: "SGB IX §§ 75, 112; ggf. § 35a SGB VIII"
     url: "https://www.gesetze-im-internet.de/sgb_9_2018/"
@@ -35,3 +35,7 @@ Nachteilsausgleich kompensiert behinderungsbedingte Nachteile ohne unzulässige 
 Schulbegleitung ist eine Teilhabeleistung mit eigenen Voraussetzungen und ersetzt nicht den Bildungsauftrag der Schule. Autismusdiagnose ist nicht gleichbedeutend mit sonderpädagogischem Unterstützungsbedarf; Förderbedarf folgt dem landesrechtlichen Verfahren. Ziel ist Teilhabe und möglichst viel Selbstbestimmung, nicht unnötige Abhängigkeit.
 
 Übergänge sind risikoreiche Schnittstellen: Informationen, Zuständigkeiten, Räume und Abläufe sollten früh transparent gemacht werden. Der Übergang Schule → Ausbildung/Studium sollte mit sozialrechtlichen Leistungen verknüpft werden – siehe [Ausbildung & Studium](/fuer-autistische-menschen/alltag/ausbildung-und-studium/).
+
+## Nachteilsausgleich in Studium und Prüfungen
+
+Auch Hochschulen und Prüfungsordnungen enthalten eigene Nachteilsausgleichs-Regelungen – es gibt nicht den einen bundesweit identischen Nachteilsausgleich für Autismus. Mögliche Anpassungen sind nur beispielhaft: ein reizärmerer Prüfungsraum, zusätzliche oder anders strukturierte Pausen, angepasste Zeitregelungen, wenn der konkrete Nachteil dies rechtfertigt, oder schriftliche statt ausschließlich mündlicher Organisationsinformationen. Eine gute Begründung beschreibt nicht nur die gewünschte Maßnahme, sondern den Zusammenhang: Welche behinderungsbedingte Barriere besteht, wie wirkt sie sich auf die Leistungserbringung aus, und warum gleicht die beantragte Maßnahme gerade diesen Nachteil aus, ohne das Prüfungsziel zu verändern? Anträge sollten frühzeitig gestellt werden; bei Ablehnung kommt ein Rechtsbehelf in Betracht, siehe [Widerspruch, Klage und Akteneinsicht](/fuer-autistische-menschen/rechte-und-antraege/widerspruch-klage-und-akteneinsicht/).

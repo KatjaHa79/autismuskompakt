@@ -25,8 +25,8 @@ const kernbereiche = [
   },
   {
     icon: "ebenen",
-    label: "Nachteilsausgleich",
-    href: "/fuer-autistische-menschen/rechte-und-antraege/steuerliche-nachteilsausgleiche/",
+    label: "Nachteilsausgleich Schule & Studium",
+    href: "/angehoerige-fachkraefte/nachteilsausgleich-und-schulbegleitung/",
   },
   {
     icon: "regler",
@@ -35,8 +35,13 @@ const kernbereiche = [
   },
   {
     icon: "uhr",
-    label: "Leistungen zur Teilhabe am Arbeitsleben",
-    href: "/fuer-autistische-menschen/rechte-und-antraege/erwerbsminderungsrente/",
+    label: "Leistungen zur Teilhabe am Arbeitsleben (LTA)",
+    href: "/fuer-autistische-menschen/rechte-und-antraege/arbeit-lta-integrationsfachdienst/",
+  },
+  {
+    icon: "uhr",
+    label: "Integrationsfachdienst & Arbeitsassistenz",
+    href: "/fuer-autistische-menschen/rechte-und-antraege/arbeit-lta-integrationsfachdienst/",
   },
 ] as const;
 
@@ -60,8 +65,6 @@ const weitereThemen = [
     href: "/fuer-autistische-menschen/rechte-und-antraege/widerspruch-klage-und-akteneinsicht/",
   },
 ] as const;
-
-const weitereThemenGeplant = ["Unterstützung in der Schule", "Mobilität"];
 ---
 
 <BaseLayout
@@ -96,22 +99,15 @@ const weitereThemenGeplant = ["Unterstützung in der Schule", "Mobilität"];
       <div class="themen-kacheln">
         {weitereThemen.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
       </div>
-      <p class="geplant-hinweis">
-        In Vorbereitung: {weitereThemenGeplant.join(" · ")}.
-      </p>
 
       <div class="notice">
         <p>
-          Jede einzelne Leistungsseite folgt künftig einem einheitlichen
-          Aufbau: kurz gesagt, worum es geht, für wen die Leistung infrage
-          kommt, wo sie beantragt wird, Voraussetzungen, benötigte
-          Unterlagen, Ablauf, was nach dem Antrag passiert, was bei
-          Ablehnung zu tun ist, passende Downloads, Hilfe/Anlaufstellen,
-          offizielle Quellen und ein Stand-Datum.
-        </p>
-        <p>
-          Diese Seite befindet sich im Aufbau. Ausführliche, sozialrechtlich
-          geprüfte Beiträge entstehen in den nächsten Etappen.
+          Jede einzelne Leistungsseite folgt einem einheitlichen Aufbau:
+          kurz gesagt, worum es geht, für wen die Leistung infrage kommt, wo
+          sie beantragt wird, Voraussetzungen, benötigte Unterlagen, Ablauf,
+          was nach dem Antrag passiert, was bei Ablehnung zu tun ist,
+          passende Downloads, Hilfe/Anlaufstellen, offizielle Quellen und
+          ein Stand-Datum.
         </p>
       </div>
     </div>

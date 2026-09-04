@@ -3,10 +3,12 @@ title: "GdB (Grad der Behinderung)"
 description: "Der GdB beschreibt, wie stark gesundheitliche Beeinträchtigungen die gesellschaftliche Teilhabe einschränken. Bei Autismus gibt es keinen automatisch festgelegten GdB."
 category: "rechte-antraege"
 targetGroups: ["autistische-menschen", "angehoerige"]
-updated: 2026-08-26
+updated: 2026-09-04
 sources:
   - title: "SGB IX (u. a. §§ 2, 152)"
     url: "https://www.gesetze-im-internet.de/sgb_9_2018/"
+  - title: "Sozialgerichtsgesetz (SGG), §§ 84, 87, 88"
+    url: "https://www.gesetze-im-internet.de/sgg/"
   - title: "Versorgungsmedizin-Verordnung / Versorgungsmedizinische Grundsätze"
     url: "https://www.bmas.de/DE/Soziales/Teilhabe-und-Inklusion/Rehabilitation-Teilhabe/versorgungsmedizinische-grundsaetze.html"
   - title: "SGB X § 25 (Akteneinsicht); SGG § 84 (Widerspruchsfrist)"
@@ -24,6 +26,18 @@ Bei Autismus gibt es keinen automatisch festgelegten GdB. Mehrere Einzel-GdB (z.
 ## Für wen kommt die Leistung infrage?
 
 Für Menschen, deren gesundheitliche Beeinträchtigung sich spürbar auf Alltag, Arbeit, Wohnen oder soziale Teilhabe auswirkt – unabhängig davon, wie die zugrunde liegende Diagnose lautet. Entscheidend ist die konkrete Auswirkung, nicht die Diagnose allein.
+
+## Schwerbehindertenausweis und Gleichstellung
+
+Ab einem GdB von 50 liegt unter den weiteren gesetzlichen Voraussetzungen eine Schwerbehinderung vor. § 2 Abs. 2 SGB IX knüpft die Schwerbehinderteneigenschaft an einen GdB von mindestens 50 und an Wohnsitz, gewöhnlichen Aufenthalt oder Beschäftigung im Geltungsbereich des Gesetzes. Der Ausweis dient nach § 152 Abs. 5 SGB IX als Nachweis für Rechte und Hilfen.
+
+Bei GdB 30 oder 40 kann für das Arbeitsleben eine **Gleichstellung** durch die Bundesagentur für Arbeit in Betracht kommen: Nach § 2 Abs. 3 SGB IX sollen Menschen mit GdB 30 oder 40 schwerbehinderten Menschen gleichgestellt werden, wenn sie infolge ihrer Behinderung ohne die Gleichstellung einen geeigneten Arbeitsplatz nicht erlangen oder nicht behalten können. Die Gleichstellung ist vor allem arbeitsrechtlich relevant – sie vermittelt nicht sämtliche Rechte schwerbehinderter Menschen, insbesondere gelten Ausnahmen etwa beim Zusatzurlaub. Im Antrag wichtig: die konkrete behinderungsbedingte Gefährdung des Arbeitsplatzes oder die Schwierigkeit, einen geeigneten Arbeitsplatz zu erhalten – nicht nur allgemeine Unsicherheit des Arbeitsplatzes.
+
+## Merkzeichen: Nicht die Diagnose entscheidet
+
+Merkzeichen im Schwerbehindertenausweis setzen jeweils zusätzliche gesetzliche gesundheitliche Voraussetzungen voraus. Eine Autismusdiagnose allein begründet kein bestimmtes Merkzeichen – deshalb gibt es hier bewusst keine Tabelle nach dem Muster "Autismus = Merkzeichen X". Nach § 152 Abs. 4 SGB IX stellt die zuständige Behörde gesundheitliche Merkmale fest, wenn sie Voraussetzung für Nachteilsausgleiche sind; entscheidend sind die jeweiligen gesetzlichen und versorgungsmedizinischen Voraussetzungen.
+
+Relevant können je nach Merkzeichen zum Beispiel sein: Mobilität und die tatsächliche Fähigkeit, Wege im öffentlichen Raum zurückzulegen (u. a. für die Merkzeichen G und aG), Orientierung und notwendige Begleitung (u. a. Merkzeichen B), Art und Umfang fremder Hilfe im Alltag sowie weitere körperliche, neurologische oder psychische Beeinträchtigungen. Wenn ein Merkzeichen beantragt wird, sollte die Begründung gezielt die Voraussetzungen dieses Merkzeichens beschreiben – allgemeine Hinweise auf Reizempfindlichkeit oder Überforderung reichen dafür allein nicht aus.
 
 ## Wo wird sie beantragt?
 

@@ -11,7 +11,7 @@ sources:
     url: "https://www.gesetze-im-internet.de/agg/"
 ---
 
-Zu Ausbildung, Studium und Nachteilsausgleich: [Ausbildung & Studium](/fuer-autistische-menschen/alltag/ausbildung-und-studium/). Zu beruflicher Rehabilitation und Erwerbsminderung: [Erwerbsminderungsrente & Reha](/fuer-autistische-menschen/rechte-und-antraege/erwerbsminderungsrente/).
+Zu Ausbildung, Studium und Nachteilsausgleich: [Ausbildung & Studium](/fuer-autistische-menschen/alltag/ausbildung-und-studium/). Zu beruflicher Rehabilitation und Erwerbsminderung: [Erwerbsminderungsrente & Reha](/fuer-autistische-menschen/rechte-und-antraege/erwerbsminderungsrente/). Zu rechtlichen Fragen der Arbeitsplatzgestaltung, Integrationsfachdienst und LTA: [Arbeit: behinderungsgerechte Gestaltung, LTA und Integrationsfachdienst](/fuer-autistische-menschen/rechte-und-antraege/arbeit-lta-integrationsfachdienst/). Für Arbeitgeber:innen und Führungskräfte: [Arbeitgeber & Führungskräfte](/angehoerige-fachkraefte/arbeitgeber-und-fuehrungskraefte/).
 
 **Rechtlicher Hinweis:** Ansprüche und Verfahren hängen vom Einzelfall ab. Rechtsstand der zugrunde liegenden Inhalte: 26.08.2026.
 

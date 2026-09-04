@@ -10,7 +10,7 @@ sources:
     url: "https://doi.org/10.3389/fmed.2025.1481953"
 ---
 
-Vertiefende Inhalte zu Gesundheitsversorgung, Psychotherapie und Medikamenten findest du im Bereich Gesundheitsversorgung & Therapie.
+Vertiefende Inhalte zu Gesundheitsversorgung, Psychotherapie und Medikamenten findest du im Bereich Gesundheitsversorgung & Therapie. Für medizinisches Personal: [Medizinische Fachkräfte – Autismusfreundliche Gesundheitsversorgung](/angehoerige-fachkraefte/medizinische-fachkraefte/).
 
 ## Für autistische Menschen
 

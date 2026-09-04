@@ -27,9 +27,8 @@ const kommunikation = [
   },
   { icon: "kreise", label: "Missverständnisse", href: "/fuer-autistische-menschen/double-empathy/" },
   { icon: "sprechblase", label: "Small Talk", href: "/fuer-autistische-menschen/alltag/kommunikation-im-alltag/" },
+  { icon: "sprechblase", label: "Kommunikationshilfen & AAC", href: "/fuer-autistische-menschen/alltag/kommunikationshilfen/" },
 ] as const;
-
-const kommunikationGeplant = ["Kommunikationshilfen"];
 
 const alltagsorganisation = [
   { icon: "kalender", label: "Tagesstruktur", href: "/fuer-autistische-menschen/alltag/tagesstruktur-und-uebergaenge/" },
@@ -54,9 +53,8 @@ const beziehungen = [
     label: "Grenzen & Zustimmung",
     href: "/fuer-autistische-menschen/alltag/sexualitaet-grenzen-und-zustimmung/",
   },
+  { icon: "kreise", label: "Dating", href: "/fuer-autistische-menschen/alltag/dating/" },
 ] as const;
-
-const beziehungenGeplant = ["Dating"];
 
 const arbeitAusbildungStudium = [
   { icon: "uhr", label: "Arbeitsplatz gestalten", href: "/fuer-autistische-menschen/alltag/arbeit/" },
@@ -143,7 +141,6 @@ const gesundheitUndTherapie = [
       <div class="themen-kacheln">
         {kommunikation.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
       </div>
-      <p class="geplant-hinweis">In Vorbereitung: {kommunikationGeplant.join(" · ")}.</p>
 
       <h2>Alltagsorganisation</h2>
       <div class="themen-kacheln">
@@ -154,7 +151,6 @@ const gesundheitUndTherapie = [
       <div class="themen-kacheln">
         {beziehungen.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
       </div>
-      <p class="geplant-hinweis">In Vorbereitung: {beziehungenGeplant.join(" · ")}.</p>
 
       <h2>Arbeit, Ausbildung & Studium</h2>
       <div class="themen-kacheln">
@@ -173,12 +169,6 @@ const gesundheitUndTherapie = [
         {gesundheitUndTherapie.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
       </div>
 
-      <div class="notice">
-        <p>
-          Diese Seite befindet sich im Aufbau. Ausführliche Beiträge
-          entstehen in den nächsten Etappen.
-        </p>
-      </div>
     </div>
   </section>
 </BaseLayout>

@@ -5,7 +5,7 @@ category: "alltag-leben"
 targetGroups: ["autistische-menschen", "angehoerige", "fachkraefte"]
 ---
 
-Zu konkreten Sozialleistungen und Anträgen: [Rechte & Anträge](/fuer-autistische-menschen/rechte-und-antraege/).
+Zu konkreten Sozialleistungen und Anträgen: [Rechte & Anträge](/fuer-autistische-menschen/rechte-und-antraege/). Für Fachkräfte aus Beratung und Sozialarbeit: [Beratung & Sozialarbeit – Von der Information zur umsetzbaren Hilfe](/angehoerige-fachkraefte/beratung-und-sozialarbeit/).
 
 ## Für autistische Menschen
 

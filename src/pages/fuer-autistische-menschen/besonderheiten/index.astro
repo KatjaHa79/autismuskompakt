@@ -39,9 +39,10 @@ const neurodivergent = [
     label: "Intellektuelle Entwicklungsstörung",
     href: "/fuer-autistische-menschen/besonderheiten/intellektuelle-entwicklungsstoerung/",
   },
+  { icon: "mond", label: "Alexithymie", href: "/fuer-autistische-menschen/alexithymie/" },
+  { icon: "regler", label: "Exekutive Funktionen", href: "/fuer-autistische-menschen/exekutive-funktionen/" },
+  { icon: "wellen", label: "Interozeption", href: "/fuer-autistische-menschen/interozeption/" },
 ] as const;
-
-const neurodivergentGeplant = ["Alexithymie", "Exekutive Dysfunktion", "Interozeption"];
 
 const psychischeBelastungen = [
   { icon: "wellen", label: "Angst", href: "/fuer-autistische-menschen/besonderheiten/angststoerungen/" },
@@ -96,9 +97,6 @@ const koerperlicheBegleiterkrankungen = [
       <div class="themen-kacheln">
         {neurodivergent.map((thema) => <ThemenKachel icon={thema.icon} title={thema.label} href={thema.href} />)}
       </div>
-      <p class="geplant-hinweis">
-        In Vorbereitung: {neurodivergentGeplant.join(" · ")}.
-      </p>
 
       <h2>Psychische Belastungen</h2>
       <div class="themen-kacheln">
@@ -114,10 +112,9 @@ const koerperlicheBegleiterkrankungen = [
 
       <div class="notice">
         <p>
-          Diese Seite befindet sich im Aufbau. Beiträge werden nur auf
-          Grundlage nachvollziehbarer Quellen erstellt und unterscheiden
-          klar zwischen gesicherten Zusammenhängen und bloßen
-          Assoziationen.
+          Beiträge werden nur auf Grundlage nachvollziehbarer Quellen
+          erstellt und unterscheiden klar zwischen gesicherten
+          Zusammenhängen und bloßen Assoziationen.
         </p>
       </div>
     </div>

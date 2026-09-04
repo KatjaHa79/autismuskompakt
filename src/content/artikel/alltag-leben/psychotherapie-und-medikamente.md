@@ -18,6 +18,8 @@ sources:
 
 </div>
 
+Für Psychotherapeut:innen und Beratungsfachkräfte: [Psychotherapie & Beratung – Autismus mitdenken, ohne alles darauf zu reduzieren](/angehoerige-fachkraefte/psychotherapie-und-beratung/).
+
 ## Für autistische Menschen
 
 Psychotherapie kann bei Depression, Angst, Zwang, Trauma oder anderen klaren Belastungen sinnvoll sein. Therapie darf strukturiert, konkret, schriftlicher und sensorisch angepasst werden. Autismus selbst ist nicht automatisch das Therapieziel.

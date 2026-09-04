@@ -12,7 +12,7 @@ sources:
     url: "https://doi.org/10.1080/13603116.2025.2589290"
 ---
 
-Zu Mobbing und Schulabsentismus im Speziellen: [Mobbing & Schulabsentismus](/angehoerige-fachkraefte/mobbing-und-schulabsentismus/). Zu Nachteilsausgleich und Schulbegleitung: [Nachteilsausgleich & Schulbegleitung](/angehoerige-fachkraefte/nachteilsausgleich-und-schulbegleitung/).
+Zu Mobbing und Schulabsentismus im Speziellen: [Mobbing & Schulabsentismus](/angehoerige-fachkraefte/mobbing-und-schulabsentismus/). Zu Nachteilsausgleich und Schulbegleitung: [Nachteilsausgleich & Schulbegleitung](/angehoerige-fachkraefte/nachteilsausgleich-und-schulbegleitung/). Für pädagogische Fachkräfte vertiefend: [Pädagogische Fachkräfte – Verhalten verstehen, Lernzugang ermöglichen](/angehoerige-fachkraefte/paedagogische-fachkraefte/).
 
 **Hinweis:** Schulrecht ist Landesrecht. Konkrete Beispiele in den Quellen beziehen sich auf Nordrhein-Westfalen; für andere Bundesländer müssen Schulgesetze, Verordnungen und Prüfungsordnungen separat geprüft werden.
 
