@@ -1,0 +1,74 @@
+{
+  "redirects": [
+    {
+      "source": "/autismus-verstehen",
+      "destination": "/fuer-autistische-menschen/",
+      "permanent": true
+    },
+    {
+      "source": "/autismus-verstehen/",
+      "destination": "/fuer-autistische-menschen/",
+      "permanent": true
+    },
+    {
+      "source": "/autismus-verstehen/alltag-und-herausforderungen",
+      "destination": "/fuer-autistische-menschen/alltag/",
+      "permanent": true
+    },
+    {
+      "source": "/autismus-verstehen/alltag-und-herausforderungen/",
+      "destination": "/fuer-autistische-menschen/alltag/",
+      "permanent": true
+    },
+    {
+      "source": "/autismus-verstehen/strategien-und-unterstuetzung",
+      "destination": "/fuer-autistische-menschen/alltag/",
+      "permanent": true
+    },
+    {
+      "source": "/autismus-verstehen/strategien-und-unterstuetzung/",
+      "destination": "/fuer-autistische-menschen/alltag/",
+      "permanent": true
+    },
+    {
+      "source": "/autismus-verstehen/autismus-und-arbeitswelt",
+      "destination": "/fuer-autistische-menschen/alltag/arbeit/",
+      "permanent": true
+    },
+    {
+      "source": "/autismus-verstehen/autismus-und-arbeitswelt/",
+      "destination": "/fuer-autistische-menschen/alltag/arbeit/",
+      "permanent": true
+    },
+    {
+      "source": "/autismus-verstehen/anlaufstellen-und-hilfen",
+      "destination": "/hilfe-finden/",
+      "permanent": true
+    },
+    {
+      "source": "/autismus-verstehen/anlaufstellen-und-hilfen/",
+      "destination": "/hilfe-finden/",
+      "permanent": true
+    },
+    {
+      "source": "/downloads",
+      "destination": "/materialien/",
+      "permanent": true
+    },
+    {
+      "source": "/downloads/",
+      "destination": "/materialien/",
+      "permanent": true
+    },
+    {
+      "source": "/literatur",
+      "destination": "/shop/",
+      "permanent": true
+    },
+    {
+      "source": "/literatur/",
+      "destination": "/shop/",
+      "permanent": true
+    }
+  ]
+}
