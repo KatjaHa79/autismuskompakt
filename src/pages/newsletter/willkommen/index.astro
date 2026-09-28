@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ThemenKachel from "../../../components/ThemenKachel.astro";
+
+// Diese Seite ist als Weiterleitungsziel nach dem Bestätigungslink der
+// Brevo-Double-Opt-in-Mail gedacht (siehe ANLEITUNG-NEWSLETTER-BREVO.md).
+// Die Weiterleitung selbst wird in Brevo eingerichtet, nicht hier im Code.
+const naechsteSchritte = [
+  {
+    icon: "kompass",
+    label: "Autismus verstehen",
+    href: "/fuer-autistische-menschen/",
+    description: "Grundlagen zu Autismus, Wahrnehmung, Kommunikation und unterschiedlichen autistischen Erfahrungen.",
+  },
+  {
+    icon: "kalender",
+    label: "Alltag & Leben",
+    href: "/fuer-autistische-menschen/alltag/",
+    description: "Praktische Informationen zu Reizregulation, Kommunikation, Beziehungen, Wohnen, Arbeit und Selbstfürsorge.",
+  },
+  {
+    icon: "auge",
+    label: "Diagnostik & Tests",
+    href: "/fuer-autistische-menschen/diagnostik/",
+    description: "Informationen zur Autismusdiagnostik, zum Ablauf einer Abklärung und zu Screeningverfahren.",
+  },
+  {
+    icon: "buch",
+    label: "Rechte & Anträge",
+    href: "/fuer-autistische-menschen/rechte-und-antraege/",
+    description: "Orientierung zu Nachteilsausgleichen, GdB, Pflegegrad, Teilhabe und weiteren Leistungen.",
+  },
+  {
+    icon: "regler",
+    label: "Materialien",
+    href: "/materialien/",
+    description: "Kostenlose Checklisten, Vorlagen, Übersichten und Arbeitshilfen zum Herunterladen.",
+  },
+] as const;
+---
+
+<BaseLayout
+  title="Newsletter bestätigt"
+  description="Deine Anmeldung zum Newsletter von Autismuskompakt ist bestätigt. Schön, dass du dabei bist."
+>
+  <section class="section">
+    <div class="container">
+      <h1>Willkommen bei Autismuskompakt.</h1>
+      <p class="lead">Deine Anmeldung ist bestätigt. Schön, dass du dabei bist.</p>
+      <p>
+        Bis die erste E-Mail kommt, kannst du dich gerne schon auf Autismuskompakt umsehen:
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="weiter-heading">
+    <div class="container container--wide">
+      <h2 id="weiter-heading">Hier geht's weiter</h2>
+      <div class="themen-kacheln">
+        {
+          naechsteSchritte.map((schritt) => (
+            <ThemenKachel
+              icon={schritt.icon}
+              title={schritt.label}
+              description={schritt.description}
+              href={schritt.href}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    max-width: var(--measure);
+    font-size: 1.0625rem;
+  }
+
+  .themen-kacheln {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: var(--space-sm);
+  }
+</style>

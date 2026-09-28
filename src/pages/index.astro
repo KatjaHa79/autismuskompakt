@@ -138,6 +138,19 @@ const zielgruppen = [
       </div>
     </div>
   </section>
+
+  <section class="section newsletter-teaser" aria-labelledby="newsletter-teaser-heading">
+    <div class="container">
+      <h2 id="newsletter-teaser-heading">Neues von Autismuskompakt direkt ins Postfach</h2>
+      <p>
+        Ausgewählte neue Inhalte, praktische Hilfen und wichtige Neuigkeiten – übersichtlich,
+        verständlich und ohne Informationsflut.
+      </p>
+      <p>
+        <a class="button button--secondary" href="/newsletter/">Kostenlos zum Newsletter anmelden</a>
+      </p>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
@@ -216,5 +229,13 @@ const zielgruppen = [
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     gap: var(--space-sm);
+  }
+
+  .newsletter-teaser p {
+    max-width: var(--measure);
+  }
+
+  .newsletter-teaser p:last-child {
+    margin-top: var(--space-sm);
   }
 </style>

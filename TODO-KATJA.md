@@ -190,3 +190,26 @@ gefüllt.
 - Externe Links, die noch keine sichtbare ↗-Kennzeichnung hatten (Website
   einer Anlaufstelle, Quellenangaben), wurden zur Konsistenz mit den
   übrigen externen Links ergänzt.
+
+## Etappe 6 – Newsletter-Landingpage
+
+### Neue Seite `/newsletter/`
+
+- [ ] Formular-Action-URL in `src/pages/newsletter/index.astro` eintragen
+      (aktuell Platzhalter `TODO_KATJA_BREVO_NEWSLETTER_FORM_ACTION_URL`).
+      Vollständige Schritt-für-Schritt-Anleitung inkl. Textvorschlag für die
+      Bestätigungs-E-Mail: **`ANLEITUNG-NEWSLETTER-BREVO.md`**.
+- [ ] Entscheiden, ob `/newsletter/` in dieselbe Brevo-Liste wie
+      `/kostenloser-leitfaden/` einträgt oder in eine eigene neue Liste
+      (Details und Empfehlung in der Anleitung, Abschnitt 1).
+- [ ] Double-Opt-in in Brevo aktivieren und Weiterleitung nach Bestätigung
+      auf `https://autismuskompakt.de/newsletter/willkommen/` einstellen.
+- [ ] Öffnungs-/Klick-Tracking der Newsletter-Kampagnen in Brevo bewusst
+      prüfen (wird durch diese Umsetzung weder aktiviert noch deaktiviert).
+
+### Datenschutzerklärung
+
+- [x] Abschnitt „Newsletter und kostenloser Leitfaden“ um den zweiten
+      Anmeldeweg über `/newsletter/` ergänzt.
+- [ ] Stand-Datum ggf. aktualisieren, sobald du die Brevo-Einrichtung
+      abgeschlossen hast (siehe auch Etappe 0 oben).

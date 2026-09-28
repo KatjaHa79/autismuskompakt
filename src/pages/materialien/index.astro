@@ -136,6 +136,11 @@ const uebrige = alle.filter((entry) => !zugeordneteIds.has(entry.id));
       <p>
         <a class="button button--accent" href={BREVO_LEITFADEN_URL}>Kostenlosen Leitfaden erhalten</a>
       </p>
+      <p class="lead-small newsletter-hint">
+        Lieber nur ausgewählte neue Inhalte und Hinweise auf Materialien direkt per E-Mail, ohne
+        den Leitfaden? Dann ist der <a href="/newsletter/">Newsletter von Autismuskompakt</a>
+        das Richtige für dich.
+      </p>
     </div>
   </section>
 
@@ -218,6 +223,11 @@ const uebrige = alle.filter((entry) => !zugeordneteIds.has(entry.id));
   .lead-small {
     max-width: var(--measure);
     margin-bottom: var(--space-sm);
+  }
+
+  .newsletter-hint {
+    margin-top: var(--space-md);
+    margin-bottom: 0;
   }
 
   h2 {
