@@ -195,17 +195,21 @@ gefüllt.
 
 ### Neue Seite `/newsletter/`
 
-- [ ] Formular-Action-URL in `src/pages/newsletter/index.astro` eintragen
-      (aktuell Platzhalter `TODO_KATJA_BREVO_NEWSLETTER_FORM_ACTION_URL`).
-      Vollständige Schritt-für-Schritt-Anleitung inkl. Textvorschlag für die
-      Bestätigungs-E-Mail: **`ANLEITUNG-NEWSLETTER-BREVO.md`**.
-- [ ] Entscheiden, ob `/newsletter/` in dieselbe Brevo-Liste wie
-      `/kostenloser-leitfaden/` einträgt oder in eine eigene neue Liste
-      (Details und Empfehlung in der Anleitung, Abschnitt 1).
-- [ ] Double-Opt-in in Brevo aktivieren und Weiterleitung nach Bestätigung
-      auf `https://autismuskompakt.de/newsletter/willkommen/` einstellen.
-- [ ] Öffnungs-/Klick-Tracking der Newsletter-Kampagnen in Brevo bewusst
-      prüfen (wird durch diese Umsetzung weder aktiviert noch deaktiviert).
+- [x] Formular-Action-URL in `src/pages/newsletter/index.astro` eingetragen
+      (eigenes Brevo-Formular „Autismuskompakt – Newsletter“, getrennt vom
+      Leitfaden-Formular). Vollständiger Ist-Zustand dokumentiert in
+      **`ANLEITUNG-NEWSLETTER-BREVO.md`**.
+- [x] Eigene Brevo-Liste „Autismuskompakt – Newsletter“ eingerichtet
+      (getrennt von `/kostenloser-leitfaden/`).
+- [x] Double-Opt-in in Brevo aktiv; Weiterleitung nach Bestätigung auf
+      `https://www.autismuskompakt.de/newsletter/willkommen/` eingestellt.
+- [ ] Öffnungs-/Klick-Tracking der Newsletter-Kampagnen in Brevo weiterhin
+      bewusst prüfen (wird durch diese Umsetzung weder aktiviert noch
+      deaktiviert).
+- [ ] Falls gewünscht: prüfen, ob `main.js` von Brevo zur Laufzeit weitere
+      externe Anfragen auslöst (z. B. an assets.brevo.com) – aus dieser
+      Arbeitsumgebung heraus technisch nicht mit Netzwerk-Mitschnitt
+      überprüfbar, siehe `ANLEITUNG-NEWSLETTER-BREVO.md`, Abschnitt 5.
 
 ### Datenschutzerklärung
 

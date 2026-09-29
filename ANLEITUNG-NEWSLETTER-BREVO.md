@@ -1,88 +1,77 @@
 # Anleitung: Newsletter-Landingpage in Brevo einrichten
 
-Diese Anleitung gehört zur neuen Seite `/newsletter/` (Datei
+Diese Anleitung gehört zur Seite `/newsletter/` (Datei
 `src/pages/newsletter/index.astro`) und zur Bestätigungsseite
 `/newsletter/willkommen/` (Datei `src/pages/newsletter/willkommen/index.astro`).
-Der Website-Code ist fertig; damit sich Interessierte darüber tatsächlich
-für den Newsletter anmelden können, fehlen noch ein paar Einstellungen, die
-sich nur in deinem Brevo-Konto vornehmen lassen.
 
-## 1. Entscheidung: eigene Liste oder bestehende Liste?
+**Status: eingerichtet.** Das eigene Brevo-Formular „Autismuskompakt –
+Newsletter“ (Liste „Autismuskompakt – Newsletter“, Double-Opt-in aktiv) ist
+verbunden. Diese Datei dokumentiert den jetzt tatsächlich eingerichteten
+Zustand als Referenz für spätere Änderungen.
 
-Die bisherige Seite `/kostenloser-leitfaden/` meldet Interessierte für
-"Leitfaden + Newsletter" gemeinsam an (eine Checkbox, ein Formular, eine
-Liste). Die neue Seite `/newsletter/` ist bewusst *ohne* Leitfaden-Bezug
-formuliert – wer sich dort anmeldet, erwartet nur den Newsletter, nicht
-automatisch den Leitfaden.
+## 1. Liste/Formular
 
-Bitte entscheide, wie du das in Brevo abbilden möchtest:
+Es wird bewusst **nicht** dasselbe Formular wie `/kostenloser-leitfaden/`
+verwendet, sondern ein eigenes, separates Formular „Autismuskompakt –
+Newsletter“ mit eigener Liste „Autismuskompakt – Newsletter“. Wer sich über
+`/newsletter/` anmeldet, landet dadurch **nicht** automatisch in der
+Leitfaden-Automation und bekommt **nicht** ungefragt den Leitfaden
+zugeschickt. Das bestehende Leitfaden-Formular wurde durch diese Einrichtung
+nicht verändert.
 
-- **Option A (empfohlen, wenn beide Zielgruppen inhaltlich denselben
-  Newsletter erhalten sollen):** Beide Formulare tragen in dieselbe
-  Brevo-Liste ein. Dann reicht ein bestehendes Formular; du musst nur die
-  Formular-Action-URL wiederverwenden.
-- **Option B (sauberer trennbar, mehr Aufwand):** Eine eigene Liste
-  "Newsletter (ohne Leitfaden)" anlegen, damit du später unterscheiden
-  kannst, wer den Leitfaden bereits hat und wer nicht.
+## 2. Formular-Konfiguration (Ist-Zustand)
 
-Ich habe **keine eigene Liste erfunden und keine bestehende ID
-wiederverwendet**, weil ich nicht sicher weiß, ob deine
-Leitfaden-Automation (die nach Bestätigung automatisch den Leitfaden
-verschickt) an die Liste oder an das Formular gebunden ist. Würde ich
-einfach dieselbe Formular-URL wie bei `/kostenloser-leitfaden/`
-eintragen, könnten Newsletter-only-Anmeldungen ungewollt auch den
-Leitfaden-Versand auslösen. Bitte prüfe das in deiner Brevo-Automation,
-bevor du dich für Option A oder B entscheidest.
+| Feld/Einstellung | Wert |
+|---|---|
+| Formular-Action-URL | `https://8d06c77e.sibforms.com/serve/MUIFALamz7EXR90AoDn-Liem1788vONX3YdCMfh1asTW2grSbmrW4aWXMxl4EAWY52qxMAadK9K16u-WLQVtqFdmP-DbgmweEmI2Pmo02jdIVxptfA1_otAE9oow0rdoqc8-HBmcqHisHfnRG3vtfMabE0r4VUF-eoEfD272UZWZ5NpLkaKRAp9MKqMOpurqgvGMT322O8AnxxMLOw==` |
+| E-Mail-Feld | `name="EMAIL"`, Pflichtfeld |
+| Einwilligung | `name="OPT_IN"`, `value="1"`, Pflichtfeld, nicht vorausgewählt |
+| Honeypot (Spam-Schutz) | `name="email_address_check"`, verstecktes Textfeld |
+| Brevo-`locale` (verstecktes Feld) | `en` |
+| `data-type` | `subscription` |
+| Double-Opt-in | aktiv – Kontakt wird erst nach Klick auf den DOI-Link endgültig in die Liste aufgenommen |
+| Weiterleitung nach DOI-Bestätigung | `https://www.autismuskompakt.de/newsletter/willkommen/` (in Brevo hinterlegt, nicht im Code) |
+| Separate Weiterleitung direkt nach Formularabsenden | keine – stattdessen Inline-Erfolgsmeldung „Fast geschafft“ auf derselben Seite |
+| Zusätzliche Bestätigungsmail nach DOI | deaktiviert |
+| AUTOHIDE | aktiviert (`Boolean(1)`) – Formular verschwindet nach erfolgreichem Absenden, Erfolgsmeldung erscheint |
 
-## 2. Formular in Brevo anlegen
+### Zum `locale`-Feld
 
-1. In Brevo einloggen → **Kontakte → Formulare** (bzw. "Contacts → Forms").
-2. Neues Formular vom Typ **"Abonnement" / "Subscription"** anlegen (oder
-   das bestehende Leitfaden-Formular duplizieren, falls du Option A
-   gewählt hast).
-3. Zielliste auswählen bzw. neue Liste "Newsletter" anlegen (Option B).
-4. **Double-Opt-in aktivieren** (in den Formular- bzw. Listeneinstellungen
-   "Double opt-in" einschalten, falls nicht schon auf Kontoebene aktiv).
-5. Feld **E-Mail** als Pflichtfeld belassen. Ein Vorname-Feld wird bewusst
-   **nicht** verwendet (siehe Abschlussbericht – Datenminimierung).
-6. Bestätigungs-E-Mail-Vorlage (DOI-Mail) einrichten – Text siehe Abschnitt 4
-   unten.
-7. **Weiterleitungs-URL nach Bestätigung** eintragen:
-   `https://autismuskompakt.de/newsletter/willkommen/`
-8. Formular speichern und den **HTML-Code exportieren**
-   ("Share" / "Formularcode" / "Embed-Code").
+Das versteckte Brevo-`locale`-Feld steht auf `en`, weil das Formular in Brevo
+so angelegt ist. Das betrifft nur interne Brevo-Logik (z. B. Formatannahmen);
+**alle sichtbaren Texte auf der Seite bleiben deutsch**, weil sämtliche
+Meldungstexte (Erfolg, Fehler, Pflichtfeld, ungültige Eingabe) explizit über
+eigene `window.*`-Variablen in `src/pages/newsletter/index.astro`
+überschrieben werden und nicht von Brevos Standard-Locale-Texten abhängen.
 
-## 3. Formular-Action-URL in den Code eintragen
+## 3. Formular-Texte (Ist-Zustand)
 
-In `src/pages/newsletter/index.astro` findest du diese Zeile:
+- **Erfolgsmeldung:** „Fast geschafft! Wir haben dir eine E-Mail geschickt.
+  Bitte klicke auf den Bestätigungslink in dieser E-Mail, um deine Anmeldung
+  zum Newsletter abzuschließen. Falls du die E-Mail nicht gleich findest,
+  schau bitte auch in deinem Spam-Ordner nach.“
+- **Fehlermeldung (Übermittlung fehlgeschlagen):** „Deine Anmeldung konnte
+  leider nicht übermittelt werden. Bitte versuche es noch einmal. Sollte es
+  weiterhin nicht funktionieren, versuche es bitte zu einem späteren
+  Zeitpunkt erneut.“
+- **Ungültige Eingabe (E-Mail):** „Bitte überprüfe deine Angaben. Achte
+  insbesondere darauf, dass deine E-Mail-Adresse vollständig und korrekt
+  eingegeben ist.“
+- **Leeres Pflichtfeld:** „Bitte fülle dieses Pflichtfeld aus.“
+- **Einwilligungstext (Checkbox):** „Ich möchte den Newsletter von Autismus
+  kompakt per E-Mail erhalten. Ich kann meine Einwilligung jederzeit mit
+  Wirkung für die Zukunft widerrufen, zum Beispiel über den Abmeldelink in
+  jeder E-Mail. Weitere Informationen finde ich in der
+  Datenschutzerklärung.“ Der Link „Datenschutzerklärung“ zeigt auf
+  `/datenschutz/` (relativer Pfad, entspricht der Projektkonvention und ist
+  auf der ausgelieferten Seite identisch zu
+  `https://www.autismuskompakt.de/datenschutz/`).
 
-```html
-action="TODO_KATJA_BREVO_NEWSLETTER_FORM_ACTION_URL"
-```
-
-Ersetze `TODO_KATJA_BREVO_NEWSLETTER_FORM_ACTION_URL` durch die echte
-`action`-URL aus deinem Brevo-Formular-Export (beginnt meist mit
-`https://xxxxxxxx.sibforms.com/serve/...`).
-
-Prüfe beim Export außerdem, ob die **Feldnamen** in deinem Export mit dem
-Code übereinstimmen (`EMAIL`, `OPT_IN`, verstecktes Feld
-`email_address_check` als Spam-Schutz, verstecktes Feld `locale`). Falls
-Brevo für deine neue Liste andere interne Feldnamen vergibt, übernimm diese
-Namen aus deinem Export – die Gestaltung (CSS-Klassen) kannst du dabei
-unverändert lassen.
-
-**Wichtig:** Diese Formular-URL ist kein Geheimnis/API-Key – sie darf
-öffentlich im HTML stehen, genau wie beim bestehenden Leitfaden-Formular.
-Ein echter Brevo-API-Key darf dagegen niemals in den Code oder ins
-Repository – den gibt es hier auch nicht, weil die Anmeldung technisch
-komplett über das eingebettete Brevo-Formular läuft (kein eigener
-Server, kein API-Aufruf aus dem Code).
-
-## 4. Textvorschlag für die Brevo-DOI-Bestätigungsmail
+## 4. DOI-Bestätigungsmail
 
 Diese Mail wird **nicht** im Website-Code verwaltet, sondern als
 E-Mail-Vorlage in Brevo hinterlegt (Formular- bzw. Listeneinstellungen →
-Double-Opt-in-E-Mail).
+Double-Opt-in-E-Mail). Textvorschlag (unverändert gültig):
 
 **Betreff:**
 
@@ -106,29 +95,46 @@ Double-Opt-in-E-Mail).
 > Viele Grüße
 > Katja von Autismuskompakt
 
-Der Bestätigungs-Button/Link wird von Brevo automatisch eingefügt
-(Platzhalter in der Vorlage, z. B. `{{ confirmation_link }}` je nach
-Brevo-Editor).
+## 5. Externe Ressourcen beim Aufruf von `/newsletter/`
 
-## 5. Tracking-Einstellungen prüfen
+Die Seite lädt genau **eine** externe Ressource: das Brevo-Skript
+`https://sibforms.com/forms/end-form/build/main.js` (deklarativ im
+`<script>`-Tag der Seite). Es wird **keine** zusätzliche externe
+Brevo-Stylesheet-Datei eingebunden – das Formular wird vollständig mit dem
+eigenen CSS der Seite gestaltet (Work Sans, bestehende Petrol-/Bronze-Farben,
+bestehende Formularoptik), nicht mit Brevos Standarddesign. Dieselbe
+Vorgehensweise (nur `main.js`, kein separates Brevo-CSS) ist bereits auf
+`/kostenloser-leitfaden/` produktiv im Einsatz.
+
+Ein direkter Netzwerk-Mitschnitt, ob `main.js` selbst zur Laufzeit
+zusätzliche Anfragen an weitere Brevo-Domains (z. B. `assets.brevo.com`)
+auslöst, war in dieser Arbeitsumgebung technisch nicht möglich (kein
+Browser-Werkzeug verfügbar, ausgehende Verbindung zu sibforms.com für eine
+statische Prüfung des Skripts wurde von der Netzwerkrichtlinie dieser Sitzung
+blockiert). Das ist bewusst als offener Prüfpunkt dokumentiert, nicht
+stillschweigend als „unbedenklich“ angenommen.
+
+## 6. Tracking-Einstellungen (weiterhin offen)
 
 Brevo bietet in den Listen-/Kampagnen-Einstellungen häufig standardmäßig
 **Öffnungs- und Klickmessung** für versendete Newsletter-Kampagnen an. Das
 ist unabhängig vom Anmeldeformular auf der Website und wird durch diese
-Umsetzung **nicht aktiviert oder deaktiviert** – bitte selbst entscheiden
-und in Brevo unter den Kampagnen- bzw. Kontoeinstellungen kontrollieren,
-ob Öffnungs-/Klick-Tracking in den tatsächlich versendeten
+Umsetzung **nicht aktiviert oder deaktiviert** – bitte selbst entscheiden und
+in Brevo unter den Kampagnen- bzw. Kontoeinstellungen kontrollieren, ob
+Öffnungs-/Klick-Tracking in den tatsächlich versendeten
 Newsletter-Ausgaben aktiv sein soll, und dies ggf. in der
 Datenschutzerklärung ergänzen, falls es aktiviert wird.
 
-## 6. Redirect-URL, ID, Environment Variables – Übersicht
+## 7. Übersicht offener Punkte
 
-| Was | Wo einzutragen | Status |
-|---|---|---|
-| Formular-Action-URL | `src/pages/newsletter/index.astro`, Attribut `action` | **offen** – Platzhalter ersetzen |
-| Liste/Formular in Brevo (Option A oder B) | Brevo-Dashboard | **offen** – Entscheidung nötig |
-| Double-Opt-in aktivieren | Brevo-Formular-/Listeneinstellungen | **offen** – prüfen/aktivieren |
-| DOI-Bestätigungsmail-Text | Brevo-Formular-/Listeneinstellungen | **offen** – Text aus Abschnitt 4 einfügen |
-| Weiterleitung nach Bestätigung | Brevo-Formular-/Listeneinstellungen | **offen** – `https://autismuskompakt.de/newsletter/willkommen/` eintragen |
-| Öffnungs-/Klick-Tracking der Kampagnen | Brevo-Kampagnen-/Kontoeinstellungen | **offen** – bewusst entscheiden |
-| Vercel-Environment-Variable | – | **nicht erforderlich** – kein API-Key, keine serverseitige Anbindung |
+| Was | Status |
+|---|---|
+| Formular-Action-URL | ✅ eingetragen |
+| Liste/Formular in Brevo | ✅ eingerichtet (eigene Liste, getrennt vom Leitfaden) |
+| Double-Opt-in | ✅ aktiv |
+| DOI-Bestätigungsmail-Text | ✅ hinterlegt |
+| Weiterleitung nach Bestätigung | ✅ auf `/newsletter/willkommen/` eingerichtet |
+| Zusätzliche Bestätigungsmail nach DOI | ✅ bewusst deaktiviert |
+| Öffnungs-/Klick-Tracking der Kampagnen | **offen** – bewusst entscheiden |
+| Vollständige Netzwerkprüfung von `main.js` zur Laufzeit | **offen** – siehe Abschnitt 5 |
+| Vercel-Environment-Variable | nicht erforderlich – kein API-Key, keine serverseitige Anbindung |
