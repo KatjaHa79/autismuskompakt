@@ -252,6 +252,48 @@ const mehrwert = [
     };
     var AUTOHIDE = Boolean(1);
   </script>
+  <script is:inline>
+    // Absicherung gegen einen leeren Erfolgs-/Fehlerkasten: Brevos main.js
+    // schaltet die Sichtbarkeit von #success-message/#error-message selbst
+    // um und kann dabei eigene, generische Zustandsklassen setzen, die
+    // unsere Gestaltungsklasse (z. B. "sib-form-message-panel--success")
+    // oder sogar den Textinhalt überschreiben – ohne das externe
+    // Brevo-Stylesheet (das wir bewusst nicht laden) bleibt der Kasten dann
+    // leer. Diese Absicherung merkt sich unser eigenes, korrektes Markup
+    // beim Laden der Seite und stellt es jedes Mal wieder her, sobald ein
+    // Panel sichtbar wird, ohne main.js' eigentliche Sichtbarkeits-Logik
+    // (und damit den Double-Opt-in-Ablauf) anzutasten.
+    (function () {
+      var container = document.getElementById("sib-form-container");
+      var successMsg = document.getElementById("success-message");
+      var errorMsg = document.getElementById("error-message");
+      if (!container || !successMsg || !errorMsg) return;
+
+      var pristine = [successMsg, errorMsg].map(function (el) {
+        return { el: el, className: el.className, innerHTML: el.innerHTML };
+      });
+
+      function isVisible(el) {
+        return window.getComputedStyle(el).display !== "none";
+      }
+
+      function restoreIfNeeded() {
+        pristine.forEach(function (entry) {
+          if (!isVisible(entry.el)) return;
+          var textEl = entry.el.querySelector(".sib-form-message-panel__inner-text");
+          var hasText = textEl && textEl.textContent.trim() !== "";
+          var hasOwnClass = entry.el.className === entry.className;
+          if (!hasText || !hasOwnClass) {
+            entry.el.className = entry.className;
+            entry.el.innerHTML = entry.innerHTML;
+          }
+        });
+      }
+
+      var observer = new MutationObserver(restoreIfNeeded);
+      observer.observe(container, { attributes: true, childList: true, subtree: true });
+    })();
+  </script>
 </BaseLayout>
 
 <style>
@@ -334,8 +376,16 @@ const mehrwert = [
     padding: var(--space-lg);
   }
 
+  /* Brevos main.js schaltet Sichtbarkeit/Layout dieser Panels selbst per
+     Inline-Style bzw. Klassenwechsel um (ohne das externe Brevo-Stylesheet,
+     das wir bewusst nicht laden, kennt main.js unsere Flex-/Farbregeln
+     nicht). Ohne !important gewinnt ein von main.js gesetzter einfacher
+     Inline-Style (z. B. display:block) gegen unsere Flex-/Farbgestaltung,
+     wodurch Icon und Text nicht mehr nebeneinander/sichtbar dargestellt
+     werden. !important auf Layout und Farben stellt sicher, dass unser
+     Design unabhängig davon greift, was main.js selbst inline setzt. */
   .sib-form-message-panel {
-    display: flex;
+    display: flex !important;
     align-items: flex-start;
     gap: var(--space-xs);
     padding: var(--space-sm);
@@ -351,15 +401,19 @@ const mehrwert = [
   }
 
   .sib-form-message-panel--error {
-    color: var(--color-error);
-    background-color: #fbeceb;
-    border-color: var(--color-error);
+    color: var(--color-error) !important;
+    background-color: #fbeceb !important;
+    border-color: var(--color-error) !important;
   }
 
   .sib-form-message-panel--success {
-    color: var(--color-petrol-dark);
-    background-color: var(--color-background-alt);
-    border-color: var(--color-petrol);
+    color: var(--color-petrol-dark) !important;
+    background-color: var(--color-background-alt) !important;
+    border-color: var(--color-petrol) !important;
+  }
+
+  .sib-form-message-panel__inner-text {
+    color: inherit;
   }
 
   .sib-icon {
