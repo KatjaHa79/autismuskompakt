@@ -334,19 +334,14 @@ const mehrwert = [
     padding: var(--space-lg);
   }
 
-  /* Sichtbarkeit bleibt vollständig Brevos main.js überlassen: einzige
-     display-Deklaration für diese beiden Panels ist "none" als Grundzustand
-     (main.js schaltet per Inline-Style auf sichtbar um, sobald der
-     jeweilige Zustand eintritt – kein !important, keine zweite
-     display-Regel, damit Brevos Entscheidung immer gewinnen kann).
-
-     Die eigentliche Gestaltung (Farbe/Hintergrund/Rahmen/Abstand) hängt
-     bewusst an der ID statt an main.js' eigenen Klassen
-     ("sib-form-message-panel(--success/--error)"): main.js kann diese
-     Klassen beim Umschalten verändern, die ID nicht – so bleibt der Inhalt
-     eines sichtbaren Panels auch dann lesbar gestaltet, wenn main.js seine
-     eigenen Klassen ohne das (bewusst nicht geladene) externe
-     Brevo-Stylesheet setzt. */
+  /* Sichtbarkeit bleibt vollständig Brevos main.js überlassen: main.js
+     setzt beim jeweiligen Zustand die Klasse "sib-form-message-panel--active"
+     auf #error-message bzw. #success-message (per Live-Test in den Chrome
+     DevTools nachgewiesen). Ohne diese Klasse bleiben beide Panels über
+     display:none verborgen; erst mit ".…--active" wird genau das
+     betroffene Panel sichtbar. Keine zweite, konkurrierende
+     display-Regel und kein !important – main.js' Entscheidung bleibt
+     dadurch in jedem Fall maßgeblich. */
   #error-message,
   #success-message {
     display: none;
@@ -357,6 +352,11 @@ const mehrwert = [
     border: var(--border-width) solid transparent;
     margin-bottom: var(--space-md);
     font-weight: 700;
+  }
+
+  #error-message.sib-form-message-panel--active,
+  #success-message.sib-form-message-panel--active {
+    display: flex;
   }
 
   #error-message {
