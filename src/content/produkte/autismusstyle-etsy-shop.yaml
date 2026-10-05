@@ -16,3 +16,18 @@ provider: "Etsy"
 buttonLabel: "Zum Etsy-Shop"
 externalUrl: "https://www.etsy.com/de/shop/AutismusStyle"
 cover: "/images/shop/etsy/shop-produkt-01.webp"
+
+# Zeigt auf /shop/ eine kompakte Vorschau-Galerie statt nur des einzelnen
+# Covers (siehe ProduktKarte.astro: gallery hat Vorrang vor cover, wenn
+# vorhanden).
+gallery:
+  - src: "/images/shop/etsy/shop-produkt-01.webp"
+    alt: "Autismus-Hoodie mit All-over-Print in Petrol, Bronze und Schwarz"
+  - src: "/images/shop/etsy/shop-produkt-02.webp"
+    alt: "Schwarzes Autismus-Shirt mit dem Spruch „Smalltalk nicht installiert“"
+  - src: "/images/shop/etsy/shop-produkt-03.webp"
+    alt: "Kommunikations-Mousepad mit Unterstützungsoptionen"
+  - src: "/images/shop/etsy/shop-produkt-04.webp"
+    alt: "Weißes Kommunikations-Shirt mit Bedürfnis-Piktogrammen"
+  - src: "/images/shop/etsy/shop-produkt-05.webp"
+    alt: "Helles Autismus-Shirt mit dem Statement „Autism doesn't have to be fixed“"

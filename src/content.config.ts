@@ -325,6 +325,17 @@ const produkte = defineCollection({
     subtitle: z.string().optional(),
     description: z.string().min(1, "description darf nicht leer sein."),
     cover: z.string().optional(),
+    // Optionale Bildergalerie als Alternative zum einzelnen `cover` –
+    // bislang nur für den Etsy-/Merchandise-Eintrag "AutismusStyle" genutzt,
+    // um mehrere Produktfotos statt eines einzelnen Covers zu zeigen.
+    gallery: z
+      .array(
+        z.object({
+          src: z.string().min(1),
+          alt: z.string().min(1),
+        }),
+      )
+      .optional(),
     productType: z.enum(productTypeValues, {
       message: `productType muss einer der folgenden Werte sein: ${productTypeValues.join(", ")}`,
     }),
