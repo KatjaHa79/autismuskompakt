@@ -20,7 +20,11 @@ const istBuch = productType === "buch";
       <img
         class:list={["cover", istBuch && "cover--buch"]}
         src={cover}
-        alt={`Buchcover ${title}${subtitle ? ` – ${subtitle}` : ""} von Katja Hageneier`}
+        alt={
+          istBuch
+            ? `Buchcover ${title}${subtitle ? ` – ${subtitle}` : ""} von Katja Hageneier`
+            : `${title}${subtitle ? ` – ${subtitle}` : ""}`
+        }
         loading="lazy"
         decoding="async"
       />

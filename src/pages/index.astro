@@ -1,5 +1,6 @@
 ---
 import fs from "node:fs";
+import path from "node:path";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ThemenKachel from "../components/ThemenKachel.astro";
 import { ETSY_SHOP_URL } from "../lib/constants";
@@ -9,15 +10,21 @@ import { ETSY_SHOP_URL } from "../lib/constants";
 // Noch nicht vorhandene Dateien werden nicht als defektes <img> ausgegeben,
 // sondern zeigen bis dahin einen ruhigen Platzhalter (siehe shopProdukte
 // unten) – die Sektion funktioniert dadurch bereits mit nur 3 von 4 Fotos.
-const shopProduktDateien = [
-  "shop-produkt-01.webp",
-  "shop-produkt-02.webp",
-  "shop-produkt-03.webp",
-  "shop-produkt-04.webp",
-];
-const shopProdukte = shopProduktDateien.map((datei) => ({
-  src: `/images/shop/etsy/${datei}`,
-  vorhanden: fs.existsSync(new URL(`../../public/images/shop/etsy/${datei}`, import.meta.url)),
+const shopProdukte = [
+  { datei: "shop-produkt-01.webp", alt: "Autismus-Hoodie mit All-over-Print in Petrol, Bronze und Schwarz" },
+  { datei: "shop-produkt-02.webp", alt: "Schwarzes Autismus-Shirt mit dem Spruch Smalltalk nicht installiert" },
+  {
+    datei: "shop-produkt-03.webp",
+    alt: "Kommunikations-Mousepad mit neun Möglichkeiten zur Unterstützung in belastenden Situationen",
+  },
+  {
+    datei: "shop-produkt-04.webp",
+    alt: "Weißes Kommunikations-Shirt mit Piktogrammen für Bedürfnisse und Alltagssituationen",
+  },
+].map((produkt) => ({
+  ...produkt,
+  src: `/images/shop/etsy/${produkt.datei}`,
+  vorhanden: fs.existsSync(path.join(process.cwd(), "public/images/shop/etsy", produkt.datei)),
 }));
 
 const themen = [
@@ -194,14 +201,14 @@ const zielgruppen = [
         {
           shopProdukte.map((produkt) =>
             produkt.vorhanden ? (
-              <li>
+              <li class="shop-teaser__gallery-item">
                 <img
                   src={produkt.src}
-                  alt="Produkt aus dem AutismusStyle-Shop auf Etsy"
+                  alt={produkt.alt}
                   loading="lazy"
                   decoding="async"
-                  width="600"
-                  height="600"
+                  width="1200"
+                  height="1200"
                 />
               </li>
             ) : (
@@ -212,6 +219,7 @@ const zielgruppen = [
           )
         }
       </ul>
+      <p class="shop-teaser__caption">Weitere Designs und Produkte bei AutismusStyle auf Etsy entdecken.</p>
     </div>
   </section>
 </BaseLayout>
@@ -331,15 +339,30 @@ const zielgruppen = [
     margin-top: var(--space-lg);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-sm);
+    gap: var(--space-md);
   }
 
-  .shop-teaser__gallery img {
-    width: 100%;
+  /* Einheitlicher, ruhiger Kartenrahmen statt quadratischem Zuschnitt:
+     object-fit: contain sorgt dafür, dass z. B. Mousepad und Hoodie
+     vollständig sichtbar bleiben, ohne Produktinhalt abzuschneiden. */
+  .shop-teaser__gallery-item {
     aspect-ratio: 1 / 1;
-    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xs);
+    background-color: var(--color-surface);
     border-radius: var(--radius);
     border: var(--border-width) solid var(--color-border);
+    overflow: hidden;
+  }
+
+  .shop-teaser__gallery-item img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
   }
 
   .shop-teaser__gallery-placeholder {
@@ -350,6 +373,18 @@ const zielgruppen = [
     justify-content: center;
     text-align: center;
     color: var(--color-text-muted);
+  }
+
+  .shop-teaser__caption {
+    margin-top: var(--space-sm);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 24rem) {
+    .shop-teaser__gallery {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (min-width: 40rem) {

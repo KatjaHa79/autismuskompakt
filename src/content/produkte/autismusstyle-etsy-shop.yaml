@@ -14,7 +14,5 @@ targetGroups:
 
 provider: "Etsy"
 buttonLabel: "Zum Etsy-Shop"
-# TODO (Katja): Platzhalter – durch die echte URL des Etsy-Shops ersetzen
-# (z. B. https://www.etsy.com/shop/AutismusStyle). Siehe auch
-# ETSY_SHOP_URL in src/lib/constants.ts.
-externalUrl: "ETSY_SHOP_URL"
+externalUrl: "https://www.etsy.com/de/shop/AutismusStyle"
+cover: "/images/shop/etsy/shop-produkt-01.webp"
