@@ -6,10 +6,12 @@ import ThemenKachel from "../components/ThemenKachel.astro";
 import { ETSY_SHOP_URL } from "../lib/constants";
 
 // Produktfotos aus dem Etsy-Shop "AutismusStyle" – echte Fotos, die Katja
-// unter public/images/shop/etsy/ ablegt (shop-produkt-01.webp bis -04.webp).
-// Noch nicht vorhandene Dateien werden nicht als defektes <img> ausgegeben,
-// sondern zeigen bis dahin einen ruhigen Platzhalter (siehe shopProdukte
-// unten) – die Sektion funktioniert dadurch bereits mit nur 3 von 4 Fotos.
+// unter public/images/shop/etsy/ ablegt (shop-produkt-01.webp bis -05.webp).
+// Diese Galerie ist bewusst unabhängig vom `cover`-Feld des produkte-Eintrags
+// (autismusstyle-etsy-shop.yaml): /shop/ zeigt dort ein einzelnes Coverbild,
+// die Startseite zeigt hier mehrere Eindrücke aus dem Shop. Noch nicht
+// vorhandene Dateien werden nicht als defektes <img> ausgegeben, sondern
+// zeigen bis dahin einen ruhigen Platzhalter (siehe shopProdukte unten).
 const shopProdukte = [
   { datei: "shop-produkt-01.webp", alt: "Autismus-Hoodie mit All-over-Print in Petrol, Bronze und Schwarz" },
   { datei: "shop-produkt-02.webp", alt: "Schwarzes Autismus-Shirt mit dem Spruch Smalltalk nicht installiert" },
@@ -20,6 +22,10 @@ const shopProdukte = [
   {
     datei: "shop-produkt-04.webp",
     alt: "Weißes Kommunikations-Shirt mit Piktogrammen für Bedürfnisse und Alltagssituationen",
+  },
+  {
+    datei: "shop-produkt-05.webp",
+    alt: "Helles Autismus-Shirt mit dem Spruch Autism doesn't have to be fixed",
   },
 ].map((produkt) => ({
   ...produkt,
@@ -387,9 +393,17 @@ const zielgruppen = [
     }
   }
 
+  /* Mittlere Breite: 3 + 2 (fünf Karten, drei je Zeile). */
   @media (min-width: 40rem) {
     .shop-teaser__gallery {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Ausreichend Platz: alle fünf Karten in einer Reihe. */
+  @media (min-width: 64rem) {
+    .shop-teaser__gallery {
+      grid-template-columns: repeat(5, 1fr);
     }
   }
 </style>
