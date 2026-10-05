@@ -1,0 +1,20 @@
+title: "AutismusStyle"
+subtitle: "Etsy-Shop"
+description: >
+  Im AutismusStyle-Shop finden sich ausgewählte Designs rund um Autismus,
+  Neurodivergenz, Kommunikation und Alltag – von klaren Statements bis zu
+  praktischen Kommunikationshilfen. Verkauf und Versand laufen vollständig
+  über Etsy.
+productType: "merchandise"
+
+targetGroups:
+  - autistische-menschen
+  - angehoerige
+  - fachkraefte
+
+provider: "Etsy"
+buttonLabel: "Zum Etsy-Shop"
+# TODO (Katja): Platzhalter – durch die echte URL des Etsy-Shops ersetzen
+# (z. B. https://www.etsy.com/shop/AutismusStyle). Siehe auch
+# ETSY_SHOP_URL in src/lib/constants.ts.
+externalUrl: "ETSY_SHOP_URL"

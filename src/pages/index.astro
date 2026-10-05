@@ -1,6 +1,24 @@
 ---
+import fs from "node:fs";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ThemenKachel from "../components/ThemenKachel.astro";
+import { ETSY_SHOP_URL } from "../lib/constants";
+
+// Produktfotos aus dem Etsy-Shop "AutismusStyle" – echte Fotos, die Katja
+// unter public/images/shop/etsy/ ablegt (shop-produkt-01.webp bis -04.webp).
+// Noch nicht vorhandene Dateien werden nicht als defektes <img> ausgegeben,
+// sondern zeigen bis dahin einen ruhigen Platzhalter (siehe shopProdukte
+// unten) – die Sektion funktioniert dadurch bereits mit nur 3 von 4 Fotos.
+const shopProduktDateien = [
+  "shop-produkt-01.webp",
+  "shop-produkt-02.webp",
+  "shop-produkt-03.webp",
+  "shop-produkt-04.webp",
+];
+const shopProdukte = shopProduktDateien.map((datei) => ({
+  src: `/images/shop/etsy/${datei}`,
+  vorhanden: fs.existsSync(new URL(`../../public/images/shop/etsy/${datei}`, import.meta.url)),
+}));
 
 const themen = [
   {
@@ -152,6 +170,50 @@ const zielgruppen = [
       </p>
     </div>
   </section>
+
+  <section class="section section--alt shop-teaser" aria-labelledby="shop-teaser-heading">
+    <div class="container container--wide">
+      <div class="shop-teaser__intro">
+        <p class="shop-teaser__eyebrow">Autismus kompakt Shop</p>
+        <h2 id="shop-teaser-heading">Autismus sichtbar machen. Auf deine Art.</h2>
+        <p>
+          Im AutismusStyle-Shop findest du ausgewählte Designs rund um Autismus,
+          Neurodivergenz, Kommunikation und Alltag – von klaren Statements bis zu
+          praktischen Kommunikationshilfen.
+        </p>
+        <p class="shop-teaser__actions">
+          <a class="button button--accent" href={ETSY_SHOP_URL} target="_blank" rel="noopener noreferrer">
+            Zum Etsy-Shop <span aria-hidden="true">↗</span>
+            <span class="visually-hidden">(öffnet auf einer anderen Website)</span>
+          </a>
+        </p>
+        <p class="shop-teaser__hint">Produkte von AUTISMUS kompakt · erhältlich über Etsy</p>
+      </div>
+
+      <ul class="shop-teaser__gallery">
+        {
+          shopProdukte.map((produkt) =>
+            produkt.vorhanden ? (
+              <li>
+                <img
+                  src={produkt.src}
+                  alt="Produkt aus dem AutismusStyle-Shop auf Etsy"
+                  loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="600"
+                />
+              </li>
+            ) : (
+              <li class="shop-teaser__gallery-placeholder placeholder" aria-hidden="true">
+                Foto folgt
+              </li>
+            )
+          )
+        }
+      </ul>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
@@ -238,5 +300,61 @@ const zielgruppen = [
 
   .newsletter-teaser p:last-child {
     margin-top: var(--space-sm);
+  }
+
+  .shop-teaser__intro {
+    max-width: var(--measure);
+  }
+
+  .shop-teaser__eyebrow {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-bronze-dark);
+    margin-bottom: var(--space-2xs);
+  }
+
+  .shop-teaser__actions {
+    margin-top: var(--space-md);
+  }
+
+  .shop-teaser__hint {
+    margin-top: var(--space-xs);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .shop-teaser__gallery {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--space-lg);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .shop-teaser__gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: var(--border-width) solid var(--color-border);
+  }
+
+  .shop-teaser__gallery-placeholder {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-text-muted);
+  }
+
+  @media (min-width: 40rem) {
+    .shop-teaser__gallery {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 </style>
