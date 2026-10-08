@@ -89,12 +89,22 @@ const wegweiser = [
     title: "Ich suche Unterstützung oder Beratung.",
     href: "/hilfe-finden/kategorie/beratung/",
   },
+  {
+    icon: "wellen",
+    title: "Ich habe Probleme bei Arbeit oder Ausbildung.",
+    href: "/fuer-autistische-menschen/alltag/arbeit/",
+  },
+  {
+    icon: "buch",
+    title: "Ich möchte einen Pflegegrad prüfen oder beantragen.",
+    href: "/fuer-autistische-menschen/rechte-und-antraege/pflegegrad/",
+  },
 ] as const;
 ---
 
 <BaseLayout
-  title="Anlaufstellen"
-  description="Anlaufstellen zum Thema Autismus: Diagnostik, Beratung, Therapie, Sozialrecht und Selbsthilfe. Filterbar nach Bundesland, Kategorie und Zielgruppe."
+  title="Hilfe & Anlaufstellen für Erwachsene"
+  description="Hilfe bei Autismus im Erwachsenenalter: passende Anlaufstellen für Diagnostik, Beratung, Alltag, Arbeit, GdB, Pflegegrad, Teilhabe und Krisen finden."
 >
   <div class="container container--wide">
     <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Anlaufstellen" }]} />
@@ -102,11 +112,23 @@ const wegweiser = [
 
   <section class="section">
     <div class="container container--wide">
-      <h1>Anlaufstellen</h1>
+      <h1>Hilfe für autistische Erwachsene: Anlaufstellen und Unterstützung finden</h1>
       <p class="lead">
-        Eine gepflegte Übersicht über Anlaufstellen zum Thema Autismus – zum
-        Beispiel für Diagnostik, Beratung, Therapie, Sozialrecht oder
-        Selbsthilfe. Diese Übersicht wächst mit jedem weiteren Ausbauschritt.
+        Die passende Hilfe zu finden, ist oft schwieriger als die Frage,
+        <em>dass</em> Unterstützung gebraucht wird. Diagnostikstellen,
+        Beratungsangebote, Sozialleistungsträger, Pflegekassen und berufliche
+        Rehabilitation haben unterschiedliche Aufgaben. Diese Seite hilft dir
+        deshalb zuerst bei der Frage, wobei du gerade Unterstützung brauchst –
+        danach findest du den passenden nächsten Schritt und weiterführende
+        Anlaufstellen.
+      </p>
+      <p class="lead">
+        Für eine erste Orientierung, welche Teilhabeleistung zu deiner
+        Situation passen könnte und wer dafür zuständig ist, berät die
+        <a href="https://www.teilhabeberatung.de/">Ergänzende unabhängige Teilhabeberatung (EUTB)</a>
+        bundesweit, neutral und kostenlos – auch ohne Schwerbehindertenausweis.
+        Die EUTB ersetzt aber keine medizinische Diagnostik, Therapie oder
+        individuelle Rechtsvertretung.
       </p>
 
       <div class="notice">
