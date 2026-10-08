@@ -22,3 +22,9 @@ Du darfst Hilfe brauchen und trotzdem selbstbestimmt leben. Selbstständigkeit b
 Autonomie ist auch bei hohem Unterstützungsbedarf relevant. Supported Decision Making, Assistenz und Interdependenz sind mögliche Optionen, um Kommunikationsformen und Präferenzen ernst zu nehmen.
 
 Überbehütung und unnötige Kontrollübernahme können Teilhabe einschränken. Gute Unterstützung sollte Wahlmöglichkeiten und Handlungsfähigkeit vergrößern, nicht verringern – das gilt für Eltern ebenso wie für Fachkräfte in Beratung, Assistenz und Pflege.
+
+### Grundhaltung: nicht entschlüsseln, sondern verstehen
+
+Es geht nicht darum, autistische Menschen zu "entschlüsseln", sondern ihre Bedürfnisse und die Barrieren in ihrer Umgebung zu verstehen. Betroffenenperspektiven sollten dabei aktiv einbezogen werden, statt ausschließlich über autistische Menschen statt mit ihnen zu sprechen. Von einzelnen Personen oder Erfahrungen sollte nicht auf "die" autistische Community insgesamt geschlossen werden – die individuelle Bandbreite ist groß.
+
+Gute Unterstützung verändert nach Möglichkeit Barrieren, statt ausschließlich Anpassung von der autistischen Person zu verlangen: ein zugänglicherer Ablauf, klarere Kommunikation oder eine reizärmere Umgebung helfen oft mehr als die Erwartung, dass sich die Person an unveränderte Bedingungen anpasst.

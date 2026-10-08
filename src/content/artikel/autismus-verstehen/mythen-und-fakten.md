@@ -33,6 +33,18 @@ Verwandte Themen: [Sprache & Begriffe](/fuer-autistische-menschen/sprache-und-be
 
 **"Nur Jungen sind autistisch."** Autismus tritt bei allen Geschlechtern auf. Mädchen und Frauen werden aus unterschiedlichen Gründen häufiger übersehen oder später diagnostiziert. Mehr dazu: [Autismus bei Frauen und Mädchen](/fuer-autistische-menschen/diagnostik/diagnostik-bei-frauen/).
 
+**"Autistische Menschen vermeiden Blickkontakt, weil sie unehrlich sind oder nicht zuhören."** Blickkontakt kann für manche autistische Menschen unangenehm, ablenkend oder kognitiv belastend sein. Weniger Blickkontakt bedeutet nicht automatisch Desinteresse, Unehrlichkeit oder fehlende Aufmerksamkeit. Mehr dazu: [Kommunikation](/fuer-autistische-menschen/kommunikation/).
+
+**"Autistische Menschen verstehen keine Ironie."** Das trifft nicht pauschal zu. Manche autistische Menschen verstehen und nutzen Ironie problemlos, andere bevorzugen eindeutigere, direktere Sprache. Wie leicht indirekte Sprache verstanden wird, ist individuell verschieden.
+
+**"Autistische Menschen sind entweder hochbegabt oder schwer beeinträchtigt."** Intelligenz und Unterstützungsbedarf sind zwei unterschiedliche Dinge. Ein hoher IQ sagt wenig darüber aus, wie viel Unterstützung jemand im Alltag braucht – und ein hoher Unterstützungsbedarf sagt nichts über die Intelligenz einer Person aus.
+
+**"Wer arbeiten kann, braucht keine Unterstützung."** Äußerlich sichtbares Funktionieren – etwa im Job oder beim Studium – verrät wenig darüber, wie viel Energie das kostet oder welche Unterstützung im Hintergrund nötig ist. Mehr dazu: [Masking](/fuer-autistische-menschen/masking/) und [Autistischer Burnout](/fuer-autistische-menschen/autistischer-burnout/).
+
+**"Meltdown und Shutdown sind dasselbe."** Autismuskompakt unterscheidet redaktionell zwischen einer eher nach außen sichtbaren, intensiven Reaktion (Meltdown) und einer eher nach innen gerichteten Reaktion mit reduzierter Kommunikation und Aktivität (Shutdown). Beide können bei starker Überlastung auftreten, sind aber nicht austauschbar. Mehr dazu: [Meltdown](/fuer-autistische-menschen/meltdown/) und [Shutdown](/fuer-autistische-menschen/shutdown/).
+
+**"Wenn man eine autistische Person kennt, kennt man alle."** Autismus ist ein Spektrum sehr unterschiedlicher individueller Ausprägungen. Erfahrungen, Bedürfnisse und Strategien einer einzelnen autistischen Person lassen sich nicht auf die gesamte Community übertragen.
+
 ## Was kann helfen?
 
 - Bei unsicheren Behauptungen über Autismus nachfragen, worauf sie sich stützen.

@@ -28,6 +28,8 @@ Nicht jeder autistische Mensch erlebt dies gleich. Mögliche Erfahrungen sind:
 - Der Wechsel zwischen unterschiedlichen Aufgaben oder Anforderungen erfordert spürbar mehr Anstrengung.
 - Zeitplanung und Priorisierung mehrerer gleichzeitiger To-dos sind anstrengender als bei einer einzelnen, klar abgegrenzten Aufgabe.
 
+Alltagsnahe Beispiele können sein: eine Aufgabe beginnt zu ungewöhnlichen Zeiten (spät abends, weil der Einstieg vorher nicht gelang), es sammeln sich viele offene Browser-Tabs oder angefangene Aufgaben gleichzeitig an, Gegenstände werden trotz eines eigentlich festen Platzes immer wieder gesucht, oder ein Gedanke bzw. ein ungelöstes Thema "hängt nach" und lässt sich schwer loslassen, während eigentlich etwas anderes ansteht. Nicht alle diese Erfahrungen sind spezifisch für Autismus – Überschneidungen mit ADHS und mit allgemeiner exekutiver Belastung (Stress, Schlafmangel) sind häufig.
+
 ## Was wissen wir aus der Forschung?
 
 Eine Meta-Analyse (Demetriou et al., 2018) über zahlreiche Einzelstudien findet bei autistischen Menschen im Gruppendurchschnitt Unterschiede in mehreren Bereichen exekutiver Funktionen, etwa bei kognitiver Flexibilität und Planung – mit erheblicher individueller Streuung. Nicht jede autistische Person zeigt Schwierigkeiten in allen untersuchten Bereichen, und exekutive Funktionen sind kein Alles-oder-Nichts-Merkmal, sondern in unterschiedlichem Ausmaß und in unterschiedlichen Teilbereichen ausgeprägt.
@@ -36,7 +38,7 @@ Ein Review zu autistischen Erwachsenen (Wallace et al., 2021) beschreibt sowohl 
 
 ## Task Paralysis: hilfreicher Alltagsbegriff, keine Diagnose
 
-Der Ausdruck "Task Paralysis" wird im Alltag verwendet, wenn eine Aufgabe trotz Absicht und Wissen nicht begonnen werden kann. Er ist kein standardisierter medizinischer Diagnosebegriff. Hinter einem solchen Zustand können verschiedene Faktoren stehen: exekutive Belastung, unklare Schritte, Angst, Perfektionismus, Erschöpfung, Reizüberlastung, Depression, ADHS oder eine Kombination. "Ich kann nicht anfangen" ist diagnostisch noch keine Erklärung – aber ein reales Problem, das ernst genommen werden sollte.
+Der Ausdruck "Task Paralysis" wird im Alltag verwendet, wenn eine Aufgabe trotz Absicht und Wissen nicht begonnen werden kann. Er ist kein standardisierter medizinischer Diagnosebegriff. Hinter einem solchen Zustand können verschiedene Faktoren stehen: exekutive Belastung, unklare Schritte, Angst, [Perfektionismus](/fuer-autistische-menschen/alltag/autismus-perfektionismus/), Erschöpfung, Reizüberlastung, Depression, ADHS oder eine Kombination. "Ich kann nicht anfangen" ist diagnostisch noch keine Erklärung – aber ein reales Problem, das ernst genommen werden sollte. Auch schwierige [Entscheidungen](/fuer-autistische-menschen/alltag/autismus-entscheidungen/) können einer Aufgabe im Weg stehen, bevor sie überhaupt begonnen wird.
 
 ## Was bedeutet das im Alltag?
 

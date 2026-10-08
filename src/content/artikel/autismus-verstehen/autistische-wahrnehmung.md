@@ -19,6 +19,12 @@ Vielleicht erlebst du Geräusche, Licht, Berührungen oder Gerüche intensiver a
 
 Es gibt nicht die eine autistische Wahrnehmung. Auch bei dir selbst kann sich Wahrnehmung verändern. Etwas, das an einem ruhigen Tag problemlos möglich ist, kann nach wenig Schlaf, Stress oder vielen Anforderungen plötzlich kaum auszuhalten sein.
 
+### Beispiele aus dem Alltag
+
+Oft sind es nicht die "großen" Reize, die auffallen, sondern kleine Details: das Summen einer Lampe oder eines Kühlschranks im sonst ruhigen Raum, Kleidung oder Haare, die auf der Haut spürbar bleiben, das Geräusch oder die Textur von Besteck, oder die Konzentration, die es kostet, ein Gespräch zu verfolgen, während mehrere andere Reize gleichzeitig konkurrieren.
+
+Ein wichtiger Unterschied ist dabei, ob ein Reiz selbst gewählt ist oder ungeplant eindringt. Musik, die du selbst laufen lässt, kann angenehm oder sogar regulierend wirken – dieselbe Lautstärke von außen, ohne eigene Kontrolle darüber, kann dagegen schnell zu viel werden.
+
 ### Mein Tipp
 
 Beobachte nicht nur, welcher Reiz schwierig ist, sondern auch:

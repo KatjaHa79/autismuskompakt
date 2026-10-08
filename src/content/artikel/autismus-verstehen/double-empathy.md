@@ -25,6 +25,8 @@ Das bedeutet aber nicht, dass autistische Menschen grundsätzlich keine sozialen
 
 **Was ich daraus praktisch mitnehme:** Wenn ein Gespräch schiefläuft, kann die Frage "Haben wir gerade wirklich dasselbe verstanden?" hilfreicher sein als die Frage, wer "falsch kommuniziert" hat.
 
+Wenn ich mich zurückziehe, heißt das nicht automatisch, dass mich etwas nicht interessiert. Rückzug kann auch bedeuten, dass ich gerade verarbeite oder mich reguliere.
+
 ## Für Angehörige
 
 Kommunikationsprobleme entstehen nicht immer ausschließlich dadurch, dass die autistische Person etwas "nicht versteht". Auch nichtautistische Menschen können Schwierigkeiten haben, autistische Kommunikation richtig einzuschätzen.
@@ -40,3 +42,5 @@ Das Double-Empathy-Modell bietet einen relevanten Perspektivwechsel gegenüber r
 Die Evidenz erlaubt jedoch nicht die Schlussfolgerung, dass diagnostisch relevante soziale Kommunikationsschwierigkeiten bei Autismus nicht existieren. Ebenso wenig lässt sich daraus ableiten, dass nichtautistische Personen grundsätzlich die Ursache sozialer Missverständnisse sind.
 
 **Für die Praxis:** Kommunikationsprobleme sollten interaktionell analysiert werden. Nicht nur: "Was kann die autistische Person nicht?", sondern auch: "Welche Anforderungen stellt diese Situation und wie tragen beide Kommunikationsweisen zum Missverständnis bei?"
+
+Für die Einordnung von Empathie ist zusätzlich die Unterscheidung zwischen kognitiver Empathie (die Perspektive einer anderen Person gedanklich erschließen) und affektiver Empathie (emotionale Resonanz, Mitfühlen) hilfreich. Beide Formen sind nicht zwangsläufig gleich stark ausgeprägt, und ein sichtbarer Emotionsausdruck ist nicht identisch mit empfundenem Mitgefühl: Manche Menschen empfinden viel, zeigen es aber auf eine Weise, die von außen nicht erwartungskonform wirkt.
