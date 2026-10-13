@@ -29,9 +29,9 @@ interface NavItem {
 
 // Nur tatsächlich vorhandene Seiten/Anker. Dropdowns gibt es ausschließlich
 // dort, wo die Zielseite selbst bereits eine kleine, feste Anzahl echter
-// Unterbereiche hat (Hub-Seite mit Bereichen bzw. Ankerabschnitten). Seiten
-// mit vielen generierten Filterrouten (Anlaufstellen, Material) bleiben
-// bewusst einfache Links.
+// Unterbereiche hat (Hub-Seite mit Bereichen, Ankerabschnitten oder eigenen
+// Filterseiten). Anlaufstellen bleibt bewusst ein einfacher Link, da die
+// Seite selbst keine feste, kleine Anzahl fester Unterbereiche anbietet.
 //
 // Die Gruppen "Für Angehörige" und "Für Fachkräfte" bilden die Themen aus
 // den gleichnamigen Abschnitten von /angehoerige-fachkraefte/ ab (siehe
@@ -39,9 +39,7 @@ interface NavItem {
 // index.astro). Mehrfach verlinkte Kacheln mit identischer Ziel-URL wurden
 // zu einem Eintrag zusammengeführt; "Schule" und "Reizverarbeitung" sind
 // bewusst in beiden Gruppen vorhanden, weil die Quellseite sie selbst für
-// beide Zielgruppen führt. "Materialien für die Praxis" wurde nicht erneut
-// aufgenommen, da "Hilfreiches Material" bereits ein eigener, unmittelbar
-// erreichbarer Hauptpunkt ist.
+// beide Zielgruppen führt.
 const angehoerigeLinks: NavLink[] = [
   { label: "Autismus verstehen", href: "/fuer-autistische-menschen/was-ist-autismus/" },
   { label: "Kommunikation verstehen", href: "/fuer-autistische-menschen/kommunikation/" },
@@ -73,6 +71,25 @@ const fachkraefteLinks: NavLink[] = [
   { label: "Arbeitgeber & Führungskräfte", href: "/angehoerige-fachkraefte/arbeitgeber-und-fuehrungskraefte/" },
 ];
 
+// Materialtypen mit eigener Filterseite /materialien/typ/<typ>/ (siehe
+// src/content.config.ts materialTypeLabels und src/pages/materialien/typ/
+// [typ].astro). Nur Typen mit tatsächlich vorhandenen Materialien erzeugen
+// dort eine Seite; "materialien-studium" hat aktuell keine Einträge und
+// wird daher bewusst nicht verlinkt. Die vier häufigsten/größten Typen
+// stehen als direkte Links im Dropdown, die übrigen (kleineren bzw.
+// spezielleren) Typen sind in der Gruppe "Weitere Materialien" gebündelt,
+// um das Menü nicht unnötig in die Breite zu ziehen.
+const weitereMaterialien: NavLink[] = [
+  { label: "Gesprächshilfen", href: "/materialien/typ/gespraechshilfen/" },
+  { label: "Reizprofile", href: "/materialien/typ/reizprofile/" },
+  { label: "Arzttermin-Vorbereitung", href: "/materialien/typ/arzttermin-vorbereitung/" },
+  { label: "Tages- und Wochenplanung", href: "/materialien/typ/tages-wochenplanung/" },
+  { label: "Belastungsprotokolle", href: "/materialien/typ/belastungsprotokolle/" },
+  { label: "Antragschecklisten", href: "/materialien/typ/antragschecklisten/" },
+  { label: "Materialien für Schule", href: "/materialien/typ/materialien-schule/" },
+  { label: "Materialien für Arbeit", href: "/materialien/typ/materialien-arbeit/" },
+];
+
 const items: NavItem[] = [
   {
     label: "Für Autist:innen",
@@ -94,7 +111,18 @@ const items: NavItem[] = [
     ],
   },
   { label: "Anlaufstellen", href: "/hilfe-finden/" },
-  { label: "Hilfreiches Material", href: "/materialien/" },
+  {
+    label: "Hilfreiches Material",
+    children: [
+      { label: "Übersicht", href: "/materialien/" },
+      { label: "Kostenloser Leitfaden", href: "/materialien/#leitfaden" },
+      { label: "Checklisten", href: "/materialien/typ/checklisten/" },
+      { label: "Vorlagen", href: "/materialien/typ/vorlagen/" },
+      { label: "Kommunikationshilfen", href: "/materialien/typ/kommunikationshilfen/" },
+      { label: "Arbeitsblätter", href: "/materialien/typ/arbeitsblaetter/" },
+      { label: "Weitere Materialien", items: weitereMaterialien },
+    ],
+  },
   {
     label: "Shop",
     alignRight: true,
