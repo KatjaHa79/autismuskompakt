@@ -1,0 +1,274 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import Hinweisbox from "../../components/Hinweisbox.astro";
+import Quellenblock from "../../components/Quellenblock.astro";
+import { GLOSSAR_EINTRAEGE, GLOSSAR_QUELLEN } from "../../data/glossar";
+
+// Alphabetisch sortieren (zuerst nach Buchstabe, dann nach Begriff), damit
+// die Reihenfolge unabhängig von der Pflege-Reihenfolge in glossar.ts
+// garantiert stimmt. Gruppierung danach anhand der sortierten Liste.
+const sortierteEintraege = [...GLOSSAR_EINTRAEGE].sort((a, b) => {
+  if (a.letter !== b.letter) return a.letter.localeCompare(b.letter, "de");
+  return a.term.localeCompare(b.term, "de");
+});
+
+interface Gruppe {
+  letter: string;
+  eintraege: typeof sortierteEintraege;
+}
+
+const gruppen: Gruppe[] = [];
+for (const eintrag of sortierteEintraege) {
+  const letzte = gruppen[gruppen.length - 1];
+  if (letzte && letzte.letter === eintrag.letter) {
+    letzte.eintraege.push(eintrag);
+  } else {
+    gruppen.push({ letter: eintrag.letter, eintraege: [eintrag] });
+  }
+}
+---
+
+<BaseLayout
+  title="Autismus-Glossar A–Z"
+  description="Autismus-Begriffe verständlich erklärt: von Alexithymie und Masking bis Meltdown, Stimming und Nachteilsausgleich. Alphabetisch und direkt auf einer Seite."
+>
+  <div class="container container--wide">
+    <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Glossar" }]} />
+  </div>
+
+  <section class="section">
+    <div class="container container--wide">
+      <h1>Autismus-Glossar: Begriffe von A bis Z einfach erklärt</h1>
+      <p class="lead">
+        Was bedeutet Masking? Was ist ein Shutdown? Im Autismus-Glossar werden
+        medizinische, psychologische und sozialrechtliche Begriffe verständlich
+        erklärt. Buchstaben und Begriffe lassen sich direkt auf dieser Seite
+        aufklappen.
+      </p>
+
+      <Hinweisbox titel="Rechtlicher und fachlicher Hinweis">
+        <p>
+          Die Erklärungen bieten eine erste Orientierung und ersetzen keine
+          individuelle medizinische, psychotherapeutische oder rechtliche
+          Beratung. Rechtliche Angaben beziehen sich auf die aktuelle
+          Rechtslage in Deutschland und können sich ändern.
+        </p>
+      </Hinweisbox>
+
+      <nav class="glossar-az" aria-label="Sprungmarken zu den Anfangsbuchstaben">
+        <ul>
+          {
+            gruppen.map((gruppe) => (
+              <li>
+                <a href={`#buchstabe-${gruppe.letter.toLowerCase()}`}>{gruppe.letter}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div class="glossar-liste">
+        {
+          gruppen.map((gruppe) => (
+            <details class="glossar-letter" id={`buchstabe-${gruppe.letter.toLowerCase()}`}>
+              <summary class="glossar-letter__summary">
+                <h2>{gruppe.letter}</h2>
+                <span class="glossar-letter__meta">
+                  <span class="glossar-letter__count">
+                    {gruppe.eintraege.length} {gruppe.eintraege.length === 1 ? "Begriff" : "Begriffe"}
+                  </span>
+                  <svg class="glossar-chevron" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18">
+                    <path
+                      d="M6 9l6 6 6-6"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </summary>
+              <div class="glossar-letter__body">
+                {
+                  gruppe.eintraege.map((eintrag) => (
+                    <details class="glossar-term" id={eintrag.id}>
+                      <summary class="glossar-term__summary">
+                        <h3>{eintrag.term}</h3>
+                        <svg class="glossar-chevron" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16">
+                          <path
+                            d="M6 9l6 6 6-6"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </summary>
+                      <div class="glossar-term__body">
+                        <p>{eintrag.definition}</p>
+                      </div>
+                    </details>
+                  ))
+                }
+              </div>
+            </details>
+          ))
+        }
+      </div>
+
+      <Quellenblock sources={GLOSSAR_QUELLEN} context="Glossar" />
+
+      <p class="glossar-fussnote">
+        Die genannten Quellen sind Ausgangsquellen für das Glossar insgesamt,
+        keine vollständigen Einzelnachweise für jeden Begriff.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    max-width: var(--measure);
+    font-size: 1rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .glossar-az {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-lg);
+  }
+
+  .glossar-az ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+  }
+
+  .glossar-az a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.25rem;
+    min-height: 2.25rem;
+    padding-inline: var(--space-2xs);
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius);
+    font-weight: 700;
+    color: var(--color-petrol);
+    text-decoration: none;
+  }
+
+  .glossar-az a:hover {
+    border-color: var(--color-bronze-soft);
+  }
+
+  .glossar-liste {
+    max-width: var(--measure);
+  }
+
+  .glossar-letter {
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius);
+    margin-bottom: var(--space-sm);
+  }
+
+  .glossar-letter__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    min-height: 44px;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .glossar-letter__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .glossar-letter__summary h2 {
+    margin: 0;
+    color: var(--color-petrol);
+  }
+
+  .glossar-letter__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    flex-shrink: 0;
+    color: var(--color-text-muted);
+  }
+
+  .glossar-letter__count {
+    font-size: 0.8125rem;
+    white-space: nowrap;
+  }
+
+  .glossar-chevron {
+    flex-shrink: 0;
+    transition: transform var(--transition-fast);
+  }
+
+  details[open] > summary .glossar-chevron {
+    transform: rotate(180deg);
+  }
+
+  .glossar-letter__body {
+    padding-inline: var(--space-md);
+    padding-bottom: var(--space-2xs);
+    border-top: var(--border-width) solid var(--color-border);
+  }
+
+  .glossar-term {
+    border-bottom: var(--border-width) solid var(--color-border);
+  }
+
+  .glossar-term:last-child {
+    border-bottom: none;
+  }
+
+  .glossar-term__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    padding-block: var(--space-sm);
+    min-height: 44px;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .glossar-term__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .glossar-term__summary h3 {
+    margin: 0;
+    font-size: 1.0625rem;
+    color: var(--color-text);
+  }
+
+  .glossar-term__body {
+    padding-bottom: var(--space-md);
+  }
+
+  .glossar-term__body p {
+    margin: 0;
+    max-width: var(--measure);
+  }
+
+  .glossar-fussnote {
+    margin-top: var(--space-sm);
+    max-width: var(--measure);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+</style>

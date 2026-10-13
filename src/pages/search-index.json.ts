@@ -12,13 +12,14 @@ import {
   materialTypeLabels,
   productTypeLabels,
 } from "../content.config";
+import { GLOSSAR_EINTRAEGE } from "../data/glossar";
 
 // Statischer Suchindex, einmal beim Build erzeugt. Keine externe Anfrage,
 // kein Tracking, keine personenbezogenen Daten – nur die Felder, die für
 // eine sinnvolle Volltextsuche nötig sind (siehe Punkt 3 des Auftrags).
 interface SearchEntry {
   id: string;
-  type: "artikel" | "anlaufstelle" | "material" | "produkt";
+  type: "artikel" | "anlaufstelle" | "material" | "produkt" | "glossar";
   title: string;
   description: string;
   url: string;
@@ -118,6 +119,20 @@ export const GET: APIRoute = async () => {
       category: productTypeLabels[entry.data.productType],
       targetGroups: entry.data.targetGroups.map((gruppe) => targetGroupLabels[gruppe]),
       status: suchZusatz,
+    });
+  }
+
+  // Glossarbegriffe sind keine eigenen Seiten, sondern aufklappbare
+  // Abschnitte auf /glossar/ (siehe Punkt 1 des Glossar-Auftrags: keine
+  // separaten Begriffsseiten). Die URL verweist deshalb auf die Sprungmarke
+  // des jeweiligen Begriffs auf dieser einen Seite.
+  for (const eintrag of GLOSSAR_EINTRAEGE) {
+    entries.push({
+      id: `glossar/${eintrag.id}`,
+      type: "glossar",
+      title: eintrag.term,
+      description: eintrag.definition,
+      url: `/glossar/#${eintrag.id}`,
     });
   }
 

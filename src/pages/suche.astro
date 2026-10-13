@@ -64,7 +64,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
 
   interface SearchEntry {
     id: string;
-    type: "artikel" | "anlaufstelle" | "material" | "produkt";
+    type: "artikel" | "anlaufstelle" | "material" | "produkt" | "glossar";
     title: string;
     description: string;
     url: string;
@@ -85,6 +85,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
     anlaufstelle: "Anlaufstelle",
     material: "Material",
     produkt: "Produkt",
+    glossar: "Glossar-Begriff",
   };
 
   const MAX_ERGEBNISSE = 40;
