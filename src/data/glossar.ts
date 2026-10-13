@@ -495,4 +495,348 @@ export const GLOSSAR_EINTRAEGE: GlossarEintrag[] = [
     definition:
       "Nach § 29 Absatz 4 SGB IX schließen Leistungsträger und leistungsberechtigte Person beim Persönlichen Budget grundsätzlich eine Zielvereinbarung. Sie regelt mindestens Förder- und Leistungsziele, den Nachweis der Bedarfsdeckung, Qualitätssicherung sowie die Höhe des Teil- und Gesamtbudgets. Eine Ausnahme gilt, wenn ausschließlich Pflegekassen das Budget erbringen.",
   },
+
+  // ---------------------------------------------------------------------
+  // Erweiterung um 48 Begriffe (zweite Redaktionsrunde). IDs wurden an die
+  // bestehende Transliterationskonvention angeglichen (ä/ö/ü → ae/oe/ue),
+  // da die Ausgangsdatei Umlaute teils ersatzlos entfernt hatte. Die
+  // Sortierung nach Buchstabe und Begriff erfolgt automatisch beim Rendern
+  // der Seite (siehe src/pages/glossar/index.astro), daher reicht Anhängen.
+  // ---------------------------------------------------------------------
+  {
+    id: "aac-augmentative-and-alternative-communication",
+    term: "AAC (Augmentative and Alternative Communication)",
+    letter: "A",
+    definition:
+      "AAC ist die englische Bezeichnung für Unterstützte Kommunikation. Dazu zählen Methoden, die gesprochene Sprache ergänzen oder ersetzen, etwa Symboltafeln, Gebärden oder elektronische Kommunikationshilfen. AAC kann unabhängig davon sinnvoll sein, ob eine Person sprechen kann oder nicht.",
+  },
+  {
+    id: "adi-r",
+    term: "ADI-R",
+    letter: "A",
+    definition:
+      "Das Autism Diagnostic Interview – Revised (ADI-R) ist ein standardisiertes Interview zur Entwicklungs- und Verhaltensgeschichte, üblicherweise mit einer gut informierten Bezugsperson. Es kann die Autismusdiagnostik ergänzen, ersetzt aber keine umfassende klinische Beurteilung. Bei Erwachsenen stehen Informationen aus der frühen Entwicklung nicht immer vollständig zur Verfügung.",
+  },
+  {
+    id: "ados-2",
+    term: "ADOS-2",
+    letter: "A",
+    definition:
+      "Die Autism Diagnostic Observation Schedule, zweite Ausgabe (ADOS-2), ist ein standardisiertes, strukturiertes Beobachtungsverfahren, das in der Autismusdiagnostik eingesetzt werden kann. Das Ergebnis ist ein Baustein der klinischen Gesamtbeurteilung und stellt für sich allein weder eine Diagnose noch einen Ausschluss von Autismus dar.",
+  },
+  {
+    id: "anamnese",
+    term: "Anamnese",
+    letter: "A",
+    definition:
+      "Die Anamnese ist die systematische Erhebung der gesundheitlichen und biografischen Vorgeschichte. In der Autismusdiagnostik gehören dazu insbesondere die Entwicklung seit der Kindheit, aktuelle Erfahrungen, Belastungen und vorhandene Stärken. Informationen aus mehreren Quellen können hilfreich sein, müssen aber kritisch eingeordnet werden.",
+  },
+  {
+    id: "angemessene-vorkehrungen",
+    term: "Angemessene Vorkehrungen",
+    letter: "A",
+    definition:
+      "Angemessene Vorkehrungen sind notwendige und geeignete Anpassungen im Einzelfall, die Menschen mit Behinderungen gleichberechtigte Teilhabe ermöglichen sollen, sofern sie keine unverhältnismäßige oder unbillige Belastung darstellen. Beispiele können angepasste Kommunikationswege oder eine reizärmere Arbeitsumgebung sein. Die konkreten Pflichten richten sich nach dem jeweiligen Rechtsrahmen.",
+  },
+  {
+    id: "angststoerung",
+    term: "Angststörung",
+    letter: "A",
+    definition:
+      "Angststörungen sind psychische Erkrankungen, bei denen Angst oder Furcht anhaltend beziehungsweise wiederkehrend zu deutlicher Belastung oder Einschränkung führt. Sie können gemeinsam mit Autismus auftreten, sind aber nicht dessen notwendiger Bestandteil. Diagnostik und Unterstützung sollten die individuellen Kommunikations- und Wahrnehmungsbedürfnisse berücksichtigen.",
+  },
+  {
+    id: "arbeitsassistenz",
+    term: "Arbeitsassistenz",
+    letter: "A",
+    definition:
+      "Arbeitsassistenz bezeichnet eine personelle Unterstützung bei der Ausübung einer beruflichen Tätigkeit. Unter bestimmten Voraussetzungen kann sie als Leistung zur Teilhabe am Arbeitsleben oder im Rahmen begleitender Hilfen im Arbeitsleben finanziert werden. Zuständigkeit und Anspruch hängen von der individuellen Situation und der einschlägigen Rechtsgrundlage ab.",
+  },
+  {
+    id: "arbeitsplatzanpassung",
+    term: "Arbeitsplatzanpassung",
+    letter: "A",
+    definition:
+      "Arbeitsplatzanpassungen verändern Arbeitsbedingungen, damit Beschäftigte ihre Tätigkeit besser ausüben können. Dazu gehören beispielsweise Licht- und Lärmanpassungen, verlässliche Aufgabenabsprachen oder flexible Kommunikationswege. Ob eine konkrete Maßnahme rechtlich geschuldet oder förderfähig ist, richtet sich nach dem Einzelfall.",
+  },
+  {
+    id: "auditive-verarbeitung",
+    term: "Auditive Verarbeitung",
+    letter: "A",
+    definition:
+      "Auditive Verarbeitung umfasst die Verarbeitung und Interpretation gehörter Informationen. Schwierigkeiten können beispielsweise das Verstehen von Sprache in lauter Umgebung betreffen. Sie sind nicht automatisch gleichbedeutend mit einer diagnostizierten auditiven Verarbeitungs- und Wahrnehmungsstörung.",
+  },
+  {
+    id: "autismusdiagnostik-bei-erwachsenen",
+    term: "Autismusdiagnostik bei Erwachsenen",
+    letter: "A",
+    definition:
+      "Die Autismusdiagnostik bei Erwachsenen untersucht, ob die Merkmale seit der Entwicklungsphase bestehen und die aktuellen diagnostischen Kriterien erfüllen. Sie umfasst eine fachliche Gesamtbeurteilung unter Berücksichtigung der Lebensgeschichte und möglicher anderer oder zusätzlicher Diagnosen. Eine Diagnose lässt sich nicht allein aus einem Online-Fragebogen ableiten.",
+  },
+  {
+    id: "autismusfreundliche-kommunikation",
+    term: "Autismusfreundliche Kommunikation",
+    letter: "A",
+    definition:
+      "Autismusfreundliche Kommunikation berücksichtigt unterschiedliche Bedürfnisse bei Sprache, Verarbeitung und Interaktion. Hilfreich können eindeutige Formulierungen, schriftliche Informationen, ausreichend Antwortzeit und das Vermeiden unnötiger Mehrdeutigkeit sein. Welche Anpassungen sinnvoll sind, sollte mit der jeweiligen Person geklärt werden.",
+  },
+  {
+    id: "autistische-identitaet",
+    term: "Autistische Identität",
+    letter: "A",
+    definition:
+      "Autistische Identität beschreibt, welche Bedeutung Autismus für das eigene Selbstverständnis hat. Manche Menschen erleben Autismus als wichtigen Teil ihrer Identität, andere bevorzugen eine stärker medizinische Einordnung oder unterschiedliche Selbstbezeichnungen. Es gibt keine für alle verbindliche Sichtweise.",
+  },
+  {
+    id: "betriebliches-eingliederungsmanagement-bem",
+    term: "Betriebliches Eingliederungsmanagement (BEM)",
+    letter: "B",
+    definition:
+      "Arbeitgeber müssen Beschäftigten ein betriebliches Eingliederungsmanagement anbieten, wenn diese innerhalb eines Jahres länger als sechs Wochen ununterbrochen oder wiederholt arbeitsunfähig waren (§ 167 Abs. 2 SGB IX). Ziel ist, Arbeitsunfähigkeit zu überwinden, erneuter Arbeitsunfähigkeit vorzubeugen und den Arbeitsplatz zu erhalten. Die Teilnahme ist freiwillig.",
+  },
+  {
+    id: "depression",
+    term: "Depression",
+    letter: "D",
+    definition:
+      "Eine Depression ist eine psychische Erkrankung, die unter anderem durch anhaltend gedrückte Stimmung oder Interessenverlust und weitere Symptome gekennzeichnet sein kann. Sie kann auch bei autistischen Menschen auftreten. Veränderungen gegenüber dem persönlichen Ausgangszustand sind bei der Beurteilung besonders wichtig.",
+  },
+  {
+    id: "diagnostische-kriterien",
+    term: "Diagnostische Kriterien",
+    letter: "D",
+    definition:
+      "Diagnostische Kriterien sind festgelegte Merkmale und Bedingungen, anhand derer Fachpersonen eine Diagnose beurteilen. Bei Autismus betreffen sie unter anderem soziale Kommunikation und Interaktion sowie eingeschränkte oder repetitive Muster. Die Einordnung berücksichtigt Entwicklung, Kontext und funktionelle Auswirkungen.",
+  },
+  {
+    id: "differenzialdiagnostik",
+    term: "Differenzialdiagnostik",
+    letter: "D",
+    definition:
+      "Differenzialdiagnostik bedeutet, mögliche andere oder zusätzliche Erklärungen für bestimmte Merkmale zu prüfen. Bei einer Autismusabklärung können beispielsweise ADHS, Angststörungen, Traumafolgen oder Sprach- und Entwicklungsbesonderheiten relevant sein. Mehrere Erkrankungen oder Entwicklungsbedingungen können gleichzeitig vorliegen.",
+  },
+  {
+    id: "ehlers-danlos-syndrome-eds",
+    term: "Ehlers-Danlos-Syndrome (EDS)",
+    letter: "E",
+    definition:
+      "Die Ehlers-Danlos-Syndrome sind eine Gruppe erblicher Bindegewebserkrankungen mit unterschiedlichen Merkmalen, beispielsweise Gelenkhypermobilität und Gewebebesonderheiten. Überschneidungen mit Autismus werden erforscht. Aus einer Autismusdiagnose lässt sich jedoch keine EDS-Diagnose ableiten und umgekehrt.",
+  },
+  {
+    id: "entscheidungsermuedung",
+    term: "Entscheidungsermüdung",
+    letter: "E",
+    definition:
+      "Entscheidungsermüdung beschreibt die subjektive Erschöpfung nach vielen oder besonders anspruchsvollen Entscheidungen. Der Ausdruck ist kein eigenständiges Krankheitsbild; Umfang und Mechanismen werden wissenschaftlich unterschiedlich diskutiert. Eine Verringerung unnötiger Auswahlmöglichkeiten kann im Alltag entlasten.",
+  },
+  {
+    id: "epilepsie",
+    term: "Epilepsie",
+    letter: "E",
+    definition:
+      "Epilepsie ist eine neurologische Erkrankung mit einer anhaltenden Neigung zu epileptischen Anfällen. Sie kann gemeinsam mit Autismus vorkommen. Nicht jede ungewöhnliche Bewegung oder Bewusstseinsveränderung ist ein epileptischer Anfall; entsprechende Ereignisse müssen fachärztlich abgeklärt werden.",
+  },
+  {
+    id: "inklusionsbetrieb",
+    term: "Inklusionsbetrieb",
+    letter: "I",
+    definition:
+      "Inklusionsbetriebe sind rechtlich geregelte Unternehmen oder Unternehmensteile, die besonders betroffenen schwerbehinderten Menschen Beschäftigung auf dem allgemeinen Arbeitsmarkt bieten. Sie verbinden wirtschaftliche Tätigkeit mit einem besonderen Beschäftigungsauftrag. Die gesetzlichen Regelungen finden sich insbesondere in §§ 215 ff. SGB IX.",
+  },
+  {
+    id: "inklusive-beschulung",
+    term: "Inklusive Beschulung",
+    letter: "I",
+    definition:
+      "Inklusive Beschulung bezeichnet den gemeinsamen Unterricht von Kindern und Jugendlichen mit unterschiedlichen Lern- und Unterstützungsbedürfnissen. Dazu können angemessene Unterstützung, barrierefreie Materialien und angepasste Rahmenbedingungen gehören. Die konkrete Umsetzung richtet sich nach dem Schulrecht des jeweiligen Bundeslandes.",
+  },
+  {
+    id: "integrationsfachdienst-ifd",
+    term: "Integrationsfachdienst (IFD)",
+    letter: "I",
+    definition:
+      "Integrationsfachdienste unterstützen unter gesetzlichen Voraussetzungen Menschen mit Behinderungen und Arbeitgeber bei Fragen der beruflichen Teilhabe. Dazu können Beratung, Vermittlung und Begleitung am Arbeitsplatz gehören. Welche Unterstützung möglich ist und wer sie beauftragt oder finanziert, hängt vom Einzelfall ab.",
+  },
+  {
+    id: "jobcoaching-am-arbeitsplatz",
+    term: "Jobcoaching am Arbeitsplatz",
+    letter: "J",
+    definition:
+      "Jobcoaching am Arbeitsplatz ist eine arbeitsplatznahe Unterstützung, bei der berufliche Abläufe, Kommunikation und Anforderungen gemeinsam bearbeitet werden. Ziel kann sein, eine Tätigkeit aufzunehmen oder dauerhaft auszuüben. Ob die Maßnahme finanziert wird, hängt von Bedarf, Leistungsträger und konkreter Ausgestaltung ab.",
+  },
+  {
+    id: "kommunikationsbarrieren",
+    term: "Kommunikationsbarrieren",
+    letter: "K",
+    definition:
+      "Kommunikationsbarrieren entstehen, wenn Informationen nicht in einer für die Beteiligten zugänglichen Form vermittelt werden. Beispiele sind unklare Anweisungen, ausschließlich mündliche Informationen oder fehlende Zeit zur Verarbeitung. Schriftliche Zusammenfassungen und eindeutige Fragen können solche Barrieren verringern.",
+  },
+  {
+    id: "komorbiditaet",
+    term: "Komorbidität",
+    letter: "K",
+    definition:
+      "Komorbidität bezeichnet das gleichzeitige Vorliegen von zwei oder mehr diagnostizierbaren Erkrankungen beziehungsweise Störungen. Autismus kann beispielsweise gemeinsam mit ADHS, Angststörungen oder Epilepsie auftreten. Der Begriff sagt für sich genommen nichts darüber aus, ob ein ursächlicher Zusammenhang besteht.",
+  },
+  {
+    id: "me-cfs",
+    term: "ME/CFS",
+    letter: "M",
+    definition:
+      "Myalgische Enzephalomyelitis/Chronisches Fatigue-Syndrom (ME/CFS) ist eine schwere, komplexe Erkrankung, deren Kernmerkmal die Zustandsverschlechterung nach Belastung (Post-Exertional Malaise, PEM) ist. Weitere Beschwerden können unter anderem ausgeprägte Erschöpfung, Schlafstörungen und kognitive Probleme sein. ME/CFS ist nicht mit gewöhnlicher Müdigkeit oder autistischem Burnout gleichzusetzen.",
+  },
+  {
+    id: "neurodiversitaetsparadigma",
+    term: "Neurodiversitätsparadigma",
+    letter: "N",
+    definition:
+      "Das Neurodiversitätsparadigma ist eine Perspektive, die neurologische Unterschiede als Teil menschlicher Vielfalt betrachtet und gesellschaftliche Barrieren kritisch hinterfragt. Es schließt die Anerkennung von Behinderungen und individuellem Unterstützungsbedarf nicht aus. Der Begriff bezeichnet eine theoretische und gesellschaftliche Sichtweise, keine medizinische Diagnose.",
+  },
+  {
+    id: "pda-profil-pathological-demand-avoidance",
+    term: "PDA-Profil (Pathological Demand Avoidance)",
+    letter: "P",
+    definition:
+      "PDA ist eine umstrittene Bezeichnung für ein Muster ausgeprägter Vermeidung erlebter Anforderungen, das teils im Zusammenhang mit Autismus diskutiert wird. Es gibt keine eigenständige PDA-Diagnose in ICD-11 oder DSM-5-TR; Definition, Abgrenzung und Forschungslage sind uneinheitlich. Der Begriff sollte nicht als gesicherter Autismus-Subtyp dargestellt werden.",
+  },
+  {
+    id: "post-exertional-malaise-pem",
+    term: "Post-Exertional Malaise (PEM)",
+    letter: "P",
+    definition:
+      "Post-Exertional Malaise bezeichnet eine oft verzögert einsetzende und länger anhaltende Verschlechterung von Beschwerden nach körperlicher, kognitiver oder emotionaler Belastung. PEM ist ein zentrales Merkmal von ME/CFS. Betroffene sollten Belastungsgrenzen ernst nehmen; pauschale Empfehlungen zur kontinuierlichen Steigerung körperlicher Aktivität können ungeeignet sein.",
+  },
+  {
+    id: "pots-posturales-tachykardiesyndrom",
+    term: "POTS (Posturales Tachykardiesyndrom)",
+    letter: "P",
+    definition:
+      "POTS ist eine Form orthostatischer Intoleranz, bei der es beim Aufrichten zu einem anhaltenden Anstieg der Herzfrequenz um mindestens 30 Schläge pro Minute (bei Jugendlichen mindestens 40) innerhalb von zehn Minuten kommen kann, ohne begleitenden Blutdruckabfall. Für die Diagnose sind weitere Kriterien und der Ausschluss anderer Ursachen erforderlich. Mögliche Zusammenhänge mit Autismus werden untersucht; ein gesicherter ursächlicher Zusammenhang ist nicht belegt.",
+  },
+  {
+    id: "pruefungsnachteilsausgleich",
+    term: "Prüfungsnachteilsausgleich",
+    letter: "P",
+    definition:
+      "Ein Prüfungsnachteilsausgleich soll behinderungsbedingte Nachteile bei der Erbringung von Prüfungsleistungen ausgleichen, ohne das fachliche Anforderungsniveau unzulässig zu verändern. Möglich sind je nach Rechtsgrundlage etwa Zeitverlängerungen, Pausen oder eine angepasste Prüfungsumgebung. Voraussetzungen und Verfahren unterscheiden sich nach Schul-, Hochschul- oder Prüfungsrecht.",
+  },
+  {
+    id: "reizbelastung-am-arbeitsplatz",
+    term: "Reizbelastung am Arbeitsplatz",
+    letter: "R",
+    definition:
+      "Reizbelastung am Arbeitsplatz bezeichnet sensorische Anforderungen wie Lärm, Licht, Gerüche oder häufige Unterbrechungen. Bei manchen autistischen Menschen können solche Bedingungen Konzentration und Wohlbefinden erheblich beeinträchtigen. Mögliche Anpassungen sind beispielsweise Rückzugsmöglichkeiten, klare Arbeitsabläufe oder geeigneter Gehörschutz.",
+  },
+  {
+    id: "schlafstoerungen",
+    term: "Schlafstörungen",
+    letter: "S",
+    definition:
+      "Schlafstörungen umfassen unterschiedliche Probleme, etwa beim Ein- oder Durchschlafen oder mit dem Schlaf-Wach-Rhythmus. Schlafprobleme werden bei autistischen Menschen berichtet, haben aber unterschiedliche mögliche Ursachen. Eine anhaltende Schlafstörung sollte individuell medizinisch abgeklärt werden.",
+  },
+  {
+    id: "schulabsentismus",
+    term: "Schulabsentismus",
+    letter: "S",
+    definition:
+      "Schulabsentismus ist ein Oberbegriff für wiederholte oder längere Abwesenheit vom Unterricht. Die Gründe können sehr unterschiedlich sein, etwa Erkrankungen, Angst, Überforderung, Konflikte oder schulische Rahmenbedingungen. Der Begriff beschreibt das Fernbleiben und erklärt nicht automatisch dessen Ursache.",
+  },
+  {
+    id: "schulbegleitung",
+    term: "Schulbegleitung",
+    letter: "S",
+    definition:
+      "Schulbegleitung ist eine individuelle Unterstützung, die einem Kind oder Jugendlichen die Teilnahme am Schulalltag ermöglichen oder erleichtern kann. Sie ersetzt nicht die pädagogische Verantwortung der Schule. Ob ein Anspruch besteht und welcher Träger zuständig ist, richtet sich nach den individuellen Voraussetzungen und dem einschlägigen Leistungsrecht.",
+  },
+  {
+    id: "schulvermeidung",
+    term: "Schulvermeidung",
+    letter: "S",
+    definition:
+      "Schulvermeidung beschreibt Situationen, in denen der Schulbesuch wiederholt nicht gelingt oder aktiv vermieden wird. Dahinter können unter anderem Ängste, Überforderung, Mobbing oder fehlende Unterstützung stehen. Eine sorgfältige Abklärung ist wichtig; Schuldzuweisungen erklären die Ursachen nicht.",
+  },
+  {
+    id: "screening",
+    term: "Screening",
+    letter: "S",
+    definition:
+      "Ein Screening dient dazu, Hinweise auf einen möglichen weiteren Abklärungsbedarf zu erkennen. Fragebögen können eine diagnostische Untersuchung vorbereiten, liefern aber weder allein eine gesicherte Autismusdiagnose noch einen verlässlichen Ausschluss. Ihre Aussagekraft hängt unter anderem von Zielgruppe und Anwendung ab.",
+  },
+  {
+    id: "selbstvertretung",
+    term: "Selbstvertretung",
+    letter: "S",
+    definition:
+      "Selbstvertretung bedeutet, eigene Interessen, Rechte und Unterstützungsbedürfnisse selbst zu formulieren und bei Entscheidungen mitzuwirken. Sie kann individuell oder organisiert stattfinden. Unterstützte Kommunikation oder Assistenz stehen selbstbestimmter Interessenvertretung nicht entgegen.",
+  },
+  {
+    id: "selektiver-mutismus",
+    term: "Selektiver Mutismus",
+    letter: "S",
+    definition:
+      "Selektiver Mutismus ist eine diagnostizierbare Störung, bei der eine Person in bestimmten sozialen Situationen wiederholt nicht spricht, obwohl sie in anderen Situationen sprechen kann. Er ist nicht mit einer bewussten Verweigerung gleichzusetzen. Selektiver Mutismus und Autismus können gemeinsam vorkommen, müssen aber diagnostisch unterschieden werden.",
+  },
+  {
+    id: "sensorisches-suchen",
+    term: "Sensorisches Suchen",
+    letter: "S",
+    definition:
+      "Sensorisches Suchen bezeichnet das aktive Aufsuchen bestimmter Sinnesreize, etwa Bewegung, Druck, Berührung oder Geräusche. Solche Reize können als angenehm, aktivierend oder regulierend erlebt werden. Welche Reize gesucht oder gemieden werden, ist individuell verschieden.",
+  },
+  {
+    id: "situativer-sprachverlust",
+    term: "Situativer Sprachverlust",
+    letter: "S",
+    definition:
+      "Situativer Sprachverlust ist eine beschreibende Bezeichnung dafür, dass gesprochene Sprache unter bestimmten Bedingungen vorübergehend schwer oder nicht zugänglich ist, etwa bei starker Überlastung. Der Ausdruck ist keine eigenständige Diagnose. Plötzlich auftretende Sprachstörungen können medizinische Notfälle sein und dürfen nicht pauschal als Überlastung eingeordnet werden.",
+  },
+  {
+    id: "sonderpaedagogischer-unterstuetzungsbedarf",
+    term: "Sonderpädagogischer Unterstützungsbedarf",
+    letter: "S",
+    definition:
+      "Sonderpädagogischer Unterstützungsbedarf bezeichnet im Schulrecht einen festgestellten besonderen Unterstützungsbedarf im Bildungsprozess. Verfahren, Bezeichnungen und Rechtsfolgen unterscheiden sich zwischen den Bundesländern. Eine Autismusdiagnose allein führt nicht automatisch zu einer bestimmten schulrechtlichen Feststellung.",
+  },
+  {
+    id: "soziale-skripte",
+    term: "Soziale Skripte",
+    letter: "S",
+    definition:
+      "Soziale Skripte sind vorbereitete Formulierungen oder gedankliche Abläufe für wiederkehrende Gesprächssituationen. Sie können beispielsweise bei Telefonaten, Arztterminen oder Konflikten Orientierung bieten. Ihre Nutzung ist eine mögliche Kommunikationsstrategie und kein diagnostisches Merkmal.",
+  },
+  {
+    id: "spaetdiagnose",
+    term: "Spätdiagnose",
+    letter: "S",
+    definition:
+      "Von einer Spätdiagnose wird gesprochen, wenn Autismus erst im Jugend- oder Erwachsenenalter erkannt wird. Gründe können unter anderem kompensierende Strategien, fehlendes Wissen oder frühere Fehleinordnungen sein. Eine späte Diagnose bedeutet nicht, dass Autismus erst spät entstanden ist.",
+  },
+  {
+    id: "task-switching-aufgabenwechsel",
+    term: "Task Switching (Aufgabenwechsel)",
+    letter: "T",
+    definition:
+      "Task Switching bezeichnet den Wechsel zwischen Aufgaben oder mentalen Anforderungen. Solche Wechsel benötigen kognitive Steuerung und können Zeit oder Konzentration kosten. Bei manchen autistischen Menschen sind häufige Unterbrechungen oder ungeplante Aufgabenwechsel besonders belastend.",
+  },
+  {
+    id: "unmasking",
+    term: "Unmasking",
+    letter: "U",
+    definition:
+      "Unmasking beschreibt den Prozess, erlernte Strategien des Verbergens oder Anpassens autistischer Merkmale bewusster wahrzunehmen und gegebenenfalls zu reduzieren. Dies kann entlastend sein, ist aber abhängig von Sicherheit, Umfeld und persönlichen Entscheidungen. Niemand ist verpflichtet, auf Masking vollständig zu verzichten.",
+  },
+  {
+    id: "woertliches-sprachverstaendnis",
+    term: "Wörtliches Sprachverständnis",
+    letter: "W",
+    definition:
+      "Wörtliches Sprachverständnis beschreibt die Tendenz, Aussagen zunächst nach ihrem direkten Wortlaut zu interpretieren. Ironie, Andeutungen oder mehrdeutige Formulierungen können dadurch zusätzlichen Interpretationsaufwand verursachen. Nicht alle autistischen Menschen verstehen Sprache überwiegend wörtlich.",
+  },
+  {
+    id: "uebergangssituationen",
+    term: "Übergangssituationen",
+    letter: "Ü",
+    definition:
+      "Übergangssituationen sind Wechsel zwischen Tätigkeiten, Orten oder sozialen Anforderungen. Für manche autistische Menschen können sie anstrengend sein, weil Aufmerksamkeit, Planung und Erwartungen neu ausgerichtet werden müssen. Vorankündigungen, klare Abläufe und ausreichend Zeit können Übergänge erleichtern.",
+  },
 ];

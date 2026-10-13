@@ -52,7 +52,7 @@ Unabhängig vom Bereich ist eine funktionsbezogene Argumentation meist verständ
 
 Nachteilsausgleich kompensiert behinderungsbedingte Nachteile ohne unzulässige Absenkung fachlicher Anforderungen. Die Maßnahme muss zum konkreten Nachteil und Lern-/Prüfungsziel passen – es gibt keine bundesweit identische Maßnahmenliste. Rechtsquelle, Bundesland und Prüfdatum sollten auf jeder Rechtsseite ausgewiesen werden.
 
-Schulbegleitung ist eine Teilhabeleistung mit eigenen Voraussetzungen und ersetzt nicht den Bildungsauftrag der Schule. Autismusdiagnose ist nicht gleichbedeutend mit sonderpädagogischem Unterstützungsbedarf; Förderbedarf folgt dem landesrechtlichen Verfahren. Ziel ist Teilhabe und möglichst viel Selbstbestimmung, nicht unnötige Abhängigkeit.
+Schulbegleitung ist eine Teilhabeleistung mit eigenen Voraussetzungen und ersetzt nicht den Bildungsauftrag der Schule. Autismusdiagnose ist nicht gleichbedeutend mit [sonderpädagogischem Unterstützungsbedarf](/glossar/#sonderpaedagogischer-unterstuetzungsbedarf); Förderbedarf folgt dem landesrechtlichen Verfahren. Ziel ist Teilhabe und möglichst viel Selbstbestimmung, nicht unnötige Abhängigkeit.
 
 Übergänge sind risikoreiche Schnittstellen: Informationen, Zuständigkeiten, Räume und Abläufe sollten früh transparent gemacht werden. Der Übergang Schule → Ausbildung/Studium sollte mit sozialrechtlichen Leistungen verknüpft werden – siehe [Ausbildung & Studium](/fuer-autistische-menschen/alltag/ausbildung-und-studium/).
 

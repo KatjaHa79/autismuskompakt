@@ -29,7 +29,7 @@ Nicht jeder autistische Mensch hat eine Alexithymie, und nicht jede Person mit A
 
 ## Was wissen wir aus der Forschung?
 
-Eine systematische Übersichtsarbeit und Meta-Analyse (Kinnaird et al., 2019) findet in autistischen Stichproben im Durchschnitt höhere Alexithymie-Werte als in Vergleichsgruppen – mit deutlicher Streuung zwischen einzelnen Personen. Alexithymie wird zunehmend als eigenständige, mit Autismus gemeinsam auftretende Eigenschaft verstanden (Komorbidität/Überlappung), nicht als Bestandteil der Autismus-Diagnosekriterien selbst. Wie stark Alexithymie bestimmte autistische Erfahrungen (z. B. im Bereich Emotionsregulation) mitbeeinflusst, ist weiterhin Gegenstand aktiver Forschung.
+Eine systematische Übersichtsarbeit und Meta-Analyse (Kinnaird et al., 2019) findet in autistischen Stichproben im Durchschnitt höhere Alexithymie-Werte als in Vergleichsgruppen – mit deutlicher Streuung zwischen einzelnen Personen. Alexithymie wird zunehmend als eigenständige, mit Autismus gemeinsam auftretende Eigenschaft verstanden ([Komorbidität](/glossar/#komorbiditaet)/Überlappung), nicht als Bestandteil der Autismus-Diagnosekriterien selbst. Wie stark Alexithymie bestimmte autistische Erfahrungen (z. B. im Bereich Emotionsregulation) mitbeeinflusst, ist weiterhin Gegenstand aktiver Forschung.
 
 ## Was bedeutet das im Alltag?
 

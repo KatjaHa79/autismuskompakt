@@ -11,7 +11,7 @@ sources:
 
 ## Für autistische Menschen
 
-Bei Migräne und Kopfschmerzen ist die Evidenz weniger eindeutig als bei Epilepsie. Eine systematische Review mit Meta-Analyse fand Hinweise auf häufiger berichtete Kopfschmerzen bei autistischen Kindern, während Ergebnisse bei Erwachsenen uneinheitlich waren.
+Bei Migräne und Kopfschmerzen ist die Evidenz weniger eindeutig als bei [Epilepsie](/glossar/#epilepsie). Eine systematische Review mit Meta-Analyse fand Hinweise auf häufiger berichtete Kopfschmerzen bei autistischen Kindern, während Ergebnisse bei Erwachsenen uneinheitlich waren.
 
 Deshalb sollte nicht pauschal behauptet werden, dass autistische Menschen generell häufiger Migräne haben, als wäre das für alle Altersgruppen sicher bewiesen.
 
