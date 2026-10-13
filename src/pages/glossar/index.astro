@@ -27,12 +27,35 @@ for (const eintrag of sortierteEintraege) {
     gruppen.push({ letter: eintrag.letter, eintraege: [eintrag] });
   }
 }
+
+// Strukturierte Daten (DefinedTermSet/DefinedTerm): bildet 1:1 die auf der
+// Seite tatsächlich vorhandenen Begriffe und Erklärungen ab – keine
+// zusätzlichen oder abweichenden Angaben. Dient der inhaltlichen Einordnung,
+// nicht dem Versprechen bestimmter Rich-Result-Darstellungen.
+const glossarUrl = new URL("/glossar/", Astro.site).toString();
+const definedTermSetLd = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  name: "Autismus-Glossar",
+  url: glossarUrl,
+  inLanguage: "de-DE",
+  hasDefinedTerm: sortierteEintraege.map((eintrag) => ({
+    "@type": "DefinedTerm",
+    "@id": `${glossarUrl}#${eintrag.id}`,
+    name: eintrag.term,
+    description: eintrag.definition,
+    url: `${glossarUrl}#${eintrag.id}`,
+    inDefinedTermSet: glossarUrl,
+  })),
+};
 ---
 
 <BaseLayout
   title="Autismus-Glossar A–Z"
   description="Autismus-Begriffe verständlich erklärt: von Alexithymie und Masking bis Meltdown, Stimming und Nachteilsausgleich. Alphabetisch und direkt auf einer Seite."
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(definedTermSetLd)} />
+
   <div class="container container--wide">
     <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Glossar" }]} />
   </div>
@@ -128,6 +151,58 @@ for (const eintrag of sortierteEintraege) {
     </div>
   </section>
 </BaseLayout>
+
+<script is:inline>
+  // Browser öffnen beim Navigieren zu einem Fragment (z. B. /glossar/#masking)
+  // automatisch das umgebende <details> des Buchstabens – das ist natives
+  // HTML-Verhalten und funktioniert bereits ohne dieses Skript. Was Browser
+  // nicht automatisch tun: das Begriffs-<details> selbst öffnen, wenn das
+  // Sprungziel selbst ein <details>-Element ist. Diese Ergänzung schließt
+  // genau diese Lücke – rein progressive Verbesserung, keine Bibliothek,
+  // keine Voraussetzung für die Grundfunktion des Akkordeons.
+  (function () {
+    function prefersReducedMotion() {
+      return (
+        window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      );
+    }
+
+    function openFromHash() {
+      var hash = window.location.hash;
+      if (!hash || hash.length < 2) return;
+
+      var id;
+      try {
+        id = decodeURIComponent(hash.slice(1));
+      } catch (error) {
+        id = hash.slice(1);
+      }
+
+      var target = document.getElementById(id);
+      if (!target) return;
+
+      var letterGroup = target.closest(".glossar-letter");
+      if (letterGroup && !letterGroup.open) {
+        letterGroup.open = true;
+      }
+
+      if (target.tagName === "DETAILS" && !target.open) {
+        target.open = true;
+      }
+
+      // Erst nach dem Öffnen erneut scrollen: Das Öffnen verändert die
+      // Seitenhöhe, der ursprüngliche Browser-Sprung kann dadurch nicht
+      // mehr an der richtigen Stelle stehen.
+      target.scrollIntoView({
+        block: "start",
+        behavior: prefersReducedMotion() ? "auto" : "smooth",
+      });
+    }
+
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+  })();
+</script>
 
 <style>
   .lead {

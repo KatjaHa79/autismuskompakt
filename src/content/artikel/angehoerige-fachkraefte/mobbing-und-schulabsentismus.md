@@ -12,7 +12,7 @@ sources:
 
 ## Für autistische Menschen
 
-Starke Belastung kann nach außen sehr unterschiedlich sichtbar sein. Meltdown und Shutdown sollten nicht vorschnell als absichtliche Verweigerung bewertet werden. Berichte über Belastung sollten ernst genommen werden, auch wenn die Schule wenig davon sieht. Mobbing sollte aktiv mitgedacht werden – das Viktimisierungsrisiko ist in Meta-Analysen erhöht.
+Starke Belastung kann nach außen sehr unterschiedlich sichtbar sein. [Meltdown](/glossar/#meltdown) und Shutdown sollten nicht vorschnell als absichtliche Verweigerung bewertet werden. Berichte über Belastung sollten ernst genommen werden, auch wenn die Schule wenig davon sieht. Mobbing sollte aktiv mitgedacht werden – das Viktimisierungsrisiko ist in Meta-Analysen erhöht.
 
 **Schutz vor Mobbing ist Aufgabe der Schule – nicht die Anpassung des gemobbten Kindes an Täter:innen.**
 

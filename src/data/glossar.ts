@@ -493,6 +493,6 @@ export const GLOSSAR_EINTRAEGE: GlossarEintrag[] = [
     term: "Zielvereinbarung (Persönliches Budget)",
     letter: "Z",
     definition:
-      "Bei einem Persönlichen Budget regelt eine Zielvereinbarung, soweit gesetzlich erforderlich, unter anderem individuelle Ziele, Nachweise und Qualitätssicherung. Maßgeblich sind die Regelungen des § 29 SGB IX.",
+      "Nach § 29 Absatz 4 SGB IX schließen Leistungsträger und leistungsberechtigte Person beim Persönlichen Budget grundsätzlich eine Zielvereinbarung. Sie regelt mindestens Förder- und Leistungsziele, den Nachweis der Bedarfsdeckung, Qualitätssicherung sowie die Höhe des Teil- und Gesamtbudgets. Eine Ausnahme gilt, wenn ausschließlich Pflegekassen das Budget erbringen.",
   },
 ];

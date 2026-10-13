@@ -19,7 +19,7 @@ Autistische Menschen können dieselben psychischen Erkrankungen und Lebenskrisen
 
 ## Therapieziel gemeinsam definieren
 
-Ziele sollten sich an Leidensdruck, Funktionsbeeinträchtigung und den Wünschen der Person orientieren. Blickkontakt, weniger Stimming oder neurotypischeres Sozialverhalten sind keine sinnvollen Therapieziele. Bei Depression, Angst, Trauma, Zwang oder anderen Erkrankungen sollte die jeweilige Problematik fachgerecht behandelt und die Durchführung bei Bedarf autismusgerecht angepasst werden.
+Ziele sollten sich an Leidensdruck, Funktionsbeeinträchtigung und den Wünschen der Person orientieren. Blickkontakt, weniger [Stimming](/glossar/#stimming) oder neurotypischeres Sozialverhalten sind keine sinnvollen Therapieziele. Bei Depression, Angst, Trauma, Zwang oder anderen Erkrankungen sollte die jeweilige Problematik fachgerecht behandelt und die Durchführung bei Bedarf autismusgerecht angepasst werden.
 
 ## Therapie anpassen – nicht einfach vereinfachen
 

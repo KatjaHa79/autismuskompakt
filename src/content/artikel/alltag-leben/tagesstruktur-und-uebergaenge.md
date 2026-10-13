@@ -32,6 +32,6 @@ Der Wechsel von einer Tätigkeit zur nächsten kann anstrengender sein als die T
 
 Vorhersehbarkeit, Klarheit und Struktur sind zentrale Unterstützungsprinzipien. Veränderungen sollten deshalb soweit möglich konkret angekündigt und erklärt werden. Das Ziel ist nicht vollständige Veränderungsvermeidung, sondern Wahlmöglichkeiten, Plan-B-Szenarien und schrittweise Vorbereitung, ohne unnötige Abhängigkeit zu erzeugen.
 
-Exekutive Funktionen umfassen unter anderem Planung, Arbeitsgedächtnis, Inhibition und kognitive Flexibilität. Meta-analytisch zeigen sich bei Autismus Gruppenunterschiede, jedoch mit erheblicher Heterogenität. Alltagsunterstützung sollte daher funktionsbezogen sein: Welche Teilschritte scheitern? Erinnerung, Initiierung, Priorisierung, Zeitplanung oder Übergang?
+[Exekutive Funktionen](/glossar/#exekutive-funktionen) umfassen unter anderem Planung, Arbeitsgedächtnis, Inhibition und kognitive Flexibilität. Meta-analytisch zeigen sich bei Autismus Gruppenunterschiede, jedoch mit erheblicher Heterogenität. Alltagsunterstützung sollte daher funktionsbezogen sein: Welche Teilschritte scheitern? Erinnerung, Initiierung, Priorisierung, Zeitplanung oder Übergang?
 
 Übergangsschwierigkeiten können mit exekutiven Anforderungen, starker Aufmerksamkeitsbindung, Stress oder komorbidem ADHS zusammenhängen. Vorwarnungen, Übergangspausen, sichtbare nächste Schritte oder Abschlussrituale können individuell erprobt werden; ihre Wirksamkeit sollte an konkreten funktionalen Zielen geprüft werden.

@@ -41,7 +41,7 @@ Voraussetzung ist ein festgestellter Teilhabebedarf. Der konkrete Unterstützung
 
 ## Was passiert nach dem Antrag?
 
-Bei Bewilligung wird in der Regel eine Zielvereinbarung mit dem Kostenträger geschlossen, die Umfang und Verwendungszweck des Budgets festlegt.
+Bei Bewilligung wird in der Regel eine [Zielvereinbarung](/glossar/#zielvereinbarung-persoenliches-budget) mit dem Kostenträger geschlossen, die Umfang und Verwendungszweck des Budgets festlegt.
 
 ## Was tun bei Ablehnung?
 

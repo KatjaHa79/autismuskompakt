@@ -39,7 +39,7 @@ Ein Cut-off ist also kein biologischer Grenzstein zwischen "autistisch" und "nic
 
 **RAADS-R:** Der RAADS-R wird online häufig wie ein diagnostischer Test behandelt. NICE nennt ihn als mögliches Hilfsmittel in komplexeren Erwachsenenassessments, nicht als alleinige Diagnose. Die Studienlage zur Vorhersagekraft als Selbstscreening ist gemischt: Eine NHS-Stichprobe fand unzureichende prädiktive Validität, während eine neuere deutsche Validierungsstudie gute Trennwerte berichtete. Unterschiedliche Stichproben und Designs erklären einen Teil dieser Unterschiede. Ein einzelner Score ist deshalb kein Diagnoseurteil.
 
-**CAT-Q:** Der CAT-Q erfasst Camouflaging-Strategien wie Kompensation, Masking und Assimilation. Er ist kein Autismusscreener und diagnostiziert keinen "versteckten Autismus". Auch nichtautistische Personen können Camouflaging berichten.
+**CAT-Q:** Der CAT-Q erfasst Camouflaging-Strategien wie Kompensation, [Masking](/glossar/#masking) und Assimilation. Er ist kein Autismusscreener und diagnostiziert keinen "versteckten Autismus". Auch nichtautistische Personen können Camouflaging berichten.
 
 ## Für Angehörige
 

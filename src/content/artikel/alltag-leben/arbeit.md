@@ -62,7 +62,7 @@ Steigende Überlastung kann sich unter anderem durch zunehmende Reizempfindlichk
 
 ### Masking im Berufsleben
 
-Du kannst erhebliche Energie darauf verwenden, soziale Erwartungen zu beobachten und zu imitieren: Blickkontakt, Smalltalk, Mimik, Gesprächsverhalten oder das Unterdrücken von Stimming. Nach außen kann dadurch der Eindruck entstehen, es gebe keine Belastung. Ein inklusiver Arbeitsplatz bewertet soziale Performanz nicht unnötig, wenn sie für die eigentliche Tätigkeit keine Rolle spielt. Mehr dazu: [Masking](/fuer-autistische-menschen/masking/) · [Autistischer Burnout](/fuer-autistische-menschen/autistischer-burnout/).
+Du kannst erhebliche Energie darauf verwenden, soziale Erwartungen zu beobachten und zu imitieren: Blickkontakt, Smalltalk, Mimik, Gesprächsverhalten oder das Unterdrücken von [Stimming](/glossar/#stimming). Nach außen kann dadurch der Eindruck entstehen, es gebe keine Belastung. Ein inklusiver Arbeitsplatz bewertet soziale Performanz nicht unnötig, wenn sie für die eigentliche Tätigkeit keine Rolle spielt. Mehr dazu: [Masking](/fuer-autistische-menschen/masking/) · [Autistischer Burnout](/fuer-autistische-menschen/autistischer-burnout/).
 
 ### Diagnose offenlegen – oder Bedarf benennen
 

@@ -20,7 +20,7 @@ Bei Konflikten ist es hilfreich, Beobachtung und Interpretation zu trennen. "Ich
 
 Familie kann ein wichtiges Unterstützungsnetz sein. Sie kann aber auch unbeabsichtigt Autonomie einschränken, wenn aus Fürsorge dauerhaft Entscheidungen übernommen werden. Eine gute Standardfrage ist: "Möchtest du Unterstützung – und wenn ja wobei genau?" Bei Kindern verändert sich Beteiligung mit dem Entwicklungsstand; bei Erwachsenen sind Zustimmung und Privatsphäre zentral.
 
-Unterschiedliche Kommunikationsstile können dazu führen, dass dieselbe Situation verschieden interpretiert wird. Double-Empathy-Forschung unterstützt eine wechselseitige Perspektive, ist aber kein vollständiges Erklärungsmodell. Konkrete Beobachtungen helfen: statt "Du ignorierst mich" lieber "Ich habe noch keine Antwort bekommen." Wenn beide Seiten überlastet sind, kann eine vereinbarte Pause sinnvoller sein als sofortige Klärung.
+Unterschiedliche Kommunikationsstile können dazu führen, dass dieselbe Situation verschieden interpretiert wird. [Double-Empathy-Forschung](/glossar/#double-empathy-problem) unterstützt eine wechselseitige Perspektive, ist aber kein vollständiges Erklärungsmodell. Konkrete Beobachtungen helfen: statt "Du ignorierst mich" lieber "Ich habe noch keine Antwort bekommen." Wenn beide Seiten überlastet sind, kann eine vereinbarte Pause sinnvoller sein als sofortige Klärung.
 
 ## Für Fachkräfte
 

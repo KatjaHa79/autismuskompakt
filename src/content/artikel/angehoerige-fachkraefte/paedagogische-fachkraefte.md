@@ -18,7 +18,7 @@ Autismusfreundliche Pädagogik bedeutet nicht, Anforderungen vollständig wegzun
 
 ## Erst die Situation analysieren, dann das Verhalten bewerten
 
-Wenn ein Kind Aufgaben verweigert, den Raum verlässt oder nach der Schule zusammenbricht, reicht die Kategorie "Verhalten" nicht. Prüfen Sie Aufgabenverständnis, Reizlage, Übergänge, soziale Anforderungen, Schmerz, Schlaf, Mobbing und die Möglichkeit, dass Belastung in der Schule lange kompensiert wird. Meltdown und Shutdown sind lebensweltliche Begriffe, keine eigenständigen Diagnosen – akute Überlastung sollte nicht mit Strafe beantwortet werden.
+Wenn ein Kind Aufgaben verweigert, den Raum verlässt oder nach der Schule zusammenbricht, reicht die Kategorie "Verhalten" nicht. Prüfen Sie Aufgabenverständnis, Reizlage, Übergänge, soziale Anforderungen, Schmerz, Schlaf, Mobbing und die Möglichkeit, dass Belastung in der Schule lange kompensiert wird. Meltdown und [Shutdown](/glossar/#shutdown) sind lebensweltliche Begriffe, keine eigenständigen Diagnosen – akute Überlastung sollte nicht mit Strafe beantwortet werden.
 
 ## Klare Lernumgebung
 

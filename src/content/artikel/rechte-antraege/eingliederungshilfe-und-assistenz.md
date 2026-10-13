@@ -13,7 +13,7 @@ Zum Persönlichen Budget als Form der Leistungserbringung: [Persönliches Budget
 
 ## Für autistische Menschen
 
-Teilhabeleistungen sollen gleichberechtigte Teilhabe und eine möglichst selbstbestimmte Lebensführung ermöglichen. Assistenz kann zum Beispiel Haushalt, soziale Beziehungen, Lebensplanung, Kommunikation oder Freizeit betreffen. Persönliches Budget ist eine Form der Leistungserbringung, kein zusätzliches Einkommen. Hilfsmittel können je nach Zweck unterschiedlichen Leistungssystemen zugeordnet sein.
+Teilhabeleistungen sollen gleichberechtigte Teilhabe und eine möglichst selbstbestimmte Lebensführung ermöglichen. Assistenz kann zum Beispiel Haushalt, soziale Beziehungen, Lebensplanung, Kommunikation oder Freizeit betreffen. [Persönliches Budget](/glossar/#persoenliches-budget) ist eine Form der Leistungserbringung, kein zusätzliches Einkommen. Hilfsmittel können je nach Zweck unterschiedlichen Leistungssystemen zugeordnet sein.
 
 Autismus allein löst keinen pauschalen Anspruch aus. Der konkrete Teilhabebedarf ist entscheidend.
 
