@@ -15,6 +15,8 @@ sources:
 
 Autismus wird sehr unterschiedlich beschrieben – von einer Liste von Schwierigkeiten bis zu einer reinen Stärkenerzählung. Beides greift zu kurz. Dieser Beitrag ordnet ein, was die Diagnose fachlich bedeutet – und was sie nicht bedeutet – aus drei Blickwinkeln.
 
+Häufige Frage dazu: [Ist Autismus vererbbar?](/fuer-autistische-menschen/ist-autismus-vererbbar/)
+
 ## Für autistische Menschen
 
 Wenn du selbst autistisch bist oder gerade versuchst herauszufinden, was Autismus für dich bedeutet, wirst du wahrscheinlich auf sehr unterschiedliche Beschreibungen stoßen. Manche erklären fast jede Schwierigkeit mit Autismus. Andere beschreiben Autismus hauptsächlich als Stärke. Beides ist zu einfach.

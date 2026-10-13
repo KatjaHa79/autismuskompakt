@@ -13,7 +13,7 @@ sources:
     url: "https://doi.org/10.1016/j.vaccine.2014.04.085"
 ---
 
-Verwandte Themen: [Sprache & Begriffe](/fuer-autistische-menschen/sprache-und-begriffe/) und [Was ist Autismus?](/fuer-autistische-menschen/was-ist-autismus/)
+Verwandte Themen: [Sprache & Begriffe](/fuer-autistische-menschen/sprache-und-begriffe/), [Was ist Autismus?](/fuer-autistische-menschen/was-ist-autismus/) und [Ist Autismus vererbbar?](/fuer-autistische-menschen/ist-autismus-vererbbar/)
 
 ## Was bedeutet das?
 

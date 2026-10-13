@@ -9,6 +9,8 @@ sources:
     url: "https://doi.org/10.1177/13623613241235531"
   - title: "Stein Duker et al. (2025): Barriers and facilitators to primary healthcare encounters as reported by autistic adults: a qualitative study. Frontiers in Medicine"
     url: "https://doi.org/10.3389/fmed.2025.1481953"
+  - title: "Nicolaidis, C. et al. (2015): \"Respect the way I need to communicate with you\": Healthcare experiences of adults on the autism spectrum. Autism, 19(7), 824–831"
+    url: "https://doi.org/10.1177/1362361315576221"
 ---
 
 Vertiefende Inhalte zu Gesundheitsversorgung, Psychotherapie und Medikamenten findest du im Bereich Gesundheitsversorgung & Therapie. Für medizinisches Personal: [Medizinische Fachkräfte – Autismusfreundliche Gesundheitsversorgung](/angehoerige-fachkraefte/medizinische-fachkraefte/).

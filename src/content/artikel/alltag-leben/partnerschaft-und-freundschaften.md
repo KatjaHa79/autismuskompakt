@@ -10,6 +10,8 @@ sources:
     url: "https://doi.org/10.1177/13623613241255811"
 ---
 
+Verwandtes Thema: [Masking](/fuer-autistische-menschen/masking/) – insbesondere, wenn die Sorge besteht, ob andere die maskierte oder die eigentliche Person mögen.
+
 ## Für autistische Menschen
 
 Autistische Menschen führen sehr unterschiedliche romantische Beziehungen. Klare Absprachen können gerade dort hilfreich sein, wo andere Paare vieles unausgesprochen lassen. Kontaktmenge, Alleinzeit, Berührung, Konfliktpausen, Aufgabenverteilung oder Veränderungen dürfen ausgesprochen werden. Eine Beziehung ist nicht weniger spontan oder liebevoll, nur weil manche Dinge bewusst vereinbart werden.

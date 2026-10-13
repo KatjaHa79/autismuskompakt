@@ -11,9 +11,13 @@ sources:
     url: "https://www.nice.org.uk/guidance/cg142"
   - title: "NICE CG170: Autism spectrum disorder in under 19s: support and management"
     url: "https://www.nice.org.uk/guidance/cg170"
+  - title: "Boulter, C., Freeston, M., South, M. & Rodgers, J. (2014): Intolerance of Uncertainty as a Framework for Understanding Anxiety in Children and Adolescents with Autism Spectrum Disorders. Journal of Autism and Developmental Disorders, 44(6), 1391–1402"
+    url: "https://doi.org/10.1007/s10803-013-2001-x"
+  - title: "South, M. & Rodgers, J. (2017): Sensory, Emotional and Cognitive Contributions to Anxiety in Autism Spectrum Disorders. Frontiers in Human Neuroscience, 11, 20"
+    url: "https://doi.org/10.3389/fnhum.2017.00020"
 ---
 
-Praktische Strategien für konkrete Veränderungssituationen im Alltag findest du auch im Bereich [Alltag & Leben](/fuer-autistische-menschen/alltag/).
+Praktische Strategien für konkrete Veränderungssituationen im Alltag findest du auch im Bereich [Alltag & Leben](/fuer-autistische-menschen/alltag/). Wenn es speziell um mehrdeutige Regeln und erlebte Ungerechtigkeit geht: [Autismus, Regeln und Gerechtigkeit](/fuer-autistische-menschen/alltag/autismus-regeln-gerechtigkeit/).
 
 ## Für autistische Menschen
 
@@ -49,5 +53,7 @@ Unterstützung bedeutet nicht, dass alle anderen Familienmitglieder ihre Bedürf
 Restriktive beziehungsweise repetitive Verhaltensweisen und ein Bedürfnis nach Gleichförmigkeit können diagnostisch relevant sein. In der Praxis sollte dennoch die Funktion eines konkreten Verhaltens betrachtet werden.
 
 Eine Routine kann Orientierung schaffen, kognitive Anforderungen reduzieren, Unsicherheit begrenzen, Regulation unterstützen oder schlicht bevorzugt werden.
+
+Ein in der Forschung verwendetes Konzept dafür ist Intoleranz gegenüber Ungewissheit: die Schwierigkeit, mit unklaren, unvorhersehbaren oder mehrdeutigen Situationen umzugehen. Mehrere Arbeiten beschreiben sie als einen zentralen Faktor, der Angst bei Autismus mitbestimmt (Boulter et al., 2014; South & Rodgers, 2017) – Festhalten an Routinen kann in diesem Rahmen auch als Strategie verstanden werden, Ungewissheit aktiv zu reduzieren, nicht nur als Selbstzweck.
 
 Nicht jede Routine ist behandlungsbedürftig. Intervention sollte sich daran orientieren, ob ein Verhalten für die Person selbst oder ihre Teilhabe tatsächlich problematisch ist. Bei notwendigen Veränderungen helfen häufig transparente Vorbereitung, konkrete Informationen und vorhersehbare Abläufe.

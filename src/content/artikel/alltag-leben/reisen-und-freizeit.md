@@ -4,6 +4,11 @@ description: "Warum Urlaub nicht automatisch Erholung bedeutet, gute Reisevorber
 category: "alltag-leben"
 targetGroups: ["autistische-menschen", "angehoerige", "fachkraefte"]
 updated: 2026-10-08
+sources:
+  - title: "Robertson, C. E. & Baron-Cohen, S. (2017): Sensory perception in autism. Nature Reviews Neuroscience, 18(11), 671–684"
+    url: "https://doi.org/10.1038/nrn.2017.112"
+  - title: "Boulter, C., Freeston, M., South, M. & Rodgers, J. (2014): Intolerance of Uncertainty as a Framework for Understanding Anxiety in Children and Adolescents with Autism Spectrum Disorders. Journal of Autism and Developmental Disorders, 44(6), 1391–1402"
+    url: "https://doi.org/10.1007/s10803-013-2001-x"
 ---
 
 ## Für autistische Menschen

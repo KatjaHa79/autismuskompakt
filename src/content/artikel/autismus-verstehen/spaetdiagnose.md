@@ -9,6 +9,9 @@ sources:
     url: "https://doi.org/10.1016/S2215-0366(15)00277-1"
   - title: "Russell et al. (2025): Who, When, Where, and Why – A systematic review of late diagnosis in autism (420 Arbeiten)"
   - title: "Khudiakova et al. (2026): Mixed-Methods Systematic Review zu Barrieren der Autismusdiagnostik im Erwachsenenalter"
+  - title: "Leedham, A., Thompson, A. R., Smith, R. & Freeth, M. (2020): 'I was exhausted trying to figure it out': the experiences of females receiving an autism diagnosis in middle to late adulthood. Autism, 24(1), 135–146"
+    url: "https://doi.org/10.1177/1362361319853442"
+  - title: "Roese, N. J. (1997): Counterfactual thinking. Psychological Bulletin, 121(1), 133–148"
 ---
 
 Verwandte Themen: [Autismus bei Frauen und Mädchen](/fuer-autistische-menschen/diagnostik/diagnostik-bei-frauen/), [Autismus im Erwachsenenalter](/fuer-autistische-menschen/autismus-im-erwachsenenalter/), [Könnte ich autistisch sein?](/fuer-autistische-menschen/diagnostik/koennte-ich-autistisch-sein/), [Diagnostik bei Erwachsenen](/fuer-autistische-menschen/diagnostik/diagnostik-bei-erwachsenen/) und der [Autismuskompakt-Orientierungscheck](/fuer-autistische-menschen/diagnostik/orientierungscheck/).
@@ -65,6 +68,10 @@ Nach einer Spätdiagnose stellt sich häufig die Frage, wie viel bisheriges Lebe
 ### Die eigene Biografie neu verstehen
 
 Nach einer Spätdiagnose betrachten viele Menschen frühere Situationen mit neuem Wissen. Das kann hilfreich sein, sollte aber nicht dazu führen, jede Schwierigkeit rückwirkend ausschließlich mit Autismus zu erklären. Eine Diagnose kann einen neuen Bezugsrahmen bieten, ohne die gesamte Persönlichkeit oder Lebensgeschichte auf eine einzige Erklärung zu reduzieren. Hilfreiche Fragen können sein: Welche Situationen haben mich schon früh besonders viel Energie gekostet? Welche Bedürfnisse habe ich lange übergangen? Welche Strategien waren hilfreich und welche nur notwendig, um Erwartungen zu erfüllen? Welche Umgebungen funktionieren gut für mich? Wo brauche ich heute Unterstützung oder andere Rahmenbedingungen?
+
+### "Was wäre gewesen, wenn ich das früher gewusst hätte?"
+
+Nach einer Spätdiagnose denken viele Menschen immer wieder darüber nach, wie das Leben mit früherem Wissen verlaufen wäre: eine andere Berufswahl, andere Beziehungen, weniger Selbstzweifel. Solche Gedanken werden in der Psychologie als kontrafaktisches Denken bezeichnet – das gedankliche Durchspielen alternativer Verläufe eines bereits geschehenen Ereignisses (Roese, 1997). Dieses Denken ist weit verbreitet, nicht spezifisch für Autismus, und kann sowohl belastend als auch hilfreich sein: Es kann Trauer über verlorene Zeit auslösen, aber auch dabei helfen, aus der Vergangenheit konkrete Schlüsse für die Zukunft zu ziehen. Eine qualitative Studie mit spät diagnostizierten Frauen (Leedham et al., 2020) beschreibt genau dieses Spannungsfeld: Erleichterung durch die Diagnose stand neben dem Wunsch, frühere Jahre im Licht des neuen Wissens noch einmal zu durchdenken. Es gibt keine "richtige" Menge an Rückblick – manchen Menschen hilft es, die Vergangenheit intensiv neu zu betrachten, anderen eher, den Fokus auf die Gegenwart zu legen.
 
 ### Brauche ich nach der Diagnose Therapie?
 

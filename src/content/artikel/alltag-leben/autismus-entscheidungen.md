@@ -4,9 +4,13 @@ description: "Warum können Entscheidungen bei Autismus anstrengend sein? Inform
 category: "alltag-leben"
 targetGroups: ["autistische-menschen", "angehoerige", "fachkraefte"]
 updated: 2026-10-08
+sources:
+  - title: "Boulter, C., Freeston, M., South, M. & Rodgers, J. (2014): Intolerance of Uncertainty as a Framework for Understanding Anxiety in Children and Adolescents with Autism Spectrum Disorders. Journal of Autism and Developmental Disorders, 44(6), 1391–1402"
+    url: "https://doi.org/10.1007/s10803-013-2001-x"
+  - title: "Schwartz, B. (2004): The Paradox of Choice: Why More Is Less. (Populärwissenschaftliches Sachbuch, keine peer-reviewte Studie – ergänzende Literatur zur Entscheidungsforschung im Allgemeinen, nicht spezifisch zu Autismus.)"
 ---
 
-Verwandte Themen: [Exekutive Funktionen](/fuer-autistische-menschen/exekutive-funktionen/), [Routinen & Vorhersehbarkeit](/fuer-autistische-menschen/routinen-und-veraenderungen/) und [Zentrale Kohärenz](/fuer-autistische-menschen/zentrale-kohaerenz/).
+Verwandte Themen: [Exekutive Funktionen](/fuer-autistische-menschen/exekutive-funktionen/), [Routinen & Vorhersehbarkeit](/fuer-autistische-menschen/routinen-und-veraenderungen/), [Zentrale Kohärenz](/fuer-autistische-menschen/zentrale-kohaerenz/) und [Autismus, Regeln und Gerechtigkeit](/fuer-autistische-menschen/alltag/autismus-regeln-gerechtigkeit/).
 
 ## Für autistische Menschen
 

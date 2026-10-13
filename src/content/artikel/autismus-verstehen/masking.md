@@ -13,6 +13,8 @@ sources:
     url: "https://doi.org/10.1177/1362361316671012"
   - title: "Hull, L. et al. (2019): Development and Validation of the Camouflaging Autistic Traits Questionnaire (CAT-Q). Journal of Autism and Developmental Disorders, 49(3), 819–833"
     url: "https://doi.org/10.1007/s10803-018-3792-6"
+  - title: "Cage, E. & Troxell-Whitman, Z. (2019): Understanding the Reasons, Contexts and Costs of Camouflaging for Autistic Adults. Journal of Autism and Developmental Disorders, 49(5), 1899–1911"
+    url: "https://doi.org/10.1007/s10803-018-03878-x"
   - title: "Hodge & Meltzoff (2026), Scoping Review: 48 Studien zu Camouflaging und psychischer Gesundheit"
   - title: "Greig et al. (2026), Meta-Analyse: 50 Studien, 16.895 Teilnehmende, Camouflaging über Geschlechter hinweg"
 ---
@@ -34,6 +36,12 @@ Masking ist von außen nicht immer erkennbar. Mögliche Beispiele: Blickkontakt 
 ## Warum masken Menschen?
 
 Als Gründe werden in der Forschung unter anderem genannt: der Wunsch nach sozialer Zugehörigkeit, Freundschaften und Beziehungen, das Vermeiden von Stigmatisierung oder negativen Reaktionen, beruflicher oder schulischer Erwartungsdruck sowie – besonders in Livingstons qualitativer Studie (2019) beschrieben – der Versuch, eigene Schwierigkeiten aktiv zu kompensieren, um Anforderungen überhaupt bewältigen zu können. Masking kann deshalb nicht einfach als "schlechte Angewohnheit" verstanden werden; es kann eine erlernte Strategie sein, um sich in einer Umgebung zu schützen oder handlungsfähig zu bleiben. Manche Menschen erleben Camouflaging zugleich als hilfreich und belastend: Strategien können Zugang zu sozialen Situationen oder Arbeit erleichtern, während dauernde Selbstbeobachtung und Anpassung viel Energie kosten können.
+
+## Masking in Freundschaften und Beziehungen
+
+Eine Befragung von 262 autistischen Erwachsenen (Cage & Troxell-Whitman, 2019) findet: Wer in vielen verschiedenen Lebensbereichen maskiert und zwischen Maskieren und Nicht-Maskieren stark wechselt, berichtet im Durchschnitt mehr psychische Belastung. Als Gründe für Camouflaging nannten Teilnehmende unter anderem, im nicht-autistischen Umfeld "durchzukommen", Mobbing zu vermeiden und den Eindruck zu steuern, den andere von ihnen gewinnen.
+
+Masking kann in engen Beziehungen eine besondere Sorge auslösen: die Frage, ob eine andere Person die maskierte Version oder die eigentliche Person mag. Wenn über lange Zeit vor allem die angepasste Seite gezeigt wurde, kann Zuneigung oder Anerkennung sich dadurch weniger tragfähig anfühlen – auch wenn die Beziehung selbst echt und beiderseitig gewollt ist. Dieses Gefühl ist nachvollziehbar, aber keine zuverlässige Information darüber, ob die Beziehung tatsächlich nur der Maske gilt. Mehr zu Beziehungen allgemein: [Partnerschaft & Freundschaften](/fuer-autistische-menschen/alltag/partnerschaft-und-freundschaften/).
 
 ## Welche Folgen kann dauerhaftes Masking haben?
 

@@ -11,6 +11,8 @@ sources:
     url: "https://pubmed.ncbi.nlm.nih.gov/40909407/"
   - title: "Trevisan, D. A. et al. (2022): Characterizing Interoceptive Differences in Autism: A Systematic Review and Meta-analysis of Case-control Studies. Autism Research"
     url: "https://pubmed.ncbi.nlm.nih.gov/35819587/"
+  - title: "Loureiro, F., Ringold, S. & Aziz-Zadeh, L. (2024): Interoception in Autism: A Narrative Review of Behavioral and Neurobiological Data. Psychology Research and Behavior Management, 17, 1841–1853"
+    url: "https://doi.org/10.2147/PRBM.S410605"
 ---
 
 Verwandte Themen: [Alexithymie](/fuer-autistische-menschen/alexithymie/), [Propriozeption](/fuer-autistische-menschen/propriozeption/) und [Reizverarbeitung](/fuer-autistische-menschen/reizverarbeitung/).
@@ -34,7 +36,7 @@ Interozeption ist kein einzelner Sinn mit einer einzigen Messgröße: Forschung 
 
 **Wichtig:** Eine 2025 veröffentlichte systematische Übersichtsarbeit und Meta-Analyse (Klein, Witthöft & Jungmann, 2025) untersuchte 31 Studien. In der Meta-Analyse vergleichbarer Erwachsenenstudien zeigte sich **kein statistisch signifikanter Unterschied** in der kardialen interozeptiven Genauigkeit zwischen autistischen und nicht-autistischen Erwachsenen. Für andere Interozeptionsbereiche waren die Ergebnisse uneinheitlich – Studien berichteten reduzierte, erhöhte oder ähnliche Werte. Diese neuere Arbeit relativiert pauschale Aussagen aus älteren Studien (z. B. Trevisan et al., 2022) über eine generell "gestörte" Interozeption bei Autismus. Autismuskompakt schreibt deshalb bewusst nicht, autistische Menschen hätten grundsätzlich eine schlechte Interozeption – die Evidenz spricht für heterogene Profile und erhebliche Messprobleme, nicht für einen einheitlichen Befund.
 
-Wie genau Interozeption, Alexithymie und Emotionsregulation bei Autismus zusammenhängen, ist zudem noch Gegenstand laufender Forschung und erlaubt keine einfache Kausalaussage wie "schlechte Interozeption verursacht Alexithymie".
+Wie genau Interozeption, Alexithymie und Emotionsregulation bei Autismus zusammenhängen, ist zudem noch Gegenstand laufender Forschung und erlaubt keine einfache Kausalaussage wie "schlechte Interozeption verursacht Alexithymie". Ein narrativer Übersichtsartikel (Loureiro et al., 2024) kommt zu einem ähnlichen Schluss: Die Befundlage ist uneinheitlich, mögliche Unterschiede in der neuronalen Verarbeitung (etwa in Insula, Hirnstamm oder Thalamus) sind plausibel, aber noch nicht ausreichend erforscht, um daraus ein einheitliches Modell abzuleiten.
 
 ## Was bedeutet das im Alltag?
 

@@ -4,6 +4,11 @@ description: "Perfektionismus ist kein Autismus-Kriterium. Bei manchen autistisc
 category: "alltag-leben"
 targetGroups: ["autistische-menschen", "angehoerige", "fachkraefte"]
 updated: 2026-10-08
+sources:
+  - title: "Frost, R. O., Marten, P., Lahart, C. & Rosenblate, R. (1990): The dimensions of perfectionism. Cognitive Therapy and Research, 14(5), 449–468"
+    url: "https://doi.org/10.1007/BF01172967"
+  - title: "Boulter, C., Freeston, M., South, M. & Rodgers, J. (2014): Intolerance of Uncertainty as a Framework for Understanding Anxiety in Children and Adolescents with Autism Spectrum Disorders. Journal of Autism and Developmental Disorders, 44(6), 1391–1402"
+    url: "https://doi.org/10.1007/s10803-013-2001-x"
 ---
 
 Verwandte Themen: [Exekutive Funktionen](/fuer-autistische-menschen/exekutive-funktionen/), [Zentrale Kohärenz](/fuer-autistische-menschen/zentrale-kohaerenz/), [Masking](/fuer-autistische-menschen/masking/) und [Autistischer Burnout](/fuer-autistische-menschen/autistischer-burnout/).

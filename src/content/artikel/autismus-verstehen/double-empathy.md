@@ -5,6 +5,8 @@ category: "autismus-verstehen"
 targetGroups: ["autistische-menschen", "angehoerige", "fachkraefte"]
 updated: 2026-08-26
 sources:
+  - title: "Milton, D. E. M. (2012): On the ontological status of autism: the 'double empathy problem'. Disability & Society, 27(6), 883–887"
+    url: "https://doi.org/10.1080/09687599.2012.710008"
   - title: "Livingston LA, Hargitai LD, Shah P. (2025): The double empathy problem: A derivation chain analysis and cautionary note. Psychological Review 132(3):744-757"
     url: "https://doi.org/10.1037/rev0000468"
   - title: "Fellowes S. (2026): Cognitive Empathy, Affective Empathy and Empirical Research on the Double Empathy Problem: A Critical Methodology Review"
@@ -19,7 +21,7 @@ Kommunikation und mögliche Anpassungen beschreibt ausführlicher der Beitrag [K
 
 Vielleicht kennst du Situationen, in denen andere deine Mimik, deinen Tonfall oder deine Absicht falsch einschätzen.
 
-Das Double-Empathy-Modell weist darauf hin, dass Verständigungsprobleme nicht ausschließlich auf der Seite autistischer Menschen entstehen müssen. Menschen mit unterschiedlichen Kommunikations- und Erfahrungsweisen können sich gegenseitig missverstehen.
+Das Double-Empathy-Modell geht ursprünglich auf den autistischen Soziologen Damian Milton (2012) zurück und weist darauf hin, dass Verständigungsprobleme nicht ausschließlich auf der Seite autistischer Menschen entstehen müssen. Menschen mit unterschiedlichen Kommunikations- und Erfahrungsweisen können sich gegenseitig missverstehen.
 
 Das bedeutet aber nicht, dass autistische Menschen grundsätzlich keine sozialen Schwierigkeiten haben. Auch das wäre zu einfach.
 
