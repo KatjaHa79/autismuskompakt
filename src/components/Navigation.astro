@@ -1,33 +1,199 @@
 ---
-const items = [
-  { label: "Für Autist:innen", href: "/fuer-autistische-menschen/" },
+interface NavChild {
+  label: string;
+  href: string;
+}
+
+interface NavItem {
+  label: string;
+  href?: string;
+  children?: NavChild[];
+  // Richtet das Dropdown rechtsbündig aus, damit es bei Hauptpunkten nahe
+  // am rechten Rand (Desktop/Tablet) nicht über den Viewport hinausragt.
+  alignRight?: boolean;
+}
+
+// Nur tatsächlich vorhandene Seiten/Anker. Dropdowns gibt es ausschließlich
+// dort, wo die Zielseite selbst bereits eine kleine, feste Anzahl echter
+// Unterbereiche hat (Hub-Seite mit Bereichen bzw. Ankerabschnitten). Seiten
+// mit vielen generierten Filterrouten (Anlaufstellen, Material) bleiben
+// bewusst einfache Links.
+const items: NavItem[] = [
+  {
+    label: "Für Autist:innen",
+    children: [
+      { label: "Übersicht", href: "/fuer-autistische-menschen/" },
+      { label: "Diagnostik & Tests", href: "/fuer-autistische-menschen/diagnostik/" },
+      { label: "Rechte & Anträge", href: "/fuer-autistische-menschen/rechte-und-antraege/" },
+      { label: "Alltag & Leben", href: "/fuer-autistische-menschen/alltag/" },
+      { label: "Besonderheiten & Begleiterkrankungen", href: "/fuer-autistische-menschen/besonderheiten/" },
+    ],
+  },
   { label: "Glossar A–Z", href: "/glossar/" },
-  { label: "Für Angehörige & Fachkräfte", href: "/angehoerige-fachkraefte/" },
+  {
+    label: "Für Angehörige & Fachkräfte",
+    children: [
+      { label: "Übersicht", href: "/angehoerige-fachkraefte/" },
+      { label: "Ich bin Angehörige:r", href: "/angehoerige-fachkraefte/#angehoerige" },
+      { label: "Ich bin Fachkraft", href: "/angehoerige-fachkraefte/#fachkraefte" },
+    ],
+  },
   { label: "Anlaufstellen", href: "/hilfe-finden/" },
   { label: "Hilfreiches Material", href: "/materialien/" },
-  { label: "Shop", href: "/shop/" },
+  {
+    label: "Shop",
+    alignRight: true,
+    children: [
+      { label: "Übersicht", href: "/shop/" },
+      { label: "Bücher", href: "/shop/#buecher" },
+      { label: "Digitale Produkte", href: "/shop/#digitale-produkte" },
+      { label: "Merchandise", href: "/shop/#merchandise" },
+    ],
+  },
   { label: "Über mich", href: "/ueber-mich/" },
 ];
 
 const currentPath = Astro.url.pathname;
+
+// Fragment (#...) spielt für den Seitenpfad keine Rolle.
+function pathOf(href: string): string {
+  return href.split("#")[0];
+}
+
+function isCurrentHref(href: string): boolean {
+  const path = pathOf(href);
+  return currentPath === path || (path !== "/" && currentPath.startsWith(path));
+}
 ---
 
 <nav class="main-nav" aria-label="Hauptnavigation">
   <ul class="main-nav__list">
     {
-      items.map((item) => {
-        const isCurrent = currentPath === item.href || currentPath.startsWith(item.href);
+      items.map((item, index) => {
+        if (!item.children) {
+          return (
+            <li class="main-nav__item">
+              <a href={item.href} aria-current={isCurrentHref(item.href!) ? "page" : undefined}>
+                {item.label}
+              </a>
+            </li>
+          );
+        }
+
+        const submenuId = `main-nav-submenu-${index}`;
+        const isActiveSection = item.children.some((child) => isCurrentHref(child.href));
+
         return (
-          <li>
-            <a href={item.href} aria-current={isCurrent ? "page" : undefined}>
+          <li
+            class:list={[
+              "main-nav__item",
+              "main-nav__item--has-children",
+              { "main-nav__item--align-right": item.alignRight },
+            ]}
+          >
+            {/* Ohne JavaScript ist das Untermenü immer sichtbar (siehe CSS);
+               die Beschriftung bleibt dann als einfacher Text stehen (per
+               CSS ausgeblendet, sobald JavaScript aktiv ist), da der Button
+               ohne Skript nichts täte. */}
+            <span class="main-nav__label-static">{item.label}</span>
+            <button
+              type="button"
+              class:list={["main-nav__trigger", { "main-nav__trigger--active": isActiveSection }]}
+              aria-expanded="false"
+              aria-controls={submenuId}
+            >
               {item.label}
-            </a>
+              <svg class="main-nav__chevron" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16">
+                <path
+                  d="M6 9l6 6 6-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <ul class="main-nav__submenu" id={submenuId}>
+              {item.children.map((child) => (
+                <li>
+                  <a href={child.href} aria-current={isCurrentHref(child.href) ? "page" : undefined}>
+                    {child.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </li>
         );
       })
     }
   </ul>
 </nav>
+
+<script is:inline>
+  (function () {
+    var nav = document.querySelector(".main-nav");
+    if (!nav) return;
+
+    var items = Array.from(nav.querySelectorAll(".main-nav__item--has-children"));
+    var triggers = items
+      .map(function (item) {
+        return item.querySelector(".main-nav__trigger");
+      })
+      .filter(Boolean);
+
+    function closeAll(exceptTrigger) {
+      triggers.forEach(function (trigger) {
+        if (trigger === exceptTrigger) return;
+        trigger.setAttribute("aria-expanded", "false");
+      });
+    }
+
+    function isOpen(trigger) {
+      return trigger.getAttribute("aria-expanded") === "true";
+    }
+
+    triggers.forEach(function (trigger) {
+      trigger.addEventListener("click", function () {
+        var wasOpen = isOpen(trigger);
+        closeAll(null);
+        trigger.setAttribute("aria-expanded", wasOpen ? "false" : "true");
+      });
+    });
+
+    // Klick auf einen Untermenü-Link: Menü schließen (wichtig bei
+    // Anker-Links auf die aktuell schon offene Seite, da dort kein voller
+    // Seitenwechsel stattfindet).
+    nav.querySelectorAll(".main-nav__submenu a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        closeAll(null);
+      });
+    });
+
+    document.addEventListener("click", function (event) {
+      var target = event.target;
+      var withinOpenItem = items.some(function (item) {
+        return item.contains(target);
+      });
+      if (!withinOpenItem) closeAll(null);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape") return;
+      var openTrigger = triggers.find(function (trigger) {
+        return isOpen(trigger);
+      });
+      if (!openTrigger) return;
+      // Verhindert, dass ein zusätzlicher Escape-Handler (z. B. für das
+      // mobile Hamburger-Menü in Header.astro) für denselben Tastendruck
+      // ebenfalls auslöst und z. B. das ganze Menü schließt, bevor der
+      // Fokus hierher zurückkehren konnte.
+      event.stopImmediatePropagation();
+      closeAll(null);
+      openTrigger.focus();
+    });
+  })();
+</script>
 
 <style>
   .main-nav__list {
@@ -38,7 +204,11 @@ const currentPath = Astro.url.pathname;
     padding: 0;
   }
 
-  .main-nav__list a {
+  .main-nav__item {
+    position: relative;
+  }
+
+  .main-nav__list > li > a {
     display: inline-block;
     padding: var(--space-xs) 0;
     font-size: 0.85rem; /* ca. 13,5–14px */
@@ -48,22 +218,157 @@ const currentPath = Astro.url.pathname;
     border-bottom: 2px solid transparent;
   }
 
-  .main-nav__list a:hover {
+  .main-nav__list > li > a:hover {
     border-bottom-color: var(--color-bronze-soft);
   }
 
-  .main-nav__list a[aria-current="page"] {
+  .main-nav__list > li > a[aria-current="page"] {
     border-bottom-color: var(--color-bronze);
   }
 
+  /* Beschriftung ohne JavaScript: einfacher Text statt Button, da der
+     Button ohne Skript nicht funktionieren würde. Das zugehörige Untermenü
+     ist in diesem Fall immer sichtbar (siehe unten), die Seite bleibt also
+     vollständig nutzbar. */
+  .main-nav__label-static {
+    display: block;
+    padding: var(--space-xs) 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-petrol);
+  }
+
+  .main-nav__trigger {
+    display: none;
+  }
+
+  html.js .main-nav__label-static {
+    display: none;
+  }
+
+  html.js .main-nav__trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    padding: var(--space-xs) 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-petrol);
+    cursor: pointer;
+  }
+
+  html.js .main-nav__trigger:hover {
+    border-bottom-color: var(--color-bronze-soft);
+  }
+
+  html.js .main-nav__trigger--active {
+    border-bottom-color: var(--color-bronze);
+  }
+
+  .main-nav__chevron {
+    flex-shrink: 0;
+    transition: transform var(--transition-fast);
+  }
+
+  html.js .main-nav__trigger[aria-expanded="true"] .main-nav__chevron {
+    transform: rotate(180deg);
+  }
+
+  /* Untermenü: ohne JavaScript immer sichtbar und Teil des normalen
+     Seitenflusses, damit alle Unterseiten ohne Skript erreichbar bleiben. */
+  .main-nav__submenu {
+    list-style: none;
+    margin: var(--space-2xs) 0 var(--space-sm) var(--space-sm);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+  }
+
+  .main-nav__submenu a {
+    display: block;
+    padding: var(--space-2xs) var(--space-sm);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: var(--radius);
+  }
+
+  .main-nav__submenu a:hover,
+  .main-nav__submenu a:focus-visible {
+    background-color: var(--color-background-alt);
+  }
+
+  .main-nav__submenu a[aria-current="page"] {
+    color: var(--color-petrol);
+    background-color: var(--color-background-alt);
+  }
+
+  /* Sobald JavaScript aktiv ist, wird das Untermenü standardmäßig
+     verborgen und ausschließlich über aria-expanded am Button gesteuert. */
+  html.js .main-nav__submenu {
+    display: none;
+  }
+
+  html.js .main-nav__trigger[aria-expanded="true"] + .main-nav__submenu {
+    display: flex;
+  }
+
+  /* Ab Desktop/Tablet-Breite (identisch zur bestehenden Hamburger-Schwelle)
+     klappt das Untermenü als schwebendes, reizarmes Panel unterhalb des
+     Hauptpunkts auf. */
+  @media (min-width: 40.0625rem) {
+    html.js .main-nav__submenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 20;
+      margin: 0;
+      min-width: 16rem;
+      max-width: min(22rem, calc(100vw - 2 * var(--space-md)));
+      padding: var(--space-2xs);
+      background-color: var(--color-surface);
+      border: var(--border-width) solid var(--color-border);
+      border-radius: var(--radius);
+    }
+
+    /* Für Hauptpunkte nahe am rechten Rand (z. B. "Shop") rechtsbündig und
+       schmaler ausrichten: Rechtsbündig verhindert das Hinausragen über
+       den rechten Rand, eine geringere Breite verhindert gleichzeitig ein
+       Hinausragen über den linken Rand (siehe Punkt 9 des Auftrags). */
+    .main-nav__item--align-right .main-nav__submenu {
+      left: auto;
+      right: 0;
+      min-width: 11rem;
+      max-width: min(14rem, calc(100vw - 2 * var(--space-md)));
+    }
+  }
+
+  /* Unter der Hamburger-Schwelle: Untermenü klappt inline direkt unter dem
+     Hauptpunkt auf, kein schwebendes Panel (vermeidet Überlagerungen auf
+     schmalen Bildschirmen). */
   @media (max-width: 40rem) {
+    html.js .main-nav__submenu {
+      position: static;
+      margin: var(--space-2xs) 0 var(--space-sm) var(--space-sm);
+      padding: 0;
+      background: transparent;
+      border: none;
+      max-width: none;
+    }
+
     html.js .main-nav__list {
       flex-direction: column;
       flex-wrap: nowrap;
       gap: var(--space-2xs);
     }
 
-    html.js .main-nav__list a {
+    html.js .main-nav__list > li > a {
       display: block;
       padding: var(--space-xs) 0;
     }

@@ -111,6 +111,10 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
 
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape" && mq.matches && panel.style.display !== "none") {
+        // Ist gerade ein Dropdown-Untermenü offen (siehe Navigation.astro),
+        // schließt ein Escape-Druck zuerst nur dieses. Erst ein zweiter
+        // Druck schließt das gesamte mobile Menü.
+        if (panel.querySelector('.main-nav__trigger[aria-expanded="true"]')) return;
         collapse();
         toggle.focus();
       }
