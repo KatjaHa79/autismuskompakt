@@ -1,7 +1,21 @@
 ---
-interface NavChild {
+interface NavLink {
   label: string;
   href: string;
+}
+
+interface NavGroup {
+  label: string;
+  items: NavLink[];
+}
+
+// Ein Untermenüpunkt ist entweder ein normaler Link oder eine verschachtelte,
+// selbst wieder aufklappbare Gruppe (aktuell nur bei "Für Angehörige &
+// Fachkräfte" genutzt).
+type NavChild = NavLink | NavGroup;
+
+function isGroup(child: NavChild): child is NavGroup {
+  return "items" in child;
 }
 
 interface NavItem {
@@ -18,6 +32,47 @@ interface NavItem {
 // Unterbereiche hat (Hub-Seite mit Bereichen bzw. Ankerabschnitten). Seiten
 // mit vielen generierten Filterrouten (Anlaufstellen, Material) bleiben
 // bewusst einfache Links.
+//
+// Die Gruppen "Für Angehörige" und "Für Fachkräfte" bilden die Themen aus
+// den gleichnamigen Abschnitten von /angehoerige-fachkraefte/ ab (siehe
+// angehoerigeGruppen/fachkraefteGruppen in src/pages/angehoerige-fachkraefte/
+// index.astro). Mehrfach verlinkte Kacheln mit identischer Ziel-URL wurden
+// zu einem Eintrag zusammengeführt; "Schule" und "Reizverarbeitung" sind
+// bewusst in beiden Gruppen vorhanden, weil die Quellseite sie selbst für
+// beide Zielgruppen führt. "Materialien für die Praxis" wurde nicht erneut
+// aufgenommen, da "Hilfreiches Material" bereits ein eigener, unmittelbar
+// erreichbarer Hauptpunkt ist.
+const angehoerigeLinks: NavLink[] = [
+  { label: "Autismus verstehen", href: "/fuer-autistische-menschen/was-ist-autismus/" },
+  { label: "Kommunikation verstehen", href: "/fuer-autistische-menschen/kommunikation/" },
+  { label: "Reizverarbeitung", href: "/fuer-autistische-menschen/reizverarbeitung/" },
+  { label: "Verhalten einordnen", href: "/angehoerige-fachkraefte/autistisches-kind-begleiten/" },
+  { label: "Unterstützung ohne Bevormundung", href: "/angehoerige-fachkraefte/unterstuetzung-ohne-bevormundung/" },
+  { label: "Hilfen beantragen", href: "/fuer-autistische-menschen/rechte-und-antraege/" },
+  {
+    label: "Unterstützen, ohne dich selbst zu verlieren",
+    href: "/angehoerige-fachkraefte/eigene-entlastung-fuer-angehoerige/",
+  },
+  { label: "Beziehungen", href: "/angehoerige-fachkraefte/partnerschaft-und-spaete-diagnose/" },
+  { label: "Diagnose eines Kindes", href: "/angehoerige-fachkraefte/eltern-nach-der-diagnose/" },
+  { label: "Schule und Kita", href: "/angehoerige-fachkraefte/schule-und-bildung/" },
+  { label: "Nachteilsausgleiche", href: "/angehoerige-fachkraefte/nachteilsausgleich-und-schulbegleitung/" },
+  { label: "Übergang ins Erwachsenenalter", href: "/angehoerige-fachkraefte/uebergang-ins-erwachsenenalter/" },
+];
+
+const fachkraefteLinks: NavLink[] = [
+  { label: "Autismusfreundliche Kommunikation", href: "/fuer-autistische-menschen/kommunikation/" },
+  { label: "Sensorische Bedürfnisse berücksichtigen", href: "/fuer-autistische-menschen/reizverarbeitung/" },
+  { label: "Medizinische Fachkräfte", href: "/angehoerige-fachkraefte/medizinische-fachkraefte/" },
+  { label: "Arzttermine gestalten", href: "/fuer-autistische-menschen/alltag/arzttermine/" },
+  { label: "Psychotherapie & Beratung", href: "/angehoerige-fachkraefte/psychotherapie-und-beratung/" },
+  { label: "Beratung & Sozialarbeit", href: "/angehoerige-fachkraefte/beratung-und-sozialarbeit/" },
+  { label: "Schule", href: "/angehoerige-fachkraefte/schule-und-bildung/" },
+  { label: "Pädagogische Fachkräfte", href: "/angehoerige-fachkraefte/paedagogische-fachkraefte/" },
+  { label: "Arbeitsplatz", href: "/fuer-autistische-menschen/alltag/arbeit/" },
+  { label: "Arbeitgeber & Führungskräfte", href: "/angehoerige-fachkraefte/arbeitgeber-und-fuehrungskraefte/" },
+];
+
 const items: NavItem[] = [
   {
     label: "Für Autist:innen",
@@ -34,8 +89,8 @@ const items: NavItem[] = [
     label: "Für Angehörige & Fachkräfte",
     children: [
       { label: "Übersicht", href: "/angehoerige-fachkraefte/" },
-      { label: "Ich bin Angehörige:r", href: "/angehoerige-fachkraefte/#angehoerige" },
-      { label: "Ich bin Fachkraft", href: "/angehoerige-fachkraefte/#fachkraefte" },
+      { label: "Für Angehörige", items: angehoerigeLinks },
+      { label: "Für Fachkräfte", items: fachkraefteLinks },
     ],
   },
   { label: "Anlaufstellen", href: "/hilfe-finden/" },
@@ -64,6 +119,13 @@ function isCurrentHref(href: string): boolean {
   const path = pathOf(href);
   return currentPath === path || (path !== "/" && currentPath.startsWith(path));
 }
+
+// Ob irgendein Link innerhalb von children (auch in verschachtelten
+// Gruppen) zur aktuellen Seite passt – für die optische "aktiver
+// Bereich"-Markierung der übergeordneten Buttons.
+function hasActiveDescendant(children: NavChild[]): boolean {
+  return children.some((child) => (isGroup(child) ? hasActiveDescendant(child.items) : isCurrentHref(child.href)));
+}
 ---
 
 <nav class="main-nav" aria-label="Hauptnavigation">
@@ -81,7 +143,7 @@ function isCurrentHref(href: string): boolean {
         }
 
         const submenuId = `main-nav-submenu-${index}`;
-        const isActiveSection = item.children.some((child) => isCurrentHref(child.href));
+        const isActiveSection = hasActiveDescendant(item.children);
 
         return (
           <li
@@ -115,13 +177,62 @@ function isCurrentHref(href: string): boolean {
               </svg>
             </button>
             <ul class="main-nav__submenu" id={submenuId}>
-              {item.children.map((child) => (
-                <li>
-                  <a href={child.href} aria-current={isCurrentHref(child.href) ? "page" : undefined}>
-                    {child.label}
-                  </a>
-                </li>
-              ))}
+              {item.children.map((child, childIndex) => {
+                if (!isGroup(child)) {
+                  return (
+                    <li>
+                      <a href={child.href} aria-current={isCurrentHref(child.href) ? "page" : undefined}>
+                        {child.label}
+                      </a>
+                    </li>
+                  );
+                }
+
+                const nestedId = `${submenuId}-${childIndex}`;
+                const nestedActive = hasActiveDescendant(child.items);
+
+                return (
+                  <li class="main-nav__item--has-children main-nav__item--nested">
+                    <span class="main-nav__label-static">{child.label}</span>
+                    <button
+                      type="button"
+                      class:list={["main-nav__trigger", { "main-nav__trigger--active": nestedActive }]}
+                      aria-expanded="false"
+                      aria-controls={nestedId}
+                    >
+                      {child.label}
+                      <svg
+                        class="main-nav__chevron"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        width="16"
+                        height="16"
+                      >
+                        <path
+                          d="M6 9l6 6 6-6"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <ul class="main-nav__submenu main-nav__submenu--nested" id={nestedId}>
+                      {child.items.map((grandchild) => (
+                        <li>
+                          <a
+                            href={grandchild.href}
+                            aria-current={isCurrentHref(grandchild.href) ? "page" : undefined}
+                          >
+                            {grandchild.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                );
+              })}
             </ul>
           </li>
         );
@@ -135,29 +246,61 @@ function isCurrentHref(href: string): boolean {
     var nav = document.querySelector(".main-nav");
     if (!nav) return;
 
-    var items = Array.from(nav.querySelectorAll(".main-nav__item--has-children"));
-    var triggers = items
-      .map(function (item) {
-        return item.querySelector(".main-nav__trigger");
-      })
-      .filter(Boolean);
-
-    function closeAll(exceptTrigger) {
-      triggers.forEach(function (trigger) {
-        if (trigger === exceptTrigger) return;
-        trigger.setAttribute("aria-expanded", "false");
-      });
-    }
+    var allTriggers = Array.from(nav.querySelectorAll(".main-nav__trigger"));
 
     function isOpen(trigger) {
       return trigger.getAttribute("aria-expanded") === "true";
     }
 
-    triggers.forEach(function (trigger) {
+    function setOpen(trigger, open) {
+      trigger.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+
+    function getContainer(trigger) {
+      return trigger.closest("li");
+    }
+
+    // Direkte Kind-Trigger (eine Ebene tiefer), z. B. die beiden
+    // Gruppen-Buttons innerhalb von "Für Angehörige & Fachkräfte".
+    function getChildTriggers(trigger) {
+      var container = getContainer(trigger);
+      var submenu = container.querySelector(":scope > .main-nav__submenu");
+      if (!submenu) return [];
+      return Array.from(submenu.querySelectorAll(":scope > li > .main-nav__trigger"));
+    }
+
+    // Trigger auf derselben Verschachtelungsebene (Geschwister-<li>), die
+    // beim Öffnen dieses Triggers exklusiv geschlossen werden.
+    function getSiblingTriggers(trigger) {
+      var container = getContainer(trigger);
+      var parentList = container.parentElement;
+      if (!parentList) return [];
+      return Array.from(parentList.children)
+        .map(function (li) {
+          return li.querySelector(":scope > .main-nav__trigger");
+        })
+        .filter(function (candidate) {
+          return candidate && candidate !== trigger;
+        });
+    }
+
+    // Schließt einen Trigger und rekursiv alle noch offenen Kind-Trigger,
+    // damit beim nächsten Öffnen keine verschachtelte Gruppe "hängen
+    // bleibt".
+    function closeTrigger(trigger) {
+      setOpen(trigger, false);
+      getChildTriggers(trigger).forEach(closeTrigger);
+    }
+
+    allTriggers.forEach(function (trigger) {
       trigger.addEventListener("click", function () {
         var wasOpen = isOpen(trigger);
-        closeAll(null);
-        trigger.setAttribute("aria-expanded", wasOpen ? "false" : "true");
+        getSiblingTriggers(trigger).forEach(closeTrigger);
+        if (wasOpen) {
+          closeTrigger(trigger);
+        } else {
+          setOpen(trigger, true);
+        }
       });
     });
 
@@ -166,31 +309,43 @@ function isCurrentHref(href: string): boolean {
     // Seitenwechsel stattfindet).
     nav.querySelectorAll(".main-nav__submenu a").forEach(function (link) {
       link.addEventListener("click", function () {
-        closeAll(null);
+        allTriggers.forEach(function (trigger) {
+          setOpen(trigger, false);
+        });
       });
     });
 
     document.addEventListener("click", function (event) {
-      var target = event.target;
-      var withinOpenItem = items.some(function (item) {
-        return item.contains(target);
+      allTriggers.forEach(function (trigger) {
+        var container = getContainer(trigger);
+        if (!container.contains(event.target)) {
+          setOpen(trigger, false);
+        }
       });
-      if (!withinOpenItem) closeAll(null);
     });
 
     document.addEventListener("keydown", function (event) {
       if (event.key !== "Escape") return;
-      var openTrigger = triggers.find(function (trigger) {
-        return isOpen(trigger);
-      });
-      if (!openTrigger) return;
+      var openTriggers = allTriggers.filter(isOpen);
+      if (openTriggers.length === 0) return;
+
+      // Innersten offenen Trigger schließen: einer, dessen Kind-Trigger
+      // (falls vorhanden) alle bereits geschlossen sind. Ein zweiter
+      // Escape-Druck schließt danach die nächste Ebene.
+      var innermost =
+        openTriggers.find(function (trigger) {
+          return getChildTriggers(trigger).every(function (child) {
+            return !isOpen(child);
+          });
+        }) || openTriggers[openTriggers.length - 1];
+
       // Verhindert, dass ein zusätzlicher Escape-Handler (z. B. für das
       // mobile Hamburger-Menü in Header.astro) für denselben Tastendruck
       // ebenfalls auslöst und z. B. das ganze Menü schließt, bevor der
       // Fokus hierher zurückkehren konnte.
       event.stopImmediatePropagation();
-      closeAll(null);
-      openTrigger.focus();
+      closeTrigger(innermost);
+      innermost.focus();
     });
   })();
 </script>
@@ -229,7 +384,8 @@ function isCurrentHref(href: string): boolean {
   /* Beschriftung ohne JavaScript: einfacher Text statt Button, da der
      Button ohne Skript nicht funktionieren würde. Das zugehörige Untermenü
      ist in diesem Fall immer sichtbar (siehe unten), die Seite bleibt also
-     vollständig nutzbar. */
+     vollständig nutzbar. Gilt gleichermaßen für die oberste Ebene und für
+     verschachtelte Gruppen. */
   .main-nav__label-static {
     display: block;
     padding: var(--space-xs) 0;
@@ -279,7 +435,8 @@ function isCurrentHref(href: string): boolean {
   }
 
   /* Untermenü: ohne JavaScript immer sichtbar und Teil des normalen
-     Seitenflusses, damit alle Unterseiten ohne Skript erreichbar bleiben. */
+     Seitenflusses, damit alle Unterseiten ohne Skript erreichbar bleiben.
+     Gilt für oberste Ebene und verschachtelte Gruppen gleichermaßen. */
   .main-nav__submenu {
     list-style: none;
     margin: var(--space-2xs) 0 var(--space-sm) var(--space-sm);
@@ -310,13 +467,31 @@ function isCurrentHref(href: string): boolean {
   }
 
   /* Sobald JavaScript aktiv ist, wird das Untermenü standardmäßig
-     verborgen und ausschließlich über aria-expanded am Button gesteuert. */
+     verborgen und ausschließlich über aria-expanded am Button gesteuert.
+     Diese Regel passt per Geschwister-Selektor auf jede Verschachtelungs-
+     ebene (Button direkt gefolgt von seinem eigenen Untermenü). */
   html.js .main-nav__submenu {
     display: none;
   }
 
   html.js .main-nav__trigger[aria-expanded="true"] + .main-nav__submenu {
     display: flex;
+  }
+
+  /* Verschachtelte Gruppe: dezent eingerückt und mit einer schmalen
+     Linie abgesetzt, damit die Zugehörigkeit zur übergeordneten Gruppe
+     ("Für Angehörige"/"Für Fachkräfte") auch optisch klar bleibt. */
+  .main-nav__item--nested {
+    padding-left: var(--space-sm);
+    border-left: var(--border-width) solid var(--color-border);
+  }
+
+  /* Lange Themenlisten innerhalb einer verschachtelten Gruppe bleiben
+     bedienbar: eigener Scrollbereich statt eines endlos wachsenden
+     Panels. Die Gruppen-Buttons selbst bleiben dabei immer sichtbar. */
+  html.js .main-nav__submenu--nested {
+    max-height: 60vh;
+    overflow-y: auto;
   }
 
   /* Ab Desktop/Tablet-Breite (identisch zur bestehenden Hamburger-Schwelle)
@@ -347,11 +522,25 @@ function isCurrentHref(href: string): boolean {
       min-width: 11rem;
       max-width: min(14rem, calc(100vw - 2 * var(--space-md)));
     }
+
+    /* Verschachtelte Gruppen schweben nicht zusätzlich als eigenes Panel
+       (das würde zu Überlagerungen führen), sondern klappen innerhalb des
+       bereits geöffneten übergeordneten Panels normal nach unten auf –
+       "unmittelbar darunter", wie im Auftrag gefordert. */
+    html.js .main-nav__submenu.main-nav__submenu--nested {
+      position: static;
+      min-width: 0;
+      max-width: none;
+      padding: 0;
+      background: transparent;
+      border: none;
+    }
   }
 
   /* Unter der Hamburger-Schwelle: Untermenü klappt inline direkt unter dem
      Hauptpunkt auf, kein schwebendes Panel (vermeidet Überlagerungen auf
-     schmalen Bildschirmen). */
+     schmalen Bildschirmen). Gilt unverändert auch für verschachtelte
+     Gruppen, die dort ohnehin bereits "static" positioniert sind. */
   @media (max-width: 40rem) {
     html.js .main-nav__submenu {
       position: static;
@@ -360,6 +549,11 @@ function isCurrentHref(href: string): boolean {
       background: transparent;
       border: none;
       max-width: none;
+    }
+
+    html.js .main-nav__submenu--nested {
+      max-height: none;
+      overflow-y: visible;
     }
 
     html.js .main-nav__list {
