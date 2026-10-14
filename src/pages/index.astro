@@ -119,29 +119,31 @@ const zielgruppen = [
 >
   <section class="hero">
     <div class="container container--wide">
-      <div class="hero__banner">
-        <img
-          src="/images/hero/hero-anders-wahrnehmen.webp"
-          alt="Anders wahrnehmen – Autismus verstehen. Alltag gestalten. Licht fällt durch transparente Glasflächen in Petrol, Bronze und Creme."
-          width="2000"
-          height="750"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        />
-      </div>
-      <div class="hero__content">
-        <h1>Autismus verstehen. Unterstützung finden. Den eigenen Weg gehen.</h1>
-        <p class="hero__lead">
-          Autismuskompakt bietet verständliche und fundierte Informationen rund
-          um Autismus – für autistische Menschen, Angehörige und Fachkräfte.
-          Hier findest du Orientierung, praktische Hilfen, Anlaufstellen und
-          Materialien für unterschiedliche Lebenssituationen.
-        </p>
-        <div class="hero__actions">
-          <a class="button button--primary" href="/fuer-autistische-menschen/">Themen entdecken</a>
-          <a class="button button--secondary" href="/hilfe-finden/">Anlaufstellen finden</a>
-          <a class="button button--accent" href="/newsletter/">Newsletter</a>
+      <div class="hero__grid">
+        <div class="hero__content">
+          <h1>Autismus verstehen. Unterstützung finden. Den eigenen Weg gehen.</h1>
+          <p class="hero__lead">
+            Autismuskompakt bietet verständliche und fundierte Informationen rund
+            um Autismus – für autistische Menschen, Angehörige und Fachkräfte.
+            Hier findest du Orientierung, praktische Hilfen, Anlaufstellen und
+            Materialien für unterschiedliche Lebenssituationen.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="/fuer-autistische-menschen/">Themen entdecken</a>
+            <a class="button button--secondary" href="/hilfe-finden/">Anlaufstellen finden</a>
+            <a class="button button--accent" href="/newsletter/">Newsletter</a>
+          </div>
+        </div>
+        <div class="hero__media">
+          <img
+            src="/images/hero/hero-anders-wahrnehmen.webp"
+            alt="Anders wahrnehmen – Autismus verstehen. Alltag gestalten. Licht fällt durch transparente Glasflächen in Petrol, Bronze und Creme."
+            width="2000"
+            height="750"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
         </div>
       </div>
     </div>
@@ -248,21 +250,11 @@ const zielgruppen = [
     border-bottom: var(--border-width) solid var(--color-bronze-soft);
   }
 
-  /* Hero-Banner: Das Bild trägt die Botschaft ("anders wahrnehmen –
-     Autismus verstehen. Alltag gestalten.") bereits fest eingebrannt.
-     Es wird deshalb immer vollständig und unbeschnitten angezeigt
-     (width: 100%, height: auto) – kein object-fit: cover, damit auf
-     keinem Viewport Buchstaben abgeschnitten werden. */
-  .hero__banner {
-    border-radius: var(--radius);
-    overflow: hidden;
-    margin-bottom: var(--space-lg);
-  }
-
-  .hero__banner img {
-    display: block;
-    width: 100%;
-    height: auto;
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: var(--space-lg);
   }
 
   .hero__content {
@@ -270,7 +262,7 @@ const zielgruppen = [
   }
 
   .hero h1 {
-    max-width: 38ch;
+    max-width: 30ch;
     line-height: 1.2;
   }
 
@@ -285,6 +277,31 @@ const zielgruppen = [
     flex-wrap: wrap;
     gap: var(--space-xs);
     margin-top: var(--space-md);
+  }
+
+  /* Hero-Bild: Der Schriftzug ("anders wahrnehmen – Autismus
+     verstehen. Alltag gestalten.") ist fest ins Bild eingebrannt
+     (sehr breites Seitenverhältnis 2000×750). Deshalb wird es auf
+     jedem Viewport immer vollständig und unbeschnitten angezeigt –
+     width: 100%, height: auto, kein object-fit: cover, keine feste
+     Höhe –, damit kein Buchstabe abgeschnitten wird. */
+  .hero__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Unterhalb von 64rem (~1024px) bliebe die rechte Bildspalte bei
+     diesem sehr breiten Bildformat so schmal, dass der eingebrannte
+     Untertitel kaum noch lesbar wäre. Deshalb bleibt es bis dahin
+     einspaltig (Text zuerst, Bild in voller Breite darunter) – erst
+     ab der Desktop-Schwelle rückt das Bild gleichwertig neben den
+     Text. */
+  @media (min-width: 64rem) {
+    .hero__grid {
+      grid-template-columns: 4fr 3fr;
+      gap: var(--space-xl);
+    }
   }
 
   .themen-kacheln {
