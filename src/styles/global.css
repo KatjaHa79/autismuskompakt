@@ -58,9 +58,22 @@
   --color-text-invert: var(--color-background);
   --color-link: var(--color-petrol);
 
-  /* Typografie */
+  /* Typografie
+     Zentrale Schriftgrößenskala. Fließtext liegt bei 16px (nicht darunter,
+     siehe Barrierefreiheitsanforderung) und bildet damit den Boden der
+     Skala; alle anderen Stufen sind funktional dazu abgestuft (Navigation/
+     Buttons/Tabellen knapp darunter, Überschriften klar darüber). Große
+     Stufen (H1–H3) sind per clamp() responsiv: Mobil kleiner, Desktop am
+     oberen Rand des jeweiligen Zielkorridors. */
   --font-body: "Work Sans", "Segoe UI", system-ui, sans-serif;
-  --font-size-base: clamp(0.90625rem, 0.89rem + 0.1vw, 0.96875rem); /* 14,5–15,5px */
+  --font-size-xs: 0.8125rem; /* 13px – Metadaten, Footer-Rubriken */
+  --font-size-sm: 0.875rem; /* 14px – Navigation, Buttons, Tabellen */
+  --font-size-base: 1rem; /* 16px – Fließtext */
+  --font-size-lg: 1.0625rem; /* 17px – Kartenüberschriften */
+  --font-size-h4: 1.125rem; /* 18px */
+  --font-size-h3: clamp(1.125rem, 1.07rem + 0.3vw, 1.375rem); /* 18–22px */
+  --font-size-h2: clamp(1.375rem, 1.26rem + 0.6vw, 1.75rem); /* 22–28px */
+  --font-size-h1: clamp(1.75rem, 1.5rem + 1.3vw, 2.25rem); /* 28–36px */
   --line-height-base: 1.6;
   --measure: 70ch; /* maximale Textzeilenlänge, entspricht --content-width */
   --narrow-width: 60ch;
@@ -170,18 +183,19 @@ h4 {
 }
 
 h1 {
-  /* ca. 26px mobil, 30–34px Desktop */
-  font-size: clamp(1.625rem, 1.56rem + 1.1vw, 2.0625rem);
+  font-size: var(--font-size-h1); /* 28–36px */
 }
 
 h2 {
-  /* ca. 22–25px */
-  font-size: clamp(1.375rem, 1.34rem + 0.5vw, 1.5625rem);
+  font-size: var(--font-size-h2); /* 22–28px */
 }
 
 h3 {
-  /* ca. 18–20px */
-  font-size: clamp(1.125rem, 1.11rem + 0.15vw, 1.25rem);
+  font-size: var(--font-size-h3); /* 18–22px */
+}
+
+h4 {
+  font-size: var(--font-size-h4); /* 18px */
 }
 
 a {
@@ -269,8 +283,8 @@ summary:focus-visible,
   gap: var(--space-2xs);
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius);
-  font-weight: 700;
-  font-size: 0.9375rem; /* ca. 14–15px */
+  font-weight: 600;
+  font-size: var(--font-size-sm); /* 14px */
   text-decoration: none;
   min-height: 44px;
   border: var(--border-width) solid transparent;
@@ -345,7 +359,7 @@ summary:focus-visible,
   border-radius: var(--radius);
   color: var(--color-petrol);
   font-weight: 700;
-  font-size: 1.0625rem;
+  font-size: var(--font-size-lg); /* 17px */
   line-height: 1.35;
   text-decoration: none;
   transition: border-color var(--transition-fast);
@@ -413,7 +427,7 @@ summary:focus-visible,
 }
 
 .theme-list__title {
-  font-size: 1.25rem;
+  font-size: var(--font-size-h3); /* 18–22px, responsiv */
   font-weight: 700;
   color: var(--color-petrol);
 }
@@ -432,10 +446,6 @@ summary:focus-visible,
 @media (min-width: 48rem) {
   .theme-list__link {
     align-items: center;
-  }
-
-  .theme-list__title {
-    font-size: 1.375rem;
   }
 }
 
@@ -478,7 +488,7 @@ summary:focus-visible,
   border: var(--border-width) solid var(--color-border);
   border-radius: 999px;
   padding: var(--space-2xs) var(--space-sm);
-  font-size: 0.95rem;
+  font-size: var(--font-size-sm); /* 14px */
   text-decoration: none;
   color: var(--color-text);
   font-weight: 700;

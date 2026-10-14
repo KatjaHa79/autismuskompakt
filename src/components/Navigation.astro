@@ -90,6 +90,19 @@ const weitereMaterialien: NavLink[] = [
   { label: "Materialien für Arbeit", href: "/materialien/typ/materialien-arbeit/" },
 ];
 
+// Shop-Unterpunkte bilden eine eigene verschachtelte Gruppe innerhalb des
+// gemeinsamen Menüs "Material & Shop" (gleiches Muster wie "Für
+// Angehörige"/"Für Fachkräfte" oben – maximal eine Verschachtelungsebene,
+// wie auch vom Rendering unterstützt). Die Material-Links selbst stehen
+// direkt auf oberster Ebene dieses Menüs (mit "Weitere Materialien" als
+// eigener verschachtelter Gruppe, identisch zum bisherigen Dropdown) – alle
+// vorher direkt erreichbaren Links bleiben dabei vollständig erhalten.
+const shopLinks: NavLink[] = [
+  { label: "Bücher", href: "/shop/#buecher" },
+  { label: "Digitale Produkte", href: "/shop/#digitale-produkte" },
+  { label: "Merchandise", href: "/shop/#merchandise" },
+];
+
 const items: NavItem[] = [
   {
     label: "Für Autist:innen",
@@ -101,41 +114,48 @@ const items: NavItem[] = [
       { label: "Besonderheiten & Begleiterkrankungen", href: "/fuer-autistische-menschen/besonderheiten/" },
     ],
   },
-  { label: "Autismus-Test", href: "/fuer-autistische-menschen/diagnostik/orientierungscheck/" },
   { label: "AuDHS", href: "/audhs/" },
-  { label: "Glossar A–Z", href: "/glossar/" },
   {
-    label: "Für Angehörige & Fachkräfte",
+    label: "Wissen",
+    children: [
+      { label: "Autismus-Test", href: "/fuer-autistische-menschen/diagnostik/orientierungscheck/" },
+      { label: "Glossar A–Z", href: "/glossar/" },
+      { label: "Neurodivergenz verstehen", href: "/neurodivergenz/" },
+    ],
+  },
+  {
+    label: "Angehörige & Fachkräfte",
     children: [
       { label: "Übersicht", href: "/angehoerige-fachkraefte/" },
       { label: "Für Angehörige", items: angehoerigeLinks },
       { label: "Für Fachkräfte", items: fachkraefteLinks },
     ],
   },
-  { label: "Anlaufstellen", href: "/hilfe-finden/" },
   {
-    label: "Hilfreiches Material",
+    label: "Material & Shop",
+    alignRight: true,
     children: [
-      { label: "Übersicht", href: "/materialien/" },
+      { label: "Material: Übersicht", href: "/materialien/" },
       { label: "Kostenloser Leitfaden", href: "/materialien/#leitfaden" },
       { label: "Checklisten", href: "/materialien/typ/checklisten/" },
       { label: "Vorlagen", href: "/materialien/typ/vorlagen/" },
       { label: "Kommunikationshilfen", href: "/materialien/typ/kommunikationshilfen/" },
       { label: "Arbeitsblätter", href: "/materialien/typ/arbeitsblaetter/" },
       { label: "Weitere Materialien", items: weitereMaterialien },
+      { label: "Shop: Übersicht", href: "/shop/" },
+      { label: "Shop", items: shopLinks },
     ],
   },
-  {
-    label: "Shop",
-    alignRight: true,
-    children: [
-      { label: "Übersicht", href: "/shop/" },
-      { label: "Bücher", href: "/shop/#buecher" },
-      { label: "Digitale Produkte", href: "/shop/#digitale-produkte" },
-      { label: "Merchandise", href: "/shop/#merchandise" },
-    ],
-  },
-  { label: "Über mich", href: "/ueber-mich/" },
+  // "Anlaufstellen" und "Über mich" stehen bewusst NICHT in dieser
+  // Hauptmenüliste: Mit 7 statt 5 Hauptpunkten ließe sich keine wirklich
+  // einzeilige Desktop-Navigation mehr erreichen (siehe Abschlussbericht,
+  // Abschnitt D – mit allen 7 Punkten plus Logo/Suche/CTA wäre die Zeile
+  // erst ab ca. 1420px einzeilig, nicht schon ab realistischen
+  // Desktop-Breiten). Beide bleiben aber direkt erreichbar: "Anlaufstellen"
+  // als eigener, gut sichtbarer Link im Aktionsbereich neben Suche und
+  // CTA (siehe Header.astro), "Über mich" als ruhiger Textlink daneben –
+  // beides erfüllt "prominent/direkt erreichbar" bzw. "klar zugänglicher
+  // Servicebereich" ohne ein zusätzliches, fast leeres "Mehr"-Dropdown.
 ];
 
 const currentPath = Astro.url.pathname;
@@ -195,7 +215,7 @@ function hasActiveDescendant(children: NavChild[]): boolean {
               aria-controls={submenuId}
             >
               {item.label}
-              <svg class="main-nav__chevron" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16">
+              <svg class="main-nav__chevron" aria-hidden="true" viewBox="0 0 24 24" width="13" height="13">
                 <path
                   d="M6 9l6 6 6-6"
                   fill="none"
@@ -235,8 +255,8 @@ function hasActiveDescendant(children: NavChild[]): boolean {
                         class="main-nav__chevron"
                         aria-hidden="true"
                         viewBox="0 0 24 24"
-                        width="16"
-                        height="16"
+                        width="13"
+                        height="13"
                       >
                         <path
                           d="M6 9l6 6 6-6"
@@ -400,7 +420,7 @@ function hasActiveDescendant(children: NavChild[]): boolean {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--space-sm) var(--space-md);
+    gap: var(--space-2xs);
     padding: 0;
   }
 
@@ -423,15 +443,15 @@ function hasActiveDescendant(children: NavChild[]): boolean {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-2xs);
-    min-height: 2.75rem;
-    padding: var(--space-xs) var(--space-sm);
+    gap: 0.25rem;
+    min-height: 2.25rem; /* 36px – kompakter, aber weiterhin über dem WCAG-2.2-Zielgrößen-Minimum von 24px */
+    padding: var(--space-2xs);
     border-radius: var(--radius);
     background-color: var(--nav-item-bg);
     border: var(--border-width) solid var(--color-border);
     font: inherit;
-    font-size: 0.85rem; /* ca. 13,5–14px, unverändert gegenüber vorher */
-    font-weight: 700;
+    font-size: var(--font-size-sm); /* 14px */
+    font-weight: 600;
     color: var(--nav-item-text);
     text-decoration: none;
     cursor: pointer;
@@ -508,8 +528,8 @@ function hasActiveDescendant(children: NavChild[]): boolean {
   .main-nav__submenu a {
     display: block;
     padding: var(--space-2xs) var(--space-sm);
-    font-size: 0.85rem;
-    font-weight: 700;
+    font-size: var(--font-size-sm); /* 14px */
+    font-weight: 600;
     color: var(--color-text);
     text-decoration: none;
     border-radius: var(--radius);

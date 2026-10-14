@@ -1,6 +1,9 @@
 ---
 import Navigation from "./Navigation.astro";
 import { BREVO_LEITFADEN_URL } from "../lib/constants";
+
+const currentPath = Astro.url.pathname;
+const isAnlaufstellen = currentPath === "/hilfe-finden/" || currentPath.startsWith("/hilfe-finden/");
 ---
 
 <header class="site-header">
@@ -36,6 +39,14 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
       <Navigation />
 
       <div class="primary-menu__actions">
+        <a
+          class="site-header__quicklink"
+          href="/hilfe-finden/"
+          aria-current={isAnlaufstellen ? "page" : undefined}
+        >
+          Anlaufstellen
+        </a>
+
         <a class="site-header__cta button button--accent" href={BREVO_LEITFADEN_URL}>
           Kostenloser Leitfaden
         </a>
@@ -59,6 +70,8 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
             </button>
           </form>
         </div>
+
+        <a class="site-header__quietlink" href="/ueber-mich/">Über mich</a>
       </div>
     </div>
   </div>
@@ -173,11 +186,12 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
   }
 
   /* Ab hier genug Platz: Logo, Navigation und CTA teilen sich eine Zeile.
-     Das freigestellte Logo ist hier der wichtigste visuelle Anker im
-     Header (Ziel ca. 100–120px sichtbare Höhe). */
+     Kompakter als zuvor (vorher 110px), damit das Logo harmonisch neben der
+     verschlankten, einzeiligen Navigation wirkt, statt den Header zu
+     dominieren – bleibt mit 72px weiterhin klar als Marke erkennbar. */
   @media (min-width: 40.0625rem) {
     .site-header__logo-img {
-      height: 6.875rem;
+      height: 4.5rem;
     }
   }
 
@@ -218,8 +232,56 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
     white-space: nowrap;
     padding-block: var(--space-2xs);
     padding-inline: var(--space-sm);
-    font-size: 0.9375rem;
+    font-size: var(--font-size-sm); /* 14px */
     min-height: 38px;
+  }
+
+  /* "Anlaufstellen" steht bewusst außerhalb der Hauptmenüliste (siehe
+     Navigation.astro), bleibt aber genauso prominent/eigenständig wie die
+     übrigen Hauptpunkte – gleiche Chip-Optik wie main-nav, nur hier im
+     Aktionsbereich neben Suche und CTA platziert. */
+  .site-header__quicklink {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    min-height: 2.25rem;
+    padding: var(--space-2xs) var(--space-xs);
+    border-radius: var(--radius);
+    background-color: #e9f1f2;
+    border: var(--border-width) solid var(--color-border);
+    font-size: var(--font-size-sm); /* 14px */
+    font-weight: 600;
+    color: var(--color-petrol);
+    text-decoration: none;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast);
+  }
+
+  .site-header__quicklink:hover {
+    background-color: #d7e6e8;
+    border-color: #a56c3b;
+  }
+
+  .site-header__quicklink[aria-current="page"] {
+    background-color: var(--color-petrol);
+    border-color: var(--color-petrol);
+    color: var(--color-white);
+  }
+
+  /* "Über mich" ist bewusst zurückhaltender als "Anlaufstellen": ein
+     ruhiger Textlink ohne Chip-Fläche, da es sich um ein weniger
+     frequentiertes Serviceziel handelt (siehe Abschlussbericht). */
+  .site-header__quietlink {
+    white-space: nowrap;
+    font-size: var(--font-size-sm); /* 14px */
+    font-weight: 600;
+    color: var(--color-petrol);
+    text-decoration: none;
+  }
+
+  .site-header__quietlink:hover {
+    text-decoration: underline;
   }
 
   .site-header__search-row {
@@ -286,9 +348,9 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
 
   /* Ab hier teilen sich Logo und Navigation eine Zeile; Leitfaden-Button und
      Suche rücken als ruhige, kompakte zweite Zeile darunter. Erst ab der
-     Einzeilen-Schwelle (siehe unten, ca. 1120px) reiht sich alles – Logo,
+     Einzeilen-Schwelle (siehe unten, ca. 1024px) reiht sich alles – Logo,
      Navigation, Suche und CTA – in einer einzigen Zeile aneinander. */
-  @media (min-width: 40.0625rem) and (max-width: 69.9375rem) {
+  @media (min-width: 40.0625rem) and (max-width: 81.9375rem) {
     .site-header__inner {
       flex-direction: row;
       flex-wrap: wrap;
@@ -316,18 +378,23 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
     }
   }
 
-  /* Ab ca. 1120px genug Breite für eine einzige ruhige Zeile: Logo,
-     Navigation, Suche und CTA nebeneinander – wie im ursprünglichen
-     Entwurf. Reihenfolge per order bewusst gesetzt (Logo, Navigation,
-     Suche, CTA), unabhängig von der DOM-Reihenfolge im Markup. Abstände
-     fallen hier knapper aus, damit Logo und Navigation nicht unnötig
-     auseinanderrücken. */
-  @media (min-width: 70rem) {
+  /* Ab ca. 1312px genug Breite für eine einzige ruhige Zeile: Logo,
+     Navigation, Suche, Anlaufstellen, "Über mich" und CTA nebeneinander.
+     Reihenfolge per order bewusst gesetzt, unabhängig von der
+     DOM-Reihenfolge im Markup. Abstände fallen hier knapper aus, damit
+     Logo und Navigation nicht unnötig auseinanderrücken. Der Breakpoint
+     wurde empirisch mit Playwright kalibriert (schrittweise Messung des
+     tatsächlichen Umbruchpunkts der 5-teiligen Hauptnavigation plus
+     Aktionsbereich, nicht anhand eines geschätzten Gerätewerts): echter
+     Umbruch bei ca. 1300px, dieser Wert plus Sicherheitsabstand für
+     abweichendes Schrift-Rendering in anderen Browsern/Betriebssystemen.
+     Siehe Abschlussbericht, Abschnitt D. */
+  @media (min-width: 82rem) {
     .site-header__inner {
       flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
-      column-gap: var(--space-sm);
+      column-gap: var(--space-xs);
       row-gap: var(--space-sm);
     }
 
@@ -356,16 +423,26 @@ import { BREVO_LEITFADEN_URL } from "../lib/constants";
       display: contents;
     }
 
-    .site-header__search-row {
+    .site-header__quicklink {
       flex: 0 0 auto;
       order: 2;
+    }
+
+    .site-header__search-row {
+      flex: 0 0 auto;
+      order: 3;
+    }
+
+    .site-header__quietlink {
+      flex: 0 0 auto;
+      order: 4;
     }
 
     .site-header__cta {
       flex: 0 0 auto;
       padding-inline: var(--space-sm);
-      font-size: 0.85rem;
-      order: 3;
+      font-size: var(--font-size-sm); /* 14px */
+      order: 5;
     }
 
     /* Dezente, ikonbasierte Suche: nimmt in der Einzeilen-Kopfzeile nur so
