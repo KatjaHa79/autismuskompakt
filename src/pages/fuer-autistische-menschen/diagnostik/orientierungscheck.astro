@@ -29,7 +29,7 @@ const quellen = [
   description="Ein wertschätzender Orientierungscheck für Erwachsene: eigene Erfahrungen mit sozialer Kommunikation, Reizen, Routinen, Masking und Überlastung besser einordnen. Kein diagnostischer Test."
   fullTitle
 >
-  <div class="container">
+  <div class="container container--content">
     <Breadcrumbs
       items={[
         { label: "Start", href: "/" },
@@ -41,7 +41,7 @@ const quellen = [
   </div>
 
   <section class="section">
-    <div class="container">
+    <div class="container container--content">
       <h1>Könnte Autismus bei mir eine Rolle spielen?</h1>
 
       <div class="prose">
@@ -143,7 +143,7 @@ const quellen = [
   </section>
 
   <section class="section section--alt">
-    <div class="container">
+    <div class="container container--content">
       <div class="prose">
         <h2>Fachliche Grundlage</h2>
         <p>Der Autismuskompakt-Orientierungscheck ist kein validiertes diagnostisches Instrument.</p>
@@ -499,7 +499,6 @@ const quellen = [
 
   .notice {
     margin-top: var(--space-lg);
-    max-width: var(--measure);
   }
 
   html.no-js .oc-app {
@@ -508,7 +507,6 @@ const quellen = [
 
   .oc-app {
     margin-top: var(--space-lg);
-    max-width: var(--measure);
   }
 
   .oc-fortschritt-text {

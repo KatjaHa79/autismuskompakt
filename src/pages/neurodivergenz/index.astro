@@ -71,12 +71,12 @@ const structuredData = {
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />
 
-  <div class="container">
+  <div class="container container--content">
     <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Neurodivergenz" }]} />
   </div>
 
   <section class="hero section">
-    <div class="container">
+    <div class="container container--content">
       <h1>Neurodivergenz verstehen: Was bedeutet neurodivergent?</h1>
       <p>
         Vielleicht hast du den Begriff <em>neurodivergent</em> schon einmal gehört. In sozialen Medien, in Gesprächen
@@ -110,7 +110,7 @@ const structuredData = {
   </section>
 
   <article class="prose-sections">
-    <div class="container">
+    <div class="container container--content">
       <section id="was-bedeutet-neurodivergenz">
         <h2>Was bedeutet Neurodivergenz?</h2>
         <p>
@@ -429,7 +429,7 @@ const structuredData = {
   </article>
 
   <section class="section section--alt" aria-labelledby="faq-heading">
-    <div class="container">
+    <div class="container container--content">
       <h2 id="faq-heading">Häufige Fragen zur Neurodivergenz</h2>
       <div class="faq-liste">
         {
@@ -459,7 +459,7 @@ const structuredData = {
   </section>
 
   <section class="section">
-    <div class="container">
+    <div class="container container--content">
       <h2>Fazit: Neurodivergenz bedeutet, Unterschiede ernst zu nehmen</h2>
       <p>Neurodivergenz beschreibt Menschen, deren neurokognitive Funktionsweisen von gesellschaftlich als typisch betrachteten Mustern abweichen.</p>
       <p>Das Konzept der Neurodiversität erinnert daran, dass unterschiedliche Arten des Denkens, Wahrnehmens und Lernens zur menschlichen Vielfalt gehören.</p>
@@ -477,7 +477,7 @@ const structuredData = {
   </section>
 
   <section class="section section--alt">
-    <div class="container">
+    <div class="container container--content">
       <h2 id="quellen-heading">Wissenschaftliche Grundlagen</h2>
       <ol class="quellenliste">
         <li id="q1">
@@ -522,7 +522,7 @@ const structuredData = {
   </section>
 
   <section class="section section--alt newsletter-teaser" aria-labelledby="newsletter-heading">
-    <div class="container">
+    <div class="container container--content">
       <h2 id="newsletter-heading">Praktische Tipps für deinen Alltag</h2>
       <p>
         Im Newsletter von AUTISMUS kompakt erhältst du verständliche Informationen und konkrete Anregungen für
@@ -545,10 +545,6 @@ const structuredData = {
     max-width: 36ch;
   }
 
-  .hero p {
-    max-width: var(--measure);
-  }
-
   .hero__intro {
     font-size: 1.05rem;
   }
@@ -557,10 +553,6 @@ const structuredData = {
     margin-top: var(--space-xl);
     padding-top: var(--space-lg);
     border-top: var(--border-width) solid var(--color-border);
-  }
-
-  .prose-sections .container {
-    max-width: var(--measure);
   }
 
   .prose-sections h2 {
@@ -589,10 +581,6 @@ const structuredData = {
      /audhs/ und im Glossar – funktioniert ohne JavaScript und ohne
      Animationen, der Öffnungszustand wird vom Browser selbst korrekt
      vermittelt. */
-  .faq-liste {
-    max-width: var(--measure);
-  }
-
   .faq-item {
     background-color: var(--color-surface);
     border: var(--border-width) solid var(--color-border);
@@ -620,7 +608,7 @@ const structuredData = {
 
   .faq-item__summary h3 {
     margin: 0;
-    font-size: 1.0625rem;
+    font-size: var(--font-size-h3); /* 18px */
     color: var(--color-petrol);
   }
 
@@ -640,22 +628,12 @@ const structuredData = {
 
   .faq-item__body p {
     margin: 0;
-    max-width: var(--measure);
-  }
-
-  .quellenliste {
-    max-width: var(--measure);
   }
 
   .quellen-fussnote {
     margin-top: var(--space-sm);
-    max-width: var(--measure);
     font-size: 0.875rem;
     color: var(--color-text-muted);
-  }
-
-  .newsletter-teaser p {
-    max-width: var(--measure);
   }
 
   .newsletter-teaser p:last-child {

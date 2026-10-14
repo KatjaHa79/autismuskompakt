@@ -33,7 +33,7 @@ const passendeMaterialien = materialIds
 <BaseLayout title={seoTitle ?? title} description={description}>
   {structuredData && <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />}
 
-  <div class="container">
+  <div class="container container--content">
     <Breadcrumbs
       items={[
         { label: "Start", href: "/" },
@@ -44,7 +44,7 @@ const passendeMaterialien = materialIds
   </div>
 
   <article class="section">
-    <div class="container">
+    <div class="container container--content">
       <p class="zielgruppen">
         Für: {targetGroups.map((gruppe) => targetGroupLabels[gruppe]).join(", ")}
       </p>
@@ -94,14 +94,6 @@ const passendeMaterialien = materialIds
 </BaseLayout>
 
 <style>
-  /* Der äußere Layoutcontainer darf website-weit breiter sein; die
-     eigentliche Artikelprosa bleibt dennoch in Lesebreite und zentriert
-     (keine Sidebar in dieser Etappe, aber architektonisch vorbereitet). */
-  .container {
-    max-width: var(--measure);
-    margin-inline: auto;
-  }
-
   .zielgruppen {
     font-size: 0.9rem;
     color: var(--color-text-muted);
