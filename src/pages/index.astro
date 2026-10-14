@@ -119,30 +119,29 @@ const zielgruppen = [
 >
   <section class="hero">
     <div class="container container--wide">
-      <div class="hero__grid">
-        <div class="hero__content">
-          <h1>Autismus verstehen. Unterstützung finden. Den eigenen Weg gehen.</h1>
-          <p class="hero__lead">
-            Autismuskompakt bietet verständliche und fundierte Informationen rund
-            um Autismus – für autistische Menschen, Angehörige und Fachkräfte.
-            Hier findest du Orientierung, praktische Hilfen, Anlaufstellen und
-            Materialien für unterschiedliche Lebenssituationen.
-          </p>
-          <div class="hero__actions">
-            <a class="button button--primary" href="/fuer-autistische-menschen/">Themen entdecken</a>
-            <a class="button button--secondary" href="/hilfe-finden/">Anlaufstellen finden</a>
-            <a class="button button--accent" href="/newsletter/">Newsletter</a>
-          </div>
-        </div>
-        <div class="hero__media">
-          <img
-            src="/images/hero/autismuskompakt-hero-stillleben.webp"
-            alt=""
-            width="1536"
-            height="1024"
-            loading="eager"
-            decoding="async"
-          />
+      <div class="hero__banner">
+        <img
+          src="/images/hero/hero-anders-wahrnehmen.webp"
+          alt="Anders wahrnehmen – Autismus verstehen. Alltag gestalten. Licht fällt durch transparente Glasflächen in Petrol, Bronze und Creme."
+          width="2000"
+          height="750"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
+      <div class="hero__content">
+        <h1>Autismus verstehen. Unterstützung finden. Den eigenen Weg gehen.</h1>
+        <p class="hero__lead">
+          Autismuskompakt bietet verständliche und fundierte Informationen rund
+          um Autismus – für autistische Menschen, Angehörige und Fachkräfte.
+          Hier findest du Orientierung, praktische Hilfen, Anlaufstellen und
+          Materialien für unterschiedliche Lebenssituationen.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="/fuer-autistische-menschen/">Themen entdecken</a>
+          <a class="button button--secondary" href="/hilfe-finden/">Anlaufstellen finden</a>
+          <a class="button button--accent" href="/newsletter/">Newsletter</a>
         </div>
       </div>
     </div>
@@ -249,11 +248,21 @@ const zielgruppen = [
     border-bottom: var(--border-width) solid var(--color-bronze-soft);
   }
 
-  .hero__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    gap: var(--space-lg);
+  /* Hero-Banner: Das Bild trägt die Botschaft ("anders wahrnehmen –
+     Autismus verstehen. Alltag gestalten.") bereits fest eingebrannt.
+     Es wird deshalb immer vollständig und unbeschnitten angezeigt
+     (width: 100%, height: auto) – kein object-fit: cover, damit auf
+     keinem Viewport Buchstaben abgeschnitten werden. */
+  .hero__banner {
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero__banner img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
   .hero__content {
@@ -261,7 +270,7 @@ const zielgruppen = [
   }
 
   .hero h1 {
-    max-width: 28ch;
+    max-width: 38ch;
     line-height: 1.2;
   }
 
@@ -276,43 +285,6 @@ const zielgruppen = [
     flex-wrap: wrap;
     gap: var(--space-xs);
     margin-top: var(--space-md);
-  }
-
-  /* Hero-Bild: ruhiges Stillleben statt abstrakter Fläche. Auf
-     schmalen Bildschirmen volle Breite im festen Seitenverhältnis
-     unterhalb der Buttons; ab der Zweispalten-Schwelle streckt es
-     sich auf die Höhe des Textbereichs und füllt die rechte Spalte. */
-  .hero__media {
-    border-radius: var(--radius);
-    overflow: hidden;
-    border: var(--border-width) solid var(--color-border);
-  }
-
-  .hero__media img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-    object-position: center 60%;
-  }
-
-  @media (min-width: 64rem) {
-    .hero__grid {
-      grid-template-columns: 1.4fr 1fr;
-      gap: var(--space-xl);
-    }
-
-    .hero__media {
-      align-self: stretch;
-      height: 100%;
-      min-height: 18rem;
-    }
-
-    .hero__media img {
-      height: 100%;
-      aspect-ratio: auto;
-    }
   }
 
   .themen-kacheln {
