@@ -8,9 +8,16 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description: string;
+  // Wenn true, wird KEIN automatischer " · Autismuskompakt"-Zusatz an den
+  // Title angehängt, weil der übergebene Title bereits selbst den
+  // vollständigen, gebrandeten SEO-Title enthält (z. B. "... | AUTISMUS
+  // kompakt"). Default false hält das bisherige Verhalten für alle
+  // anderen Seiten unverändert bei.
+  fullTitle?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, fullTitle = false } = Astro.props;
+const pageTitle = fullTitle ? title : `${title} · Autismuskompakt`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -19,7 +26,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} · Autismuskompakt</title>
+    <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
@@ -32,7 +39,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <meta property="og:site_name" content="Autismuskompakt" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={`${title} · Autismuskompakt`} />
+    <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:locale" content="de_DE" />
