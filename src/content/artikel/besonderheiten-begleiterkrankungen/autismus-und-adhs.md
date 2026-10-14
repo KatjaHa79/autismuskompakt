@@ -29,6 +29,8 @@ Außerhalb offizieller Diagnosekriterien hat sich umgangssprachlich der Begriff 
 
 Ein Fachreview zur Überlappung beider Diagnosen (Antshel & Russo, 2019) weist darauf hin, dass Autismus und ADHS gemeinsame Beeinträchtigungen in sozialer Funktion und exekutiven Funktionen zeigen können, sich aber in der konkreten Ausprägung deutlich unterscheiden – und dass eine Behandlung beide Diagnosen berücksichtigen sollte, wenn beide vorliegen. Einfache Ratschläge wie "Du musst dir nur einen Plan machen" greifen bei dieser Kombination oft zu kurz, weil starre Pläne am ADHS-Anteil scheitern können und völlig offene Strukturen am Autismus-Anteil. Hilfreicher kann ein flexibles Gerüst sein: feste Ankerpunkte (z. B. Aufstehzeit, Mahlzeiten) kombiniert mit bewusst freien, nicht vollständig durchgeplanten Abschnitten dazwischen.
 
+Eine ausführlichere, eigene Themenwelt zu dieser Kombination findest du unter [AuDHS verstehen: Wenn Autismus und ADHS zusammenkommen](/audhs/) – mit vertiefenden Artikeln zu möglichen Merkmalen und zur Diagnostik im Erwachsenenalter.
+
 ## Für Angehörige
 
 ADHS und Autismus können gleichzeitig vorkommen und sich in einzelnen Alltagssituationen überlappen. Konzentrationsprobleme, Aufgabenwechsel oder Organisation können deshalb nicht zuverlässig allein von außen einer Diagnose zugeordnet werden.

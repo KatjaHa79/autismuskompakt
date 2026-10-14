@@ -1,0 +1,659 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import ThemenKachel from "../../components/ThemenKachel.astro";
+
+// Die sechs Themenkarten der AuDHS-Welt (Master-Projektauftrag Punkt 7).
+// Die ersten beiden verlinken auf die veröffentlichten Fachartikel; die
+// übrigen vier verlinken auf die passenden Abschnitte dieser Übersichts-
+// seite selbst, da es dafür noch keine eigenen AuDHS-spezifischen Artikel
+// gibt (siehe Punkt 12: keine automatisch erzeugten Platzhalterartikel).
+const themenkarten = [
+  {
+    icon: "regler",
+    title: "AuDHS-Symptome erkennen und verstehen",
+    description: "Zehn mögliche Merkmale im Alltag – mit Beispielen und praktischen Anregungen.",
+    href: "/audhs/symptome/",
+  },
+  {
+    icon: "uhr",
+    title: "AuDHS bei Erwachsenen und Diagnostik",
+    description: "Warum die Kombination manchmal erst spät erkannt wird und wie die Diagnostik abläuft.",
+    href: "/audhs/erwachsene/",
+  },
+  {
+    icon: "kalender",
+    title: "AuDHS im Alltag",
+    description: "Warum manche gut gemeinten Ratschläge nicht passen – und was stattdessen helfen kann.",
+    href: "/audhs/#alltag",
+  },
+  {
+    icon: "wellen",
+    title: "Reizverarbeitung und Energie",
+    description: "Zwischen Überreizung und Unterforderung: die eigene sensorische Umgebung verstehen.",
+    href: "/audhs/#reizverarbeitung-und-energie",
+  },
+  {
+    icon: "sprechblase",
+    title: "AuDHS in Beziehungen",
+    description: "Unterschiedliche Bedürfnisse nach Nähe, Austausch und Rückzug konkret benennen.",
+    href: "/audhs/#beziehungen",
+  },
+  {
+    icon: "ebenen",
+    title: "AuDHS im Beruf",
+    description: "Welche Arbeitsbedingungen entlasten können – individuell statt nach Schema.",
+    href: "/audhs/#beruf",
+  },
+] as const;
+
+const faqEintraege = [
+  {
+    frage: "Ist AuDHS eine eigenständige Diagnose?",
+    antwort:
+      "Nein. AuDHS ist eine informelle Bezeichnung für das gemeinsame Auftreten von Autismus und ADHS. Beide Störungsbilder werden diagnostisch getrennt beurteilt.",
+  },
+  {
+    frage: "Kann man gleichzeitig autistisch sein und ADHS haben?",
+    antwort:
+      "Ja. Autismus und ADHS können gemeinsam diagnostiziert werden. Forschung und diagnostische Leitlinien berücksichtigen dieses gemeinsame Auftreten.",
+  },
+  {
+    frage: "Welche Symptome sind typisch für AuDHS?",
+    antwort:
+      "Es gibt keine eigenständige, offiziell definierte AuDHS-Symptomliste. Menschen mit beiden Störungsbildern können Merkmale von Autismus und ADHS in individuell unterschiedlichen Kombinationen zeigen.",
+  },
+  {
+    frage: "Gibt es einen AuDHS-Test für Erwachsene?",
+    antwort:
+      "Online-Screenings können einzelne Merkmale erfassen. Sie können aber keine Diagnose stellen oder sicher ausschließen. Eine umfassende fachliche Untersuchung ist erforderlich.",
+  },
+  {
+    frage: "Ist AuDHS eine Form von Neurodivergenz?",
+    antwort:
+      "Menschen mit Autismus und ADHS werden häufig als neurodivergent beschrieben. Neurodivergenz ist ein übergeordneter Begriff und keine medizinische Diagnose.",
+  },
+  {
+    frage: "Kann AuDHS erst im Erwachsenenalter entstehen?",
+    antwort:
+      "Autismus und ADHS sind neuroentwicklungsbedingte Störungsbilder. Sie entstehen nicht erstmals durch die Anforderungen des Erwachsenenlebens. Ihre Merkmale können allerdings erst später erkannt werden oder unter veränderten Lebensumständen deutlicher hervortreten.",
+  },
+] as const;
+---
+
+<BaseLayout
+  title="AuDHS verstehen: Autismus und ADHS zusammen"
+  description="Was ist AuDHS? Erfahre, wie Autismus und ADHS zusammen auftreten, welche Merkmale möglich sind und welche Hilfen den Alltag erleichtern können."
+>
+  <div class="container">
+    <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "AuDHS" }]} />
+  </div>
+
+  <section class="hero section">
+    <div class="container">
+      <h1>AuDHS verstehen: Wenn Autismus und ADHS zusammenkommen</h1>
+      <p class="hero__intro">
+        <strong
+          >Struktur brauchen und gleichzeitig Abwechslung suchen. Ruhe benötigen und sich dennoch nach neuen Reizen
+          sehnen. Etwas unbedingt erledigen wollen und trotzdem nicht anfangen können.</strong
+        >
+      </p>
+      <p>
+        Für manche Menschen, die sowohl autistisch sind als auch ADHS haben, gehören solche scheinbaren Gegensätze
+        zum Alltag. Bedürfnisse nach Vorhersehbarkeit und Flexibilität können aufeinandertreffen. Was an einem Tag
+        hilfreich ist, kann am nächsten Tag nicht mehr ausreichen.
+      </p>
+      <p>
+        Das gemeinsame Auftreten von Autismus und einer Aufmerksamkeitsdefizit-/Hyperaktivitätsstörung (ADHS) wird
+        häufig als <strong>AuDHS</strong> bezeichnet.
+      </p>
+      <p>
+        Auf AUTISMUS kompakt erfährst du, was hinter dieser Kombination steckt, welche Merkmale und Herausforderungen
+        auftreten können und weshalb manche herkömmlichen Alltagstipps nicht gut funktionieren. Vor allem findest du
+        Anregungen, um eigene Bedürfnisse besser zu verstehen und deinen Alltag entsprechend zu gestalten.
+      </p>
+    </div>
+  </section>
+
+  <article class="prose-sections">
+    <div class="container">
+      <section id="was-ist-audhs">
+        <h2>Was ist AuDHS?</h2>
+        <p>
+          AuDHS ist eine gebräuchliche, insbesondere in der neurodivergenten Community verwendete Bezeichnung für das
+          gemeinsame Vorliegen von Autismus und ADHS. Es handelt sich nicht um eine eigenständige medizinische
+          Diagnose.
+        </p>
+        <p>
+          Autismus und ADHS sind zwei eigenständige neuroentwicklungsbedingte Störungsbilder, die gleichzeitig
+          auftreten können. Sie werden anhand unterschiedlicher diagnostischer Kriterien erfasst, können sich jedoch
+          in einzelnen Merkmalen und ihren Auswirkungen auf den Alltag überschneiden. [<a href="#q1">1</a>,
+          <a href="#q2">2</a>, <a href="#q3">3</a>]
+        </p>
+        <p>
+          Bei Autismus stehen unter anderem Besonderheiten der sozialen Kommunikation und Interaktion sowie
+          eingeschränkte oder repetitive Verhaltensweisen und Interessen im Mittelpunkt. Dazu können sensorische
+          Besonderheiten und ein ausgeprägtes Bedürfnis nach Vorhersehbarkeit gehören.
+        </p>
+        <p>
+          ADHS ist durch anhaltende Merkmale von Unaufmerksamkeit und/oder Hyperaktivität und Impulsivität
+          gekennzeichnet. Schwierigkeiten mit der Organisation, Steuerung und Umsetzung von Aufgaben können sich
+          ebenfalls im Alltag bemerkbar machen.
+        </p>
+        <p>
+          Wenn Autismus und ADHS gemeinsam vorliegen, können unterschiedliche Merkmale und Bedürfnisse miteinander in
+          Wechselwirkung stehen. Wie sich diese Kombination äußert, ist individuell verschieden.
+        </p>
+        <p><strong>Ein einheitliches, wissenschaftlich definiertes AuDHS-Profil gibt es nicht.</strong></p>
+      </section>
+
+      <section id="symptome">
+        <h2>AuDHS-Symptome: Welche Merkmale können auftreten?</h2>
+        <p>
+          Viele Menschen suchen nach „AuDHS Symptome", weil sie bestimmte Erfahrungen bei sich selbst oder anderen
+          besser einordnen möchten.
+        </p>
+        <p>
+          Wichtig ist dabei: Es gibt keine eigene diagnostische Symptomliste für AuDHS. Für die Diagnostik werden
+          Autismus und ADHS jeweils anhand ihrer eigenen Kriterien beurteilt.
+        </p>
+        <p>Dennoch können sich beim gemeinsamen Auftreten besondere Herausforderungen ergeben.</p>
+
+        <h3>Struktur brauchen und Routinen schwer umsetzen können</h3>
+        <p>
+          Feste Abläufe können Orientierung und Sicherheit vermitteln. Gleichzeitig können Schwierigkeiten mit
+          Aufmerksamkeit, Organisation oder Handlungssteuerung dazu führen, dass es schwerfällt, diese Routinen
+          zuverlässig einzuhalten.
+        </p>
+        <p>
+          Manche Menschen erleben deshalb eine Spannung zwischen dem Wunsch nach Beständigkeit und den Schwierigkeiten
+          bei der praktischen Umsetzung.
+        </p>
+
+        <h3>Reize vermeiden und nach Stimulation suchen</h3>
+        <p>
+          Bestimmte Geräusche, Lichtverhältnisse oder Berührungen können als unangenehm oder überwältigend erlebt
+          werden. Andere Sinneseindrücke, beispielsweise selbst gewählte Musik oder Bewegung, können dagegen angenehm
+          und anregend sein.
+        </p>
+        <p>
+          Bei Autismus sind <a href="/fuer-autistische-menschen/reizverarbeitung/"
+            >sensorische Besonderheiten der Reizverarbeitung</a
+          > gut beschrieben. Auch Menschen mit ADHS können Schwierigkeiten erleben, störende Reize auszublenden.
+          Daraus lässt sich allerdings kein allgemeines sensorisches AuDHS-Profil ableiten. [<a href="#q1">1</a>,
+          <a href="#q2">2</a>]
+        </p>
+
+        <h3>Intensive Interessen und Schwierigkeiten bei alltäglichen Aufgaben</h3>
+        <p>
+          Manche Menschen können sich sehr ausführlich mit einem interessanten Thema beschäftigen, während ihnen das
+          Beginnen oder Abschließen anderer Tätigkeiten schwerfällt.
+        </p>
+        <p>
+          Dafür können unterschiedliche Faktoren verantwortlich sein, etwa Schwierigkeiten mit der
+          Aufmerksamkeitssteuerung, Handlungsplanung, Überforderung oder der Wechsel zwischen Tätigkeiten.
+        </p>
+
+        <h3>Soziale Kontakte wünschen und Rückzug benötigen</h3>
+        <p>
+          Soziale Begegnungen können bereichernd sein und gleichzeitig Energie kosten. Dazu können Anforderungen an
+          Kommunikation, Aufmerksamkeit und sensorische Verarbeitung beitragen.
+        </p>
+        <p>Manche Menschen benötigen deshalb nach sozialen Aktivitäten bewusst Zeit für sich.</p>
+        <p>
+          Diese Beispiele beschreiben mögliche Alltagserfahrungen. Sie sind weder bei allen Menschen mit AuDHS
+          vorhanden noch ausschließlich für diese Kombination charakteristisch.
+        </p>
+        <p>
+          <strong>Ausführlicher Artikel:</strong>
+          <a href="/audhs/symptome/">AuDHS-Symptome: 10 mögliche Merkmale im Alltag</a>.
+        </p>
+      </section>
+
+      <section id="erwachsene">
+        <h2>AuDHS bei Erwachsenen: Warum wird die Kombination manchmal spät erkannt?</h2>
+        <p>Manche Menschen erfahren erst im Erwachsenenalter, dass sie autistisch sind und zusätzlich ADHS haben.</p>
+        <p>
+          Das kann unterschiedliche Gründe haben. Möglicherweise wurde zunächst nur eines der beiden Störungsbilder
+          erkannt. Vielleicht wurden Schwierigkeiten lange durch erlernte Strategien, Unterstützung oder günstige
+          Lebensumstände ausgeglichen.
+        </p>
+        <p>
+          Manche autistische Menschen entwickeln zudem Anpassungsstrategien, die ihre Schwierigkeiten nach außen
+          weniger sichtbar machen. Dieses Phänomen wird häufig als Masking oder Camouflaging beschrieben.
+          Forschungsergebnisse zeigen Zusammenhänge zwischen Camouflaging und psychischen Belastungen. Daraus lässt
+          sich jedoch nicht grundsätzlich ableiten, dass Masking eine späte Diagnose verursacht. [<a href="#q4"
+            >4</a
+          >]
+        </p>
+        <p>
+          Auch gesellschaftliche Vorstellungen können die Erkennung beeinflussen. Autismus und ADHS werden nicht bei
+          allen Menschen auf dieselbe Weise sichtbar, und manche Schwierigkeiten werden zunächst anderen Ursachen
+          zugeschrieben.
+        </p>
+        <p>
+          Eine wissenschaftliche Übersichtsarbeit über Erfahrungen mit Autismusdiagnosen im Erwachsenenalter
+          beschreibt unter anderem Schwierigkeiten beim Zugang zur Diagnostik, unterschiedliche emotionale Reaktionen
+          und die Bedeutung einer neuen Einordnung der eigenen Lebensgeschichte. Diese Ergebnisse beziehen sich auf
+          Autismus und können nicht uneingeschränkt auf alle Menschen mit AuDHS übertragen werden. [<a href="#q5"
+            >5</a
+          >]
+        </p>
+        <p>
+          <strong>Ausführlicher Artikel:</strong>
+          <a href="/audhs/erwachsene/">AuDHS bei Erwachsenen: Warum Autismus und ADHS manchmal erst spät erkannt werden</a>.
+        </p>
+      </section>
+
+      <section id="alltag">
+        <h2>AuDHS im Alltag: Wenn gute Ratschläge nicht funktionieren</h2>
+        <p>„Mach dir einfach einen festen Tagesplan."</p>
+        <p>„Du musst nur konsequent dranbleiben."</p>
+        <p>„Arbeite deine Aufgaben der Reihe nach ab."</p>
+        <p>
+          Vielleicht hast du solche Ratschläge schon gehört. Sie können hilfreich sein, passen aber nicht automatisch
+          zu den Bedürfnissen jedes Menschen.
+        </p>
+        <p>
+          Ein starrer Tagesplan kann beispielsweise Orientierung bieten und gleichzeitig zusätzlichen Druck erzeugen.
+          Eine flexible Arbeitsweise kann Freiraum schaffen, aber auch die Übersicht erschweren.
+        </p>
+        <p>Bei AuDHS kann es deshalb sinnvoll sein, verschiedene Bedürfnisse gleichzeitig zu berücksichtigen.</p>
+        <p>
+          Statt den gesamten Tag minutengenau festzulegen, könntest du mit wenigen festen Orientierungspunkten
+          arbeiten. Vielleicht hilft dir eine gleichbleibende Morgenroutine, während du andere Aufgaben abhängig von
+          deiner Energie und Konzentration einteilst.
+        </p>
+        <p>
+          Auch bei der Aufgabenorganisation gibt es keine Universallösung. Manche Menschen profitieren von visuellen
+          Erinnerungen, andere benötigen möglichst wenige sichtbare Informationen. Einige arbeiten gut mit kurzen
+          Zeitabschnitten, während andere längere ununterbrochene Arbeitsphasen bevorzugen.
+        </p>
+        <p>
+          Solche Strategien sind praktische Anregungen. Sie sind nicht automatisch wissenschaftlich geprüfte
+          Behandlungsmethoden für AuDHS.
+        </p>
+        <p>
+          <strong
+            >Entscheidend ist nicht, möglichst konsequent einer bestimmten Methode zu folgen, sondern herauszufinden,
+            welche Bedingungen tatsächlich helfen.</strong
+          >
+        </p>
+      </section>
+
+      <section id="reizverarbeitung-und-energie">
+        <h2>Reizverarbeitung, Energie und Überforderung</h2>
+        <p>
+          Geräusche, Licht, Gerüche, Gespräche und digitale Informationen gehören zum Alltag. Wie diese
+          Sinneseindrücke verarbeitet und bewertet werden, ist individuell verschieden.
+        </p>
+        <p>
+          Bei autistischen Menschen können sensorische Besonderheiten eine wichtige Rolle spielen. Manche
+          Sinneseindrücke werden besonders intensiv wahrgenommen, andere weniger deutlich.
+        </p>
+        <p>Bei ADHS können insbesondere Ablenkbarkeit und Schwierigkeiten mit der Steuerung von Aufmerksamkeit hinzukommen.</p>
+        <p>
+          Für Menschen, bei denen beide Störungsbilder vorliegen, kann es deshalb hilfreich sein, ihre persönliche
+          Reizumgebung genauer zu betrachten.
+        </p>
+        <p>
+          Vielleicht benötigst du beim Arbeiten Ruhe, findest aber gezielte Bewegungspausen angenehm. Vielleicht ist
+          Musik hilfreich, solange du sie selbst auswählen und die Lautstärke kontrollieren kannst.
+        </p>
+        <p>Es geht darum, zwischen belastenden und hilfreichen Reizen zu unterscheiden.</p>
+        <p>
+          Mögliche Anpassungen sind ein ruhiger Arbeitsplatz, planbare Pausen, selbst gewählte sensorische
+          Hilfsmittel oder die Möglichkeit, sich aus besonders belastenden Situationen zurückzuziehen.
+        </p>
+        <p>Welche Maßnahmen sinnvoll sind, sollte sich nach deinen tatsächlichen Bedürfnissen richten.</p>
+      </section>
+
+      <section id="beziehungen">
+        <h2>AuDHS in Beziehungen und Kommunikation</h2>
+        <p>
+          Menschen mit AuDHS können unterschiedliche Bedürfnisse nach Nähe, Austausch, Spontaneität und Rückzug
+          haben.
+        </p>
+        <p>
+          Schwierigkeiten entstehen manchmal nicht allein durch individuelle Merkmale, sondern auch durch
+          unterschiedliche Erwartungen und unklare Absprachen.
+        </p>
+        <p>
+          Vielleicht möchtest du Zeit mit anderen verbringen, benötigst aber vorher Informationen über den Ablauf.
+          Oder du freust dich auf ein Treffen und stellst anschließend fest, dass du mehr Erholung brauchst als
+          erwartet.
+        </p>
+        <p>Hier kann es helfen, Bedürfnisse möglichst konkret zu benennen.</p>
+        <p>
+          Anstelle von „Ich brauche mehr Rücksicht" könnte eine Vereinbarung beispielsweise lauten: „Bitte sage mir
+          möglichst früh Bescheid, wenn sich unsere Pläne ändern."
+        </p>
+        <p>
+          Auch Angehörige und Bezugspersonen profitieren davon, individuelle Bedürfnisse kennenzulernen, statt aus
+          einer Diagnose auf bestimmte Verhaltensweisen zu schließen.
+        </p>
+      </section>
+
+      <section id="neurodivergenz">
+        <h2>AuDHS und Neurodivergenz</h2>
+        <p>
+          Der Begriff <a href="/glossar/#neurodiversitaet">Neurodivergenz</a> beschreibt neurologische und kognitive Funktionsweisen,
+          die von gesellschaftlich als typisch betrachteten Mustern abweichen.
+        </p>
+        <p>
+          Autismus und ADHS werden häufig unter dem Begriff Neurodivergenz eingeordnet. Neurodivergenz selbst ist
+          jedoch keine medizinische Diagnose.
+        </p>
+        <p>
+          Diese Perspektive kann dazu beitragen, menschliche Unterschiede nicht ausschließlich als persönliche
+          Defizite zu betrachten.
+        </p>
+        <p>
+          Gleichzeitig ist wichtig, tatsächliche Einschränkungen, Behinderungen und Unterstützungsbedürfnisse ernst
+          zu nehmen. Eine wertschätzende Betrachtung neurodivergenter Menschen sollte Belastungen weder
+          dramatisieren noch verharmlosen.
+        </p>
+      </section>
+
+      <section id="beruf">
+        <h2>AuDHS im Beruf</h2>
+        <p>
+          Berufliche Anforderungen können für Menschen mit AuDHS besondere Herausforderungen mit sich bringen. Dazu
+          gehören beispielsweise häufige Unterbrechungen, unklare Arbeitsaufträge, spontane Änderungen oder eine
+          belastende Reizumgebung.
+        </p>
+        <p>Nicht jeder Mensch benötigt dieselben Anpassungen.</p>
+        <p>
+          Manche profitieren von einem möglichst ruhigen <a href="/fuer-autistische-menschen/alltag/arbeit/"
+            >Arbeitsplatz</a
+          >, andere von abwechslungsreichen Tätigkeiten oder der Möglichkeit, zwischendurch aufzustehen und sich zu
+          bewegen.
+        </p>
+        <p>Auch schriftliche Aufgabenstellungen, transparente Prioritäten und verlässliche Kommunikation können hilfreich sein.</p>
+        <p>
+          Arbeitgeber sollten deshalb nicht versuchen, ein allgemeines Arbeitsmodell für alle Menschen mit AuDHS zu
+          entwickeln. Sinnvoller ist es, gemeinsam mit den Beschäftigten passende Bedingungen zu erarbeiten.
+        </p>
+      </section>
+
+      <section id="diagnostik">
+        <h2>AuDHS-Diagnostik: Wie werden Autismus und ADHS festgestellt?</h2>
+        <p>
+          Wenn du vermutest, dass bei dir Autismus und ADHS gemeinsam vorliegen könnten, kann eine qualifizierte
+          diagnostische Abklärung sinnvoll sein.
+        </p>
+        <p>
+          Einen einzelnen medizinisch anerkannten Test, der AuDHS als eigenständige Diagnose bestätigt oder
+          ausschließt, gibt es nicht.
+        </p>
+        <p>Stattdessen werden Autismus und ADHS anhand ihrer jeweiligen diagnostischen Kriterien untersucht.</p>
+        <p>
+          Dabei können die Entwicklungsgeschichte, aktuelle Merkmale, Auswirkungen auf unterschiedliche
+          Lebensbereiche sowie mögliche andere oder zusätzlich bestehende Erkrankungen berücksichtigt werden.
+        </p>
+        <p>
+          Fragebögen und Screeningverfahren können Hinweise liefern, ersetzen aber keine umfassende fachliche
+          Diagnostik. [<a href="#q1">1</a>, <a href="#q2">2</a>]
+        </p>
+        <p>
+          Wenn beide Störungsbilder vermutet werden, ist eine <a href="/fuer-autistische-menschen/diagnostik/"
+            >diagnostische Stelle mit entsprechender Erfahrung</a
+          > besonders sinnvoll.
+        </p>
+      </section>
+    </div>
+  </article>
+
+  <section class="section section--alt" aria-labelledby="themenwelt-heading">
+    <div class="container container--wide">
+      <h2 id="themenwelt-heading">Die AuDHS-Themenwelt im Überblick</h2>
+      <p class="themenwelt-intro">Alle Bereiche dieser Seite auch als direkt anklickbare Themenkarten:</p>
+      <div class="themen-kacheln">
+        {
+          themenkarten.map((karte) => (
+            <ThemenKachel icon={karte.icon} title={karte.title} description={karte.description} href={karte.href} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="faq-heading">
+    <div class="container">
+      <h2 id="faq-heading">Häufige Fragen zu AuDHS</h2>
+      <div class="faq-liste">
+        {
+          faqEintraege.map((eintrag) => (
+            <details class="faq-item">
+              <summary class="faq-item__summary">
+                <h3>{eintrag.frage}</h3>
+                <svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18">
+                  <path
+                    d="M6 9l6 6 6-6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </summary>
+              <div class="faq-item__body">
+                <p>{eintrag.antwort}</p>
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <h2>Du musst nicht in ein einziges Schema passen</h2>
+      <p>AuDHS kann bedeuten, mit unterschiedlichen und manchmal widersprüchlich wirkenden Bedürfnissen zu leben.</p>
+      <p>
+        Du darfst Struktur brauchen und gleichzeitig flexibel bleiben wollen. Du darfst soziale Kontakte schätzen und
+        anschließend Zeit für dich benötigen. Du darfst bei alltäglichen Aufgaben Schwierigkeiten haben, auch wenn
+        dir andere Tätigkeiten leichtfallen.
+      </p>
+      <p>
+        Es geht nicht darum, sämtliche Unterschiede aufzulösen oder dich möglichst gut an bestehende Erwartungen
+        anzupassen.
+      </p>
+      <p>
+        Es geht darum, deine Bedürfnisse besser zu verstehen, Belastungen zu reduzieren und Bedingungen zu schaffen,
+        unter denen du deinen Alltag möglichst selbstbestimmt gestalten kannst.
+      </p>
+      <p>
+        <strong
+          >AUTISMUS kompakt unterstützt dich dabei mit fundiertem Wissen, verständlichen Erklärungen und konkreten
+          Hilfen für deinen Alltag.</strong
+        >
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 id="quellen-heading">Wissenschaftliche Grundlagen</h2>
+      <ol class="quellenliste">
+        <li id="q1">
+          NICE: <em>Autism spectrum disorder in adults: diagnosis and management</em> (CG142).
+          <a href="https://www.nice.org.uk/guidance/cg142/chapter/Recommendations" rel="noopener noreferrer"
+            >Zur Quelle <span aria-hidden="true">↗</span
+            ><span class="visually-hidden"> (öffnet auf einer anderen Website)</span></a
+          >
+        </li>
+        <li id="q2">
+          NICE: <em>Attention deficit hyperactivity disorder: diagnosis and management</em> (NG87).
+          <a href="https://www.nice.org.uk/guidance/ng87/chapter/recommendations" rel="noopener noreferrer"
+            >Zur Quelle <span aria-hidden="true">↗</span
+            ><span class="visually-hidden"> (öffnet auf einer anderen Website)</span></a
+          >
+        </li>
+        <li id="q3">
+          Antshel, K. M., Zhang-James, Y. & Faraone, S. V. (2013): <em>The comorbidity of ADHD and autism spectrum
+          disorder.</em> Expert Review of Neurotherapeutics, 13(10).
+          <a href="https://doi.org/10.1586/14737175.2013.840417" rel="noopener noreferrer"
+            >Zur Quelle <span aria-hidden="true">↗</span
+            ><span class="visually-hidden"> (öffnet auf einer anderen Website)</span></a
+          >
+        </li>
+        <li id="q4">
+          Khudiakova et al. (2024): <em>A systematic review and meta-analysis of mental health outcomes associated
+          with camouflaging in autistic people.</em> Research in Autism Spectrum Disorders, 118:102492.
+          <a href="https://doi.org/10.1016/j.rasd.2024.102492" rel="noopener noreferrer"
+            >Zur Quelle <span aria-hidden="true">↗</span
+            ><span class="visually-hidden"> (öffnet auf einer anderen Website)</span></a
+          >
+        </li>
+        <li id="q5">
+          Nayyar et al. (2025): <em>Exploring Lived Experiences of Receiving a Diagnosis of Autism in Adulthood.</em>
+          Autism in Adulthood, 7(1).
+          <a href="https://doi.org/10.1089/aut.2023.0152" rel="noopener noreferrer"
+            >Zur Quelle <span aria-hidden="true">↗</span
+            ><span class="visually-hidden"> (öffnet auf einer anderen Website)</span></a
+          >
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--alt newsletter-teaser" aria-labelledby="newsletter-heading">
+    <div class="container">
+      <h2 id="newsletter-heading">Praktische Tipps für deinen Alltag</h2>
+      <p>
+        Im Newsletter von AUTISMUS kompakt erhältst du verständliche Informationen und konkrete Anregungen für
+        typische Alltagssituationen.
+      </p>
+      <p>
+        <a class="button button--secondary" href="/newsletter/">Zum kostenlosen Newsletter</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-bottom: var(--space-md);
+    border-bottom: var(--border-width) solid var(--color-bronze-soft);
+  }
+
+  .hero h1 {
+    max-width: 32ch;
+  }
+
+  .hero__intro {
+    max-width: var(--measure);
+    font-size: 1.05rem;
+    margin-top: var(--space-sm);
+  }
+
+  .hero p {
+    max-width: var(--measure);
+  }
+
+  .prose-sections section + section {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: var(--border-width) solid var(--color-border);
+  }
+
+  .prose-sections .container {
+    max-width: var(--measure);
+  }
+
+  .prose-sections h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .prose-sections h3 {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xs);
+  }
+
+  .prose-sections p {
+    margin-bottom: var(--space-sm);
+  }
+
+  .themenwelt-intro {
+    max-width: var(--measure);
+    margin-bottom: var(--space-md);
+  }
+
+  .themen-kacheln {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: var(--space-sm);
+  }
+
+  /* FAQ-Akkordeon: natives <details>/<summary>, dasselbe Muster wie im
+     Glossar – funktioniert ohne JavaScript und ohne Animationen, der
+     Öffnungszustand wird vom Browser selbst korrekt vermittelt. */
+  .faq-liste {
+    max-width: var(--measure);
+  }
+
+  .faq-item {
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius);
+  }
+
+  .faq-item + .faq-item {
+    margin-top: var(--space-sm);
+  }
+
+  .faq-item__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    min-height: 44px;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq-item__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item__summary h3 {
+    margin: 0;
+    font-size: 1.0625rem;
+    color: var(--color-petrol);
+  }
+
+  .faq-chevron {
+    flex-shrink: 0;
+    color: var(--color-petrol);
+    transition: transform var(--transition-fast);
+  }
+
+  details[open] > summary .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-item__body {
+    padding: 0 var(--space-md) var(--space-md);
+  }
+
+  .faq-item__body p {
+    margin: 0;
+    max-width: var(--measure);
+  }
+
+  .quellenliste {
+    max-width: var(--measure);
+  }
+
+  .newsletter-teaser p {
+    max-width: var(--measure);
+  }
+
+  .newsletter-teaser p:last-child {
+    margin-top: var(--space-sm);
+  }
+</style>

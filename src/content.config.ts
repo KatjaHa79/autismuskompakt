@@ -3,6 +3,10 @@ import { glob } from "astro/loaders";
 import { z } from "zod";
 
 // Kategorien orientieren sich an den Themenbereichen aus Etappe 1.
+// "audhs" ergänzt die eigenständige Themenwelt zu Autismus und ADHS
+// gemeinsam (siehe /audhs/) – ebenfalls mit fester Hub-Seite, damit
+// künftige AuDHS-Artikel ohne erneuten Umbau als weitere Markdown-Dateien
+// unter src/content/artikel/audhs/ ergänzt werden können.
 const categoryValues = [
   "autismus-verstehen",
   "diagnostik-tests",
@@ -10,6 +14,7 @@ const categoryValues = [
   "alltag-leben",
   "besonderheiten-begleiterkrankungen",
   "angehoerige-fachkraefte",
+  "audhs",
 ] as const;
 
 // Die drei Zielgruppen aus dem Master-Projektauftrag (Punkt 2).
@@ -28,6 +33,7 @@ export const categoriesRequiringUpdated: ReadonlySet<(typeof categoryValues)[num
   "rechte-antraege",
   "diagnostik-tests",
   "besonderheiten-begleiterkrankungen",
+  "audhs",
 ]);
 
 // Lesbare Bezeichnung je Kategorie, u. a. für Breadcrumbs.
@@ -38,6 +44,7 @@ export const categoryLabels: Record<(typeof categoryValues)[number], string> = {
   "alltag-leben": "Alltag & Leben",
   "besonderheiten-begleiterkrankungen": "Besonderheiten & Begleiterkrankungen",
   "angehoerige-fachkraefte": "Für Angehörige & Fachkräfte",
+  audhs: "AuDHS",
 };
 
 // Zugehörige Wegweiser-/Hub-Seite je Kategorie aus Etappe 1.
@@ -48,6 +55,7 @@ export const categoryHrefs: Record<(typeof categoryValues)[number], string> = {
   "alltag-leben": "/fuer-autistische-menschen/alltag/",
   "besonderheiten-begleiterkrankungen": "/fuer-autistische-menschen/besonderheiten/",
   "angehoerige-fachkraefte": "/angehoerige-fachkraefte/",
+  audhs: "/audhs/",
 };
 
 const sourceSchema = z.object({
@@ -60,6 +68,11 @@ const articles = defineCollection({
   schema: z
     .object({
       title: z.string().min(1, "title darf nicht leer sein."),
+      // Optional: abweichender, meist kürzerer Title für <title>/OG, falls
+      // sich der sichtbare H1-Titel inhaltlich davon unterscheiden soll
+      // (z. B. AuDHS-Artikel "Erwachsene"). Ohne Angabe wird weiterhin wie
+      // bisher "title" für H1 und SEO-Title gleichermaßen verwendet.
+      seoTitle: z.string().min(1).optional(),
       description: z.string().min(1, "description darf nicht leer sein."),
       category: z.enum(categoryValues, {
         message: `category muss einer der folgenden Werte sein: ${categoryValues.join(", ")}`,

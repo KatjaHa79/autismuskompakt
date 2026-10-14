@@ -1,0 +1,34 @@
+---
+import { render } from "astro:content";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleStaticPaths } from "../../lib/articles";
+
+export async function getStaticPaths() {
+  return getArticleStaticPaths("audhs");
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+// Article-Schema (JSON-LD): nur für die beiden AuDHS-Fachartikel ergänzt,
+// rein additiv über den optionalen ArticleLayout-Prop (siehe dort) – keine
+// Änderung an anderen Artikeln. Bildet ausschließlich tatsächlich
+// vorhandene Angaben ab, keine Bewertungen oder Auszeichnungen.
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const isoDate = entry.data.updated ? entry.data.updated.toISOString().slice(0, 10) : undefined;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: entry.data.title,
+  description: entry.data.description,
+  inLanguage: "de-DE",
+  ...(isoDate ? { datePublished: isoDate, dateModified: isoDate } : {}),
+  author: { "@type": "Organization", name: "Autismuskompakt" },
+  publisher: { "@type": "Organization", name: "Autismuskompakt" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": canonicalURL },
+};
+---
+
+<ArticleLayout entry={entry} structuredData={structuredData}>
+  <Content />
+</ArticleLayout>

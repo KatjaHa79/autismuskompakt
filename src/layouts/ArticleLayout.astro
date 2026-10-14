@@ -12,10 +12,14 @@ import { PASSENDE_MATERIALIEN } from "../lib/artikel-materialien";
 
 interface Props {
   entry: CollectionEntry<"artikel">;
+  // Optionale strukturierte Daten (z. B. Article-Schema) als JSON-LD-Objekt.
+  // Rein additiv: ohne diesen Prop verhält sich die Komponente exakt wie
+  // zuvor, bestehende Artikel sind davon nicht betroffen.
+  structuredData?: Record<string, unknown>;
 }
 
-const { entry } = Astro.props;
-const { title, description, category, targetGroups, updated, sources } = entry.data;
+const { entry, structuredData } = Astro.props;
+const { title, seoTitle, description, category, targetGroups, updated, sources } = entry.data;
 
 const zeigtRechtlichenHinweis = categoriesRequiringUpdated.has(category);
 
@@ -26,7 +30,9 @@ const passendeMaterialien = materialIds
   .filter((material) => material !== undefined);
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={seoTitle ?? title} description={description}>
+  {structuredData && <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />}
+
   <div class="container">
     <Breadcrumbs
       items={[
