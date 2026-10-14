@@ -380,11 +380,26 @@ function hasActiveDescendant(children: NavChild[]): boolean {
 </script>
 
 <style>
+  /* Button-Design-Tokens dieser Navigation, abgeleitet aus der sitewide
+     Petrol/Bronze-Palette (siehe global.css). Bronze kommt hier bewusst
+     nur als zurückhaltender Akzent vor (Hover-Rahmen, Rand der
+     verschachtelten Gruppen) – nie als Fläche oder Schriftfarbe. */
+  .main-nav {
+    --nav-item-bg: #e9f1f2;
+    --nav-item-bg-hover: #d7e6e8;
+    --nav-item-text: var(--color-petrol);
+    --nav-item-active-bg: var(--color-petrol);
+    --nav-item-active-bg-hover: var(--color-petrol-dark);
+    --nav-item-active-text: var(--color-white);
+    --nav-accent: #a56c3b;
+  }
+
   .main-nav__list {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-xs) var(--space-lg);
+    align-items: center;
+    gap: var(--space-sm) var(--space-md);
     padding: 0;
   }
 
@@ -392,35 +407,72 @@ function hasActiveDescendant(children: NavChild[]): boolean {
     position: relative;
   }
 
-  .main-nav__list > li > a {
-    display: inline-block;
-    padding: var(--space-xs) 0;
-    font-size: 0.85rem; /* ca. 13,5–14px */
-    color: var(--color-petrol);
+  /* Gemeinsames Button-Erscheinungsbild für alle Hauptmenüpunkte UND für
+     verschachtelte Gruppen-Buttons: einfache Links ohne Unterthemen, der
+     Trigger-Button mit JavaScript und die statische Beschriftung ohne
+     JavaScript sehen optisch identisch aus – heller petrolgrauer Grund,
+     dunkelpetrolfarbene Schrift, dezenter Rahmen, einheitliche Höhe und
+     Innenabstände. Bewusst nicht auf ".main-nav__list > li >" beschränkt,
+     da .main-nav__label-static und .main-nav__trigger unverändert gleich
+     auch in verschachtelten Gruppen vorkommen (siehe weiter unten für die
+     dort abweichende, randlose Variante). */
+  .main-nav__list > li > a,
+  .main-nav__label-static,
+  html.js .main-nav__trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2xs);
+    min-height: 2.75rem;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius);
+    background-color: var(--nav-item-bg);
+    border: var(--border-width) solid var(--color-border);
+    font: inherit;
+    font-size: 0.85rem; /* ca. 13,5–14px, unverändert gegenüber vorher */
+    font-weight: 700;
+    color: var(--nav-item-text);
     text-decoration: none;
-    font-weight: 700;
-    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast);
   }
 
-  .main-nav__list > li > a:hover {
-    border-bottom-color: var(--color-bronze-soft);
-  }
-
-  .main-nav__list > li > a[aria-current="page"] {
-    border-bottom-color: var(--color-bronze);
-  }
-
-  /* Beschriftung ohne JavaScript: einfacher Text statt Button, da der
-     Button ohne Skript nicht funktionieren würde. Das zugehörige Untermenü
-     ist in diesem Fall immer sichtbar (siehe unten), die Seite bleibt also
-     vollständig nutzbar. Gilt gleichermaßen für die oberste Ebene und für
-     verschachtelte Gruppen. */
+  /* Die Beschriftung ohne JavaScript ist nicht interaktiv (das zugehörige
+     Untermenü ist dann immer sichtbar, siehe unten) – daher kein
+     Zeiger-Cursor, sie bleibt aber optisch identisch zum Button. */
   .main-nav__label-static {
-    display: block;
-    padding: var(--space-xs) 0;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--color-petrol);
+    cursor: default;
+  }
+
+  .main-nav__list > li > a:hover,
+  html.js .main-nav__trigger:hover {
+    background-color: var(--nav-item-bg-hover);
+    border-color: var(--nav-accent);
+  }
+
+  /* "Aktiv" (die aktuelle Seite liegt in diesem Menü) und "geöffnet"
+     erhalten dieselbe kräftige Darstellung: volles Petrol, weiße Schrift.
+     Gilt auf oberster Ebene ebenso wie für verschachtelte Gruppen-Buttons;
+     der zusätzliche ".main-nav"-Klassenbezug erhöht die Spezifität bewusst
+     über die der randlosen Standarddarstellung verschachtelter Gruppen
+     (siehe weiter unten), damit eine geöffnete/aktive verschachtelte
+     Gruppe dort zuverlässig die kräftige Füllung erhält. */
+  .main-nav__list > li > a[aria-current="page"],
+  html.js .main-nav .main-nav__trigger.main-nav__trigger--active,
+  html.js .main-nav .main-nav__trigger[aria-expanded="true"] {
+    background-color: var(--nav-item-active-bg);
+    border-color: var(--nav-item-active-bg);
+    color: var(--nav-item-active-text);
+  }
+
+  .main-nav__list > li > a[aria-current="page"]:hover,
+  html.js .main-nav .main-nav__trigger.main-nav__trigger--active:hover,
+  html.js .main-nav .main-nav__trigger[aria-expanded="true"]:hover {
+    background-color: var(--nav-item-active-bg-hover);
+    border-color: var(--nav-item-active-bg-hover);
   }
 
   .main-nav__trigger {
@@ -429,29 +481,6 @@ function hasActiveDescendant(children: NavChild[]): boolean {
 
   html.js .main-nav__label-static {
     display: none;
-  }
-
-  html.js .main-nav__trigger {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2xs);
-    padding: var(--space-xs) 0;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid transparent;
-    font: inherit;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--color-petrol);
-    cursor: pointer;
-  }
-
-  html.js .main-nav__trigger:hover {
-    border-bottom-color: var(--color-bronze-soft);
-  }
-
-  html.js .main-nav__trigger--active {
-    border-bottom-color: var(--color-bronze);
   }
 
   .main-nav__chevron {
@@ -507,12 +536,25 @@ function hasActiveDescendant(children: NavChild[]): boolean {
     display: flex;
   }
 
-  /* Verschachtelte Gruppe: dezent eingerückt und mit einer schmalen
-     Linie abgesetzt, damit die Zugehörigkeit zur übergeordneten Gruppe
-     ("Für Angehörige"/"Für Fachkräfte") auch optisch klar bleibt. */
+  /* Verschachtelte Gruppe: eigener, zurückhaltender Button-Stil ohne
+     Flächenfarbe (nur Rahmen), damit die Hierarchie zum übergeordneten,
+     flächig gefüllten Hauptpunkt erkennbar bleibt. Der schmale
+     Bronze-Akzent am linken Rand macht zusätzlich sichtbar, dass hier eine
+     eigene aufklappbare Gruppe beginnt ("Für Angehörige"/"Für
+     Fachkräfte"/"Weitere Materialien"). */
   .main-nav__item--nested {
     padding-left: var(--space-sm);
-    border-left: var(--border-width) solid var(--color-border);
+    border-left: var(--border-width) solid var(--nav-accent);
+  }
+
+  li.main-nav__item--nested > .main-nav__label-static,
+  html.js li.main-nav__item--nested > .main-nav__trigger {
+    background-color: transparent;
+  }
+
+  html.js li.main-nav__item--nested > .main-nav__trigger:hover {
+    background-color: var(--color-background-alt);
+    border-color: var(--nav-accent);
   }
 
   /* Lange Themenlisten innerhalb einer verschachtelten Gruppe bleiben
@@ -532,7 +574,7 @@ function hasActiveDescendant(children: NavChild[]): boolean {
       top: 100%;
       left: 0;
       z-index: 20;
-      margin: 0;
+      margin: var(--space-2xs) 0 0;
       min-width: 16rem;
       max-width: min(22rem, calc(100vw - 2 * var(--space-md)));
       padding: var(--space-2xs);
@@ -561,6 +603,7 @@ function hasActiveDescendant(children: NavChild[]): boolean {
       min-width: 0;
       max-width: none;
       padding: 0;
+      margin-top: var(--space-2xs);
       background: transparent;
       border: none;
     }
@@ -588,12 +631,21 @@ function hasActiveDescendant(children: NavChild[]): boolean {
     html.js .main-nav__list {
       flex-direction: column;
       flex-wrap: nowrap;
+      /* Setzt das für die einzeilige Desktop-Darstellung gesetzte
+         align-items: center zurück: in der Spalten-Anordnung steht quer
+         (horizontal) sonst nur Platz für den Inhalt zur Verfügung
+         (Schrumpfen statt Strecken), wodurch die Hauptpunkte trotz
+         width: 100% unten nicht wirklich vollbreit würden. */
+      align-items: stretch;
       gap: var(--space-2xs);
     }
 
-    html.js .main-nav__list > li > a {
-      display: block;
-      padding: var(--space-xs) 0;
+    /* Hauptmenüpunkte als gut erkennbare, vollbreite Buttons; der Chevron
+       bleibt dabei am rechten Rand des Buttons sichtbar. */
+    .main-nav__list > li > a,
+    .main-nav__list > li > .main-nav__label-static,
+    html.js .main-nav__list > li > .main-nav__trigger {
+      width: 100%;
     }
   }
 </style>
