@@ -132,6 +132,15 @@ const definedTermSetLd = {
                       </summary>
                       <div class="glossar-term__body">
                         <p>{eintrag.definition}</p>
+                        {
+                          eintrag.weiterfuehrenderLink && (
+                            <p class="glossar-term__weiterfuehrend">
+                              <a href={eintrag.weiterfuehrenderLink.href}>
+                                Ausführlicher Artikel: {eintrag.weiterfuehrenderLink.label}
+                              </a>
+                            </p>
+                          )
+                        }
                       </div>
                     </details>
                   ))
@@ -338,6 +347,12 @@ const definedTermSetLd = {
   .glossar-term__body p {
     margin: 0;
     max-width: var(--measure);
+  }
+
+  .glossar-term__body .glossar-term__weiterfuehrend {
+    margin-top: var(--space-xs);
+    font-size: 0.9rem;
+    font-weight: 700;
   }
 
   .glossar-fussnote {

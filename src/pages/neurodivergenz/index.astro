@@ -1,0 +1,664 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+
+const faqEintraege = [
+  {
+    frage: "Was bedeutet neurodivergent einfach erklärt?",
+    antwort:
+      "Neurodivergent bedeutet, dass die neurokognitiven Funktionsweisen eines Menschen in relevanter Weise von dem abweichen, was gesellschaftlich als typisch betrachtet wird. Der Begriff ist keine eigenständige medizinische Diagnose.",
+  },
+  {
+    frage: "Was ist der Unterschied zwischen Neurodiversität und Neurodivergenz?",
+    antwort:
+      "Neurodiversität bezeichnet die neurologische Vielfalt innerhalb einer Gruppe oder Gesellschaft. Neurodivergenz beschreibt dagegen neurokognitive Funktionsweisen, die von gesellschaftlich als typisch betrachteten Mustern abweichen.",
+  },
+  {
+    frage: "Ist Autismus eine Form von Neurodivergenz?",
+    antwort: "Ja. Autismus gehört zu den am häufigsten genannten Formen von Neurodivergenz.",
+  },
+  {
+    frage: "Gehört ADHS zur Neurodivergenz?",
+    antwort: "Ja. Auch ADHS wird häufig als Form von Neurodivergenz eingeordnet.",
+  },
+  {
+    frage: "Ist Neurodivergenz eine Krankheit?",
+    antwort:
+      "Neurodivergenz selbst ist keine medizinische Diagnose und keine Krankheit. Der Begriff kann jedoch Menschen einschließen, bei denen diagnostizierte Störungsbilder, Behinderungen oder Erkrankungen vorliegen.",
+  },
+  {
+    frage: "Ist jeder Mensch neurodivergent?",
+    antwort: "Nein. Alle Menschen sind Teil der menschlichen Neurodiversität, aber nicht jeder Mensch wird als neurodivergent bezeichnet.",
+  },
+  {
+    frage: "Kann man neurodivergent sein, ohne eine Diagnose zu haben?",
+    antwort:
+      "Ja. Neurodivergenz ist ein nichtdiagnostischer Begriff. Eine Person kann sich als neurodivergent verstehen, ohne dass bereits eine medizinische Diagnose vorliegt. Daraus lässt sich allerdings keine bestimmte Erkrankung ableiten.",
+  },
+  {
+    frage: "Sind alle neurodivergenten Menschen hochbegabt?",
+    antwort:
+      "Nein. Neurodivergenz sagt für sich genommen nichts darüber aus, ob jemand hochbegabt ist. Fähigkeiten und Unterstützungsbedürfnisse sind individuell verschieden.",
+  },
+] as const;
+
+// Article-JSON-LD nach demselben Muster wie bei den AuDHS-Fachartikeln
+// (src/pages/audhs/[slug].astro). Veröffentlichungsdatum entspricht dem
+// tatsächlichen Integrationsdatum dieser Seite (kein erfundenes Datum).
+// Als Autor/Herausgeber wird konsistent zur bestehenden AuDHS-Struktur
+// "Autismuskompakt" (Organization) verwendet.
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const veroeffentlichungsdatum = "2026-10-14";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Neurodivergenz verstehen: Was bedeutet neurodivergent?",
+  description:
+    "Was bedeutet neurodivergent? Erfahre, was Neurodivergenz und Neurodiversität unterscheidet und welche Rolle Autismus, ADHS und andere Unterschiede spielen.",
+  inLanguage: "de-DE",
+  datePublished: veroeffentlichungsdatum,
+  dateModified: veroeffentlichungsdatum,
+  author: { "@type": "Organization", name: "Autismuskompakt" },
+  publisher: { "@type": "Organization", name: "Autismuskompakt" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": canonicalURL },
+};
+---
+
+<BaseLayout
+  title="Neurodivergenz verstehen: Bedeutung & Beispiele | AUTISMUS kompakt"
+  description="Was bedeutet neurodivergent? Erfahre, was Neurodivergenz und Neurodiversität unterscheidet und welche Rolle Autismus, ADHS und andere Unterschiede spielen."
+  fullTitle
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Neurodivergenz" }]} />
+  </div>
+
+  <section class="hero section">
+    <div class="container">
+      <h1>Neurodivergenz verstehen: Was bedeutet neurodivergent?</h1>
+      <p>
+        Vielleicht hast du den Begriff <em>neurodivergent</em> schon einmal gehört. In sozialen Medien, in Gesprächen
+        über Autismus und ADHS oder im Zusammenhang mit Schule und Beruf begegnet er uns zunehmend häufiger.
+      </p>
+      <p>
+        Doch was bedeutet Neurodivergenz eigentlich? Ist neurodivergent eine Diagnose? Sind alle autistischen
+        Menschen neurodivergent? Und was ist der Unterschied zwischen Neurodivergenz und Neurodiversität?
+      </p>
+      <p>
+        Hinter diesen Begriffen steht eine Perspektive auf menschliche Unterschiede, die zunehmend Bedeutung
+        gewinnt: Nicht alle Menschen nehmen ihre Umgebung auf dieselbe Weise wahr, verarbeiten Informationen gleich
+        oder haben dieselben Bedürfnisse.
+      </p>
+      <p>
+        Das klingt zunächst selbstverständlich. Im Alltag orientieren sich viele Erwartungen und Strukturen jedoch
+        daran, wie die meisten Menschen funktionieren sollen.
+      </p>
+      <p class="hero__intro">
+        <strong
+          >Neurodivergenz beschreibt Menschen, deren neurologische oder kognitive Funktionsweisen von dem abweichen,
+          was gesellschaftlich als typisch angesehen wird.</strong
+        >
+      </p>
+      <p>
+        Dabei geht es nicht darum, Schwierigkeiten zu verharmlosen oder alle Unterschiede als besondere Begabungen
+        darzustellen. Vielmehr soll ein differenzierter Blick auf Fähigkeiten, Einschränkungen und individuelle
+        Bedürfnisse ermöglicht werden.
+      </p>
+    </div>
+  </section>
+
+  <article class="prose-sections">
+    <div class="container">
+      <section id="was-bedeutet-neurodivergenz">
+        <h2>Was bedeutet Neurodivergenz?</h2>
+        <p>
+          Der Begriff Neurodivergenz beschreibt eine Abweichung von gesellschaftlich als typisch betrachteten
+          neurokognitiven Funktionsweisen.
+        </p>
+        <p>
+          Eine Person wird als neurodivergent bezeichnet, wenn ihre Art, Informationen zu verarbeiten, zu lernen,
+          Aufmerksamkeit zu steuern, zu kommunizieren oder ihre Umwelt wahrzunehmen, in relevanter Weise von
+          vorherrschenden Erwartungen abweicht.
+        </p>
+        <p>
+          Neurodivergenz ist keine eigenständige medizinische Diagnose. Der Begriff entstammt einem gesellschaftlichen
+          und wissenschaftlichen Diskurs über neurologische Vielfalt und wird nicht als separate Diagnose in der
+          ICD-11 oder im DSM-5-TR geführt.
+        </p>
+        <p>
+          Zu den häufig genannten Formen von Neurodivergenz gehören Autismus und ADHS. Je nach Begriffsverständnis
+          werden auch Legasthenie, Dyskalkulie, Dyspraxie und weitere neurologische oder neurokognitive Unterschiede
+          einbezogen.
+        </p>
+        <p>
+          Welche Bedingungen genau unter Neurodivergenz fallen, ist allerdings nicht abschließend und
+          allgemeinverbindlich festgelegt. Das liegt auch daran, dass Neurodivergenz kein einheitliches medizinisches
+          Klassifikationssystem ist. [<a href="#q1">1</a>, <a href="#q2">2</a>]
+        </p>
+      </section>
+
+      <section id="neurodivergenz-und-neurodiversitaet">
+        <h2>Neurodivergenz und Neurodiversität: Was ist der Unterschied?</h2>
+        <p>Die Begriffe klingen ähnlich und werden häufig miteinander verwechselt. Dabei bezeichnen sie unterschiedliche Dinge.</p>
+        <p>
+          <strong>Neurodiversität</strong> beschreibt die Vielfalt neurologischer und kognitiver Funktionsweisen
+          innerhalb einer Gruppe oder Gesellschaft.
+        </p>
+        <p>Diese Vielfalt umfasst alle Menschen. Auch neurotypische Menschen sind Teil der menschlichen Neurodiversität.</p>
+        <p><strong>Neurodivergenz</strong> bezeichnet dagegen eine bestimmte Abweichung von dem, was als neurokognitiv typisch gilt.</p>
+        <p>
+          <strong>Neurotypisch</strong> beschreibt Menschen, deren neurokognitive Entwicklung und Funktionsweisen
+          weitgehend den gesellschaftlich erwarteten Mustern entsprechen.
+        </p>
+        <p>
+          Diese Begriffe sind beschreibende Konzepte. Sie lassen sich nicht mit einem einzelnen medizinischen Test
+          eindeutig voneinander abgrenzen.
+        </p>
+
+        <h3>Ein einfaches Beispiel</h3>
+        <p>Stell dir eine Gruppe von Menschen vor, die gemeinsam an einem Projekt arbeiten.</p>
+        <p>
+          Einige benötigen möglichst ruhige Arbeitsbedingungen. Andere können sich besser konzentrieren, wenn sie
+          sich bewegen dürfen. Manche bevorzugen spontane Gespräche, andere möchten Informationen schriftlich
+          erhalten.
+        </p>
+        <p>Die Unterschiede innerhalb dieser Gruppe veranschaulichen Neurodiversität.</p>
+        <p>
+          Wenn eine Person beispielsweise aufgrund von Autismus oder ADHS neurokognitive Besonderheiten aufweist, die
+          von den üblichen Erwartungen abweichen, kann sie als neurodivergent bezeichnet werden.
+        </p>
+        <p>Dabei gilt:</p>
+        <ul>
+          <li>Eine einzelne Person kann neurodivergent sein.</li>
+          <li>Eine Gruppe von Menschen kann neurodivers sein.</li>
+          <li>Neurodiversität umfasst neurodivergente und neurotypische Menschen.</li>
+        </ul>
+        <p>
+          Der Satz „Wir brauchen mehr Neurodiversität" ist deshalb nicht immer präzise. Wenn es beispielsweise um
+          eine stärkere Beteiligung bislang unterrepräsentierter neurodivergenter Menschen geht, sollte das auch
+          entsprechend benannt werden.
+        </p>
+      </section>
+
+      <section id="woher-kommt-der-begriff">
+        <h2>Woher kommt der Begriff Neurodiversität?</h2>
+        <p>
+          Das Konzept der Neurodiversität entwickelte sich in den 1990er-Jahren im Umfeld autistischer
+          Selbstvertretung und früher Online-Communities.
+        </p>
+        <p>
+          Die australische Soziologin Judy Singer und der Journalist Harvey Blume prägten seine frühe öffentliche und
+          akademische Verbreitung maßgeblich.
+        </p>
+        <p>
+          Die Entstehung lässt sich jedoch nicht überzeugend einer einzelnen Person zuschreiben. Bereits zuvor hatten
+          autistische Menschen über neurologische Vielfalt, gesellschaftliche Normen und Selbstbestimmung diskutiert.
+          [<a href="#q1">1</a>, <a href="#q3">3</a>]
+        </p>
+        <p>In den folgenden Jahren entwickelte sich daraus eine breitere Neurodiversitätsbewegung.</p>
+        <p>
+          Sie setzt sich unter anderem dafür ein, dass neurologische Unterschiede nicht ausschließlich unter
+          Defizitgesichtspunkten betrachtet werden und neurodivergente Menschen stärker an Entscheidungen beteiligt
+          werden, die ihr Leben betreffen.
+        </p>
+        <p>
+          Die Begriffe <em>neurodivergent</em> und <em>Neurodivergenz</em> wurden später insbesondere durch die Selbstvertretungsbewegung
+          verbreitet.
+        </p>
+      </section>
+
+      <section id="formen-von-neurodivergenz">
+        <h2>Welche Formen von Neurodivergenz gibt es?</h2>
+        <p>Neurodivergenz ist ein Oberbegriff, keine eigene diagnostische Kategorie. Deshalb gibt es keine weltweit verbindliche Liste aller Formen.</p>
+        <p>Einige Bedingungen werden besonders häufig in diesem Zusammenhang genannt.</p>
+
+        <h3>Autismus</h3>
+        <p>
+          Autismus ist eine neuroentwicklungsbedingte Besonderheit, die in medizinischen Klassifikationen als
+          Autismus-Spektrum-Störung eingeordnet wird.
+        </p>
+        <p>
+          Autistische Menschen können sich insbesondere hinsichtlich sozialer Kommunikation, Interaktion,
+          Interessen, Routinen und sensorischer Verarbeitung von nichtautistischen Menschen unterscheiden.
+        </p>
+        <p>
+          Die Ausprägungen sind sehr individuell. Manche autistische Menschen leben weitgehend selbstständig, andere
+          benötigen in vielen Lebensbereichen umfangreiche Unterstützung.
+        </p>
+        <p>Autismus ist eine häufig genannte Form von Neurodivergenz.</p>
+
+        <h3>ADHS</h3>
+        <p>Die Aufmerksamkeitsdefizit-/Hyperaktivitätsstörung ist ein neuroentwicklungsbedingtes Störungsbild.</p>
+        <p>ADHS kann sich unter anderem durch Schwierigkeiten mit Aufmerksamkeit, Impulsivität, Aktivitätsregulation und Alltagsorganisation zeigen.</p>
+        <p>
+          Das bedeutet nicht, dass Menschen mit ADHS grundsätzlich unkonzentriert sind oder keine Aufgaben bewältigen
+          können. Entscheidend sind die konkreten Merkmale, ihre Ausprägung und ihre Auswirkungen auf den Alltag.
+        </p>
+        <p>Auch ADHS wird häufig dem Begriff Neurodivergenz zugeordnet.</p>
+
+        <h3>AuDHS – Autismus und ADHS gemeinsam</h3>
+        <p>Autismus und ADHS können gleichzeitig vorliegen.</p>
+        <p>
+          Diese Kombination wird häufig als <a href="/audhs/">AuDHS</a> bezeichnet. Der Begriff ist keine
+          eigenständige medizinische Diagnose.
+        </p>
+        <p>
+          Manche Menschen mit AuDHS erleben besondere Spannungsfelder zwischen unterschiedlichen Bedürfnissen,
+          beispielsweise zwischen dem Wunsch nach festen Routinen und Schwierigkeiten, diese zuverlässig umzusetzen.
+        </p>
+        <p>Andere erleben die Kombination ganz anders.</p>
+        <p>Ein eigenständiges, wissenschaftlich klar definiertes AuDHS-Symptomprofil gibt es nicht.</p>
+
+        <h3>Legasthenie</h3>
+        <p>Legasthenie bezeichnet besondere Schwierigkeiten beim Erwerb und bei der Anwendung von Lese- und Rechtschreibfähigkeiten.</p>
+        <p>Sie ist nicht Ausdruck mangelnder Intelligenz oder fehlender Anstrengung.</p>
+        <p>Je nach verwendetem Begriffsrahmen wird Legasthenie ebenfalls als Form von Neurodivergenz verstanden.</p>
+
+        <h3>Dyskalkulie</h3>
+        <p>
+          Bei Dyskalkulie bestehen ausgeprägte und anhaltende Schwierigkeiten beim Erwerb mathematischer
+          Grundfertigkeiten beziehungsweise beim Umgang mit Zahlen und Rechenoperationen.
+        </p>
+        <p>Die Schwierigkeiten lassen sich nicht allein durch mangelnde Übung oder fehlende Motivation erklären.</p>
+        <p>Auch Dyskalkulie wird in vielen Darstellungen unter Neurodivergenz eingeordnet.</p>
+
+        <h3>Dyspraxie und Entwicklungsstörungen der motorischen Koordination</h3>
+        <p>Bei einer Entwicklungsstörung der motorischen Koordination können Planung, Koordination und Ausführung von Bewegungen erschwert sein.</p>
+        <p>Das kann sich beispielsweise beim Schreiben, bei feinmotorischen Aufgaben oder bei alltäglichen Bewegungsabläufen bemerkbar machen.</p>
+        <p>Der Begriff Dyspraxie wird je nach Land und fachlichem Zusammenhang unterschiedlich verwendet.</p>
+
+        <h3>Weitere neurokognitive Unterschiede</h3>
+        <p>Auch das Tourette-Syndrom und weitere neurologische oder psychische Bedingungen werden in manchen Definitionen von Neurodivergenz berücksichtigt.</p>
+        <p>
+          Hier ist eine wichtige Einschränkung notwendig: Es gibt keine allgemein anerkannte Grenze zwischen allen
+          Formen von Neurodivergenz, neurologischen Erkrankungen und psychischen Erkrankungen.
+        </p>
+        <p>Deshalb sollte aus der Verwendung des Begriffs nicht automatisch auf eine medizinische Diagnose oder ein bestimmtes Störungsbild geschlossen werden.</p>
+      </section>
+
+      <section id="behinderung">
+        <h2>Bedeutet neurodivergent, eine Behinderung zu haben?</h2>
+        <p>Nicht zwangsläufig. Neurodivergenz und Behinderung sind unterschiedliche Begriffe, die sich überschneiden können.</p>
+        <p>
+          Neurodivergenz beschreibt neurokognitive Unterschiede. Behinderung bezieht sich auf längerfristige
+          Beeinträchtigungen, die in Wechselwirkung mit Barrieren die gleichberechtigte Teilhabe erschweren können.
+        </p>
+        <p>
+          Ein neurodivergenter Mensch kann behindert sein. Eine andere neurodivergente Person erlebt möglicherweise
+          weniger Einschränkungen oder identifiziert sich selbst nicht als behindert.
+        </p>
+        <p>
+          Wichtig ist auch die rechtliche Unterscheidung: Ob im Einzelfall eine Behinderung oder Schwerbehinderung
+          im rechtlichen Sinne vorliegt, richtet sich nach den dafür geltenden Voraussetzungen und kann nicht allein
+          aus der Bezeichnung neurodivergent abgeleitet werden.
+        </p>
+        <p>Der Begriff Neurodivergenz sollte tatsächliche Behinderungen und Unterstützungsbedürfnisse nicht unsichtbar machen.</p>
+        <p>Ebenso wenig sollte eine Diagnose dazu führen, Menschen pauschal bestimmte Fähigkeiten abzusprechen.</p>
+      </section>
+
+      <section id="normal">
+        <h2>Neurodivergent oder neurotypisch: Was ist eigentlich normal?</h2>
+        <p>Im Alltag sprechen wir häufig davon, dass sich jemand „normal" oder „anders" verhält.</p>
+        <p>Doch solche Einordnungen hängen stark davon ab, welche Erwartungen in einer bestimmten Umgebung gelten.</p>
+        <p>
+          Beispielsweise werden in vielen Arbeitsumgebungen spontane Kommunikation, längeres Sitzen, gleichzeitige
+          Aufmerksamkeit für mehrere Informationsquellen und flexible Aufgabenwechsel erwartet.
+        </p>
+        <p>Menschen, die unter anderen Bedingungen besser arbeiten, können dadurch Nachteile erleben.</p>
+        <p>Das bedeutet jedoch nicht automatisch, dass sämtliche Schwierigkeiten ausschließlich durch gesellschaftliche Erwartungen entstehen.</p>
+        <p>Einige neurokognitive Besonderheiten können unabhängig von äußeren Barrieren erhebliche Belastungen oder Einschränkungen mit sich bringen.</p>
+        <p>Die Neurodiversitätsperspektive regt deshalb an, sowohl individuelle Voraussetzungen als auch die Gestaltung der Umgebung zu betrachten.</p>
+      </section>
+
+      <section id="krankheit">
+        <h2>Ist Neurodivergenz eine Krankheit?</h2>
+        <p>Neurodivergenz selbst ist keine Krankheit und keine medizinische Diagnose.</p>
+        <p>Allerdings können sich unter dem Begriff Menschen mit unterschiedlichen diagnostizierten Störungsbildern, Behinderungen oder Erkrankungen wiederfinden.</p>
+        <p>Autismus und ADHS werden beispielsweise in medizinischen Klassifikationssystemen als neuroentwicklungsbedingte Störungsbilder erfasst.</p>
+        <p>Diese medizinische Einordnung und die Neurodiversitätsperspektive müssen sich nicht gegenseitig ausschließen.</p>
+        <p>
+          Eine Person kann ihre neurologischen Besonderheiten als wichtigen Teil ihrer Identität verstehen und
+          gleichzeitig unter bestimmten Merkmalen erheblich leiden oder medizinische Unterstützung benötigen.
+        </p>
+        <p>Es ist daher zu vereinfacht, Neurodivergenz grundsätzlich als Krankheit oder grundsätzlich als besondere Stärke zu beschreiben.</p>
+      </section>
+
+      <section id="nicht-automatisch-begabung">
+        <h2>Neurodivergenz ist nicht automatisch eine besondere Begabung</h2>
+        <p>
+          In sozialen Medien wird Neurodivergenz manchmal mit außergewöhnlicher Kreativität, hoher Intelligenz,
+          besonderer Wahrnehmung oder ausgeprägten Spezialfähigkeiten verbunden.
+        </p>
+        <p>Einige neurodivergente Menschen verfügen tatsächlich über individuelle Stärken in bestimmten Bereichen.</p>
+        <p>Daraus lässt sich aber nicht ableiten, dass Neurodivergenz grundsätzlich mit besonderen Begabungen verbunden ist.</p>
+        <p>Auch neurotypische Menschen können kreativ, analytisch oder besonders detailorientiert sein.</p>
+        <p>Umgekehrt haben neurodivergente Menschen nicht die Aufgabe, ihre Unterschiede durch außergewöhnliche Leistungen zu rechtfertigen.</p>
+        <p>
+          <strong
+            >Der Wert eines Menschen hängt nicht davon ab, ob seine neurokognitiven Besonderheiten gesellschaftlich
+            als nützlich angesehen werden.</strong
+          >
+        </p>
+      </section>
+
+      <section id="alltag">
+        <h2>Wie zeigt sich Neurodivergenz im Alltag?</h2>
+        <p>Es gibt keine einheitlichen Symptome von Neurodivergenz, da der Begriff unterschiedliche neurokognitive Besonderheiten umfasst.</p>
+        <p>Dennoch können bestimmte Themen für manche neurodivergente Menschen eine Rolle spielen.</p>
+
+        <h3>Informationsverarbeitung</h3>
+        <p>Manche Menschen benötigen mehr Zeit, um gesprochene Informationen einzuordnen, oder profitieren von schriftlichen Anweisungen.</p>
+        <p>Andere können Informationen in bestimmten Bereichen schnell und detailliert verarbeiten, haben aber Schwierigkeiten, mehrere Anforderungen gleichzeitig zu berücksichtigen.</p>
+
+        <h3>Reizverarbeitung</h3>
+        <p>Geräusche, Licht, Berührungen und andere Sinneseindrücke können individuell sehr unterschiedlich erlebt werden.</p>
+        <p>Manche Menschen profitieren von reizarmen Umgebungen, andere von gezielten zusätzlichen Sinneseindrücken.</p>
+
+        <h3>Kommunikation</h3>
+        <p>Unterschiedliche Kommunikationsweisen können zu Missverständnissen führen, besonders wenn Erwartungen nicht ausdrücklich benannt werden.</p>
+        <p>Eine klare Kommunikation kann deshalb hilfreich sein, ohne dass sich alle Menschen auf denselben Kommunikationsstil festlegen müssen.</p>
+
+        <h3>Organisation und Aufmerksamkeit</h3>
+        <p>Einige neurodivergente Menschen erleben Schwierigkeiten mit Aufgabenbeginn, Zeitmanagement, Konzentration oder Handlungsplanung.</p>
+        <p>Ob und in welcher Form diese auftreten, hängt unter anderem vom zugrunde liegenden Störungsbild und von individuellen Faktoren ab.</p>
+
+        <h3>Erholung und Energie</h3>
+        <p>Bestimmte Umgebungen oder Anforderungen können mehr Energie beanspruchen als andere.</p>
+        <p>Hilfreich kann sein, persönliche Belastungsfaktoren zu erkennen und ausreichend Erholungsmöglichkeiten einzuplanen.</p>
+
+        <p>Diese Erfahrungen sind Beispiele und nicht spezifisch für Neurodivergenz. Auch neurotypische Menschen können entsprechende Schwierigkeiten erleben.</p>
+      </section>
+
+      <section id="schule-und-beruf">
+        <h2>Welche Bedeutung hat Neurodivergenz in Schule und Beruf?</h2>
+        <p>Viele Bildungs- und Arbeitsumgebungen orientieren sich an einheitlichen Erwartungen.</p>
+        <p>Alle sollen Informationen auf dieselbe Weise aufnehmen, sich ähnlich lange konzentrieren, vergleichbar kommunizieren und Aufgaben nach denselben Abläufen bearbeiten.</p>
+        <p>Solche Strukturen passen jedoch nicht zu allen Menschen gleichermaßen.</p>
+        <p>Neurodivergente Menschen können von individuell angepassten Rahmenbedingungen profitieren.</p>
+
+        <h3>Klare Kommunikation</h3>
+        <p>Schriftliche Aufgabenstellungen, eindeutige Zuständigkeiten und nachvollziehbare Prioritäten können Missverständnisse reduzieren.</p>
+
+        <h3>Unterschiedliche Arbeitsumgebungen</h3>
+        <p>Manche Menschen benötigen ruhige Arbeitsplätze oder die Möglichkeit, störende Reize zu reduzieren.</p>
+        <p>Andere profitieren von Bewegungspausen oder individuell gestalteten Arbeitsabläufen.</p>
+
+        <h3>Planbarkeit</h3>
+        <p>Frühzeitige Informationen über Änderungen, klare Zeitangaben und realistische Übergangsfristen können die Orientierung erleichtern.</p>
+
+        <h3>Individuelle Unterstützung</h3>
+        <p>Nicht jede neurodivergente Person benötigt dieselben Hilfen.</p>
+        <p>Deshalb sollten Anpassungen möglichst gemeinsam mit der betroffenen Person entwickelt werden.</p>
+
+        <p>Solche Veränderungen können auch neurotypischen Menschen zugutekommen.</p>
+        <p>Wichtig ist, nicht aus einer Diagnose oder Selbstbezeichnung unmittelbar auf Fähigkeiten, Belastbarkeit oder Unterstützungsbedarf zu schließen.</p>
+      </section>
+
+      <section id="angehoerige-unterstuetzen">
+        <h2>Wie können Angehörige neurodivergente Menschen unterstützen?</h2>
+        <p>Angehörige möchten häufig helfen, wissen aber nicht immer, welche Unterstützung tatsächlich erwünscht ist.</p>
+        <p>
+          Gut gemeinte Ratschläge wie „Du musst dich einfach mehr konzentrieren" oder „Versuch doch, etwas
+          spontaner zu sein" können an den eigentlichen Schwierigkeiten vorbeigehen.
+        </p>
+        <p>Hilfreicher ist es, konkrete Situationen zu betrachten.</p>
+        <p>
+          Welche Anforderungen sind belastend? Welche Bedingungen erleichtern den Alltag? Welche Unterstützung wird
+          gewünscht, und was sollte die Person möglichst selbst entscheiden können?
+        </p>
+        <p>Manchmal genügt eine klare Absprache. In anderen Situationen sind umfangreichere Anpassungen oder fachliche Unterstützungsangebote notwendig.</p>
+        <p>Die Grundlage ist, individuelle Erfahrungen ernst zu nehmen, ohne aus der Bezeichnung neurodivergent pauschale Schlussfolgerungen zu ziehen.</p>
+      </section>
+
+      <section id="woher-weiss-ich-es">
+        <h2>Woher weiß ich, ob ich neurodivergent bin?</h2>
+        <p>Vielleicht erkennst du dich in einigen beschriebenen Erfahrungen wieder und fragst dich, ob du selbst neurodivergent bist.</p>
+        <p>Ein einzelner medizinischer Neurodivergenz-Test existiert nicht.</p>
+        <p>Da Neurodivergenz ein übergeordneter, nichtdiagnostischer Begriff ist, gibt es auch keine einheitlichen diagnostischen Kriterien dafür.</p>
+        <p>
+          Wenn du beispielsweise <a href="/audhs/">Autismus oder ADHS</a> bei dir vermutest, kann es sinnvoll sein,
+          dich mit den jeweiligen diagnostischen Merkmalen auseinanderzusetzen.
+        </p>
+        <p>Dabei sollte die Frage nach einer Diagnose nicht allein davon abhängen, ob du dich in allgemeinen Erfahrungsberichten wiedererkennst.</p>
+        <p>Wenn du seit längerer Zeit unter erheblichen Schwierigkeiten leidest oder dir Klarheit über mögliche Ursachen wünschst, kann eine qualifizierte fachliche Abklärung hilfreich sein.</p>
+        <p>Du darfst dich unabhängig davon mit deinen individuellen Bedürfnissen beschäftigen und passende Alltagshilfen ausprobieren.</p>
+      </section>
+    </div>
+  </article>
+
+  <section class="section section--alt" aria-labelledby="faq-heading">
+    <div class="container">
+      <h2 id="faq-heading">Häufige Fragen zur Neurodivergenz</h2>
+      <div class="faq-liste">
+        {
+          faqEintraege.map((eintrag) => (
+            <details class="faq-item">
+              <summary class="faq-item__summary">
+                <h3>{eintrag.frage}</h3>
+                <svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18">
+                  <path
+                    d="M6 9l6 6 6-6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </summary>
+              <div class="faq-item__body">
+                <p>{eintrag.antwort}</p>
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Fazit: Neurodivergenz bedeutet, Unterschiede ernst zu nehmen</h2>
+      <p>Neurodivergenz beschreibt Menschen, deren neurokognitive Funktionsweisen von gesellschaftlich als typisch betrachteten Mustern abweichen.</p>
+      <p>Das Konzept der Neurodiversität erinnert daran, dass unterschiedliche Arten des Denkens, Wahrnehmens und Lernens zur menschlichen Vielfalt gehören.</p>
+      <p>Diese Perspektive kann helfen, starre Vorstellungen von Normalität zu hinterfragen und individuelle Bedürfnisse besser zu berücksichtigen.</p>
+      <p>Gleichzeitig sollten wir nicht übersehen, dass neurodivergente Menschen erhebliche Einschränkungen erleben und Unterstützung benötigen können.</p>
+      <p>Es geht weder darum, Schwierigkeiten zu verharmlosen, noch darum, Unterschiede grundsätzlich als Defizite zu betrachten.</p>
+      <p>
+        <strong
+          >Entscheidend ist, Menschen mit ihren individuellen Fähigkeiten, Belastungen und Bedürfnissen
+          wahrzunehmen – und Bedingungen zu schaffen, unter denen sie möglichst selbstbestimmt leben können.</strong
+        >
+      </p>
+      <p>AUTISMUS kompakt verbindet dafür verständliche Informationen mit wissenschaftlicher Einordnung und konkreten Anregungen für den Alltag.</p>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <h2 id="quellen-heading">Wissenschaftliche Grundlagen</h2>
+      <ol class="quellenliste">
+        <li id="q1">
+          Pellicano, E. &amp; den Houting, J. (2022): <em>Annual Research Review: Shifting from 'normal science' to
+          neurodiversity in autism science.</em> Journal of Child Psychology and Psychiatry, 63(4), 381–396.
+          <a href="https://doi.org/10.1111/jcpp.13534" rel="noopener noreferrer"
+            >Zur Quelle <span aria-hidden="true">↗</span
+            ><span class="visually-hidden"> (öffnet auf einer anderen Website)</span></a
+          >
+        </li>
+        <li id="q2">
+          National Autism Implementation Team (2022): <em>Neurodevelopmental disorders and neurodiversity:
+          definition of terms from Scotland's National Autism Implementation Team.</em> The British Journal of
+          Psychiatry.
+          <a
+            href="https://www.cambridge.org/core/journals/the-british-journal-of-psychiatry/article/neurodevelopmental-disorders-and-neurodiversity-definition-of-terms-from-scotlands-national-autism-implementation-team/C6582CFF0E5E00F2F0F38F294A6659D1"
+            rel="noopener noreferrer"
+            >Zur Quelle <span aria-hidden="true">↗</span
+            ><span class="visually-hidden"> (öffnet auf einer anderen Website)</span></a
+          >
+        </li>
+        <li id="q3">
+          National Autistic Society: <em>The neurodiversity movement.</em>
+          <a href="https://www.autism.org.uk/advice-and-guidance/identity/the-neurodiversity-movement" rel="noopener noreferrer"
+            >Zur Quelle <span aria-hidden="true">↗</span
+            ><span class="visually-hidden"> (öffnet auf einer anderen Website)</span></a
+          >
+        </li>
+        <li id="q4">
+          Cleveland Clinic (2022): <em>Neurodivergent: What It Is, Symptoms &amp; Types.</em>
+          <a href="https://my.clevelandclinic.org/health/symptoms/23154-neurodivergent" rel="noopener noreferrer"
+            >Zur Quelle <span aria-hidden="true">↗</span
+            ><span class="visually-hidden"> (öffnet auf einer anderen Website)</span></a
+          >
+        </li>
+      </ol>
+      <p class="quellen-fussnote">
+        Hinweis: Das Erscheinungsjahr der Quelle [2] wurde entsprechend der redaktionellen Vorgabe von 2023 auf 2022
+        korrigiert.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--alt newsletter-teaser" aria-labelledby="newsletter-heading">
+    <div class="container">
+      <h2 id="newsletter-heading">Praktische Tipps für deinen Alltag</h2>
+      <p>
+        Im Newsletter von AUTISMUS kompakt erhältst du verständliche Informationen und konkrete Anregungen für
+        typische Alltagssituationen.
+      </p>
+      <p>
+        <a class="button button--secondary" href="/newsletter/">Zum kostenlosen Newsletter</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-bottom: var(--space-md);
+    border-bottom: var(--border-width) solid var(--color-bronze-soft);
+  }
+
+  .hero h1 {
+    max-width: 36ch;
+  }
+
+  .hero p {
+    max-width: var(--measure);
+  }
+
+  .hero__intro {
+    font-size: 1.05rem;
+  }
+
+  .prose-sections section + section {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: var(--border-width) solid var(--color-border);
+  }
+
+  .prose-sections .container {
+    max-width: var(--measure);
+  }
+
+  .prose-sections h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .prose-sections h3 {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xs);
+  }
+
+  .prose-sections p {
+    margin-bottom: var(--space-sm);
+  }
+
+  .prose-sections ul {
+    margin: 0 0 var(--space-sm);
+    padding-inline-start: 1.25em;
+  }
+
+  .prose-sections li {
+    margin-bottom: var(--space-2xs);
+  }
+
+  /* FAQ-Akkordeon: natives <details>/<summary>, dasselbe Muster wie auf
+     /audhs/ und im Glossar – funktioniert ohne JavaScript und ohne
+     Animationen, der Öffnungszustand wird vom Browser selbst korrekt
+     vermittelt. */
+  .faq-liste {
+    max-width: var(--measure);
+  }
+
+  .faq-item {
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius);
+  }
+
+  .faq-item + .faq-item {
+    margin-top: var(--space-sm);
+  }
+
+  .faq-item__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    min-height: 44px;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq-item__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item__summary h3 {
+    margin: 0;
+    font-size: 1.0625rem;
+    color: var(--color-petrol);
+  }
+
+  .faq-chevron {
+    flex-shrink: 0;
+    color: var(--color-petrol);
+    transition: transform var(--transition-fast);
+  }
+
+  details[open] > summary .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-item__body {
+    padding: 0 var(--space-md) var(--space-md);
+  }
+
+  .faq-item__body p {
+    margin: 0;
+    max-width: var(--measure);
+  }
+
+  .quellenliste {
+    max-width: var(--measure);
+  }
+
+  .quellen-fussnote {
+    margin-top: var(--space-sm);
+    max-width: var(--measure);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+
+  .newsletter-teaser p {
+    max-width: var(--measure);
+  }
+
+  .newsletter-teaser p:last-child {
+    margin-top: var(--space-sm);
+  }
+</style>

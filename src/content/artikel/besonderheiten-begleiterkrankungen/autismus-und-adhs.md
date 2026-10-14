@@ -46,3 +46,5 @@ ADHS gehört in großen Meta-Analysen zu den häufigen koexistierenden neuroentw
 Für die Differentialdiagnostik reicht die phänotypische Ähnlichkeit nicht. Entwicklungsverlauf, Funktionszusammenhang, Kontextbreite und für ADHS typische Kernsymptome müssen eigenständig beurteilt werden.
 
 Eine bestehende Autismusdiagnose sollte eine ADHS-Abklärung bei klinischem Verdacht nicht verhindern; umgekehrt erklärt ADHS keine autistischen Kernmerkmale.
+
+Einordnung des übergeordneten Begriffs: [Neurodivergenz verstehen](/neurodivergenz/).

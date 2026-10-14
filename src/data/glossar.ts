@@ -9,6 +9,10 @@ export interface GlossarEintrag {
   term: string;
   letter: string;
   definition: string;
+  // Optionaler weiterführender Link zu einem ausführlichen Artikel auf der
+  // Website (z. B. /neurodivergenz/). Rein additiv – ohne Angabe verhält
+  // sich ein Eintrag exakt wie bisher.
+  weiterfuehrenderLink?: { href: string; label: string };
 }
 
 export interface GlossarQuelle {
@@ -333,6 +337,7 @@ export const GLOSSAR_EINTRAEGE: GlossarEintrag[] = [
     letter: "N",
     definition:
       "Neurodivergent ist ein nichtdiagnostischer Begriff für Menschen, deren neurologische Entwicklung oder Verarbeitung von gesellschaftlich als typisch betrachteten Mustern abweicht. Die Abgrenzung ist nicht einheitlich festgelegt.",
+    weiterfuehrenderLink: { href: "/neurodivergenz/", label: "Neurodivergenz verstehen: Was bedeutet neurodivergent?" },
   },
   {
     id: "neurodiversitaet",
@@ -340,6 +345,7 @@ export const GLOSSAR_EINTRAEGE: GlossarEintrag[] = [
     letter: "N",
     definition:
       "Neurodiversität bezeichnet die Vielfalt menschlicher neurologischer Entwicklung und Informationsverarbeitung. Der Begriff beschreibt die Vielfalt insgesamt und schließt das Bestehen von Behinderungen oder Unterstützungsbedarfen nicht aus.",
+    weiterfuehrenderLink: { href: "/neurodivergenz/", label: "Neurodivergenz verstehen: Was bedeutet neurodivergent?" },
   },
   {
     id: "neurotypisch",

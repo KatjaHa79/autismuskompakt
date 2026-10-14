@@ -17,6 +17,8 @@ Autismus wird sehr unterschiedlich beschrieben – von einer Liste von Schwierig
 
 Häufige Frage dazu: [Ist Autismus vererbbar?](/fuer-autistische-menschen/ist-autismus-vererbbar/)
 
+Mehr zum Hintergrund: [Neurodivergenz verstehen: Was bedeutet neurodivergent?](/neurodivergenz/)
+
 ## Für autistische Menschen
 
 Wenn du selbst autistisch bist oder gerade versuchst herauszufinden, was Autismus für dich bedeutet, wirst du wahrscheinlich auf sehr unterschiedliche Beschreibungen stoßen. Manche erklären fast jede Schwierigkeit mit Autismus. Andere beschreiben Autismus hauptsächlich als Stärke. Beides ist zu einfach.

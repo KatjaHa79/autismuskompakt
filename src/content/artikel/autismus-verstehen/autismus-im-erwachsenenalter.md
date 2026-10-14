@@ -13,7 +13,7 @@ sources:
     url: "https://www.gesundheitsinformation.de/wie-wird-autismus-festgestellt.html"
 ---
 
-Verwandte Themen: [Spätdiagnose](/fuer-autistische-menschen/spaetdiagnose/) und [Autismus und Älterwerden](/fuer-autistische-menschen/autismus-und-aelterwerden/).
+Verwandte Themen: [Spätdiagnose](/fuer-autistische-menschen/spaetdiagnose/), [Autismus und Älterwerden](/fuer-autistische-menschen/autismus-und-aelterwerden/) und [Neurodivergenz verstehen](/neurodivergenz/).
 
 ## Kurz gesagt
 
