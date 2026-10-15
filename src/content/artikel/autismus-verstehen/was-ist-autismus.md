@@ -1,6 +1,9 @@
 ---
 title: "Was ist Autismus?"
+seoTitle: "Was ist Autismus? Merkmale, Diagnose & Alltag | AUTISMUS kompakt"
+fullTitle: true
 description: "Eine Einführung in Autismus als neuroentwicklungsbezogene Diagnose – für autistische Menschen, Angehörige und Fachkräfte, jeweils mit eigenem Blickwinkel."
+metaDescription: "Was ist Autismus? Erfahre, wie sich autistische Wahrnehmung, Kommunikation und Bedürfnisse unterscheiden können – verständlich erklärt und mit Alltagsbeispielen."
 category: "autismus-verstehen"
 targetGroups: ["autistische-menschen", "angehoerige", "fachkraefte"]
 updated: 2026-08-26

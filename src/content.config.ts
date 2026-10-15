@@ -73,7 +73,17 @@ const articles = defineCollection({
       // (z. B. AuDHS-Artikel "Erwachsene"). Ohne Angabe wird weiterhin wie
       // bisher "title" für H1 und SEO-Title gleichermaßen verwendet.
       seoTitle: z.string().min(1).optional(),
+      // Optional: wenn true, hängt BaseLayout keinen " · Autismuskompakt"-
+      // Zusatz an seoTitle/title an, weil der Markenname bereits selbst im
+      // String enthalten ist. Ohne Angabe (Standard) unverändertes
+      // bisheriges Verhalten für alle anderen Artikel.
+      fullTitle: z.boolean().optional(),
       description: z.string().min(1, "description darf nicht leer sein."),
+      // Optional: abweichender Text nur für <meta name="description">, falls
+      // sich die SEO-Beschreibung von der sichtbaren "Kurz gesagt"-Zeile auf
+      // der Seite unterscheiden soll. Ohne Angabe wird weiterhin "description"
+      // für beide Zwecke verwendet (bisheriges Verhalten unverändert).
+      metaDescription: z.string().min(1).optional(),
       category: z.enum(categoryValues, {
         message: `category muss einer der folgenden Werte sein: ${categoryValues.join(", ")}`,
       }),

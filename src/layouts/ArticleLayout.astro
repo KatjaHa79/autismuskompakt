@@ -19,7 +19,8 @@ interface Props {
 }
 
 const { entry, structuredData } = Astro.props;
-const { title, seoTitle, description, category, targetGroups, updated, sources } = entry.data;
+const { title, seoTitle, fullTitle, description, metaDescription, category, targetGroups, updated, sources } =
+  entry.data;
 
 const zeigtRechtlichenHinweis = categoriesRequiringUpdated.has(category);
 
@@ -30,7 +31,7 @@ const passendeMaterialien = materialIds
   .filter((material) => material !== undefined);
 ---
 
-<BaseLayout title={seoTitle ?? title} description={description}>
+<BaseLayout title={seoTitle ?? title} description={metaDescription ?? description} fullTitle={fullTitle}>
   {structuredData && <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />}
 
   <div class="container container--content">
