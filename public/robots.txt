@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://autismuskompakt.de/sitemap-index.xml
+Sitemap: https://www.autismuskompakt.de/sitemap-index.xml
