@@ -388,7 +388,19 @@ const isAnlaufstellen = currentPath === "/hilfe-finden/" || currentPath.startsWi
      Aktionsbereich, nicht anhand eines geschätzten Gerätewerts): echter
      Umbruch bei ca. 1300px, dieser Wert plus Sicherheitsabstand für
      abweichendes Schrift-Rendering in anderen Browsern/Betriebssystemen.
-     Siehe Abschlussbericht, Abschnitt D. */
+     Siehe Abschlussbericht, Abschnitt D.
+
+     Layout-Prinzip (Fehlerkorrektur, SEO/Header-Phase 5): .main-nav wuchs
+     zuvor selbst per flex-grow (flex: 1 1 0%) auf die volle verbleibende
+     Zeilenbreite, während .main-nav__list ihre Einträge weiterhin
+     linksbündig packt (kein justify-content) – dadurch entstand auf
+     breiten Bildschirmen eine auffällige leere Fläche INNERHALB der
+     Navigationsbox, direkt vor "Anlaufstellen". .main-nav wächst daher
+     nicht mehr selbst (flex: 0 1 auto); stattdessen sammelt ein einzelner
+     margin-inline-start: auto auf dem ersten Aktions-Element ("Anlaufstellen")
+     den gesamten übrigen Platz gebündelt an exakt einer Stelle zwischen
+     Hauptnavigation und rechter Gruppe – die rechte Gruppe selbst bleibt
+     dabei durch den kleinen gemeinsamen column-gap eng zusammenhängend. */
   @media (min-width: 82rem) {
     .site-header__inner {
       flex-direction: row;
@@ -411,7 +423,7 @@ const isAnlaufstellen = currentPath === "/hilfe-finden/" || currentPath.startsWi
     }
 
     .primary-menu :global(.main-nav) {
-      flex: 1 1 0%;
+      flex: 0 1 auto;
       min-width: 0;
     }
 
@@ -424,6 +436,7 @@ const isAnlaufstellen = currentPath === "/hilfe-finden/" || currentPath.startsWi
     }
 
     .site-header__quicklink {
+      margin-inline-start: auto;
       flex: 0 0 auto;
       order: 2;
     }
