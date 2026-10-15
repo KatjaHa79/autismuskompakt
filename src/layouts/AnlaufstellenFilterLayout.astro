@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import AnlaufstelleKarte from "../components/AnlaufstelleKarte.astro";
+import { getFacetRobots } from "../lib/indexierung";
 
 interface Props {
   title: string;
@@ -11,11 +12,13 @@ interface Props {
 }
 
 const { title, filterLabel, entries } = Astro.props;
+const robots = getFacetRobots(Astro.url.pathname);
 ---
 
 <BaseLayout
   title={`${title} – Anlaufstellen`}
   description={`Anlaufstellen zum Thema Autismus, gefiltert nach: ${filterLabel}.`}
+  robots={robots}
 >
   <div class="container">
     <Breadcrumbs

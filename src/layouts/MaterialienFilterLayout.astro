@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import MaterialKarte from "../components/MaterialKarte.astro";
+import { getFacetRobots } from "../lib/indexierung";
 
 interface Props {
   title: string;
@@ -11,11 +12,13 @@ interface Props {
 }
 
 const { title, filterLabel, entries } = Astro.props;
+const robots = getFacetRobots(Astro.url.pathname);
 ---
 
 <BaseLayout
   title={`${title} – Hilfreiches Material`}
   description={`Kostenlose Materialien, gefiltert nach: ${filterLabel}.`}
+  robots={robots}
 >
   <div class="container">
     <Breadcrumbs
