@@ -83,7 +83,11 @@ const isAnlaufstellen = currentPath === "/hilfe-finden/" || currentPath.startsWi
     var panel = document.getElementById("primary-menu");
     if (!toggle || !panel) return;
 
-    var mq = window.matchMedia("(max-width: 40rem)");
+    // Schwelle identisch zur CSS-Hamburger-Schwelle weiter unten
+    // (@media max-width: 81.9375rem) und zur Dropdown-Schwelle in
+    // Navigation.astro - muss bei einer künftigen Änderung dort
+    // ebenfalls angepasst werden.
+    var mq = window.matchMedia("(max-width: 81.9375rem)");
 
     function collapse() {
       panel.style.display = "none";
@@ -322,7 +326,15 @@ const isAnlaufstellen = currentPath === "/hilfe-finden/" || currentPath.startsWi
     background-color: var(--color-petrol);
   }
 
-  @media (max-width: 40rem) {
+  /* Hamburger-Schwelle (3. Korrektur): zuvor nur bis 40rem, darüber bis
+     81.9375rem ein separates zweizeiliges Layout (Logo+Nav in Zeile 1,
+     Suche/Anlaufstellen/Leitfaden in Zeile 2). Das zweizeilige Layout
+     wirkte bei ca. 1280px unruhig. Die Hamburger-Schwelle deckt jetzt
+     durchgehend bis knapp unter die Einzeilen-Desktop-Schwelle ab (siehe
+     unten, @media min-width: 82rem) – kein separates zweizeiliges
+     Zwischenlayout mehr. Identisch zur JS-Schwelle oben
+     (window.matchMedia) und zur Dropdown-Schwelle in Navigation.astro. */
+  @media (max-width: 81.9375rem) {
     html.js .nav-toggle {
       display: inline-flex;
     }
@@ -346,38 +358,6 @@ const isAnlaufstellen = currentPath === "/hilfe-finden/" || currentPath.startsWi
     }
   }
 
-  /* Ab hier teilen sich Logo und Navigation eine Zeile; Leitfaden-Button und
-     Suche rücken als ruhige, kompakte zweite Zeile darunter. Erst ab der
-     Einzeilen-Schwelle (siehe unten, ca. 1024px) reiht sich alles – Logo,
-     Navigation, Suche und CTA – in einer einzigen Zeile aneinander. */
-  @media (min-width: 40.0625rem) and (max-width: 81.9375rem) {
-    .site-header__inner {
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      column-gap: var(--space-lg);
-      row-gap: var(--space-sm);
-    }
-
-    .site-header__top {
-      flex: 0 0 auto;
-    }
-
-    .primary-menu {
-      flex: 1 1 0%;
-      min-width: 0;
-    }
-
-    .primary-menu :global(.main-nav) {
-      flex: 1 1 auto;
-    }
-
-    .primary-menu__actions {
-      flex-basis: 100%;
-      justify-content: flex-end;
-    }
-  }
-
   /* Ab ca. 1312px genug Breite für eine einzige ruhige Zeile: Logo,
      Navigation, Suche, Anlaufstellen, "Über mich" und CTA nebeneinander.
      Reihenfolge per order bewusst gesetzt, unabhängig von der
@@ -390,17 +370,28 @@ const isAnlaufstellen = currentPath === "/hilfe-finden/" || currentPath.startsWi
      abweichendes Schrift-Rendering in anderen Browsern/Betriebssystemen.
      Siehe Abschlussbericht, Abschnitt D.
 
-     Layout-Prinzip (Fehlerkorrektur, SEO/Header-Phase 5): .main-nav wuchs
-     zuvor selbst per flex-grow (flex: 1 1 0%) auf die volle verbleibende
-     Zeilenbreite, während .main-nav__list ihre Einträge weiterhin
-     linksbündig packt (kein justify-content) – dadurch entstand auf
-     breiten Bildschirmen eine auffällige leere Fläche INNERHALB der
-     Navigationsbox, direkt vor "Anlaufstellen". .main-nav wächst daher
-     nicht mehr selbst (flex: 0 1 auto); stattdessen sammelt ein einzelner
-     margin-inline-start: auto auf dem ersten Aktions-Element ("Anlaufstellen")
-     den gesamten übrigen Platz gebündelt an exakt einer Stelle zwischen
-     Hauptnavigation und rechter Gruppe – die rechte Gruppe selbst bleibt
-     dabei durch den kleinen gemeinsamen column-gap eng zusammenhängend. */
+     Layout-Prinzip (2. Korrektur, nach erneuter Live-Prüfung): Die erste
+     Korrektur hatte die Ursache nur verlagert, nicht beseitigt. .main-nav
+     wuchs nicht mehr selbst, aber .primary-menu (sein Elternelement) hatte
+     weiterhin flex: 1 1 0% – wuchs also seinerseits auf die volle
+     verbleibende Zeilenbreite. Der dadurch entstehende Freiraum wurde per
+     margin-inline-start: auto auf "Anlaufstellen" an einer einzigen Stelle
+     gebündelt. Da der Header über .container--wide auf --site-width-wide
+     (88rem/ca. 1408px) begrenzt ist, blieb dieser gebündelte Freiraum auf
+     jedem Bildschirm ab dieser Breite konstant groß (~124px) – sichtbar
+     deutlich größer als die übrigen, kleinen Navigationsabstände.
+
+     Echte Korrektur: Kein Element in dieser Zeile wächst mehr
+     (.primary-menu jetzt flex: 0 1 auto statt 1 1 0%, kein auto-Margin
+     mehr). Stattdessen erhält .primary-menu einen einzigen, festen
+     column-gap in derselben Stärke wie der Abstand zwischen den fünf
+     Hauptmenüpunkten (--space-sm) – dadurch sind ALLE Abstände in der
+     gesamten Kopfzeile (innerhalb der Hauptnavigation, zwischen
+     Hauptnavigation und "Anlaufstellen", zwischen den rechten
+     Aktionslinks) exakt gleich groß. Verbleibender Freiraum auf sehr
+     breiten Bildschirmen entsteht dadurch nicht mehr als Lücke zwischen
+     den Gruppen, sondern bleibt unauffällig nach "Kostenloser Leitfaden"
+     als Randabstand innerhalb des zentrierten Containers. */
   @media (min-width: 82rem) {
     .site-header__inner {
       flex-direction: row;
@@ -416,9 +407,9 @@ const isAnlaufstellen = currentPath === "/hilfe-finden/" || currentPath.startsWi
     }
 
     .primary-menu {
-      flex: 1 1 0%;
+      flex: 0 1 auto;
       min-width: 0;
-      column-gap: var(--space-2xs);
+      column-gap: var(--space-sm);
       order: 1;
     }
 
@@ -436,7 +427,6 @@ const isAnlaufstellen = currentPath === "/hilfe-finden/" || currentPath.startsWi
     }
 
     .site-header__quicklink {
-      margin-inline-start: auto;
       flex: 0 0 auto;
       order: 2;
     }
@@ -484,7 +474,7 @@ const isAnlaufstellen = currentPath === "/hilfe-finden/" || currentPath.startsWi
     }
   }
 
-  @media (max-width: 40rem) {
+  @media (max-width: 81.9375rem) {
     .site-header__search input {
       width: 100%;
       max-width: none;

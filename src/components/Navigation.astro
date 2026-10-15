@@ -586,10 +586,11 @@ function hasActiveDescendant(children: NavChild[]): boolean {
     overflow-y: auto;
   }
 
-  /* Ab Desktop/Tablet-Breite (identisch zur bestehenden Hamburger-Schwelle)
-     klappt das Untermenü als schwebendes, reizarmes Panel unterhalb des
+  /* Ab Desktop-Breite (identisch zur Hamburger-Schwelle in Header.astro,
+     seit der 3. Header-Korrektur bei 82rem statt zuvor 40.0625rem) klappt
+     das Untermenü als schwebendes, reizarmes Panel unterhalb des
      Hauptpunkts auf. */
-  @media (min-width: 40.0625rem) {
+  @media (min-width: 82rem) {
     html.js .main-nav__submenu {
       position: absolute;
       top: 100%;
@@ -630,11 +631,12 @@ function hasActiveDescendant(children: NavChild[]): boolean {
     }
   }
 
-  /* Unter der Hamburger-Schwelle: Untermenü klappt inline direkt unter dem
-     Hauptpunkt auf, kein schwebendes Panel (vermeidet Überlagerungen auf
-     schmalen Bildschirmen). Gilt unverändert auch für verschachtelte
-     Gruppen, die dort ohnehin bereits "static" positioniert sind. */
-  @media (max-width: 40rem) {
+  /* Unter der Hamburger-Schwelle (jetzt 81.9375rem, siehe Header.astro):
+     Untermenü klappt inline direkt unter dem Hauptpunkt auf, kein
+     schwebendes Panel (vermeidet Überlagerungen bei gestapeltem Menü).
+     Gilt unverändert auch für verschachtelte Gruppen, die dort ohnehin
+     bereits "static" positioniert sind. */
+  @media (max-width: 81.9375rem) {
     html.js .main-nav__submenu {
       position: static;
       margin: var(--space-2xs) 0 var(--space-sm) var(--space-sm);
