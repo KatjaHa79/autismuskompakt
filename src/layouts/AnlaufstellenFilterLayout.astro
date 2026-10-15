@@ -4,20 +4,30 @@ import BaseLayout from "./BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import AnlaufstelleKarte from "../components/AnlaufstelleKarte.astro";
 import { getFacetRobots } from "../lib/indexierung";
+import { ANLAUFSTELLEN_DATENHINWEIS } from "../lib/bundesland-seo";
 
 interface Props {
   title: string;
   filterLabel: string;
   entries: CollectionEntry<"anlaufstellen">[];
+  // Optionale Overrides für redaktionell individuell gepflegte Facetten
+  // (aktuell: die 16 Bundesland-Seiten, siehe bundesland-seo.ts). Ohne
+  // Angabe unverändertes bisheriges Verhalten (automatisch generierter
+  // Title/Description aus title/filterLabel) für alle anderen Facetten
+  // (Kategorie, Zielgruppe, Altersgruppe, Online, Vor Ort).
+  seoTitle?: string;
+  metaDescription?: string;
+  introText?: string;
 }
 
-const { title, filterLabel, entries } = Astro.props;
+const { title, filterLabel, entries, seoTitle, metaDescription, introText } = Astro.props;
 const robots = getFacetRobots(Astro.url.pathname);
 ---
 
 <BaseLayout
-  title={`${title} – Anlaufstellen`}
-  description={`Anlaufstellen zum Thema Autismus, gefiltert nach: ${filterLabel}.`}
+  title={seoTitle ?? `${title} – Anlaufstellen`}
+  description={metaDescription ?? `Anlaufstellen zum Thema Autismus, gefiltert nach: ${filterLabel}.`}
+  fullTitle={Boolean(seoTitle)}
   robots={robots}
 >
   <div class="container">
@@ -33,6 +43,16 @@ const robots = getFacetRobots(Astro.url.pathname);
   <section class="section">
     <div class="container">
       <h1>{title}</h1>
+
+      {
+        introText && (
+          <div class="facette-intro">
+            <p>{introText}</p>
+            <p class="facette-intro__hinweis">{ANLAUFSTELLEN_DATENHINWEIS}</p>
+          </div>
+        )
+      }
+
       <p class="lead">
         <a href="/hilfe-finden/">Zurück zur vollständigen Übersicht und zu weiteren Filtern</a>
       </p>
@@ -59,6 +79,17 @@ const robots = getFacetRobots(Astro.url.pathname);
 </BaseLayout>
 
 <style>
+  .facette-intro {
+    max-width: var(--measure);
+    margin-top: var(--space-sm);
+  }
+
+  .facette-intro__hinweis {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-2xs);
+  }
+
   .lead {
     max-width: var(--measure);
     margin-bottom: var(--space-lg);
